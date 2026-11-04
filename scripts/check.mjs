@@ -38,7 +38,8 @@ export function check(base = root) {
     if (!/<svg\b/i.test(html) || !/<desc[\s>]/i.test(html)) errors.push(`${lesson.file}: needs a reviewed SVG diagram with a text equivalent.`);
     if (!/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8'))) errors.push('Shared style needs reduced-motion support.');
   }
-  const publicFiles = ['index.html', ...actual.map(name=>'lessons/'+name), 'assets/site.css','assets/lesson.js'];
+  const collect = directory => existsSync(resolve(base,directory)) ? readdirSync(resolve(base,directory),{withFileTypes:true}).flatMap(entry => entry.isDirectory() ? collect(directory+'/'+entry.name) : [directory+'/'+entry.name]) : [];
+  const publicFiles = ['index.html', ...actual.map(name=>'lessons/'+name), ...collect('assets'), ...collect('reference')];
   for (const name of publicFiles) {
     const path = resolve(base,name);
     if (!existsSync(path)) continue;
@@ -77,7 +78,7 @@ export function check(base = root) {
   }
   const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','lessons.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
   for (const file of candidates) {
-    if (!allowedRoots.has(file) && !/^(?:assets|lessons|templates|scripts|skills\/geometry-teach|tests|docs)\//.test(file)) errors.push(`Unexpected public repository path: ${file}`);
+    if (!allowedRoots.has(file) && !/^(?:assets|lessons|reference|templates|scripts|skills\/geometry-teach|tests|docs)\//.test(file)) errors.push(`Unexpected public repository path: ${file}`);
     if (!/\.(?:html|css|js|mjs|json|md|txt|py)$/.test(file) && !allowedRoots.has(file)) errors.push(`Unsafe repository file type: ${file}`);
     if (existsSync(resolve(base,file)) && lstatSync(resolve(base,file)).isSymbolicLink()) errors.push(`Symlink is not publishable: ${file}`);
   }

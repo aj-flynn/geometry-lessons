@@ -1,0 +1,27 @@
+# Private input must live OUTSIDE this public repository. These are a second guard.
+private/
+inputs/
+uploads/
+drafts/
+learning-records/
+NOTES.md
+*.pdf
+*.doc
+*.docx
+*.docm
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.webp
+*.gif
+*.zip
+*.log
+.env*
+node_modules/
+dist/
+.taste-skill/
+.qa/
+__pycache__/
+*.pyc
+

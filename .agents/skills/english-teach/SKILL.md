@@ -1,17 +1,14 @@
 ---
 name: english-teach
-description: Teach reading, language, and writing through original passages and evidence-based practice that leaves the assignment to the learner.
+description: Teach reading, language and writing through original texts and evidence-based practice.
 license: MIT
 ---
 
 # English
 
-Apply [homework-teach](../homework-teach/SKILL.md) to the verified English route. Map the actual operations: selecting a quotation, paraphrasing, explaining a device, connecting evidence to a claim, testing interpretations, or revising. Use unrelated passages, imagery, characters, and claims. A renamed scene or translated assigned line can supply the answer. Keep the supplied work private and ungraded.
+Apply [homework-teach](../homework-teach/SKILL.md). Map the reading or writing decisions and the required response. Use unrelated language, passages, imagery, characters and claims.
 
-- Distinguish observation, intended meaning in plain words, and interpretation with evidence. Preserve actor, negation, uncertainty, conditions, and questions. Separate character, speaker, narrator, and author. A single action can support a bounded claim. Consider plausible alternatives and what would distinguish them.
-- Teach finding a short sufficient quotation from multiple original lines when the learner must find evidence. Connect exact wording to a device's effect, using plausible nonexamples for relevant device types. When the claim concerns another person, explain what the comparison shows about the speaker's view. Use manner of speech as evidence for bounded trait and relationship claims when the task calls for it. Require distinct evidence-to-claim links for multiple traits or speakers.
-- Teach older syntax or vocabulary on the main route when translation is required. Model relevant pronouns, verb forms, word order, negatives and conditions with labeled invented lines. Bridge plain meaning to natural modern English. Use reliable edition notes or historical dictionaries for uncertain meanings. When both translation and device analysis are required, combine them in one fresh line and a transfer. Privately list the needed devices. Make extra background optional. For writing, revise an original sentence and explain meaning, clarity, or audience effects.
-- Move from annotation to a fresh guided attempt and an uncued diagnosis. Keep the passage visible when a lens changes. Ask for a prediction and explanation when context changes. Build tempting alternatives from real details in the invented text. Give reasoning and a retry. Leave open interpretations to a comparison after the attempt.
-- Check quotation accuracy, grammar, device/effect links, alternate readings and agreement across controls, prose and print. Measure essential text-entry borders and state indicators against adjacent colors at 3:1. Use a visible cue beyond color and a keyboard-accessible labeled control. Test reset, focus, announcements, and static fallback.
-
-Close with an independent transfer, later recall, and a bounded way to check work on the learner's own text.
+- Separate observation, plain meaning and interpretation. Preserve actor, negation, uncertainty, conditions and questions. Distinguish speaker, character, narrator and author. Find the smallest useful quotation in a fresh unmarked passage. Include plausible alternatives and explain how wording supports a bounded claim.
+- When translating older language, teach needed pronouns, verbs and word order with new lines, then bridge literal meaning to natural English. If analysis is also required, use the same new line to show how a device shapes meaning. Use genuine details to build tempting alternatives.
+- Match writing practice to the genre and length. For an essay, show how to select and group evidence under distinct reasons, connect each source to a claim, and plan the whole argument. Let the learner build an independent plan from new readings before showing a model. For revision, explain the effect on meaning, clarity or audience.
+- Keep passages visible during decisions. Group the marked quotation, explanatory note and caption in one figure. Move from annotation to an uncued attempt. Verify exact quotation, grammar and the evidence link. Check mobile/print reading and visible, contrasting keyboard controls. Give a bounded way to check the learner's own work privately.

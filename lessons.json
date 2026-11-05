@@ -62,8 +62,8 @@
     {
       "file": "0002-close-reading-dialogue.html",
       "subject": "English",
-      "title": "Reading between the lines",
-      "summary": "Unpack figurative language, separate paraphrase from interpretation, and support character inferences with evidence.",
+      "title": "What a line lets you infer",
+      "summary": "Put older dialogue into today’s English, explain figurative effects, and support character inferences with exact quotations.",
       "topics": [
         "Close reading",
         "Figurative language",
@@ -74,17 +74,17 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "8a930bd35deebc11faf96b06273ceaeb18a441961d913fb551d447248cede4f4",
+        "sha256": "651f4fca3f39b13b56575b8a7c234add27872ce7523ff9ffc3a180fa20dc5a3e",
         "dependencies": {
           "assets/english.css": "f1178a6db4f124892cf31bb71a2e865b9eaa2dc7552581b723c534554cbe7d9d",
+          "assets/inference.css": "ea50bd58bd6668b8b31ab169b3d6b3626ed6c1b2808c75a54d72ddd9781abdca",
+          "assets/inference.js": "fcefc304e89d3608c110e3a82933d15bfe9cfde1ed5c4255f09e1f68207160bd",
           "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/reading.css": "ff96479ef805c1831a449a61cb01f716cca3cc032df6492895dd129fc79c1f12",
-          "assets/reading.js": "d89058c14099456f27557492dcc04f9891658748aeae2b3ce9231a9842216fd8",
-          "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
-          "reference/close-reading.html": "b1413830e34885f68585f364850b5e1a7de212d65791d25d0b05566507e4e7a2"
+          "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf"
         },
         "contract": {
-          ".agents/skills/english-teach/SKILL.md": "039b111aba1df16df620ee78010a6906ca9e85b51c4f6262d33c139a99bf9f47",
+          ".agents/skills/english-teach/SKILL.md": "4518695c8792833a62e234e33a4fb01f21f6e226e965d441f96a988d90d37cf5",
           ".agents/skills/homework-teach/SKILL.md": "515d147ffa191daa2361fa1aae8ca98b7c145525e606af19b7dacb140d4eee87",
           ".agents/skills/homework-teach/references/independent-refinement.md": "50b397d3ae2f01d1731f6c4edc6a65059afa57750d6b869d5969506d1e7e9ee4",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "a076f53639d490d6e0ceee7487023a081e08e3368d5f10c5f24086c33239b2e8",

@@ -1,0 +1,20 @@
+.reading .opening {align-items: start}
+.reading .route {margin-bottom: 0}
+.reading .stage > div {min-width: 0}
+.reading .stage h3 {margin-top: 24px}
+.reading .context-lab > h3 {margin-top: 0}
+.reading .reading-chain {padding-left: 26px}
+.reading .practice-item button[type=reset] {background: var(--paper); color: var(--ink); border: 2px solid var(--ink)}
+.reading .practice-item button:disabled {cursor: default}
+.reading .practice-item form:has(fieldset:disabled) {display: none}
+.reading .choice:focus-within {outline: 3px solid #315ea5; outline-offset: 2px}
+.reading .scene p:last-child {margin-bottom: 12px}
+@media (max-width: 480px) {
+  .reading h1 {font-size: clamp(32px, 10vw, 48px)}
+}
+@media print {
+  .reading .practice-item form {display: none !important}
+  .reading details {break-inside: auto}
+  .reading .static-reading[hidden] {display: block !important}
+  .reading .scene {border-color: #555}
+}

@@ -31,3 +31,7 @@ Sol 6.1 High connected natural modern phrasing, figurative device, shared qualit
 
 
 The current English lesson and assets are unchanged. A fresh source-aware Astra review of the revised shared contract and exact tree `f392171bc5218611b2514d7c5afbee83c21fac6ed60defd66dd3ff92d8adc4e1` scored the lesson and exercised English process 100/100. The next independent Opus assessment remains pending.
+
+## Assignment-level benchmark
+
+Independent Astra assessments under the grade-level rubric scored the prior lesson 94.2/100 and the fresh Sol 6.1 High lesson 95.9/100. The exercised compact English process scored 95/100 on that benchmark. The replacement adds an uncued passage for finding quotations and distinguishing figurative devices. The public lesson keeps its original URL. The public edition groups the existing explanatory steps with the annotated figure. Its SHA-256 is 651f4fca3f39b13b56575b8a7c234add27872ce7523ff9ffc3a180fa20dc5a3e.

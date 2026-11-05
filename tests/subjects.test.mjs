@@ -10,6 +10,19 @@ import {check} from '../scripts/check.mjs';
 const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64)};
 const entry=(file,subject)=>({file,subject,title:subject+' concept',summary:'Synthetic metadata only.',topics:['Concept'],review:{...review}});
 
+test('English is indexed independently while geometry and science retain their links',()=>{
+  const lessons=[entry('0001-geometry-concept.html','Geometry'),entry('0002-science-concept.html','Science'),entry('0003-english-concept.html','English')];
+  const html=renderIndex({version:2,lessons},'{{COUNT}} {{LESSONS}}');
+  assert.match(html,/3 lessons to revisit/);
+  for (const lesson of lessons) {
+    const start=html.indexOf('id="subject-'+lesson.subject.toLowerCase()+'"');
+    const end=html.indexOf('</section>',start);
+    assert.ok(html.slice(start,end).includes('href="lessons/'+lesson.file+'"'));
+  }
+  assert.throws(()=>validateManifest({version:1,lessons:[lessons[2]]}),/version 2/);
+  assert.throws(()=>validateManifest({version:2,lessons:[{...lessons[2],review:{...review,accuracy:false}}]}),/accuracy/);
+});
+
 test('version 2 indexes geometry and science separately without changing lesson URLs',()=>{
   const geometry=entry('0001-geometry-concept.html','Geometry');
   const science=entry('0002-science-concept.html','Science');

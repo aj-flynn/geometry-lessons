@@ -19,6 +19,24 @@
         "accuracy": true
       },
       "subject": "Geometry"
+    },
+    {
+      "file": "0002-close-reading-dialogue.html",
+      "subject": "English",
+      "title": "Reading between the lines",
+      "summary": "Unpack figurative language, separate paraphrase from interpretation, and support character inferences with evidence.",
+      "topics": [
+        "Close reading",
+        "Figurative language",
+        "Evidence and reasoning"
+      ],
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": true,
+        "sha256": "e642088dabfb9b62d54ac06045d13a7054bc3c9dff3ded4396ee48bbcfc917d5"
+      }
     }
   ]
 }

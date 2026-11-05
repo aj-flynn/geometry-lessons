@@ -3,7 +3,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
-export const subjects = Object.freeze(['Geometry', 'Science']);
+export const subjects = Object.freeze(['Geometry', 'Science', 'English']);
 export const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const subjectOf = lesson => lesson.subject ?? 'Geometry';
 
@@ -15,8 +15,8 @@ export function validateManifest(manifest) {
     const number = lesson.file.slice(0, 4);
     if (seen.has(number)) throw new Error('Lesson identifiers must be unique.');
     seen.add(number);
-    if ((manifest.version === 2 && !lesson.subject) || !subjects.includes(subjectOf(lesson))) throw new Error('Supply a supported lesson subject: Geometry or Science.');
-    if (manifest.version === 1 && subjectOf(lesson) !== 'Geometry') throw new Error('Science lessons require manifest version 2.');
+    if ((manifest.version === 2 && !lesson.subject) || !subjects.includes(subjectOf(lesson))) throw new Error('Supply a supported lesson subject: Geometry, Science, or English.');
+    if (manifest.version === 1 && subjectOf(lesson) !== 'Geometry') throw new Error('Non-geometry lessons require manifest version 2.');
     if (typeof lesson.title !== 'string' || !lesson.title.trim() || lesson.title.length > 85) throw new Error('Supply a short public lesson title.');
     if (typeof lesson.summary !== 'string' || !lesson.summary.trim() || lesson.summary.length > 260) throw new Error('Supply a short public lesson summary.');
     if (!Array.isArray(lesson.topics) || !lesson.topics.length || lesson.topics.some(t => typeof t !== 'string' || !t.trim() || t.length > 60)) throw new Error('Supply public concept topics.');

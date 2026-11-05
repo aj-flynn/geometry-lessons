@@ -38,7 +38,9 @@ Use globally unique sequential names `lessons/NNNN-concept-name.html`. The libra
 }
 ```
 
-`subject` is `Geometry` or `Science`. Version 2 requires `accuracy` for either subject. Existing version-1 geometry records with `math` remain readable for compatibility; new work uses version 2. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update the hash and repeat affected review when its HTML changes.
+`subject` is `Geometry`, `Science`, or `English`. Version 2 requires `accuracy` for every subject. Existing version-1 geometry records with `math` remain readable for compatibility; new work uses version 2. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update the hash and repeat affected review when its HTML changes.
+
+For English, verify definitions, grammar, paraphrases, and evidence-to-claim reasoning. Distinguish plausible interpretation from established fact. Use wholly original, unrelated characters and situations; do not reproduce, translate, or answer an assigned passage. A reading manipulative may change the interpretive lens while keeping the words fixed. Keep a readable static explanation.
 
 Run `node scripts/build-index.mjs`, `node scripts/check.mjs`, and `node --test tests/*.test.mjs`. The checker verifies schema, glossary presence for version 2, index consistency, file hashes, local links, and common unsafe file/network/storage patterns. It cannot prove privacy, no-answer compliance, scientific validity, or reading level.
 

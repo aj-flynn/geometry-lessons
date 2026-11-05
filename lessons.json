@@ -97,10 +97,10 @@
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
           "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
-          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+          "reference/chemistry-field-guide.html": "7f26995cd935e3bc73d8bf553893ad477c5004956a0dade233df7c7a3e41adae"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/chemistry-teach/SKILL.md": "b8056bbeeb93e5ad6c5446ffbceca15d1b43d4c6c2e8d48dff4490895d4ed7e1",
           ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
           ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
@@ -127,16 +127,16 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "773aa024543f9ee4804c33b911efd815e4d192338c5b9c07dcef4a2822053e7c",
+        "sha256": "7f766d6421d035afe01c7dc0cb20d41764021aa1f27535160597067b3738b905",
         "dependencies": {
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
           "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
-          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+          "reference/chemistry-field-guide.html": "7f26995cd935e3bc73d8bf553893ad477c5004956a0dade233df7c7a3e41adae"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/chemistry-teach/SKILL.md": "b8056bbeeb93e5ad6c5446ffbceca15d1b43d4c6c2e8d48dff4490895d4ed7e1",
           ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
           ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
@@ -169,10 +169,10 @@
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
           "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
-          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+          "reference/chemistry-field-guide.html": "7f26995cd935e3bc73d8bf553893ad477c5004956a0dade233df7c7a3e41adae"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/chemistry-teach/SKILL.md": "b8056bbeeb93e5ad6c5446ffbceca15d1b43d4c6c2e8d48dff4490895d4ed7e1",
           ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
           ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
@@ -205,10 +205,10 @@
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
           "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
-          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+          "reference/chemistry-field-guide.html": "7f26995cd935e3bc73d8bf553893ad477c5004956a0dade233df7c7a3e41adae"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/chemistry-teach/SKILL.md": "b8056bbeeb93e5ad6c5446ffbceca15d1b43d4c6c2e8d48dff4490895d4ed7e1",
           ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
           ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",

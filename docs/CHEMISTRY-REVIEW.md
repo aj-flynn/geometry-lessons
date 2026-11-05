@@ -1,3 +1,26 @@
+# Chemistry candidate 7: independent Astra 100/100
+
+A fresh independent `gpt-6-astra`/high reviewer awarded **100/100 to each of the four chemistry lessons and the chemistry-scoped reusable process**, plus **7/7 linked coverage** on A1's scale. All 23 categories in every lesson received their full rubric weights; process categories were 30/30, 20/20, 20/20, 15/15, 15/15. No category was unassessed and no material unresolved boundary was found. Opus review is pending; this is not dual-model completion or proof of learner mastery.
+
+After the process plateau, a fresh brainstorming agent compared three new approaches and selected an applicability audit: choose a method, execute it, then check the result. The revised skill generated fresh sufficient-evidence and insufficient-evidence decisions in the electron lesson. The field guide now checks applicability before procedure. The reviewer tested the prompts without their headings and found the evidence still supports the decisions, so success does not depend on a method-name cue. The earlier source-only candidate's missing-choice finding is resolved.
+
+The reviewer visually inspected both private source images, the complete local route and feedback, and all four retained learner-facing destinations. No private input or assigned response is reproduced here. Fresh browser checks exercised every choice and numerical feedback branch, model controls, keyboard operation, print/no-script behavior, library returns, and 12 page/width combinations without overflow or page errors. The reviewer checked exact current dependencies/contracts and ran the checker and all 27 tests. Native zoom and earlier unchanged-runtime evidence are identified by provenance in the private record. No native screen-reader conformance audit or learner-retention study is claimed.
+
+The four lesson HTML hashes, skill, and local guide identify the frozen candidate:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| lessons/0003-reading-particle-formulas.html | bf6b7793efb76e7046ae3fc5925e4357fdda0d3e222af2cbfb70c2cd5722ce7a |
+| lessons/0004-electrons-and-bonds.html | 7f766d6421d035afe01c7dc0cb20d41764021aa1f27535160597067b3738b905 |
+| lessons/0005-shape-and-polarity.html | 3fd7115f418b465155a2f5fd9bcfa8bf2207736bf6bce7f9437d9db8702309ee |
+| lessons/0006-between-molecules.html | 8121846d7053fedca97d64d977f0e084e6039c8dad552e38327d313733de6b6a |
+| .agents/skills/chemistry-teach/SKILL.md | b8056bbeeb93e5ad6c5446ffbceca15d1b43d4c6c2e8d48dff4490895d4ed7e1 |
+| reference/chemistry-field-guide.html | 7f26995cd935e3bc73d8bf553893ad477c5004956a0dade233df7c7a3e41adae |
+
+All four loaded runtime assets are unchanged; the manifest records their exact hashes and the guide dependency. The sanitized full independent report is identified privately by SHA-256 `12a3f4fda083c0e941970546ce800f8648c85ca592015185287ac986680024e4`. Earlier differing judgments remain below rather than being averaged or erased.
+
+---
+
 # Chemistry source-workflow revision
 
 A fresh independent Astra/high review scored candidate 6 at **100, 98.5, 100, 100** for lessons 0003–0006, linked coverage **6.5/7**, and reusable chemistry process **99/100** (30/30 boundaries, 19/20 teaching, 20/20 accuracy, 15/15 repeatability, 15/15 validation). All categories were assessed. No hard privacy, homework-separation, consequential accuracy, or core accessibility failure was reported.

@@ -16,6 +16,8 @@ Choose the smallest path that prepares the learner to act. Formula reading, elec
 
 Review separation at the level of the requested response. A generic definition, rank order, elemental list, or standard diagram can complete assigned work just as directly as a numerical answer. If so, teach its prerequisites or an independently different case and leave the final naming or inference to the learner. Change the reasoning context or representation as well as numbers: a token-counting model can introduce notation, but it must eventually connect to chemistry. A different atom symbol alone does not make a worked structure original.
 
+Before teaching a procedure whose use depends on a particle model, identify the evidence that permits starting it. Distinguish selecting a representation, executing its method, and auditing its result. A task that names the model or supplies the decisive context does not exercise selecting it. For a consequential model choice, require a fresh case in which the learner chooses a defensible representation and explains the deciding fact, plus an insufficient-evidence case when a formula or inventory cannot settle that choice. Test the task without its method-naming heading: do the givens still support the decision? State the question and represented scale; allow compatible models or withheld judgment instead of imposing a universal two-category rule. Check that linked method summaries preserve this applicability decision rather than directing every formula straight into a molecular drawing.
+
 ## Build from a visible model to a method
 
 Select the relevant branch rather than forcing every chemistry lesson through bonding:

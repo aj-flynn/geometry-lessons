@@ -1,0 +1,62 @@
+.nomenclature {font-size:1.125rem; --teal:#075750; --line:#b4ceca; --tint:#e4efec; --paper-card:#fff}
+.nomenclature header {padding-block:1.5rem; border-top:.35rem solid var(--teal)}
+.nomenclature h1 {font-size:clamp(2.15rem, 4.9vw, 3.75rem)}
+.nomenclature h2 {font-size:clamp(1.5rem, 3.7vw, 2rem)}
+.nomenclature h3 {font-size:1.2rem}
+.nomenclature p, .nomenclature li, .nomenclature summary {line-height:1.55}
+.nomenclature .intro {font-size:1.25em; max-width:45ch}
+.nomenclature aside {padding:.75rem 1rem; background:var(--tint)}
+.nomenclature aside details {background:var(--paper-card)}
+.nomenclature .worked, .nomenclature .check {padding:1rem; margin-block:1rem}
+.nomenclature .worked {border-inline-start:.22rem solid var(--teal); background:var(--tint)}
+.nomenclature .check {border:1px solid var(--line); background:var(--paper-card)}
+.nomenclature ol {padding-inline-start:1.45em}
+.nomenclature li + li {margin-block-start:.4em}
+.nomenclature details {padding:.35rem .75rem}
+.nomenclature fieldset {min-inline-size:0; padding:.75rem; margin:0 0 .75rem; border:1px solid var(--line)}
+.nomenclature legend {font-weight:bold; max-inline-size:100%}
+.nomenclature label {display:flex; gap:.65em; align-items:center; min-block-size:44px; cursor:pointer}
+.nomenclature input {min-inline-size:1.2rem; min-block-size:1.2rem; accent-color:var(--teal); margin:0}
+.nomenclature p, .nomenclature li, .nomenclature dd {overflow-wrap:anywhere}
+.nomenclature form[data-practice-ready="true"] + .static-feedback {display:none}
+.nomenclature button:disabled {opacity:.55; cursor:default}
+.nomenclature button {max-width:100%; padding:.55em .7em}
+.nomenclature [hidden] {display:none !important}
+.nomenclature figure {padding:.6rem; background:var(--paper-card); max-width:28rem}
+.nomenclature svg {font:700 27px Arial,sans-serif; fill:var(--ink)}
+.nomenclature svg rect {stroke:var(--teal); stroke-width:2px}
+.nomenclature .positive {fill:#d6eae5}
+.nomenclature .negative {fill:#f8e3b3}
+.nomenclature figcaption {font-size:.9em}
+.nomenclature table {width:100%; max-width:32rem; border-collapse:collapse; font:inherit}
+.nomenclature caption {text-align:left; padding-bottom:.35em}
+.nomenclature th, .nomenclature td {padding:.3em .5em; text-align:left; border-bottom:1px solid var(--line)}
+.nomenclature thead {background:var(--tint)}
+.nomenclature [id] {scroll-margin-block-start:1rem}
+@media (max-width:380px) {
+  .nomenclature .worked, .nomenclature .check, .nomenclature aside, .nomenclature fieldset {padding:.6rem}
+  .nomenclature h1 {font-size:1.8rem}
+  .nomenclature h2 {font-size:1.25rem}
+  .nomenclature table {table-layout:fixed; font-size:.875em}
+  .nomenclature th, .nomenclature td {padding-inline:.2em}
+  .nomenclature thead th:first-child {width:63%}
+}
+@media print {
+  .nomenclature {font-size:11pt; line-height:1.35}
+  .nomenclature header {padding:0}
+  .nomenclature h1 {font-size:27pt}
+  .nomenclature h2 {font-size:18pt; margin-block-end:.35rem}
+  .nomenclature h3 {font-size:13pt; margin-block-end:.2rem}
+  .nomenclature section {margin-block-start:.8rem}
+  .nomenclature p, .nomenclature li, .nomenclature summary {line-height:1.35}
+  .nomenclature p, .nomenclature ol {margin-block:.25rem}
+  .nomenclature li + li {margin-block-start:.15rem}
+  .nomenclature summary {min-height:0; padding-block:0}
+  .nomenclature dt {margin-block-start:.3rem}
+  .nomenclature h2, .nomenclature h3 {break-after:avoid}
+  .nomenclature .check, .nomenclature .worked, .nomenclature aside, .nomenclature details {break-inside:avoid}
+  .nomenclature form, .nomenclature [data-charge-model] {display:none !important}
+  .nomenclature form[data-practice-ready="true"] + .static-feedback {display:block}
+  .nomenclature .worked, .nomenclature .check, .nomenclature details {margin-block:.35rem; padding-block:.35rem}
+  .nomenclature figure {margin-block:.5rem; max-width:18rem}
+}

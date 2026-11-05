@@ -4,301 +4,278 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Translate a reaction description into formulas and state labels, then balance the molecular equation.">
-  <title>From reaction words to a balanced equation</title>
+  <meta name="description" content="Use reaction descriptions to choose formulas, label states and balance molecular equations.">
+  <title>From reaction words to balanced equations</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/reaction-ledger.css?v=heading-wrap">
+  <link rel="stylesheet" href="../../../assets/reaction-words.css">
   <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
-  <script src="../../../assets/chemistry.js?v=ledger-notation" defer></script>
+  <script src="../../../assets/chemistry.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson chemistry">
+  <main id="main" class="lesson reaction-words">
     <a class="return-link" href="../index.html">← Lesson library</a>
     <header>
-      <h1>From reaction words to a balanced equation</h1>
-      <p class="lead">Translate the description into formulas and state symbols. Then use atom counts to find the smallest whole-number ratio.</p>
+      <p class="eyebrow">General chemistry · Writing equations</p>
+      <h1>From reaction words to balanced equations</h1>
+      <p class="lead">Read what reacts and what forms. Write each substance and its state. Then find the smallest whole-number amounts that conserve every element.</p>
+      <p>Use the reactions as written models.</p>
+      <nav class="lesson-route" aria-label="Lesson sections">
+        <a href="#split">1. Formulas and states</a>
+        <a href="#oxygen">2. Oxygen count</a>
+        <a href="#ions">3. Ionic formulas</a>
+        <a href="#conditions">4. Reaction conditions</a>
+        <a href="#independent">Final practice</a>
+      </nav>
     </header>
-    <p><a href="#glossary">Glossary of terms and symbols</a></p>
-    <nav class="chem-path" aria-label="Lesson sections">
-      <a href="#translate">Read the description</a>
-      <a href="#decompose">Check a decomposition</a>
-      <a href="#oxygen">Handle oxygen pairs</a>
-      <a href="#solutions">Track groups in solution</a>
-      <a href="#hydrogen">Count hydrogen across products</a>
-      <a href="#practice">Write your own equations</a>
-    </nav>
-    <section aria-labelledby="translate">
-      <h2 id="translate">Read the description before you balance</h2>
+    <aside class="start" aria-label="Before you start">
+      <p><strong>Before you start.</strong> How many sulfur and oxygen atoms are represented by 2 SO<sub>3</sub>?</p>
+      <p>An <a href="#term-ion">ion</a> is an atom or group with a charge. In the ionic name iron(II) bromide, (II) gives the iron ion a +2 charge. How many Br<sup>−</sup> ions balance one Fe<sup>2+</sup> ion?</p>
+      <details><summary>Check the count and the charges</summary>
+        <p>Two SO<sub>3</sub> molecules contain two S and six O atoms. The front number multiplies the whole formula.</p>
+        <p>Two Br<sup>−</sup> ions give −2, so the charges cancel and the formula is FeBr<sub>2</sub>. The Roman numeral gives a charge. The <a href="#term-subscript">subscript</a>, the small 2 in the formula, gives a count.</p>
+      </details>
+    </aside>
+    <p>Use the <a href="#glossary">glossary</a> as you work.</p>
+
+    <section aria-labelledby="split">
+      <h2 id="split">1. Translate before you balance</h2>
+      <p>Heating solid silver(I) oxide yields solid silver and oxygen gas. “Yields” marks the arrow between <a href="#term-sides">reactants</a> (starting substances) and <a href="#term-sides">products</a> (substances formed). Heat can go above the arrow as a condition.</p>
       <ol>
-        <li>Put the <strong><a href="#term-reactants">reactants</a></strong> (starting substances) left of the arrow and the <strong><a href="#term-products">products</a></strong> (substances formed) on the right. Use a plus sign between substances on the same side. In “Y is produced when X reacts,” X goes on the left.</li>
-        <li>Write each substance’s formula and state. Copy a formula when it is given. Look up an element’s symbol for a solid metal, use the given molecular formula or its name for a molecular substance, and use the charges on <a href="#term-ion">ions</a> (atoms or bonded groups with a net charge) to write a neutral formula for an ionic compound.</li>
-        <li>Keep those formulas fixed. Balance by changing only <strong><a href="#term-coefficient">coefficients</a></strong> (the numbers in front). A <strong><a href="#term-subscript">subscript</a></strong> (the small number after a symbol or group) tells you what one molecule or one ionic <a href="#term-formula-unit">formula unit</a> (the simplest ratio of ions) contains. A missing coefficient or subscript means 1.</li>
-        <li>Check the number of atoms of every element on both sides. Divide all coefficients by any shared factor greater than 1. Omit coefficients of 1 in the final equation.</li>
+        <li><strong>Build the formulas.</strong> Ag<sup>+</sup> and O<sup>2−</sup> need a 2:1 ratio for zero total charge, giving Ag<sub>2</sub>O. Elemental silver is Ag. Free oxygen gas is <a href="#term-diatomic">diatomic</a>, meaning each O<sub>2</sub> molecule contains two oxygen atoms.</li>
+        <li><strong>Label the states.</strong> A <a href="#term-state">state symbol</a> tells how the substance is present in this reaction. Here the solids get (s) and oxygen gas gets (g). Liquid (l) describes a substance in its liquid state. <a href="#term-aqueous">Aqueous</a> (aq) means dissolved in water.</li>
+        <li><strong>Write a skeleton.</strong> A <a href="#term-skeleton">skeleton equation</a> places the substances on their sides before the amounts are settled. In a <a href="#term-molecular">molecular equation</a>, keep each substance’s complete neutral formula, even for a salt dissolved in water.</li>
       </ol>
-      <p>Use <strong>(s)</strong> for solid, <strong>(l)</strong> for liquid, <strong>(g)</strong> for gas or vapor, and <strong><a href="#term-aqueous">(aq)</a></strong> for a substance dissolved in water. Use a <strong><a href="#term-molecular-equation">molecular equation</a></strong> (an equation with whole formulas), even for dissolved ionic compounds. An ionic formula unit gives an ion ratio. It represents neither a separate molecule in a crystal nor a cluster that stays together in water.</p>
-      <p>A balanced equation conserves atoms and total charge. The substances here all have neutral formulas, so the total charge is zero on each side. Balancing uses the products given in the description and cannot establish which products will form.</p>
-      <h3>One coefficient changes every count in its formula</h3>
-      <p>Gaseous nitrogen monoxide and oxygen gas form gaseous nitrogen dioxide. Oxygen gas is <strong><a href="#term-diatomic">diatomic</a></strong> (two atoms per molecule). The names give NO, O<sub>2</sub>, and NO<sub>2</sub>, each labeled (g). Start with one of each. Predict what happens to both product counts if you double only nitrogen dioxide. Which reactant would you adjust next?</p>
-      <figure class="reaction-ledger" data-chem-steps="counts" data-exclusive>
-        <div class="ledger-display">
-          <div data-stage="1">
-            <p class="ledger-stage-label"><strong>Trial 2 · Unbalanced</strong></p>
-            <p class="ledger-equation"><span role="img" aria-label="This trial has one nitrogen monoxide gas molecule and one oxygen gas molecule on the reactant side, with two nitrogen dioxide gas molecules on the product side."><span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span></span></p>
-            <dl class="ledger-totals">
-              <div><dt>Reactant atoms</dt><dd>N = 1, O = 3</dd></div>
-              <div><dt>Product atoms</dt><dd>N = 2, O = 4</dd></div>
-            </dl>
-          </div>
-          <div data-stage="2">
-            <p class="ledger-stage-label"><strong>Balanced equation</strong></p>
-            <p class="ledger-equation"><span role="img" aria-label="Two nitrogen monoxide gas molecules plus one oxygen gas molecule yield two nitrogen dioxide gas molecules."><span class="ledger-term">2NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span></span></p>
-            <dl class="ledger-totals">
-              <div><dt>Reactant atoms</dt><dd>N = 2, O = 4</dd></div>
-              <div><dt>Product atoms</dt><dd>N = 2, O = 4</dd></div>
-            </dl>
-          </div>
-          <div data-stage="0">
-            <p class="ledger-stage-label"><strong>Trial 1 · Unbalanced</strong></p>
-            <p class="ledger-equation"><span role="img" aria-label="This trial has one nitrogen monoxide gas molecule and one oxygen gas molecule on the reactant side, with one nitrogen dioxide gas molecule on the product side."><span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ NO<sub>2</sub>(g)</span></span></p>
-            <dl class="ledger-totals">
-              <div><dt>Reactant atoms</dt><dd>N = 1, O = 3</dd></div>
-              <div><dt>Product atoms</dt><dd>N = 1, O = 2</dd></div>
-            </dl>
-          </div>
-        </div>
-        <div class="enhanced" hidden>
-          <div class="controls">
-            <button type="button" data-step>Next step</button>
-            <button type="button" data-play aria-pressed="false">Play steps</button>
-            <button type="button" data-pause>Pause</button>
-            <button type="button" data-reset>Reset ledger</button>
-          </div>
-          <p data-step-status role="status"></p>
-        </div>
-        <details class="observations">
-          <summary>Compare the three counts</summary>
-          <ol class="step-notes">
-            <li>Trial 1 is unbalanced. One molecule of each substance gives 1 nitrogen and 3 oxygen atoms on the reactant side, and 1 nitrogen and 2 oxygen atoms on the product side.</li>
-            <li>Trial 2 is unbalanced. Doubling only nitrogen dioxide gives 2 nitrogen and 4 oxygen atoms on the product side. The reactants still have 1 nitrogen and 3 oxygen atoms.</li>
-            <li>The equation is balanced. Doubling nitrogen monoxide adds 1 nitrogen and 1 oxygen atom to the reactant side. Both sides now have 2 nitrogen and 4 oxygen atoms.</li>
-          </ol>
-          <p class="ledger-static-equation">Trial 2 in symbols <span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span>.</p>
-        </details>
-        <figcaption>An atom ledger compares totals on each side. It tracks amounts in the equation and leaves out molecular shape and the reaction pathway.</figcaption>
+      <p class="equation"><span>Ag<sub>2</sub>O(s)</span> → <span>Ag(s)</span> + <span>O<sub>2</sub>(g)</span></p>
+      <p>Keep formulas and states fixed. Change only a <a href="#term-coefficient">coefficient</a>, the number in front. A <a href="#term-subscript">subscript</a> is a small number inside a formula that counts atoms or groups. Changing it changes the substance.</p>
+      <p>Count Ag<sub>2</sub>O <a href="#term-unit">formula units</a> (ion ratios in the solid), Ag atoms, and O<sub>2</sub> molecules. The same ratios work in moles.</p>
+      <p><strong>Predict.</strong> One O<sub>2</sub> molecule needs two oxygen atoms. How many silver(I) oxide formula units supply those atoms? What will that choice do to the silver count?</p>
+      <figure class="atom-inventory">
+        <div class="unit-labels"><strong>Unit 1</strong><strong>Unit 2</strong></div>
+        <svg viewBox="0 0 280 62" role="img" aria-labelledby="model-title model-desc">
+          <title id="model-title">Atom inventory for the silver oxide coefficient</title>
+          <desc id="model-desc">Each of two boxes contains two silver counters and one oxygen counter. Both boxes together represent four silver atoms and two oxygen atoms.</desc>
+          <g fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="4" width="126" height="54" rx="7"/>
+            <rect x="150" y="4" width="126" height="54" rx="7"/>
+            <circle cx="29" cy="31" r="11"/><circle cx="66" cy="31" r="11"/>
+            <circle cx="175" cy="31" r="11"/><circle cx="212" cy="31" r="11"/>
+            <rect x="94" y="21" width="20" height="20" fill="#a5d3d3"/>
+            <rect x="240" y="21" width="20" height="20" fill="#a5d3d3"/>
+          </g>
+        </svg>
+        <figcaption>Circles count Ag atoms. Squares count O atoms. Two Ag<sub>2</sub>O units give <strong>4 Ag and 2 O</strong>. The boxes organize counts for an extended solid.</figcaption>
       </figure>
-      <p><strong>Final</strong> 2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g). The reactant O<sub>2</sub> has coefficient 1, so the coefficients have no shared factor greater than 1.</p>
-      <form class="practice" data-chem-choice>
-        <fieldset>
-          <legend>A draft has 3N₂O(g). How many atoms does that term contribute?</legend>
-          <label class="option"><input type="radio" name="counts" data-explanation="The coefficient counts three molecules. Count both nitrogen atoms inside each molecule and retry."><span>3 nitrogen and 3 oxygen</span></label>
-          <label class="option"><input type="radio" name="counts" data-explanation="Apply the coefficient to the oxygen as well. Count one oxygen atom in each of the three molecules, then retry."><span>6 nitrogen and 1 oxygen</span></label>
-          <label class="option"><input type="radio" name="counts" data-explanation="Yes. Each molecule contains two nitrogen atoms and one oxygen atom, so multiply both counts by three."><span>6 nitrogen and 3 oxygen</span></label>
-        </fieldset>
-        <button type="submit" disabled>Check choice</button>
-        <p class="feedback" role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare your choice</summary><p>Three molecules give six nitrogen atoms and three oxygen atoms. If you missed a multiplier, trace both element counts in each molecule and try the question again.</p></details>
-    </section>
-
-    <section aria-labelledby="decompose">
-      <h2 id="decompose">When is the first draft already balanced?</h2>
-      <p>In a <strong><a href="#term-decomposition">decomposition</a></strong> (a reaction in which one substance breaks down), one reactant forms two or more products. Compare two heated solids. The first equation needs no adjustment. The second has an oxygen-pair constraint.</p>
-      <h3>Copper(II) hydroxide gives copper(II) oxide and water vapor</h3>
-      <p><strong>Given</strong> Heated solid copper(II) hydroxide forms solid copper(II) oxide and water vapor. <strong>Goal</strong> Write its balanced molecular equation.</p>
-      <ol>
-        <li>Read “copper(II)” as the copper ion with charge 2+. The symbol for copper is Cu. Hydroxide is OH<sup>−</sup>, so one Cu<sup>2+</sup> needs two OH<sup>−</sup> groups. The charges add to +2 − 2 = 0. Write Cu(OH)<sub>2</sub> with parentheses around the repeated group.</li>
-        <li>Oxide is O<sup>2−</sup>. One oxide ion balances one Cu<sup>2+</sup>, giving CuO. Use H<sub>2</sub>O for water and (g) for vapor.</li>
-        <li>Draft Cu(OH)<sub>2</sub>(s) → CuO(s) + H<sub>2</sub>O(g). The left has Cu 1, O 2, H 2. The right has Cu 1, O 1 + 1 = 2, H 2. All counts match at the smallest possible coefficients.</li>
-      </ol>
-      <h3>Silver(I) oxide gives silver and oxygen gas</h3>
-      <p><strong>Given</strong> Heated solid silver(I) oxide forms solid silver and diatomic oxygen gas. <strong>Goal</strong> Write its balanced molecular equation.</p>
-      <ol>
-        <li>Silver(I) is Ag<sup>+</sup>. Two Ag<sup>+</sup> and one O<sup>2−</sup> give neutral Ag<sub>2</sub>O. Use Ag for silver metal and O<sub>2</sub> for the gas.</li>
-        <li>Draft Ag<sub>2</sub>O(s) → Ag(s) + O<sub>2</sub>(g). The draft supplies one oxygen atom on the left per formula unit and two on the right per molecule. Two formula units supply the two atoms needed for one oxygen molecule.</li>
-        <li>Two formula units supply four silver atoms. Use a 4 in front of Ag. The final equation is 2Ag<sub>2</sub>O(s) → 4Ag(s) + O<sub>2</sub>(g).</li>
-        <li>Check Ag 4 and O 2 on each side. One coefficient is 1, so the ratio is already simplest.</li>
-      </ol>
-      <p>Heat can be shown with <a href="#term-heat">Δ over the reaction arrow</a>. It is a reaction condition. The equation includes only the substances when you count atoms.</p>
-
-      <form class="practice" data-chem-choice>
-        <fieldset>
-          <legend>Liquid hydrogen peroxide, H₂O₂, decomposes into liquid water and diatomic oxygen gas. Which edit balances the draft and keeps those substances?</legend>
-          <label class="option"><input type="radio" name="oxide" data-explanation="Yes. Two peroxide molecules give four H and four O atoms. Two water molecules and one O₂ give the same totals."><span>Double the peroxide and the water. Keep one O₂.</span></label>
-          <label class="option"><input type="radio" name="oxide" data-explanation="That balances the oxygen count by changing the named gas to individual atoms. Keep O₂ and retry."><span>Keep one of each and change the oxygen gas to O.</span></label>
-          <label class="option"><input type="radio" name="oxide" data-explanation="That leaves four H atoms on the left and two on the right. Reconcile the H and O counts with coefficients and retry."><span>Double the peroxide and the oxygen gas. Keep one water.</span></label>
-        </fieldset>
-        <button type="submit" disabled>Check choice</button>
-        <p class="feedback" role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare your choice</summary><p>Two H₂O₂ and two H₂O balance hydrogen at four atoms per side. The two water molecules account for two of the four O atoms on the left. One O₂ accounts for the remaining two. If you edited the formula or balanced only one element, restore the formulas and retry both rows.</p></details>
+      <p>Set the silver coefficient to 4. Both sides now have Ag 4 and O 2. The terms are neutral, and 2:4:1 is simplest.</p>
+      <p class="equation"><span>2 Ag<sub>2</sub>O(s)</span> → <span>4 Ag(s)</span> + <span>O<sub>2</sub>(g)</span></p>
+      <div class="attempt">
+        <h3>Try a molten salt</h3>
+        <p>An electric current through molten lithium chloride produces liquid lithium and chlorine gas. Write the whole equation on paper. Use Li<sup>+</sup> and Cl<sup>−</sup> as formula clues. What will the lithium chloride coefficient be?</p>
+        <form data-practice data-expected="2" data-tolerance="0"
+          data-mistakes='{"1":"One formula unit provides one chlorine atom. Compare that with one molecule of free chlorine gas, then retry.","4":"Four can work only if you also double the other smallest coefficients. Look for a smaller whole-number ratio."}'
+          data-hint="Count the chlorine atoms in a single gas molecule and in a single lithium chloride formula unit. Try again."
+          data-success="Two LiCl units supply two chlorine atoms for one Cl₂ molecule. Check the lithium count and explain the state label for molten LiCl.">
+          <label for="salt-coefficient">Lithium chloride coefficient</label>
+          <div class="answer-row"><input id="salt-coefficient" type="number" min="1" step="1" required><button type="submit" disabled>Check coefficient</button></div>
+          <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+        </form>
+        <details><summary>Compare the full equation</summary>
+          <p class="equation"><span>2 LiCl(l)</span> → <span>2 Li(l)</span> + <span>Cl<sub>2</sub>(g)</span></p>
+          <p>Both sides have Li 2 and Cl 2. If you used (aq) for molten LiCl, look for a solvent in the description. The salt itself is liquid. If chlorine still differs, keep Cl<sub>2</sub> and adjust the front number on LiCl.</p>
+        </details>
+        <details class="retry"><summary>Retry with a different salt</summary>
+          <p>In a written reaction model, molten barium chloride yields liquid barium and chlorine gas. Barium forms a 2+ ion. Which coefficient pattern changes?</p>
+          <details><summary>Compare the new ratio</summary><p>BaCl<sub>2</sub>(l) → Ba(l) + Cl<sub>2</sub>(g). One unit already supplies two Cl atoms and one Ba atom.</p></details>
+        </details>
+      </div>
     </section>
 
     <section aria-labelledby="oxygen">
-      <h2 id="oxygen">Find how much oxygen the pairs must supply</h2>
-      <p>When a fuel burns completely, the description may give carbon dioxide and water as products. In these examples, carbon appears in just one product and hydrogen in just one product. Their counts fix the two product coefficients for one fuel molecule. Oxygen appears in both products and in the fuel, so count it last.</p>
-      <h3>One ethanol molecule needs a whole number of oxygen molecules</h3>
-      <p><strong>Given</strong> Gaseous ethanol, C<sub>2</sub>H<sub>6</sub>O, burns in diatomic oxygen gas to produce carbon dioxide gas and water vapor. <strong>Goal</strong> Write the balanced molecular equation.</p>
-      <ol>
-        <li>Copy the fuel formula. Use O<sub>2</sub> for diatomic oxygen, CO<sub>2</sub> for carbon dioxide, and H<sub>2</sub>O for water. All four terms have (g).</li>
-        <li>For one fuel molecule, put 2 in front of CO<sub>2</sub> for the two carbon atoms and 3 in front of H<sub>2</sub>O for the six hydrogen atoms.</li>
-        <li>The products contain 2 × 2 + 3 × 1 = 7 oxygen atoms. The fuel supplies one. O<sub>2</sub> must supply 7 − 1 = 6 atoms, or 3 molecules.</li>
-        <li><strong>Final equation</strong> C<sub>2</sub>H<sub>6</sub>O(g) + 3O<sub>2</sub>(g) → 2CO<sub>2</sub>(g) + 3H<sub>2</sub>O(g). Both sides have C 2, H 6, and O 7. The coefficient of the fuel is 1.</li>
-      </ol>
-      <h3>One propan-2-ol molecule leaves an odd oxygen demand</h3>
-      <p><strong>Given</strong> In a complete burn, gaseous propan-2-ol, C<sub>3</sub>H<sub>8</sub>O, reacts with diatomic oxygen gas to form gaseous carbon dioxide and water vapor. <strong>Goal</strong> Write the balanced molecular equation.</p>
-      <ol>
-        <li>Write the same product formulas and (g) labels as before. Per fuel molecule, use 3CO<sub>2</sub> for the three carbon atoms and 4H<sub>2</sub>O for the eight hydrogen atoms.</li>
-        <li>The products contain 3 × 2 + 4 × 1 = 10 oxygen atoms. The fuel supplies one. The remaining 10 − 1 = 9 atoms require a temporary ratio of 9/2 O<sub>2</sub> per fuel molecule.</li>
-        <li>Double <em>every</em> coefficient so all are whole numbers. <strong>Final equation</strong> 2C<sub>3</sub>H<sub>8</sub>O(g) + 9O<sub>2</sub>(g) → 6CO<sub>2</sub>(g) + 8H<sub>2</sub>O(g).</li>
-        <li>For C, 2 × 3 = 6 on the left and 6 on the right. For H, 2 × 8 = 16 on the left and 8 × 2 = 16 on the right. For O, 2 + 9 × 2 = 20 on the left and 6 × 2 + 8 = 20 on the right. No number greater than 1 divides all four coefficients.</li>
-      </ol>
-
-      <form class="practice" data-chem-choice>
-        <fieldset>
-          <legend>After accounting for oxygen in a fuel, its products need 11 more oxygen atoms per fuel molecule. What preserves the carbon and hydrogen counts?</legend>
-          <label class="option"><input type="radio" name="oxygen-pairs" data-explanation="That supplies 12 extra oxygen atoms, one too many. Keep the exact ratio, then retry."><span>Use six O₂ per fuel molecule and keep the product amounts.</span></label>
-          <label class="option"><input type="radio" name="oxygen-pairs" data-explanation="Yes. Doubling the whole ratio preserves carbon and hydrogen. The oxygen molecules then supply 22 atoms for two fuel molecules."><span>Use eleven O₂ for two fuel molecules and double both product amounts.</span></label>
-          <label class="option"><input type="radio" name="oxygen-pairs" data-explanation="That doubles the carbon and hydrogen supplied but leaves the amounts used unchanged. Scale all terms together and retry."><span>Use eleven O₂ for two fuel molecules and keep both product amounts.</span></label>
-        </fieldset>
-        <button type="submit" disabled>Check choice</button>
-        <p class="feedback" role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare your choice</summary><p>The temporary oxygen coefficient is 11/2. Multiply the whole ratio by two. If you rounded or scaled only the reactants, redo the carbon, hydrogen and oxygen counts before retrying.</p></details>
+      <h2 id="oxygen">2. Count all sources of an element</h2>
+      <p>Methanol vapor, CH<sub>3</sub>OH, burns in oxygen gas to form carbon dioxide gas and water vapor. This is <a href="#term-combustion">combustion</a> in oxygen. Both products are gases.</p>
+      <p class="equation"><span>CH<sub>3</sub>OH(g)</span> + <span>O<sub>2</sub>(g)</span> → <span>CO<sub>2</sub>(g)</span> + <span>H<sub>2</sub>O(g)</span></p>
+      <p><strong>Match C and H first.</strong> One CH<sub>3</sub>OH has one C and four H, so use one CO<sub>2</sub> and two H<sub>2</sub>O. Then adjust O<sub>2</sub>. A term containing a free element changes only that element when you adjust its coefficient.</p>
+      <div class="decision">
+        <p><strong>Predict.</strong> Which O<sub>2</sub> coefficient fills the oxygen gap for one fuel molecule? Count the O already in the fuel. A temporary fraction is allowed.</p>
+        <form data-chem-choice>
+          <fieldset>
+            <legend>Coefficient on O<sub>2</sub></legend>
+            <label><input type="radio" name="oxygen-coefficient" value="one" data-explanation="One O₂ gives two O atoms. With one from the fuel, that gives three, while the products need four."> <span>1</span></label>
+            <label><input type="radio" name="oxygen-coefficient" value="two" data-explanation="Two O₂ give four O atoms. The fuel already gives one, so this supplies one more than the products need."> <span>2</span></label>
+            <label><input type="radio" name="oxygen-coefficient" value="three-halves" data-explanation="Three O atoms are needed after counting the fuel oxygen. Each O₂ contributes two, so 3/2 fits. Scale the entire equation next."> <span>3/2</span></label>
+          </fieldset>
+          <button type="submit" disabled>Check oxygen</button>
+          <p class="feedback" role="status" aria-live="polite"></p>
+        </form>
+        <details><summary>Compare the oxygen count</summary>
+          <table class="atom-ledger">
+            <caption>O atoms for one fuel molecule</caption>
+            <thead><tr><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+            <tbody>
+              <tr><td>CH<sub>3</sub>OH gives <strong>1</strong></td><td>CO<sub>2</sub> needs <strong>2</strong></td></tr>
+              <tr><td>O<sub>2</sub> must give <strong>3</strong></td><td>2 H<sub>2</sub>O need <strong>2</strong></td></tr>
+              <tr><td>1 + 3 = <strong>4</strong></td><td>2 + 2 = <strong>4</strong></td></tr>
+            </tbody>
+          </table>
+          <p>Three O atoms take 3/2 O<sub>2</sub>. Double <em>every</em> coefficient to keep the atom totals equal and clear the fraction.</p>
+          <p class="equation"><span>2 CH<sub>3</sub>OH(g)</span> + <span>3 O<sub>2</sub>(g)</span> → <span>2 CO<sub>2</sub>(g)</span> + <span>4 H<sub>2</sub>O(g)</span></p>
+          <p>Both sides have C 2, H 8 and O 8. Each term is neutral and 2:3:2:4 is the simplest ratio.</p>
+        </details>
+      </div>
+      <div class="attempt">
+        <h3>Try a fuel with a different composition</h3>
+        <p>Liquid ethylene glycol, C<sub>2</sub>H<sub>6</sub>O<sub>2</sub>, burns with oxygen gas. It forms gaseous carbon dioxide and water vapor. Write a balanced molecular equation and show one oxygen count for each side.</p>
+        <details><summary>Compare your counts</summary>
+          <p>One fuel unit needs two CO<sub>2</sub> and three H<sub>2</sub>O. They contain seven O atoms. The fuel already supplies two, leaving five. Use 5/2 O<sub>2</sub> as a temporary coefficient and then double the whole equation.</p>
+          <p class="equation"><span>2 C<sub>2</sub>H<sub>6</sub>O<sub>2</sub>(l)</span> + <span>5 O<sub>2</sub>(g)</span> → <span>4 CO<sub>2</sub>(g)</span> + <span>6 H<sub>2</sub>O(g)</span></p>
+          <p>Both sides have C 4, H 12 and O 14. If you got 10 O on the left, add the 4 O atoms in the fuel. If doubling broke your C or H counts, check that you doubled every coefficient.</p>
+        </details>
+        <details class="retry"><summary>Retry with a different fuel</summary>
+          <p>Use ethanol vapor (C<sub>2</sub>H<sub>6</sub>O), oxygen gas, carbon dioxide gas and water vapor. Is doubling necessary?</p>
+          <details><summary>Compare the ethanol case</summary><p>One fuel molecule requires two CO<sub>2</sub> and three H<sub>2</sub>O. Seven product O atoms minus one O atom in the fuel leaves six. Use three O<sub>2</sub>. All coefficients are already whole numbers.</p></details>
+        </details>
+      </div>
+      <p class="pause"><strong>Pause here if you like.</strong> When you return, <a href="#ions">pick up with ions in solution</a>.</p>
     </section>
 
-    <section aria-labelledby="solutions">
-      <h2 id="solutions">Keep whole formulas when an aqueous mixture forms a solid</h2>
-      <p>Look for a <strong><a href="#term-precipitate">precipitate</a></strong> (a solid that forms in a solution). The description tells you which product is solid and which remains dissolved. In a molecular equation, write each dissolved compound with its full neutral formula and (aq).</p>
-      <p><strong>Given</strong> Mixing aqueous barium nitrate and aqueous potassium sulfate produces solid barium sulfate and aqueous potassium nitrate. <strong>Goal</strong> Write the balanced molecular equation.</p>
-      <ol>
-        <li>Look up the ion symbols and charges. Barium is Ba<sup>2+</sup>, potassium is K<sup>+</sup>, nitrate is NO<sub>3</sub><sup>−</sup>, and sulfate is SO<sub>4</sub><sup>2−</sup>. Nitrate and sulfate are <strong><a href="#term-polyatomic-ion">polyatomic ions</a></strong> (charged groups made of several atoms).</li>
-        <li>One Ba<sup>2+</sup> needs two NO<sub>3</sub><sup>−</sup> groups, so +2 + 2(−1) = 0. Write Ba(NO<sub>3</sub>)<sub>2</sub>. One SO<sub>4</sub><sup>2−</sup> needs two K<sup>+</sup>, so 2(+1) − 2 = 0. Write K<sub>2</sub>SO<sub>4</sub>. The products pair +2 with −2 in BaSO<sub>4</sub> and +1 with −1 in KNO<sub>3</sub>.</li>
-        <li>Draft Ba(NO<sub>3</sub>)<sub>2</sub>(aq) + K<sub>2</sub>SO<sub>4</sub>(aq) → BaSO<sub>4</sub>(s) + KNO<sub>3</sub>(aq). Sulfate matches, but potassium and nitrate do not. Since nitrate stays NO<sub>3</sub> in the formulas on both sides, count those groups together. Two nitrate groups and two potassium ions on the left require 2KNO<sub>3</sub> on the right.</li>
-        <li><strong>Final equation</strong> Ba(NO<sub>3</sub>)<sub>2</sub>(aq) + K<sub>2</sub>SO<sub>4</sub>(aq) → BaSO<sub>4</sub>(s) + 2KNO<sub>3</sub>(aq). Expand the groups to check Ba 1, K 2, N 2, S 1, and O 10 on each side. All formulas are neutral. The coefficients include 1.</li>
-      </ol>
-      <p>Count an intact group as a unit only when its composition is unchanged across the equation. In the copper hydroxide example, oxide and water carry the oxygen and hydrogen separately, so count those elements individually.</p>
-
-      <form class="practice" data-chem-choice>
-        <fieldset>
-          <legend>Zinc nitrate contains Zn²⁺ and NO₃⁻. What does one neutral formula unit contribute?</legend>
-          <label class="option"><input type="radio" name="nitrate" data-explanation="The outer 2 multiplies every atom inside the nitrate group. Apply it to all three oxygen atoms and retry."><span>One zinc, two nitrogen and three oxygen atoms.</span></label>
-          <label class="option"><input type="radio" name="nitrate" data-explanation="Two positive ions would add even more positive charge. Match one +2 ion with two −1 ions, then retry."><span>Two zinc, one nitrogen and three oxygen atoms.</span></label>
-          <label class="option"><input type="radio" name="nitrate" data-explanation="Yes. Zn(NO₃)₂ contains one zinc and two nitrate groups, each with one nitrogen and three oxygen atoms."><span>One zinc, two nitrogen and six oxygen atoms.</span></label>
-        </fieldset>
-        <button type="submit" disabled>Check choice</button>
-        <p class="feedback" role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare your choice</summary><p>One Zn²⁺ needs two nitrate groups. The outer 2 in Zn(NO₃)₂ multiplies the nitrogen and the oxygen. If you missed either count, rewrite the two nitrate groups separately and retry.</p></details>
+    <section aria-labelledby="ions">
+      <h2 id="ions">3. Keep ionic formulas whole</h2>
+      <p>Solutions of aluminum sulfate and barium chloride are mixed. Solid barium sulfate forms, while aluminum chloride remains in solution. The solid that forms from solution is a <a href="#term-precipitate">precipitate</a>.</p>
+      <p>The <a id="symbol-lookup" href="https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf">periodic table (IUPAC PDF)</a> gives Ba for barium. The <a href="#ion-lookup">ion reference</a> gives SO<sub>4</sub><sup>2−</sup> for sulfate, a <a href="#term-polyatomic">polyatomic ion</a> (a bonded group with a charge).</p>
+      <p>Use Al<sup>3+</sup>, Ba<sup>2+</sup>, and Cl<sup>−</sup> with sulfate to make neutral formulas.</p>
+      <ul>
+        <li>Two Al<sup>3+</sup> balance three sulfate ions (+6 and −6). Write Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>. The outside 3 repeats the entire sulfate group, so one unit has 3 S and 12 O.</li>
+        <li>One Ba<sup>2+</sup> needs two Cl<sup>−</sup>, giving BaCl<sub>2</sub>. One Ba<sup>2+</sup> and one sulfate give BaSO<sub>4</sub>. One Al<sup>3+</sup> needs three Cl<sup>−</sup>, giving AlCl<sub>3</sub>.</li>
+        <li>Keep whole formulas for the (aq) terms, even if the salts separate into ions in water.</li>
+      </ul>
+      <p class="equation"><span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>BaCl<sub>2</sub>(aq)</span> → <span>BaSO<sub>4</sub>(s)</span> + <span>AlCl<sub>3</sub>(aq)</span></p>
+      <p><strong>Predict.</strong> Each sulfate group stays intact. What coefficient on barium sulfate will match the left side? Follow that choice through Ba and Cl.</p>
+      <p><strong>Match the sulfate groups first.</strong> Three groups require 3 BaSO<sub>4</sub>. Match its Ba with 3 BaCl<sub>2</sub>, then use the six Cl atoms and two Al atoms in 2 AlCl<sub>3</sub>.</p>
+      <p class="equation"><span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>3 BaCl<sub>2</sub>(aq)</span> → <span>3 BaSO<sub>4</sub>(s)</span> + <span>2 AlCl<sub>3</sub>(aq)</span></p>
+      <p>Each side has Al 2, Ba 3, S 3, O 12 and Cl 6. All formulas have zero net charge. With a 1 in the ratio 1:3:3:2, no further reduction is possible.</p>
+      <div class="attempt">
+        <h3>Try another solution pair</h3>
+        <p>Mix aqueous potassium chromate and silver(I) nitrate. Solid silver(I) chromate forms and potassium nitrate stays dissolved. Use K<sup>+</sup>, Ag<sup>+</sup>, CrO<sub>4</sub><sup>2−</sup> and NO<sub>3</sub><sup>−</sup>. Write the molecular equation before checking the solid term.</p>
+        <form data-chem-choice>
+          <fieldset>
+            <legend>How should the solid product appear?</legend>
+            <label><input type="radio" name="precipitate" value="charge" data-explanation="One Ag⁺ gives +1 while one chromate gives −2. Change the ion ratio within the neutral formula and try again."> <span>AgCrO<sub>4</sub>(s)</span></label>
+            <label><input type="radio" name="precipitate" value="phase" data-explanation="The formula is neutral. The words say a solid forms, so reconsider the state label."> <span>Ag<sub>2</sub>CrO<sub>4</sub>(aq)</span></label>
+            <label><input type="radio" name="precipitate" value="match" data-explanation="The two Ag⁺ ions balance one chromate ion, and (s) marks the solid. Now match Ag, K and nitrate using coefficients."> <span>Ag<sub>2</sub>CrO<sub>4</sub>(s)</span></label>
+          </fieldset>
+          <button type="submit" disabled>Check solid term</button>
+          <p class="feedback" role="status" aria-live="polite"></p>
+        </form>
+        <details><summary>Compare the full equation</summary>
+          <p class="equation"><span>K<sub>2</sub>CrO<sub>4</sub>(aq)</span> + <span>2 AgNO<sub>3</sub>(aq)</span> → <span>Ag<sub>2</sub>CrO<sub>4</sub>(s)</span> + <span>2 KNO<sub>3</sub>(aq)</span></p>
+          <p>Both sides have K 2, Cr 1, O 10, Ag 2 and N 2. If nitrate is short on one side, adjust the coefficient in front of the whole nitrate compound. If the product is dissolved in your equation, reread which substance forms a solid.</p>
+        </details>
+        <details class="retry"><summary>Retry the solid formula</summary>
+          <p>Use Pb<sup>2+</sup> and I<sup>−</sup>.</p>
+          <details><summary>Compare the lead compound</summary><p>PbI<sub>2</sub>(s). One lead ion and two iodide ions make a neutral formula unit. The solid state comes from the description.</p></details>
+        </details>
+      </div>
     </section>
 
-    <section aria-labelledby="hydrogen">
-      <h2 id="hydrogen">Count every place hydrogen ends up</h2>
-      <p>Compare the role of water in two reactions. In the first, every hydrogen atom ends up in the gas. In the second, hydrogen also stays in a solid product.</p>
-      <h3>With magnesium and steam, hydrogen goes to one product</h3>
-      <p><strong>Given</strong> Solid magnesium reacts with steam to produce solid magnesium oxide and hydrogen gas. <strong>Goal</strong> Write the balanced molecular equation.</p>
-      <ol>
-        <li>Use the element symbol Mg for magnesium metal. Steam is H<sub>2</sub>O(g). One Mg<sup>2+</sup> and one O<sup>2−</sup> make neutral MgO. Hydrogen gas is diatomic H<sub>2</sub>(g).</li>
-        <li>Draft Mg(s) + H<sub>2</sub>O(g) → MgO(s) + H<sub>2</sub>(g). One water molecule provides one oxygen for the oxide and two hydrogen atoms for the gas. Both sides have Mg 1, O 1 and H 2. All coefficients are 1.</li>
-      </ol>
-      <h3>With calcium hydride, hydrogen goes to two products</h3>
-      <p><strong>Given</strong> In a water reaction with solid calcium hydride, liquid water is consumed, solid calcium hydroxide forms, and hydrogen gas is released. Use the stated solid product. <strong>Goal</strong> Write the balanced molecular equation.</p>
-      <ol>
-        <li>Look up Ca<sup>2+</sup> and hydride H<sup>−</sup>. Two hydride ions balance one calcium ion, giving CaH<sub>2</sub>. Two hydroxide groups, OH<sup>−</sup>, also balance one calcium ion, giving Ca(OH)<sub>2</sub>. Liquid water has (l), and H<sub>2</sub> gas has (g).</li>
-        <li>Draft CaH<sub>2</sub>(s) + H<sub>2</sub>O(l) → Ca(OH)<sub>2</sub>(s) + H<sub>2</sub>(g). Start with one unit of the hydroxide. Its two O atoms require two water molecules.</li>
-        <li>Count hydrogen after setting the water coefficient. The hydride provides two H atoms and water provides four, for six on the left. The solid product accounts for two. The remaining four H atoms give two H<sub>2</sub> molecules.</li>
-        <li><strong>Final equation</strong> CaH<sub>2</sub>(s) + 2H<sub>2</sub>O(l) → Ca(OH)<sub>2</sub>(s) + 2H<sub>2</sub>(g). Check Ca 1, O 2 and H 6 on both sides. The coefficients include 1.</li>
-      </ol>
-
-      <form class="practice" data-chem-choice>
-        <fieldset>
-          <legend>A set of reactants supplies eight H atoms. The solid product accounts for two. How many hydrogen gas molecules fit the rest?</legend>
-          <label class="option"><input type="radio" name="hydrogen-count" data-explanation="Yes. Subtract the two H atoms in the solid, then divide the six remaining atoms into pairs."><span>Three molecules, using six H atoms.</span></label>
-          <label class="option"><input type="radio" name="hydrogen-count" data-explanation="This would send every H atom to the gas. Reserve two atoms for the solid and retry."><span>Four molecules, using eight H atoms.</span></label>
-          <label class="option"><input type="radio" name="hydrogen-count" data-explanation="Six is the remaining number of atoms. Each gas molecule needs two, so group them in pairs and retry."><span>Six molecules, using twelve H atoms.</span></label>
-        </fieldset>
-        <button type="submit" disabled>Check choice</button>
-        <p class="feedback" role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare your choice</summary><p>Eight H atoms minus two in the solid leaves six. Six atoms make three H₂ molecules. If you used all eight or counted six gas molecules, draw the six leftover atoms in pairs and retry.</p></details>
+    <section aria-labelledby="conditions">
+      <h2 id="conditions">4. Read the conditions as written</h2>
+      <p>Hot solid iron and steam form solid magnetite (Fe<sub>3</sub>O<sub>4</sub>) and hydrogen gas. Steam is H<sub>2</sub>O(g). Use Fe(s) for the metal and H<sub>2</sub>(g) for free hydrogen. Keep the specified oxide formula.</p>
+      <p class="equation"><span>Fe(s)</span> + <span>H<sub>2</sub>O(g)</span> → <span>Fe<sub>3</sub>O<sub>4</sub>(s)</span> + <span>H<sub>2</sub>(g)</span></p>
+      <p><strong>Predict.</strong> One magnetite unit needs four oxygen atoms. Where will they come from? Count the hydrogen atoms that arrive with them.</p>
+      <p>One magnetite unit needs 3 Fe and 4 O atoms. Four waters supply the O and bring 8 H atoms, enough for 4 H<sub>2</sub>. Both sides have Fe 3, O 4 and H 8. The neutral terms are in the simplest ratio.</p>
+      <p class="equation"><span>3 Fe(s)</span> + <span>4 H<sub>2</sub>O(g)</span> → <span>Fe<sub>3</sub>O<sub>4</sub>(s)</span> + <span>4 H<sub>2</sub>(g)</span></p>
+      <h3>When hydrogen goes into two products</h3>
+      <p>Solid calcium hydride (CaH<sub>2</sub>) and liquid water produce calcium hydroxide and hydrogen gas. In the case shown, the hydroxide forms a solid. Two OH<sup>−</sup> balance one Ca<sup>2+</sup>, so write Ca(OH)<sub>2</sub>(s).</p>
+      <p class="equation"><span>CaH<sub>2</sub>(s)</span> + <span>H<sub>2</sub>O(l)</span> → <span>Ca(OH)<sub>2</sub>(s)</span> + <span>H<sub>2</sub>(g)</span></p>
+      <p><strong>Predict.</strong> Two waters supply the two O atoms in one hydroxide unit. How many H atoms are left for the gas after making the solid?</p>
+      <details class="worked-check"><summary>Compare the hydrogen count</summary>
+        <table class="atom-ledger">
+          <caption>H atoms in the reaction</caption>
+          <thead><tr><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+          <tbody>
+            <tr><td>CaH<sub>2</sub> gives <strong>2</strong></td><td>Ca(OH)<sub>2</sub> uses <strong>2</strong></td></tr>
+            <tr><td>2 H<sub>2</sub>O give <strong>4</strong></td><td>H<sub>2</sub> must use <strong>4</strong></td></tr>
+            <tr><td>2 + 4 = <strong>6</strong></td><td>2 + 4 = <strong>6</strong></td></tr>
+          </tbody>
+        </table>
+        <p>Four H atoms make two H<sub>2</sub> molecules.</p>
+        <p class="equation"><span>CaH<sub>2</sub>(s)</span> + <span>2 H<sub>2</sub>O(l)</span> → <span>Ca(OH)<sub>2</sub>(s)</span> + <span>2 H<sub>2</sub>(g)</span></p>
+        <p>Both sides have Ca 1, O 2 and H 6. The terms are neutral and 1:2:1:2 is simplest. The ledger tracks totals across the reaction.</p>
+      </details>
+      <div class="attempt">
+        <h3>Try a reaction that makes steam</h3>
+        <p>Gaseous hydrogen sulfide (H<sub>2</sub>S) reacts with solid copper(II) oxide, producing solid copper(II) sulfide and water vapor. Write the equation. Use Cu<sup>2+</sup>, O<sup>2−</sup> and S<sup>2−</sup> for the solids.</p>
+        <details><summary>Compare formulas and states</summary><p class="equation"><span>H<sub>2</sub>S(g)</span> + <span>CuO(s)</span> → <span>CuS(s)</span> + <span>H<sub>2</sub>O(g)</span></p><p>Both sides have H 2, S 1, Cu 1 and O 1, so all coefficients are 1. If you wrote H<sub>2</sub> on the left, reread the full compound name. If you labeled water (l), look for the word that gives its state here.</p></details>
+        <details class="retry"><summary>Retry with a new set of state cues</summary>
+          <p>A description says that aqueous hydrogen peroxide decomposes to liquid water and oxygen gas. Write the skeleton with state labels.</p>
+          <details><summary>Compare the skeleton</summary><p>H<sub>2</sub>O<sub>2</sub>(aq) → H<sub>2</sub>O(l) + O<sub>2</sub>(g). “Aqueous” describes a substance dissolved in water, while “liquid water” describes water itself. Balancing would be a separate step.</p></details>
+        </details>
+      </div>
     </section>
 
-    <section aria-labelledby="practice">
-      <h2 id="practice">Write complete equations from descriptions</h2>
-      <p>Use paper for each attempt. Write a molecular equation with formulas, state labels and the smallest whole-number coefficients. Choose an element or intact group to balance first and explain why. Leave each comparison closed until you have a full draft and have checked every element.</p>
-      <p>Use this lookup strip as needed. Aluminum is Al<sup>3+</sup>, nitride is N<sup>3−</sup>, hydroxide is OH<sup>−</sup>, and ammonia is NH<sub>3</sub>. Strontium is Sr<sup>2+</sup>, potassium is K<sup>+</sup>, phosphate is PO<sub>4</sub><sup>3−</sup>, and nitrate is NO<sub>3</sub><sup>−</sup>. Hydrobromic acid is HBr(aq), zinc forms Zn<sup>2+</sup>, and bromide is Br<sup>−</sup>.</p>
-
-      <h3>1. A material reacts with water</h3>
-      <p>In a simplified description of aluminum nitride reacting with liquid water, solid aluminum hydroxide forms and ammonia is released as a gas. Solid aluminum nitride is the other starting material.</p>
-      <details><summary>Compare equation 1</summary>
-        <p>Al<sup>3+</sup> and N<sup>3−</sup> give AlN. One Al<sup>3+</sup> and three OH<sup>−</sup> groups give Al(OH)<sub>3</sub>. Three water molecules supply the three oxygen atoms. Their six hydrogen atoms go into both products, three to the solid and three to the gas.</p>
-        <p>AlN(s) + 3H<sub>2</sub>O(l) → Al(OH)<sub>3</sub>(s) + NH<sub>3</sub>(g). Each side has Al 1, N 1, O 3, H 6. A coefficient of 1 makes the ratio simplest.</p>
-        <p>If you sent all six H atoms to ammonia, start again at the oxygen row, then subtract the three H in the solid before counting NH<sub>3</sub>.</p>
-      </details>
-
-      <h3>2. Two solutions make a solid</h3>
-      <p>Solid strontium phosphate forms when aqueous potassium phosphate and aqueous strontium nitrate are mixed. Potassium nitrate stays dissolved.</p>
-      <details><summary>Compare equation 2</summary>
-        <p>For strontium phosphate, +6 and −6 cancel using three strontium ions and two phosphate groups. Potassium phosphate needs three K<sup>+</sup> per phosphate. Strontium nitrate needs two nitrates per Sr<sup>2+</sup>. Potassium nitrate needs one of each ion.</p>
-        <p>For one unit of Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, use two units of potassium phosphate and three of strontium nitrate. Those supply six potassium ions and six nitrate groups, so six units of potassium nitrate complete the equation.</p>
-        <p>2K<sub>3</sub>PO<sub>4</sub>(aq) + 3Sr(NO<sub>3</sub>)<sub>2</sub>(aq) → Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>(s) + 6KNO<sub>3</sub>(aq). Each side has K 6, Sr 3, P 2, N 6, O 26. Every compound formula is neutral and the coefficients include 1.</p>
-        <p>If you split dissolved substances into ions, write each neutral formula first and use (aq). If you balanced only the solid, retry the dissolved product by counting both potassium and nitrate.</p>
-      </details>
-
-      <h3>3. A vapor burns</h3>
-      <p>Ethanal vapor, C<sub>2</sub>H<sub>4</sub>O, and diatomic oxygen gas react completely. The two products are carbon dioxide gas and steam.</p>
-      <details><summary>Compare equation 3</summary>
-        <p>One fuel molecule calls for two carbon dioxide and two water molecules. The products have 2 × 2 + 2 × 1 = 6 oxygen atoms. The fuel supplies one of the six, so oxygen gas supplies five. Use 5/2 O<sub>2</sub> temporarily and multiply the whole ratio by two.</p>
-        <p>2C<sub>2</sub>H<sub>4</sub>O(g) + 5O<sub>2</sub>(g) → 4CO<sub>2</sub>(g) + 4H<sub>2</sub>O(g). Each side has C 4, H 8, and O 12. No number greater than 1 divides all four coefficients.</p>
-        <p>If you used three O<sub>2</sub> per fuel molecule, count the oxygen already in the fuel and retry. If you used (l) for water, read the word “steam” again.</p>
-      </details>
-
-      <h3>4. A heated solid releases a gas</h3>
-      <p>When solid anhydrous copper(II) nitrate is heated, solid copper(II) oxide remains. Nitrogen dioxide gas and diatomic oxygen gas are released. Anhydrous means the crystal formula contains no water.</p>
-      <details><summary>Compare equation 4</summary>
-        <p>Two nitrates balance one Cu<sup>2+</sup>, so write Cu(NO<sub>3</sub>)<sub>2</sub>. Oxide is O<sup>2−</sup>, so write CuO. Per nitrate formula unit, one CuO uses the copper and two NO<sub>2</sub> use the nitrogen. Those products account for five of the six oxygen atoms. The remaining atom calls for 1/2 O<sub>2</sub>, so double all coefficients.</p>
-        <p>2Cu(NO<sub>3</sub>)<sub>2</sub>(s) → 2CuO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g). Each side has Cu 2, N 4, O 12. The coefficients include 1.</p>
-        <p>If you kept nitrate together, find nitrogen and oxygen in the product formulas. The nitrate group has changed, so try the copper and nitrogen rows first, then return to oxygen.</p>
-      </details>
-
-      <h3>5. A solid metal reacts with an acid</h3>
-      <p>Hydrogen gas forms as solid zinc reacts with aqueous hydrobromic acid. Zinc bromide remains dissolved.</p>
-      <details><summary>Compare equation 5</summary>
-        <p>Use Zn for the metal, HBr for the acid, and H<sub>2</sub> for the gas. Neutral zinc bromide takes two Br<sup>−</sup> per Zn<sup>2+</sup>, giving ZnBr<sub>2</sub>. A coefficient of two on HBr supplies two bromine atoms for the salt and two hydrogen atoms for the gas. Keep the acid in molecular-equation notation.</p>
-        <p>Zn(s) + 2HBr(aq) → ZnBr<sub>2</sub>(aq) + H<sub>2</sub>(g). Each side has Zn 1, H 2, Br 2. The coefficients include 1.</p>
-        <p>If you wrote H as the gas, use the diatomic formula. If you wrote ZnBr, use the charges to build a neutral formula and then rebalance.</p>
-      </details>
+    <section aria-labelledby="independent">
+      <h2 id="independent">Write two equations from scratch</h2>
+      <p>Write each balanced molecular equation with state symbols. Point to one formula or state clue. Explain your first balancing step.</p>
+      <div class="attempt">
+        <h3>A. Two solutions</h3>
+        <p>A solution of ammonium phosphate is mixed with a solution of calcium bromide. Solid calcium phosphate separates, and ammonium bromide stays in solution.</p>
+        <p>Use Ca<sup>2+</sup> and bromide (charge −1). Use the <a href="#symbol-lookup">periodic table</a> for symbols and the <a href="#ion-lookup">ion reference</a> for the other charges.</p>
+        <details><summary>Diagnose and compare A</summary>
+          <ul class="diagnosis">
+            <li><strong>Formula differs?</strong> Check the charges in calcium phosphate. Three calcium ions and two phosphate ions cancel.</li>
+            <li><strong>Formula matches but counts differ?</strong> Start with phosphate, then calcium. Use parentheses for multiple copies of a polyatomic ion inside a formula.</li>
+            <li><strong>Only a state differs?</strong> Compare the substance that separates with the one that stays dissolved.</li>
+          </ul>
+          <p class="equation"><span>2 (NH<sub>4</sub>)<sub>3</sub>PO<sub>4</sub>(aq)</span> + <span>3 CaBr<sub>2</sub>(aq)</span> → <span>Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>(s)</span> + <span>6 NH<sub>4</sub>Br(aq)</span></p>
+          <p>Each side has N 6, H 24, P 2, O 8, Ca 3 and Br 6.</p>
+        </details>
+      </div>
+      <div class="attempt">
+        <h3>B. A metal and a solution</h3>
+        <p>Solid aluminum reacts with aqueous potassium hydroxide and liquid water. The products are hydrogen gas and a dissolved salt made of K<sup>+</sup> and [Al(OH)<sub>4</sub>]<sup>−</sup> ions.</p>
+        <details><summary>Diagnose and compare B</summary>
+          <ul class="diagnosis">
+            <li><strong>Product formula differs?</strong> One K<sup>+</sup> cancels the charge on one [Al(OH)<sub>4</sub>]<sup>−</sup> ion.</li>
+            <li><strong>O matches but H differs?</strong> For one dissolved product unit, one KOH and three waters supply four O atoms. They also supply seven H atoms. Subtract the four H in the dissolved product before pairing what is left.</li>
+            <li><strong>Counts match with a fraction?</strong> Three remaining H atoms require 3/2 H<sub>2</sub>. Double all coefficients to get whole numbers.</li>
+          </ul>
+          <p class="equation"><span>2 Al(s)</span> + <span>2 KOH(aq)</span> + <span>6 H<sub>2</sub>O(l)</span> → <span>2 K[Al(OH)<sub>4</sub>](aq)</span> + <span>3 H<sub>2</sub>(g)</span></p>
+          <p>Each side has Al 2, K 2, O 8 and H 14. Both equations have neutral terms and the smallest whole-number ratios.</p>
+        </details>
+      </div>
+      <p class="recall"><strong>Later recall.</strong> Before reopening the lesson, write down the three decisions you make before adjusting any coefficient. Explain how you would find an incorrect state label even in a balanced equation.</p>
+      <p>For a short method refresher, see <a href="https://webs.anokaramsey.edu/lund/chem1020/Lecture/Handouts/Strategies%20for%20Balancing%20Chemical%20Equations.pdf">Anoka-Ramsey’s balancing strategies (one-page PDF)</a>.</p>
     </section>
 
-    <section aria-labelledby="remember">
-      <h2 id="remember">Explain your first move</h2>
-      <p>Choose one practice case where it helped to start with a metal or an intact ion group, and one where it helped to leave an element until the end. Explain what the description or formulas told you to do. Then point to one formula whose subscript you kept fixed and explain what changing it would do.</p>
-      <p>On your next visit, recall the four state symbols and the difference between a subscript and a coefficient before opening the glossary. Then consider a description that says a solid appears when two dissolved compounds react. Where would (s) and (aq) go, and what information would you need before writing any formulas?</p>
+    <section aria-labelledby="ion-lookup">
+      <h2 id="ion-lookup">Ion reference</h2>
+      <dl class="ions-list">
+        <dt>Ammonium</dt><dd>NH<sub>4</sub><sup>+</sup></dd>
+        <dt>Hydroxide</dt><dd>OH<sup>−</sup></dd>
+        <dt>Nitrate</dt><dd>NO<sub>3</sub><sup>−</sup></dd>
+        <dt>Phosphate</dt><dd>PO<sub>4</sub><sup>3−</sup></dd>
+        <dt>Sulfate</dt><dd>SO<sub>4</sub><sup>2−</sup></dd>
+      </dl>
+      <p>Ion entries are from the <a href="https://gchem.cm.utexas.edu/canvas.php?target=bonding/ionic/polyatomic-ions.html">University of Texas table of polyatomic ions</a>.</p>
     </section>
 
     <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt id="term-aqueous">Aqueous (aq)</dt><dd>Dissolved in water. (l) is the label for a liquid substance, (s) for a solid, and (g) for a gas or vapor.</dd>
-        <dt id="term-coefficient">Coefficient</dt><dd>Number in front of a formula that multiplies all of its atom counts. The final equation uses the smallest positive whole-number ratio.</dd>
-        <dt id="term-decomposition">Decomposition</dt><dd>A reaction in which one reactant forms more than one product.</dd>
-        <dt id="term-diatomic">Diatomic</dt><dd>Made of two atoms per molecule. A sample of diatomic elemental gas is counted in pairs.</dd>
-        <dt id="term-formula-unit">Formula unit</dt><dd>The set of atom or ion counts represented by an ionic compound’s formula. An ionic solid is an extended array, with the formula describing the ion ratio.</dd>
-        <dt id="term-ion">Ion</dt><dd>An atom or bonded group with a net charge.</dd>
-        <dt id="term-polyatomic-ion">Polyatomic ion</dt><dd>An ion containing multiple atoms, as in nitrate.</dd>
-        <dt id="term-molecular-equation">Molecular equation</dt><dd>An equation written with whole formulas for all substances, including dissolved ionic compounds.</dd>
-        <dt id="term-precipitate">Precipitate</dt><dd>A solid formed from a solution.</dd>
-        <dt id="term-reactants">Reactants</dt><dd>The starting substances, written before the arrow.</dd>
-        <dt id="term-products">Products</dt><dd>The substances formed, written after the arrow.</dd>
-        <dt id="term-subscript">Subscript</dt><dd>Small number in a formula that counts atoms of the preceding element or repeats a preceding parenthesized group.</dd>
-        <dt id="term-heat">Δ over the arrow</dt><dd>The reaction is carried out with heat.</dd>
+        <div><dt id="term-sides">Reactants and products</dt><dd>Starting substances are on the left. Substances formed are on the right.</dd></div>
+        <div><dt id="term-diatomic">Diatomic</dt><dd>Two atoms per molecule. The subscript 2 in O<sub>2</sub> is part of the formula for free oxygen gas.</dd></div>
+        <div><dt id="term-state">State symbol</dt><dd>(s) solid, (l) liquid, (g) gas, (aq) dissolved in water.</dd></div>
+        <div><dt id="term-aqueous">Aqueous</dt><dd>Dissolved in water, indicated by (aq).</dd></div>
+        <div><dt id="term-skeleton">Skeleton equation</dt><dd>The formulas on their proper sides before balancing the equation.</dd></div>
+        <div><dt id="term-coefficient">Coefficient</dt><dd>Number before a formula that scales the amount of the entire substance. A coefficient of 1 is usually omitted.</dd></div>
+        <div><dt id="term-subscript">Subscript</dt><dd>Number showing how many atoms or parenthesized groups occur in one formula unit or molecule. An omitted subscript means 1.</dd></div>
+        <div><dt id="term-unit">Formula unit</dt><dd>The simplest ratio of ions indicated by an ionic compound’s formula. It describes composition in an extended solid.</dd></div>
+        <div><dt id="term-combustion">Combustion</dt><dd>A reaction in which a fuel burns. Complete combustion of the fuels in this lesson gives carbon dioxide and water.</dd></div>
+        <div><dt id="term-precipitate">Precipitate</dt><dd>A solid that forms from a solution.</dd></div>
+        <div><dt id="term-ion">Ion</dt><dd>An atom or bonded group with a net electric charge.</dd></div>
+        <div><dt id="term-polyatomic">Polyatomic ion</dt><dd>A bonded group of atoms with a net electric charge.</dd></div>
+        <div><dt id="term-molecular">Molecular equation</dt><dd>Represents substances with their complete chemical formulas, including dissolved ionic compounds.</dd></div>
       </dl>
-    </section>
-
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">Practice with another atom model</h2>
-      <p>Use the <a href="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_en.html?screens=1">PhET Balancing Chemical Equations simulation</a> from the University of Colorado Boulder to compare atom counts as you change coefficients on the Intro screen.</p>
     </section>
   </main>
 </body>

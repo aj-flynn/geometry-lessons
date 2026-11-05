@@ -1,0 +1,160 @@
+.reaction-words header {
+  border-block-start: 5px solid #146875;
+  padding-block: 1rem;
+}
+.reaction-words .lesson-route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2em 1em;
+  border-block-end: 1px solid #68807a;
+  padding-block-end: .5em;
+}
+.reaction-words .lesson-route a {
+  max-inline-size: 100%;
+  font-size: inherit;
+  text-decoration: underline;
+}
+.reaction-words .eyebrow {
+  color: #146875;
+  font-weight: bold;
+}
+.reaction-words :is(p, li, dt, dd, summary, button) {
+  overflow-wrap: anywhere;
+}
+.reaction-words .start {
+  border-inline-start: 4px solid #146875;
+  padding-inline-start: 1rem;
+}
+.reaction-words .equation {
+  background: #e1efef;
+  border-inline-start: 4px solid #146875;
+  padding: .5rem .8rem;
+  font-weight: bold;
+}
+.reaction-words .equation span {
+  display: inline-block;
+  white-space: nowrap;
+}
+.reaction-words li + li {
+  margin-top: .45em;
+}
+.reaction-words figure {
+  max-width: 29rem;
+}
+.reaction-words .attempt {
+  border-block-start: 1px solid #68807a;
+  padding-block-start: 1rem;
+  margin-block: 1.4rem;
+}
+.reaction-words .answer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-block: .5rem;
+}
+.reaction-words fieldset {
+  min-inline-size: 0;
+  margin-inline: 0;
+}
+.reaction-words fieldset label {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  min-height: 44px;
+}
+.reaction-words legend {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.reaction-words input[type="radio"] {
+  margin: .4rem;
+  accent-color: #146875;
+}
+.reaction-words button:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+@media (max-width: 400px) {
+  .reaction-words .equation { padding-inline: .35rem; }
+  .reaction-words ol, .reaction-words ul { padding-inline-start: 1.3rem; }
+  .reaction-words input:focus-visible { outline-offset: 2px; }
+}
+@media print {
+  .reaction-words .equation {
+    break-inside: avoid;
+    padding-block: .1rem;
+  }
+  .reaction-words p, .reaction-words li { orphans: 2; widows: 2; }
+  .reaction-words :is(h2, h3, legend, summary) { break-after: avoid; }
+  .reaction-words details { padding: .1rem 0 .25rem; }
+  .reaction-words summary { min-height: 0; padding-block: .1rem; }
+  .reaction-words form[data-practice] { display: none; }
+  .reaction-words form[data-chem-choice] { break-inside: avoid; }
+  .reaction-words input { display: none; }
+  .reaction-words fieldset label { min-height: 0; }
+  .reaction-words .attempt { padding-block-start: .6rem; margin-block: .6rem; }
+}
+.reaction-words .ions-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: .2em 1em;
+  max-width: 24rem;
+}
+.reaction-words .ions-list :is(dt, dd) { margin: 0; }
+@media (max-width: 400px) {
+  .reaction-words details { padding-inline: .5rem; }
+}
+@media print {
+  .reaction-words { line-height: 1.35; }
+  .reaction-words header { padding-block: .45rem; }
+  .reaction-words section { margin-top: 1rem; }
+  .reaction-words p { max-width: none; margin-block: .45em; }
+  .reaction-words figure { max-width: 19rem; padding: 10px; }
+  .reaction-words summary { list-style: none; }
+  .reaction-words .attempt { break-inside: avoid; }
+}
+
+.reaction-words .unit-labels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .4rem;
+  margin-block-end: .3rem;
+  text-align: center;
+}
+.reaction-words .atom-ledger {
+  inline-size: 100%;
+  max-inline-size: 28rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.reaction-words .atom-ledger caption {
+  text-align: left;
+  font-weight: bold;
+  margin-block: .4em;
+}
+.reaction-words .atom-ledger :is(th, td) {
+  padding: .25em .3em;
+  border-block-end: 1px solid #68807a;
+  text-align: left;
+  vertical-align: top;
+}
+.reaction-words .atom-ledger tbody tr:last-child {
+  background: #e1efef;
+}
+.reaction-words .pause {
+  border-inline-start: 4px solid #146875;
+  padding-inline-start: .8rem;
+}
+@media (max-width: 400px) {
+  .reaction-words h1 { font-size: clamp(26px, 8.4vw, 34px); }
+  .reaction-words h2 { font-size: clamp(23px, 7.4vw, 28px); }
+  .reaction-words h3 { font-size: clamp(20px, 6.4vw, 23px); }
+  .reaction-words .atom-ledger :is(th, td) { padding-inline: .2rem; }
+}
+@media print {
+  .reaction-words :is(.decision, .worked-check, #glossary dl > div) { break-inside: avoid; }
+  .reaction-words #glossary dt { break-after: avoid; }
+  .reaction-words :is(details, ol, ul) { margin-block: .4em; }
+  .reaction-words form { margin-block-start: .4em; }
+  .reaction-words .recall { break-inside: avoid; }
+}

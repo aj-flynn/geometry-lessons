@@ -10,4 +10,6 @@ On that English release, Opus 5.5 Medium scored the lesson 80/100 and the exerci
 
 The revised word-to-equation Chemistry lesson earned 100/100 from Astra and 82.8/100 from Opus 5.5 Medium. Opus found the notation and glossary links consistent in the supplied evidence, and identified missing ion-charge lookup instruction and learner control of coefficients.
 
+The latest published word-to-equation sample scored 100/100 with Astra after bounded revisions and 83.5/100 with Opus 5.5 Medium on the same candidate. The fresh first-run draft scored 92.5/100. Two additional public transfer assignments from different courses tested how well the skill transfers. They are linked in the gallery.
+
 Earlier scores apply to their own revisions and rubric editions. See the [archived refinement record](https://github.com/aj-flynn/geometry-lessons/blob/b858e1112942f353513e508e80920735248dde96/docs/SKILL-REFINEMENT.md). Private inputs, comparisons and raw review evidence stay outside the repository.

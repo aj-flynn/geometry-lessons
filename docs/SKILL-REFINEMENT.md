@@ -8,4 +8,6 @@ Astra assessed eight public sample lessons and six lessons from three private as
 
 On that English release, Opus 5.5 Medium scored the lesson 80/100 and the exercised process 78/100. It found a missing qualification in the worked paraphrase and a mismatch between the model argument and the assignment’s argument type. Its review packet lacked lesson-specific browser evidence.
 
+The revised word-to-equation Chemistry lesson earned 100/100 from Astra and 82.8/100 from Opus 5.5 Medium. Opus found the notation and glossary links consistent in the supplied evidence, and identified missing ion-charge lookup instruction and learner control of coefficients.
+
 Earlier scores apply to their own revisions and rubric editions. See the [archived refinement record](https://github.com/aj-flynn/geometry-lessons/blob/b858e1112942f353513e508e80920735248dde96/docs/SKILL-REFINEMENT.md). Private inputs, comparisons and raw review evidence stay outside the repository.

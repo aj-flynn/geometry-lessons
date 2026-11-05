@@ -1,9 +1,41 @@
 ---
 name: geometry-teach
-description: Teach geometry homework concepts with the repository's homework-teach workflow, glossary, diagrams, animations, and fresh practice, without answering assigned work.
+description: Teach geometry homework concepts through justified relationships, accurate diagrams, and fresh practice, without answering assigned work. Use for geometry lessons and follow-up reasoning in this library.
 license: MIT
 ---
 
-# Geometry lesson generation
+# Geometry: decide what the givens justify
 
-Read and apply [homework-teach](../homework-teach/SKILL.md). Select its Geometry branch, preserve existing geometry assets and URLs, and apply its privacy, no-answer, source, glossary, review, and publication requirements. This repository-discoverable entry point preserves the familiar geometry invocation while the complete shared workflow lives in homework-teach.
+Read [homework-teach](../homework-teach/SKILL.md) for the shared privacy, routing, lesson, review, and delivery contract. This skill supplies geometry decisions. Keep the subject `Geometry`, existing URLs, and compatible shared assets.
+
+## Translate the demand, privately
+
+Visually inspect every supplied figure, including angle arcs, tick marks, parallel arrows, right-angle boxes, orientation, units, and the order of named vertices. Separate stated givens from apparent measurements. Handwriting is neither proof nor permission to confirm an answer. If an essential mark is unreadable, ask about that mark instead of inferring it.
+
+Map the underlying demands to the teaching: matching parts; selecting a theorem and checking its conditions; computing or comparing a quantity; interpreting a diagram; and justifying a claim. Include only relevant demands. For each, plan an original worked example or explanation followed by a new transfer check. A topic mention is not coverage. Keep the map and assignment comparisons private. Change configurations, representation, question direction, and context as well as values.
+
+Offer an optional prerequisite check before formal notation. Explain each symbol on first use, including angle names, similarity/congruence signs, ratios, variables, and units. A learner who cannot yet compare a pair of lengths should have a short numerical bridge before a chain of proportions.
+
+## Make the evidence visible
+
+Use computed coordinates for accurate diagrams. Mark the givens explicitly and label a schematic as schematic. The picture's orientation, apparent size, or visual symmetry does not establish a theorem condition. Match an edge by both endpoints; use one correspondence consistently in angle statements and ratios. A turn or reflection may change position without changing which parts correspond.
+
+Choose a visual that exposes the key decision: a rotated figure for correspondence, an allowed example and counterexample for a claim, or a dimension model for scaling. Pair it with a text equivalent containing the same givens and relationship. Verify geometry, labels, descriptions, formulas, and interaction states agree at every endpoint and at one intermediate state. Test SVG label legibility at its rendered mobile size, not only in the source viewBox.
+
+## Similarity and dimensional reasoning
+
+When similarity is relevant:
+
+- Establish that the figures are similar before using one uniform factor. For general polygons, corresponding angles and side ratios both matter; use a triangle shortcut only when its hypotheses are given.
+- Name the comparison direction before calculating: target divided by original. Keep the direction and units consistent across every ratio; reverse with the reciprocal.
+- Separate invariants from scaled quantities: angle measures remain equal; lengths and perimeter use the length factor; area uses its square. Explain perimeter by adding scaled sides, and area by combining two scaled lengths. An equal-side enlargement alone does not change an angle.
+- Connect ratios to actual quantities. A factor is unitless; a new perimeter needs the original perimeter, and a new area needs the original area. Include a fresh nonrectangular transfer when the explanation uses rectangles, and include a reduction when enlargement is the starting model.
+- Give a purposeful prediction, observation, and explanation prompt around the manipulative. Keep any sentence about the current state synchronized with the controls, or label it explicitly as a fixed worked state. Preserve reset, pause, reduced motion, and a useful static example.
+
+For universal claims, teach the burden of evidence: a reason covering all allowed cases for always; one allowed case in each direction for sometimes; a contradiction for every allowed case for never. Use a genuinely separate geometric claim for practice, with feedback on why evidence is sufficient. Avoid a general fact that would itself classify an assigned case.
+
+## Return the decision to the learner
+
+After a worked example, change the representation or requested quantity. Start feedback with the reasoning the learner should revisit, and permit a retry. Include mixed practice that requires selecting the relationship rather than merely substituting into the displayed formula. Support an exit explanation with a self-check of evidence, direction, units, and whether the result should be larger or smaller. Automatic checking of a fresh numerical result does not grade a free-text explanation or establish mastery.
+
+Complete the shared semantic and browser review. In geometry, explicitly inspect correspondence, theorem hypotheses, angle invariance, units and dimensional powers, measurement plausibility, and diagram/text agreement. Include imported model modules among the dependency hashes. A reusable skill improvement is complete when a fresh lesson or meaningful revision demonstrates the changed teaching behavior; do not treat wording changes alone as validation.

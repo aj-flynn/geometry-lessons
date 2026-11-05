@@ -47,13 +47,15 @@ Use globally unique sequential names `lessons/NNNN-concept-name.html`. The libra
 }
 ```
 
-`subject` is `Geometry`, `Science`, or `English`. Version 2 requires `accuracy` for every subject. Existing version-1 geometry records with `math` remain readable for compatibility; new work uses version 2. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update the hash and repeat affected review when its HTML changes.
+`subject` is an exact registered label from the library's `subjects.json`. Current skills include Geometry, Science, Chemistry, and English; new subjects are added through the [new-subject workflow](new-subject.md). Version 2 requires `accuracy` for every subject. Existing version-1 geometry records with `math` and version-2 Science records remain readable for compatibility; new work uses version 2. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update the hash and repeat affected review when its HTML changes.
 
 For English, verify definitions, grammar, paraphrases, and evidence-to-claim reasoning. Distinguish plausible interpretation from established fact. Use wholly original, unrelated characters and situations; do not reproduce, translate, or answer an assigned passage. A reading manipulative may change the interpretive lens while keeping the words fixed. Keep a readable static explanation.
 
 Run `node scripts/build-index.mjs`, `node scripts/check.mjs`, and `node --test tests/*.test.mjs`. The checker verifies schema, glossary presence for version 2, index consistency, file hashes, the required labeled library anchor, local links, and common unsafe file/network/storage patterns. It cannot prove privacy, no-answer compliance, scientific validity, or reading level.
 
 ## Publish and return
+
+For lesson generation and subject-skill testing, apply [independent refinement](independent-refinement.md) before claiming completion. Publish independently improved intermediate lessons and skills under that workflow; final completion requires Astra and Opus each at 100 on the same candidate.
 
 Inspect current changes and stage only explicit reviewed paths. Use the existing authorized GitHub connection and current branch head; preserve unrelated work. For current maintenance, publish the lesson, manifest, root index, and changed assets together to `aj-flynn/geometry-lessons`, `main`. For a separately authorized incoming library, recheck its private mapping and publish only to its configured repository and branch; keep indexes independent. Pages uses `/ (root)` with `.nojekyll`. Verify the exact live page and the subject-grouped index, not just the commit. Report pending builds or blocked actions accurately.
 

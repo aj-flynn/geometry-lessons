@@ -1,0 +1,22 @@
+[
+  {
+    "id": "geometry",
+    "label": "Geometry",
+    "skill": ".agents/skills/geometry-teach/SKILL.md"
+  },
+  {
+    "id": "science",
+    "label": "Science",
+    "skill": ".agents/skills/science-teach/SKILL.md"
+  },
+  {
+    "id": "chemistry",
+    "label": "Chemistry",
+    "skill": ".agents/skills/chemistry-teach/SKILL.md"
+  },
+  {
+    "id": "english",
+    "label": "English",
+    "skill": ".agents/skills/english-teach/SKILL.md"
+  }
+]

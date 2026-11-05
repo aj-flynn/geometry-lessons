@@ -10,7 +10,9 @@ Open this repository in Codex and use `$homework-teach` with an assignment suppl
 
 > Teach the concepts in this attachment with different examples. Include a glossary, diagrams, and interactive practice. Do not answer or confirm the assigned work. Publish the reviewed lesson to the authorized library and return its verified link.
 
-The [homework-teach skill](.agents/skills/homework-teach/SKILL.md) owns input reading, teaching, and follow-up. Its [lesson workflow](.agents/skills/homework-teach/references/lesson-workflow.md) owns review, metadata, and publication. `$geometry-teach` remains an alias for geometry requests.
+The [homework-teach skill](.agents/skills/homework-teach/SKILL.md) identifies the subject and loads its teaching skill from `subjects.json`. An unknown subject gets a new reusable skill before lesson generation. Geometry, Chemistry, English, and general Science have their own guidance. The shared [lesson workflow](.agents/skills/homework-teach/references/lesson-workflow.md) owns review, metadata, and publication.
+
+The [independent refinement loop](.agents/skills/homework-teach/references/independent-refinement.md) tests lessons and skills with fresh Astra reviews to 100/100, then Claude Code Opus 5.5 at high effort to 100/100. Improved lesson and skill revisions are published throughout; final completion requires both reviewers on the same candidate. This maintenance work uses the existing library. Future email libraries retain the separate private routing rules; public indexes contain no email addresses.
 
 Photos, PDFs, Word documents, and text stay outside this public checkout, including ignored folders and Git history. Read diagrams visually; the DOCX helper assists text inspection only. Publish original explanations and examples, never source assignments, identifying details, private learner records, or assigned answers. Answer keys, graded-work completion, student profiles, analytics, public uploads, and inbox automation setup are outside this project's scope.
 

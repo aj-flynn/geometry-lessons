@@ -1,13 +1,44 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
-export const subjects = Object.freeze(['Geometry', 'Science', 'English']);
 export const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const subjectOf = lesson => lesson.subject ?? 'Geometry';
 
-export function validateManifest(manifest) {
+export function validateSubjectRegistry(registry) {
+  if (!Array.isArray(registry) || !registry.length) throw new Error('Supply a nonempty subject registry.');
+  const ids = new Set();
+  const labels = new Set();
+  for (const entry of registry) {
+    const { id, label, skill } = entry ?? {};
+    if (typeof id !== 'string' || !/^[a-z]+(?:-[a-z0-9]+)*$/.test(id) || id !== id.trim() || id === 'homework') {
+      throw new Error('Supply a valid subject ID using lowercase letters and hyphen-separated words.');
+    }
+    if (typeof label !== 'string' || label.length > 60 || !/^\p{L}[\p{L}\p{M}\p{N} &'’-]*$/u.test(label) || label !== label.trim()) {
+      throw new Error('Supply a short subject label.');
+    }
+    if (skill !== `.agents/skills/${id}-teach/SKILL.md`) throw new Error(`Invalid skill path for subject ${id}.`);
+    const labelKey = label.normalize('NFC').toLowerCase();
+    if (ids.has(id) || labels.has(labelKey)) throw new Error('Subject IDs and labels must be unique.');
+    ids.add(id);
+    labels.add(labelKey);
+  }
+  return registry;
+}
+
+export function loadSubjectRegistry(base = root) {
+  const file = resolve(base, 'subjects.json');
+  // Older standalone fixture trees can use the registry bundled with the scripts.
+  const source = resolve(base) === resolve(root) || existsSync(file) ? file : resolve(root, 'subjects.json');
+  return validateSubjectRegistry(JSON.parse(readFileSync(source, 'utf8')));
+}
+
+const defaultRegistry = Object.freeze(loadSubjectRegistry().map(entry => Object.freeze(entry)));
+export const subjects = Object.freeze(defaultRegistry.map(({ label }) => label));
+
+export function validateManifest(manifest, registry = defaultRegistry) {
+  const labels = validateSubjectRegistry(registry).map(({ label }) => label);
   if (![1,2].includes(manifest.version) || !Array.isArray(manifest.lessons)) throw new Error('Unsupported lesson manifest.');
   const seen = new Set();
   for (const lesson of manifest.lessons) {
@@ -15,7 +46,7 @@ export function validateManifest(manifest) {
     const number = lesson.file.slice(0, 4);
     if (seen.has(number)) throw new Error('Lesson identifiers must be unique.');
     seen.add(number);
-    if ((manifest.version === 2 && !lesson.subject) || !subjects.includes(subjectOf(lesson))) throw new Error('Supply a supported lesson subject: Geometry, Science, or English.');
+    if ((manifest.version === 2 && !lesson.subject) || !labels.includes(subjectOf(lesson))) throw new Error(`Supply a supported lesson subject from subjects.json (${labels.join(', ')}).`);
     if (manifest.version === 1 && subjectOf(lesson) !== 'Geometry') throw new Error('Non-geometry lessons require manifest version 2.');
     if (typeof lesson.title !== 'string' || !lesson.title.trim() || lesson.title.length > 85) throw new Error('Supply a short public lesson title.');
     if (typeof lesson.summary !== 'string' || !lesson.summary.trim() || lesson.summary.length > 260) throw new Error('Supply a short public lesson summary.');
@@ -29,23 +60,23 @@ export function validateManifest(manifest) {
   return manifest;
 }
 
-export function renderIndex(manifest, template) {
-  validateManifest(manifest);
+export function renderIndex(manifest, template, registry = defaultRegistry) {
+  validateManifest(manifest, registry);
   const count = manifest.lessons.length;
-  const content = subjects.map(subject => {
-    const lessons = manifest.lessons.filter(lesson=>subjectOf(lesson)===subject).sort((a,b)=>b.file.localeCompare(a.file));
-    const id = 'subject-'+subject.toLowerCase();
-    const entries = lessons.length ? `<ul class="lesson-list">\n${lessons.map(lesson => `        <li><a class="lesson-link" href="lessons/${escape(lesson.file)}"><div><h4>${escape(lesson.title)}</h4><span class="topic-line">${lesson.topics.map(escape).join(' · ')}</span></div><p>${escape(lesson.summary)} <span aria-hidden="true">↗</span></p></a></li>`).join('\n')}\n      </ul>` : `<p class="subject-empty">No ${subject.toLowerCase()} lessons yet. A concept lesson will appear here when one is added.</p>`;
-    return `<section class="subject-group" aria-labelledby="${id}"><div class="subject-heading"><h3 id="${id}">${subject}</h3><p>${lessons.length} ${lessons.length===1?'lesson':'lessons'}</p></div>${entries}</section>`;
+  const content = registry.map(({ id, label }) => {
+    const lessons = manifest.lessons.filter(lesson=>subjectOf(lesson)===label).sort((a,b)=>b.file.localeCompare(a.file));
+    const headingId = 'subject-'+id;
+    const entries = lessons.length ? `<ul class="lesson-list">\n${lessons.map(lesson => `        <li><a class="lesson-link" href="lessons/${escape(lesson.file)}"><div><h4>${escape(lesson.title)}</h4><span class="topic-line">${lesson.topics.map(escape).join(' · ')}</span></div><p>${escape(lesson.summary)} <span aria-hidden="true">↗</span></p></a></li>`).join('\n')}\n      </ul>` : `<p class="subject-empty">No ${escape(label.toLowerCase())} lessons yet. A concept lesson will appear here when one is added.</p>`;
+    return `<section class="subject-group" aria-labelledby="${headingId}"><div class="subject-heading"><h3 id="${headingId}">${escape(label)}</h3><p>${lessons.length} ${lessons.length===1?'lesson':'lessons'}</p></div>${entries}</section>`;
   }).join('\n      ');
-  return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`).replace('{{LESSONS}}', content);
+  return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`).replace('{{LESSONS}}', () => content);
 }
 
-export function generateIndex(base = root) {
-  return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'));
+export function generateIndex(base = root, registry = loadSubjectRegistry(base)) {
+  return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'), registry);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   writeFileSync(resolve(root,'index.html'), generateIndex());
-  console.log('Updated root index.html from lessons.json.');
+  console.log('Updated root index.html from lessons.json and subjects.json.');
 }

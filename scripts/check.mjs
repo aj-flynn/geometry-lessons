@@ -1,9 +1,9 @@
-import { readFileSync, readdirSync, lstatSync, existsSync } from 'node:fs';
-import { resolve, relative, extname, dirname } from 'node:path';
+import { readFileSync, readdirSync, lstatSync, existsSync, realpathSync } from 'node:fs';
+import { resolve, relative, extname, dirname, isAbsolute, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { root, generateIndex, validateManifest } from './build-index.mjs';
+import { root, generateIndex, loadSubjectRegistry, validateManifest } from './build-index.mjs';
 
 export function inspectPublicCode(source, name) {
   const findings = [];
@@ -34,10 +34,54 @@ export function hasLibraryLink(html) {
   });
 }
 
+const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
+
+function inspectSkillFiles(base, registry, candidates, skillFolders) {
+  const errors = [];
+  const entries = new Map([[sharedSkill, 'homework-teach'], ...registry.map(({ id, skill }) => [skill, `${id}-teach`])]);
+  const files = new Set(candidates);
+  const realBase = realpathSync(base);
+  const publishableFile = name => {
+    const target = resolve(base, name);
+    return files.has(name) && existsSync(target) && lstatSync(target).isFile()
+      && realpathSync(target) === resolve(realBase, name);
+  };
+  for (const name of entries.keys()) {
+    if (!publishableFile(name)) errors.push(`Missing publishable skill file: ${name}`);
+  }
+  for (const name of files) {
+    if (!name.endsWith('.md') || !skillFolders.some(folder => name.startsWith(folder)) || !publishableFile(name)) continue;
+    const text = readFileSync(resolve(base, name), 'utf8');
+    const expectedName = entries.get(name);
+    const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+    const skillName = frontmatter?.match(/^name:[ \t]*([^\r\n]+)$/m)?.[1].trim();
+    if (expectedName && skillName !== expectedName) errors.push(`${name}: expected frontmatter name ${expectedName}.`);
+
+    let linksSharedSkill = false;
+    const body = text.replace(/<!--[\s\S]*?-->/g, '');
+    for (const [, angle, plain] of body.matchAll(/\]\(\s*(?:<([^>]+)>|([^\s)]+))(?:\s+(?:"[^"]*"|'[^']*'))?\s*\)/g)) {
+      const url = angle ?? plain;
+      if (/^(?:https?:\/\/|mailto:|#)/i.test(url)) continue;
+      const path = url.split(/[?#]/, 1)[0];
+      const target = relative(base, resolve(base, dirname(name), path)).split(sep).join('/');
+      if (!path || isAbsolute(path) || /[:\\%]/.test(path) || target.startsWith('../') || !publishableFile(target)) {
+        errors.push(`${name}: invalid local skill link ${url}`);
+      } else if (target === sharedSkill) {
+        linksSharedSkill = true;
+      }
+    }
+    if (expectedName && name !== sharedSkill && !linksSharedSkill) {
+      errors.push(`${name}: needs a link to the shared homework-teach contract.`);
+    }
+  }
+  return errors;
+}
+
 export function check(base = root) {
   const errors = [];
-  const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')));
-  if (readFileSync(resolve(base,'index.html'),'utf8') !== generateIndex(base)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
+  const registry = loadSubjectRegistry(base);
+  const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
+  if (readFileSync(resolve(base,'index.html'),'utf8') !== generateIndex(base, registry)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
@@ -91,9 +135,11 @@ export function check(base = root) {
     });
     candidates = walk(base);
   }
-  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','lessons.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
+  if (existsSync(resolve(base, 'subjects.json'))) errors.push(...inspectSkillFiles(base, registry, candidates, allowedSkillFolders));
   for (const file of candidates) {
-    if (!allowedRoots.has(file) && !/^(?:assets|lessons|reference|templates|scripts|skills\/(?:geometry-teach|homework-teach)|\.agents\/skills\/(?:geometry-teach|homework-teach)|tests|docs)\//.test(file)) errors.push(`Unexpected public repository path: ${file}`);
+    if (!allowedRoots.has(file) && !/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(file) && !allowedSkillFolders.some(folder => file.startsWith(folder))) errors.push(`Unexpected public repository path: ${file}`);
     if (!/\.(?:html|css|js|mjs|json|md|txt|py)$/.test(file) && !allowedRoots.has(file)) errors.push(`Unsafe repository file type: ${file}`);
     if (existsSync(resolve(base,file)) && lstatSync(resolve(base,file)).isSymbolicLink()) errors.push(`Symlink is not publishable: ${file}`);
   }

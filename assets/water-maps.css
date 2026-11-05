@@ -1,0 +1,34 @@
+.lesson .basin {padding: 12px}
+.basin figcaption {margin: 0 0 8px}
+.basin svg {background: #fff}
+.basin .grid-lines {fill: none; stroke: #142924; stroke-opacity: .45; stroke-width: .65; stroke-dasharray: 2 2}
+.basin .contours {fill: none; stroke: #fff; stroke-opacity: .85; stroke-width: 1.25}
+.basin .zero-contour {stroke: #222; stroke-opacity: 1; stroke-width: 1.1}
+.basin .landmarks {display: flex; flex-wrap: wrap; column-gap: 2.4em; margin: 12px 0; padding-inline-start: 1.6em}
+.lesson .text-map {padding: 6px 8px; margin-bottom: 0}
+.text-map table {border-collapse: collapse; width: 100%; table-layout: fixed}
+.text-map caption {text-align: start; margin-bottom: .4em}
+.text-map th, .text-map td {text-align: center; border: 1px solid #767676; padding-block: .25em}
+.lesson .practice {margin-block: 1.25em}
+.practice form label {display: block}
+.practice form button {margin-block: 8px}
+.model-tests {padding-inline-start: 1.2em}
+@media (max-width: 480px) {
+  .lesson .basin {padding: 5px}
+  .basin figcaption, .basin .landmarks {padding-inline-end: 5px}
+  .text-map table {font-size: .94em}
+}
+@media print {
+  @page {margin: 12mm}
+  body {font-size: 11pt; line-height: 1.28}
+  .lesson section {margin-top: 15px}
+  :focus-visible {outline: none !important}
+  .lesson p {margin-block: .4em}
+  .lesson h2, .lesson h3 {break-after: avoid; margin-block-end: .3em}
+  .lesson .basin {margin-block: .6em; print-color-adjust: exact}
+  .lesson .basin svg {width: 320px; max-height: none; margin-inline: auto}
+  .lesson details {padding-block: .25em; margin-block: .35em}
+  .lesson summary {min-height: 0; padding-block: .25em}
+  .text-map th, .text-map td {padding-block: 0}
+  .lesson .practice {padding: 6px; margin-block: .6em}
+}

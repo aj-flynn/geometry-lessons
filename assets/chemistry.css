@@ -41,7 +41,7 @@
 .chemistry svg .diagram-note{display:none}
 .chemistry table{border-collapse:collapse;width:100%;max-width:650px;background:#e5eeee}
 .chemistry caption{text-align:left;font-weight:bold;padding-bottom:12px}
-.chemistry th,.chemistry td{text-align:left;padding:12px 16px;border-bottom:2px solid #fff}
+.chemistry th,.chemistry td{text-align:left;overflow-wrap:anywhere;padding:12px 16px;border-bottom:2px solid #fff}
 .chemistry th{background:#d4e8e8}
 .chemistry .callout{background:#d4e8e8}
 .chemistry fieldset{border:0;background:#e5eeee}

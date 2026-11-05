@@ -4,300 +4,199 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Learn to balance chemical equations by following linked atom counts and checking each element.">
-  <title>Balance reactions with an atom ledger</title>
-  <link rel="stylesheet" href="../../../assets/site.css">
-  <link rel="stylesheet" href="../../../assets/atom-ledger.css">
-  <script src="../../../assets/atom-ledger.js" defer></script>
+  <meta name="description" content="Track atoms across an equation and choose which coefficient to adjust.">
+  <title>Balance a chemical equation</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/balancing.css">
+  <script src="../../../assets/chemistry.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/balancing.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson">
+  <main id="main" class="lesson chemistry balancing">
     <a class="return-link" href="../index.html">← Lesson library</a>
-    <h1>Balance reactions with an atom ledger</h1>
-    <p class="lead">Choose which atom count to start with, then track what each change does to the rest of the equation.</p>
-    <p>Before you start, read <span class="formula">3 CO<sub>2</sub></span> aloud. Which number counts molecules, and which counts O atoms in each molecule? Check your reading in the first section.</p>
-    <ul class="jump-links">
-      <li><a href="#ledger">Read the atom ledger</a></li>
-      <li><a href="#multiples">Match the packs</a></li>
-      <li><a href="#groups">Follow atoms through groups</a></li>
-      <li><a href="#linked">Solve linked counts</a></li>
-      <li><a href="#glossary">Glossary and state symbols</a></li>
-    </ul>
+    <header>
+      <p class="eyebrow">Chemistry · Reactions</p>
+      <h1>Balance a chemical equation</h1>
+      <p class="lead">Count the atoms. Choose a number to change. Check what else moves with it.</p>
+    </header>
+    <aside class="callout" aria-label="Before you start">
+      <p>Which formula shows two oxygen atoms in one molecule, CO or CO<sub>2</sub>? Say how you know, then read the next line.</p>
+    </aside>
+    <p>The <a href="#term-subscript">subscript</a>, a small number after a symbol, makes CO<sub>2</sub> a group of one C and two O atoms. A symbol without a subscript counts once. See the <a href="#glossary">glossary</a> for other notation.</p>
 
-    <section aria-labelledby="ledger">
-      <h2 id="ledger">Read the atom ledger</h2>
-      <p>A <strong>coefficient</strong> is the number in front of a formula. It multiplies the whole formula. A <strong>subscript</strong> is the small number in a formula. It helps specify the composition of the substance. An unwritten coefficient or subscript counts as 1. In <span class="formula">3 CO<sub>2</sub></span>, three molecules contribute 3 × 2 = 6 oxygen atoms and 3 × 1 = 3 carbon atoms. The counts here are atoms, grouped by element.</p>
-      <p>The arrow points from <strong>reactants</strong>, the substances used, to <strong>products</strong>, the substances formed. Keep the formulas fixed when you balance a supplied <strong>skeleton equation</strong>, which lists the reactants and products before the quantities are settled. Track each element on its own row in an <strong>atom ledger</strong>, a table of left and right atom counts. The state symbol (g) means gas. Other <a href="#states">state symbols</a> are listed below.</p>
-      <p class="equation"><span class="formula">2 O<sub>3</sub>(g)</span> → <span class="formula">3 O<sub>2</sub>(g)</span></p>
+    <section aria-labelledby="inventory">
+      <h2 id="inventory">Follow the atoms</h2>
+      <p>The arrow runs from <a href="#term-reactant">reactants</a>, the starting substances, to <a href="#term-product">products</a>, the substances made. Here all three substances are gases, shown by <a href="#term-state">(g)</a>.</p>
+      <p class="equation"><span>CO(g)</span> + <span>O<sub>2</sub>(g)</span> → <span>CO<sub>2</sub>(g)</span></p>
+      <p>Read the blank spaces in front as ones. With one molecule of each, the left has three O atoms and the right shows two. Which picture would account for the extra O?</p>
       <figure>
-        <div class="model-panels">
-          <div class="model-panel"><h3>Reactants · 2 O<sub>3</sub></h3><svg viewBox="0 0 220 78" role="img" aria-labelledby="ozone-title ozone-desc">
- <title id="ozone-title">Two ozone molecules</title>
- <desc id="ozone-desc">Each cluster has three labeled oxygen atoms. Six oxygen atoms in total.</desc>
- <g stroke="#1c4d36" stroke-width="2" fill="#f5f9f6"><rect x="29" y="6" width="58" height="63" rx="11"/><rect x="134" y="6" width="58" height="63" rx="11"/></g>
- <g fill="#e2eae2" stroke="#1c4d36" stroke-width="1.4"><circle cx="58" cy="24" r="12"/><text x="58" y="28.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="46" cy="48" r="12"/><text x="46" y="52.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="70" cy="48" r="12"/><text x="70" y="52.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="163" cy="24" r="12"/><text x="163" y="28.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="151" cy="48" r="12"/><text x="151" y="52.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="175" cy="48" r="12"/><text x="175" y="52.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text></g>
- </svg></div>
-          <div class="model-panel"><h3>Products · 3 O<sub>2</sub></h3><svg viewBox="0 0 220 78" role="img" aria-labelledby="oxygen-title oxygen-desc">
- <title id="oxygen-title">Three oxygen molecules</title>
- <desc id="oxygen-desc">Each pair has two labeled oxygen atoms. Six oxygen atoms in total.</desc>
- <g stroke="#1c4d36" stroke-width="2" fill="#f5f9f6"><rect x="4" y="21" width="56" height="41" rx="11"/><rect x="82" y="21" width="56" height="41" rx="11"/><rect x="160" y="21" width="56" height="41" rx="11"/></g>
- <g fill="#e2eae2" stroke="#1c4d36" stroke-width="1.4"><circle cx="19" cy="41" r="12"/><text x="19" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="45" cy="41" r="12"/><text x="45" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="97" cy="41" r="12"/><text x="97" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="123" cy="41" r="12"/><text x="123" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="175" cy="41" r="12"/><text x="175" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text><circle cx="201" cy="41" r="12"/><text x="201" y="45.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d2a1c" stroke="none">O</text></g>
- </svg></div>
-        </div>
-        <figcaption>Each circle is an O atom and each box is one molecule. Two boxes of three and three boxes of two each account for six O atoms. The diagram shows composition and grouping. Distances, shapes and the path the reaction takes are outside this model.</figcaption>
+        <svg viewBox="0 0 440 158" role="img" aria-labelledby="picture-title picture-desc">
+          <title id="picture-title">A trial inventory for carbon monoxide and oxygen</title>
+          <desc id="picture-desc">The left side has a carbon-oxygen pair and an oxygen-oxygen pair. The right has one group with two oxygen atoms around one carbon atom. The trial accounts for one carbon on each side and three oxygen atoms on the left versus two on the right.</desc>
+          <g class="packets">
+            <rect x="5" y="42" width="91" height="51" rx="9"/>
+            <rect x="109" y="42" width="91" height="51" rx="9"/>
+            <rect x="276" y="42" width="143" height="51" rx="9"/>
+          </g>
+          <g class="marks">
+            <circle class="carbon" cx="29" cy="67" r="19"/><circle cx="71" cy="67" r="19"/>
+            <circle cx="133" cy="67" r="19"/><circle cx="175" cy="67" r="19"/>
+            <circle cx="302" cy="67" r="19"/><circle class="carbon" cx="347" cy="67" r="19"/><circle cx="392" cy="67" r="19"/>
+          </g>
+          <g text-anchor="middle" class="mark-labels">
+            <text x="29" y="75">C</text><text x="71" y="75">O</text>
+            <text x="133" y="75">O</text><text x="175" y="75">O</text>
+            <text x="302" y="75">O</text><text x="347" y="75">C</text><text x="392" y="75">O</text>
+            <text x="50" y="128">CO</text><text x="155" y="128">O₂</text><text x="347" y="128">CO₂</text>
+            <text x="237" y="75">→</text>
+          </g>
+        </svg>
+        <figcaption>One C appears on each side. Three O atoms enter this trial and only two are shown leaving. Boxes group atoms by molecule. The marks show counts, with size, spacing and bonds left out of the model.</figcaption>
       </figure>
-      <p>Predict before testing. If the right side changes from three O<sub>2</sub> molecules to four while the left stays fixed, which side will show an oxygen surplus? Would replacing O<sub>2</sub> with O<sub>3</sub> keep the same product?</p>
-      <div class="practice count-test" data-count-explorer>
-        <label for="oxygen-count">Right-side O<sub>2</sub> molecules</label>
-        <select id="oxygen-count"><option>2</option><option selected>3</option><option>4</option></select>
-        <div class="controls"><button type="button">Compare counts</button><button type="button">Reset</button></div>
-        <output class="audit" aria-live="polite"></output>
-      </div>
-      <details class="count-comparison"><summary>Compare the predictions</summary><p>Two molecules give 4 O atoms, three give 6, and four give 8. The left keeps 6. At four molecules the right has two O atoms beyond what the reactants supply. O<sub>3</sub> would specify ozone in place of oxygen gas.</p></details>
-      <p>Try again with two O<sub>2</sub> molecules. Say what changes and what stays fixed. Replacing O<sub>2</sub> with O<sub>3</sub> would specify a different product.</p>
+      <p>Change a <a href="#term-coefficient">coefficient</a>, the number of copies of the whole formula. A reaction can regroup the original atoms. Changing CO<sub>2</sub> to CO<sub>3</sub> would change the substance you were given.</p>
 
-      <h3>Audit a reaction report</h3>
-      <p>A report for a gas reaction shows seven atoms on each side. Can the reported amounts come from these reactants alone? Write separate C, N and O rows and point to the evidence for your decision.</p>
-      <p class="equation"><span class="formula">2 CO(g)</span> + <span class="formula">NO<sub>2</sub>(g)</span> → <span class="formula">CO<sub>2</sub>(g)</span> + <span class="formula">2 NO(g)</span></p>
-      <details><summary>Compare the audit</summary>
-        <table>
-  <caption>Report as written (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">C</th><td>2</td><td>1</td></tr><tr><th scope="row">N</th><td>1</td><td>2</td></tr><tr><th scope="row">O</th><td>4</td><td>4</td></tr></tbody>
-</table>
-        <p>The report calls for an additional N atom and leaves a C atom unaccounted for. Seven is the sum of three rows, so a surplus and a deficit can cancel in the sum. When checking a proposed equation for an ordinary chemical reaction, use the amounts represented for each element to see which atoms would be missing from the accounting. A correct count still needs chemical evidence for the identities of the substances.</p>
-        <p>Retry with one molecule of each gas. The left then has one C, one N and three O atoms. Predict the three right-side counts before comparing.</p>
-        <details><summary>Compare the retry</summary><p>The right also has one C, one N and three O atoms. Transfer of one O atom from each nitrogen dioxide molecule to one carbon monoxide molecule fits the revised ledger.</p></details>
-      </details>
+      <div class="workbench">
+        <h3>Predict, then change one coefficient</h3>
+        <p>Predict the right-side C and O counts if CO<sub>2</sub> goes from one copy to two. Which element would then need more on the left?</p>
+        <div data-inventory hidden>
+          <p class="equation" aria-label="Current trial">
+            <span><b data-factor>1</b> CO(g)</span> + <span><b data-factor>1</b> O<sub>2</sub>(g)</span> → <span><b data-factor>1</b> CO<sub>2</sub>(g)</span>
+          </p>
+          <p data-totals role="status" aria-live="polite"></p>
+          <div class="controls">
+            <button type="button" data-increase>Add one CO</button>
+            <button type="button" data-increase>Add one O₂</button>
+            <button type="button" data-increase>Add one CO₂</button>
+            <button type="button" data-reset>Reset to ones</button>
+          </div>
+        </div>
+        <details class="model-fallback">
+          <summary>Compare your prediction</summary>
+          <p>Trial 1 CO(g) + 1 O<sub>2</sub>(g) → 2 CO<sub>2</sub>(g) shows 2 C and 4 O atoms on the right. The left still shows 1 C and 3 O atoms. Try changing just the left CO count next.</p>
+        </details>
+      </div>
+      <ol class="worked">
+        <li><strong>Trial</strong> <span class="equation"><span>CO(g)</span> + <span>O<sub>2</sub>(g)</span> → <span>2 CO<sub>2</sub>(g)</span></span>. Doubling the right side gives 2 C and 4 O atoms there.</li>
+        <li>Double CO on the left to bring C to 2 there too. The left now has 2 O from CO plus 2 O from O<sub>2</sub>, or 4 O atoms. See the complete line below.</li>
+        <li><strong>Final</strong> <span class="equation"><span>2 CO(g)</span> + <span>O<sub>2</sub>(g)</span> → <span>2 CO<sub>2</sub>(g)</span></span>. The C and O rows match. Each written substance is neutral, so the total charge is zero on each side. The coefficient of 1 means there is no common whole-number divisor greater than one.</li>
+      </ol>
+      <p>In your own words, compare the one-copy picture with the final inventory. Which could describe where all the oxygen atoms went, and what would be missing from the other picture?</p>
+      <div class="checkpoint">
+        <h3>Check a different trial</h3>
+        <p class="equation"><span>NH<sub>3</sub>(g)</span> → <span>N<sub>2</sub>(g)</span> + <span>H<sub>2</sub>(g)</span></p>
+        <form data-chem-choice>
+          <fieldset>
+            <legend>What is the total number of H atoms on the left after changing NH₃ to two copies?</legend>
+            <label class="option"><input type="radio" name="h-count" data-explanation="Two counts the copies. Each copy contains three H atoms. Multiply and try again.">2 H atoms</label>
+            <label class="option"><input type="radio" name="h-count" data-explanation="Three counts H in just one copy. Include both copies and try again.">3 H atoms</label>
+            <label class="option"><input type="radio" name="h-count" data-explanation="Yes. Two copies carry three H atoms each. Check nitrogen next. Two NH₃ molecules carry two N atoms.">6 H atoms</label>
+            <button type="submit" disabled>Check the count</button>
+            <p class="feedback" role="status" aria-live="polite"></p>
+          </fieldset>
+        </form>
+        <details class="static-feedback"><summary>Compare your count</summary><p>Two NH<sub>3</sub> molecules contain 2 × 3 = 6 H atoms and 2 × 1 = 2 N atoms. Two counts the copies. Three counts H in one copy.</p></details>
+        <p>Retry with four NH<sub>3</sub> molecules. Count H and N separately.</p>
+        <details><summary>Compare the retry</summary><p>4 × 3 = 12 H atoms and 4 × 1 = 4 N atoms.</p></details>
+      </div>
     </section>
 
-    <section aria-labelledby="multiples">
-      <h2 id="multiples">Match the packs</h2>
-      <p>Start with an element that occurs in one term per side. A term is one formula and its coefficient. If one count is a multiple of the other, the larger pack gives you a trial total. If neither count divides the other, use a <strong>common multiple</strong>, a number both pack sizes divide into evenly.</p>
-      <div class="example">
-        <h3>One pack size fits inside the other</h3>
-        <p>Given lithium metal and fluorine gas forming solid lithium fluoride, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">Li(s)</span> + <span class="formula">F<sub>2</sub>(g)</span> → <span class="formula">LiF(s)</span></p>
-        <ol class="method">
-          <li>Fluorine comes in pairs on the left and one F per formula unit on the right. For one F<sub>2</sub> molecule use two LiF formula units. A <strong>formula unit</strong> represents the simplest composition ratio of an ionic solid. Here that ratio is one Li to one F.</li>
-          <li>Two LiF units require two Li atoms. Write 2 in front of Li.</li>
-        </ol>
-        <p class="equation"><span class="formula">2 Li(s)</span> + <span class="formula">F<sub>2</sub>(g)</span> → <span class="formula">2 LiF(s)</span></p>
-        <table>
-  <caption>Lithium fluoride check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">Li</th><td>2</td><td>2</td></tr><tr><th scope="row">F</th><td>2</td><td>2</td></tr></tbody>
-</table>
+    <section aria-labelledby="strategy">
+      <h2 id="strategy">Pick a starting point</h2>
+      <p>Start with a symbol that appears in just one formula on each side. If the same group stays together, you can count the group first. Save a symbol shared by several formulas for a later pass.</p>
+      <p class="equation"><span>Al(OH)<sub>3</sub>(s)</span> + <span>H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>H<sub>2</sub>O(l)</span></p>
+      <p>In Al(OH)<sub>3</sub>, the 3 applies to both O and H. For a solid such as this, the formula counts a <a href="#term-unit">formula unit</a>, the composition ratio, rather than a separate molecule. Here (s) is solid, (l) is liquid and (aq) means dissolved in water. Read more about <a href="../../../reference/formula-notation.html">formula and state notation</a>.</p>
+      <ol class="worked">
+        <li><strong>Trial</strong> <span class="equation"><span>2 Al(OH)<sub>3</sub>(s)</span> + <span>H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>H<sub>2</sub>O(l)</span></span>. Start with Al. Two left units match the two Al atoms in one product unit.</li>
+        <li><strong>Trial</strong> <span class="equation"><span>2 Al(OH)<sub>3</sub>(s)</span> + <span>3 H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>H<sub>2</sub>O(l)</span></span>. Three acid copies match the three sulfate groups in one product unit.</li>
+        <li>There are now 6 H atoms from the solid and 6 from the acid. Put 6 before H<sub>2</sub>O(l) to match the total of 12 H atoms.</li>
+        <li><strong>Final</strong> <span class="equation"><span>2 Al(OH)<sub>3</sub>(s)</span> + <span>3 H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span>Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span>6 H<sub>2</sub>O(l)</span></span>. Check all elements below, even those you handled as a group.</li>
+      </ol>
+      <table class="atom-table">
+        <caption>Final atom counts</caption>
+        <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Al</th><td>2</td><td>2</td></tr>
+          <tr><th scope="row">S</th><td>3</td><td>3</td></tr>
+          <tr><th scope="row">H</th><td>6 + 6 = 12</td><td>12</td></tr>
+          <tr><th scope="row">O</th><td>6 + 12 = 18</td><td>12 + 6 = 18</td></tr>
+        </tbody>
+      </table>
+      <p>The written formulas are neutral on both sides. The ratio 2, 3, 1, 6 is already in smallest whole numbers. The equation tracks the overall changes. Dissolved substances can contain ions, charged particles, even when written as neutral formulas here.</p>
+      <p><strong>When a group splits</strong>, count its elements separately. If the last element needs an even total but the other trials give an odd count, try doubling all the coefficients you already settled. Then match the last element and recheck every row.</p>
+      <div class="checkpoint">
+        <h3>Test the shortcut</h3>
+        <p class="equation"><span>ZnS(s)</span> + <span>O<sub>2</sub>(g)</span> → <span>ZnO(s)</span> + <span>SO<sub>2</sub>(g)</span></p>
+        <p>Suppose the trial uses one copy of each solid and one of SO<sub>2</sub>. Zinc and sulfur match. Explain why an O<sub>2</sub> coefficient alone cannot finish this trial in whole numbers.</p>
+        <details><summary>Compare your explanation</summary><p>The right shows 1 + 2 = 3 O atoms. The left adds O in pairs. Retry with two copies of each solid and two of SO<sub>2</sub>. Find the new coefficient for O<sub>2</sub>.</p>
+          <details><summary>Compare the retry</summary><p>With 2 ZnS(s) + 3 O<sub>2</sub>(g) → 2 ZnO(s) + 2 SO<sub>2</sub>(g), each side has 2 Zn, 2 S, 6 O and zero net charge. The coefficients have no common factor above one.</p></details>
+        </details>
       </div>
-      <div class="example">
-        <h3>The pack sizes require a new total</h3>
-        <p>Given the gas-phase skeleton for ammonia formation, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">N<sub>2</sub>(g)</span> + <span class="formula">H<sub>2</sub>(g)</span> → <span class="formula">NH<sub>3</sub>(g)</span></p>
-        <ol class="method">
-          <li>H comes in groups of two on the left and three on the right. One NH<sub>3</sub> would ask for an odd H total, which no whole number of H<sub>2</sub> molecules can supply.</li>
-          <li>Use six H atoms, the smallest shared multiple. This calls for three H<sub>2</sub> and two NH<sub>3</sub>.</li>
-          <li>Two NH<sub>3</sub> molecules require two N atoms, so use one N<sub>2</sub> molecule.</li>
-        </ol>
-        <p class="equation"><span class="formula">N<sub>2</sub>(g)</span> + <span class="formula">3 H<sub>2</sub>(g)</span> → <span class="formula">2 NH<sub>3</sub>(g)</span></p>
-        <table>
-  <caption>Ammonia check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">N</th><td>2</td><td>2</td></tr><tr><th scope="row">H</th><td>6</td><td>6</td></tr></tbody>
-</table>
-      </div>
-      <h3>Construct two different ratios</h3>
-      <p>For each skeleton, write the smallest whole-number coefficients. Mark the first row you chose and explain what in that row made it useful. Then audit all rows.</p>
-      <p class="equation"><span class="formula">B<sub>2</sub>O<sub>3</sub>(s)</span> + <span class="formula">Mg(s)</span> → <span class="formula">MgO(s)</span> + <span class="formula">B(s)</span></p>
-      <form class="practice" data-construct data-product-start="2" data-retry="Retry. Keep each formula fixed and trace the row where your first edit changed an additional count.">
-  <fieldset><legend>Positive whole-number coefficients</legend>
-    <div class="coefficients"><label for="boron-0"><span class="formula">B<sub>2</sub>O<sub>3</sub>(s)</span> <input id="boron-0" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"B":2,"O":3}'></label>
-      <label for="boron-1"><span class="formula">Mg(s)</span> <input id="boron-1" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Mg":1}'></label>
-      <label for="boron-2"><span class="formula">MgO(s)</span> <input id="boron-2" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Mg":1,"O":1}'></label>
-      <label for="boron-3"><span class="formula">B(s)</span> <input id="boron-3" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"B":1}'></label></div>
-  </fieldset>
-  <div class="controls"><button type="submit" disabled>Check atom counts</button><button type="reset">Clear and retry</button></div>
-  <output class="audit" aria-live="polite"></output>
-</form>
-      <p class="equation"><span class="formula">N<sub>2</sub>O(g)</span> → <span class="formula">N<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-      <form class="practice" data-construct data-product-start="1" data-retry="Retry. Identify any row that matched with all coefficients set to 1. Recheck it after the edit that fixed a different row.">
-  <fieldset><legend>Positive whole-number coefficients</legend>
-    <div class="coefficients"><label for="nitrous-0"><span class="formula">N<sub>2</sub>O(g)</span> <input id="nitrous-0" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"N":2,"O":1}'></label>
-      <label for="nitrous-1"><span class="formula">N<sub>2</sub>(g)</span> <input id="nitrous-1" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"N":2}'></label>
-      <label for="nitrous-2"><span class="formula">O<sub>2</sub>(g)</span> <input id="nitrous-2" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"O":2}'></label></div>
-  </fieldset>
-  <div class="controls"><button type="submit" disabled>Check atom counts</button><button type="reset">Clear and retry</button></div>
-  <output class="audit" aria-live="polite"></output>
-</form>
-      <details><summary>Compare the two constructions</summary>
-        <p class="equation"><span class="formula">B<sub>2</sub>O<sub>3</sub>(s)</span> + <span class="formula">3 Mg(s)</span> → <span class="formula">3 MgO(s)</span> + <span class="formula">2 B(s)</span></p>
-        <p>One boron oxide unit sets three MgO units via O. That sets three Mg atoms. The two B atoms in the oxide set two B on the right. Check B 2, O 3 and Mg 3 on each side.</p>
-        <p class="equation"><span class="formula">2 N<sub>2</sub>O(g)</span> → <span class="formula">2 N<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-        <p>The N row matches at first, but O arrives in pairs on the product side. Using two N<sub>2</sub>O molecules gives two O atoms and raises the N count to four. Check N 4 and O 2 on each side. If a row failed, retry from that row and check the other row again.</p>
-      </details>
-    </section>
-
-    <section aria-labelledby="groups">
-      <h2 id="groups">Follow atoms through groups</h2>
-      <p>A subscript outside parentheses multiplies each atom count inside. For example, one Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> formula unit contains two Al, three S and twelve O. If every S is accounted for in SO<sub>4</sub> groups on both sides, count those groups together in a trial row. Any additional O atoms still belong in the O check. When a group splits across formulas, keep separate element rows. This shortcut is bookkeeping for the written formulas.</p>
-      <div class="example">
-        <h3>Follow a chain from one formula to the next</h3>
-        <p>Given the skeleton for carbon dioxide capture by lithium hydroxide, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">CO<sub>2</sub>(g)</span> + <span class="formula">LiOH(s)</span> → <span class="formula">Li<sub>2</sub>CO<sub>3</sub>(s)</span> + <span class="formula">H<sub>2</sub>O(l)</span></p>
-        <ol class="method">
-          <li>Start with one Li<sub>2</sub>CO<sub>3</sub> unit. Its one C calls for one CO<sub>2</sub> molecule.</li>
-          <li>Its two Li call for two LiOH units. These units also supply two H atoms.</li>
-          <li>Match those two H atoms with one H<sub>2</sub>O molecule. Check O by adding both contributions on each side.</li>
-        </ol>
-        <p class="equation"><span class="formula">CO<sub>2</sub>(g)</span> + <span class="formula">2 LiOH(s)</span> → <span class="formula">Li<sub>2</sub>CO<sub>3</sub>(s)</span> + <span class="formula">H<sub>2</sub>O(l)</span></p>
-        <table>
-  <caption>Carbon capture check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">C</th><td>1</td><td>1</td></tr><tr><th scope="row">Li</th><td>2</td><td>2</td></tr><tr><th scope="row">H</th><td>2</td><td>2</td></tr><tr><th scope="row">O</th><td>2 + 2 = 4</td><td>3 + 1 = 4</td></tr></tbody>
-</table>
-      </div>
-      <div class="example">
-        <h3>Open a group that splits across products</h3>
-        <p>Given the skeleton for heated lead(II) nitrate, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">Pb(NO<sub>3</sub>)<sub>2</sub>(s)</span> → <span class="formula">PbO(s)</span> + <span class="formula">NO<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-        <ol class="method">
-          <li>Start with one lead nitrate unit. The two nitrate groups supply two N and six O atoms. There are no nitrate groups in the product formulas.</li>
-          <li>One Pb atom sets one PbO unit. Two N atoms set two NO<sub>2</sub> molecules.</li>
-          <li>Those products account for 1 + 2 × 2 = 5 O atoms. The remaining one O atom per trial unit would require a coefficient of ½ for O<sub>2</sub>.</li>
-          <li>Multiply every trial coefficient by 2 to give whole numbers in the same ratio. Recount the O row after the change.</li>
-        </ol>
-        <p class="equation"><span class="formula">2 Pb(NO<sub>3</sub>)<sub>2</sub>(s)</span> → <span class="formula">2 PbO(s)</span> + <span class="formula">4 NO<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-        <table>
-  <caption>Nitrate decomposition check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">Pb</th><td>2</td><td>2</td></tr><tr><th scope="row">N</th><td>4</td><td>4</td></tr><tr><th scope="row">O</th><td>12</td><td>2 + 8 + 2 = 12</td></tr></tbody>
-</table>
-      </div>
-      <h3>Decide whether a group row will work</h3>
-      <p>Balance this skeleton for aluminum hydroxide dissolving in sulfuric acid. Decide whether any group can help you count, and explain how that choice affects your first coefficient.</p>
-      <p class="equation"><span class="formula">Al(OH)<sub>3</sub>(s)</span> + <span class="formula">H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span class="formula">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span class="formula">H<sub>2</sub>O(l)</span></p>
-      <form class="practice" data-construct data-product-start="2" data-retry="Retry. Check whether every S belongs to the same written group on both sides. Then count H from both reactants.">
-  <fieldset><legend>Positive whole-number coefficients</legend>
-    <div class="coefficients"><label for="sulfate-0"><span class="formula">Al(OH)<sub>3</sub>(s)</span> <input id="sulfate-0" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Al":1,"O":3,"H":3}'></label>
-      <label for="sulfate-1"><span class="formula">H<sub>2</sub>SO<sub>4</sub>(aq)</span> <input id="sulfate-1" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"H":2,"S":1,"O":4}'></label>
-      <label for="sulfate-2"><span class="formula">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> <input id="sulfate-2" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Al":2,"S":3,"O":12}'></label>
-      <label for="sulfate-3"><span class="formula">H<sub>2</sub>O(l)</span> <input id="sulfate-3" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"H":2,"O":1}'></label></div>
-  </fieldset>
-  <div class="controls"><button type="submit" disabled>Check atom counts</button><button type="reset">Clear and retry</button></div>
-  <output class="audit" aria-live="polite"></output>
-</form>
-      <details><summary>Compare the group decision</summary>
-        <p class="equation"><span class="formula">2 Al(OH)<sub>3</sub>(s)</span> + <span class="formula">3 H<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span class="formula">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>(aq)</span> + <span class="formula">6 H<sub>2</sub>O(l)</span></p>
-        <p>Each S is accompanied by four O in both the acid formula and the aluminum sulfate formula, so you can match those groups first. One aluminum sulfate unit needs three acid units and two aluminum hydroxide units. Add the H contributions, 6 + 6 = 12 H atoms, to set six water molecules. Both sides give Al 2, S 3, H 12 and O 18. Retry by counting S and O in separate rows to see where the same ratio comes from.</p>
-      </details>
-      <h3>Construct a new ledger</h3>
-      <p>These are the specified final products of strongly heated silver carbonate. Balance the overall equation. Write your starting row and the reason for that choice before checking.</p>
-      <p class="equation"><span class="formula">Ag<sub>2</sub>CO<sub>3</sub>(s)</span> → <span class="formula">Ag(s)</span> + <span class="formula">CO<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-      <form class="practice" data-construct data-product-start="1" data-retry="Retry. For an element written in more than one product, add the contributions before you change a coefficient.">
-  <fieldset><legend>Positive whole-number coefficients</legend>
-    <div class="coefficients"><label for="carbonate-0"><span class="formula">Ag<sub>2</sub>CO<sub>3</sub>(s)</span> <input id="carbonate-0" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Ag":2,"C":1,"O":3}'></label>
-      <label for="carbonate-1"><span class="formula">Ag(s)</span> <input id="carbonate-1" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"Ag":1}'></label>
-      <label for="carbonate-2"><span class="formula">CO<sub>2</sub>(g)</span> <input id="carbonate-2" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"C":1,"O":2}'></label>
-      <label for="carbonate-3"><span class="formula">O<sub>2</sub>(g)</span> <input id="carbonate-3" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"O":2}'></label></div>
-  </fieldset>
-  <div class="controls"><button type="submit" disabled>Check atom counts</button><button type="reset">Clear and retry</button></div>
-  <output class="audit" aria-live="polite"></output>
-</form>
-      <details><summary>Compare the construction</summary>
-        <p class="equation"><span class="formula">2 Ag<sub>2</sub>CO<sub>3</sub>(s)</span> → <span class="formula">4 Ag(s)</span> + <span class="formula">2 CO<sub>2</sub>(g)</span> + <span class="formula">O<sub>2</sub>(g)</span></p>
-        <p>One carbonate unit would give two Ag and one CO<sub>2</sub>. That leaves one O atom, which is half an O<sub>2</sub> molecule per trial unit. Double every coefficient. The ledger now gives Ag 4, C 2 and O 6 on each side, with 4 + 2 O atoms in the products. Retry by starting with two carbonate units and reasoning through every row without using a fractional trial.</p>
-      </details>
     </section>
 
     <section aria-labelledby="linked">
-      <h2 id="linked">Solve linked counts</h2>
-      <p>When an element appears in several formulas on one or both sides, total its contributions. Keep track of whether a coefficient can move on its own or must change other counts. These two skeletons differ in the oxygen source. State symbols are omitted for the hot reaction mixtures.</p>
-      <div class="example">
-        <h3>Oxygen comes from a term you can adjust on its own</h3>
-        <p>Given the first skeleton, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">MnO<sub>2</sub></span> + <span class="formula">KOH</span> + <span class="formula">O<sub>2</sub></span> → <span class="formula">K<sub>2</sub>MnO<sub>4</sub></span> + <span class="formula">H<sub>2</sub>O</span></p>
-        <ol class="method">
-          <li>Try one K<sub>2</sub>MnO<sub>4</sub>. The Mn row sets one MnO<sub>2</sub>.</li>
-          <li>The two K atoms set two KOH. The two H from those KOH set one H<sub>2</sub>O.</li>
-          <li>Count 4 O from MnO<sub>2</sub> and KOH together, and 5 O in the products. O<sub>2</sub> contributes only to O, so assign it ½ in the trial.</li>
-          <li>Double the entire ratio to get integers and verify the linked rows.</li>
-        </ol>
-        <p class="equation"><span class="formula">2 MnO<sub>2</sub></span> + <span class="formula">4 KOH</span> + <span class="formula">O<sub>2</sub></span> → <span class="formula">2 K<sub>2</sub>MnO<sub>4</sub></span> + <span class="formula">2 H<sub>2</sub>O</span></p>
-        <table>
-  <caption>Oxygen-source check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">Mn</th><td>2</td><td>2</td></tr><tr><th scope="row">K</th><td>4</td><td>4</td></tr><tr><th scope="row">H</th><td>4</td><td>4</td></tr><tr><th scope="row">O</th><td>4 + 4 + 2 = 10</td><td>8 + 2 = 10</td></tr></tbody>
-</table>
+      <h2 id="linked">Use two counts together</h2>
+      <p>In hot potassium hydroxide solution, chlorine ends up in two products. No single product carries all the Cl, so a Cl count alone leaves too many numbers open.</p>
+      <p class="equation"><span>Cl<sub>2</sub>(g)</span> + <span>KOH(aq)</span> → <span>KCl(aq)</span> + <span>KClO<sub>3</sub>(aq)</span> + <span>H<sub>2</sub>O(l)</span></p>
+      <ol class="worked">
+        <li>Try one KClO<sub>3</sub>(aq). It needs 3 O atoms. More O must go to H<sub>2</sub>O(l), so the 3 alone cannot tell you how many KOH copies to use.</li>
+        <li>Every KOH supplies one H and one O. Each water uses two of those H atoms and one of their O atoms. So <em>every two KOH copies</em> contribute one O to water and leave one O for KClO<sub>3</sub>. Getting 3 O into KClO<sub>3</sub> takes 6 KOH and gives 3 H<sub>2</sub>O.</li>
+        <li>Now account for the 6 K atoms. One is already in KClO<sub>3</sub>, so the other 5 go to KCl. Those two products together need 6 Cl atoms, supplied by 3 Cl<sub>2</sub>.</li>
+        <li><strong>Final</strong> <span class="equation"><span>3 Cl<sub>2</sub>(g)</span> + <span>6 KOH(aq)</span> → <span>5 KCl(aq)</span> + <span>KClO<sub>3</sub>(aq)</span> + <span>3 H<sub>2</sub>O(l)</span></span>. Each side has 6 Cl, 6 K, 6 O and 6 H atoms, with zero net charge. The coefficient of 1 rules out further reduction.</li>
+      </ol>
+      <div class="checkpoint">
+        <h3>Test a grouped formula</h3>
+        <p class="equation"><span>Ca(NO<sub>3</sub>)<sub>2</sub>(s)</span> → <span>CaO(s)</span> + <span>NO<sub>2</sub>(g)</span> + <span>O<sub>2</sub>(g)</span></p>
+        <p>Try one copy of the starting solid. How many copies of NO<sub>2</sub> match its N count? Explain what happens to O when you also match Ca.</p>
+        <details><summary>Compare your reasoning</summary><p>One starting unit has 2 N and 6 O atoms. One CaO and two NO<sub>2</sub> match Ca and N, but account for only 5 O atoms. The leftover O cannot make a whole O<sub>2</sub> molecule. Double the trial and recount.</p>
+          <details><summary>Compare the retry</summary><p><span class="equation"><span>2 Ca(NO<sub>3</sub>)<sub>2</sub>(s)</span> → <span>2 CaO(s)</span> + <span>4 NO<sub>2</sub>(g)</span> + <span>O<sub>2</sub>(g)</span></span> gives 2 Ca, 4 N, 12 O and zero net charge on each side. The 1 in front of oxygen means the ratio is as small as possible.</p></details>
+        </details>
       </div>
-      <div class="example">
-        <h3>The oxygen source also changes K and Cl</h3>
-        <p>Given the second skeleton, find the smallest whole-number coefficients.</p>
-        <p class="equation"><span class="formula">MnO<sub>2</sub></span> + <span class="formula">KOH</span> + <span class="formula">KClO<sub>3</sub></span> → <span class="formula">K<sub>2</sub>MnO<sub>4</sub></span> + <span class="formula">KCl</span> + <span class="formula">H<sub>2</sub>O</span></p>
-        <p>Predict whether changing only the KClO<sub>3</sub> coefficient can fix a deficit of O while leaving K and Cl balanced. Follow the linked counts to test your prediction.</p>
-        <ol class="method">
-          <li>Let <var>x</var> be the K<sub>2</sub>MnO<sub>4</sub> coefficient. Mn sets the MnO<sub>2</sub> coefficient to <var>x</var> as well.</li>
-          <li>Let <var>y</var> be the KClO<sub>3</sub> coefficient. Cl sets the KCl coefficient to <var>y</var>. Changing KClO<sub>3</sub> alone would disturb Cl and K.</li>
-          <li>There are <var>y</var> K atoms in KClO<sub>3</sub> and <var>y</var> in KCl. Those contributions cancel in the K equality, so KOH must supply the remaining 2<var>x</var> K atoms. Its coefficient is 2<var>x</var>.</li>
-          <li>Those KOH units supply 2<var>x</var> H atoms. Water accounts for two H per molecule, so its coefficient is <var>x</var>.</li>
-          <li>In O atoms the ledger gives 2<var>x</var> + 2<var>x</var> + 3<var>y</var> = 4<var>x</var> + <var>x</var>. Subtract 4<var>x</var> from both sides to get 3<var>y</var> = <var>x</var>. Choose <var>y</var> = 1 and <var>x</var> = 3 for the smallest positive integers.</li>
-        </ol>
-        <p class="equation"><span class="formula">3 MnO<sub>2</sub></span> + <span class="formula">6 KOH</span> + <span class="formula">KClO<sub>3</sub></span> → <span class="formula">3 K<sub>2</sub>MnO<sub>4</sub></span> + <span class="formula">KCl</span> + <span class="formula">3 H<sub>2</sub>O</span></p>
-        <table>
-  <caption>Chlorate-source check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">Mn</th><td>3</td><td>3</td></tr><tr><th scope="row">K</th><td>6 + 1 = 7</td><td>6 + 1 = 7</td></tr><tr><th scope="row">Cl</th><td>1</td><td>1</td></tr><tr><th scope="row">H</th><td>6</td><td>6</td></tr><tr><th scope="row">O</th><td>6 + 6 + 3 = 15</td><td>12 + 3 = 15</td></tr></tbody>
-</table>
-      </div>
+    </section>
 
-      <h3 id="transfer">Mixed transfer</h3>
-      <p>Write the smallest whole-number coefficients for the given sulfur recovery skeleton. Use S<sub>8</sub>(s) for the collected sulfur after cooling. Give the final equation and a short explanation of the first count you chose and how it constrained another coefficient. Test your own method before opening the hints.</p>
-      <p class="equation"><span class="formula">H<sub>2</sub>S(g)</span> + <span class="formula">SO<sub>2</sub>(g)</span> → <span class="formula">S<sub>8</sub>(s)</span> + <span class="formula">H<sub>2</sub>O(g)</span></p>
-      <form class="practice" data-construct data-product-start="2" data-retry="Retry. Which row sums two reactant terms? Find a different row to constrain one of those terms before changing both.">
-  <fieldset><legend>Positive whole-number coefficients</legend>
-    <div class="coefficients"><label for="sulfur-0"><span class="formula">H<sub>2</sub>S(g)</span> <input id="sulfur-0" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"H":2,"S":1}'></label>
-      <label for="sulfur-1"><span class="formula">SO<sub>2</sub>(g)</span> <input id="sulfur-1" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"S":1,"O":2}'></label>
-      <label for="sulfur-2"><span class="formula">S<sub>8</sub>(s)</span> <input id="sulfur-2" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"S":8}'></label>
-      <label for="sulfur-3"><span class="formula">H<sub>2</sub>O(g)</span> <input id="sulfur-3" type="number" inputmode="numeric" min="1" max="999" step="1" required autocomplete="off" data-atoms='{"H":2,"O":1}'></label></div>
-  </fieldset>
-  <div class="controls"><button type="submit" disabled>Check atom counts</button><button type="reset">Clear and retry</button></div>
-  <output class="audit" aria-live="polite"></output>
-</form>
-      <details><summary>Hint after an attempt</summary><p>H and O are each present in one formula per side. Can the water coefficient satisfy both constraints at once?</p></details>
-      <details><summary>Compare the reasoning after an attempt</summary>
-        <p>Write <var>a</var>, <var>b</var>, <var>c</var> and <var>d</var> for the four coefficients in order. In H atoms, 2<var>a</var> = 2<var>d</var>, so <var>a</var> = <var>d</var>. In O atoms, 2<var>b</var> = <var>d</var>. Thus <var>a</var> = <var>d</var> = 2<var>b</var>. The left S count is <var>a</var> + <var>b</var> = 3<var>b</var>, so the S row requires 3<var>b</var> = 8<var>c</var>. The least positive total divisible by both 3 and 8 is 24 S atoms. It gives <var>b</var> = 8 and <var>c</var> = 3, then <var>a</var> = <var>d</var> = 16.</p>
-        <p class="equation"><span class="formula">16 H<sub>2</sub>S(g)</span> + <span class="formula">8 SO<sub>2</sub>(g)</span> → <span class="formula">3 S<sub>8</sub>(s)</span> + <span class="formula">16 H<sub>2</sub>O(g)</span></p>
-        <table>
-  <caption>Sulfur recovery check (atom counts)</caption>
-  <thead><tr><th scope="col">Element</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-  <tbody><tr><th scope="row">H</th><td>32</td><td>32</td></tr><tr><th scope="row">O</th><td>16</td><td>16</td></tr><tr><th scope="row">S</th><td>16 + 8 = 24</td><td>24</td></tr></tbody>
-</table>
-        <p>If you start at S and assign one S<sub>8</sub>, there are several ways to split eight S atoms between the two reactants. A trial split of four and four fails because H would require four H<sub>2</sub>O while O would require eight. Retry by writing both H and O constraints before choosing a sulfur total.</p>
+    <section aria-labelledby="practice">
+      <h2 id="practice">Choose your own first move</h2>
+      <p class="equation"><span>P<sub>4</sub>(s)</span> + <span>NaOH(aq)</span> + <span>H<sub>2</sub>O(l)</span> → <span>PH<sub>3</sub>(g)</span> + <span>NaH<sub>2</sub>PO<sub>2</sub>(aq)</span></p>
+      <p>Balance this overall equation for white phosphorus and aqueous sodium hydroxide. Write the full equation on paper with the smallest whole-number coefficients. Explain your first move and show how you settled the most difficult coefficient.</p>
+      <details><summary>Get a hint after trying</summary><p>Look for two totals that use some of the same formulas. Write the contribution of each formula before choosing trial numbers.</p></details>
+      <div class="workbench" data-balance-practice hidden>
+        <div class="coefficient-fields">
+          <label for="phosphorus">P<sub>4</sub>(s)</label><input id="phosphorus" type="number" min="1" max="99" step="1" inputmode="numeric" autocomplete="off">
+          <label for="base">NaOH(aq)</label><input id="base" type="number" min="1" max="99" step="1" inputmode="numeric" autocomplete="off">
+          <label for="water">H<sub>2</sub>O(l)</label><input id="water" type="number" min="1" max="99" step="1" inputmode="numeric" autocomplete="off">
+          <label for="phosphine">PH<sub>3</sub>(g)</label><input id="phosphine" type="number" min="1" max="99" step="1" inputmode="numeric" autocomplete="off">
+          <label for="salt">NaH<sub>2</sub>PO<sub>2</sub>(aq)</label><input id="salt" type="number" min="1" max="99" step="1" inputmode="numeric" autocomplete="off">
+        </div>
+        <div class="controls">
+          <button type="button" data-check>Check coefficients</button>
+          <button type="button" data-clear>Clear and retry</button>
+        </div>
+        <p data-result class="feedback" role="status" aria-live="polite"></p>
+      </div>
+      <details class="practice-fallback"><summary>Compare your work</summary>
+        <p>Match Na by giving NaOH and NaH<sub>2</sub>PO<sub>2</sub> the same coefficient. Each salt unit needs two O atoms, one from its matching NaOH and one from water, so give water that coefficient too. Together the NaOH and water supply 3 H per salt unit. The salt needs 2, leaving 1 H for PH<sub>3</sub>. Each PH<sub>3</sub> needs three such H atoms, so try 3 of each of those matched formulas and 1 PH<sub>3</sub>.</p>
+        <p class="equation"><span>P<sub>4</sub>(s)</span> + <span>3 NaOH(aq)</span> + <span>3 H<sub>2</sub>O(l)</span> → <span>PH<sub>3</sub>(g)</span> + <span>3 NaH<sub>2</sub>PO<sub>2</sub>(aq)</span></p>
+        <p>The trial needs 1 + 3 = 4 P atoms, supplied by one P<sub>4</sub>. Verify 4 P, 3 Na, 9 H and 6 O atoms on each side. The charge shown is zero on both sides and the coefficients have no common factor above one.</p>
       </details>
+      <p>Retry from the other end. Give P<sub>4</sub> a trial coefficient of 2. Work out the product amounts, then explain whether you would keep the final list.</p>
+      <details><summary>Compare the retry</summary><p>Eight P atoms divide between two PH<sub>3</sub> molecules and six salt units. That needs six NaOH and six H<sub>2</sub>O. Every coefficient is even, so divide the full list by 2 before keeping it.</p></details>
     </section>
 
     <section aria-labelledby="recall">
-      <h2 id="recall">Recall the decision</h2>
-      <p>On a later visit, before opening the lesson, sketch a ledger with an element that appears in two products. Explain what you multiply and what you add. Then write how you would tell whether changing one coefficient can fix only that row. Afterward, check the method on the carbon capture or sulfur recovery example.</p>
-      <p>If you get stuck on a different equation, ask about the row where a change starts to disturb another count.</p>
+      <h2 id="recall">Recall it later</h2>
+      <p>Before reopening the lesson, sketch two empty inventory columns and label them. Explain when you would count a group as a unit and what would make you switch to counting its elements.</p>
     </section>
-
-    <section id="glossary" aria-labelledby="glossary-title">
-      <h2 id="glossary-title">Glossary</h2>
+    <section id="glossary" aria-labelledby="terms">
+      <h2 id="terms">Glossary</h2>
       <dl>
-        <dt>Atom ledger</dt><dd>A tally of the atoms of each element represented on the two sides of a reaction arrow.</dd>
-        <dt>Coefficient</dt><dd>The number in front of a formula. In these equations it scales the amount of the entire substance and all of its atom counts.</dd>
-        <dt>Subscript</dt><dd>A small number that specifies a count in a formula. When it follows a parenthesis, it multiplies the whole parenthesized group.</dd>
-        <dt>Skeleton equation</dt><dd>The specified reactant and product formulas before their amounts are balanced.</dd>
-        <dt>Reactant and product</dt><dd>A reactant is used up to the extent the reaction proceeds. A product forms as the reaction proceeds.</dd>
-        <dt>Molecule and formula unit</dt><dd>A molecule is a distinct bonded group of atoms. A formula unit for an ionic solid gives the simplest ratio of ions in the extended solid.</dd>
-        <dt id="states">State symbols</dt><dd><b>(s)</b> solid, <b>(l)</b> liquid, <b>(g)</b> gas and <b>(aq)</b> dissolved in water. They describe the form of the substance and contribute no atoms.</dd>
-        <dt>Common multiple</dt><dd>A number that each of the given whole numbers divides evenly.</dd>
+        <dt id="term-coefficient">Coefficient</dt><dd>Number in front of a formula that multiplies all its atom counts. A missing coefficient means 1.</dd>
+        <dt id="term-subscript">Subscript</dt><dd>Small number that counts the preceding element or parenthesized group in one formula.</dd>
+        <dt id="term-reactant">Reactant</dt><dd>A starting substance, written before the arrow.</dd>
+        <dt id="term-product">Product</dt><dd>A substance made in the reaction, written after the arrow.</dd>
+        <dt id="term-state">State symbols</dt><dd>(s) solid, (l) liquid, (g) gas, (aq) dissolved in water.</dd>
+        <dt id="term-unit">Formula unit</dt><dd>A counting unit for a compound written as a ratio, such as an ionic solid. It represents the stated proportions rather than a separate particle.</dd>
       </dl>
-    </section>
-
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">Check an element symbol</h2>
-      <p>Look up an unfamiliar symbol before you count the atoms of that element. <a href="https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf">IUPAC periodic table</a>.</p>
     </section>
   </main>
 </body>

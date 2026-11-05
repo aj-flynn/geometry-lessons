@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Choose between counting atoms and balancing charge, then translate compound names and formulas.">
+  <title>Names and formulas</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/formula.css">
+  <script src="../../../assets/formula.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson chemistry formula-lesson">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <header>
+      <p class="eyebrow">Chemistry · Compound naming</p>
+      <h1>Names and formulas</h1>
+      <p class="lead">Translate a compound’s name into a formula, or read its formula to name a metal that can have different charges.</p>
+    </header>
+    <aside class="formula-start" aria-label="Before you start">
+      <p>Warm up. In K<sub>2</sub>S, how many K symbols does the small 2 count? What does the missing small number after S mean?</p>
+      <details><summary>Check the notation</summary><p>A <a href="#term-subscript">subscript</a>, the small number below the line, counts the symbol or group immediately before it. Here the ratio is two K symbols for each S symbol. An unwritten subscript is 1.</p></details>
+    </aside>
+    <nav class="formula-nav" aria-label="Lesson steps">
+      <a href="#ionic">Balance charge</a>
+      <a href="#molecular">Read prefixes</a>
+      <a href="#reverse">Name from a formula</a>
+      <a href="#try">Mix the methods</a>
+      <a href="#reference">Lookup card</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+
+    <section aria-labelledby="ionic">
+      <h2 id="ionic">1. Balance charge</h2>
+      <p>An <a href="#term-ion">ion</a> is an atom or group with an electric charge. In these examples an <a href="#term-ionic">ionic compound</a> combines a positive metal ion with a negative ion. In a neutral formula their charges add to zero. The subscripts show the smallest whole-number ratio of ions in the extended solid.</p>
+      <h3>Write the formula for aluminum sulfide</h3>
+      <p>Start by <a href="#lookup-ions">looking up aluminum and sulfide</a>. Match the names to Al<sup>3+</sup> and S<sup>2−</sup>. The raised numbers give charge per ion. Below, each positive or negative number is in units of the elementary charge, the size of the charge on a proton.</p>
+      <p><strong>Predict.</strong> One of each gives a total of +1. If you change only the sulfide count to 2, will the total reach zero or pass it? Then find the smallest pair of counts that does reach zero.</p>
+      <div class="formula-model" data-charge-model hidden>
+        <div class="formula-controls">
+          <div><label for="al-count">Count of Al<sup>3+</sup></label><select id="al-count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <div><label for="s-count">Count of S<sup>2−</sup></label><select id="s-count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <button type="button" data-charge-reset>Reset counts</button>
+        </div>
+        <p data-charge-output role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <details data-model-fallback><summary>Compare trial counts</summary>
+        <ul><li>One Al<sup>3+</sup> and one S<sup>2−</sup> give +3 − 2 = +1.</li><li>One Al<sup>3+</sup> and two S<sup>2−</sup> give +3 − 4 = −1. The total passes zero.</li><li>Two Al<sup>3+</sup> and three S<sup>2−</sup> give +6 − 6 = 0.</li><li>Four Al<sup>3+</sup> and six S<sup>2−</sup> also give zero. Divide both counts by two to recover the smallest ratio.</li></ul>
+      </details>
+      <h3>Record the smallest ratio</h3>
+      <p>The smallest positive charge total shared by multiples of 3 and 2 is 6. This requires 2 aluminum ions and 3 sulfide ions.</p>
+      <figure class="formula-ledger">
+        <svg viewBox="0 0 340 165" role="img" aria-labelledby="ledger-title ledger-desc">
+          <title id="ledger-title">Aluminum sulfide charge ledger</title>
+          <desc id="ledger-desc">Two aluminum ions at plus three each total plus six. Three sulfide ions at minus two each total minus six. Their charges sum to zero.</desc>
+          <g fill="#d4e8e8" stroke="#265552" stroke-width="2">
+            <rect x="14" y="14" width="50" height="42" rx="5"/><rect x="74" y="14" width="50" height="42" rx="5"/>
+          </g>
+          <g fill="#fff4d5" stroke="#755713" stroke-width="2">
+            <rect x="14" y="70" width="50" height="42" rx="5"/><rect x="74" y="70" width="50" height="42" rx="5"/><rect x="134" y="70" width="50" height="42" rx="5"/>
+          </g>
+          <g fill="#0d2a1c" font-family="Arial, sans-serif" font-size="20">
+            <text x="22" y="42">Al³⁺</text><text x="82" y="42">Al³⁺</text><text x="202" y="42">Total +6</text>
+            <text x="24" y="98">S²⁻</text><text x="84" y="98">S²⁻</text><text x="144" y="98">S²⁻</text><text x="202" y="98">Total −6</text>
+            <text x="14" y="150">+6 − 6 = 0</text>
+          </g>
+        </svg>
+        <figcaption>Two +3 charges give +6. Three −2 charges give −6. Write Al<sub>2</sub>S<sub>3</sub> with the positive ion first. The boxes show counts and charge only. Their spacing and arrangement do not represent the solid.</figcaption>
+      </figure>
+      <h3>Read a charge given in the name</h3>
+      <p>For copper(II) bromide, the <a href="#term-roman">Roman numeral</a> II gives +2 per copper ion. Look up bromide to find Br<sup>−</sup>. One Cu<sup>2+</sup> needs two Br<sup>−</sup>, since +2 + 2(−1) = 0. Write CuBr<sub>2</sub>.</p>
+      <div class="formula-check">
+        <h3>Try two new names</h3>
+        <p>Use the <a href="#lookup-ions">ion lookup</a> to write the formulas for lithium oxide and lead(II) iodide. Say how you found each metal’s charge, then check the sum.</p>
+        <details><summary>Compare your formulas</summary>
+          <p>Li<sub>2</sub>O uses two +1 lithium ions for one −2 oxide ion. PbI<sub>2</sub> uses one +2 lead ion for two −1 iodide ions. LiO would total −1. Pb<sub>2</sub>I treats II as a count and would total +3.</p>
+        </details>
+        <p><strong>Retry.</strong> Write the formula for potassium bromide and show that its ion counts are already the smallest possible.</p>
+        <details><summary>Compare the retry</summary><p>KBr uses one +1 ion and one −1 ion. Their sum is zero, and both counts are already 1.</p></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="molecular">
+      <h2 id="molecular">2. Read prefixes</h2>
+      <p>A <a href="#term-molecule">molecule</a> is a group of bonded atoms that acts as a unit. For the binary molecular names here, two nonmetal elements are named and a <a href="#term-prefix">prefix</a> tells how many atoms of that element are in one molecule. An omitted prefix on the first element means 1.</p>
+      <h3>Write carbon tetrabromide</h3>
+      <p>Carbon comes first and has no prefix, so count 1 C. In tetrabromide, <a href="#lookup-prefixes">tetra- means 4</a> and bromide is the name ending for Br. Write CBr<sub>4</sub>.</p>
+      <h3>Keep both counts when both are given</h3>
+      <p>In tetraphosphorus decasulfide, <em>tetra-</em> gives 4 P and <em>deca-</em> gives 10 S. Write P<sub>4</sub>S<sub>10</sub>. P<sub>2</sub>S<sub>5</sub> has the same ratio but gives different atom counts for one molecule.</p>
+      <div class="formula-check">
+        <h3>Try a new name</h3>
+        <p>Write the molecular formula for disulfur dichloride. What does each prefix count?</p>
+        <details><summary>Compare your formula</summary><p>The first di- counts two sulfur atoms and the second di- counts two chlorine atoms. Write S<sub>2</sub>Cl<sub>2</sub>. Dividing the counts by two would give an atom ratio with fewer atoms than the name specifies.</p></details>
+        <p><strong>Retry.</strong> Write carbon monoxide. Account for the first element’s missing prefix.</p>
+        <details><summary>Compare the retry</summary><p>Write CO. The missing first prefix gives one carbon atom, and mono- gives one oxygen atom.</p></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="reverse">
+      <h2 id="reverse">3. Name from a formula</h2>
+      <p>When a metal can have more than one charge, use the formula and the known negative charge to recover the charge <em>per metal</em>. That is the value to write as a Roman numeral immediately after the metal name.</p>
+      <h3>One negative element</h3>
+      <p>For Cu<sub>2</sub>S, the <a href="#lookup-ions">lookup card</a> gives sulfide as S<sup>2−</sup>. Find the charge of one copper and write the name.</p>
+      <ol class="formula-steps">
+        <li>One sulfide contributes −2.</li>
+        <li>The two copper ions together must contribute +2.</li>
+        <li>Each copper contributes +2 ÷ 2 = +1.</li>
+        <li>Write <strong>copper(I) sulfide</strong>.</li>
+      </ol>
+      <h3>One negative group, repeated</h3>
+      <p>A <a href="#term-polyatomic">polyatomic ion</a> is a group of bonded atoms that carries a charge as a unit. In Cu<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, the 4 counts oxygen atoms within each phosphate ion. The 2 outside the parentheses counts whole phosphate ions. Look up the entire group to find PO<sub>4</sub><sup>3−</sup>.</p>
+      <ol class="formula-steps">
+        <li>Two phosphate ions contribute 2 × (−3) = −6.</li>
+        <li>The three copper ions together must contribute +6.</li>
+        <li>Each copper contributes +6 ÷ 3 = +2.</li>
+        <li>Write <strong>copper(II) phosphate</strong>. Keep the name of the whole group.</li>
+      </ol>
+      <p>This charge ledger gives the formal value used in the name. It gives no information about the arrangement of atoms or the degree of electron sharing in the real compound.</p>
+      <div class="formula-check">
+        <h3>Try a fresh formula</h3>
+        <p>Write the full name of CuSO<sub>4</sub>. Identify the whole negative group before finding the metal’s charge.</p>
+        <details><summary>Compare your name</summary><p>There is one sulfate ion, SO<sub>4</sub><sup>2−</sup>. Its charge requires one +2 copper, giving copper(II) sulfate. The 4 counts oxygen atoms in sulfate. It does not count sulfate ions.</p></details>
+        <p><strong>Retry.</strong> Write the full name of Cu<sub>2</sub>O. Separate the total positive charge from the charge of each copper ion.</p>
+        <details><summary>Compare the retry</summary><p>One oxide contributes −2. The two copper ions share the +2 total, so each is +1. Write copper(I) oxide.</p></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="try">
+      <h2 id="try">Mix the methods</h2>
+      <p>Use paper and the <a href="#reference">lookup card</a>. Translate each entry. Before you calculate, decide what to count and what in the entry tells you which method to use.</p>
+      <ol class="formula-steps">
+        <li>Write the full name of Cr<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>.</li>
+        <li>Write the formula for strontium fluoride.</li>
+        <li>Write the formula for sulfur hexafluoride.</li>
+        <li>Write the formula for iron(III) fluoride.</li>
+        <li>Write the full name of TiS<sub>2</sub>.</li>
+      </ol>
+      <p><strong>Explain your choice.</strong> Compare entries 2 and 3. Both end in <em>fluoride</em>. What clue makes the subscript come from charge in one entry and a count in the other?</p>
+      <details><summary>Compare after your first attempt</summary>
+        <ol class="formula-steps">
+          <li><strong>Chromium(III) sulfate.</strong> Three sulfate groups give 3 × (−2) = −6. Two chromium atoms account for +6, so each has formal charge +3. The 4 stays within each sulfate group.</li>
+          <li><strong>SrF<sub>2</sub>.</strong> Strontium is a metal with charge +2. Two fluoride ions give −2, so the sum is zero.</li>
+          <li><strong>SF<sub>6</sub>.</strong> Sulfur and fluorine are nonmetals in this molecular name. No prefix on the first name gives one S, and hexa- gives six F.</li>
+          <li><strong>FeF<sub>3</sub>.</strong> The III supplies +3 for each iron. Three fluoride ions balance one iron ion.</li>
+          <li><strong>Titanium(IV) sulfide.</strong> In the formal naming calculation, two sulfides give −4, so one titanium accounts for +4. The numeral comes from +4 even though the displayed subscript is 2.</li>
+        </ol>
+      </details>
+      <p><strong>Retry.</strong> Write the formula for chromium(III) phosphate. Will its phosphate group need parentheses?</p>
+      <details><summary>Compare the reverse check</summary><p>Chromium contributes +3 and phosphate contributes −3. One of each gives zero, so write CrPO<sub>4</sub>. Parentheses are used to attach a subscript to a repeated group. This formula contains one phosphate group per chromium.</p></details>
+      <p><strong>Later recall.</strong> Before reopening the lesson, explain what a numeral in a metal name tells you and what a prefix in a molecular name tells you. Sketch a charge ledger for one example you can remember.</p>
+    </section>
+
+    <section id="reference" aria-labelledby="reference-title">
+      <h2 id="reference-title">Lookup card</h2>
+      <p>Look for an element in your course periodic table to find its symbol and group, the numbered column. For the common single-atom ions in introductory naming, groups 1 and 2 commonly give +1 and +2, while groups 15, 16 and 17 commonly give −3, −2 and −1 when the element forms a negative ion. Aluminum commonly gives +3. Use your course ion table for named groups and for exceptions.</p>
+      <h3 id="lookup-ions">Charges used in the lesson</h3>
+      <dl class="formula-reference">
+        <div><dt>Aluminum, Al</dt><dd>+3</dd></div>
+        <div><dt>Lithium, Li · potassium, K</dt><dd>+1 each</dd></div>
+        <div><dt>Strontium, Sr</dt><dd>+2</dd></div>
+        <div><dt>Fluoride, F · bromide, Br · iodide, I</dt><dd>−1 each</dd></div>
+        <div><dt>Oxide, O · sulfide, S</dt><dd>−2 each</dd></div>
+        <div><dt>Phosphate, PO<sub>4</sub></dt><dd>−3 per group</dd></div>
+        <div><dt>Sulfate, SO<sub>4</sub></dt><dd>−2 per group</dd></div>
+      </dl>
+      <p>Copper (Cu), iron (Fe), chromium (Cr), lead (Pb) and titanium (Ti) use the given Roman numeral or the charge you infer from the formula. Their names alone leave the charge open.</p>
+      <h3 id="lookup-prefixes">Counts used in molecular names</h3>
+      <p>Mono- 1, di- 2, tri- 3, tetra- 4, penta- 5, hexa- 6, deca- 10. Prefix spelling can contract before an element ending, as in <em>monoxide</em>. Read that prefix as 1.</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt id="term-subscript">Subscript</dt><dd>Small number at the lower right of a symbol or group. If no subscript appears, read 1.</dd>
+        <dt id="term-ion">Ion</dt><dd>An atom or bonded group with a positive or negative electric charge.</dd>
+        <dt id="term-ionic">Ionic compound</dt><dd>A neutral substance built from positive and negative ions. Its formula gives the smallest whole-number ratio of those ions.</dd>
+        <dt id="term-roman">Roman numeral</dt><dd>In these metal names, the formal positive charge per metal. For example, I means +1, II means +2, III means +3, IV means +4, V means +5, and VI means +6.</dd>
+        <dt id="term-molecule">Molecule</dt><dd>A group of bonded atoms that acts as a unit. A molecular formula counts the atoms in one such unit.</dd>
+        <dt id="term-prefix">Prefix</dt><dd>A word part at the beginning of a name. In this kind of molecular name it gives an atom count.</dd>
+        <dt id="term-polyatomic">Polyatomic ion</dt><dd>A bonded group of two or more atoms with one charge for the entire group.</dd>
+      </dl>
+    </section>
+  </main>
+</body>
+</html>

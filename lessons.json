@@ -25,7 +25,7 @@
         },
         "contract": {
           ".agents/skills/geometry-teach/SKILL.md": "e1885594b8d64365b3ffe458dea21213af3f2ed6bc0897c09ce4da13b29a6b10",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
@@ -83,7 +83,7 @@
         },
         "contract": {
           ".agents/skills/english-teach/SKILL.md": "8c7dbedcffa1932b50c8026ad088f31a7912b24c342cdce335f03e314d54aeeb",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
@@ -138,8 +138,8 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/chemistry-teach/SKILL.md": "3387dd460360e67bcbb0bb2a8cb7d061b87418d62879c23d04faccee1ea12f58",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
@@ -194,8 +194,8 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/chemistry-teach/SKILL.md": "3387dd460360e67bcbb0bb2a8cb7d061b87418d62879c23d04faccee1ea12f58",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
@@ -251,8 +251,8 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/chemistry-teach/SKILL.md": "3387dd460360e67bcbb0bb2a8cb7d061b87418d62879c23d04faccee1ea12f58",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
@@ -307,8 +307,8 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
-          ".agents/skills/homework-teach/SKILL.md": "edf15e402df182b5ee3acd99e69bd06d46b49775e898caffb60c549b8c98d2bf",
+          ".agents/skills/chemistry-teach/SKILL.md": "3387dd460360e67bcbb0bb2a8cb7d061b87418d62879c23d04faccee1ea12f58",
+          ".agents/skills/homework-teach/SKILL.md": "a7add5d5c75d0b41e59f1bc3a3d019baf18bad9fabbfb45b523d1c7fabde2fee",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
           ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",

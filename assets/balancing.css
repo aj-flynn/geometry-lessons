@@ -1,0 +1,56 @@
+.balancing .eyebrow {
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.balancing .callout {
+  margin-block-start: 1rem;
+  border-inline-start: 4px solid #146875;
+  padding-block: .2rem;
+}
+.balancing .equation {
+  font-weight: 650;
+  line-height: 1.65;
+}
+.balancing .equation > span {
+  display: inline-block;
+  white-space: nowrap;
+}
+.balancing .packets rect { fill: #fff; stroke: #146875; stroke-width: 2; }
+.balancing .marks circle { fill: #fff4b5; stroke: #0d2a1c; stroke-width: 2; }
+.balancing .marks .carbon { fill: #aad8dd; }
+.balancing svg .mark-labels { font-size: 24px; font-weight: 700; }
+.balancing .workbench, .balancing .checkpoint {
+  background: #f0f5f4;
+  border-inline-start: 4px solid #146875;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+.balancing .worked { padding-inline-start: 1.5rem; }
+.balancing .worked li { margin-block: .8rem; }
+.balancing .atom-table { margin-block: 1.3rem; }
+.balancing .atom-table th, .balancing .atom-table td { text-align: start; }
+.balancing .coefficient-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(4rem, 8rem);
+  gap: .75rem;
+  align-items: center;
+}
+.balancing .coefficient-fields input { width: 100%; }
+.balancing [data-balance-practice][data-ready] + .practice-fallback { display: none; }
+.balancing button { max-width: 100%; }
+@media (max-width: 450px) {
+  .balancing header { padding-inline: .75rem; }
+  .balancing header h1 { font-size: 1.7rem; }
+  .balancing h2 { font-size: 1.5rem; }
+  .balancing .coefficient-fields { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .balancing .coefficient-fields label:not(:first-child) { margin-block-start: .7rem; }
+}
+@media print {
+  .balancing h2, .balancing h3, .balancing caption { break-after: avoid; }
+  .balancing li, .balancing .atom-table tr { break-inside: avoid; }
+  .balancing .workbench, .balancing .checkpoint { background: none; }
+  .balancing [data-inventory], .balancing [data-balance-practice], .balancing [data-chem-choice] { display: none; }
+  .balancing [data-balance-practice][data-ready] + .practice-fallback { display: block; }
+}

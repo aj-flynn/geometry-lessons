@@ -4,234 +4,219 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Balance a chemical equation by checking atom totals, then record the physical states.">
+  <meta name="description" content="Use an atom count to balance a chemical equation, then add state symbols from the stated conditions.">
   <title>Balance a chemical equation</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/chemistry.css">
-  <link rel="stylesheet" href="../../../assets/atom-count.css">
-  <script src="../../../assets/atom-count.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/balance.css">
+  <script src="../../../assets/chemistry.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/balance.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson chemistry atom-count">
+  <main id="main" class="lesson chemistry balance">
     <a class="return-link" href="../index.html">← Lesson library</a>
     <header>
-      <p class="eyebrow">Chemistry / Reactions</p>
+      <p class="eyebrow">Chemistry · Chemical equations</p>
       <h1>Balance a chemical equation</h1>
-      <p class="lead">Choose which number to change, prove that every element matches across the arrow, and show the physical state of each substance.</p>
+      <p class="lead">Find the smallest whole-number ratio that accounts for every atom. Then show the physical state of each substance when it is given.</p>
     </header>
 
-    <aside class="starter" aria-labelledby="start-title">
-      <h2 id="start-title">Before you start</h2>
-      <p>In SO<sub>2</sub>, how many sulfur atoms and oxygen atoms are in one molecule?</p>
-      <details><summary>Check the count</summary><p>There is one sulfur atom and there are two oxygen atoms. A <a href="#subscript">subscript</a> is a small number after an element symbol. The 2 belongs to O. With no small number after S, count one S.</p></details>
-      <p><a href="#glossary">Open the glossary</a></p>
+    <aside aria-labelledby="start">
+      <h2 id="start">Read one formula first</h2>
+      <p>In Fe<sub>2</sub>O<sub>3</sub>, how many iron atoms and oxygen atoms does one unit of the formula count?</p>
+      <details><summary>Check the small numbers</summary>
+        <p>A <a href="#term-subscript">subscript</a> is the small number after an element symbol. One Fe<sub>2</sub>O<sub>3</sub> <a href="#term-unit">formula unit</a> counts two iron atoms and three oxygen atoms. A symbol without a subscript counts one atom per unit.</p>
+      </details>
+      <p>Use the <a href="#glossary">glossary</a> if a symbol or term is unfamiliar.</p>
     </aside>
 
-    <section aria-labelledby="count-title">
-      <p class="eyebrow">01 / Count</p>
-      <h2 id="count-title">Change the number of groups</h2>
-      <p>A <a href="#equation">chemical equation</a> places the <a href="#reactant">reactants</a> (starting substances) to the left of the arrow and the <a href="#product">products</a> (substances formed) to the right. The formulas are fixed. Change a <a href="#coefficient">coefficient</a>, the number in front, to multiply <em>every</em> atom count in that formula. A missing coefficient means 1.</p>
-      <figure class="groups">
-        <svg viewBox="0 0 260 112" role="img" aria-labelledby="groups-title groups-desc">
-          <title id="groups-title">One silver oxide formula unit compared with two</title>
-          <desc id="groups-desc">One box on top and two below. Each box contains two circles for silver and one diamond for oxygen.</desc>
-          <g transform="translate(67 4)">
-            <rect class="group-box" x="0" y="0" width="126" height="44" rx="5"/>
-            <circle class="ag-atom" cx="25" cy="22" r="11"/>
-            <circle class="ag-atom" cx="57" cy="22" r="11"/>
-            <path class="o-atom" d="M99 10 L111 22 L99 34 L87 22 Z"/>
-          </g>
-          <g transform="translate(2 64)">
-            <rect class="group-box" x="0" y="0" width="126" height="44" rx="5"/>
-            <circle class="ag-atom" cx="25" cy="22" r="11"/>
-            <circle class="ag-atom" cx="57" cy="22" r="11"/>
-            <path class="o-atom" d="M99 10 L111 22 L99 34 L87 22 Z"/>
-          </g>
-          <g transform="translate(132 64)">
-            <rect class="group-box" x="0" y="0" width="126" height="44" rx="5"/>
-            <circle class="ag-atom" cx="25" cy="22" r="11"/>
-            <circle class="ag-atom" cx="57" cy="22" r="11"/>
-            <path class="o-atom" d="M99 10 L111 22 L99 34 L87 22 Z"/>
-          </g>
-        </svg>
-        <p class="legend">Circle = silver (Ag). Diamond = oxygen (O).</p>
-        <figcaption>One Ag<sub>2</sub>O <a href="#formula-unit">formula unit</a> gives the ratio of two Ag atoms to one O atom in solid silver oxide. Two units count as four Ag and two O. The boxes show counts, with no claim about the positions or bonds in the solid.</figcaption>
-      </figure>
-
-      <div class="study">
-        <h3>Meet the oxygen pair</h3>
-        <p><strong>Given.</strong> Solid silver oxide breaks down into solid silver and oxygen gas. In O<sub>2</sub>, we count oxygen in two-atom molecules. Ag in solid silver counts atoms in an extended solid.</p>
-        <p><strong>Goal.</strong> Make both elements match by changing only coefficients. Start with one of each formula.</p>
-        <p>A <a href="#state">state symbol</a> goes immediately after its formula. Here, (s) means solid and (g) means gas.</p>
-        <p class="eq trial"><span>Ag<sub>2</sub>O(s)</span> <span>→ Ag(s)</span> <span>+ O<sub>2</sub>(g)</span></p>
-        <p>The left has one O atom per Ag<sub>2</sub>O unit. The right has two O atoms per O<sub>2</sub> molecule. The first total both sides can reach is two. <strong>Predict.</strong> If you change the Ag<sub>2</sub>O coefficient to 2 and leave Ag at 1, which row will match? How much silver will you then need?</p>
-
-        <div data-atom-model hidden>
-          <p class="eq trial"><span><b data-oxide-number></b>Ag<sub>2</sub>O(s)</span> <span>→ <b data-silver-number></b>Ag(s)</span> <span>+ O<sub>2</sub>(g)</span></p>
-          <div class="trial-controls">
-            <label><span>Ag<sub>2</sub>O coefficient</span> <select data-oxide aria-label="Ag₂O coefficient"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
-            <label>Ag coefficient <select data-silver aria-label="Ag coefficient"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
-            <button type="button" data-reset>Reset trial</button>
+    <section aria-labelledby="count">
+      <p class="eyebrow">01 · Count</p>
+      <h2 id="count">Scale the whole formula</h2>
+      <p>A <a href="#term-coefficient">coefficient</a> is the number in front of a formula. It multiplies the count for every element in that formula. When no coefficient is written, use 1. Changing a subscript changes the substance described by the formula.</p>
+      <figure class="unit-model">
+        <div class="unit-pair">
+          <div class="unit"><strong>Unit 1</strong>
+            <svg viewBox="0 0 148 106" role="img" aria-labelledby="first-unit" aria-describedby="first-count">
+              <title id="first-unit">First formula unit of iron(III) oxide</title>
+              <desc id="first-count">Two tan circles represent iron atoms. Three blue circles represent oxygen atoms.</desc>
+              <g class="iron-dot"><circle cx="50" cy="28" r="20"/><circle cx="98" cy="28" r="20"/></g>
+              <g class="oxygen-dot"><circle cx="28" cy="78" r="20"/><circle cx="74" cy="78" r="20"/><circle cx="120" cy="78" r="20"/></g>
+            </svg>
+            <p class="unit-labels"><span class="iron-key">2 Fe</span><span class="oxygen-key">3 O</span></p>
           </div>
-          <table class="inventory">
-            <caption>Trial totals in atoms</caption>
+          <div class="unit"><strong>Unit 2</strong>
+            <svg viewBox="0 0 148 106" role="img" aria-labelledby="second-unit" aria-describedby="second-count">
+              <title id="second-unit">Second formula unit of iron(III) oxide</title>
+              <desc id="second-count">Two tan circles represent iron atoms. Three blue circles represent oxygen atoms.</desc>
+              <g class="iron-dot"><circle cx="50" cy="28" r="20"/><circle cx="98" cy="28" r="20"/></g>
+              <g class="oxygen-dot"><circle cx="28" cy="78" r="20"/><circle cx="74" cy="78" r="20"/><circle cx="120" cy="78" r="20"/></g>
+            </svg>
+            <p class="unit-labels"><span class="iron-key">2 Fe</span><span class="oxygen-key">3 O</span></p>
+          </div>
+        </div>
+        <figcaption><strong>2Fe<sub>2</sub>O<sub>3</sub></strong> counts 2 × 2 = 4 Fe atoms and 2 × 3 = 6 O atoms. Each box is a counting group. The circles represent atoms and their positions are schematic. Solid iron(III) oxide has an extended structure.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="balance">
+      <p class="eyebrow">02 · Balance</p>
+      <h2 id="balance">Follow a change across the equation</h2>
+      <p><strong>Given.</strong> In a simplified model of roasting pyrite, the <a href="#term-reactant">reactants</a> are the starting substances, FeS<sub>2</sub> and O<sub>2</sub>. The <a href="#term-product">products</a> are the substances formed, Fe<sub>2</sub>O<sub>3</sub> and SO<sub>2</sub>. The arrow points from reactants to products. Keep these formulas and their sides fixed.</p>
+      <p><strong>Goal.</strong> Change coefficients until each element has the same atom count on both sides. A chemical reaction rearranges atoms and preserves the count of each element. Use the <a href="#term-ratio">smallest whole-number ratio</a>, with no whole number greater than 1 dividing all coefficients.</p>
+      <ol class="moves">
+        <li><p><strong>Match iron and sulfur first.</strong> Start with one Fe<sub>2</sub>O<sub>3</sub>. Its two Fe atoms require 2FeS<sub>2</sub>. That gives 2 × 2 = 4 S atoms on the left, so use 4SO<sub>2</sub> on the right.</p></li>
+        <li><p><strong>Add oxygen from both products.</strong> Fe<sub>2</sub>O<sub>3</sub> contributes 3 O atoms and 4SO<sub>2</sub> contributes 4 × 2 = 8 O atoms. That gives 3 + 8 = 11 O atoms on the right.</p></li>
+      </ol>
+
+      <div class="trial" data-balance-lab>
+        <h3>Test one change</h3>
+        <p class="equation"><span>2FeS<sub>2</sub></span> <span>+ 5O<sub>2</sub></span> <span>→</span> <span>Fe<sub>2</sub>O<sub>3</sub></span> <span>+ 4SO<sub>2</sub></span></p>
+        <p>Five O<sub>2</sub> units give 10 O atoms. Predict the right-side Fe, S and O totals if you double just Fe<sub>2</sub>O<sub>3</sub>. Which row that already matches will need attention?</p>
+        <div class="enhanced" hidden>
+          <p class="equation trial-readout"><span>2FeS<sub>2</sub></span> <span>+ 5O<sub>2</sub></span> <span>→</span> <span><b data-product-count></b>Fe<sub>2</sub>O<sub>3</sub></span> <span>+ 4SO<sub>2</sub></span></p>
+          <div class="lab-controls">
+            <label for="oxide-count">Coefficient of Fe<sub>2</sub>O<sub>3</sub></label>
+            <div class="control-line">
+              <select id="oxide-count">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <button type="button" data-balance-reset>Reset trial</button>
+            </div>
+          </div>
+          <table class="ledger">
+            <caption>Atom counts for the current trial</caption>
             <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Ag</th><td data-ag-left>2</td><td data-ag-right>1</td></tr>
-              <tr><th scope="row">O</th><td data-o-left>1</td><td>2</td></tr>
+              <tr><th scope="row">Fe</th><td>2</td><td data-iron>2</td></tr>
+              <tr><th scope="row">S</th><td>4</td><td>4</td></tr>
+              <tr><th scope="row">O</th><td>10</td><td data-oxygen>11</td></tr>
             </tbody>
           </table>
-          <p data-count-status role="status"></p>
+          <p class="trial-status" data-balance-status role="status"></p>
         </div>
-
-        <details class="model-comparison"><summary>Compare the trials</summary>
-          <p class="eq trial"><span>2Ag<sub>2</sub>O(s)</span> <span>→ Ag(s)</span> <span>+ O<sub>2</sub>(g)</span></p>
-          <p>O matches at two atoms on each side. Ag still differs, with four atoms on the left and one on the right.</p>
-          <p>Keep the two Ag<sub>2</sub>O units and change the Ag coefficient to 4. That adds Ag on the right while leaving both O totals alone.</p>
+        <details>
+          <summary>Compare the atom counts</summary>
+          <p class="equation"><span>2FeS<sub>2</sub></span> <span>+ 5O<sub>2</sub></span> <span>→</span> <span>2Fe<sub>2</sub>O<sub>3</sub></span> <span>+ 4SO<sub>2</sub></span></p>
+          <p>On the right, Fe changes from 2 to 4. O changes from 11 to 6 + 8 = 14. S stays at 4. This gives an even oxygen total, but Fe now differs across the arrow. If you chose 7O<sub>2</sub> at this point, only oxygen and sulfur would match.</p>
+          <p>Before continuing, try raising Fe<sub>2</sub>O<sub>3</sub> to 3 in the original trial. Which atoms does this add on the right?</p>
+          <details><summary>Compare the retry</summary><p>3Fe<sub>2</sub>O<sub>3</sub> gives 6 Fe and 9 O from that formula. With the 8 O atoms in 4SO<sub>2</sub>, the right side has 6 Fe, 4 S and 17 O atoms.</p></details>
         </details>
-        <p><strong>Final.</strong> Four Ag atoms and two O atoms on each side. All formulas represent neutral substances, so total charge is zero on each side. The coefficients have no common divisor greater than 1.</p>
-        <p class="eq final"><span>2Ag<sub>2</sub>O(s)</span> <span>→ 4Ag(s)</span> <span>+ O<sub>2</sub>(g)</span></p>
       </div>
 
-      <div class="practice study">
-        <h3>Try a different breakdown</h3>
-        <p>Write the balanced equation for heated ammonium nitrite. Tell which element changes along with hydrogen when you adjust the amount of water.</p>
-        <p class="eq"><span>NH<sub>4</sub>NO<sub>2</sub>(s)</span> <span>→ N<sub>2</sub>(g)</span> <span>+ H<sub>2</sub>O(g)</span></p>
-        <details><summary>Compare your equation</summary>
-          <p class="eq"><span>NH<sub>4</sub>NO<sub>2</sub>(s)</span> <span>→ N<sub>2</sub>(g)</span> <span>+ 2H<sub>2</sub>O(g)</span></p>
-          <p>Two N atoms already match. Water needs a coefficient of 2 to match four H atoms, and that same change brings O to two on each side. If you saw only one N on the left, add the two appearances of N in NH<sub>4</sub>NO<sub>2</sub>.</p>
-          <p><strong>Retry.</strong> If every coefficient in your balanced equation were tripled, what would happen to the atom counts and what would you write as the final ratio?</p>
-          <details><summary>Check the retry</summary><p>Each side would have 6 N, 12 H, and 6 O atoms. The totals still match. Divide all three coefficients by 3 to get the simplest ratio.</p></details>
+      <ol class="moves" start="3">
+        <li><p><strong>Scale the linked counts together.</strong> O<sub>2</sub> supplies pairs, so no whole coefficient can supply 11 O atoms. Double the FeS<sub>2</sub>, Fe<sub>2</sub>O<sub>3</sub> and SO<sub>2</sub> coefficients together to keep Fe and S matched and make the oxygen total even.</p>
+          <table class="ledger linked-counts">
+            <caption>Scaling the linked terms. Count O on the right.</caption>
+            <thead><tr><th scope="col">Atom</th><th scope="col">Trial</th><th scope="col">×2</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Fe</th><td>2</td><td>4</td></tr>
+              <tr><th scope="row">S</th><td>4</td><td>8</td></tr>
+              <tr><th scope="row">O</th><td>3 + 8 = 11</td><td>6 + 16 = 22</td></tr>
+            </tbody>
+          </table>
+        </li>
+        <li><p><strong>Set the oxygen coefficient last.</strong> Each O<sub>2</sub> unit supplies two atoms. Match the 22 on the right with 22 ÷ 2 = 11 units of O<sub>2</sub> on the left.</p></li>
+      </ol>
+      <div class="result">
+        <p class="equation"><span>4FeS<sub>2</sub></span> <span>+ 11O<sub>2</sub></span> <span>→</span> <span>2Fe<sub>2</sub>O<sub>3</sub></span> <span>+ 8SO<sub>2</sub></span></p>
+        <p>Each side has 4 Fe, 8 S and 22 O atoms. All written species are neutral, so each side also has zero net charge. The coefficients 4, 11, 2 and 8 have no common divisor greater than 1. The equation describes amounts for the stated reaction. It does not show the reaction steps or how quickly the reaction occurs.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="label">
+      <p class="eyebrow">03 · Label</p>
+      <h2 id="label">Attach the given states</h2>
+      <p>A <a href="#term-state">state symbol</a> goes immediately after the formula it describes. Write (s) for solid, (l) for liquid, (g) for gas and (aq) for dissolved in water. Read the conditions in the prompt. The formula and coefficient alone do not tell you the state.</p>
+      <p>When carbon monoxide, oxygen and carbon dioxide are all gases, write (g) three times. The atom counts stay the same.</p>
+      <p class="equation"><span>2CO(g)</span> <span>+ O<sub>2</sub>(g)</span> <span>→</span> <span>2CO<sub>2</sub>(g)</span></p>
+      <p>When solid calcium carbonate yields solid calcium oxide and carbon dioxide gas, put each state next to its own formula.</p>
+      <p class="equation"><span>CaCO<sub>3</sub>(s)</span> <span>→</span> <span>CaO(s)</span> <span>+ CO<sub>2</sub>(g)</span></p>
+
+      <div class="state-practice">
+        <h3>Try a different state</h3>
+        <p>Solid mercury(II) oxide decomposes. In the product report, the collected mercury is liquid and the oxygen is gas. Write the full equation before checking the state of Hg.</p>
+        <p class="equation"><span>2HgO</span> <span>→</span> <span>2Hg</span> <span>+ O<sub>2</sub></span></p>
+        <form data-chem-choice>
+          <fieldset>
+            <legend>Which notation describes the collected mercury?</legend>
+            <label class="option"><input type="radio" name="mercury" value="a" data-explanation="(aq) describes a substance dissolved in water. The mercury itself is liquid. Check the state list, then try again."><span>2Hg(aq)</span></label>
+            <label class="option"><input type="radio" name="mercury" value="b" data-explanation="2HgO(s) → 2Hg(l) + O₂(g). The state symbols leave two Hg atoms and two O atoms on each side. Then try the state transfer below."><span>2Hg(l)</span></label>
+            <label class="option"><input type="radio" name="mercury" value="c" data-explanation="(s) would describe solid mercury. Use the reported state of each substance separately, then try again."><span>2Hg(s)</span></label>
+            <button type="submit" disabled>Check the Hg notation</button>
+            <p class="feedback" role="status"></p>
+          </fieldset>
+        </form>
+        <details class="static-feedback"><summary>Compare the reported states</summary>
+          <p class="equation"><span>2HgO(s)</span> <span>→</span> <span>2Hg(l)</span> <span>+ O<sub>2</sub>(g)</span></p>
+          <p>Use (l) for the liquid mercury. The solid label belongs only to HgO, and (aq) would require mercury to be dissolved in water. The states leave two Hg atoms and two O atoms on each side.</p>
         </details>
       </div>
     </section>
 
-    <section aria-labelledby="match-title">
-      <p class="eyebrow">02 / Match</p>
-      <h2 id="match-title">Read the size of each group</h2>
-      <div class="study">
-        <h3>When one group already fits</h3>
-        <p><strong>Given.</strong> H<sub>2</sub> and Cl<sub>2</sub> form HCl. All three substances are gases at the stated conditions. <strong>Goal.</strong> Write the balanced equation with states.</p>
-        <p class="eq trial"><span>H<sub>2</sub>(g)</span> <span>+ Cl<sub>2</sub>(g)</span> <span>→ HCl(g)</span></p>
-        <p>One H<sub>2</sub> gives two H atoms. Each HCl takes one H, so try 2HCl. This also uses two Cl atoms, exactly one Cl<sub>2</sub>. There is no need to change either reactant coefficient.</p>
-        <p class="eq final"><span>H<sub>2</sub>(g)</span> <span>+ Cl<sub>2</sub>(g)</span> <span>→ 2HCl(g)</span></p>
-        <p>Put (g) after <em>each</em> gas. The state and the coefficient tell you different things. Labeling the state leaves the atom totals alone.</p>
-      </div>
-
-      <div class="study">
-        <h3>When both groups have to grow</h3>
-        <p><strong>Given.</strong> Solid white phosphorus and chlorine gas form phosphorus trichloride, collected as a liquid. <strong>Goal.</strong> Match both elements and show each state.</p>
-        <p class="eq trial"><span>P<sub>4</sub>(s)</span> <span>+ Cl<sub>2</sub>(g)</span> <span>→ PCl<sub>3</sub>(l)</span></p>
-        <ol class="moves">
-          <li>Cl comes in groups of two on the left and three on the right. The first shared total is six Cl atoms. Try three Cl<sub>2</sub> molecules and two PCl<sub>3</sub> molecules.
-            <p class="eq trial"><span>P<sub>4</sub>(s)</span> <span>+ 3Cl<sub>2</sub>(g)</span> <span>→ 2PCl<sub>3</sub>(l)</span></p>
-          </li>
-          <li>That trial gives four P atoms on the left and two on the right. Double <em>both</em> Cl terms to keep Cl matched. The right then has four P atoms, enough to use one P<sub>4</sub> molecule.</li>
+    <section aria-labelledby="transfer">
+      <p class="eyebrow">04 · Transfer</p>
+      <h2 id="transfer">Write the equations yourself</h2>
+      <p>Use paper. For each equation, write the smallest whole-number coefficients and check all atom counts. Include state symbols where the conditions give them.</p>
+      <ol class="transfer-list">
+        <li><p>Ammonia can react with oxygen to form nitric oxide and water. Balance the given formulas. Mark your first coefficient change and explain which count you checked next.</p>
+          <p class="equation"><span>NH<sub>3</sub></span> <span>+ O<sub>2</sub></span> <span>→</span> <span>NO</span> <span>+ H<sub>2</sub>O</span></p>
+          <p>Now rewrite the balanced equation for a report that tracks the same reaction amounts after cooling the products. In the report, every substance is a gas except the collected liquid water.</p></li>
+        <li><p>Nitric oxide reacts with oxygen to form nitrogen dioxide. In this case, all substances are gases.</p>
+          <p class="equation"><span>NO</span> <span>+ O<sub>2</sub></span> <span>→</span> <span>NO<sub>2</sub></span></p></li>
+        <li><p>Hydrogen peroxide dissolved in water decomposes to liquid water and oxygen gas.</p>
+          <p class="equation"><span>H<sub>2</sub>O<sub>2</sub></span> <span>→</span> <span>H<sub>2</sub>O</span> <span>+ O<sub>2</sub></span></p></li>
+      </ol>
+      <details><summary>Compare after trying all three</summary>
+        <ol class="transfer-list">
+          <li><p>One route starts with hydrogen. Two NH<sub>3</sub> units supply 6 H atoms, so use 3H<sub>2</sub>O. Two N atoms require 2NO. The product oxygen count is 2 + 3 = 5, so double these linked amounts to make ten O atoms on the right. Use 5O<sub>2</sub> on the left.</p>
+            <p class="equation"><span>4NH<sub>3</sub></span> <span>+ 5O<sub>2</sub></span> <span>→</span> <span>4NO</span> <span>+ 6H<sub>2</sub>O</span></p>
+            <p>Each side counts 4 N, 12 H and 10 O atoms. If you got 2O<sub>2</sub> or 3O<sub>2</sub> after the first H match, check oxygen from both products and make their combined count even.</p>
+            <p class="equation"><span>4NH<sub>3</sub>(g)</span> <span>+ 5O<sub>2</sub>(g)</span> <span>→</span> <span>4NO(g)</span> <span>+ 6H<sub>2</sub>O(l)</span></p>
+            <p>Keep the ratio for the report. Apply the gas rule to three formulas and the liquid exception to water alone.</p></li>
+          <li><p class="equation"><span>2NO(g)</span> <span>+ O<sub>2</sub>(g)</span> <span>→</span> <span>2NO<sub>2</sub>(g)</span></p>
+            <p>Each side counts 2 N and 4 O atoms. Include oxygen from both reactants. Each of the three formulas gets (g).</p></li>
+          <li><p class="equation"><span>2H<sub>2</sub>O<sub>2</sub>(aq)</span> <span>→</span> <span>2H<sub>2</sub>O(l)</span> <span>+ O<sub>2</sub>(g)</span></p>
+            <p>Each side counts 4 H and 4 O atoms. (aq) describes the peroxide dissolved in water. (l) describes the liquid water produced.</p></li>
         </ol>
-        <p class="eq final"><span>P<sub>4</sub>(s)</span> <span>+ 6Cl<sub>2</sub>(g)</span> <span>→ 4PCl<sub>3</sub>(l)</span></p>
-        <p>Check four P and twelve Cl atoms on each side. The product is labeled (l) because it is collected as a liquid. The two reactants keep their own states. In particular, a formula with two atoms can be a gas here, but a subscript never tells you the state.</p>
-      </div>
-
-      <div class="practice study">
-        <h3>Balance first, then write the states</h3>
-        <p>Balance each equation on paper. Then use your own balanced equation to make a second version with states.</p>
-        <ul>
-          <li><span class="eq"><span>NO</span> <span>+ O<sub>2</sub></span> <span>→ NO<sub>2</sub></span></span> For the second version, all substances are gases.</li>
-          <li><span class="eq"><span>CS<sub>2</sub></span> <span>+ H<sub>2</sub>O</span> <span>→ CO<sub>2</sub></span> <span>+ H<sub>2</sub>S</span></span> For the second version, all substances are gases except the carbon disulfide (CS<sub>2</sub>) feed, which is liquid before it vaporizes.</li>
-        </ul>
-        <details><summary>Compare your notation</summary>
-          <p>In the first equation, keep NO and NO<sub>2</sub> at the same coefficient so N matches. Try two of each. O then totals 2 + 2 = 4 on the left and 2 × 2 = 4 on the right.</p>
-          <p class="eq"><span>2NO(g)</span> <span>+ O<sub>2</sub>(g)</span> <span>→ 2NO<sub>2</sub>(g)</span></p>
-          <p>In the second, match two S atoms with two H<sub>2</sub>S. Match its four H atoms with two H<sub>2</sub>O. Check one C and two O atoms on both sides.</p>
-          <p class="eq"><span>CS<sub>2</sub>(l)</span> <span>+ 2H<sub>2</sub>O(g)</span> <span>→ CO<sub>2</sub>(g)</span> <span>+ 2H<sub>2</sub>S(g)</span></p>
-          <p>Apply the gas label to each term it describes. The stated exception is CS<sub>2</sub>, so water is still marked (g).</p>
-          <p><strong>Retry.</strong> Write the second equation for conditions after the feed has vaporized, with the other states unchanged.</p>
-          <details><summary>Check the retry</summary><p class="eq"><span>CS<sub>2</sub>(g)</span> <span>+ 2H<sub>2</sub>O(g)</span> <span>→ CO<sub>2</sub>(g)</span> <span>+ 2H<sub>2</sub>S(g)</span></p><p>Only CS<sub>2</sub> changes label. The coefficients and formulas still give the same atom counts.</p></details>
-        </details>
-      </div>
+        <p>The species are neutral in all three examples. Each ratio has no common divisor greater than 1. An unwritten coefficient counts as 1.</p>
+      </details>
     </section>
 
-    <section aria-labelledby="split-title">
-      <p class="eyebrow">03 / Track</p>
-      <h2 id="split-title">When atoms are spread across terms</h2>
-      <div class="study">
-        <p><strong>Given.</strong> In one overall reaction for making iron from iron oxide, CO is used up and CO<sub>2</sub> forms. <strong>Goal.</strong> Find the smallest whole-number coefficients.</p>
-        <p class="eq trial"><span>Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+ CO(g)</span> <span>→ Fe(s)</span> <span>+ CO<sub>2</sub>(g)</span></p>
-        <p>O is in two reactant formulas. Starting there means guessing more than one amount. Start where an element occurs in only one formula on each side.</p>
-        <ol class="moves">
-          <li><strong>Match Fe.</strong> One Fe<sub>2</sub>O<sub>3</sub> has two Fe atoms, so try 2Fe. Iron oxide is counted in formula units and solid Fe in atoms.
-            <p class="eq trial"><span>Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+ CO(g)</span> <span>→ 2Fe(s)</span> <span>+ CO<sub>2</sub>(g)</span></p>
-          </li>
-          <li><strong>Keep C matched.</strong> Each CO and each CO<sub>2</sub> contains one C. Use the same number of CO and CO<sub>2</sub> molecules.</li>
-          <li><strong>Finish O.</strong> Each matched CO/CO<sub>2</sub> pair puts one more O atom on the right than on the left. Three pairs account for the three O atoms that came from the oxide.</li>
-        </ol>
-        <p class="eq final"><span>Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+ 3CO(g)</span> <span>→ 2Fe(s)</span> <span>+ 3CO<sub>2</sub>(g)</span></p>
-        <table class="inventory">
-          <caption>Final count in atoms</caption>
-          <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Fe</th><td>2</td><td>2</td></tr>
-            <tr><th scope="row">C</th><td>3</td><td>3</td></tr>
-            <tr><th scope="row">O</th><td>3 + 3 = 6</td><td>3 × 2 = 6</td></tr>
-          </tbody>
-        </table>
-        <p>The charges total zero on each side and the 1 keeps the ratio in simplest form. These counts describe the overall reaction. They give no timing or steps for how the atoms move.</p>
-      </div>
-      <div class="practice study">
-        <h3>Keep a match while you change a trial</h3>
-        <p>For sulfur dioxide made from solid pyrite, suppose a trial matches Fe and S as shown. Can you finish O by changing O<sub>2</sub> alone to a whole number? Write the smallest whole-number equation and explain your move.</p>
-        <p class="eq"><span>2FeS<sub>2</sub>(s)</span> <span>+ O<sub>2</sub>(g)</span> <span>→ Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+ 4SO<sub>2</sub>(g)</span></p>
-        <details><summary>Compare your move</summary>
-          <p>There are 3 + 4 × 2 = 11 O atoms on the right. O<sub>2</sub> alone gives even totals. Double the already matched group of FeS<sub>2</sub>, Fe<sub>2</sub>O<sub>3</sub> and SO<sub>2</sub> terms, then use 11 O<sub>2</sub> molecules for the new total of 22 O atoms.</p>
-          <p class="eq"><span>4FeS<sub>2</sub>(s)</span> <span>+ 11O<sub>2</sub>(g)</span> <span>→ 2Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+ 8SO<sub>2</sub>(g)</span></p>
-          <p>If you double only one product, Fe or S stops matching. The finished counts are 4 Fe, 8 S, and 22 O on both sides. The coefficients share no divisor above 1.</p>
-          <p><strong>Retry.</strong> In the trial <span class="eq"><span>Cu<sub>2</sub>S(s)</span> <span>+ O<sub>2</sub>(g)</span> <span>→ 2Cu(s)</span> <span>+ SO<sub>2</sub>(g)</span></span> should you double the matched group or keep it?</p>
-          <details><summary>Check the retry</summary><p>Keep it. Both sides already contain two Cu, one S, and two O atoms, so the trial is the finished equation.</p></details>
-        </details>
-      </div>
-    </section>
-
-    <section aria-labelledby="transfer-title">
-      <p class="eyebrow">04 / Transfer</p>
-      <h2 id="transfer-title">Balance an air scrubber equation</h2>
-      <div class="practice study">
-        <p>Sodium peroxide and sodium carbonate are solids. Carbon dioxide and oxygen are gases.</p>
-        <p class="eq"><span>Na<sub>2</sub>O<sub>2</sub></span> <span>+ CO<sub>2</sub></span> <span>→ Na<sub>2</sub>CO<sub>3</sub></span> <span>+ O<sub>2</sub></span></p>
-        <p>On paper, write the balanced equation with physical states. Explain why you started with your chosen element, what you kept matched while editing the equation, and how you checked your result.</p>
-        <details><summary>Compare after you write it</summary>
-          <p>Start with Na or C. Each occurs in one formula on each side. One Na<sub>2</sub>CO<sub>3</sub> needs the Na from one Na<sub>2</sub>O<sub>2</sub> and the C from one CO<sub>2</sub>. That trial leaves four O atoms on the left and three already in the carbonate. The spare O atom cannot make a whole O<sub>2</sub> molecule.</p>
-          <p>Double the three linked amounts so there are two spare O atoms. One O<sub>2</sub> now uses both. If you doubled only the carbonate, recheck the Na and C counts.</p>
-          <p class="eq"><span>2Na<sub>2</sub>O<sub>2</sub>(s)</span> <span>+ 2CO<sub>2</sub>(g)</span> <span>→ 2Na<sub>2</sub>CO<sub>3</sub>(s)</span> <span>+ O<sub>2</sub>(g)</span></p>
-          <p>Both sides have four Na, two C, eight O, and zero net charge. The 1 for O<sub>2</sub> makes this the simplest whole-number ratio. Its (g) label comes from the stated conditions.</p>
-          <p><strong>Retry.</strong> Close the comparison. Sketch your own three-row atom count for a different equation in this lesson. Show what would change if you increased just one coefficient, then repair the balance.</p>
-        </details>
-      </div>
-    </section>
-
-    <section aria-labelledby="remember">
-      <h2 id="remember">When you come back</h2>
-      <p>Before rereading, sketch a trial equation and mark the one part of a term that you can change to balance atoms. Explain how you would spot a useful starting element and what you would count again after every move.</p>
-      <p>On a new problem, check each element on both sides, total charge, the simplest whole-number ratio, and whether each requested state comes from the stated conditions.</p>
+    <section aria-labelledby="return">
+      <h2 id="return">Take the method back to your work</h2>
+      <ol>
+        <li>Keep every given formula and its side of the arrow fixed.</li>
+        <li>Count coefficient × subscript for each term. Add an element’s contributions on each side.</li>
+        <li>Look for an element in just one formula on each side to start. When an element is supplied in pairs, check whether the opposite total is even. Recount every row a move touches.</li>
+        <li>Check each element, net charge and the smallest whole-number ratio. Then append the states where given.</li>
+      </ol>
+      <p>On your next visit, recall why doubling one coefficient can break a match. Then balance the equation below on paper and say which element you chose first.</p>
+      <p class="equation"><span>CaO</span> <span>+ HCl</span> <span>→</span> <span>CaCl<sub>2</sub></span> <span>+ H<sub>2</sub>O</span></p>
+      <details><summary>Compare the recall attempt</summary>
+        <p class="equation"><span>CaO</span> <span>+ 2HCl</span> <span>→</span> <span>CaCl<sub>2</sub></span> <span>+ H<sub>2</sub>O</span></p>
+        <p>One route starts with Cl. The two Cl atoms in CaCl<sub>2</sub> require 2HCl, which also gives the two H atoms in H<sub>2</sub>O. Both sides now count 1 Ca, 1 O, 2 H and 2 Cl atoms and have zero net charge. The other coefficients can stay at 1, so the ratio cannot be reduced.</p>
+      </details>
     </section>
 
     <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt id="subscript">Subscript</dt><dd>The small number after an element symbol or group in a formula. A missing subscript means one.</dd>
-        <dt id="equation">Chemical equation</dt><dd>A symbolic record of substances consumed and formed in a reaction.</dd>
-        <dt id="reactant">Reactant</dt><dd>A starting substance, written to the left of the reaction arrow.</dd>
-        <dt id="product">Product</dt><dd>A substance formed, written to the right of the arrow.</dd>
-        <dt id="coefficient">Coefficient</dt><dd>The number before a formula. It scales the whole formula. The coefficient 1 is usually left unwritten.</dd>
-        <dt id="formula-unit">Formula unit</dt><dd>The smallest whole-number ratio of components shown by the formula of an ionic solid. It serves as a counting unit.</dd>
-        <dt id="state">State symbol</dt><dd>A label placed after a formula. (s) means solid, (l) liquid, (g) gas, and (aq) dissolved in water.</dd>
+        <dt id="term-subscript">Subscript</dt><dd>The small number giving the count of an element in one unit of the formula. With no written subscript, the count is one.</dd>
+        <dt id="term-unit">Formula unit</dt><dd>The group of atoms counted by the formula for a compound such as solid iron(III) oxide.</dd>
+        <dt id="term-coefficient">Coefficient</dt><dd>The number before a formula that scales all of its counts. An omitted coefficient means one.</dd>
+        <dt id="term-reactant">Reactant</dt><dd>A starting substance written to the left of the arrow.</dd>
+        <dt id="term-product">Product</dt><dd>A substance formed, written to the right of the arrow.</dd>
+        <dt id="term-ratio">Smallest whole-number ratio</dt><dd>A set of whole-number coefficients with no common divisor greater than one.</dd>
+        <dt id="term-state">State symbol</dt><dd>Parentheses after a formula indicating solid (s), liquid (l), gas (g) or dissolved in water (aq) under the given conditions.</dd>
       </dl>
     </section>
-
     <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">References</h2>
-      <p>Check the definitions of balanced equation, coefficient, reactant, and product. <a href="https://openstax.org/books/chemistry-2e/pages/4-key-terms">OpenStax Chemistry 2e key terms</a>.</p>
-      <p>Review how to find a shared total and how to check for even and odd atom counts. <a href="https://webs.anokaramsey.edu/lund/chem1020/Lecture/Handouts/Strategies%20for%20Balancing%20Chemical%20Equations.pdf">Anoka-Ramsey Community College balancing handout (PDF)</a>.</p>
+      <h2 id="sources">Read a little more</h2>
+      <p>The IUPAC Gold Book explains how a chemical equation arranges formulas, coefficients and the reaction arrow. <a href="https://goldbook.iupac.org/terms/view/C01034/pdf" rel="noreferrer">Chemical reaction equation (one-page PDF)</a></p>
     </section>
   </main>
 </body>

@@ -1,0 +1,127 @@
+.lesson.balance {
+  --atom-ink: #173a3b;
+  --atom-wash: #e7f1ef;
+  --atom-accent: #265856;
+  --iron-key: #f4d9b9;
+  --oxygen-key: #cbe4e2;
+  color: var(--atom-ink);
+  width: min(790px, 100% - clamp(16px, 5vw, 64px));
+}
+.balance header {
+  padding: clamp(.7rem, 3.5vw, 2.2rem);
+  background: var(--atom-wash);
+  border-top: 5px solid var(--atom-accent);
+}
+.balance header h1 { font-size: clamp(1.85rem, 6vw, 3.65rem); }
+.balance header .lead { font-size: clamp(1.05rem, 2.5vw, 1.35rem); }
+.balance .eyebrow {
+  margin-block: 0 .55rem;
+  font-size: .79rem;
+  font-weight: bold;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.balance aside { margin-top: 2rem; }
+.balance aside h2 { font-size: 1.45rem; }
+.balance section { margin-top: clamp(2.1rem, 6vw, 4.25rem); }
+.balance h2 { line-height: 1.12; }
+.balance h1, .balance h2, .balance h3, .balance summary, .balance label, .balance button {
+  overflow-wrap: break-word;
+}
+.balance .unit-model { padding: clamp(.45rem, 2.8vw, 1.5rem); background: var(--atom-wash); }
+.balance .unit-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+.balance .unit {
+  flex: 1 1 8rem;
+  max-width: min(100%, 18rem);
+  min-width: 0;
+  padding: .3rem;
+  border: 1px solid var(--atom-accent);
+  background: white;
+  text-align: center;
+}
+.balance .unit svg { max-width: 148px; margin-inline: auto; }
+.balance .iron-dot { fill: var(--iron-key); stroke: var(--atom-ink); }
+.balance .oxygen-dot { fill: var(--oxygen-key); stroke: var(--atom-ink); }
+.balance .unit-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .25em;
+  margin: .25em 0;
+  font-weight: bold;
+}
+.balance .unit-labels span { padding: 0 .3em; border: 1px solid var(--atom-accent); white-space: nowrap; }
+.balance .iron-key { background: var(--iron-key); }
+.balance .oxygen-key { background: var(--oxygen-key); }
+.balance figcaption { font-size: .95em; }
+.balance ol { padding-inline-start: 1.2em; }
+.balance ol li { padding-inline-start: .16em; }
+.balance .equation {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: .35em;
+  row-gap: .14em;
+  font-size: 1.08em;
+  font-weight: bold;
+}
+.balance .equation span { white-space: nowrap; }
+.balance sub { font-size: .74em; line-height: 0; }
+.balance .trial, .balance .result {
+  padding: clamp(.5rem, 2.8vw, 1.35rem);
+  background: var(--atom-wash);
+  border-inline-start: 3px solid var(--atom-accent);
+  margin-block: 1.3rem;
+}
+.balance .trial-readout { padding-block: .45rem; border-block: 1px solid var(--atom-accent); }
+.balance .lab-controls label { display: block; font-weight: bold; }
+.balance .control-line { display: flex; flex-wrap: wrap; gap: .8rem; margin-block: .45rem .9rem; }
+.balance select {
+  font: inherit;
+  color: inherit;
+  background: white;
+  border: 2px solid var(--atom-accent);
+  min-height: 48px;
+  padding: .25rem .65rem;
+}
+.balance select:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.balance .ledger { background: white; max-width: 24rem; }
+.balance .ledger th, .balance .ledger td { padding: .25rem clamp(.15rem, 1.1vw, .8rem); }
+.balance .linked-counts thead th { white-space: nowrap; }
+.balance .trial-status { font-weight: bold; }
+.balance details {
+  padding: .35rem clamp(.35rem, 2.2vw, 1.15rem);
+  background: #edf0ed;
+  border: 1px solid #829893;
+}
+.balance details details { background: #f7f7f7; }
+.balance .trial details { background: #f7f7f7; }
+.balance .transfer-list > li + li { border-top: 1px solid #a8b8b4; }
+.balance fieldset { padding: clamp(.35rem, 2.5vw, 1.1rem); }
+.balance .option { gap: .4rem; padding: .4rem; }
+@media print {
+  .lesson.balance { width: 100%; color: #000; line-height: 1.42; }
+  .balance header { padding: 0; border: 0; }
+  .balance p { margin-block: .55rem; }
+  .balance .eyebrow { margin-top: .6rem; }
+  .balance section { margin-top: 1rem; }
+  .balance section + section { padding-top: 0; }
+  .balance .unit, .balance .trial, .balance .result, .balance fieldset { background: white; }
+  .balance .unit-model { margin-block: .6rem; }
+  .balance .trial, .balance .result { padding-block: 0; }
+  .balance details { margin-block: .35rem; border: 0; background: white; }
+  .balance details > summary { display: list-item; min-height: auto; padding: 0; }
+  .balance h2, .balance h3, .balance summary { break-after: avoid; }
+  .balance .equation,
+  .balance .result,
+  .balance .state-practice,
+  .balance .transfer-list > li,
+  .balance .moves[start] > li:first-child { break-inside: avoid; }
+  .balance .state-practice form { margin-top: .6rem; }
+  .balance .state-practice .option { min-height: 0; margin-block: .15rem; }
+  .balance .unit svg { max-width: 90px; }
+}

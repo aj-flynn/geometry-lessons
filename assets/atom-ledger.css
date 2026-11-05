@@ -1,115 +1,41 @@
-.ledger {
-  --paper: #faf8f1;
-  --ink: #173037;
-  --surface: #eef2eb;
-  --line: #a2b5a6;
-  --blue: #145765;
-  --accent: #ffc86d;
-  color: var(--ink);
-}
-.ledger .ledger-header {
-  padding: clamp(20px, 6vw, 48px);
-  background: #173037;
-  border-top: 5px solid var(--accent);
-  color: #faf8f1;
-}
-.ledger .ledger-header h1 {
-  max-width: 16ch;
-  font-family: Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -.055em;
-}
-.ledger .ledger-header .eyebrow { color: var(--accent); }
-.ledger .eyebrow {
-  margin-block: 0 10px;
-  color: var(--blue);
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-}
-.ledger h2 { font-family: Georgia, serif; font-weight: 500; letter-spacing: -.038em; }
-.ledger section { margin-top: 3.7rem; border-top: 1px solid var(--line); padding-top: 1.35rem; }
-.ledger .chem-path { column-gap: .9rem; }
-.ledger .chem-path a { padding-inline: 0; font-weight: 600; }
-.ledger .prompt, .ledger .aside-note {
-  padding: 12px 16px;
-  background: #fcf0d7;
-  border-left: 3px solid #8c5a13;
-  max-width: none;
-}
-.ledger figure { margin-inline: 0; border-radius: 12px; background: #eef2eb; }
-.ledger .tile-lab svg { width: min(100%, 560px); margin-inline: auto; font-size: 17px; }
-.ledger svg .tray { fill: #faf8f1; stroke: #a2b5a6; stroke-width: 1.5px; }
-.ledger svg .tile-square { fill: #145765; }
-.ledger svg .tile-dot { fill: #ffcb7b; stroke: #825013; stroke-width: 1.7px; }
-.ledger svg .tile-arrow { font-size: 24px; }
-.ledger .tile-lab figcaption { color: #314a49; }
-.ledger .observations { background: #faf8f1; }
-.ledger .notation-card {
-  display: grid;
-  grid-template-columns: minmax(12rem, 2fr) minmax(0, 3fr);
-  gap: 1.2rem;
-  align-items: center;
-  padding: clamp(14px, 4vw, 28px);
-  border-block: 1px solid var(--line);
-  background: var(--surface);
-}
-.ledger .notation-card dt { margin-top: .55rem; }
-.ledger .notation-card dd { margin-bottom: .55rem; }
-.ledger .formula-display {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: bold;
-  letter-spacing: -.04em;
-}
-.ledger .multiplier {
-  color: #172e31;
-  background: var(--accent);
-  padding: 0 .17em;
-  border-radius: .13em;
-}
-.ledger .equation {
-  padding: .65rem .85rem;
-  max-width: none;
-  background: #e7efec;
-  border-left: 3px solid var(--blue);
-  font-size: clamp(1.08rem, 3vw, 1.38rem);
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-.ledger .method { max-width: 65ch; padding-left: 1.45rem; }
-.ledger .method li { padding-left: .35rem; margin-block: .7rem; }
-.ledger .atom-table { width: min(100%, 35rem); margin-block: 1rem; font-variant-numeric: tabular-nums; }
-.ledger .atom-table tbody th { background: #e1ede8; }
-.ledger .numeric-fallback { display: block; }
-.ledger form[data-practice-ready="true"] + .numeric-fallback { display: none; }
-.ledger button { border-radius: .38rem; }
-.ledger .secondary { border: 2px solid var(--ink); background: transparent; color: var(--ink); }
-.ledger fieldset { background: var(--surface); }
-.ledger .coefficient-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.4rem), 1fr));
-  gap: .65rem 1.15rem;
-}
-.ledger .coefficient-grid label { display: flex; flex-direction: column; align-items: start; }
-.ledger .coefficient-grid label span { font-weight: bold; }
-.ledger .coefficient-grid input { width: 100%; background: #fff; }
-.ledger .builder-panel .controls { margin-bottom: 0; }
-.ledger .glossary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.4rem; }
-.ledger .glossary-grid > div { padding: .55rem 0; border-bottom: 1px solid var(--line); }
-.ledger .glossary-grid dt { margin-top: 0; }
-@media (max-width: 540px) {
-  .ledger .notation-card, .ledger .glossary-grid { grid-template-columns: minmax(0, 1fr); }
-  .ledger .notation-card { gap: .35rem; }
-  .ledger .tile-lab { padding-inline: 4px; }
-  .ledger .tile-lab > :not(svg) { margin-inline: 8px; }
-  .ledger .tile-lab svg { font-size: 19px; }
+.ledger { --paper: #f8faf9; --ink: #132e35; width: min(890px, 100% - 44px); }
+.ledger header { background: #15343d; color: #f8faf9; border-radius: 4px; padding: clamp(22px, 5vw, 50px); }
+.ledger header .eyebrow { color: #a7dadb; }
+.ledger .eyebrow { margin-block: 0 10px; color: #145d64; font-size: .79em; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.ledger .chem-path { border-bottom: 1px solid #a4b6b7; padding-bottom: 14px; }
+.ledger .chem-path a { min-height: 44px; padding-inline: 3px; }
+.ledger h2 { letter-spacing: -.025em; }
+.ledger .equation { max-width: none; padding: .65em .85em; border-left: 4px solid #146875; background: #e7efef; font-size: 1.11em; font-weight: 600; }
+.ledger .model-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ledger .molecule-tray { min-width: 0; background: #f8faf9; padding: 12px; }
+.ledger .molecule-tray h3 { font-size: 1.05em; letter-spacing: -.01em; }
+.ledger .molecule-tray p { margin: 0; font-weight: 600; }
+.ledger .model-atoms .carbon { fill: #abd6dc; stroke: #132e35; stroke-width: 1.4; }
+.ledger .model-atoms .oxygen { fill: #f6d89d; stroke: #132e35; stroke-width: 1.4; }
+.ledger .model-atoms text { font-size: 19px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.ledger .worked { margin-block: 20px; padding-left: 1.5em; max-width: 69ch; }
+.ledger .worked li { padding: .6em .3em .9em; border-bottom: 1px solid #bccdcd; }
+.ledger .work-line { display: block; margin-block: .55em; font-weight: bold; }
+.ledger .work-line small { display: block; font-size: .9em; font-weight: 400; }
+.ledger article { margin-block: 30px; }
+.ledger form.practice { padding: clamp(12px, 2.5vw, 24px); border: 1px solid #b7c8c7; background: #eef4f3; }
+.ledger fieldset { background: transparent; padding: 0; }
+.ledger .coefficient-inputs { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 16px; }
+.ledger .coefficient-inputs label { display: grid; gap: 4px; font-weight: 700; }
+.ledger .coefficient-inputs input { width: 5em; max-width: 100%; }
+.ledger form button { margin: 4px 6px 4px 0; }
+.ledger form table { margin-top: 16px; }
+.ledger .feedback { font-size: .98em; }
+.ledger details { background: #e9efed; }
+@media (max-width: 550px) {
+  .ledger .model-pair { grid-template-columns: 1fr; }
+  .ledger .molecule-tray svg { max-width: 300px; }
 }
 @media print {
-  .ledger .ledger-header { padding: 0; color: #000; border-top: 0; }
-  .ledger .ledger-header .eyebrow, .ledger .eyebrow { color: #173037; }
-  .ledger section { padding-top: 0; }
-  .ledger form, .ledger [data-ledger-builder] { display: none !important; }
-  .ledger form[data-practice-ready="true"] + .numeric-fallback { display: block; }
-  .ledger p, .ledger li { orphans: 2; widows: 2; }
-  .ledger h2, .ledger h3 { break-after: avoid; }
+  .ledger { width: 100%; }
+  .ledger header { color: #000; background: #fff; padding: 0; }
+  .ledger header .eyebrow, .ledger .eyebrow { color: #000; }
+  .ledger .model-pair { grid-template-columns: 1fr 1fr; }
+  .ledger form.practice { display: none; }
+  .ledger .equation { border: 0; padding: .25em 0; }
 }

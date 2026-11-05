@@ -68,7 +68,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "2e1b67ecfc35046618868d8f0ba769d4066d13a9faf3a49dbe13341a845e7cf3",
+        "sha256": "bf6b7793efb76e7046ae3fc5925e4357fdda0d3e222af2cbfb70c2cd5722ce7a",
         "dependencies": {
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
@@ -140,7 +140,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "cd9a63dabf079770baea6b46add100061f75672dfb45e4a58d109d2a4659e538",
+        "sha256": "8121846d7053fedca97d64d977f0e084e6039c8dad552e38327d313733de6b6a",
         "dependencies": {
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",

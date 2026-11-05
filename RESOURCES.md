@@ -22,10 +22,10 @@
 
 Additional sources verified during subject-skill regeneration:
 
-- [OpenStax: Atomic structure and symbolism](https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism): atomic number, particle counts, and symbols.
-- [OpenStax: Electronic structure of atoms](https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations): main-group valence reasoning and electron configurations.
+- [IUPAC periodic table, 4 May 2022 edition](https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf): learner lookup of element symbols, names, and numbered groups. This dated one-page PDF is not evidence for valence counts or a recommendation of current atomic-weight values.
+- [NIST carbon atomic data](https://physics.nist.gov/PhysRefData/Handbook/Tables/carbontable1.htm), [helium atomic data](https://physics.nist.gov/PhysRefData/Handbook/Tables/heliumtable1.htm), and [gallium atomic data](https://physics.nist.gov/PhysRefData/Handbook/Tables/galliumtable1.htm): author verification of neutral ground-state outer-shell counts, the helium exception, and the distinction between filled inner d orbitals and the outer shell. These spectroscopy tables are author evidence, not beginner reading assignments.
 - [Royal Society of Chemistry: Atomic data](https://periodic-table.rsc.org/Help/AtomicData): meanings and limits of tabulated atomic quantities.
 - [Math Is Fun: Vectors](https://www.mathsisfun.com/algebra/vectors.html): direction-dependent addition and subtraction, with representative calculations independently checked during source review.
-- [OpenStax: Phase transitions](https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions): physical phase changes and energy.
+- [NIST Chemistry WebBook: normal-boiling-point measurements](https://webbook.nist.gov/cgi/cbook.cgi?ID=C74986&Type=TBOIL): optional practice reading measured values with units, provenance, and uncertainty. These data do not establish a force-name ranking or a controlled comparison between substances.
 
 The chemistry sequence uses original prerequisite models and independently selected worked structures and transfer cases. The printable field guide links the four lessons and their glossaries. Numerical classification cutoffs are left to the learner's course convention; no assignment-specific label map or element list is supplied. This resource list records author verification; each lesson's learner-facing source selection is reviewed separately against its supplied input.

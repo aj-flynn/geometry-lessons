@@ -1,3 +1,23 @@
+# Chemistry source-workflow revision
+
+A fresh independent Astra/high review scored candidate 6 at **100, 98.5, 100, 100** for lessons 0003–0006, linked coverage **6.5/7**, and reusable chemistry process **99/100** (30/30 boundaries, 19/20 teaching, 20/20 accuracy, 15/15 repeatability, 15/15 validation). All categories were assessed. No hard privacy, homework-separation, consequential accuracy, or core accessibility failure was reported.
+
+This incremental publication selects the improved source routes in 0003 and 0006, both of which earned full weights in all 23 categories, plus the source-selection skill and author resource list. The numerical scores tie their preceding versions; the demonstrated improvement is removing inaccurate or unnecessarily broad linked material and giving each retained reference a precise learner action. The source-only 0004 candidate is held for a teaching correction after the new reviewer found a missing fresh model-selection check; its 98.5 score is retained, not discarded. No Opus completion is claimed.
+
+An independent brainstorming agent proposed three untried approaches: purpose-first learner references separated from author evidence, a versioned source registry, and original bounded companion references. The first was selected and exercised across every retained destination. The skill now selects author evidence by claim type and regenerates the learner's source paragraph around a specific task. The dated IUPAC table supports symbol/group lookup; NIST measured data support reading units, provenance and uncertainty. Neither is presented as a universal classification or ranking rule. Source inspection also corrected the brainstorming pass's preliminary recommendation after further numerical checking found another unsuitable example.
+
+The reviewer visually compared both private inputs with the complete local route and full retained destinations. Fresh browser checks covered all choice/numeric feedback paths, models, no-script safety, reduced motion, responsive layouts and navigation; supplied native-zoom evidence was inspected with that provenance stated. The current checker and 27 Node tests passed in review. The selected publication snapshot separately passes its 25-test published infrastructure. Screen-reader conformance and learner retention were not established. The shared traceability-only changes were re-exercised against chemistry's unchanged assets and guide without claiming new learning outcomes.
+
+| Published artifact | SHA-256 |
+| --- | --- |
+| lessons/0003-reading-particle-formulas.html | bf6b7793efb76e7046ae3fc5925e4357fdda0d3e222af2cbfb70c2cd5722ce7a |
+| lessons/0006-between-molecules.html | 8121846d7053fedca97d64d977f0e084e6039c8dad552e38327d313733de6b6a |
+| .agents/skills/chemistry-teach/SKILL.md | 9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4 |
+
+The four chemistry assets and field guide are unchanged from preceding assessments. The assessed but held 0004 HTML hash is `c0a1ef4855a7b8e9d86aa92946417fb99b3308bea7239c827493e0d61bb89734`. Its deductions are A1 6.5/7, C2 3.5/4, C5 2.5/3; all other categories received full weight. That finding drives the next skill and teaching iteration.
+
+---
+
 # Current chemistry incremental improvements
 
 Two fresh independent Astra/high reviews assessed successive fixed candidates. Candidate 4 scored lessons 0003/0004/0005/0006 at 100/100/99.5/100 and the reusable process at 99.5. Candidate 5 scored them at 100/99.5/100/100 and the process at 99. The latest process breakdown is boundaries 30/30, teaching 20/20, subject accuracy 19/20, repeatability 15/15, validation/delivery 15/15. Linked conceptual coverage was assessed at 7/7. Scores are not averaged or promoted to dual-model completion.

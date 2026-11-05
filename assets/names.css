@@ -1,0 +1,81 @@
+.naming {
+  --ink: #122c27;
+  --surface: #e9eeeb;
+  --paper: #faf9f5;
+  --purple: #4a2a4f;
+  --line: #a0b4ac;
+  color: var(--ink);
+  line-height: 1.55;
+}
+body:has(.naming) { background: #faf9f5; }
+.naming .lesson-head { border-bottom: 2px solid var(--ink); padding-bottom: 1.25rem; }
+.naming .eyebrow { font-size: .78em; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+.naming .mission { font-size: 1.18em; max-width: 45ch; }
+.naming .start { border-left: .25rem solid var(--ink); padding: 0 0 0 .8rem; }
+.naming .jump { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; }
+.naming h1, .naming h2, .naming h3 { line-height: 1.12; letter-spacing: -.025em; }
+.naming h1 { font-size: clamp(2rem, 1.25rem + 4vw, 4rem); }
+.naming h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2.25rem); }
+.naming h3 { font-size: 1.19em; }
+.naming section { border-top: 1px solid var(--line); padding-top: .75rem; }
+.naming section > .eyebrow { margin-top: 0; }
+.naming .routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.naming .routes > div { background: var(--surface); padding: 1rem; border-top: .2rem solid var(--ink); }
+.naming .routes > div:nth-child(2) { border-color: var(--purple); }
+.naming .routes p:last-child, .naming .steps:last-child { margin-bottom: 0; }
+.naming .steps { padding-left: 1.4em; }
+.naming .steps li { padding-left: .2em; margin-block: .5em; }
+.naming .practice, .naming .trial-block { border: 1px solid var(--line); background: #fff; padding: 1rem; margin-block: 1.2rem; }
+.naming .note { border-left: .2rem solid var(--purple); padding-left: .8rem; }
+.naming details { padding: .35rem .75rem; margin-block: .5rem; }
+.naming details details { padding-inline: .5rem; border-left: 1px solid var(--line); }
+.naming summary { padding-block: .4rem; align-content: center; }
+.naming form label { display: block; font-weight: 700; }
+.naming input { border: 2px solid var(--ink); background: #fff; min-height: 48px; }
+.naming input[type="text"] { width: min(100%, 24rem); display: block; margin-block: .5rem; padding: .45rem; }
+.naming input[type="number"] { display: block; margin-block: .4rem; }
+.naming button { white-space: normal; text-align: left; margin: .1rem .15rem .2rem 0; }
+.naming [role="status"]:empty { margin: 0; }
+.naming .ion-counts { display: flex; gap: .5rem 1.2rem; flex-wrap: wrap; margin-block: .5rem; }
+.naming .ledger { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: .75rem; background: transparent; }
+.naming .ledger > div { border: 1px solid var(--line); background: var(--surface); padding: .65rem; }
+.naming .ledger > div:nth-child(2) { border-color: #baa6bd; background: #f2eaf4; }
+.naming .ledger figcaption { grid-column: 1 / -1; margin-top: 0; font-size: .92em; }
+.naming figure.model { padding: 1rem; background: var(--surface); }
+.naming figure.model svg { max-width: 28rem; }
+.naming figure.model figcaption { font-size: .9em; }
+.naming .tokens { display: flex; flex-wrap: wrap; gap: .3rem; margin-block: .4rem; }
+.naming .tokens span { border: 1px solid currentColor; border-radius: .28rem; padding: .12rem .35rem; white-space: nowrap; }
+.naming .ledger > div:nth-child(2) .tokens { color: var(--purple); }
+.naming .lookup { display: grid; grid-template-columns: auto 1fr; gap: .35rem .65rem; }
+.naming .lookup > * { margin: 0; }
+.naming :target { scroll-margin-top: 1em; }
+.naming sub, .naming sup { line-height: 0; }
+@media (max-width: 630px) {
+  .naming .routes, .naming .ledger { grid-template-columns: minmax(0, 1fr); }
+  .naming h1 { font-size: 1.85rem; }
+  .naming .lookup { grid-template-columns: auto minmax(0, 1fr); column-gap: .3rem; }
+}
+@media print {
+  .naming { color: #000; font-size: 11pt; line-height: 1.38; }
+  .naming .start, .naming .note { border-color: #000; }
+  .naming .lesson-head, .naming .routes > div { border-color: #000; }
+  .naming .lesson-head { padding-bottom: 7pt; }
+  .naming .return-link, .naming summary { min-height: 0; }
+  .naming h1 { font-size: 26pt; }
+  .naming h2 { font-size: 17pt; margin-bottom: 7pt; }
+  .naming h3 { font-size: 13pt; margin-bottom: 5pt; }
+  .naming section { margin-top: 15pt; padding-top: 6pt; }
+  .naming p { margin-block: 5pt; }
+  .naming .practice, .naming .trial-block, .naming .routes > div { padding: 8pt; margin-block: 6pt; }
+  .naming details, .naming figure.model { padding: 4pt 8pt; margin-block: 5pt; }
+  .naming summary { padding-block: 2pt; }
+  .naming #glossary dt { margin-top: 5pt; }
+  .naming #glossary dd { margin-top: 1pt; }
+  .naming figure.model svg { max-width: 3in; }
+  .naming .eyebrow, .naming h2, .naming h3, .naming summary, .naming dt { break-after: avoid; }
+  .naming .practice, .naming .trial-block, .naming .routes > div { break-inside: avoid; }
+  .naming p, .naming li { orphans: 2; widows: 2; }
+  .naming form { display: none; }
+  .naming details[hidden] { display: block; }
+}

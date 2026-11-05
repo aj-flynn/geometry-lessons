@@ -1,0 +1,67 @@
+.balance .equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .12em .28em;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.balance .formula { white-space: nowrap; }
+.balance .count-model svg { max-inline-size: 420px; }
+.balance .atom-o { fill: #f3dad2; }
+.balance .atom-c { fill: #dce8e3; }
+.balance aside { margin-top: 2rem; }
+.balance .steps { padding-inline-start: 1.45em; }
+.balance .steps li { margin-block: .6em; }
+.balance fieldset { margin: 0; padding: 0; border: 0; min-inline-size: 0; }
+.balance legend { padding: 0; font-weight: 700; margin-bottom: .45em; }
+.balance select,
+.balance textarea {
+  display: block;
+  max-inline-size: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  border: 2px solid var(--ink);
+}
+.balance select { margin-bottom: .5em; min-height: 44px; }
+.balance select:focus-visible,
+.balance textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+.balance input[type=number] { display: block; margin-bottom: .5em; }
+.balance .trial .controls { margin-block: 1em; }
+.balance .trial-counts table { border-collapse: collapse; margin-block: 1em; font-variant-numeric: tabular-nums; }
+.balance .trial-counts caption { text-align: left; }
+.balance .trial-counts th,
+.balance .trial-counts td { border-bottom: 1px solid currentColor; padding: .15em .5em; text-align: start; }
+.balance [data-chem-choice] label { display: block; margin-bottom: .7em; }
+.balance input[type=radio] { width: 1em; height: 1em; accent-color: var(--ink); vertical-align: middle; }
+.balance button:disabled { opacity: .7; cursor: default; transform: none; }
+.balance .attempt { margin-block: 2em; }
+.balance textarea { inline-size: 100%; min-block-size: 4.5em; padding: .35em; }
+.balance .return-link,
+.balance :is(h1,h2,h3,legend) { text-wrap: balance; }
+.balance [data-trial-ready] + .trial-fallback,
+.balance [data-practice-ready] + .phase-fallback { display: none; }
+@media (max-width: 390px) {
+  .balance h1 { font-size: 28px; }
+  .balance .trial-counts table { font-size: .9em; }
+  .balance .trial-counts th, .balance .trial-counts td { padding-inline: .15em; }
+  .balance .practice, .balance details { padding-inline: 10px; }
+  .balance button { padding-inline: .55em; }
+}
+@media print {
+  .balance { line-height: 1.4; }
+  .balance section { margin-block-start: 1.1em; }
+  .balance p { max-width: none; margin-block: .6em; orphans: 2; widows: 2; }
+  .balance h2, .balance h3 { margin-block-end: .45em; break-after: avoid; }
+  .balance .steps li, .balance dt, .balance .equation { break-inside: avoid; }
+  .balance dt, .balance .attempt > label { break-after: avoid; }
+  .balance .attempt { margin-block: 1.15em; }
+  .balance details { padding: 0 .4em; }
+  .balance summary { min-height: 0; }
+  .balance .attempt > textarea { background: white; resize: none; }
+  .balance #coefficient-trial,
+  .balance [data-chem-choice] { display: none; }
+  .balance [data-trial-ready] + .trial-fallback,
+  .balance [data-practice-ready] + .phase-fallback { display: block; }
+}

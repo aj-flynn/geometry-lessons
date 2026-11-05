@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Use atom counts to balance a chemical equation, then use the stated conditions to label each substance.">
+  <title>Balance a chemical equation</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/balance.css">
+  <script src="../../../assets/balance.js" defer></script>
+  <script src="../../../assets/chemistry.js?v=20261105-r9" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson balance">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <h1>Balance a chemical equation</h1>
+    <p class="lead">Use <a href="#term-coefficient">coefficients</a> (numbers in front of formulas) to show how much of each substance reacts or forms. Then use <a href="#term-state">state labels</a> such as (g) for gas to record the form of each substance under the given conditions.</p>
+    <p><a href="#glossary">Open the glossary</a> for the notation in this lesson.</p>
+    <aside aria-labelledby="warm-up">
+      <h2 id="warm-up">Before you start</h2>
+      <p>In <span class="formula">3CO<sub>2</sub></span>, carbon dioxide is represented by three <a href="#term-molecule">molecules</a>, each a group of bonded atoms. Say how many carbon atoms and how many oxygen atoms this represents. Which number tells you the oxygen count <em>per molecule</em>?</p>
+      <details><summary>Compare your count</summary><p>There are 3 carbon atoms and 6 oxygen atoms. The <a href="#term-subscript">subscript</a> (small lower number) 2 after O tells you there are 2 oxygen atoms in each molecule. Each molecule also has 1 carbon atom, indicated by C with no subscript.</p></details>
+    </aside>
+
+    <section aria-labelledby="read">
+      <h2 id="read">Count both sides</h2>
+      <p>The arrow points from the <a href="#term-arrow">reactants</a> (what reacts) to the <a href="#term-arrow">products</a> (what forms). In an ordinary chemical reaction atoms rearrange, so a <a href="#term-balance">balanced equation</a> has equal counts of each element on the two sides. For each element, multiply the count in one formula by the coefficient. Add those contributions when the element appears in several formulas on a side.</p>
+      <figure class="count-model">
+        <svg viewBox="0 0 312 66" role="img" aria-labelledby="co2-title co2-desc">
+          <title id="co2-title">Two carbon dioxide molecules</title>
+          <desc id="co2-desc">Two separate O C O groups. Each group contains one C atom with an O atom on either side.</desc>
+          <g stroke="currentColor">
+            <circle class="atom-o" cx="33" cy="33" r="21"></circle><circle class="atom-c" cx="76" cy="33" r="21"></circle><circle class="atom-o" cx="119" cy="33" r="21"></circle>
+            <circle class="atom-o" cx="193" cy="33" r="21"></circle><circle class="atom-c" cx="236" cy="33" r="21"></circle><circle class="atom-o" cx="279" cy="33" r="21"></circle>
+          </g>
+          <g fill="currentColor" text-anchor="middle" font-size="22" font-weight="700">
+            <text x="33" y="41">O</text><text x="76" y="41">C</text><text x="119" y="41">O</text>
+            <text x="193" y="41">O</text><text x="236" y="41">C</text><text x="279" y="41">O</text>
+          </g>
+        </svg>
+        <figcaption><strong><span class="formula">2CO<sub>2</sub></span></strong> represents two carbon dioxide molecules. Each group has one C atom and two O atoms, for a total of two C and four O atoms. The drawing shows groups and atom counts. The circles and gaps have no physical scale, and the drawing leaves out bond details.</figcaption>
+      </figure>
+      <p>Changing the coefficient repeats the same group. Changing the subscript changes the formula itself. An unwritten coefficient is 1. For an ionic solid such as <span class="formula">Na<sub>2</sub>CO<sub>3</sub></span>, a <a href="#term-formula-unit">formula unit</a> records the simplest ratio of its ions (charged atoms or groups) in the solid. In the count, one formula unit contributes 2 Na, 1 C, and 3 O.</p>
+    </section>
+
+    <section aria-labelledby="pairs">
+      <h2 id="pairs">Match oxygen in pairs</h2>
+      <p><strong>Given.</strong> Liquid phosphorus trichloride reacts with oxygen gas to make liquid phosphorus oxychloride. <strong>Goal.</strong> Find the smallest whole-number coefficients for the given formulas.</p>
+      <p class="equation"><span class="formula">PCl<sub>3</sub>(l)</span> <span>+</span> <span class="formula">O<sub>2</sub>(g)</span> <span>→</span> <span class="formula">POCl<sub>3</sub>(l)</span></p>
+      <ol class="steps">
+        <li>With all coefficients at 1, P and Cl already match. Oxygen comes in pairs on the left and appears once per product molecule on the right. With one product molecule, the right has an odd O count. An integer number of oxygen molecules supplies an even count.</li>
+        <li>Try 2 product molecules, so the right has 2 oxygen atoms. One oxygen molecule on the left already supplies those 2 O atoms.
+          <p class="equation"><span class="formula">PCl<sub>3</sub>(l)</span> <span>+</span> <span class="formula">O<sub>2</sub>(g)</span> <span>→</span> <span class="formula">2POCl<sub>3</sub>(l)</span></p></li>
+        <li>The right now has 2 P and 6 Cl atoms. Each phosphorus trichloride molecule contributes 1 P and 3 Cl. Using 2 such molecules matches both counts.
+          <p class="equation"><span class="formula">2PCl<sub>3</sub>(l)</span> <span>+</span> <span class="formula">O<sub>2</sub>(g)</span> <span>→</span> <span class="formula">2POCl<sub>3</sub>(l)</span></p></li>
+        <li>Check P, Cl and O. Each side has 2 P, 6 Cl and 2 O atoms. Both sides have total charge zero because the formulas here are neutral. The ratio 2 to 1 to 2 is already the smallest whole-number ratio.</li>
+      </ol>
+      <h3>Test a single change</h3>
+      <p id="prediction">Start from one of each molecule. Predict which counts change if you double only the phosphorus trichloride on the left. Compare your prediction with the counts. Then reset and choose a different first change to match O.</p>
+      <form id="coefficient-trial" class="practice trial" aria-describedby="prediction" hidden>
+        <fieldset>
+          <legend>Your trial</legend>
+          <label for="target-atom">Element to reconcile</label>
+          <select id="target-atom" name="target">
+            <option value="O">Oxygen (O)</option><option value="P">Phosphorus (P)</option><option value="Cl">Chlorine (Cl)</option>
+          </select>
+          <label for="phosphorus-chloride">Coefficient of <span class="formula">PCl<sub>3</sub>(l)</span></label>
+          <input id="phosphorus-chloride" name="left-compound" type="number" min="1" max="99" step="1" value="1" required>
+          <label for="oxygen-gas">Coefficient of <span class="formula">O<sub>2</sub>(g)</span></label>
+          <input id="oxygen-gas" name="left-oxygen" type="number" min="1" max="99" step="1" value="1" required>
+          <label for="phosphorus-oxychloride">Coefficient of <span class="formula">POCl<sub>3</sub>(l)</span></label>
+          <input id="phosphorus-oxychloride" name="right-compound" type="number" min="1" max="99" step="1" value="1" required>
+        </fieldset>
+        <div class="controls"><button type="submit" disabled>Test counts</button><button type="reset">Reset</button></div>
+        <div class="trial-counts">
+          <p class="equation" aria-label="Tested equation"><span class="formula"><span data-factor></span>PCl<sub>3</sub>(l)</span> + <span class="formula"><span data-factor></span>O<sub>2</sub>(g)</span> → <span class="formula"><span data-factor></span>POCl<sub>3</sub>(l)</span></p>
+          <table>
+            <caption>Atom counts in the tested equation</caption>
+            <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+            <tbody>
+              <tr data-atom="P"><th scope="row">P</th><td>1</td><td>1</td></tr>
+              <tr data-atom="Cl"><th scope="row">Cl</th><td>3</td><td>3</td></tr>
+              <tr data-atom="O"><th scope="row">O</th><td>2</td><td>1</td></tr>
+            </tbody>
+          </table>
+          <p data-trial-status role="status"></p>
+        </div>
+      </form>
+      <details class="trial-fallback"><summary>Compare the trials on paper</summary>
+        <p>Write down P, Cl and O counts on each side with all coefficients at 1. Then change only the coefficient of phosphorus trichloride to 2 and recount. Reset to one of each and choose a different first change to match O.</p>
+        <p>First trial, P is 1 to 1, Cl is 3 to 3 and O is 2 to 1. Second trial, P is 2 to 1, Cl is 6 to 3 and O is still 2 to 1. Phosphorus trichloride contributes no O. After resetting, double the product to match O. Recheck P and Cl before deciding how to finish.</p>
+      </details>
+      <p>When you change a coefficient, check every element in that formula before deciding what to change next. The count model reports proportions. It leaves out reaction speed, conditions and intermediate steps.</p>
+    </section>
+
+    <section aria-labelledby="several">
+      <h2 id="several">Follow a count through several formulas</h2>
+      <p><strong>Given.</strong> Heating solid baking soda (sodium bicarbonate) produces solid sodium carbonate, carbon dioxide gas and water vapor. <strong>Goal.</strong> Balance the equation.</p>
+      <p class="equation"><span class="formula">NaHCO<sub>3</sub>(s)</span> <span>→</span> <span class="formula">Na<sub>2</sub>CO<sub>3</sub>(s)</span> <span>+</span> <span class="formula">CO<sub>2</sub>(g)</span> <span>+</span> <span class="formula">H<sub>2</sub>O(g)</span></p>
+      <ol class="steps">
+        <li>O appears in three products, so start with Na, which appears in just one formula on each side. One unit of sodium carbonate contains 2 Na, so use 2 units of sodium bicarbonate on the left.
+          <p class="equation"><span class="formula">2NaHCO<sub>3</sub>(s)</span> <span>→</span> <span class="formula">Na<sub>2</sub>CO<sub>3</sub>(s)</span> <span>+</span> <span class="formula">CO<sub>2</sub>(g)</span> <span>+</span> <span class="formula">H<sub>2</sub>O(g)</span></p></li>
+        <li>That change supplies 2 H atoms. One water molecule uses both. The 2 C atoms on the left match 1 in sodium carbonate plus 1 in carbon dioxide.</li>
+        <li>Check the distributed O count. The left has 2 × 3 = 6 O atoms. On the right, 3 + 2 + 1 = 6 O atoms.</li>
+        <li>Each side has 2 Na, 2 H, 2 C and 6 O atoms, and each solid formula unit and gas molecule is neutral overall. The coefficients 2, 1, 1, 1 have no common divisor greater than 1.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="phase">
+      <h2 id="phase">Put state labels after formulas</h2>
+      <p>Read the conditions for each substance. Use (s) for solid, (l) for liquid and (g) for gas. Use (aq) when the substance is dissolved in water. A state label follows the whole formula and contributes zero atoms to the count.</p>
+      <p><strong>Given.</strong> In an overall description of methanol synthesis, carbon monoxide gas and hydrogen gas yield methanol vapor. <strong>Goal.</strong> Balance with these states. Then record the same overall material change with methanol collected as liquid.</p>
+      <p class="equation"><span class="formula">CO(g)</span> <span>+</span> <span class="formula">H<sub>2</sub>(g)</span> <span>→</span> <span class="formula">CH<sub>3</sub>OH(g)</span></p>
+      <p>C and O already match at 1 atom each on both sides. The methanol molecule contains 4 H atoms (3 + 1). Two hydrogen molecules supply 2 × 2 = 4 H atoms on the left.</p>
+      <p class="equation"><span class="formula">CO(g)</span> <span>+</span> <span class="formula">2H<sub>2</sub>(g)</span> <span>→</span> <span class="formula">CH<sub>3</sub>OH(g)</span></p>
+      <p>The final counts are 1 C, 4 H and 1 O per side, with zero total charge and the simplest ratio 1 to 2 to 1. With liquid methanol as the collected product, change its state label to (l).</p>
+      <p class="equation"><span class="formula">CO(g)</span> <span>+</span> <span class="formula">2H<sub>2</sub>(g)</span> <span>→</span> <span class="formula">CH<sub>3</sub>OH(l)</span></p>
+      <p>The coefficients and subscripts stay fixed. This second line includes collection after cooling. The equation summarizes the materials before and after, leaving out the cooling step.</p>
+      <p id="phase-prompt">In the balanced equation below, chlorine gas reacts with potassium iodide dissolved in water. The products are potassium chloride dissolved in water and solid iodine. Suppose the iodine product is later heated and recorded as a vapor. Choose an edit and predict what happens to the atom counts.</p>
+      <p class="equation"><span class="formula">Cl<sub>2</sub>(g)</span> + <span class="formula">2KI(aq)</span> → <span class="formula">2KCl(aq)</span> + <span class="formula">I<sub>2</sub>(s)</span></p>
+      <form class="practice" data-chem-choice aria-describedby="phase-prompt">
+        <fieldset>
+          <legend>Choose your edit</legend>
+          <label><input type="radio" name="phase-edit" value="coefficient" data-explanation="This edit adds iodine molecules and changes the iodine totals. Try changing only the label after the formula for iodine."> Write <span class="formula">2I<sub>2</sub>(g)</span> and keep the other coefficients.</label>
+          <label><input type="radio" name="phase-edit" value="state" data-explanation="That works. Solid iodine and iodine vapor both use I₂, so the atom totals stay equal. Explain why the other labels stay the same."> Write <span class="formula">I<sub>2</sub>(g)</span> and keep the coefficients.</label>
+          <label><input type="radio" name="phase-edit" value="subscript" data-explanation="This edit changes the number of iodine atoms in each molecule. Keep the formula for iodine and try changing only the state label."> Write <span class="formula">I(g)</span> and keep the coefficients.</label>
+        </fieldset>
+        <button type="submit" disabled>Check edit</button>
+        <p class="feedback" role="status"></p>
+      </form>
+      <details class="static-feedback phase-fallback"><summary>Compare your edit on paper</summary>
+        <p>Choose among <span class="formula">2I<sub>2</sub>(g)</span>, <span class="formula">I<sub>2</sub>(g)</span> and <span class="formula">I(g)</span>. The correct edit is <span class="formula">I<sub>2</sub>(g)</span>. It keeps the formula and coefficient for iodine. The first choice doubles the iodine count by adding a molecule. The third choice uses a single atom per particle. Try explaining why the other labels stay the same.</p>
+      </details>
+    </section>
+
+    <section aria-labelledby="practice">
+      <h2 id="practice">Balance on your own</h2>
+      <p>For each case, write the balanced equation using the given formulas, then rewrite it with a state label after each formula. Use the smallest positive whole-number coefficients. Explain your first decision, and give the evidence you used to check the finished equation. Work in the response spaces or on paper before opening a comparison.</p>
+
+      <article class="attempt" aria-labelledby="reform">
+        <h3 id="reform">Case A · Making synthesis gas</h3>
+        <p>Methane and steam react to produce carbon monoxide and hydrogen. In this description all four substances are gases.</p>
+        <p class="equation"><span class="formula">CH<sub>4</sub></span> <span>+</span> <span class="formula">H<sub>2</sub>O</span> <span>→</span> <span class="formula">CO</span> <span>+</span> <span class="formula">H<sub>2</sub></span></p>
+        <label for="reform-response">Your equations and reasoning for case A</label>
+        <textarea id="reform-response" rows="4" spellcheck="false"></textarea>
+        <details><summary>Compare case A</summary>
+          <p class="equation"><span class="formula">CH<sub>4</sub></span> <span>+</span> <span class="formula">H<sub>2</sub>O</span> <span>→</span> <span class="formula">CO</span> <span>+</span> <span class="formula">3H<sub>2</sub></span></p>
+          <p class="equation"><span class="formula">CH<sub>4</sub>(g)</span> <span>+</span> <span class="formula">H<sub>2</sub>O(g)</span> <span>→</span> <span class="formula">CO(g)</span> <span>+</span> <span class="formula">3H<sub>2</sub>(g)</span></p>
+          <p>One of each formula already matches C and O. The left supplies 4 + 2 = 6 H atoms, so 3 hydrogen molecules match the right to the left. Both sides have 1 C, 1 O, 6 H and zero total charge. The coefficients 1, 1, 1, 3 are the simplest ratio. Steam here is water vapor, so water takes (g).</p>
+          <p>If you used a subscript of 6 to fix H, retry using a count of whole hydrogen molecules.</p>
+        </details>
+      </article>
+
+      <article class="attempt" aria-labelledby="roast">
+        <h3 id="roast">Case B · Roasting an ore</h3>
+        <p>For one pathway of pyrite roasting, solid iron disulfide and oxygen gas yield solid iron(III) oxide and sulfur dioxide gas. Use this pathway as given.</p>
+        <p class="equation"><span class="formula">FeS<sub>2</sub></span> <span>+</span> <span class="formula">O<sub>2</sub></span> <span>→</span> <span class="formula">Fe<sub>2</sub>O<sub>3</sub></span> <span>+</span> <span class="formula">SO<sub>2</sub></span></p>
+        <label for="roast-response">Your equations and reasoning for case B</label>
+        <textarea id="roast-response" rows="4" spellcheck="false"></textarea>
+        <details><summary>Compare case B</summary>
+          <p class="equation"><span class="formula">4FeS<sub>2</sub></span> <span>+</span> <span class="formula">11O<sub>2</sub></span> <span>→</span> <span class="formula">2Fe<sub>2</sub>O<sub>3</sub></span> <span>+</span> <span class="formula">8SO<sub>2</sub></span></p>
+          <p class="equation"><span class="formula">4FeS<sub>2</sub>(s)</span> <span>+</span> <span class="formula">11O<sub>2</sub>(g)</span> <span>→</span> <span class="formula">2Fe<sub>2</sub>O<sub>3</sub>(s)</span> <span>+</span> <span class="formula">8SO<sub>2</sub>(g)</span></p>
+          <p>One unit of iron(III) oxide needs 2 units of iron disulfide to match Fe. Those 2 units supply 4 S atoms, so use 4 sulfur dioxide molecules. That puts 3 + 4 × 2 = 11 O atoms on the right, while the oxygen gas on the left supplies atoms in pairs.</p>
+          <p>Double the linked Fe and S amounts together so the right needs 22 O atoms. Use 11 oxygen molecules. The result has 4 Fe, 8 S and 22 O atoms per side. Both sides have zero total charge, and 4, 11, 2, 8 share no divisor greater than 1.</p>
+          <p>If you changed only one product coefficient to make O even, retry from Fe and S and see which of those rows the change broke.</p>
+        </details>
+      </article>
+    </section>
+
+    <section aria-labelledby="remember">
+      <h2 id="remember">Check your next equation</h2>
+      <p>Before opening this lesson again, recall what a number in front of a formula changes. For a fresh equation, choose a starting element and say why it is a useful first count. Check each atom count, total charge, the smallest ratio and each state label against the conditions.</p>
+      <p>If one row disagrees, trace it back to each formula that contributes atoms to that row. Ask about the first point where your counts diverge in the private chat.</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt id="term-arrow">Reactants and products</dt><dd>In the written direction, the formulas before → are the reactants and the formulas after → are the products.</dd>
+        <dt id="term-balance">Balanced equation</dt><dd>An equation with the same total number of atoms of each element and the same total electric charge on each side.</dd>
+        <dt id="term-coefficient">Coefficient</dt><dd>The multiplier in front of the entire formula. A coefficient of 1 is usually left unwritten.</dd>
+        <dt id="term-subscript">Subscript</dt><dd>The small lower number after an element symbol or group. It gives that element or group's count in the formula. An unwritten subscript is 1.</dd>
+        <dt id="term-molecule">Molecule</dt><dd>A distinct group of bonded atoms. One oxygen molecule has formula <span class="formula">O<sub>2</sub></span> and contains two oxygen atoms.</dd>
+        <dt id="term-formula-unit">Formula unit</dt><dd>The smallest whole-number ratio written for an ionic compound. An ion is an atom or group with electric charge. The formula counts a ratio of ions in the solid.</dd>
+        <dt id="term-state">State label</dt><dd>A symbol in parentheses after the formula. (s) means solid, (l) liquid, (g) gas and (aq) dissolved in water.</dd>
+      </dl>
+    </section>
+    <section class="sources" aria-labelledby="sources">
+      <h2 id="sources">Read a little more</h2>
+      <p>See how letters and coefficients stand for an entire reaction in the <a href="https://old.goldbook.iupac.org/pdf/S06025.pdf">IUPAC Gold Book entry on stoichiometric numbers</a>. A stoichiometric number uses a minus sign for reactants to show they are consumed. The coefficients written in the equation are positive.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.thermal-table { border-collapse: collapse; max-width: 100%; }
+.thermal-table caption { text-align: left; margin-bottom: .5rem; }
+.thermal-table th, .thermal-table td { border: 1px solid currentColor; padding: .35em; }
+.cause-path { display: grid; gap: .55em; margin: 0; padding: 0 0 0 1.8em; }
+.cause-path strong { display: block; }
+.trial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; }
+.trial-grid > div { border-top: 3px solid currentColor; padding-block: .6em; }
+.tile-row { display: flex; gap: .3em; }
+.tile-row span { width: 1em; height: 1em; border: 2px solid currentColor; border-radius: 50%; }
+.lesson [hidden] { display: none; }
+@media (max-width: 34rem) { .trial-grid { grid-template-columns: 1fr; } }
+@media print {
+  form[data-practice], [data-model-result] { display: none; }
+  .lesson details[data-model-static][hidden] { display: block; }
+}
+.lesson .energy-flow svg { max-width: 360px; margin-inline: auto; }

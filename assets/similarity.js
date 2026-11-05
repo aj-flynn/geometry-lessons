@@ -86,8 +86,13 @@ if (explorer) initializeExplorer(explorer);
 for(const quiz of document.querySelectorAll('[data-choice-quiz]')) {
   const feedback=quiz.querySelector('[data-choice-feedback]');
   if (!feedback) continue;
-  for(const button of quiz.querySelectorAll('button[data-choice]')) {
-    button.addEventListener('click',()=>{
+  const choices = [...quiz.querySelectorAll('button[data-choice]')];
+  for (const button of choices) {
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', () => {
+      for (const choice of choices) {
+        choice.setAttribute('aria-pressed', String(choice === button));
+      }
       feedback.textContent = button.dataset.choice===quiz.dataset.correct
         ? quiz.dataset.success : (button.dataset.hint || quiz.dataset.hint);
     });

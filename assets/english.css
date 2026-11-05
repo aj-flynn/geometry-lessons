@@ -10,8 +10,16 @@
 .english .annotation-notes{display:grid;grid-template-columns:1fr 1fr;gap:24px}.english .annotation-notes p{margin:0;font-size:18px}
 .english .annotation figcaption{font-size:16px}.english .explorer{border:0;background:#e9eef7}
 .english .explorer [data-lens-reveal]{background:#162c48;color:white;border:0}.english .explorer [data-restart]{margin-left:10px}
-.english .context-lab{margin-top:32px;padding:26px;background:#e9eef7}.english .context-result{background:white;padding:20px;margin:20px 0}
-.english .context-lab button{font-size:16px}.english .context-lab button[aria-pressed=true]{background:#315ea5}
+.english .context-lab{margin-top:32px;padding:26px;background:#e9eef7}.english .context-result:not(:empty){background:white;padding:20px;margin:20px 0}
+.english .context-lab button{font-size:16px}
+.english .context-lab button[data-context]{background:#e9eef7;color:#162c48;border:2px solid #315ea5}
+.english .context-lab button[data-context][aria-pressed=true]{background:#162c48;color:white;border-color:#162c48}
+.english .context-selection{visibility:hidden;font-weight:700}
+.english [aria-pressed=true] .context-selection{visibility:visible}
+.english .reading-chain{margin:20px 0;padding-left:24px}
+.english .reading-chain li{padding:8px 0}
+.english .reading-chain li::marker{color:#315ea5;font-weight:700}
+@media screen and (min-width:761px){.english .reading-chain{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 34px}}
 .english .context-result p:first-child{margin-top:0}.english .context-result p:last-child{margin-bottom:0}
 .english .stop-point{font-size:16px;padding:12px 0;color:#244469}.english .scene strong{font-size:16px;letter-spacing:0}
 @media(max-width:1050px){.english .opening,.english .pair{grid-template-columns:1fr}.english .opening{gap:24px}.english h1{font-size:clamp(42px,6.8vw,68px)}.english .stage{grid-template-columns:1fr;gap:8px}.english .stage-tag{padding:0}.english .annotation-notes{grid-template-columns:1fr;gap:18px}}

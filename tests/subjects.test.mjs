@@ -184,7 +184,7 @@ test('publication requires a complete registry with valid skill names and local 
 });
 
 test('teaching instructions and documentation links resolve',()=>{
-  const paths=['AGENTS.md','README.md','RESOURCES.md','docs/REVIEW-RUBRIC.md','docs/LESSON-0001-REVIEW.md','docs/ENGLISH-REVIEW.md','docs/CHEMISTRY-REVIEW.md','.agents/skills/homework-teach/SKILL.md','.agents/skills/homework-teach/references/science.md','.agents/skills/homework-teach/references/lesson-workflow.md','.agents/skills/homework-teach/references/routing.md','.agents/skills/geometry-teach/SKILL.md'];
+  const paths=['AGENTS.md','README.md','RESOURCES.md','docs/REVIEW-RUBRIC.md','docs/LESSON-0001-REVIEW.md','docs/ENGLISH-REVIEW.md','docs/CHEMISTRY-REVIEW.md','.agents/skills/homework-teach/SKILL.md','.agents/skills/science-teach/SKILL.md','.agents/skills/homework-teach/references/lesson-workflow.md','.agents/skills/homework-teach/references/routing.md','.agents/skills/geometry-teach/SKILL.md'];
   for(const file of paths){
     const full=join(root,file),text=readFileSync(full,'utf8');
     for(const [,target] of text.matchAll(/\]\(([^)]+)\)/g)){

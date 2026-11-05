@@ -6,7 +6,8 @@
 - [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md): source of the mission-led, short HTML lesson, reusable asset, retrieval practice, and feedback approach. Adapted here for public concept lessons without private learning records or homework answers. [MIT notice](.agents/skills/homework-teach/LICENSE-MATT-POCOCK.txt).
 
 - [Illustrative Mathematics: What are scaled copies?](https://im.kendallhunt.com/MS/students/2/1/1/index.html): visual scaling and a consistent multiplier across corresponding lengths.
-- [Math Open Reference: Similar triangles and area](https://www.mathopenref.com/similartrianglesareas.html): focused interactive comparison of length factors and area factors. Active learner-facing geometry sources were narrowed after independent review; earlier broad destinations are retained only in historical review records.
+- [Math Open Reference: Similar triangles and area](https://www.mathopenref.com/similartrianglesareas.html): author verification of the scale and area relationship.
+- [Math Open Reference: Triangle area](https://www.mathopenref.com/trianglearea.html) supplies the base-and-height prerequisite for the area explanation.
 
 
 - [Shakespeare’s Words: Language Companion](https://www.shakespeareswords.com/Public/LanguageCompanion/TopicList.aspx): reference for older pronoun and verb forms, contractions, and context-dependent vocabulary in the English toolkit.

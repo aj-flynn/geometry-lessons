@@ -406,8 +406,6 @@ test('review binds linked reference cycles and their assets plus the current tea
     [rubric, '# Synthetic review rubric', 'contract file'],
     ['subjects.json', readFileSync(join(base, 'subjects.json'), 'utf8'), 'contract file'],
     ['scripts/check-live.py', 'Synthetic contract input.', 'contract file'],
-    ['scripts/check-routing.mjs', 'Synthetic contract input.', 'contract file'],
-    ['tests/fixtures/routing-cases.json', 'Synthetic contract input.', 'contract file'],
     [geometrySkill, geometrySkillText, 'contract file'],
     [sharedGuide, '# Synthetic shared guidance', 'contract file']
   ]) {

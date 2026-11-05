@@ -95,7 +95,7 @@ Claude Code, Codex, or another reviewer can use this rubric independently. Give 
 
 Identify the reviewer and assessed revision, give category scores and the total, and explain major strengths, concerns, and evidence limitations. The reviewer chooses the report format. A review by the lesson's author should be identified as such rather than described as an independent review.
 
-The owner's completion target is 100/100 for each lesson and the reusable process: first independent Astra, then Claude Code Opus 5.5 at high effort, on the same final candidate. Follow the skill's [independent refinement workflow](../.agents/skills/homework-teach/references/independent-refinement.md) for iteration, brainstorming when stuck, and incremental publication. These targets are separate from the act of evaluation: report the actual assessment even when it falls below a target. Historical reviews describe their own revisions and rubric editions; they do not certify this edition or later lesson changes.
+During [skill refinement](../.agents/skills/homework-teach/references/independent-refinement.md), score the untouched outputs of fresh authors. Report the actual assessment even when it falls below a target. Historical reviews describe their own revisions and rubric editions.
 
 ## Reusable process — separate optional assessment
 

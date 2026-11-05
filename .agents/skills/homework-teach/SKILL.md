@@ -27,6 +27,6 @@ Use GPT-6.1 Sol High to generate and revise the HTML. Draft privately from templ
 
 In private follow-up, ask what feels unclear and offer one fresh prerequisite check. Give a smaller hint or checking method when asked for an assigned answer. At the next learner-initiated visit, try one recall prompt and fresh transfer before reteaching. Generate or publish a revision when requested.
 
-Follow [semantic review and publication](references/lesson-workflow.md) and [independent refinement](references/independent-refinement.md).
+Follow [semantic review and publication](references/lesson-workflow.md).
 
 Adapted from [Matt Pocock's teach process](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). See [MIT notice](LICENSE-MATT-POCOCK.txt). Keep learner records private.

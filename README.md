@@ -2,7 +2,7 @@
 
 [Open the lesson library](https://aj-flynn.github.io/geometry-lessons/).
 
-Use [homework-teach](.agents/skills/homework-teach/SKILL.md) with an authorized private assignment. It selects or creates the subject skill in subjects.json. GPT-6.1 Sol High authors focused HTML from the needed reasoning. Fresh Astra and Claude Code Opus 5.5 High score the same candidate independently. Follow the [refinement workflow](.agents/skills/homework-teach/references/independent-refinement.md) for review and incremental publication.
+Use [homework-teach](.agents/skills/homework-teach/SKILL.md) with an authorized private assignment. It selects or creates the subject skill in subjects.json. GPT-6.1 Sol High authors focused HTML, checks the lesson, and publishes reviewed output. During [skill refinement](.agents/skills/homework-teach/references/independent-refinement.md), independent Astra and Claude Code reviews test what fresh Sol authors produce across multiple assignments.
 
 This checkout and its history are public. Keep actual inputs, transcriptions, identifying information and learner records elsewhere. Publish original teaching that leaves the assigned work to the learner.
 

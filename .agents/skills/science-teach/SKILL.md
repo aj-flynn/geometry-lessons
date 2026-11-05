@@ -8,6 +8,6 @@ license: MIT
 
 Apply [homework-teach](../homework-teach/SKILL.md). Route specialized relationships to their discipline and link needed continuations. Teach the mechanism needed to justify each tested condition as well as the inquiry method.
 
-- For experiments, separate the changed variable, measured response and fixed conditions. In a fresh system, predict what competing mechanisms would change. Show why a confound matters before asking the learner to repair a different comparison.
-- For data, locate and compare patterns in the same kind of map, graph or table as the task. Check scales, units and baselines. Distinguish measured and calculated quantities, and observations, trends and causal explanations.
+- For experiments, draw one causal path from question through setup and mechanism to measurement, calculation and bounded claim. Show how a competing cause reaches the same response. Have the learner justify a repair by pointing to the link it changes.
+- For data, keep the task's scale type and spatial cues. On original continuous maps, find a point by landmarks, estimate from the legend, compare regions and match dates. Have the learner point to the cue that disproves a plausible wrong claim and repair it. Distinguish a broad change from a local shift and test competing causes. Check units and baselines.
 - For models, name the system and limits. Test one boundary. Label synthetic data. Check signs, units, ranges and conservation. Leave assigned measurements and conclusions to the learner.

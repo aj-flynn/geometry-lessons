@@ -1,0 +1,26 @@
+.cooling h1{max-width:16ch}
+.cooling .warm-up{border-inline-start:4px solid #35756e;padding-inline-start:1rem}
+.cooling .warm-up details{max-width:38rem}
+.cooling figure{background:#e4eeeb}
+.cooling figure svg{max-width:27rem;margin-inline:auto}
+.cooling .causal ol,.cooling .audit-prompts{padding-inline-start:1.5rem}
+.cooling .causal li+li,.cooling .audit-prompts li+li{margin-block-start:.65em}
+.cooling .causal .side-path{border-inline-start:3px solid #35756e;padding-inline-start:.75em;margin-block:.4em}
+.cooling .test-record{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem;margin-block:1.25rem}
+.cooling .test-record article{border:1px solid #35756e;padding:1rem;background:#e4eeeb}
+.cooling .run-strip{border-inline-start:2px solid #35756e;list-style:none;padding-inline-start:.75em}
+.cooling .run-strip li+li{margin-block-start:.35em}
+.cooling .model-controls:not([hidden]){display:flex;flex-wrap:wrap;gap:.75em;align-items:center;margin-block:1em}
+.cooling .model-controls select{background:var(--paper);color:inherit;font:inherit;min-height:48px;padding:.35em .5em}
+.cooling .model-controls select:focus-visible{outline:3px solid var(--ink);outline-offset:5px}
+.cooling .model-controls p{flex-basis:100%;margin:0}
+.cooling .model-controls p:empty{display:none}
+.cooling input[type=number]{width:100%}
+@media screen{
+  .cooling form[data-practice-ready]+.static-feedback{display:none}
+}
+@media print{
+  .cooling .test-record article,.cooling .practice{break-inside:avoid}
+  .cooling .model-controls:not([hidden]){display:none}
+  .cooling [data-model-static][hidden]{display:block}
+}

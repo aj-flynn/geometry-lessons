@@ -4,205 +4,270 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Read signed water-level maps, compare patterns, and test a possible cause.">
-  <title>Read a water-level map</title>
+  <meta name="description" content="Read a continuous water-height map, then test what could explain a change.">
+  <title>Reading water-height maps</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/water-level.css">
+  <link rel="stylesheet" href="../../../assets/water-height-maps.css">
   <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
-  <script src="../../../assets/water-level.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson water-lesson">
+  <main id="main" class="lesson height-lesson">
     <a class="return-link" href="../index.html">← Lesson library</a>
-    <h1>Read a water-level map</h1>
-    <p class="lead">Find where water is higher or lower than usual, then use the map to ask what might have moved it.</p>
-    <p><a href="#glossary">Open the glossary</a> for words and symbols.</p>
-    <aside aria-label="Before you start">
-      <p>If the usual water height is 12 cm and today it is 9 cm, would the difference be above or below zero?</p>
-      <details><summary>Check the sign</summary><p>9 cm − 12 cm = −3 cm. Subtract the usual height from today's height. The minus sign means 3 cm below usual.</p></details>
-    </aside>
+    <p class="subject-label">Earth science · Map reading</p>
+    <h1>Reading water-height maps</h1>
+    <p class="lead">Find a place, read its height difference, and use patterns to test what moved the water.</p>
+    <aside class="map-note" aria-label="Before you start"><p>If the usual water height is 80 cm and today's height is 77 cm, did the water sit above or below usual? Subtract the usual height to check.</p></aside>
+    <p><a href="#glossary">Open the glossary</a> for words and units.</p>
 
-    <section aria-labelledby="point">
-      <h2 id="point">1. Read one spot</h2>
-      <p>A water-level <strong>departure</strong> is the measured height minus a <strong>reference height</strong> (the height chosen for comparison). The reference might be a <strong>mean</strong>, or average, of past measurements at that spot. Zero means the two heights match.</p>
-      <p>Start with the map title and date. Then look for the <strong>legend</strong>, the key that connects map colors to numbers. Check what the numbers measure. A height legend gives height differences. A temperature legend would give a different measurement.</p>
-      <p>Use the coastline or a landmark to find your spot. For an offshore reading, move from the land into the water. Match the nearby water shade to the legend.</p>
-      <figure>
-        <svg viewBox="0 0 480 246" role="img" aria-labelledby="map-title map-desc">
-          <title id="map-title">Water-level departure at fictional Gull Inlet, May 6</title>
-          <desc id="map-desc">The town is on gray land. Inlet markers A and B are in the water. A is purple and lines up with minus 12 centimeters. B is pale green and lines up halfway from zero to plus 12 centimeters. In the legend, darker purple marks larger negative values and darker green marks larger positive values.</desc>
-          <defs>
-            <linearGradient id="height-scale">
-              <stop offset="0" stop-color="#50347b"/>
-              <stop offset=".25" stop-color="#9277b3"/>
-              <stop offset=".5" stop-color="#f7f7ef"/>
-              <stop offset=".75" stop-color="#71a982"/>
-              <stop offset="1" stop-color="#1e6442"/>
-            </linearGradient>
-          </defs>
-          <rect width="480" height="246" rx="8" fill="#fff"/>
-          <text x="18" y="30" font-size="20" font-weight="bold" fill="#0d2a1c">Gull Inlet · May 6</text>
-          <path d="M18 50 H462 V166 H18Z" fill="#f7f7ef" stroke="#26382e"/>
-          <path d="M18 50 H145 C156 72 144 90 123 105 C103 122 137 142 122 166 H18Z" fill="#d5d8d6" stroke="#26382e"/>
-          <path d="M173 52 C222 51 252 77 249 104 C245 130 206 139 176 127 C159 117 148 96 157 76Z" fill="#9277b3"/>
-          <path d="M306 82 C337 70 376 84 389 111 C400 141 363 164 322 154 C296 146 273 115 287 96Z" fill="#b4d0b9"/>
-          <text x="28" y="84" font-size="18" fill="#0d2a1c">Town</text>
-          <circle cx="191" cy="90" r="14" fill="#fff" stroke="#0d2a1c" stroke-width="2"/>
-          <text x="191" y="96" text-anchor="middle" font-size="17" font-weight="bold" fill="#0d2a1c">A</text>
-          <circle cx="335" cy="119" r="14" fill="#fff" stroke="#0d2a1c" stroke-width="2"/>
-          <text x="335" y="125" text-anchor="middle" font-size="17" font-weight="bold" fill="#0d2a1c">B</text>
-          <text x="20" y="193" font-size="17" font-weight="bold" fill="#0d2a1c">Departure (cm)</text>
-          <rect x="26" y="202" width="428" height="13" fill="url(#height-scale)" stroke="#26382e"/>
-          <path d="M26 215v6 M133 215v6 M240 215v6 M347 215v6 M454 215v6" stroke="#26382e" stroke-width="2"/>
-          <g font-size="16" text-anchor="middle" fill="#0d2a1c">
-            <text x="26" y="237">−24</text><text x="133" y="237">−12</text><text x="240" y="237">0</text><text x="347" y="237">+12</text><text x="454" y="237">+24</text>
+    <section aria-labelledby="read"><h2 id="read">Read a snapshot</h2>
+      <p>A <strong>baseline</strong> is the height used for comparison. In these models it is the long-term average height. Each model lake uses one flat baseline for every place and date. A <strong>departure</strong> is the height at a place minus its baseline. The height in the warm-up was 3 cm below usual, a departure of −3 cm.</p>
+      <p>A map for one date is a <strong>snapshot</strong>. Its <strong>legend</strong> tells you what the shading measures. On a continuous legend the colors blend, so an in-between shade stands for an in-between value.</p>
+      <aside class="map-key" aria-label="Map legend">
+        <p><strong>Water height departure (cm)</strong></p>
+        <svg viewBox="0 0 400 66" role="img" aria-labelledby="work-key-label">
+          <title id="work-key-label">Continuous height departure scale from minus 40 to plus 40 centimeters</title>
+          <defs><linearGradient id="work-key-scale"><stop offset="0.000000" stop-color="#863c08"/><stop offset="0.250000" stop-color="#dc863e"/><stop offset="0.500000" stop-color="#fff9e8"/><stop offset="0.750000" stop-color="#9272b5"/><stop offset="1.000000" stop-color="#482267"/></linearGradient></defs>
+          <rect x="33" y="7" width="334" height="22" rx="3" fill="url(#work-key-scale)" stroke="#412c32"/>
+          <path d="M33 29v7 M116.5 29v7 M200 29v7 M283.5 29v7 M367 29v7" stroke="#412c32" stroke-width="2"/>
+          <g fill="#332332" font-family="Arial, sans-serif" font-size="23" text-anchor="middle">
+            <text x="33" y="61">−40</text><text x="116.5" y="61">−20</text><text x="200" y="61">0</text><text x="283.5" y="61">+20</text><text x="367" y="61">+40</text>
           </g>
         </svg>
-        <figcaption>Fictional inlet and made-up data. The gray town is land. A is in water at the shade of the −12 tick. B is in water at a shade about halfway from the 0 tick to the +12 tick. The drawing has no distance scale.</figcaption>
+        <p>Deep orange is the far left, cream is the center, and deep purple is the far right. The space from one mark to the next stands for 20 cm.</p>
+      </aside>
+      <figure class="map-panel">
+        <figcaption><h3>Lantern Reservoir</h3><p><strong>June 8, 2021</strong> · Synthetic data</p></figcaption>
+        <svg viewBox="0 0 500 270" role="img" aria-labelledby="lan21-name lan21-desc">
+          <title id="lan21-name">Lantern Reservoir, June 8, 2021</title>
+          <desc id="lan21-desc">Slate Bluff is at the top shore. Reed Dock is on the bottom shore on the same north–south grid line. A detailed text map follows.</desc>
+          <defs>
+            <clipPath id="lan21-shore"><path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z"/></clipPath>
+            <linearGradient id="lan21-field" gradientUnits="userSpaceOnUse" x1="200" y1="35" x2="230" y2="235"><stop offset="-0.000000" stop-color="#8362a5"/><stop offset="0.090909" stop-color="#9272b5"/><stop offset="0.545455" stop-color="#fff9e8"/><stop offset="1.000000" stop-color="#dc863e"/></linearGradient>
+          </defs>
+          <rect x="1" y="1" width="498" height="268" fill="#f9f3e8" stroke="#a89e8c"/>
+          <path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z" fill="url(#lan21-field)"/>
+
+          <path d="M50 35v200 M100 35v200 M150 35v200 M200 35v200 M250 35v200 M300 35v200 M350 35v200 M400 35v200 M450 35v200 M50 35h400 M50 85h400 M50 135h400 M50 185h400 M50 235h400 " stroke="#2e2634" stroke-opacity=".40" stroke-width="1.3" fill="none"/>
+          <path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z" stroke="#2e2634" stroke-width="2.1" fill="none"/>
+          <path d="M474 47V28 M468 34l6-6 6 6" stroke="#23182c" stroke-width="3" fill="none"/>
+          <text x="474" y="21" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#23182c">N</text>
+          <g fill="#261834" stroke="#fffaf1" stroke-width="2"><path d="M250 25l10 18h-20z"/><rect x="242" y="227" width="16" height="16"/></g>
+        </svg>
+        <p class="landmarks">▲ Slate Bluff · ■ Reed Dock</p>
+        <details class="access-map"><summary>Read the map as text</summary><p>North is up. One square north of Reed Dock the shade is about halfway from the center of the key to the first mark on the left. One square south of Slate Bluff the shade is a little over halfway from the center to the first mark on the right. Most of the north is purple and most of the south is orange, with orange reaching farther north on the east shore.</p></details>
       </figure>
-      <h3>Worked reading at A</h3>
-      <p><strong>Given</strong> The shade at water marker A matches the −12 cm tick. <strong>Goal</strong> Estimate the departure at A in meters (m). The legend reports centimeters (cm), and 100 cm = 1 m.</p>
+      <h3>Find a spot near Reed Dock</h3>
+      <p><strong>Given.</strong> Use the June 8, 2021 map and the spot one grid square north of Reed Dock. The legend uses centimeters (cm).</p>
+      <p><strong>Goal.</strong> Estimate the departure in meters (m).</p>
       <ol class="steps">
-        <li><span class="math">Departure at A ≈ −12 cm</span><br>Read the tick, keeping its sign. The symbol ≈ means “about equal to.”</li>
-        <li><span class="math">−12 cm × (1 m / 100 cm) = −0.12 m</span><br>Multiply by a conversion factor equal to one. The centimeters cancel, and the minus sign stays.</li>
-        <li><span class="math">Departure at A ≈ −0.12 m</span><br>Changing units keeps the estimate the same size. The water was about 0.12 m below its reference.</li>
+        <li>Find the square for Reed Dock. Move one grid square north, into the water.</li>
+        <li>Match the spot's pale orange shade to about halfway from −20 to 0 on the legend. The departure is about −10 cm.</li>
+        <li>Since 100 cm = 1 m, divide the number of centimeters by 100 to get meters. −10 cm = −0.10 m.</li>
+        <li>The water there was about 0.10 m below its baseline. The negative sign says which side of the baseline the water was on.</li>
       </ol>
-      <p>If a shade falls between ticks, estimate between their numbers. A blurry boundary may support a range rather than a single reading.</p>
-
+      <h3>Spot a claim the map can't support</h3>
+      <p>“The orange near the dock means the lake was cooling.” Point to the legend title. It names <em>height departure</em>. Testing cooling would take temperature readings on two or more dates.</p>
       <div class="practice">
-        <h3>Try the other marker</h3>
-        <p>Estimate the signed departure at B in meters. Explain which part of the legend supports your sign.</p>
-        <details><summary>Get a hint</summary><p>Find the two nearest ticks. Use their numbers to estimate the halfway value in centimeters, then use 100 cm = 1 m.</p></details>
-        <form data-practice data-expected="0.06" data-tolerance="0.01"
-          data-hint="Find B's shade on the scale and estimate a value between its two closest ticks. Then convert to meters and retry."
-          data-mistakes='{"6":"That is the estimate in centimeters. Divide the number of centimeters by 100 for meters and retry.","-0.06":"The size fits. Check which side of zero B falls on, then retry."}'
-          data-success="About +0.06 m fits the scale. B is above zero and about halfway to +12 cm.">
-          <label for="spot-b">Signed departure at B (m)</label>
-          <div class="controls"><input id="spot-b" type="number" step="any" required>
-          <button type="submit" disabled>Check estimate</button></div>
-          <p class="feedback" data-feedback role="status"></p>
-        </form>
-        <details class="point-comparison"><summary>Compare the estimate</summary><p>The scale gives about +6 cm. Since +6 cm × (1 m / 100 cm) = +0.06 m, the departure is about +0.06 m. If you wrote +6 m, check the unit. If you wrote a negative number, find B again relative to zero.</p></details>
-        <details><summary>Retry with a new reading</summary><p>A new reading falls halfway from −24 cm to −12 cm. Estimate it in meters before checking.</p>
-          <details><summary>Check the retry</summary><p>Halfway is −18 cm, so the estimate is −0.18 m. The sign stayed negative when the unit changed.</p></details>
-        </details>
+        <h3>Check the other end</h3>
+        <p>In the same panel, pick a spot one grid square south of Slate Bluff. Someone says the purple there proves the water is getting higher. Point to a clue that makes that claim too strong. Say what the shade can tell you.</p>
+        <details><summary>Compare your reasoning</summary><p>The panel has one date. The shade is on the positive side of the height scale, so the water is above its baseline there. To say it is getting higher, you need an earlier height from the same spot.</p></details>
+        <p><strong>Retry.</strong> Suppose an earlier map shows deeper purple at the same spot with the same legend. What would that say about the change?</p>
+        <details><summary>Compare the retry</summary><p>It was higher on the earlier date. The water fell between snapshots and stayed above the baseline.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="pattern">
-      <h2 id="pattern">2. Compare areas and dates</h2>
-      <p>A spot reading uses one water patch. A <strong>regional pattern</strong> describes what happens across an area. Use several patches spread across the area. Notice how much water each patch covers and mention a large exception. When comparing two regions, both can have the same sign. One region might still have a much larger departure.</p>
-      <p>For two dates, compare the same places with the same variable, units, and reference. Check the dates in the captions. If two legends use different scales, compare their numbers rather than matching the shades.</p>
-      <figure>
-        <table>
-          <caption>Fictional Reed Marsh · Water-level departures (cm)</caption>
-          <thead><tr><th scope="col">Zone</th><th scope="col">June 4</th><th scope="col">June 11</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Outer reeds</th><td>+5</td><td>−2</td></tr>
-            <tr><th scope="row">Main pool</th><td>+8</td><td>−5</td></tr>
-            <tr><th scope="row">Creek mouth</th><td>−3</td><td>−3</td></tr>
-          </tbody>
-        </table>
-        <figcaption>Each zone covers the same area. Each column uses the same past mean for a given zone. Numbers are made up.</figcaption>
-      </figure>
-      <p>On June 4, two of the three equal areas were above their usual heights. The creek mouth was an exception. A week later the outer reeds and main pool had both shifted below usual. The creek mouth stayed at the same departure.</p>
-      <p>The two dates show a change in the marsh. A <strong>trend</strong>, a pattern of change over time, needs a series of observations. A week of change could be temporary.</p>
-      <div class="practice">
-        <h3>Check a pattern at the quarry</h3>
-        <p>A survey maps four equal-area water zones. In the morning, three are −4 cm and one is +16 cm. In the afternoon, all four are +1 cm. Both surveys use the same reference at each zone.</p>
-        <p>In which survey was most of the surface above usual? Did every zone go up? Point to a reading that supports each answer.</p>
-        <details><summary>Compare your reasoning</summary><p>In the afternoon all four zones are above zero. In the morning only one is above zero, even though it has the largest single number. The zone at +16 cm fell to +1 cm. If you picked the morning, count the area on each side of zero. If you expected every zone to go up, follow one zone at a time across the two surveys.</p></details>
-        <details><summary>Retry with a changed cue</summary><p>In a new morning survey, a large zone covers three-quarters of the quarry and reads −3 cm. Three tiny zones read +2 cm each. What sign covers most of the water?</p>
-          <details><summary>Check the retry</summary><p>The negative sign covers most of the water. Three-quarters is more than half. Counting labels works for equal-area zones. Here the zones differ in size.</p></details>
-        </details>
-      </div>
-    </section>
-
-    <section aria-labelledby="cause">
-      <h2 id="cause">3. Test a possible cause</h2>
-      <p>An <strong>observation</strong> says what the data show. A <strong>hypothesis</strong> is a possible explanation you can test. Start with the pattern, then ask what process could make it and what other evidence would help you check.</p>
-      <h3>Wind over a long tray</h3>
-      <p>Imagine a tray of water with a fan blowing toward the sealed end. The other end has a shut gate. Wind drags on the surface. The tray holds the same amount of water the whole time.</p>
-      <p><strong>Predict.</strong> Which end will stand higher while the fan blows toward the sealed end? If you turn the fan around, what should change?</p>
-      <div data-tray>
-        <div class="controls" data-model-controls hidden>
-          <label for="fan">Fan direction</label>
-          <select id="fan" disabled>
-            <option value="off">Fan off</option>
-            <option value="sealed">Toward sealed end</option>
-            <option value="gate">Toward gate end</option>
-          </select>
-          <button type="button" data-reset disabled>Reset</button>
-        </div>
-        <figure data-model-figure hidden>
-          <svg viewBox="0 0 430 190" role="img" aria-labelledby="tray-title tray-desc">
-            <title id="tray-title">Side view of the tray model</title>
-            <desc id="tray-desc" data-tray-desc>Fan off. The surface is level and matches the dashed still-water line.</desc>
-            <rect width="430" height="190" rx="8" fill="#fff"/>
-            <text x="25" y="31" font-size="18" font-weight="bold" fill="#0d2a1c">Still-water level (dashes)</text>
-            <path data-water d="M45 96 H385 V146 H45 Z" fill="#a3cfde" stroke="#17516d" stroke-width="3"/>
-            <path d="M45 96 H385" fill="none" stroke="#0d2a1c" stroke-width="2" stroke-dasharray="7 5"/>
-            <path d="M45 58 V146 H385 V58" fill="none" stroke="#0d2a1c" stroke-width="4"/>
-            <g font-size="17" fill="#0d2a1c">
-              <text x="45" y="174">Gate end</text><text x="385" y="174" text-anchor="end">Sealed end</text>
-            </g>
+    <section aria-labelledby="patterns"><h2 id="patterns">Look for a pattern before naming a cause</h2>
+      <h3>Two ends on one date</h3>
+      <p>In the 2021 Lantern map, scan several places at each end. Most of the north end has purple shades and most of the south end has orange shades. The orange side reaches farther north on the east shore. One spot near the middle would miss that north–south contrast.</p>
+      <p>What could lift one end and lower the other? Wind that blows in one direction for hours can push surface water toward one shore. Some of that water comes from the opposite end. This <strong>redistribution</strong> moves water around inside the lake. If more water flows into the lake than leaves it, the lake gains water. That can lift the surface at both ends.</p>
+      <div class="water-test">
+        <h3>Predict, then test</h3>
+        <p>Picture a long tray holding water. Which change could put water above the starting line at one end and below it at the other? Predict what each test will do before opening it.</p>
+        <details><summary>Test a steady push toward the north</summary>
+          <svg viewBox="0 0 400 120" role="img" aria-labelledby="wind-tray">
+            <title id="wind-tray">With a steady push north, water is lower on the south end and equally higher on the north end</title>
+            <text x="30" y="24" fill="#261834" font-family="Arial, sans-serif" font-size="23">South</text>
+            <text x="370" y="24" text-anchor="end" fill="#261834" font-family="Arial, sans-serif" font-size="23">North</text>
+            <path d="M30 88L370 52v50H30z" fill="#a993c5"/>
+            <path d="M30 70H370" stroke="#291f30" stroke-width="2" stroke-dasharray="5 6"/>
+            <path d="M30 88L370 52" fill="none" stroke="#482267" stroke-width="3"/>
+            <path d="M30 40v62h340V40" fill="none" stroke="#291f30" stroke-width="3"/>
           </svg>
-          <figcaption data-model-result role="status">Fan off. The surface is level and matches the dashed still-water line.</figcaption>
-        </figure>
-        <details data-model-comparison><summary>Compare all three fan settings</summary>
-          <ul>
-            <li><strong>Off</strong> The surface is level at the still-water line.</li>
-            <li><strong>Toward the sealed end</strong> Water is higher than the still-water line at the sealed end and lower at the gate end.</li>
-            <li><strong>Toward the gate end</strong> The high and low ends switch. The gate stays shut.</li>
-          </ul>
-          <p>Check whether your prediction follows where the water is pushed. Retry by imagining the fan stops and the water settles.</p>
+          <p class="static-note">Dashed line shows the starting height.</p>
+          <p>Water piles up at the north end and drops at the south end. In this tray no water spills or enters, so the amount of water stays the same.</p>
         </details>
+        <details><summary>Test pouring in more water</summary>
+          <svg viewBox="0 0 400 120" role="img" aria-labelledby="fill-tray">
+            <title id="fill-tray">With more water added, the settled surface is higher at both ends</title>
+            <text x="30" y="24" fill="#261834" font-family="Arial, sans-serif" font-size="23">South</text>
+            <text x="370" y="24" text-anchor="end" fill="#261834" font-family="Arial, sans-serif" font-size="23">North</text>
+            <path d="M30 51H370v51H30z" fill="#a993c5"/>
+            <path d="M30 70H370" stroke="#291f30" stroke-width="2" stroke-dasharray="5 6"/>
+            <path d="M30 51H370" fill="none" stroke="#482267" stroke-width="3"/>
+            <path d="M30 40v62h340V40" fill="none" stroke="#291f30" stroke-width="3"/>
+          </svg>
+          <p class="static-note">Dashed line shows the starting height.</p>
+          <p>After the surface settles, both ends are higher. More water is stored in the tray.</p>
+        </details>
+        <p>Close either test to return to the prediction. The drawings exaggerate the slopes. Real lakes have uneven bottoms and can keep sloshing after the wind eases.</p>
       </div>
-      <p>The sketch exaggerates the slope to show the effect. It holds the tray shape, temperature, and amount of water fixed. A real ocean also has currents, tides, Earth's rotation, and changes in water temperature. A change in steady winds can change currents (moving seawater) and shift water from one region to another. When seawater warms, the same amount of water can take up more space. This is called <strong>thermal expansion</strong>.</p>
-
       <div class="practice">
-        <h3>Choose a measurement</h3>
-        <p>In a fictional aquarium, the water near the viewing window stands higher than usual and the other end stands lower. A student thinks a pump has been pushing water toward the window. Which extra record would check the idea most directly?</p>
-        <details><summary>Compare your choice</summary><p>Look for the pump's flow direction and when it ran. If it ran toward the window before and during the high reading, that would support the idea. A date alone gives the timing of the map. A second water-level map could show whether the pattern returns, but would still leave the pump's role open.</p></details>
-        <details><summary>Retry with a rival idea</summary><p>Suppose a student thinks one end warmed up. What would you measure across the tank to check that idea?</p>
-          <details><summary>Check the retry</summary><p>Measure water temperature at both ends before and during the height change. A warming pattern could support the idea. You would still check the pump record because two processes can happen together.</p></details>
-        </details>
+        <h3>Check the proposed cause</h3>
+        <p>A calm afternoon follows a storm. The north end and the south end are both higher than before the storm. Which test fits better? Name one measurement that would help you check.</p>
+        <details><summary>Compare your reasoning</summary><p>A gain of water fits better than a simple push from one end to the other. Compare water entering and leaving the lake over the storm. A pair of shore readings alone can't prove how much water was gained.</p></details>
+        <p><strong>Retry.</strong> On another afternoon the north end is down and the south end is up. Which direction of steady wind would fit?</p>
+        <details><summary>Compare the retry</summary><p>Wind blowing toward the south could push water toward that end. Check the wind record before treating the push as the cause.</p></details>
+      </div>
+      <h3>The same places on two dates</h3>
+      <figure class="map-panel">
+        <figcaption><h3>Lantern Reservoir</h3><p><strong>June 8, 2023</strong> · Synthetic data</p></figcaption>
+        <svg viewBox="0 0 500 270" role="img" aria-labelledby="lan23-name lan23-desc">
+          <title id="lan23-name">Lantern Reservoir, June 8, 2023</title>
+          <desc id="lan23-desc">Slate Bluff is at the top shore. Reed Dock is on the bottom shore on the same north–south grid line. A detailed text map follows.</desc>
+          <defs>
+            <clipPath id="lan23-shore"><path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z"/></clipPath>
+            <linearGradient id="lan23-field" gradientUnits="userSpaceOnUse" x1="200" y1="35" x2="230" y2="235"><stop offset="-0.000000" stop-color="#cebcd1"/><stop offset="1.000000" stop-color="#e4d7db"/></linearGradient>
+          </defs>
+          <rect x="1" y="1" width="498" height="268" fill="#f9f3e8" stroke="#a89e8c"/>
+          <path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z" fill="url(#lan23-field)"/>
+
+          <path d="M50 35v200 M100 35v200 M150 35v200 M200 35v200 M250 35v200 M300 35v200 M350 35v200 M400 35v200 M450 35v200 M50 35h400 M50 85h400 M50 135h400 M50 185h400 M50 235h400 " stroke="#2e2634" stroke-opacity=".40" stroke-width="1.3" fill="none"/>
+          <path d="M250 35 C275 19 320 24 344 43 C367 67 349 85 369 115 C392 149 366 174 345 195 C314 214 296 224 250 235 C210 241 166 231 153 210 C124 184 157 161 144 133 C126 110 132 78 158 59 C184 41 217 47 250 35Z" stroke="#2e2634" stroke-width="2.1" fill="none"/>
+          <path d="M474 47V28 M468 34l6-6 6 6" stroke="#23182c" stroke-width="3" fill="none"/>
+          <text x="474" y="21" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#23182c">N</text>
+          <g fill="#261834" stroke="#fffaf1" stroke-width="2"><path d="M250 25l10 18h-20z"/><rect x="242" y="227" width="16" height="16"/></g>
+        </svg>
+        <p class="landmarks">▲ Slate Bluff · ■ Reed Dock</p>
+        <details class="access-map"><summary>Read the map as text</summary><p>North is up. Most of the lake is pale purple. The north is a little darker than the south, but even the dark end is under halfway from the center of the key to the first mark on the right. Same baseline at each place and same legend as the earlier Lantern panel.</p></details>
+      </figure>
+      <p>Compare the June 8, 2021 and June 8, 2023 panels using the same legend above. The north end went from strong purple to pale purple. The south end went from strong orange to pale purple. The ends changed in opposite directions and the contrast weakened.</p>
+      <p>A wind pushing north in 2021 and weaker wind in 2023 could explain why the height difference shrank. Added water alone could lift both ends, but it can't explain why the north end fell. Wind records and water flow records could help separate the effects.</p>
+      <aside class="map-note" aria-label="Check dates"><p>A report says the second Lantern panel was taken on July 8, 2023. Point to the caption before you use the claim. It says <strong>June 8</strong>. You can compare the dates shown, but you'd need a July panel to check a July claim. When panels use different baselines or legends, find out whether their values can be put on the same scale first.</p></aside>
+      <div class="practice">
+        <h3>Check what changed</h3>
+        <p>A camper saw that the north end was purple in both Lantern panels and wrote, “The north end stayed at the same height.” Which map cue would you use to repair that sentence?</p>
+        <details><summary>Compare your reasoning</summary><p>Read the strength of the purple on the shared legend. The lighter 2023 shade is closer to zero. The north end fell even though it was still above its baseline.</p></details>
+        <p><strong>Retry.</strong> A different bay goes from pale orange to deep orange on one shared scale. Which way did its water height move?</p>
+        <details><summary>Compare the retry</summary><p>It fell farther below its baseline.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="exit">
-      <h2 id="exit">Choose a method</h2>
-      <p>A wetland team sends you a June map and a second map labeled only “later.” A dock on the later map is marked in a patch below zero.</p>
-      <ol>
-        <li>What can you tell from the later map alone?</li>
-        <li>What would you check before comparing the dock across maps?</li>
-        <li>Suppose the dock really did drop while water rose near the opposite bank. Propose a cause and name a measurement that could test it.</li>
-      </ol>
-      <details><summary>Check your explanation</summary><p>One map tells you how that patch compares with its reference at the time shown. To tell whether it dropped, find the dock's water patch on both maps, check the dates and references, and read the numbers with their units. If it did drop, one hypothesis is that winds pushed water away from the dock toward the opposite bank. Wind speed and direction records from before and during the shift would help test that idea.</p></details>
-      <p><strong>On your own maps</strong> Mark the location or outline the region, then point to the legend and date that back up your observation. If a date or scale is missing or conflicts with a caption, say what you can read and check which map to use before making a claim about that date.</p>
-      <p><strong>Next time</strong> Before opening this page, explain the difference between “below usual” and “went down.” Then name one record you could use to test a wind explanation.</p>
+    <section aria-labelledby="transfer"><h2 id="transfer">Your turn at Juniper Lake</h2>
+      <p>Use the panels and the shared legend. Try each decision before opening its comparison.</p>
+      <aside class="map-key" aria-label="Map legend">
+        <p><strong>Water height departure (cm)</strong></p>
+        <svg viewBox="0 0 400 66" role="img" aria-labelledby="try-key-label">
+          <title id="try-key-label">Continuous height departure scale from minus 40 to plus 40 centimeters</title>
+          <defs><linearGradient id="try-key-scale"><stop offset="0.000000" stop-color="#863c08"/><stop offset="0.250000" stop-color="#dc863e"/><stop offset="0.500000" stop-color="#fff9e8"/><stop offset="0.750000" stop-color="#9272b5"/><stop offset="1.000000" stop-color="#482267"/></linearGradient></defs>
+          <rect x="33" y="7" width="334" height="22" rx="3" fill="url(#try-key-scale)" stroke="#412c32"/>
+          <path d="M33 29v7 M116.5 29v7 M200 29v7 M283.5 29v7 M367 29v7" stroke="#412c32" stroke-width="2"/>
+          <g fill="#332332" font-family="Arial, sans-serif" font-size="23" text-anchor="middle">
+            <text x="33" y="61">−40</text><text x="116.5" y="61">−20</text><text x="200" y="61">0</text><text x="283.5" y="61">+20</text><text x="367" y="61">+40</text>
+          </g>
+        </svg>
+        <p>Deep orange is the far left, cream is the center, and deep purple is the far right. The space from one mark to the next stands for 20 cm.</p>
+      </aside>
+      <div class="map-pair">
+        <figure class="map-panel">
+        <figcaption><h3>Juniper Lake</h3><p><strong>August 8, 2024</strong> · Synthetic data</p></figcaption>
+        <svg viewBox="0 0 500 270" role="img" aria-labelledby="jun24-name jun24-desc">
+          <title id="jun24-name">Juniper Lake, August 8, 2024</title>
+          <desc id="jun24-desc">Quarry Point is on the west shore, Pump House is on the east shore, and Gull Island is near the center. A detailed text map follows.</desc>
+          <defs>
+            <clipPath id="jun24-shore"><path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z"/></clipPath>
+            <linearGradient id="jun24-field" gradientUnits="userSpaceOnUse" x1="0" y1="135" x2="500" y2="135"><stop offset="0.000000" stop-color="#a85a1e"/><stop offset="0.187500" stop-color="#dc863e"/><stop offset="0.500000" stop-color="#fff9e8"/><stop offset="0.812500" stop-color="#9272b5"/><stop offset="1.000000" stop-color="#664286"/></linearGradient>
+          </defs>
+          <rect x="1" y="1" width="498" height="268" fill="#f9f3e8" stroke="#a89e8c"/>
+          <path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z" fill="url(#jun24-field)"/>
+          <defs><radialGradient id="jun24-cove" gradientUnits="userSpaceOnUse" cx="235" cy="163" r="30">
+            <stop offset="0" stop-color="#987aba"/><stop offset=".4" stop-color="#b2a0cc"/>
+            <stop offset="1" stop-color="#f4e8ec" stop-opacity="0"/>
+          </radialGradient></defs>
+          <circle cx="235" cy="163" r="30" fill="url(#jun24-cove)" clip-path="url(#jun24-shore)"/>
+          <path d="M50 35v200 M100 35v200 M150 35v200 M200 35v200 M250 35v200 M300 35v200 M350 35v200 M400 35v200 M450 35v200 M50 35h400 M50 85h400 M50 135h400 M50 185h400 M50 235h400 " stroke="#2e2634" stroke-opacity=".40" stroke-width="1.3" fill="none"/>
+          <path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z" stroke="#2e2634" stroke-width="2.1" fill="none"/>
+          <path d="M474 47V28 M468 34l6-6 6 6" stroke="#23182c" stroke-width="3" fill="none"/>
+          <text x="474" y="21" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#23182c">N</text>
+          <g fill="#261834" stroke="#fffaf1" stroke-width="2"><path d="M50 75l10 18h-20z"/><rect x="442" y="127" width="16" height="16"/><ellipse cx="250" cy="135" rx="15" ry="8" fill="#f9f3e8" stroke="#261834"/></g>
+        </svg>
+        <p class="landmarks">▲ Quarry Point · ■ Pump House · Oval Gull Island</p>
+        <details class="access-map"><summary>Read the map as text</summary><p>North is up. The shore near Quarry Point is orange, and most of the western half on the left of the grid line through Gull Island is orange. The shore near Pump House is purple. Moving west from Pump House, at the first grid line the shade is close to the first mark right of the center of the legend. At the next grid line it is roughly two thirds of the way from center to that same mark. The only purple patch clearly on the left side is just south and a little west of Gull Island.</p></details>
+      </figure>
+        <figure class="map-panel">
+        <figcaption><h3>Juniper Lake</h3><p><strong>August 8, 2026</strong> · Synthetic data</p></figcaption>
+        <svg viewBox="0 0 500 270" role="img" aria-labelledby="jun26-name jun26-desc">
+          <title id="jun26-name">Juniper Lake, August 8, 2026</title>
+          <desc id="jun26-desc">Quarry Point is on the west shore, Pump House is on the east shore, and Gull Island is near the center. A detailed text map follows.</desc>
+          <defs>
+            <clipPath id="jun26-shore"><path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z"/></clipPath>
+            <linearGradient id="jun26-field" gradientUnits="userSpaceOnUse" x1="0" y1="135" x2="500" y2="135"><stop offset="0.000000" stop-color="#d9cad6"/><stop offset="0.448276" stop-color="#9272b5"/><stop offset="1.000000" stop-color="#573277"/></linearGradient>
+          </defs>
+          <rect x="1" y="1" width="498" height="268" fill="#f9f3e8" stroke="#a89e8c"/>
+          <path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z" fill="url(#jun26-field)"/>
+
+          <path d="M50 35v200 M100 35v200 M150 35v200 M200 35v200 M250 35v200 M300 35v200 M350 35v200 M400 35v200 M450 35v200 M50 35h400 M50 85h400 M50 135h400 M50 185h400 M50 235h400 " stroke="#2e2634" stroke-opacity=".40" stroke-width="1.3" fill="none"/>
+          <path d="M50 85 C77 69 102 100 144 77 C177 49 222 59 249 73 C282 86 310 91 336 71 C370 45 416 62 436 91 C448 111 447 124 450 135 C467 156 434 184 399 203 C359 232 334 222 304 221 C256 207 212 230 173 221 C138 217 116 203 99 199 C69 202 47 177 57 153 C71 127 45 121 50 85Z" stroke="#2e2634" stroke-width="2.1" fill="none"/>
+          <path d="M474 47V28 M468 34l6-6 6 6" stroke="#23182c" stroke-width="3" fill="none"/>
+          <text x="474" y="21" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#23182c">N</text>
+          <g fill="#261834" stroke="#fffaf1" stroke-width="2"><path d="M50 75l10 18h-20z"/><rect x="442" y="127" width="16" height="16"/><ellipse cx="250" cy="135" rx="15" ry="8" fill="#f9f3e8" stroke="#261834"/></g>
+        </svg>
+        <p class="landmarks">▲ Quarry Point · ■ Pump House · Oval Gull Island</p>
+        <details class="access-map"><summary>Read the map as text</summary><p>North is up. This panel uses the same baseline at each place and the same legend as the earlier Juniper panel. The west half is light to medium purple, with most of the shade between the center and the first mark to its right. The east half is a deeper purple with most of the shade between the first and second marks right of center.</p></details>
+      </figure>
+      </div>
+      <h3>1. Correct a map reading</h3>
+      <p>A radio host points to the orange water near Quarry Point on the earlier panel and calls it a sign of rising water. Point to the clue that would make you change the claim. What can the map tell the host instead?</p>
+      <details><summary>Compare your reasoning</summary><p>The date tells you it's one snapshot. The legend shows that the orange near Quarry Point means water below its baseline that day. A rise needs a second reading at the same spot. A single negative departure could go with either a rise or a fall since an earlier date.</p></details>
+      <h3>2. Estimate an offshore height difference</h3>
+      <p>On the earlier panel, find the water two grid squares west of Pump House. Estimate the departure there in meters. Explain how you found the place, matched the shade, and handled the units.</p>
+      <form class="practice" data-practice data-expected="0.13" data-tolerance="0.03"
+        data-hint="Find the square for Pump House and move left two grid squares. Match that shade on the legend in centimeters, then divide by 100. Try again."
+        data-mistakes='{"13":"That estimate is in centimeters. Divide the number of centimeters by 100 to get meters. Try again.","-0.13":"That flips the sign. Locate the purple shade on the legend and see which side of zero it falls on. Try again."}'
+        data-success="That fits the map. The shade two squares west of Pump House is about +13 cm, or +0.13 m. Explain how you found the spot and its sign.">
+        <label for="juniper-metres">Estimated departure in meters</label>
+        <div class="controls">
+          <input id="juniper-metres" type="number" step="any" required>
+          <button type="submit" disabled>Check estimate</button>
+        </div>
+        <p data-feedback role="status" aria-live="polite"></p>
+      </form>
+      <details class="static-feedback"><summary>Compare the estimate</summary><p>The spot is purple between 0 and +20 cm, a little closer to the +20 mark. About +13 cm is a reasonable estimate. +13 cm = +0.13 m. Estimates from +0.10 to +0.16 m fit the shade.</p></details>
+      <p><strong>Retry.</strong> Suppose the shade at the same spot lands one quarter of the way from 0 to −20 cm on a new map. Give the departure in meters.</p>
+      <details><summary>Compare the retry</summary><p>One quarter of 20 cm is 5 cm. This spot is on the negative side, so −5 cm = −0.05 m.</p></details>
+      <h3>3. Compare whole regions</h3>
+      <p>On the earlier panel, is the western half generally above or below its baseline? Use the grid line through Gull Island to split the lake. A friend uses the water beside the south shore of the island to argue the opposite. Point to the evidence you would use to repair the claim.</p>
+      <details><summary>Compare your reasoning</summary><p>Most of the west half has orange shades, so it's generally below its baseline. The small patch of purple immediately south and just west of the island is an exception. Scan the open water along the west shore as well as the patch near the island.</p></details>
+      <h3>4. Propose a cause for the contrast</h3>
+      <p>A field note dated August 18, 2024 asks why one end was higher than the other. Can either panel support an explanation for that date? Then use the <em>earlier displayed panel</em> to describe a contrast, propose a cause, and name a measurement that could test it.</p>
+      <details><summary>Compare your reasoning</summary><p>The captions give August 8 dates, so there is no August 18 panel here. On August 8, 2024, the east is mostly above its baseline and the west mostly below. Steady wind toward the east could push water from the west end. Check the direction and strength of the wind before the snapshot. More stored water alone would be more likely to lift both ends.</p></details>
+      <h3>5. Explain what changed between panels</h3>
+      <p>Do the dates, baseline and legend allow a comparison? Describe a major change using evidence from more than one part of the lake. Compare a change in water stored with a change in where the water was pushed. Which better fits the evidence? What other data would you ask for?</p>
+      <details><summary>Compare your reasoning</summary><p>Both show August 8 with the same baseline and legend, two years apart. Most of the west went from orange to purple and much of the east became a stronger purple. The west changed more. Higher departures on both sides fit a gain in stored water better than a simple shift from one end to the other. Wind could still affect the pattern. To test the gain, compare amounts of water that entered and left, and check whether the wind changed.</p></details>
+      <p><strong>Retry.</strong> Suppose a third panel with the same legend shows a darker purple west end and a newly orange east end. Name a mechanism that could explain the change from the 2026 panel. What could show you the proposed mechanism is wrong?</p>
+      <details><summary>Compare the retry</summary><p>Wind pushing toward the west could raise that end and draw water away from the east. A record showing calm conditions during and before the shift would weaken that idea. With only two snapshots you can't tell when the shift occurred.</p></details>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
-      <h2 id="glossary-title">Glossary</h2>
+    <section aria-labelledby="remember"><h2 id="remember">Use the method again</h2>
+      <p>Which would you read first to check whether a patch shows a temperature, whether a place is above its usual height, or whether its height changed? Explain why a single positive departure can't answer all three questions.</p>
+      <p>Next time, before reopening the lesson, sketch a lake and a continuous legend. Draw one pair of maps where water shifts toward an end and another where both ends go up. Name one measurement besides height that could help you tell the causes apart.</p>
+      <p>If you get stuck on a new map, ask in the private chat whether you need help finding the place, reading the key, or testing a cause.</p>
+    </section>
+    <section id="glossary" aria-labelledby="glossary-title"><h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt>Reference height and mean</dt><dd>A reference height is the comparison height. A mean is an average, found by adding values and dividing by how many there are.</dd>
-        <dt>Departure, deviation, or anomaly</dt><dd>A signed difference from a reference. Here it is measured height minus reference height.</dd>
-        <dt>Sea surface height deviation (SSHD)</dt><dd>A departure for the height of the ocean surface compared with its reference.</dd>
-        <dt>Legend</dt><dd>The key that tells what the map's colors or symbols represent.</dd>
-        <dt>cm, m, and ≈</dt><dd>Centimeters, meters, and “about equal to.” A meter contains 100 centimeters.</dd>
-        <dt>Regional pattern and trend</dt><dd>A regional pattern covers an area. A trend describes the direction of change across a series of observations.</dd>
-        <dt>Observation and hypothesis</dt><dd>An observation describes the evidence. A hypothesis offers an explanation that new evidence can test.</dd>
-        <dt>Current and thermal expansion</dt><dd>A current is flowing water. Thermal expansion is an increase in volume as a material warms.</dd>
+        <dt>Average (mean)</dt><dd>The sum of the readings divided by how many readings there are.</dd>
+        <dt>Baseline</dt><dd>The reference height. The models use a flat long-term average for each lake.</dd>
+        <dt>Departure</dt><dd>Height minus baseline. A positive value is above baseline and a negative value is below it.</dd>
+        <dt>Legend</dt><dd>The map key. A continuous legend has blended shades for values between its marks.</dd>
+        <dt>Redistribution</dt><dd>Movement from one part of a lake to another.</dd>
+        <dt>Snapshot</dt><dd>A map of conditions at one time.</dd>
+        <dt>cm and m</dt><dd>Centimeter and meter, units of length. One meter is 100 centimeters.</dd>
+        <dt>Synthetic data</dt><dd>Made-up values used to test a method.</dd>
       </dl>
     </section>
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">Read a little more</h2>
-      <ul>
-        <li>Learn how a satellite measures sea surface height. <a href="https://sealevel.nasa.gov/faq/19/how-do-satellites-measure-sea-level-change/">NASA Sea Level Change Portal</a></li>
-        <li>See how winds can push water toward a shore. <a href="https://oceanservice.noaa.gov/hazards/hurricanes/">NOAA National Ocean Service</a></li>
-      </ul>
+    <section class="sources" aria-labelledby="sources"><h2 id="sources">Read a little more</h2>
+      <p>See how a steady wind can push water toward one end of a lake and how the water can slosh when the wind stops. <a href="https://oceanservice.noaa.gov/facts/seiche.html">NOAA's guide to seiches</a></p>
+      <p>Read how water entering and leaving a lake affects its level. <a href="https://www.usgs.gov/water-science-school/science/lakes-and-reservoirs">U.S. Geological Survey's guide to lakes and reservoirs</a></p>
     </section>
   </main>
 </body>

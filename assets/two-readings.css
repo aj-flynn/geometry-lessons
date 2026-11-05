@@ -1,0 +1,362 @@
+.two-readings-page {
+  --paper: #f8f4e9;
+  --surface: #f0e9db;
+  --ink: #1e302e;
+  --accent: #f4d594;
+  --quiet: #3f5650;
+  --rule: #b9ad99;
+  --link: #245a52;
+}
+
+.two-readings {
+  width: min(1100px, 100% - 3rem);
+  overflow-wrap: anywhere;
+}
+
+.two-readings .reading-header {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.25rem;
+}
+
+.two-readings .reading-header span {
+  text-align: right;
+}
+
+.two-readings .opening {
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  padding: 1.5rem 0 2rem;
+}
+
+.two-readings h1 {
+  font-size: clamp(2.8rem, 6.6vw, 5.4rem);
+  max-width: 13ch;
+}
+
+.two-readings .lead {
+  max-width: 42ch;
+}
+
+.two-readings .warm-up {
+  border-top: 3px solid var(--link);
+  padding: 1rem 1.25rem;
+  background: #fdfbf4;
+}
+
+.two-readings .warm-up h2 {
+  font-size: 1.55rem;
+  margin: 0;
+}
+
+.two-readings .warm-up ol {
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.two-readings .warm-up li + li {
+  margin-top: 0.4rem;
+}
+
+.two-readings .route {
+  padding: 0.3rem 1.1rem;
+  margin-bottom: 2rem;
+  background: transparent;
+  border-block: 1px solid var(--rule);
+}
+
+.two-readings a {
+  color: var(--link);
+}
+
+.two-readings .eyebrow,
+.two-readings .byline,
+.two-readings .reading-credit {
+  color: var(--quiet);
+}
+
+.two-readings .eyebrow {
+  margin-bottom: 0.6rem;
+}
+
+.two-readings .task {
+  border-left: 3px solid var(--link);
+  padding: 0.65rem 1rem;
+  background: #edf0e7;
+}
+
+.two-readings .task strong {
+  display: block;
+}
+
+.two-readings .spread,
+.two-readings .model-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.8rem, 2.3vw, 1.75rem);
+}
+
+.two-readings .spread {
+  margin-top: 1.5rem;
+}
+
+.two-readings .leaf {
+  min-width: 0;
+  padding: clamp(1rem, 2.65vw, 2rem);
+  background: #fdfbf4;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--link);
+}
+
+.two-readings .leaf h3 {
+  font: 400 clamp(1.7rem, 3vw, 2.2rem)/1.1 Georgia, "Times New Roman", serif;
+  margin-bottom: 0.35rem;
+}
+
+.two-readings .byline,
+.two-readings .reading-credit {
+  font-size: 0.95rem;
+}
+
+.two-readings .byline {
+  margin-top: 0;
+}
+
+.two-readings .passage {
+  padding-left: 1.25em;
+  margin: 1.25rem 0 0;
+  font: 1.05rem/1.65 Georgia, "Times New Roman", serif;
+}
+
+.two-readings .passage li {
+  padding-left: 0.25em;
+}
+
+.two-readings .passage li + li {
+  margin-top: 0.95rem;
+}
+
+.two-readings .passage li::marker {
+  font: 700 0.85em Arial, sans-serif;
+  color: var(--quiet);
+}
+
+.two-readings .model {
+  background: #fdfbf4;
+  border: 1px solid var(--rule);
+  padding: 0.75rem clamp(0.85rem, 2.4vw, 1.6rem);
+}
+
+.two-readings .annotation {
+  padding: clamp(0.8rem, 2.4vw, 1.6rem);
+  background: #e9eee3;
+}
+
+.two-readings .annotation blockquote {
+  font: 1.25rem/1.4 Georgia, "Times New Roman", serif;
+  margin-bottom: 1rem;
+}
+
+.two-readings .annotation mark {
+  background: #f6dfa9;
+}
+
+.two-readings .annotation figcaption {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.75rem;
+}
+
+.two-readings .claim-revision,
+.two-readings .model-paragraph {
+  border-left: 3px solid var(--link);
+  padding-left: 0.85rem;
+}
+
+.two-readings .context-lab {
+  margin-top: 1.25rem;
+  padding: clamp(0.9rem, 2.5vw, 1.7rem);
+  background: #edf0e7;
+}
+
+.two-readings .context-lab ul {
+  padding-left: 1.25em;
+}
+
+.two-readings .context-lab li + li {
+  margin-top: 0.55rem;
+}
+
+.two-readings .context-lab .controls button {
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 1rem;
+  border-color: var(--link);
+  background: #fdfbf4;
+  color: var(--ink);
+}
+
+.two-readings .context-lab .controls button[aria-pressed="true"],
+.two-readings .context-lab button[data-context-reset] {
+  background: var(--ink);
+  color: white;
+}
+
+.two-readings .context-lab:has([data-context-interaction]:not([hidden])) .static-context {
+  display: none;
+}
+
+.two-readings :focus-visible {
+  outline: 3px solid var(--link);
+}
+
+.two-readings .ending {
+  background: var(--ink);
+}
+
+.two-readings dt:target {
+  background: var(--accent);
+  width: fit-content;
+}
+
+@media screen and (max-width: 780px) {
+  .two-readings .opening,
+  .two-readings .spread,
+  .two-readings .model-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .two-readings h1 {
+    font-size: clamp(2.65rem, 8vw, 4.5rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .two-readings {
+    width: calc(100% - 1.5rem);
+    margin-top: 0.75rem;
+  }
+
+  .two-readings .reading-header {
+    gap: 0.75rem;
+  }
+
+  .two-readings .route {
+    padding-inline: 0.55rem;
+  }
+}
+
+@media print {
+  @page { margin: 0.55in; }
+
+  .two-readings-page,
+  .two-readings .leaf,
+  .two-readings .annotation,
+  .two-readings .warm-up,
+  .two-readings .task,
+  .two-readings .model,
+  .two-readings .context-lab,
+  .two-readings .ending {
+    background: white;
+    color: black;
+  }
+
+  .two-readings .opening {
+    padding: 0;
+  }
+
+  .two-readings .leaf {
+    padding: 0.65rem;
+  }
+
+  .two-readings .passage,
+  .two-readings .annotation blockquote {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .two-readings .ending h2,
+  .two-readings .eyebrow,
+  .two-readings .byline,
+  .two-readings .reading-credit,
+  .two-readings a {
+    color: black;
+  }
+
+  .two-readings .annotation {
+    break-inside: auto;
+  }
+
+  .two-readings .spread,
+  .two-readings .model-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .two-readings .leaf h3,
+  .two-readings summary {
+    break-after: avoid;
+  }
+
+  .two-readings .context-lab .static-context {
+    display: block !important;
+  }
+
+  .two-readings [data-context-interaction] {
+    display: none !important;
+  }
+}
+
+.two-readings .accuracy-check { margin-top: 1.5rem; }
+.two-readings .essay-plan li + li { margin-top: 0.6rem; }
+
+@media print {
+  .two-readings-page {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .two-readings {
+    width: 100%;
+    margin: 0;
+  }
+
+  .two-readings h1 {
+    font-size: 26pt;
+    max-width: none;
+    margin: 0.1in 0;
+  }
+
+  .two-readings h2 {
+    margin-bottom: 0.1in;
+  }
+
+  .two-readings .lead {
+    font-size: 11pt;
+    max-width: none;
+  }
+
+  .two-readings p {
+    max-width: none;
+    margin-block: 0.08in;
+  }
+
+  .two-readings section {
+    margin-top: 0.25in;
+  }
+
+  .two-readings .warm-up,
+  .two-readings .context-lab {
+    padding: 0.12in;
+  }
+
+  .two-readings details {
+    padding: 0.06in 0.1in;
+    margin-block: 0.07in;
+  }
+
+  .two-readings summary {
+    min-height: 0;
+    padding: 0.05in 0;
+  }
+
+  .two-readings .task {
+    break-inside: avoid;
+  }
+}

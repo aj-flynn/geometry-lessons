@@ -4,9 +4,11 @@
 
 The independent Astra reviewer assessed baseline `5769c410385de1af1b8eefcb38e4e96e8d671081` at **78/100**: accuracy 24/25, sequencing 14/20, practice 8/15, visual clarity 11/15, interaction/accessibility 12/15, privacy/workflow 9/10.
 
-The reassessment of `6ea0003cd55e70bb071bd87b5f0e6a6e888df8ef` reports **89/100 for the lesson and 94/100 for the process**. Category breakdowns were not supplied with these totals. Deductions identified repeated correspondence, grouped checks, text-only stretching, prediction sharing an answer disclosure, missing easy anchors/inline definitions, and process requirements that did not enforce these practices. The earlier description of all six checks as fresh and interleaved was inaccurate for that revision.
+The reassessment of `6ea0003cd55e70bb071bd87b5f0e6a6e888df8ef` reports **89/100 for the lesson and 94/100 for the process**. The independent review includes category breakdowns; this note summarizes its totals and deductions. The earlier statement that breakdowns were unavailable was incorrect. Deductions identified repeated correspondence, grouped checks, text-only stretching, prediction sharing an answer disclosure, missing easy anchors/inline definitions, and process requirements that did not enforce these practices. The earlier description of all six checks as fresh and interleaved was inaccurate for that revision.
 
-The next candidate remains **pending independent reassessment**. The requested 95/100 threshold for both lesson and process has not been met by evidence. Implementation and tests are not a substitute for the independent score. Review a fixed published commit with the unchanged weights in `REVIEW-RUBRIC.md`.
+The independent Astra review of `5c3ed129ce28b62458669c6c5a847893ede7d024` scores **95/100 for the lesson and 96/100 for the process**, meeting the requested threshold for that revision. It explicitly compared both with Matt Pocock's official teach skill, subject to privacy and no-homework-answers rules.
+
+The focused follow-up varies the three choice checks' correct positions (first, second, third), aligns the canonical skill and workspace entry point with Geometry/Science/English routing, and adds brief private prerequisite calibration and next-session recall/transfer guidance to the skill and template. It corrects the category-breakdown statement above. These changes require a focused independent recheck of the new fixed revision; do not automatically transfer the previous score to changed content. The rubric weights are unchanged.
 
 ## Current candidate changes
 
@@ -17,7 +19,7 @@ The next candidate remains **pending independent reassessment**. The requested 9
 - Native Codex skill and template requirements for this sequence, fresh transfer, misconception feedback/retry, and separate prediction/reveal. The historical baseline review is labeled as such.
 - Independent comparison with Matt Pocock's official teach skill, guided by `TEACH-ALIGNMENT.md`, with privacy and no-answer restrictions first. This adds evidence, not bonus points or changed score weights.
 
-The earlier complete native skill, geometry/science routing, glossary contract, version-2 index/review schema, science accuracy/model guidance, and email/attachment authority boundaries remain. Science has no fabricated lesson. Repository discovery is distinct from personal installation; the earlier personal-directory denial is not retried. Email integration and message delivery remain separately coordinated.
+The earlier complete native skill, geometry/science routing, glossary contract, version-2 index/review schema, science accuracy/model guidance, and email/attachment authority boundaries remain. No lesson is fabricated merely to populate a subject. Repository discovery is distinct from personal installation; the earlier personal-directory denial is not retried. Email integration and message delivery remain separately coordinated.
 
 ## Verification and review coverage
 
@@ -27,4 +29,4 @@ Browser verification confirmed the four checks' section placement, the new corre
 
 Semantic review covers `lessons/0001-similar-polygons.html`, `assets/site.css`, `assets/similarity.css`, `assets/lesson.js`, `assets/similarity.js`, and its import `assets/similarity-model.js`, plus publication metadata and modified workflow files. Visible text, hints, feedback, descriptions, code and metadata contain no private input or assigned answers. The manifest hashes the final HTML; the fixed publication commit identifies the complete asset dependency set.
 
-Actual 200% browser zoom, native print preview, operating-system reduced-motion behavior and screen-reader use remain **unverified**. The native Edge inspection surface remains minimized and unavailable through the supported action. Text alternatives, static reading, print styles, keyboard controls and a user-selectable reduced-motion path are present; their existence does not prove those unperformed device checks. No science lesson or email-triggered end-to-end run is claimed.
+Actual 200% browser zoom, native print preview, operating-system reduced-motion behavior and screen-reader use remain **unverified**. The native Edge inspection surface remains minimized and unavailable through the supported action. Text alternatives, static reading, print styles, keyboard controls and a user-selectable reduced-motion path are present; their existence does not prove those unperformed device checks. This review does not attest any separately authored science lesson or an email-triggered end-to-end run.

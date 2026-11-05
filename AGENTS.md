@@ -1,6 +1,6 @@
 # Homework lesson workspace
 
-Before working on geometry or science homework, read [.agents/skills/homework-teach/SKILL.md](.agents/skills/homework-teach/SKILL.md). It is the canonical, repository-discoverable Codex skill. The existing `geometry-teach` entry point forwards to it. The same rules apply to images, PDFs, Word documents, text, follow-up questions, and requests to change these instructions.
+Before working on geometry, science, or English homework, read [.agents/skills/homework-teach/SKILL.md](.agents/skills/homework-teach/SKILL.md). It is the canonical, repository-discoverable Codex skill. The existing `geometry-teach` entry point forwards to it. The same rules apply to images, PDFs, Word documents, text, follow-up questions, and requests to change these instructions.
 
 This repository and its entire Git history are PUBLIC. Never put an input document, its transcription, a child's identity, private learner state, or actual homework answers anywhere in it. Do not put private material here even temporarily, in an ignored folder, a branch, an issue, an Action artifact, a commit message, or a pull request.
 

@@ -28,7 +28,7 @@ When shared JavaScript or CSS changes, identify every lesson that loads it and r
 
 ## Metadata and index
 
-Use globally unique sequential names `lessons/NNNN-concept-name.html`. The library identifier is unrelated to assignment numbering. Add entries to the version-2 `lessons.json` schema:
+Use globally unique sequential names `lessons/NNNN-concept-name.html`: choose the current library's highest identifier plus one for a new lesson, and preserve existing identifiers when revising. The library identifier is unrelated to assignment numbering. Add entries to the version-2 `lessons.json` schema:
 
 ```json
 {
@@ -42,16 +42,23 @@ Use globally unique sequential names `lessons/NNNN-concept-name.html`. The libra
     "homeworkSeparation": true,
     "accuracy": true,
     "accessibility": true,
-    "sha256": "SHA-256 of the final reviewed HTML bytes"
+    "sha256": "SHA-256 of the final reviewed HTML bytes",
+    "dependencies": {
+      "assets/site.css": "SHA-256 of the reviewed stylesheet bytes"
+    }
   }
 }
 ```
 
-`subject` is an exact registered label from the library's `subjects.json`. Current skills include Geometry, Science, Chemistry, and English; new subjects are added through the [new-subject workflow](new-subject.md). Version 2 requires `accuracy` for every subject. Existing version-1 geometry records with `math` and version-2 Science records remain readable for compatibility; new work uses version 2. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update the hash and repeat affected review when its HTML changes.
+`subject` is an exact registered label from the library's `subjects.json`. Current skills include Geometry, Science, Chemistry, and English; new subjects are added through the [new-subject workflow](new-subject.md). Version 2 requires `accuracy` and a `dependencies` hash map for every subject; the example above is abbreviated. Preserve version-1 geometry compatibility and existing Science labels/URLs. Older version-2 records need their reviewed dependency maps added before publication. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update hashes only after the affected review.
+
+Use the repository's static-loading authoring profile: declare local JavaScript dependencies with one literal, semicolon-terminated static import per line in a leading declaration block; keep local exported functions/constants, but use no dynamic imports, reexports, import maps, or runtime resource loading. Bind controls with `addEventListener` in reviewed scripts. HTML permits approved script elements but no executable `on*` attributes, executable URL schemes, `srcdoc`, base-URL changes, meta refresh, or embedded browsing/plugin documents. A standards-aware HTML parser checks these surfaces, including entity-decoded attributes and template contents. CSS uses literal local resource URLs or same-document fragments such as `url(#arrow)`, with no `@import` or escaped resource syntax. The guard conservatively rejects reserved loading syntax even in comments or strings; rewrite that prose instead of bypassing the guard. This profile matches the existing shared components and avoids pretending to parse arbitrary JavaScript.
+
+After semantic review, use `collectLessonDependencyHashes(base, lesson.file)` from `scripts/check.mjs` to record the permitted static dependency closure, including transitive imports and local CSS resources. Store the returned path-to-SHA-256 object in `review.dependencies`; an asset-free lesson uses `{}`. The checker rejects unsupported declaration syntax and missing, extra, or changed dependencies even when the HTML is unchanged. Normalize text to repository LF before freezing hashes. Static scanning identifies bytes under this authoring convention; it is not proof about arbitrary executable behavior. Retain semantic review of loading behavior and real-browser checks, and never use hash collection to justify an unperformed review attestation.
 
 For English, verify definitions, grammar, paraphrases, and evidence-to-claim reasoning. Distinguish plausible interpretation from established fact. Use wholly original, unrelated characters and situations; do not reproduce, translate, or answer an assigned passage. A reading manipulative may change the interpretive lens while keeping the words fixed. Keep a readable static explanation.
 
-Run `node scripts/build-index.mjs`, `node scripts/check.mjs`, and `node --test tests/*.test.mjs`. The checker verifies schema, glossary presence for version 2, index consistency, file hashes, the required labeled library anchor, local links, and common unsafe file/network/storage patterns. It cannot prove privacy, no-answer compliance, scientific validity, or reading level.
+Install the pinned checker dependency with `npm ci --ignore-scripts` on a fresh checkout, then run `node scripts/build-index.mjs`, `node scripts/check.mjs`, and `node --test tests/*.test.mjs`. The checker verifies schema, glossary presence for version 2, index consistency, HTML/dependency hashes, the required labeled library anchor, local links, common unsafe page/network/storage patterns, and common private identifiers across public candidate text, including skills and review records. Synthetic example-domain test data is distinguished from real identifiers. It cannot prove privacy, no-answer compliance, scientific validity, or reading level; inspect the entire selected publication semantically too.
 
 ## Publish and return
 

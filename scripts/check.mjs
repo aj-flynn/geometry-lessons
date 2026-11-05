@@ -1,12 +1,29 @@
 import { readFileSync, readdirSync, lstatSync, existsSync, realpathSync } from 'node:fs';
 import { resolve, relative, extname, dirname, isAbsolute, sep } from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest } from './build-index.mjs';
+import { parse } from 'parse5';
+import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, lessonFilename } from './build-index.mjs';
+
+const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
+const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
+
+export function inspectPrivateIdentifiers(source, name) {
+  const findings = [];
+  const addresses = source.matchAll(/[A-Z0-9._%+-]+@([A-Z0-9.-]+\.[A-Z]{2,})/gi);
+  const exampleDomain = /(?:^|\.)example\.(?:com|net|org)$|\.(?:example|invalid|test)$/i;
+  if ([...addresses].some(([, domain]) => !exampleDomain.test(domain))) {
+    findings.push(`${name}: Email-like personal identifier`);
+  }
+  const windowsHome = /\b[A-Z]:[\\/]+(?:Users|Documents and Settings)[\\/]+[^\\/\s"'<>]+/i;
+  const unixHome = /(?:^|[\s"'<>=(]|file:\/\/)\/(?:Users|home)\/[^/\s"'<>]+/i;
+  if (windowsHome.test(source) || unixHome.test(source)) findings.push(`${name}: Absolute private home path`);
+  return findings;
+}
 
 export function inspectPublicCode(source, name) {
-  const findings = [];
+  const findings = inspectPrivateIdentifiers(source, name);
   const rules = [
     [/data:|blob:/i, 'Embedded data/blob payload'],
     [/<(?:img|iframe|object|embed)\b/i, 'Input-capable embedded media; use reviewed inline SVG'],
@@ -15,11 +32,220 @@ export function inspectPublicCode(source, name) {
     [/\b(?:localStorage|sessionStorage|indexedDB)\b|document\.cookie/, 'Persistent browser data'],
     [/<form\b[^>]*\baction\s*=/i, 'Form submission destination'],
     [/url\(\s*["']?(?:https?:)?\/\//i, 'External CSS resource'],
-    [/\bAUTHOR:|\{\{[A-Z_]+\}\}/, 'Unfinished authoring scaffold'],
-    [/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i, 'Email-like personal identifier']
+    [/\bAUTHOR:|\{\{[A-Z_]+\}\}/, 'Unfinished authoring scaffold']
   ];
   for (const [pattern, message] of rules) if (pattern.test(source)) findings.push(`${name}: ${message}`);
   return findings;
+}
+
+function isRegularLocalFile(file, expectedPath) {
+  return existsSync(file) && lstatSync(file).isFile() && realpathSync(file) === expectedPath;
+}
+
+function cssReferences(css) {
+  if (/\\|@import\b/i.test(css)) {
+    throw new Error('CSS must avoid escapes and @import. Link each stylesheet directly in the lesson HTML.');
+  }
+  if (/\b(?:image|image-set|src|cross-fade|paint|element)\s*\(/i.test(css)) {
+    throw new Error('CSS resource references must use a literal local url(...).');
+  }
+  const tokens = /\b(url)\((?:\s*(?:"([^"]+)"|'([^']+)'|([^\s"'()]+))\s*\))?|\/\*[\s\S]*?\*\/|"[^"]*"|'[^']*'/gi;
+  const references = [];
+  for (const [, functionName, double, single, bare] of css.matchAll(tokens)) {
+    if (!functionName) continue;
+    const url = (double ?? single ?? bare)?.trim();
+    if (!url) throw new Error('CSS resource references must use a literal local url(...).');
+    if (!url.startsWith('#')) references.push(url);
+  }
+  return references;
+}
+
+const binding = String.raw`[A-Za-z_$][\w$]*`;
+const namedBinding = String.raw`${binding}(?:[ \t]+as[ \t]+${binding})?`;
+const namedList = String.raw`\{[ \t]*${namedBinding}(?:[ \t]*,[ \t]*${namedBinding})*[ \t]*,?[ \t]*\}`;
+const namedOrNamespace = String.raw`(?:${namedList}|\*[ \t]+as[ \t]+${binding})`;
+const importBindings = String.raw`(?:${binding}(?:[ \t]*,[ \t]*${namedOrNamespace})?|${namedOrNamespace})`;
+const leadingImport = new RegExp(String.raw`^import[ \t]+(?:${importBindings}[ \t]+from[ \t]+)?(["'])(\.\.?\/[\w./-]+\.m?js(?:\?[\w.=&-]+)?)\1;(?=[ \t]*(?:\r?\n|$))`);
+
+function moduleReferences(source) {
+  if (/\bexport\b(?![ \t]+(?:async[ \t]+function|function|class|const|let|var|default)\b)/.test(source)) {
+    throw new Error('Declare local exports directly. Export lists and re-exports are outside the lesson dependency profile.');
+  }
+  const runtimeLoaders = /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon|Worker|SharedWorker|serviceWorker|paintWorklet|audioWorklet|importScripts|Image|Audio|eval|Function|insertAdjacentHTML|innerHTML|outerHTML)\b/;
+  const resourceChanges = /\.(?:src|srcset|href)\s*=|\b(?:createElement|createElementNS)\s*\([^)]*?["'](?:script|link|iframe|img|object|embed|audio|video|source)["']|\bsetAttribute(?:NS)?\s*\([^)]*?["'](?:src|srcset|href|xlink:href)["']/i;
+  const documentWrites = /\bdocument\s*(?:(?:\.|\?\.)\s*write(?:ln)?\b|(?:\?\.\s*)?\[\s*(["'\x60])write(?:ln)?\1\s*\])/;
+  const cssUrls = /\burl\(/i;
+  if ([runtimeLoaders, resourceChanges, documentWrites, cssUrls].some(pattern => pattern.test(source))) {
+    throw new Error('Declare lesson resources in HTML, CSS, or leading static imports. Runtime resource loaders are outside the lesson dependency profile.');
+  }
+  const references = [];
+  let remainder = source.trimStart();
+  while (remainder) {
+    const comment = remainder.match(/^(?:\/\/[^\r\n]*|\/\*[\s\S]*?\*\/)/)?.[0];
+    if (comment && !/\bimport\b/.test(comment)) {
+      remainder = remainder.slice(comment.length).trimStart();
+      continue;
+    }
+    const declaration = remainder.match(leadingImport);
+    if (!declaration) break;
+    references.push(declaration[2]);
+    remainder = remainder.slice(declaration[0].length).trimStart();
+  }
+  // Search the raw body, including strings, comments, and template expressions.
+  if (/\bimport\b/.test(remainder)) {
+    throw new Error('Use only leading static import declarations: one per line with a quoted relative JS path and a semicolon.');
+  }
+  return references;
+}
+
+function* htmlElements(node) {
+  if (node.tagName) yield node;
+  for (const child of node.childNodes ?? []) yield* htmlElements(child);
+  if (node.content) yield* htmlElements(node.content);
+}
+
+const normalizeHtmlUrl = value => value.replace(/[\t\r\n]/g, '').replace(/^[\u0000-\u0020]+|[\u0000-\u0020]+$/g, '');
+const embeddedElements = new Set([
+  'iframe', 'frame', 'frameset', 'object', 'embed', 'applet', 'portal', 'fencedframe',
+  'img', 'image', 'feimage', 'picture', 'audio', 'video', 'source', 'track'
+]);
+const urlAttributes = new Set(['href', 'src', 'action', 'formaction', 'data', 'poster', 'background', 'cite', 'longdesc']);
+const svgStyleAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'cursor', 'marker', 'marker-start', 'marker-mid', 'marker-end'];
+
+function inspectHtml(source) {
+  const references = new Set();
+  const links = new Set();
+  const ids = new Set();
+  const addReferences = urls => urls.forEach(url => references.add(url));
+  // Inspect both trees so markup in the JavaScript-disabled fallback is checked.
+  const documents = [parse(source), parse(source, { scriptingEnabled: false })];
+  for (const node of documents.flatMap(document => [...htmlElements(document)])) {
+    const tag = node.tagName.toLowerCase();
+    const isSvg = node.namespaceURI === 'http://www.w3.org/2000/svg';
+    const attrs = new Map();
+    for (const { name, prefix, value } of node.attrs) {
+      const attribute = name.toLowerCase();
+      if (attribute.startsWith('on')) {
+        throw new Error('Use addEventListener in reviewed JavaScript instead of inline HTML event attributes.');
+      }
+      if (attribute === 'srcdoc') throw new Error('Embedded srcdoc documents are outside the lesson HTML profile.');
+      if (attribute === 'base' && prefix === 'xml') throw new Error('Lesson dependencies require the default page base URL.');
+      const url = urlAttributes.has(attribute) ? normalizeHtmlUrl(value) : value;
+      if (urlAttributes.has(attribute) && /^(?:javascript|vbscript|data|blob):/i.test(url)) {
+        throw new Error('Executable or embedded URL schemes are outside the lesson HTML profile.');
+      }
+      if (attribute === 'href' || attribute === 'src') links.add(url);
+      attrs.set(prefix ? prefix + ':' + attribute : attribute, url);
+    }
+    if (embeddedElements.has(tag)) throw new Error('Embedded media, documents, and plug-ins are outside the lesson HTML profile. Use inline SVG.');
+    if (tag === 'script' && node.namespaceURI !== 'http://www.w3.org/1999/xhtml') {
+      throw new Error('Declare reviewed scripts in HTML outside SVG or MathML.');
+    }
+    if (tag === 'base') throw new Error('Lesson dependencies require the default page base URL.');
+    if (tag === 'meta' && attrs.get('http-equiv')?.trim().toLowerCase() === 'refresh') {
+      throw new Error('Use a normal link instead of an automatic page refresh.');
+    }
+    if (['ping', 'attributionsrc'].some(name => attrs.has(name))) {
+      throw new Error('Lesson links must avoid tracking and extra network requests.');
+    }
+    if (attrs.has('formaction') || (tag === 'form' && attrs.has('action'))) {
+      throw new Error('Lesson practice must avoid form submission destinations.');
+    }
+    if (tag !== 'script' && ['src', 'srcset', 'poster', 'background'].some(name => attrs.has(name))) {
+      throw new Error('Declare lesson resources in stylesheet or script elements. Use inline SVG for graphics.');
+    }
+    if (isSvg && tag !== 'a' && [attrs.get('href'), attrs.get('xlink:href')].some(url => url && !url.startsWith('#'))) {
+      throw new Error('SVG resource links must point to a fragment in the current page.');
+    }
+    if (['animate', 'set', 'animatetransform', 'animatemotion'].includes(tag) &&
+        /^(?:href|xlink:href|src|style)$/i.test(attrs.get('attributename'))) {
+      throw new Error('SVG animation must leave resource attributes fixed.');
+    }
+    if (attrs.has('id')) ids.add(attrs.get('id'));
+    if (attrs.has('style')) addReferences(cssReferences(attrs.get('style')));
+    if (isSvg) {
+      for (const name of svgStyleAttributes) {
+        if (attrs.has(name)) addReferences(cssReferences(attrs.get(name)));
+      }
+    }
+    const body = () => node.childNodes.filter(child => child.nodeName === '#text').map(child => child.value).join('');
+    if (tag === 'link') {
+      const rel = attrs.get('rel')?.trim().toLowerCase();
+      const preload = rel === 'preload' && /^(?:script|style)$/i.test(attrs.get('as'));
+      if (rel === 'stylesheet' || rel === 'modulepreload' || preload) {
+        references.add(attrs.get('href'));
+      } else if (attrs.has('href')) {
+        throw new Error('Lesson link elements must declare stylesheets or script/style preloads.');
+      }
+    } else if (tag === 'style') {
+      addReferences(cssReferences(body()));
+    } else if (tag === 'script') {
+      const type = attrs.get('type')?.trim().toLowerCase();
+      if (type === 'importmap') throw new Error('Lesson dependencies require direct module URLs.');
+      const src = attrs.get('src');
+      if (type && type !== 'module' && !/^(?:application|text)\/(?:java|ecma)script$/.test(type)) {
+        if (src === undefined && /^(?:application\/(?:ld\+)?json|text\/plain)$/.test(type)) continue;
+        throw new Error('Use a standard script type for lesson JavaScript.');
+      }
+      if (src !== undefined) references.add(src);
+      else addReferences(moduleReferences(body()));
+    }
+  }
+  return { references, links, ids };
+}
+
+function dependencyHashes(base, lesson, references) {
+  const realBase = realpathSync(base);
+  const dependencies = new Map();
+  function visit(from, url) {
+    const local = url?.trim().split(/[?#]/, 1)[0];
+    if (!local || isAbsolute(local) || /[:\\%&\s]/.test(local)) {
+      throw new Error(`${from}: Invalid lesson dependency URL.`);
+    }
+    const file = resolve(base, dirname(from), local);
+    const name = relative(base, file).split(sep).join('/');
+    if (!dependencyPath.test(name) || !textExtension.test(name)) {
+      throw new Error(`${from}: Lesson dependency must be a supported file within assets/.`);
+    }
+    if (dependencies.has(name)) return;
+    if (!isRegularLocalFile(file, resolve(realBase, name))) {
+      throw new Error(`${from}: Missing or unsafe lesson dependency ${name}.`);
+    }
+    const bytes = readFileSync(file);
+    dependencies.set(name, hashBytes(bytes));
+    const ext = extname(name);
+    const source = bytes.toString('utf8');
+    const references = ext === '.css' ? cssReferences(source)
+      : ext === '.js' || ext === '.mjs' ? moduleReferences(source) : [];
+    for (const reference of references) visit(name, reference);
+  }
+
+  for (const url of references) visit(lesson, url);
+  return Object.fromEntries([...dependencies.entries()].sort(([left], [right]) => left.localeCompare(right)));
+}
+
+export function collectLessonDependencyHashes(base, lessonFile) {
+  if (typeof lessonFile !== 'string' || !lessonFilename.test(lessonFile)) {
+    throw new Error('Lesson dependency discovery requires a manifest lesson filename.');
+  }
+  const lesson = 'lessons/' + lessonFile;
+  const file = resolve(base, lesson);
+  if (!isRegularLocalFile(file, resolve(realpathSync(base), lesson))) throw new Error('Missing or unsafe lesson file.');
+  return dependencyHashes(base, lesson, inspectHtml(readFileSync(file, 'utf8')).references);
+}
+
+function inspectReviewedDependencies(base, name, references, reviewed, candidates) {
+  const errors = [];
+  const dependencies = dependencyHashes(base, name, references);
+  for (const [asset, hash] of Object.entries(dependencies)) {
+    if (!candidates.has(asset)) errors.push(`${name}: dependency ${asset} is not a publication candidate.`);
+    if (!Object.hasOwn(reviewed, asset)) errors.push(`${name}: missing reviewed dependency ${asset}.`);
+    else if (hash !== reviewed[asset].toLowerCase()) errors.push(`${name}: dependency ${asset} changed since review.`);
+  }
+  for (const asset of Object.keys(reviewed)) {
+    if (!Object.hasOwn(dependencies, asset)) errors.push(`${name}: reviewed dependency ${asset} is not loaded.`);
+  }
+  return errors;
 }
 
 // Enforce the shared authoring convention. Browser review still checks visibility
@@ -55,11 +281,7 @@ function inspectSkillFiles(base, registry, candidates, skillFolders) {
   const entries = new Map([[sharedSkill, 'homework-teach'], ...registry.map(({ id, skill }) => [skill, `${id}-teach`])]);
   const files = new Set(candidates);
   const realBase = realpathSync(base);
-  const publishableFile = name => {
-    const target = resolve(base, name);
-    return files.has(name) && existsSync(target) && lstatSync(target).isFile()
-      && realpathSync(target) === resolve(realBase, name);
-  };
+  const publishableFile = name => files.has(name) && isRegularLocalFile(resolve(base, name), resolve(realBase, name));
   for (const name of entries.keys()) {
     if (!publishableFile(name)) errors.push(`Missing publishable skill file: ${name}`);
   }
@@ -83,7 +305,8 @@ function inspectSkillFiles(base, registry, candidates, skillFolders) {
       const path = url.split(/[?#]/, 1)[0];
       const target = relative(base, resolve(base, dirname(name), path)).split(sep).join('/');
       if (!path || isAbsolute(path) || /[:\\%]/.test(path) || target.startsWith('../') || !publishableFile(target)) {
-        errors.push(`${name}: invalid local skill link ${url}`);
+        const displayUrl = inspectPrivateIdentifiers(url, '').length ? '[private identifier]' : url;
+        errors.push(`${name}: invalid local skill link ${displayUrl}`);
       } else if (target === sharedSkill) {
         linksSharedSkill = true;
       }
@@ -95,8 +318,28 @@ function inspectSkillFiles(base, registry, candidates, skillFolders) {
   return errors;
 }
 
+function repositoryCandidates(base) {
+  // Include tracked files even when their names match an ignore rule.
+  try {
+    return new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
+      cwd: base, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
+    }).split('\0').filter(Boolean));
+  } catch {
+    // Source archives and disposable check fixtures do not contain .git.
+    const walk = (dir, prefix = '') => readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+      const name = prefix + entry.name;
+      if (['.git', '.taste-skill', '.qa', 'node_modules', '__pycache__', 'dist'].includes(entry.name)) return [];
+      return entry.isDirectory() ? walk(resolve(dir, entry.name), name + '/') : [name];
+    });
+    return new Set(walk(base));
+  }
+}
+
 export function check(base = root) {
   const errors = [];
+  const realBase = realpathSync(base);
+  const candidates = repositoryCandidates(base);
+  const regularFile = name => isRegularLocalFile(resolve(base, name), resolve(realBase, name));
   const registry = loadSubjectRegistry(base);
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
   const template = readFileSync(resolve(base,'templates/index.html'),'utf8');
@@ -104,12 +347,14 @@ export function check(base = root) {
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
-  for (const lesson of manifest.lessons) {
-    const file = resolve(lessonDir,lesson.file);
-    if (!existsSync(file)) { errors.push(`Missing lesson ${lesson.file}`); continue; }
-    const sha = createHash('sha256').update(readFileSync(file)).digest('hex');
+  const lessons = new Map(manifest.lessons.map(lesson => ['lessons/' + lesson.file, lesson]));
+  for (const [name, lesson] of lessons) {
+    if (!regularFile(name)) { errors.push(`Missing or unsafe lesson ${lesson.file}`); continue; }
+    if (!candidates.has(name)) errors.push(`${name}: lesson is not a publication candidate.`);
+    const bytes = readFileSync(resolve(base, name));
+    const sha = hashBytes(bytes);
     if (sha !== lesson.review.sha256.toLowerCase()) errors.push(`${lesson.file}: changed since review; review again and update hash.`);
-    const html = readFileSync(file,'utf8');
+    const html = bytes.toString('utf8');
     if (!hasLibraryLink(html)) errors.push(`${lesson.file}: needs a visible Lesson library link to ../index.html.`);
     if (manifest.version === 2 && (!/\bid="glossary"/.test(html) || !/<dl[\s>]/i.test(html) || !/href="#glossary"/.test(html))) errors.push(`${lesson.file}: needs a linked glossary with a definition list.`);
     const hasDiagram = /<svg\b/i.test(html) && /<desc[\s>]/i.test(html);
@@ -118,57 +363,85 @@ export function check(base = root) {
       const visual = isEnglish ? 'a reviewed SVG diagram with a text equivalent or an annotated passage figure' : 'a reviewed SVG diagram with a text equivalent';
       errors.push(`${lesson.file}: needs ${visual}.`);
     }
-    if (!/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8'))) errors.push('Shared style needs reduced-motion support.');
   }
-  const collect = directory => existsSync(resolve(base,directory)) ? readdirSync(resolve(base,directory),{withFileTypes:true}).flatMap(entry => entry.isDirectory() ? collect(directory+'/'+entry.name) : [directory+'/'+entry.name]) : [];
-  const publicFiles = ['index.html', ...actual.map(name=>'lessons/'+name), ...collect('assets'), ...collect('reference')];
-  for (const name of publicFiles) {
-    const path = resolve(base,name);
+  if (manifest.lessons.length && (!regularFile('assets/site.css') || !/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8')))) {
+    errors.push('Shared style needs reduced-motion support.');
+  }
+  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
+  const decoder = new TextDecoder('utf-8', { fatal: true });
+  let checkedFiles = 0;
+  for (const name of candidates) {
+    const pathFindings = inspectPrivateIdentifiers(name, 'Repository path');
+    if (pathFindings.length) {
+      errors.push(...pathFindings);
+      continue;
+    }
+    const allowedPath = allowedRoots.has(name) || /^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name)
+      || allowedSkillFolders.some(folder => name.startsWith(folder));
+    const allowedType = textExtension.test(name) || allowedRoots.has(name);
+    if (!allowedPath) errors.push(`Unexpected public repository path: ${name}`);
+    if (!allowedType) errors.push(`Unsafe repository file type: ${name}`);
+    const path = resolve(base, name);
     if (!existsSync(path)) continue;
-    const source = readFileSync(path,'utf8');
-    errors.push(...inspectPublicCode(source,name));
+    if (!regularFile(name)) {
+      errors.push(`Symlink or non-file is not publishable: ${name}`);
+      continue;
+    }
+    if (!allowedPath || !allowedType) continue;
+    let source;
+    try {
+      source = decoder.decode(readFileSync(path));
+    } catch {
+      errors.push(`${name}: Expected readable UTF-8 text.`);
+      continue;
+    }
+    if (source.includes('\0')) {
+      errors.push(`${name}: Expected text without binary data.`);
+      continue;
+    }
+    const publicPageOrAsset = name === 'index.html' || /^(?:assets|lessons|reference)\//.test(name);
+    if (!publicPageOrAsset) {
+      errors.push(...inspectPrivateIdentifiers(source, name));
+      continue;
+    }
+    checkedFiles++;
+    errors.push(...inspectPublicCode(source, name));
     if (extname(path) === '.html') {
       if (!/<html\b[^>]*lang="en"/.test(source) || !/<meta\b[^>]*name="viewport"/.test(source)) errors.push(`${name}: missing language or responsive viewport.`);
       if ((source.match(/<h1[\s>]/g)||[]).length !== 1) errors.push(`${name}: needs one h1.`);
-      for (const match of source.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)) {
-        const url = match[1];
-        if (/^https:\/\//.test(url)) continue;
+      let markup;
+      try {
+        markup = inspectHtml(source);
+        if (manifest.version === 2 && lessons.has(name)) {
+          errors.push(...inspectReviewedDependencies(base, name, markup.references, lessons.get(name).review.dependencies, candidates));
+        }
+      } catch (error) {
+        errors.push(`${name}: ${error.message}`);
+        if (!markup) continue;
+      }
+      for (const url of markup.links) {
+        if (/^https:\/\//i.test(url)) continue;
+        const displayUrl = inspectPrivateIdentifiers(url, '').length ? '[private identifier]' : url;
         if (/^#/.test(url)) {
-          if (!source.includes(`id="${url.slice(1)}"`)) errors.push(`${name}: missing anchor ${url}`);
+          if (!markup.ids.has(url.slice(1))) errors.push(`${name}: missing anchor ${displayUrl}`);
           continue;
         }
-        if (/^[a-z]+:|^\/\//i.test(url)) { errors.push(`${name}: unsupported URL scheme.`); continue; }
+        if (/^[a-z][a-z0-9+.-]*:|^\/\//i.test(url)) { errors.push(`${name}: unsupported URL scheme.`); continue; }
         const [pathAndQuery,anchor] = url.split('#');
         const local = pathAndQuery.split('?')[0];
         const target = resolve(dirname(path),local);
         const rel = relative(base,target);
-        if (rel.startsWith('..') || !existsSync(target)) errors.push(`${name}: invalid local link ${url}`);
-        else if (anchor && !readFileSync(target,'utf8').includes(`id="${anchor}"`)) errors.push(`${name}: missing linked anchor ${url}`);
+        if (rel.startsWith('..') || isAbsolute(rel) || !existsSync(target)) errors.push(`${name}: invalid local link ${displayUrl}`);
+        else if (anchor && (!isRegularLocalFile(target, resolve(realBase, rel)) || !readFileSync(target,'utf8').includes(`id="${anchor}"`))) {
+          errors.push(`${name}: missing linked anchor ${displayUrl}`);
+        }
       }
     }
   }
-  // Inspect all Git candidates, including force-added ignored files. Without Git,
-  // inspect the source tree. Private data must never enter either path.
-  let candidates;
-  try { candidates = execFileSync('git',['ls-files','--cached','--others','--exclude-standard','-z'],{cwd:base,encoding:'utf8',stdio:['ignore','pipe','ignore']}).split('\0').filter(Boolean); }
-  catch {
-    const walk = (dir,prefix='') => readdirSync(dir,{withFileTypes:true}).flatMap(entry => {
-      const name = prefix+entry.name;
-      if (['.git','.taste-skill','.qa','node_modules','__pycache__','dist'].includes(entry.name)) return [];
-      return entry.isDirectory() ? walk(resolve(dir,entry.name),name+'/') : [name];
-    });
-    candidates = walk(base);
-  }
-  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
-  const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
   errors.push(...inspectSkillFiles(base, registry, candidates, allowedSkillFolders));
-  for (const file of candidates) {
-    if (!allowedRoots.has(file) && !/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(file) && !allowedSkillFolders.some(folder => file.startsWith(folder))) errors.push(`Unexpected public repository path: ${file}`);
-    if (!/\.(?:html|css|js|mjs|json|md|txt|py)$/.test(file) && !allowedRoots.has(file)) errors.push(`Unsafe repository file type: ${file}`);
-    if (existsSync(resolve(base,file)) && lstatSync(resolve(base,file)).isSymbolicLink()) errors.push(`Symlink is not publishable: ${file}`);
-  }
   if (errors.length) throw new Error(errors.join('\n'));
-  return { lessons: manifest.lessons.length, checkedFiles: publicFiles.length, repositoryFiles: candidates.length };
+  return { lessons: manifest.lessons.length, checkedFiles, repositoryFiles: candidates.size };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

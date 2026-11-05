@@ -1,3 +1,37 @@
+# Current shared workflow refinement
+
+| Fixed candidate | Independent assessment | Category scores | Total |
+| --- | --- | --- | ---: |
+| Initial corrected router | Astra / high | 30, 20, 20, 15, 15 | 100 |
+| Same router | Claude Code `claude-opus-5-5` / high | 26, 17.5, 17, 12, 11.5 | 84 |
+| Expanded privacy and dependency checks | Astra / high | 30, 20, 20, 15, 13 | 98 |
+| Restricted static imports | Astra / high | 30, 20, 20, 15, 13 | 98 |
+| Parsed HTML profile and complete static asset checks | Astra / high | 30, 20, 20, 15, 15 | 100 |
+| Same parsed-HTML candidate | Claude Code `claude-opus-5-5` / high | 26, 18, 17, 13, 12 | 86 |
+
+Category order is privacy/authority, teaching, subject accuracy, repeatability, validation/delivery. These are shared-process opinions, not individual lesson scores. No average substitutes for either reviewer. Both Claude invocations returned the exact requested model in `modelUsage`; high effort was supplied explicitly. They received public workflow files only, not private homework. The current process is an intermediate improvement, not completion of the owner's dual-100 target.
+
+The first Opus findings led to privacy scans across skills/review records, exact transitive asset hashes, full learner-destination review, explicit read-only reviewers, both-stage plateau handling, cross-subject re-exercise, actual-subject correction, language markup, and generic subject navigation. Subsequent Astra probes found a template-expression import gap and an inline HTML handler gap.
+
+Two independent brainstorming agents each proposed at least three untried approaches. For JavaScript loading, options were a restricted static declaration profile, closed bundles, and a full publication inventory; the static profile was selected. For executable HTML, options were a standards-aware restricted HTML surface, generated browser CSP, and a complete resource inventory; the parsed HTML surface was selected. The implemented guards retain ordinary reviewed scripts and `addEventListener`, restrict imports/resources, and reject executable HTML attributes/URLs, embedded documents and ordinary runtime loaders. They do not claim to prove arbitrary JavaScript safe; semantic and browser review remain mandatory.
+
+The latest Opus report identified concrete remaining work: apply resource guards to non-lesson pages, hash linked reference pages and their dependencies, block ordinary runtime navigation, clarify private evidence pointers and advisory reviewer output, resolve email-triggered subject-creation scope, make optional skill-tool discovery portable, and commit instruction-level routing scenarios. It also expressed reservations about reliance on semantic judgment for teaching/accuracy and manually verified delivery. Those judgments are preserved rather than replaced with Astra's higher score. No actual private leak or unsafe runtime load was found in the six published lessons.
+
+Astra observed 25 passing JavaScript tests, two passing DOCX tests, a passing six-lesson checker, exact generated-index equality, and unchanged scoped hashes. Opus observed the checker and all 25 JavaScript tests passing; its attempts to create synthetic probes were denied by its read-only tool permissions, so those findings were explicitly code-based inference. Neither shared-process review claims private-input alignment, a screen-reader audit, or learner outcomes. Parent publication independently verifies public delivery.
+
+| Shared artifact | SHA-256 |
+| --- | --- |
+| homework-teach/SKILL.md | da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212 |
+| references/independent-refinement.md | ef6aa98dc664c7c49afdcc378d84b34e32197b8f791bdbcd02a77c024be8d93e |
+| references/lesson-workflow.md | 5efce8001cd400055696f3a8d05a31c93e5fb934d3ef7623ddeff595a1a725cb |
+| scripts/check.mjs | fe55f078a192a212cd5252a5f394ce0d44607019ae823fb0289454b98cdb9823 |
+| scripts/build-index.mjs | 5c2a9ad0db5e2602553afcb99f619ac649dd1291a5b9e963fb1c81391bd6c993 |
+| docs/REVIEW-RUBRIC.md | e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87 |
+
+The following sections retain earlier fixed-candidate history.
+
+---
+
 # Subject-skill refinement
 
 This run restructures the shared homework workflow into subject routing and reusable subject skills. The authorized destination remains the existing lesson library; private email partitioning rules remain in place for separately provisioned incoming libraries. No email integration or new library was installed by this work.

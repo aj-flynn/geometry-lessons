@@ -16,7 +16,15 @@
         "math": true,
         "accessibility": true,
         "sha256": "eb93b583ad0d51813058270db18486f621982a74d8a8dadb72adc570525662f6",
-        "accuracy": true
+        "accuracy": true,
+        "dependencies": {
+          "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
+          "assets/similarity.css": "03051d7759eb886c05140b7b7727e2b582e82bcf69861311d41f64473d4f7b01",
+          "assets/similarity.js": "1f3a3da260d55bf2cc1b4c3e2593b0ead28e294d56f299b81c3675933e5de0f9",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       },
       "subject": "Geometry"
     },
@@ -35,7 +43,14 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "8e9d52e2229bbd3fb07210f783847ac0a4934c0664ae268edd9cf09934563933"
+        "sha256": "8e9d52e2229bbd3fb07210f783847ac0a4934c0664ae268edd9cf09934563933",
+        "dependencies": {
+          "assets/english.css": "b507f13d66c5c15996300f7c01e2b7339697de4adb984461a0ec1eb0e57dc286",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/reading.css": "6a82ad7381b54dbc55130da83d92920bc460f9cbd0a6777b5b54383d100e264e",
+          "assets/reading.js": "6d6bf497f58d9bbca428df05f915453e0fc26c279ea69c3af6a8a9193afdda73",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       }
     },
     {
@@ -53,7 +68,13 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "2e1b67ecfc35046618868d8f0ba769d4066d13a9faf3a49dbe13341a845e7cf3"
+        "sha256": "2e1b67ecfc35046618868d8f0ba769d4066d13a9faf3a49dbe13341a845e7cf3",
+        "dependencies": {
+          "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
+          "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       }
     },
     {
@@ -71,7 +92,13 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "773aa024543f9ee4804c33b911efd815e4d192338c5b9c07dcef4a2822053e7c"
+        "sha256": "773aa024543f9ee4804c33b911efd815e4d192338c5b9c07dcef4a2822053e7c",
+        "dependencies": {
+          "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
+          "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       }
     },
     {
@@ -89,7 +116,13 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "3fd7115f418b465155a2f5fd9bcfa8bf2207736bf6bce7f9437d9db8702309ee"
+        "sha256": "3fd7115f418b465155a2f5fd9bcfa8bf2207736bf6bce7f9437d9db8702309ee",
+        "dependencies": {
+          "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
+          "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       }
     },
     {
@@ -107,7 +140,13 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "cd9a63dabf079770baea6b46add100061f75672dfb45e4a58d109d2a4659e538"
+        "sha256": "cd9a63dabf079770baea6b46add100061f75672dfb45e4a58d109d2a4659e538",
+        "dependencies": {
+          "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
+          "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
+          "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        }
       }
     }
   ]

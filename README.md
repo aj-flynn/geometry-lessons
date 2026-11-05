@@ -25,7 +25,7 @@ Photos, PDFs, Word documents, and text stay outside this public checkout, includ
 | `lessons/` | Reviewed concept lessons with stable URLs |
 | `assets/` | Shared styles, interactions, and subject models |
 | `reference/` | Learner-facing reading and chemistry guides |
-| `lessons.json` | Lesson metadata, semantic review attestations, and reviewed HTML hashes |
+| `lessons.json` | Lesson metadata, semantic review attestations, and reviewed HTML/dependency hashes |
 | `index.html` | Generated library page; edit the manifest/template instead |
 | `scripts/`, `tests/` | Index generation and publication/behavior checks |
 | `RESOURCES.md` | Educational source links |
@@ -33,7 +33,7 @@ Photos, PDFs, Word documents, and text stay outside this public checkout, includ
 
 ## Check and publish
 
-Use Node 22+; the Node scripts have no package dependencies. After semantic review and updating the manifest:
+Use Node 22+. On a fresh checkout, install the pinned checker dependency with `npm ci --ignore-scripts`. The checker uses [parse5](https://github.com/inikulin/parse5) to inspect actual HTML attributes and template contents. After semantic review and updating the manifest:
 
 ```text
 node scripts/build-index.mjs

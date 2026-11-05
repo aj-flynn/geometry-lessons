@@ -5,6 +5,9 @@ import { resolve } from 'node:path';
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const subjectOf = lesson => lesson.subject ?? 'Geometry';
+export const lessonFilename = /^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
+export const dependencyPath = /^assets\/(?:[\w-]+\/)*[\w.-]+\.[a-z0-9]+$/i;
+const sha256 = /^[a-f0-9]{64}$/i;
 
 export function validateSubjectRegistry(registry) {
   if (!Array.isArray(registry) || !registry.length) throw new Error('Supply a nonempty subject registry.');
@@ -40,7 +43,7 @@ export function validateManifest(manifest, registry = defaultRegistry) {
   if (![1,2].includes(manifest.version) || !Array.isArray(manifest.lessons)) throw new Error('Unsupported lesson manifest.');
   const seen = new Set();
   for (const lesson of manifest.lessons) {
-    if (!/^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(lesson.file)) throw new Error('Lesson filenames must be NNNN-concept-name.html.');
+    if (typeof lesson.file !== 'string' || !lessonFilename.test(lesson.file)) throw new Error('Lesson filenames must be NNNN-concept-name.html.');
     const number = lesson.file.slice(0, 4);
     if (seen.has(number)) throw new Error('Lesson identifiers must be unique.');
     seen.add(number);
@@ -53,7 +56,20 @@ export function validateManifest(manifest, registry = defaultRegistry) {
     for (const check of ['privacy','homeworkSeparation',accuracyCheck,'accessibility']) {
       if (lesson.review?.[check] !== true) throw new Error(`${lesson.file}: missing ${check} review.`);
     }
-    if (!/^[a-f0-9]{64}$/i.test(lesson.review.sha256)) throw new Error(`${lesson.file}: missing final HTML SHA-256.`);
+    if (typeof lesson.review.sha256 !== 'string' || !sha256.test(lesson.review.sha256)) {
+      throw new Error(`${lesson.file}: missing final HTML SHA-256.`);
+    }
+    if (manifest.version === 2) {
+      const { dependencies } = lesson.review;
+      if (!dependencies || Object.getPrototypeOf(dependencies) !== Object.prototype) {
+        throw new Error(`${lesson.file}: missing reviewed dependency SHA-256 map.`);
+      }
+      for (const [name, hash] of Object.entries(dependencies)) {
+        if (!dependencyPath.test(name) || typeof hash !== 'string' || !sha256.test(hash)) {
+          throw new Error(`${lesson.file}: invalid reviewed dependency path or SHA-256.`);
+        }
+      }
+    }
   }
   return manifest;
 }

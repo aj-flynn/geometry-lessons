@@ -7,7 +7,7 @@ import {createHash} from 'node:crypto';
 import {root,renderIndex,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry} from '../scripts/build-index.mjs';
 import {check} from '../scripts/check.mjs';
 
-const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64)};
+const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{}};
 const entry=(file,subject)=>({file,subject,title:subject+' concept',summary:'Synthetic metadata only.',topics:['Concept'],review:{...review}});
 const spanish={id:'spanish',label:'Spanish',skill:'.agents/skills/spanish-teach/SKILL.md'};
 

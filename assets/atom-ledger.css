@@ -1,96 +1,36 @@
-.atom-lesson {
-  --ledger-ink: #173328;
-  --ledger-deep: #173d38;
-  --ledger-mist: #e3f0ec;
-  --ledger-warm: #f8e8bf;
+.lesson .equation{font-size:1.12em;font-weight:700;line-height:1.85}
+.formula{white-space:nowrap}
+.lesson table{border-collapse:collapse;margin-block:1rem;font-variant-numeric:tabular-nums}
+.lesson caption{font-weight:700;text-align:left;margin-bottom:.35rem}
+.lesson th,.lesson td{border:1px solid #617167;padding:.3em .58em;text-align:center;line-height:1.4}
+.lesson thead th{background:#e2eae2}
+.lesson table th[scope=row]{text-align:left}
+.lesson .method li+li{margin-top:.55em}
+.lesson .model-panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.85rem}
+.lesson .model-panel{background:#fff;padding:.5rem}
+.lesson .model-panel h3{text-align:center;font-size:1rem;letter-spacing:normal;margin:.5rem}
+.lesson [data-count-explorer],.lesson form[data-construct]{display:none}
+.lesson [data-count-explorer][data-practice-ready],.lesson form[data-practice-ready]{display:block}
+.lesson .count-test[data-practice-ready]+.count-comparison{display:none}
+.lesson .controls{gap:.65rem}
+.lesson select{font:inherit;color:inherit;background:#fff;border:2px solid currentColor;min-height:48px;padding:.45rem}
+.lesson select:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+.lesson fieldset{margin:0;min-inline-size:0;border:1px solid #617167;padding:.65rem}
+.lesson legend{font-weight:700;padding-inline:.3rem}
+.lesson .coefficients{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11ch),1fr));gap:.75rem}
+.lesson .coefficients label{display:flex;flex-direction:column;gap:.35rem}
+.lesson .coefficients input{width:100%;max-width:100%;background:#fff}
+.lesson .audit{display:block;overflow-wrap:anywhere}
+.lesson .audit:not(:empty){padding:.7em 0;border-top:1px solid #617167}
+.lesson .example+.example{margin-top:2rem}
+.lesson .jump-links{padding-left:1.3rem}
+@media print{
+  .lesson [data-count-explorer][data-practice-ready],.lesson form[data-practice-ready]{display:none}
+  .lesson .count-test[data-practice-ready]+.count-comparison{display:block}
+  .lesson .model-panel,.lesson table{break-inside:avoid}
 }
-.atom-lesson header {
-  padding: clamp(20px, 5vw, 42px);
-  background: var(--ledger-deep);
-  color: white;
-  border-radius: 4px;
-}
-.atom-lesson header .course, .atom-lesson .chapter {
-  font-size: .84em;
-  letter-spacing: .055em;
-  font-weight: bold;
-}
-.atom-lesson header .course { color: #d2ece2; }
-.atom-lesson .chem-path { border-bottom: 1px solid #adc8be; }
-.atom-lesson .chapter {
-  margin-block: 0 9px;
-  color: #205749;
-}
-.atom-lesson h2, .atom-lesson h3 { letter-spacing: -.025em; }
-.atom-lesson h3 { margin-top: 28px; }
-.atom-lesson .equation {
-  background: #f0f4f1;
-  border-left: 3px solid #276758;
-  padding: .65rem .9rem;
-  max-width: none;
-  font-weight: 700;
-  font-size: 1.08em;
-}
-.atom-lesson .method { padding-left: 1.5em; }
-.atom-lesson .method li { padding-left: .2em; margin-bottom: .5em; }
-.atom-lesson .method li::marker { color: #205749; font-weight: 700; }
-.atom-lesson figure { background: var(--ledger-mist); }
-.particle-grid {
-  display: grid;
-  gap: .9rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-}
-.atom-set, .group-strip {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  width: fit-content;
-  max-width: 100%;
-  padding: 5px;
-  margin-block: 6px;
-  background: #fff;
-  border: 1px solid #5f8276;
-  border-radius: 6px;
-}
-.tile, .group-strip span {
-  display: inline-grid;
-  place-items: center;
-  min-width: 1.4em;
-  padding: .08em .19em;
-  border-radius: 5px;
-  font-weight: bold;
-  color: var(--ledger-ink);
-}
-.tile.n, .group-strip span:first-child { background: #c3e8dd; }
-.tile.o, .group-strip span { background: var(--ledger-warm); }
-.group-notation { display: grid; gap: 3px; }
-.group-notation strong:not(:first-child) { margin-top: 10px; }
-.group-notation .group-strip { margin: 0; }
-.atom-lesson .ledger-demo {
-  padding: clamp(12px, 4vw, 22px);
-  margin-block: 1.2rem;
-  border: 1px solid #adc8be;
-}
-.atom-lesson .ledger-demo h3 { margin-top: 0; }
-.ledger-live { max-width: 28em; }
-.ledger-live input { display: block; }
-.ledger-live table { margin-block: 10px; }
-.atom-lesson table { table-layout: fixed; }
-.atom-lesson th, .atom-lesson td {
-  overflow-wrap: anywhere;
-  padding: clamp(6px, 2vw, 13px);
-}
-.atom-lesson .ledger-reset { margin-top: 8px; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .atom-lesson button:hover, .atom-lesson button:active { transform: none; }
-}
-@media print {
-  .atom-lesson header .course { color: black; }
-  .atom-lesson header { background: white; color: black; }
-  .atom-lesson .ledger-live { display: none; }
-  .atom-lesson .equation { break-inside: avoid; }
-  .atom-lesson h2, .atom-lesson h3 { break-after: avoid; }
-  .atom-lesson details > summary { display: list-item; }
+
+@media (max-width:520px){
+  .lesson table{width:100%;table-layout:fixed;overflow-wrap:anywhere}
+  .lesson th,.lesson td{padding:.3em .25em}
 }

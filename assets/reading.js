@@ -17,7 +17,7 @@ for (const form of document.querySelectorAll('[data-question] form')) {
   form.addEventListener('submit', event => {
     event.preventDefault();
     const selected = form.querySelector('input:checked');
-    feedback.textContent = !selected ? 'Choose an explanation, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : form.dataset.hint;
+    feedback.textContent = !selected ? 'Choose an explanation, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : (selected.dataset.feedback || form.dataset.hint || 'Use the hint and compare the wording before trying again.');
   });
   form.addEventListener('change', () => { feedback.textContent = ''; });
 }

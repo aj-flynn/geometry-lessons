@@ -8,7 +8,7 @@ A public library of geometry and science concept lessons written for a high scho
 - Input: private homework photos, scanned/text PDFs, Word documents, or text.
 - Boundary: never publish input or identifying details, and never reveal or validate the assigned answer, proof, scientific explanation, classification, or lab conclusion.
 
-The repository and existing URLs retain their `geometry-lessons` name. The public index groups Geometry and Science separately. Science has no lesson yet; the generalized workflow is ready for an actual science request rather than an invented assignment. The site has no upload service, model API, analytics, or inbox listener.
+The repository and existing URLs retain their `geometry-lessons` name. The public index groups Geometry and Science separately. The Science shelf contains a four-part chemistry sequence with original prerequisite models, an abstract electron ledger, controllable diagrams, and a printable field guide. The site has no upload service, model API, analytics, or inbox listener.
 
 ## Use the Codex skill
 

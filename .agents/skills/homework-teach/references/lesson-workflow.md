@@ -18,6 +18,10 @@ Review the whole final artifact, including visible text, hints, code, metadata, 
 
 Do not use a review flag as proof that an unperformed check happened. If an unavailable verification surface leaves a material concern unresolved, pause that publication and report the concern. Otherwise document the bounded verification limit.
 
+Include a short exit task that transfers the method to a new case, with feedback after an attempt. Ask for recall without looking on a later day and mix related skills after each has been introduced. Keep predictions ahead of revealed observations. These are teaching requirements, not evidence of actual learner mastery; never publish private performance records.
+
+When shared JavaScript or CSS changes, identify every lesson that loads it and repeat the affected science, interaction, and accessibility checks. Record the fixed Git revision or the dependency hashes used for review alongside the lesson HTML hashes; an unchanged HTML hash does not establish that its behavior is unchanged.
+
 ## Metadata and index
 
 Use globally unique sequential names `lessons/NNNN-concept-name.html`. The library identifier is unrelated to assignment numbering. Add entries to the version-2 `lessons.json` schema:

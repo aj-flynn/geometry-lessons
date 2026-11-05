@@ -37,6 +37,78 @@
         "accessibility": true,
         "sha256": "e642088dabfb9b62d54ac06045d13a7054bc3c9dff3ded4396ee48bbcfc917d5"
       }
+    },
+    {
+      "file": "0003-reading-particle-formulas.html",
+      "title": "Read a formula as a particle recipe",
+      "summary": "Separate a recipe from its number of copies using original token groups.",
+      "topics": [
+        "Particle counting",
+        "Notation",
+        "Ratios"
+      ],
+      "subject": "Science",
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": true,
+        "sha256": "3a8cdffb92f5adce50fa68ae22dead2065623e34c1f60a27a56095dc8031d2a5"
+      }
+    },
+    {
+      "file": "0004-electrons-and-bonds.html",
+      "title": "Follow the electrons",
+      "summary": "Audit an abstract electron budget and distinguish counting from classification.",
+      "topics": [
+        "Electron accounting",
+        "Charge",
+        "Models"
+      ],
+      "subject": "Science",
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": true,
+        "sha256": "465874bf1524143b2348f4150d8c8905f2b767c3b10c862e9b8d9cf4597da00a"
+      }
+    },
+    {
+      "file": "0005-shape-and-polarity.html",
+      "title": "Put bond arrows in space",
+      "summary": "Compare electron-pull values and explore how equal arrows combine in supplied geometry.",
+      "topics": [
+        "Electronegativity",
+        "Geometry",
+        "Combined effects"
+      ],
+      "subject": "Science",
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": true,
+        "sha256": "b53b45301363b657fbaea068157f08ebd2326a41ddb6e0b04d831845e10ce069"
+      }
+    },
+    {
+      "file": "0006-between-molecules.html",
+      "title": "Look between the molecules",
+      "summary": "Compare intact-particle motion and conditional physical-property trends.",
+      "topics": [
+        "Particle models",
+        "Attractions",
+        "Physical properties"
+      ],
+      "subject": "Science",
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": true,
+        "sha256": "bba376e9c84eeb650c0f8769fee671f6c3967b1a49f8ae757a394b94ff82e11f"
+      }
     }
   ]
 }

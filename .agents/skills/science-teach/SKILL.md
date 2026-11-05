@@ -6,6 +6,8 @@ license: MIT
 
 # Integrated science
 
-Apply [homework-teach](../homework-teach/SKILL.md). Use Science for genuinely cross-disciplinary inquiry. Use the matching discipline skill for specialized relationships, notation, or classifications. Link necessary specialist continuations and preserve existing Science URLs.
+Apply [homework-teach](../homework-teach/SKILL.md). Route specialized relationships to their discipline and link needed continuations. Teach the mechanism needed to justify each tested condition as well as the inquiry method.
 
-Teach one needed reasoning operation. For experiments, identify changed and measured variables and conditions to hold fixed; use a new confounded comparison. For graphs, distinguish measured and calculated quantities, verify axis scales and units, and separate trend from cause. For models, state the system, assumptions, and omitted effects, then test a boundary. Verify conservation, signs, dimensions, and valid ranges where applicable. Label synthetic data and illustrations clearly. Use a source suited to the claim, a fresh transfer check, misconception feedback, and a retry. Leave actual measurements and lab conclusions to the learner.
+- For experiments, separate the changed variable, measured response and fixed conditions. In a fresh system, predict what competing mechanisms would change. Show why a confound matters before asking the learner to repair a different comparison.
+- For data, locate and compare patterns in the same kind of map, graph or table as the task. Check scales, units and baselines. Distinguish measured and calculated quantities, and observations, trends and causal explanations.
+- For models, name the system and limits. Test one boundary. Label synthetic data. Check signs, units, ranges and conservation. Leave assigned measurements and conclusions to the learner.

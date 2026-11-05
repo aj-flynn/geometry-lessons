@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Use evidence about energy, material and mass to predict temperature changes and plan fair tests.">
+  <title>What made it cool more?</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/cooling-lab.css">
+  <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/cooling-lab.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson cooling-lesson">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <h1>What made it cool more?</h1>
+    <p>Two objects cool by different amounts. Learn to explain why, then design a test that can tell which cause mattered.</p>
+    <p><a href="#glossary">Open the glossary</a> for words and units.</p>
+
+    <section aria-labelledby="material">
+      <h2 id="material">1. Predict from a property</h2>
+      <p>A <strong>hypothesis</strong> is a testable explanation. It gives you a prediction you can check. To predict how much a sample cools, think about the energy that leaves it, what it’s made of and how much matter it contains. That amount of matter is its <strong>mass</strong>.</p>
+      <p>Inside a sample, tiny particles are always moving. As a solid or liquid cools without changing state, its particles move less on average. Different materials can need different amounts of energy transfer for the same temperature change. <strong>Specific heat</strong> tells how much energy it takes to raise the temperature of a fixed mass of a material by one degree.</p>
+      <h3>Worked prediction</h3>
+      <p>A lunch bag designer tests two fillings. The chart gives made-up results for packs of the same mass. Each pack contains 40 grams (g) of filling. Energy is measured in <strong>joules</strong> (J). Temperature is measured in <strong>degrees Celsius</strong> (°C).</p>
+      <table>
+        <caption>Energy removed from each 40 g pack to cool it by 1 °C</caption>
+        <thead><tr><th scope="col">Filling</th><th scope="col">Energy out</th></tr></thead>
+        <tbody><tr><th scope="row">Cream</th><td>120 J</td></tr><tr><th scope="row">Syrup</th><td>80 J</td></tr></tbody>
+      </table>
+      <p><strong>Given.</strong> Both packs start at 20 °C. A lab device takes 240 J out of each pack. Assume the chart still holds over these small changes and neither filling freezes.</p>
+      <p><strong>Goal.</strong> Predict which pack will have the bigger temperature drop.</p>
+      <ol class="steps">
+        <li>Cream cools by one degree for each 120 J removed. There are two groups of 120 J in 240 J, so it cools by 2 °C.</li>
+        <li>Syrup cools by one degree for each 80 J removed. There are three groups of 80 J in 240 J, so it cools by 3 °C.</li>
+        <li>Predict a bigger drop for syrup. It needs less energy to leave the pack for each degree of cooling. Since the masses match, the chart points to a difference in specific heat.</li>
+      </ol>
+      <p>The fillings have different specific heats in this model. Two different materials can also have similar specific heats, so test the prediction. A drop of 3 °C means the temperature change is −3 °C. To find a signed change from readings, subtract the starting temperature from the ending temperature. For syrup that would be 17 °C − 20 °C = −3 °C.</p>
+
+      <h3>Check a prediction</h3>
+      <p>A robot maker predicts that a plastic foot will cool more than a metal foot <em>because the plastic foot is blue</em>. The feet have equal mass and the same amount of energy leaves each. Which evidence would help you judge the prediction?</p>
+      <form class="practice choice-check" data-choice-check>
+        <fieldset disabled>
+          <legend>Choose a piece of evidence.</legend>
+          <label><input type="radio" name="evidence" required data-reply="That gives the outside temperature. Compare the feet by measuring how much energy must leave each one for a one-degree drop. Try again."> The temperature of the lab</label>
+          <label><input type="radio" name="evidence" required data-reply="Yes. The amount of energy out for one degree, at equal mass, shows which material’s temperature is easier to change. Use that evidence to explain a prediction."> The energy each loses per degree</label>
+          <label><input type="radio" name="evidence" required data-reply="Color alone gives no measure of the energy each foot needs to lose per degree. Look for evidence about that property and try again."> The shade of each foot</label>
+          <button type="submit" disabled>Check choice</button>
+          <p class="feedback" data-choice-result role="status"></p>
+        </fieldset>
+      </form>
+      <details class="choice-fallback"><summary>Compare your reasoning</summary>
+        <p>Measure energy lost per degree for feet of equal mass. The material that needs less energy loss for each degree is expected to have a bigger drop. A shade of blue alone supplies no evidence about that amount. Now say what you would predict if plastic lost more energy per degree than metal.</p>
+        <details><summary>Check the retry</summary><p>The metal foot should cool more for the same energy loss. A degree of cooling costs the metal foot less energy.</p></details>
+      </details>
+    </section>
+
+    <section aria-labelledby="mass">
+      <h2 id="mass">2. Change the amount of matter</h2>
+      <p>Take away the same amount of energy from a small and a large batch of the <em>same</em> gel. The larger batch has more particles, so each part of the batch loses a smaller share. Its temperature drops less.</p>
+      <figure class="energy-figure">
+        <svg viewBox="0 0 336 126" role="img" aria-labelledby="energy-title energy-desc">
+          <title id="energy-title">The same energy out, shared across one or four gel packets</title>
+          <desc id="energy-desc">A left panel shows one gel packet with four 20-joule portions of energy removed. A right panel shows four matching packets with one 20-joule portion removed from each.</desc>
+          <rect x="2" y="2" width="158" height="120" rx="6" fill="#f7f7f7" stroke="#0d2a1c" stroke-width="2"/>
+          <rect x="176" y="2" width="158" height="120" rx="6" fill="#f7f7f7" stroke="#0d2a1c" stroke-width="2"/>
+          <text x="81" y="29" text-anchor="middle" fill="#0d2a1c" font-size="19">1 packet</text>
+          <text x="255" y="29" text-anchor="middle" fill="#0d2a1c" font-size="19">4 packets</text>
+          <g fill="#c8e3d3" stroke="#0d2a1c" stroke-width="2">
+            <rect x="67" y="42" width="28" height="43" rx="4"/>
+            <rect x="191" y="42" width="28" height="43" rx="4"/>
+            <rect x="224" y="42" width="28" height="43" rx="4"/>
+            <rect x="257" y="42" width="28" height="43" rx="4"/>
+            <rect x="290" y="42" width="28" height="43" rx="4"/>
+          </g>
+          <g fill="#0d2a1c">
+            <circle cx="75" cy="56" r="4"/><circle cx="87" cy="56" r="4"/><circle cx="75" cy="70" r="4"/><circle cx="87" cy="70" r="4"/>
+            <circle cx="205" cy="63" r="4"/><circle cx="238" cy="63" r="4"/><circle cx="271" cy="63" r="4"/><circle cx="304" cy="63" r="4"/>
+          </g>
+          <text x="81" y="109" text-anchor="middle" fill="#0d2a1c" font-size="18">80 J out</text>
+          <text x="255" y="109" text-anchor="middle" fill="#0d2a1c" font-size="18">80 J out</text>
+        </svg>
+        <figcaption>Each dot stands for 20 J removed. The one-packet batch loses all 80 J in one packet. Four identical packets share the loss evenly, so each loses 20 J.</figcaption>
+      </figure>
+
+      <h3>Make a prediction and test it</h3>
+      <p>In this model, one 10 g gel packet needs to lose 20 J to cool by 1 °C. The device removes 80 J in total each time. Predict what happens to the temperature drop when the batch grows from two packets to four. Explain your prediction before you switch.</p>
+      <div class="mass-model" data-mass-model hidden>
+        <label for="packets">Batch size</label>
+        <select id="packets" disabled>
+          <option value="1">1 packet (10 g)</option>
+          <option value="2" selected>2 packets (20 g)</option>
+          <option value="4">4 packets (40 g)</option>
+        </select>
+        <button type="button" data-reset-model disabled>Reset to two packets</button>
+        <output for="packets" role="status"></output>
+      </div>
+      <details class="model-fallback"><summary>Compare the batch sizes</summary>
+        <ul>
+          <li>One packet loses 80 J. It cools by 4 °C.</li>
+          <li>Two packets lose 40 J each. The batch cools by 2 °C.</li>
+          <li>Four packets lose 20 J each. The batch cools by 1 °C.</li>
+        </ul>
+        <p>The batch with four packets has twice the mass of the batch with two. Each packet loses half as much energy, so its temperature drops by half as much.</p>
+      </details>
+      <p>We’re modeling the gel alone. The 80 J leaves the gel, each packet cools evenly and the gel stays in the same state. If some gel froze, some energy could leave while the gel was changing state, and this model would give the wrong temperature drop.</p>
+
+      <h3>Check a temperature change</h3>
+      <p>A smaller tray of one liquid cools from 30 °C to 24 °C. A tray with twice the mass of the same liquid starts at 31 °C. The same amount of energy leaves both trays. With the same model as above, how many degrees does the larger tray cool?</p>
+      <form class="practice" data-practice data-expected="3" data-tolerance="0"
+        data-mistakes='{"6":"Six degrees is the drop for the smaller tray. The same energy loss is shared across twice the mass in the larger tray. Try again.","28":"That is the ending temperature of the larger tray. Enter the size of its drop and try again.","-3":"A signed change is negative during cooling. This question asks for the size of the drop, which is positive. Try again.","12":"Twice the mass shares the same energy loss. Work out whether each part loses more or less, then retry."}'
+        data-hint="Find the smaller tray’s drop. Then work out how doubling the mass changes the drop when the energy loss stays the same."
+        data-success="The drop is 3 °C. The same energy loss is shared over twice the mass. Explain how the drop and the ending temperature differ.">
+        <label for="larger-drop">Larger tray’s temperature drop (°C)</label>
+        <input id="larger-drop" type="number" step="any" required>
+        <button type="submit" disabled>Check drop</button>
+        <p class="feedback" data-feedback role="status"></p>
+      </form>
+      <details class="static-feedback"><summary>Compare your calculation</summary>
+        <p>The smaller tray cools by 30 °C − 24 °C = 6 °C. Twice the mass cools by half as much, so the larger tray cools by 3 °C. Try finding its ending temperature.</p>
+        <details><summary>Check the retry</summary><p>31 °C − 3 °C = 28 °C. Its ending temperature and its temperature drop are different quantities.</p></details>
+      </details>
+    </section>
+
+    <section aria-labelledby="energy">
+      <h2 id="energy">3. Follow the energy</h2>
+      <p>Even two samples with the same mass and material can cool by different amounts. More energy leaving a sample makes it cool more, as long as it stays in the same state. The time on a timer tells how long energy could leave. The amount that leaves also depends on how quickly it leaves.</p>
+      <h3>Worked procedure</h3>
+      <p>A museum team asks whether the mass of a gel block changes how much it cools. A cooling tool presses against each block. The team records the starting and ending temperature of each block and writes these notes.</p>
+      <table>
+        <caption>Two runs in the museum’s cooling test</caption>
+        <thead><tr><th scope="col">Step</th><th scope="col">Run A</th><th scope="col">Run B</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pick a block</th><td>Thin, gel P</td><td>Thick, gel Q</td></tr>
+          <tr><th scope="row">Cool it</th><td>Tool fits flat</td><td>Tool tips up at one edge</td></tr>
+        </tbody>
+      </table>
+      <p>Both blocks start at the same temperature. The same tool runs for the same time. Suppose run B cools less. A greater mass might explain it if the thick block has more matter. Weigh the blocks to check their masses. Gel Q might also need to lose more energy per degree. A gap under the tipped tool can slow the energy transfer, so less energy may leave block B in the same time.</p>
+      <p>Each extra change that could affect the result is a <strong>confound</strong>. Here’s how the team can make mass the one condition it changes on purpose.</p>
+      <ol class="steps">
+        <li><strong>Use one gel for both blocks.</strong> Keep their masses different. Now the material can’t explain a difference in the drops.</li>
+        <li><strong>Match and verify energy removed from the gel.</strong> Fit the tool flat on both blocks, limit transfers to the room, and use a device checked against a known standard to measure energy removed from each block. Stop at the same measured amount for both. Matching the timer alone still leaves the amount of energy uncertain.</li>
+      </ol>
+      <p>Subtract the start from the end for each run to get the <strong>response</strong>, the result you compare. The conditions you keep the same to make that comparison fair are <strong>controls</strong>.</p>
+
+      <h3>Check the energy path</h3>
+      <p>Two equal metal samples cool on identical cold pads for four minutes. One makes direct contact. A foam sheet sits between the other sample and its pad. Which check most directly answers whether the samples lost equal amounts of energy?</p>
+      <form class="practice choice-check" data-choice-check>
+        <fieldset disabled>
+          <legend>Choose what to check.</legend>
+          <label><input type="radio" name="energy" required data-reply="The timer tells how long the paths were open. Foam can change how quickly energy flows. Check an amount and try again."> Verify the two timers agree</label>
+          <label><input type="radio" name="energy" required data-reply="Equal pads don’t make equal paths. One path goes through foam. Try a check that tracks what leaves the samples."> Verify the pads are equally cold</label>
+          <label><input type="radio" name="energy" required data-reply="Yes. Measuring the energy lost by each sample answers the question directly. Explain why the foam makes the timer alone insufficient."> Measure the energy each sample loses</label>
+          <button type="submit" disabled>Check choice</button>
+          <p class="feedback" data-choice-result role="status"></p>
+        </fieldset>
+      </form>
+      <details class="choice-fallback"><summary>Compare your reasoning</summary>
+        <p>Measure the energy that leaves each sample. Foam can slow the transfer. The same timer and equally cold pads leave the total energy loss uncertain. Try imagining that both paths have a foam layer. What new evidence would let you claim the losses match?</p>
+        <details><summary>Check the retry</summary><p>Measure the energy loss in each run and compare the measurements. Matched paths help, and the measurements test whether the intended control held.</p></details>
+      </details>
+    </section>
+
+    <section aria-labelledby="apply">
+      <h2 id="apply">4. Take the next decision yourself</h2>
+      <h3>Make a case</h3>
+      <p>A drone maker is choosing between two kinds of plastic for a clip. In a small lab test, clips of equal mass started at the same temperature and both dropped 3 °C. Clip M lost 150 J, and clip N lost 90 J. The maker predicts that clip N will have the smaller drop when both clips lose 90 J. Say whether you support the prediction, and use a reason from the measurements.</p>
+      <details><summary>Compare after explaining</summary>
+        <p>Challenge the prediction. Clip N dropped 3 °C when it lost 90 J. Clip M had to lose more than 90 J for the same drop. With 90 J out, clip M should have the smaller drop. This prediction assumes the clips start at the same temperature and stay in the same state.</p>
+      </details>
+
+      <h3>Repair a test</h3>
+      <p>A rescue team compares two materials for cooling wraps. They want to know if the wrap filling changes how far the temperature falls when the filling loses a set amount of energy. A sensor measures energy leaving each filling through the cooling pads. It misses energy that leaves by other paths. Read the lab notes. Propose two edits and explain why each is needed.</p>
+      <div class="run-cards">
+        <div>
+          <h4>Setup notes</h4>
+          <ol>
+            <li>Load a whole pack of filling K into one wrap and a whole pack of filling L into an identical wrap.</li>
+            <li>Start both runs at 19 °C. Close the insulating lid during each run.</li>
+            <li>Stop when the pads have drawn out 110 J. Record the ending temperature and find the change.</li>
+          </ol>
+        </div>
+        <div>
+          <h4>What happened in the lab</h4>
+          <ul>
+            <li>The packs had the same size labels. The scale read 65 g for filling K and 85 g for filling L.</li>
+            <li>The lid shut for K. A probe wire held it open for L, letting cool room air reach the wrap. The room was cooler than either wrap throughout the run.</li>
+            <li>The pad meter read 110 J in both runs.</li>
+          </ul>
+        </div>
+      </div>
+      <details><summary>Compare after writing both edits</summary>
+        <ol>
+          <li>Weigh out the same mass of each filling. The larger mass can have a smaller drop because more matter shares the energy loss.</li>
+          <li>Route the wire so the lid shuts during both runs. Limit any energy loss to the room, and check that the energy leaving each filling matches. The pad meter only counted the energy that entered the pads. The filling could also lose energy to the cooler room through the open lid.</li>
+        </ol>
+        <p>Retest your plan on paper. If the wraps cool by the same amount, can you claim the fillings are the same material? Explain.</p>
+        <details><summary>Compare the retry</summary><p>A matching drop in one fair test means the samples responded alike under those conditions. Different materials can have similar specific heats.</p></details>
+      </details>
+      <h3>Choose your first move</h3>
+      <p>A classmate says, “This pack lost more energy because its final temperature was lower.” You only have the final readings. Would you start with a fair-test plan or ask for a measurement? Name your first move and explain why.</p>
+      <details><summary>Compare after choosing</summary><p>Ask for starting temperatures. Find both changes before comparing drops. Then check material and mass before using a drop as evidence about energy loss.</p></details>
+    </section>
+
+    <section aria-labelledby="recall">
+      <h2 id="recall">Recall it later</h2>
+      <p>Before opening the lesson next time, draw two samples that have the same temperature drop. Give one reason they might have lost different amounts of energy. Say what you would hold fixed and what you would measure in a test of your reason.</p>
+      <p>If you get stuck on a class question, find its goal first. Then point to the measurement you would compare and trace one other possible cause. Bring that step to the private chat if you want help thinking it through.</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt>Hypothesis</dt><dd>A testable explanation that leads to a prediction.</dd>
+        <dt>Energy transfer</dt><dd>Energy moving into or out of a sample. Joules (J) measure the amount that moves.</dd>
+        <dt>Temperature change</dt><dd>Ending temperature minus starting temperature. A drop of 3 °C is a change of −3 °C.</dd>
+        <dt>Mass</dt><dd>The amount of matter in the sample. Grams (g) are a unit of mass.</dd>
+        <dt>Specific heat</dt><dd>The energy needed to raise the temperature of one gram of a material by one degree Celsius, when given in joules per gram per degree Celsius.</dd>
+        <dt>Control</dt><dd>A condition you keep the same to make a comparison fair.</dd>
+        <dt>Response</dt><dd>The result you measure or calculate from measurements to compare runs.</dd>
+        <dt>Confound</dt><dd>An extra difference between runs that could explain a change in the response.</dd>
+      </dl>
+    </section>
+
+    <section class="sources" aria-labelledby="sources">
+      <h2 id="sources">Read a little more</h2>
+      <p><a href="https://www.acs.org/middleschoolchemistry/simulations/chapter2/lesson1.html">American Chemical Society models of particles during heating and cooling</a></p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Read signed water-level maps, compare patterns, and test a possible cause.">
+  <title>Read a water-level map</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/water-level.css">
+  <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/water-level.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson water-lesson">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <h1>Read a water-level map</h1>
+    <p class="lead">Find where water is higher or lower than usual, then use the map to ask what might have moved it.</p>
+    <p><a href="#glossary">Open the glossary</a> for words and symbols.</p>
+    <aside aria-label="Before you start">
+      <p>If the usual water height is 12 cm and today it is 9 cm, would the difference be above or below zero?</p>
+      <details><summary>Check the sign</summary><p>9 cm − 12 cm = −3 cm. Subtract the usual height from today's height. The minus sign means 3 cm below usual.</p></details>
+    </aside>
+
+    <section aria-labelledby="point">
+      <h2 id="point">1. Read one spot</h2>
+      <p>A water-level <strong>departure</strong> is the measured height minus a <strong>reference height</strong> (the height chosen for comparison). The reference might be a <strong>mean</strong>, or average, of past measurements at that spot. Zero means the two heights match.</p>
+      <p>Start with the map title and date. Then look for the <strong>legend</strong>, the key that connects map colors to numbers. Check what the numbers measure. A height legend gives height differences. A temperature legend would give a different measurement.</p>
+      <p>Use the coastline or a landmark to find your spot. For an offshore reading, move from the land into the water. Match the nearby water shade to the legend.</p>
+      <figure>
+        <svg viewBox="0 0 480 246" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">Water-level departure at fictional Gull Inlet, May 6</title>
+          <desc id="map-desc">The town is on gray land. Inlet markers A and B are in the water. A is purple and lines up with minus 12 centimeters. B is pale green and lines up halfway from zero to plus 12 centimeters. In the legend, darker purple marks larger negative values and darker green marks larger positive values.</desc>
+          <defs>
+            <linearGradient id="height-scale">
+              <stop offset="0" stop-color="#50347b"/>
+              <stop offset=".25" stop-color="#9277b3"/>
+              <stop offset=".5" stop-color="#f7f7ef"/>
+              <stop offset=".75" stop-color="#71a982"/>
+              <stop offset="1" stop-color="#1e6442"/>
+            </linearGradient>
+          </defs>
+          <rect width="480" height="246" rx="8" fill="#fff"/>
+          <text x="18" y="30" font-size="20" font-weight="bold" fill="#0d2a1c">Gull Inlet · May 6</text>
+          <path d="M18 50 H462 V166 H18Z" fill="#f7f7ef" stroke="#26382e"/>
+          <path d="M18 50 H145 C156 72 144 90 123 105 C103 122 137 142 122 166 H18Z" fill="#d5d8d6" stroke="#26382e"/>
+          <path d="M173 52 C222 51 252 77 249 104 C245 130 206 139 176 127 C159 117 148 96 157 76Z" fill="#9277b3"/>
+          <path d="M306 82 C337 70 376 84 389 111 C400 141 363 164 322 154 C296 146 273 115 287 96Z" fill="#b4d0b9"/>
+          <text x="28" y="84" font-size="18" fill="#0d2a1c">Town</text>
+          <circle cx="191" cy="90" r="14" fill="#fff" stroke="#0d2a1c" stroke-width="2"/>
+          <text x="191" y="96" text-anchor="middle" font-size="17" font-weight="bold" fill="#0d2a1c">A</text>
+          <circle cx="335" cy="119" r="14" fill="#fff" stroke="#0d2a1c" stroke-width="2"/>
+          <text x="335" y="125" text-anchor="middle" font-size="17" font-weight="bold" fill="#0d2a1c">B</text>
+          <text x="20" y="193" font-size="17" font-weight="bold" fill="#0d2a1c">Departure (cm)</text>
+          <rect x="26" y="202" width="428" height="13" fill="url(#height-scale)" stroke="#26382e"/>
+          <path d="M26 215v6 M133 215v6 M240 215v6 M347 215v6 M454 215v6" stroke="#26382e" stroke-width="2"/>
+          <g font-size="16" text-anchor="middle" fill="#0d2a1c">
+            <text x="26" y="237">−24</text><text x="133" y="237">−12</text><text x="240" y="237">0</text><text x="347" y="237">+12</text><text x="454" y="237">+24</text>
+          </g>
+        </svg>
+        <figcaption>Fictional inlet and made-up data. The gray town is land. A is in water at the shade of the −12 tick. B is in water at a shade about halfway from the 0 tick to the +12 tick. The drawing has no distance scale.</figcaption>
+      </figure>
+      <h3>Worked reading at A</h3>
+      <p><strong>Given</strong> The shade at water marker A matches the −12 cm tick. <strong>Goal</strong> Estimate the departure at A in meters (m). The legend reports centimeters (cm), and 100 cm = 1 m.</p>
+      <ol class="steps">
+        <li><span class="math">Departure at A ≈ −12 cm</span><br>Read the tick, keeping its sign. The symbol ≈ means “about equal to.”</li>
+        <li><span class="math">−12 cm × (1 m / 100 cm) = −0.12 m</span><br>Multiply by a conversion factor equal to one. The centimeters cancel, and the minus sign stays.</li>
+        <li><span class="math">Departure at A ≈ −0.12 m</span><br>Changing units keeps the estimate the same size. The water was about 0.12 m below its reference.</li>
+      </ol>
+      <p>If a shade falls between ticks, estimate between their numbers. A blurry boundary may support a range rather than a single reading.</p>
+
+      <div class="practice">
+        <h3>Try the other marker</h3>
+        <p>Estimate the signed departure at B in meters. Explain which part of the legend supports your sign.</p>
+        <details><summary>Get a hint</summary><p>Find the two nearest ticks. Use their numbers to estimate the halfway value in centimeters, then use 100 cm = 1 m.</p></details>
+        <form data-practice data-expected="0.06" data-tolerance="0.01"
+          data-hint="Find B's shade on the scale and estimate a value between its two closest ticks. Then convert to meters and retry."
+          data-mistakes='{"6":"That is the estimate in centimeters. Divide the number of centimeters by 100 for meters and retry.","-0.06":"The size fits. Check which side of zero B falls on, then retry."}'
+          data-success="About +0.06 m fits the scale. B is above zero and about halfway to +12 cm.">
+          <label for="spot-b">Signed departure at B (m)</label>
+          <div class="controls"><input id="spot-b" type="number" step="any" required>
+          <button type="submit" disabled>Check estimate</button></div>
+          <p class="feedback" data-feedback role="status"></p>
+        </form>
+        <details class="point-comparison"><summary>Compare the estimate</summary><p>The scale gives about +6 cm. Since +6 cm × (1 m / 100 cm) = +0.06 m, the departure is about +0.06 m. If you wrote +6 m, check the unit. If you wrote a negative number, find B again relative to zero.</p></details>
+        <details><summary>Retry with a new reading</summary><p>A new reading falls halfway from −24 cm to −12 cm. Estimate it in meters before checking.</p>
+          <details><summary>Check the retry</summary><p>Halfway is −18 cm, so the estimate is −0.18 m. The sign stayed negative when the unit changed.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section aria-labelledby="pattern">
+      <h2 id="pattern">2. Compare areas and dates</h2>
+      <p>A spot reading uses one water patch. A <strong>regional pattern</strong> describes what happens across an area. Use several patches spread across the area. Notice how much water each patch covers and mention a large exception. When comparing two regions, both can have the same sign. One region might still have a much larger departure.</p>
+      <p>For two dates, compare the same places with the same variable, units, and reference. Check the dates in the captions. If two legends use different scales, compare their numbers rather than matching the shades.</p>
+      <figure>
+        <table>
+          <caption>Fictional Reed Marsh · Water-level departures (cm)</caption>
+          <thead><tr><th scope="col">Zone</th><th scope="col">June 4</th><th scope="col">June 11</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Outer reeds</th><td>+5</td><td>−2</td></tr>
+            <tr><th scope="row">Main pool</th><td>+8</td><td>−5</td></tr>
+            <tr><th scope="row">Creek mouth</th><td>−3</td><td>−3</td></tr>
+          </tbody>
+        </table>
+        <figcaption>Each zone covers the same area. Each column uses the same past mean for a given zone. Numbers are made up.</figcaption>
+      </figure>
+      <p>On June 4, two of the three equal areas were above their usual heights. The creek mouth was an exception. A week later the outer reeds and main pool had both shifted below usual. The creek mouth stayed at the same departure.</p>
+      <p>The two dates show a change in the marsh. A <strong>trend</strong>, a pattern of change over time, needs a series of observations. A week of change could be temporary.</p>
+      <div class="practice">
+        <h3>Check a pattern at the quarry</h3>
+        <p>A survey maps four equal-area water zones. In the morning, three are −4 cm and one is +16 cm. In the afternoon, all four are +1 cm. Both surveys use the same reference at each zone.</p>
+        <p>In which survey was most of the surface above usual? Did every zone go up? Point to a reading that supports each answer.</p>
+        <details><summary>Compare your reasoning</summary><p>In the afternoon all four zones are above zero. In the morning only one is above zero, even though it has the largest single number. The zone at +16 cm fell to +1 cm. If you picked the morning, count the area on each side of zero. If you expected every zone to go up, follow one zone at a time across the two surveys.</p></details>
+        <details><summary>Retry with a changed cue</summary><p>In a new morning survey, a large zone covers three-quarters of the quarry and reads −3 cm. Three tiny zones read +2 cm each. What sign covers most of the water?</p>
+          <details><summary>Check the retry</summary><p>The negative sign covers most of the water. Three-quarters is more than half. Counting labels works for equal-area zones. Here the zones differ in size.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section aria-labelledby="cause">
+      <h2 id="cause">3. Test a possible cause</h2>
+      <p>An <strong>observation</strong> says what the data show. A <strong>hypothesis</strong> is a possible explanation you can test. Start with the pattern, then ask what process could make it and what other evidence would help you check.</p>
+      <h3>Wind over a long tray</h3>
+      <p>Imagine a tray of water with a fan blowing toward the sealed end. The other end has a shut gate. Wind drags on the surface. The tray holds the same amount of water the whole time.</p>
+      <p><strong>Predict.</strong> Which end will stand higher while the fan blows toward the sealed end? If you turn the fan around, what should change?</p>
+      <div data-tray>
+        <div class="controls" data-model-controls hidden>
+          <label for="fan">Fan direction</label>
+          <select id="fan" disabled>
+            <option value="off">Fan off</option>
+            <option value="sealed">Toward sealed end</option>
+            <option value="gate">Toward gate end</option>
+          </select>
+          <button type="button" data-reset disabled>Reset</button>
+        </div>
+        <figure data-model-figure hidden>
+          <svg viewBox="0 0 430 190" role="img" aria-labelledby="tray-title tray-desc">
+            <title id="tray-title">Side view of the tray model</title>
+            <desc id="tray-desc" data-tray-desc>Fan off. The surface is level and matches the dashed still-water line.</desc>
+            <rect width="430" height="190" rx="8" fill="#fff"/>
+            <text x="25" y="31" font-size="18" font-weight="bold" fill="#0d2a1c">Still-water level (dashes)</text>
+            <path data-water d="M45 96 H385 V146 H45 Z" fill="#a3cfde" stroke="#17516d" stroke-width="3"/>
+            <path d="M45 96 H385" fill="none" stroke="#0d2a1c" stroke-width="2" stroke-dasharray="7 5"/>
+            <path d="M45 58 V146 H385 V58" fill="none" stroke="#0d2a1c" stroke-width="4"/>
+            <g font-size="17" fill="#0d2a1c">
+              <text x="45" y="174">Gate end</text><text x="385" y="174" text-anchor="end">Sealed end</text>
+            </g>
+          </svg>
+          <figcaption data-model-result role="status">Fan off. The surface is level and matches the dashed still-water line.</figcaption>
+        </figure>
+        <details data-model-comparison><summary>Compare all three fan settings</summary>
+          <ul>
+            <li><strong>Off</strong> The surface is level at the still-water line.</li>
+            <li><strong>Toward the sealed end</strong> Water is higher than the still-water line at the sealed end and lower at the gate end.</li>
+            <li><strong>Toward the gate end</strong> The high and low ends switch. The gate stays shut.</li>
+          </ul>
+          <p>Check whether your prediction follows where the water is pushed. Retry by imagining the fan stops and the water settles.</p>
+        </details>
+      </div>
+      <p>The sketch exaggerates the slope to show the effect. It holds the tray shape, temperature, and amount of water fixed. A real ocean also has currents, tides, Earth's rotation, and changes in water temperature. A change in steady winds can change currents (moving seawater) and shift water from one region to another. When seawater warms, the same amount of water can take up more space. This is called <strong>thermal expansion</strong>.</p>
+
+      <div class="practice">
+        <h3>Choose a measurement</h3>
+        <p>In a fictional aquarium, the water near the viewing window stands higher than usual and the other end stands lower. A student thinks a pump has been pushing water toward the window. Which extra record would check the idea most directly?</p>
+        <details><summary>Compare your choice</summary><p>Look for the pump's flow direction and when it ran. If it ran toward the window before and during the high reading, that would support the idea. A date alone gives the timing of the map. A second water-level map could show whether the pattern returns, but would still leave the pump's role open.</p></details>
+        <details><summary>Retry with a rival idea</summary><p>Suppose a student thinks one end warmed up. What would you measure across the tank to check that idea?</p>
+          <details><summary>Check the retry</summary><p>Measure water temperature at both ends before and during the height change. A warming pattern could support the idea. You would still check the pump record because two processes can happen together.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section aria-labelledby="exit">
+      <h2 id="exit">Choose a method</h2>
+      <p>A wetland team sends you a June map and a second map labeled only “later.” A dock on the later map is marked in a patch below zero.</p>
+      <ol>
+        <li>What can you tell from the later map alone?</li>
+        <li>What would you check before comparing the dock across maps?</li>
+        <li>Suppose the dock really did drop while water rose near the opposite bank. Propose a cause and name a measurement that could test it.</li>
+      </ol>
+      <details><summary>Check your explanation</summary><p>One map tells you how that patch compares with its reference at the time shown. To tell whether it dropped, find the dock's water patch on both maps, check the dates and references, and read the numbers with their units. If it did drop, one hypothesis is that winds pushed water away from the dock toward the opposite bank. Wind speed and direction records from before and during the shift would help test that idea.</p></details>
+      <p><strong>On your own maps</strong> Mark the location or outline the region, then point to the legend and date that back up your observation. If a date or scale is missing or conflicts with a caption, say what you can read and check which map to use before making a claim about that date.</p>
+      <p><strong>Next time</strong> Before opening this page, explain the difference between “below usual” and “went down.” Then name one record you could use to test a wind explanation.</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt>Reference height and mean</dt><dd>A reference height is the comparison height. A mean is an average, found by adding values and dividing by how many there are.</dd>
+        <dt>Departure, deviation, or anomaly</dt><dd>A signed difference from a reference. Here it is measured height minus reference height.</dd>
+        <dt>Sea surface height deviation (SSHD)</dt><dd>A departure for the height of the ocean surface compared with its reference.</dd>
+        <dt>Legend</dt><dd>The key that tells what the map's colors or symbols represent.</dd>
+        <dt>cm, m, and ≈</dt><dd>Centimeters, meters, and “about equal to.” A meter contains 100 centimeters.</dd>
+        <dt>Regional pattern and trend</dt><dd>A regional pattern covers an area. A trend describes the direction of change across a series of observations.</dd>
+        <dt>Observation and hypothesis</dt><dd>An observation describes the evidence. A hypothesis offers an explanation that new evidence can test.</dd>
+        <dt>Current and thermal expansion</dt><dd>A current is flowing water. Thermal expansion is an increase in volume as a material warms.</dd>
+      </dl>
+    </section>
+    <section class="sources" aria-labelledby="sources">
+      <h2 id="sources">Read a little more</h2>
+      <ul>
+        <li>Learn how a satellite measures sea surface height. <a href="https://sealevel.nasa.gov/faq/19/how-do-satellites-measure-sea-level-change/">NASA Sea Level Change Portal</a></li>
+        <li>See how winds can push water toward a shore. <a href="https://oceanservice.noaa.gov/hazards/hurricanes/">NOAA National Ocean Service</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

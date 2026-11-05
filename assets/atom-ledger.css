@@ -1,41 +1,96 @@
-.ledger { --paper: #f8faf9; --ink: #132e35; width: min(890px, 100% - 44px); }
-.ledger header { background: #15343d; color: #f8faf9; border-radius: 4px; padding: clamp(22px, 5vw, 50px); }
-.ledger header .eyebrow { color: #a7dadb; }
-.ledger .eyebrow { margin-block: 0 10px; color: #145d64; font-size: .79em; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.ledger .chem-path { border-bottom: 1px solid #a4b6b7; padding-bottom: 14px; }
-.ledger .chem-path a { min-height: 44px; padding-inline: 3px; }
-.ledger h2 { letter-spacing: -.025em; }
-.ledger .equation { max-width: none; padding: .65em .85em; border-left: 4px solid #146875; background: #e7efef; font-size: 1.11em; font-weight: 600; }
-.ledger .model-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.ledger .molecule-tray { min-width: 0; background: #f8faf9; padding: 12px; }
-.ledger .molecule-tray h3 { font-size: 1.05em; letter-spacing: -.01em; }
-.ledger .molecule-tray p { margin: 0; font-weight: 600; }
-.ledger .model-atoms .carbon { fill: #abd6dc; stroke: #132e35; stroke-width: 1.4; }
-.ledger .model-atoms .oxygen { fill: #f6d89d; stroke: #132e35; stroke-width: 1.4; }
-.ledger .model-atoms text { font-size: 19px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
-.ledger .worked { margin-block: 20px; padding-left: 1.5em; max-width: 69ch; }
-.ledger .worked li { padding: .6em .3em .9em; border-bottom: 1px solid #bccdcd; }
-.ledger .work-line { display: block; margin-block: .55em; font-weight: bold; }
-.ledger .work-line small { display: block; font-size: .9em; font-weight: 400; }
-.ledger article { margin-block: 30px; }
-.ledger form.practice { padding: clamp(12px, 2.5vw, 24px); border: 1px solid #b7c8c7; background: #eef4f3; }
-.ledger fieldset { background: transparent; padding: 0; }
-.ledger .coefficient-inputs { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 16px; }
-.ledger .coefficient-inputs label { display: grid; gap: 4px; font-weight: 700; }
-.ledger .coefficient-inputs input { width: 5em; max-width: 100%; }
-.ledger form button { margin: 4px 6px 4px 0; }
-.ledger form table { margin-top: 16px; }
-.ledger .feedback { font-size: .98em; }
-.ledger details { background: #e9efed; }
-@media (max-width: 550px) {
-  .ledger .model-pair { grid-template-columns: 1fr; }
-  .ledger .molecule-tray svg { max-width: 300px; }
+.atom-lesson {
+  --ledger-ink: #173328;
+  --ledger-deep: #173d38;
+  --ledger-mist: #e3f0ec;
+  --ledger-warm: #f8e8bf;
+}
+.atom-lesson header {
+  padding: clamp(20px, 5vw, 42px);
+  background: var(--ledger-deep);
+  color: white;
+  border-radius: 4px;
+}
+.atom-lesson header .course, .atom-lesson .chapter {
+  font-size: .84em;
+  letter-spacing: .055em;
+  font-weight: bold;
+}
+.atom-lesson header .course { color: #d2ece2; }
+.atom-lesson .chem-path { border-bottom: 1px solid #adc8be; }
+.atom-lesson .chapter {
+  margin-block: 0 9px;
+  color: #205749;
+}
+.atom-lesson h2, .atom-lesson h3 { letter-spacing: -.025em; }
+.atom-lesson h3 { margin-top: 28px; }
+.atom-lesson .equation {
+  background: #f0f4f1;
+  border-left: 3px solid #276758;
+  padding: .65rem .9rem;
+  max-width: none;
+  font-weight: 700;
+  font-size: 1.08em;
+}
+.atom-lesson .method { padding-left: 1.5em; }
+.atom-lesson .method li { padding-left: .2em; margin-bottom: .5em; }
+.atom-lesson .method li::marker { color: #205749; font-weight: 700; }
+.atom-lesson figure { background: var(--ledger-mist); }
+.particle-grid {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+.atom-set, .group-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px;
+  margin-block: 6px;
+  background: #fff;
+  border: 1px solid #5f8276;
+  border-radius: 6px;
+}
+.tile, .group-strip span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4em;
+  padding: .08em .19em;
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--ledger-ink);
+}
+.tile.n, .group-strip span:first-child { background: #c3e8dd; }
+.tile.o, .group-strip span { background: var(--ledger-warm); }
+.group-notation { display: grid; gap: 3px; }
+.group-notation strong:not(:first-child) { margin-top: 10px; }
+.group-notation .group-strip { margin: 0; }
+.atom-lesson .ledger-demo {
+  padding: clamp(12px, 4vw, 22px);
+  margin-block: 1.2rem;
+  border: 1px solid #adc8be;
+}
+.atom-lesson .ledger-demo h3 { margin-top: 0; }
+.ledger-live { max-width: 28em; }
+.ledger-live input { display: block; }
+.ledger-live table { margin-block: 10px; }
+.atom-lesson table { table-layout: fixed; }
+.atom-lesson th, .atom-lesson td {
+  overflow-wrap: anywhere;
+  padding: clamp(6px, 2vw, 13px);
+}
+.atom-lesson .ledger-reset { margin-top: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .atom-lesson button:hover, .atom-lesson button:active { transform: none; }
 }
 @media print {
-  .ledger { width: 100%; }
-  .ledger header { color: #000; background: #fff; padding: 0; }
-  .ledger header .eyebrow, .ledger .eyebrow { color: #000; }
-  .ledger .model-pair { grid-template-columns: 1fr 1fr; }
-  .ledger form.practice { display: none; }
-  .ledger .equation { border: 0; padding: .25em 0; }
+  .atom-lesson header .course { color: black; }
+  .atom-lesson header { background: white; color: black; }
+  .atom-lesson .ledger-live { display: none; }
+  .atom-lesson .equation { break-inside: avoid; }
+  .atom-lesson h2, .atom-lesson h3 { break-after: avoid; }
+  .atom-lesson details > summary { display: list-item; }
 }

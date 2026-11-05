@@ -1,0 +1,70 @@
+.reaction-lesson {
+  --rule: #b6ccc7;
+  --panel: #eef4f0;
+  --teal: #15555a;
+}
+.reaction-lesson header {
+  border-top: 6px solid var(--teal);
+  background: #e0ece6;
+}
+.reaction-lesson .eyebrow {
+  margin: 0 0 10px;
+  color: var(--teal);
+  font-size: .84em;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.reaction-lesson .chem-path {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.reaction-lesson .states {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(9em, 100%), 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.reaction-lesson .states div { background: var(--panel); padding: 12px 14px; }
+.reaction-lesson .states dt { margin: 0; color: var(--teal); }
+.reaction-lesson .worked {
+  border-top: 2px solid var(--teal);
+  margin-block: 24px;
+  padding-top: 18px;
+}
+.reaction-lesson li + li { margin-top: 8px; }
+.reaction-lesson .equation {
+  background: var(--panel);
+  border-left: 4px solid var(--teal);
+  padding: 10px 14px;
+  font-weight: 650;
+  max-width: none;
+}
+.reaction-lesson .formula { white-space: nowrap; }
+.reaction-lesson .ledger { max-width: 38em; }
+.reaction-lesson .ledger :is(th, td) { padding: .55em .7em; }
+.reaction-lesson .exploration { margin-block: 30px; }
+.reaction-lesson .exploration figure {
+  max-width: 570px;
+  padding: 18px;
+}
+.reaction-lesson .svg-head { fill: #15555a; }
+.reaction-lesson .svg-label { fill: #fff; font-weight: 700; }
+.reaction-lesson .svg-row { fill: #f9fffb; }
+.reaction-lesson .svg-warn { fill: #ffedb4; }
+.reaction-lesson .practice-list { padding-left: 1.45em; }
+.reaction-lesson .practice-list > li { margin-bottom: 26px; }
+.reaction-lesson .callout { margin-block: 26px; }
+@media (max-width: 420px) {
+  .reaction-lesson .exploration figure { padding: 10px; }
+  .reaction-lesson .ledger :is(th, td) { padding: .42em .32em; }
+}
+@media print {
+  .reaction-lesson header { border: 0; }
+  .reaction-lesson .exploration figure svg { max-height: 150px; }
+  .reaction-lesson .svg-head { fill: white; }
+  .reaction-lesson .svg-label { fill: black; }
+  .reaction-lesson .worked { border-color: black; }
+  .reaction-lesson .ledger, .reaction-lesson .equation { break-inside: avoid; }
+}

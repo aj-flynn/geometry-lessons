@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Translate reaction descriptions into formulas and state labels, then balance the atoms and check the whole equation.">
+  <title>From reaction words to balanced equations</title>
+  <link rel="stylesheet" href="../../../assets/site.css">
+  <link rel="stylesheet" href="../../../assets/chemistry.css">
+  <link rel="stylesheet" href="../../../assets/reaction-ledger.css">
+  <script src="../../../assets/chemistry.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson chemistry reaction-lesson" tabindex="-1">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <header>
+      <p class="eyebrow">General chemistry · Reactions</p>
+      <h1>From reaction words to balanced equations</h1>
+      <p class="lead">Write the substances and their states first. Then adjust how many units of each substance take part until every element balances.</p>
+    </header>
+    <nav class="chem-path" aria-label="On this page">
+      <a href="#translate">01 Translate</a><a href="#count">02 Count</a><a href="#ions">03 Keep groups</a><a href="#independent">04 Practice</a><a href="#glossary">Glossary</a>
+    </nav>
+
+    <section aria-labelledby="translate">
+      <p class="eyebrow">01 · Write the skeleton</p>
+      <h2 id="translate">Turn words into chemical terms</h2>
+      <p><strong>Reactants</strong> go on the left of the arrow. <strong>Products</strong> go on the right. A <strong>skeleton equation</strong> records the formulas and states before you decide whether any coefficients need to change.</p>
+      <dl class="states" aria-label="State symbols">
+        <div><dt>(s)</dt><dd>solid</dd></div><div><dt>(l)</dt><dd>liquid</dd></div>
+        <div><dt>(g)</dt><dd>gas or vapor</dd></div><div><dt>(aq)</dt><dd>dissolved in water</dd></div>
+      </dl>
+      <p>For an elemental solid such as copper metal, write Cu(s). For a diatomic gas, the formula includes two atoms, as in F<sub>2</sub>(g) for fluorine gas. The name identifies the formula and the description determines the state.</p>
+      <p>A <strong>molecular equation</strong> lists substances by their complete formulas. It can include ionic compounds. For a dissolved salt, keep the neutral salt formula with <span class="formula">(aq)</span> even though the ions separate in water. A <strong>formula unit</strong> counts one formula’s worth of ions. In an ionic solid it represents a ratio in the lattice, the repeating arrangement of ions.</p>
+      <article class="worked">
+        <h3>Worked example · Start at one</h3>
+        <p><strong>Given.</strong> Solid ammonium chloride breaks apart on heating to form ammonia gas and hydrogen chloride gas. Show the forward change described.</p>
+        <p><strong>Goal.</strong> Write a balanced molecular equation with states.</p>
+        <ol>
+          <li>Ammonium, NH<sub>4</sub><sup>+</sup>, and chloride, Cl<sup>−</sup>, have equal and opposite charges. One of each gives the neutral formula NH<sub>4</sub>Cl. Use the known ammonia formula NH<sub>3</sub>. Hydrogen chloride is HCl, with one H and one Cl per molecule.</li>
+          <li>Write the solid on the left and both gases on the right. Heat is a condition, which can go above the arrow.</li>
+          <li>Count atoms with an implied <strong>coefficient</strong> of 1 for every term. The coefficient is the multiplier in front of the formula.</li>
+        </ol>
+        <p class="equation"><span class="formula">NH<sub>4</sub>Cl(s)</span> → <span class="formula">NH<sub>3</sub>(g)</span> + <span class="formula">HCl(g)</span></p>
+        <table class="ledger">
+          <caption>Atom totals with every coefficient equal to 1</caption>
+          <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+          <tbody><tr><th scope="row">N</th><td>1</td><td>1</td></tr><tr><th scope="row">H</th><td>4</td><td>3 + 1 = 4</td></tr><tr><th scope="row">Cl</th><td>1</td><td>1</td></tr></tbody>
+        </table>
+        <p>Every row already matches. The ratio is 1:1:1, so all the coefficients stay implicit. Hydrogen is split across two products. Add both contributions to get the right-hand total.</p>
+      </article>
+      <form data-chem-choice>
+        <fieldset>
+          <legend>Quick check · Choose the state from the description</legend>
+          <p>Which pair records bromine vapor and potassium bromide dissolved in water?</p>
+          <label class="option"><input type="radio" name="states" data-explanation="Vapor is a gas in these conditions. Switch the first state and try again."><span>Br<sub>2</sub>(l) and KBr(aq)</span></label>
+          <label class="option"><input type="radio" name="states" data-explanation="Yes. Vapor gives (g), and dissolved in water gives (aq). The bromine molecule has two Br atoms."><span>Br<sub>2</sub>(g) and KBr(aq)</span></label>
+          <label class="option"><input type="radio" name="states" data-explanation="Dissolved in water calls for (aq), even if the pure solute would be solid. Try again."><span>Br<sub>2</sub>(g) and KBr(s)</span></label>
+          <button type="submit" disabled>Check choice</button>
+          <p class="feedback" aria-live="polite"></p>
+        </fieldset>
+      </form>
+      <details class="static-feedback"><summary>Compare your state labels</summary><p>Use Br<sub>2</sub>(g) and KBr(aq). Vapor fixes the first state. The words “dissolved in water” fix the second.</p></details>
+    </section>
+
+    <section aria-labelledby="count">
+      <p class="eyebrow">02 · Balance the atoms</p>
+      <h2 id="count">Count the whole side</h2>
+      <p>A <strong>subscript</strong> tells you how many atoms of an element are in one molecule or formula unit. A coefficient multiplies the entire formula. For example, 3SO<sub>2</sub> counts 3 S atoms and 6 O atoms. Changing SO<sub>2</sub> to SO<sub>3</sub> would name a different substance.</p>
+      <article class="worked">
+        <h3>Worked example · Oxygen in two products</h3>
+        <p><strong>Given.</strong> In the roasting of solid zinc sulfide, diatomic oxygen gas reacts to form solid zinc oxide and sulfur dioxide gas. <strong>Diatomic</strong> means two atoms per molecule.</p>
+        <p><strong>Goal.</strong> Balance the molecular equation using the smallest whole-number ratio.</p>
+        <p class="equation"><span class="formula">ZnS(s)</span> + <span class="formula">O<sub>2</sub>(g)</span> → <span class="formula">ZnO(s)</span> + <span class="formula">SO<sub>2</sub>(g)</span></p>
+        <p>The zinc and sulfide ions have charges +2 and −2. Zinc and oxide ions have charges +2 and −2 as well. Each solid therefore has a 1:1 ion ratio. With one unit of ZnS, one ZnO accounts for its Zn and one SO<sub>2</sub> accounts for its S.</p>
+        <ol>
+          <li>Count O on the product side. <strong>1 + 2 = 3 O atoms</strong>.</li>
+          <li>Match 3 O atoms with pairs. <strong>3 ÷ 2 = 3/2 molecules of O<sub>2</sub> per formula unit of ZnS</strong> as a temporary ratio.</li>
+          <li>Multiply <em>every</em> coefficient by 2. <strong>2 × (1, 3/2, 1, 1) = (2, 3, 2, 2)</strong>.</li>
+        </ol>
+        <p class="equation"><span class="formula">2ZnS(s)</span> + <span class="formula">3O<sub>2</sub>(g)</span> → <span class="formula">2ZnO(s)</span> + <span class="formula">2SO<sub>2</sub>(g)</span></p>
+        <table class="ledger">
+          <caption>Atom totals after scaling all four terms</caption>
+          <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+          <tbody><tr><th scope="row">Zn</th><td>2</td><td>2</td></tr><tr><th scope="row">S</th><td>2</td><td>2</td></tr><tr><th scope="row">O</th><td>3 × 2 = 6</td><td>2 × 1 + 2 × 2 = 6</td></tr></tbody>
+        </table>
+        <p>All rows match. There is no common factor greater than 1. The fraction was a ratio step. The final equation counts whole molecules and formula units.</p>
+      </article>
+
+      <article class="exploration" data-chem-steps="ledger" data-exclusive>
+        <h3>Test a shortcut</h3>
+        <p>Start with 1 ZnS and 3 O<sub>2</sub> on the left, and 1 ZnO and 1 SO<sub>2</sub> on the right. Predict which rows would match if you doubled both products and left the reactants alone.</p>
+        <div class="enhanced" hidden>
+          <div class="controls" aria-label="Ledger controls">
+            <button type="button" data-step>Next step</button>
+            <button type="button" data-play aria-pressed="false">Replay</button>
+            <button type="button" data-pause>Pause</button>
+            <button type="button" data-reset>Reset</button>
+          </div>
+          <p data-step-status aria-live="polite"></p>
+        </div>
+        <figure>
+          <svg viewBox="0 0 460 242" role="img" aria-labelledby="ledger-title ledger-desc">
+            <title id="ledger-title">Ledger of atom totals</title>
+            <desc id="ledger-desc">After scaling the full ratio, reactants and products each have 2 Zn, 2 S and 6 O atoms.</desc>
+            <rect class="svg-head" x="0" y="0" width="460" height="50" rx="6"/>
+            <g class="svg-label"><text x="14" y="34">Atom</text><text x="118" y="34">Reactants</text><text x="308" y="34">Products</text></g>
+            <g data-stage="0">
+              <rect class="svg-row" x="0" y="58" width="460" height="51" rx="6"/><rect class="svg-row" x="0" y="118" width="460" height="51" rx="6"/><rect class="svg-warn" x="0" y="178" width="460" height="51" rx="6"/>
+              <text x="14" y="92">Zn</text><text x="166" y="92">1</text><text x="356" y="92">1</text>
+              <text x="14" y="152">S</text><text x="166" y="152">1</text><text x="356" y="152">1</text>
+              <text x="14" y="212">O</text><text x="166" y="212">6</text><text x="356" y="212">3</text>
+            </g>
+            <g data-stage="1">
+              <rect class="svg-warn" x="0" y="58" width="460" height="51" rx="6"/><rect class="svg-warn" x="0" y="118" width="460" height="51" rx="6"/><rect class="svg-row" x="0" y="178" width="460" height="51" rx="6"/>
+              <text x="14" y="92">Zn</text><text x="166" y="92">1</text><text x="356" y="92">2</text>
+              <text x="14" y="152">S</text><text x="166" y="152">1</text><text x="356" y="152">2</text>
+              <text x="14" y="212">O</text><text x="166" y="212">6</text><text x="356" y="212">6</text>
+            </g>
+            <g data-stage="2">
+              <rect class="svg-row" x="0" y="58" width="460" height="51" rx="6"/><rect class="svg-row" x="0" y="118" width="460" height="51" rx="6"/><rect class="svg-row" x="0" y="178" width="460" height="51" rx="6"/>
+              <text x="14" y="92">Zn</text><text x="166" y="92">2</text><text x="356" y="92">2</text>
+              <text x="14" y="152">S</text><text x="166" y="152">2</text><text x="356" y="152">2</text>
+              <text x="14" y="212">O</text><text x="166" y="212">6</text><text x="356" y="212">6</text>
+            </g>
+          </svg>
+          <figcaption>Rows compare total atoms on each side. Shading flags unequal totals, which you can also see in the numbers. The ledger models conservation. It shows neither the reaction mechanism nor the yield.</figcaption>
+        </figure>
+        <details class="observations"><summary>Compare the three states in words</summary>
+          <ol class="step-notes">
+            <li>Starting state. Zn and S both match at 1 each. Oxygen is 6 on the left and 3 on the right.</li>
+            <li>Double both products. Oxygen now matches at 6. Zinc and sulfur each have 1 on the left and 2 on the right.</li>
+            <li>Use 2 ZnS on the left to bring both Zn and S to 2. Oxygen stays at 6 on each side. All rows now match.</li>
+          </ol>
+        </details>
+      </article>
+      <form data-chem-choice>
+        <fieldset>
+          <legend>Quick check · Is doubling necessary?</legend>
+          <p>Solid sulfur, written S(s) for this equation, reacts with O<sub>2</sub>(g) to give SO<sub>2</sub>(g). Begin with one unit of each written formula. What does the oxygen count tell you to do?</p>
+          <label class="option"><input type="radio" name="pair" data-explanation="Yes. One pair already gives the two oxygen atoms needed. Sulfur also matches, so the whole-number ratio is 1 to 1 to 1."><span>Keep one O<sub>2</sub> because the product needs two O atoms.</span></label>
+          <label class="option"><input type="radio" name="pair" data-explanation="The subscript 2 gives two O atoms per molecule. Count that pair before deciding on the number in front. Try again."><span>Use two O<sub>2</sub> because the product needs two O atoms.</span></label>
+          <label class="option"><input type="radio" name="pair" data-explanation="Two of every term would balance, but the coefficients would have a common factor of 2. Try the smaller ratio."><span>Double every term because oxygen enters in pairs.</span></label>
+          <button type="submit" disabled>Check choice</button>
+          <p class="feedback" aria-live="polite"></p>
+        </fieldset>
+      </form>
+      <details class="static-feedback"><summary>Compare your oxygen reasoning</summary><p>One O<sub>2</sub> already supplies two O atoms to make one SO<sub>2</sub>. One S supplies its S atom. There is no odd oxygen total to resolve.</p></details>
+    </section>
+
+    <section aria-labelledby="ions">
+      <p class="eyebrow">03 · Balance intact groups</p>
+      <h2 id="ions">Keep a group together when it appears on both sides</h2>
+      <p>A <strong>polyatomic ion</strong> is a group of atoms with a net charge. When the same group appears intact in formulas on both sides and its atoms are accounted for by those groups, you can use a row for the group. Check the individual atoms at the end.</p>
+      <article class="worked">
+        <h3>Worked example · A solid forms from solutions</h3>
+        <p><strong>Given.</strong> Aqueous strontium nitrate and aqueous potassium sulfate form solid strontium sulfate and aqueous potassium nitrate. The new solid is a <strong>precipitate</strong>.</p>
+        <p><strong>Goal.</strong> Use neutral formulas and retain all four substances in the balanced molecular equation.</p>
+        <ul>
+          <li>Strontium is Sr<sup>2+</sup> and nitrate is NO<sub>3</sub><sup>−</sup>. <strong>(+2) + 2(−1) = 0</strong>, so the formula is Sr(NO<sub>3</sub>)<sub>2</sub>. The outside 2 counts two whole nitrate groups.</li>
+          <li>Potassium is K<sup>+</sup> and sulfate is SO<sub>4</sub><sup>2−</sup>. <strong>2(+1) + (−2) = 0</strong>, so the formula is K<sub>2</sub>SO<sub>4</sub>.</li>
+          <li>One strontium ion with one sulfate ion gives SrSO<sub>4</sub>. One potassium ion with one nitrate ion gives KNO<sub>3</sub>.</li>
+        </ul>
+        <p class="equation"><span class="formula">Sr(NO<sub>3</sub>)<sub>2</sub>(aq)</span> + <span class="formula">K<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span class="formula">SrSO<sub>4</sub>(s)</span> + <span class="formula">KNO<sub>3</sub>(aq)</span></p>
+        <ol>
+          <li>One Sr on each side matches. One sulfate on each side matches.</li>
+          <li>Two nitrates on the left require a coefficient of 2 for KNO<sub>3</sub> on the right.</li>
+          <li>That same coefficient supplies two K on the right, matching the two K on the left.</li>
+        </ol>
+        <p class="equation"><span class="formula">Sr(NO<sub>3</sub>)<sub>2</sub>(aq)</span> + <span class="formula">K<sub>2</sub>SO<sub>4</sub>(aq)</span> → <span class="formula">SrSO<sub>4</sub>(s)</span> + <span class="formula">2KNO<sub>3</sub>(aq)</span></p>
+        <table class="ledger">
+          <caption>Final atom audit after balancing nitrate and sulfate as groups</caption>
+          <thead><tr><th scope="col">Atom</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+          <tbody><tr><th scope="row">Sr</th><td>1</td><td>1</td></tr><tr><th scope="row">K</th><td>2</td><td>2</td></tr><tr><th scope="row">N</th><td>2</td><td>2</td></tr><tr><th scope="row">S</th><td>1</td><td>1</td></tr><tr><th scope="row">O</th><td>2 × 3 + 4 = 10</td><td>4 + 2 × 3 = 10</td></tr></tbody>
+        </table>
+        <p>Each formula is neutral as written. Both sides have net charge 0, and the coefficients have no common factor greater than 1.</p>
+      </article>
+      <form data-chem-choice>
+        <fieldset>
+          <legend>Quick check · Decide whether the group survives</legend>
+          <p>Consider solid ammonium dichromate breaking down to solid chromium(III) oxide, nitrogen gas, and water vapor. Can you use an ammonium-group row by itself to track N and H on both sides?</p>
+          <label class="option"><input type="radio" name="groups" data-explanation="The atoms are conserved, but their grouping can change. Find nitrogen and hydrogen in the products separately, then try again."><span>Yes. Conservation of atoms guarantees the ammonium group stays intact.</span></label>
+          <label class="option"><input type="radio" name="groups" data-explanation="A phase change alone cannot tell you whether a group survives. Compare the formulas that contain N or H, then try again."><span>No. The gas label means that any polyatomic group must break apart.</span></label>
+          <label class="option"><input type="radio" name="groups" data-explanation="Right. The products contain N and H in different molecules. Count N and H in separate rows."><span>No. None of the products contains an intact ammonium group.</span></label>
+          <button type="submit" disabled>Check choice</button>
+          <p class="feedback" aria-live="polite"></p>
+        </fieldset>
+      </form>
+      <details class="static-feedback"><summary>Compare your decision about the group</summary><p>None of the products contains the ammonium group. Use separate N and H rows. The nitrogen is in the diatomic gas and the hydrogen is in water vapor.</p></details>
+    </section>
+
+    <section aria-labelledby="independent">
+      <p class="eyebrow">04 · Apply the method</p>
+      <h2 id="independent">Write and check a fresh equation</h2>
+      <p>For each description, write a balanced molecular equation with states on paper. Choose an efficient first row and explain what made it useful. Then compare your work.</p>
+      <ol class="practice-list">
+        <li>
+          <h3>Two gases from a solution</h3>
+          <p>When aqueous ammonium nitrite decomposes, it produces diatomic nitrogen gas and water vapor. The nitrite ion is NO<sub>2</sub><sup>−</sup>.</p>
+          <details><summary>Compare your equation</summary>
+            <p class="equation"><span class="formula">NH<sub>4</sub>NO<sub>2</sub>(aq)</span> → <span class="formula">N<sub>2</sub>(g)</span> + <span class="formula">2H<sub>2</sub>O(g)</span></p>
+            <p>One ammonium ion and one nitrite ion give a neutral formula. Starting with 1 NH<sub>4</sub>NO<sub>2</sub>, its four H atoms require 2 H<sub>2</sub>O. That uses both O atoms. Count one N in each ion for 2 N on the left, matching one N<sub>2</sub> on the right. The description gives water as a vapor.</p>
+          </details>
+        </li>
+        <li>
+          <h3>Gas-phase oxidation</h3>
+          <p>In a step of nitric acid manufacture, ammonia gas reacts with diatomic oxygen gas to yield nitrogen monoxide gas and water vapor.</p>
+          <details><summary>Compare your equation</summary>
+            <p class="equation"><span class="formula">4NH<sub>3</sub>(g)</span> + <span class="formula">5O<sub>2</sub>(g)</span> → <span class="formula">4NO(g)</span> + <span class="formula">6H<sub>2</sub>O(g)</span></p>
+            <p>Start with 2 NH<sub>3</sub> so the 6 H atoms make a whole number of water molecules. That sets 2 NO and 3 H<sub>2</sub>O. The O total is 2 + 3 = 5, so the ratio requires 5/2 O<sub>2</sub>. Double all four coefficients. Check N = 4, H = 12, and O = 10 on each side.</p>
+          </details>
+        </li>
+        <li>
+          <h3>Two solutions produce a solid</h3>
+          <p>Aqueous barium chloride and aqueous potassium phosphate form solid barium phosphate and aqueous potassium chloride. Barium ions carry charge +2, and phosphate ions are PO<sub>4</sub><sup>3−</sup>.</p>
+          <details><summary>Compare your equation</summary>
+            <p class="equation"><span class="formula">3BaCl<sub>2</sub>(aq)</span> + <span class="formula">2K<sub>3</sub>PO<sub>4</sub>(aq)</span> → <span class="formula">Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>(s)</span> + <span class="formula">6KCl(aq)</span></p>
+            <p>For solid barium phosphate, 3(+2) + 2(−3) = 0. One formula unit of this solid requires three Ba and two phosphate groups. The corresponding reactant coefficients supply six Cl and six K, which fit six KCl. Check Ba = 3, P = 2, O = 8, K = 6, and Cl = 6 on each side.</p>
+          </details>
+        </li>
+        <li>
+          <h3>Iron from an oxide</h3>
+          <p>Consider the overall reduction of solid iron(III) oxide by carbon monoxide gas to produce solid iron and carbon dioxide gas. Iron(III) means Fe<sup>3+</sup>. The oxide ion is O<sup>2−</sup>.</p>
+          <details><summary>Compare your equation</summary>
+            <p class="equation"><span class="formula">Fe<sub>2</sub>O<sub>3</sub>(s)</span> + <span class="formula">3CO(g)</span> → <span class="formula">2Fe(s)</span> + <span class="formula">3CO<sub>2</sub>(g)</span></p>
+            <p>Use 2 Fe on the right to match the neutral Fe<sub>2</sub>O<sub>3</sub> on the left. Carbon must have the same coefficient in CO and CO<sub>2</sub>. With that coefficient called <var>x</var>, the oxygen row reads 3 + <var>x</var> = 2<var>x</var>, so <var>x</var> = 3. Check Fe = 2, C = 3, and O = 6 on each side. The overall equation combines the changes into one accounting step.</p>
+          </details>
+        </li>
+      </ol>
+      <aside class="callout" aria-labelledby="leave">
+        <h3 id="leave">Return to your own equations</h3>
+        <p>Read one description and explain why each term has its formula, side and state. Predict which coefficient will be easiest to set first. Add contributions from every term that contains an element, check every row and divide the coefficients by any common factor.</p>
+        <p><strong>Later recall.</strong> Tomorrow, reconstruct those checks from memory. Explain why multiplying a whole equation by 2 preserves balance and changing a subscript can change the substance.</p>
+      </aside>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <p class="eyebrow">Reference</p>
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt>Reactant and product</dt><dd>A starting substance and a substance formed, respectively.</dd>
+        <dt>State label</dt><dd>Parentheses indicating solid (s), liquid (l), gas (g) or dissolved in water (aq) under the described conditions.</dd>
+        <dt>Skeleton equation</dt><dd>The formulas of the substances on their respective sides before you finish balancing.</dd>
+        <dt>Molecular equation</dt><dd>An equation written using complete formulas for the substances, including neutral formulas for dissolved ionic compounds.</dd>
+        <dt>Molecule</dt><dd>A discrete group of bonded atoms. A diatomic molecule contains two atoms.</dd>
+        <dt>Ion and polyatomic ion</dt><dd>An ion has a net electric charge. A polyatomic ion is an ion with more than one atom.</dd>
+        <dt>Formula unit</dt><dd>One formula’s worth of a compound. For an ionic solid, it expresses the relative numbers of the ions.</dd>
+        <dt>Subscript and coefficient</dt><dd>A subscript inside a formula counts atoms or groups per unit. A coefficient in front counts units of the entire formula. An omitted number means 1.</dd>
+        <dt>Precipitate</dt><dd>A solid that forms from a solution.</dd>
+        <dt>Balanced equation</dt><dd>An equation with equal totals for each element and equal total charge on both sides. By convention, write the smallest whole-number coefficient ratio for these reactions.</dd>
+      </dl>
+    </section>
+  </main>
+</body>
+</html>

@@ -15,18 +15,18 @@
         "homeworkSeparation": true,
         "math": true,
         "accessibility": true,
-        "sha256": "e65bc44c6c55176711cfed52609b2c02dd155187283f36f8bfa44157e1850c87",
+        "sha256": "7eb99312079b569174ef886622bbb819696fe9ae20b8b4b05193ec25489e7025",
         "accuracy": true,
         "dependencies": {
           "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
           "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
           "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
           "assets/similarity.css": "e7ebc637b24bdc27646529c13c012e75be74282c821e1d6b98dcc7b946c68820",
-          "assets/similarity.js": "a55767b389a63def45bfb3dce7e58efa9d9c7b1c39378f6095d53f5fdb4e3615",
+          "assets/similarity.js": "80e5deac7d6a7a6f1606767de4bdf8142f199e528e21209186255d24cddde1f4",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf"
         },
         "contract": {
-          ".agents/skills/geometry-teach/SKILL.md": "31bc43f4782cc57edac8cb06207870b4edf6e508c4fe0e7aceebe90c94b20b40",
+          ".agents/skills/geometry-teach/SKILL.md": "5d08f87a9dadb1d79584b84730d5455cb697690fabdbc7c5fdd625437c193323",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",

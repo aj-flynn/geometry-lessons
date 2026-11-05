@@ -23,3 +23,10 @@ Reviewed input tree `33ca81a44a87a9e433fa95396c19c6ddfa1cc279c5f7dec2ca73593a84f
 
 
 The third source-aware Opus 5.5 High review of the preceding deployed Geometry scope scored the lesson and process 92/100 each. Its findings guide further work combining marked correspondence and missing length, and recovering boundary measurements on both figures.
+
+
+## Ordered Geometry transfer
+
+Sol 6.1 High joined marked correspondence to a complete proportion record and length calculation, then placed the exercise after the ratio convention. A first Astra assessment found the order issue and scored 99/100 for the lesson and process. Fresh Astra scored the corrected lesson and process 100/100. The checker, 28 Node tests and 140 browser practice checks passed. Opus and current live verification remain pending.
+
+Reviewed input tree `dbffa7f713776a395b312289380b38c6102ca5b7ffcf010d6deac6535e6984bf`. Exact reviewed hashes are in the manifest.

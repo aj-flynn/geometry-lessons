@@ -36,3 +36,10 @@ Independent brainstorming compared a learner-built terminology exercise, an inte
 ## English translation and image practice
 
 Sol 6.1 High connected natural modern phrasing, figurative device, shared quality and effect in original practice, and refined announcements and repeated feedback. Fresh independent Astra scored the revised lesson and exercised English process 100/100. The selected English scope matches its assessed hashes. The checker, 28 Node tests and 134 browser practice checks passed. The fixed input tree is 12177e6b25f3e2338b8e43b0bf1cc157066e4d444a8ae0ee75483a5348a892aa. Current Opus and live checks are pending.
+
+
+## Ordered Geometry transfer
+
+Sol 6.1 High joined marked correspondence to a complete proportion record and length calculation, then placed the exercise after the ratio convention. A first Astra assessment found the order issue and scored 99/100 for the lesson and process. Fresh Astra scored the corrected lesson and process 100/100. The checker, 28 Node tests and 140 browser practice checks passed. Opus and current live verification remain pending.
+
+Reviewed input tree `dbffa7f713776a395b312289380b38c6102ca5b7ffcf010d6deac6535e6984bf`. Exact reviewed hashes are in the manifest.

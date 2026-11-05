@@ -30,20 +30,29 @@ function initializeExplorer(explorer) {
   reduce.checked = preference.matches;
   const fields = Object.fromEntries([...explorer.querySelectorAll('[data-metric]')].map(el=>[el.dataset.metric,el]));
 
-  function draw(scale) {
+  function draw(scale, playing = false) {
     const metrics = rectangleMetrics(scale);
     const rect = rectangleDrawing(scale);
     for (const [name,value] of Object.entries(rect)) shape.setAttribute(name,value);
-    widthLabel.textContent = `${formatNumber(metrics.width)} cm`;
+    const length = value => playing ? String(Number(value.toFixed(1))) : formatNumber(value);
+    const measure = value => playing ? String(Number(value.toFixed(2))) : formatNumber(value);
+    const display = {
+      width: length(metrics.width),
+      height: length(metrics.height),
+      perimeter: length(metrics.perimeter),
+      area: measure(metrics.area),
+      scale: measure(scale)
+    };
+    widthLabel.textContent = display.width + ' cm';
     widthLabel.setAttribute('x',rect.x+rect.width/2);
     widthLabel.setAttribute('y',rect.y-12);
-    heightLabel.textContent = `${formatNumber(metrics.height)} cm`;
+    heightLabel.textContent = `${display.height} cm`;
     heightLabel.setAttribute('x',rect.x+rect.width+12);
     heightLabel.setAttribute('y',rect.y+rect.height/2+7);
-    for (const [key,el] of Object.entries(fields)) el.textContent = formatNumber(metrics[key]);
+    for (const [key,el] of Object.entries(fields)) el.textContent = display[key];
     slider.value = scale;
-    slider.setAttribute('aria-valuetext',`Scale factor ${formatNumber(scale)}`);
-    description.textContent = `The enlarged or reduced rectangle is ${formatNumber(metrics.width)} by ${formatNumber(metrics.height)} centimeters. Both dimensions scale by ${formatNumber(scale)}. Its perimeter is ${formatNumber(metrics.perimeter)} centimeters and area is ${formatNumber(metrics.area)} square centimeters.`;
+    slider.setAttribute('aria-valuetext',`Scale factor ${display.scale}`);
+    description.textContent = `The enlarged or reduced rectangle is ${display.width} by ${display.height} centimeters. Both dimensions scale by ${display.scale}. Its perimeter is ${display.perimeter} centimeters and area is ${display.area} square centimeters.`;
   }
   function announce(prefix = 'Current example.') {
     const m=rectangleMetrics(Number(slider.value));
@@ -70,7 +79,7 @@ function initializeExplorer(explorer) {
     status.textContent='Playing from scale 0.8 to 2.4. Pause at any time.';
     const tick=now=>{
       const progress=Math.min((now-started)/4000,1);
-      draw(0.8+1.6*progress);
+      draw(0.8+1.6*progress, true);
       if(progress<1)frame=requestAnimationFrame(tick);
       else{stop();announce('Resize complete.');}
     };

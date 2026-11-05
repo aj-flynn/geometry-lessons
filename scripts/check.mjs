@@ -57,7 +57,8 @@ export function check(base = root) {
           continue;
         }
         if (/^[a-z]+:|^\/\//i.test(url)) { errors.push(`${name}: unsupported URL scheme.`); continue; }
-        const [local,anchor] = url.split('#');
+        const [pathAndQuery,anchor] = url.split('#');
+        const local = pathAndQuery.split('?')[0];
         const target = resolve(dirname(path),local);
         const rel = relative(base,target);
         if (rel.startsWith('..') || !existsSync(target)) errors.push(`${name}: invalid local link ${url}`);

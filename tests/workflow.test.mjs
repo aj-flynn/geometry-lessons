@@ -31,7 +31,7 @@ test('publication checks reject changed reviewed HTML, raw documents, and uninde
   try {
     for (const dir of ['templates','assets','lessons']) mkdirSync(join(temp,dir));
     for (const file of ['templates/index.html','assets/site.css','assets/lesson.js']) cpSync(join(root,file),join(temp,file));
-    const html = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title></head><body><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A test shape</desc></svg></body></html>';
+    const html = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title><link rel="stylesheet" href="../assets/site.css?v=qa"></head><body><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A test shape</desc></svg></body></html>';
     const file = '0001-synthetic-qa.html';
     writeFileSync(join(temp,'lessons',file),html);
     const manifest = {version:1,lessons:[{file,title:'Synthetic QA',summary:'Temporary test only',topics:['QA'],review:{privacy:true,homeworkSeparation:true,math:true,accessibility:true,sha256:createHash('sha256').update(html).digest('hex')}}]};

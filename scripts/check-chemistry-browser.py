@@ -116,7 +116,9 @@ def main():
     ok(f'{path.stem} numeric retry {answer}',right!=wrong and right==(form.get_attribute('data-success') or 'That fits this practice example. Can you explain why?'))
    for form in page.locator('[data-chem-choice]').all():
     for opt in form.locator('input').all():
-     opt.check();form.locator('button').click()
+     opt.check()
+     ok(f'{path.stem} previous choice feedback cleared',form.locator('.feedback').inner_text()=='')
+     form.locator('button').click()
      ok(f'{path.stem} choice feedback {opt.get_attribute("name")} {opt.get_attribute("value")}',form.locator('.feedback').inner_text()==opt.get_attribute('data-explanation'))
    for model in page.locator('[data-chem-steps]').all():
     model.locator('[data-step]').click();ok(f'{path.stem} step advances',model.locator('[data-step-status]').inner_text().startswith('Step 2'))

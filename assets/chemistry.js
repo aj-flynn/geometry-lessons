@@ -8,6 +8,9 @@ for (const form of document.querySelectorAll('[data-chem-choice]')) {
     const selected = form.querySelector('input:checked');
     feedback.textContent = selected ? selected.dataset.explanation : 'Choose an option, then explain what evidence supports it.';
   });
+  form.addEventListener('change', event => {
+    if (event.target.matches('input[type="radio"]')) feedback.textContent = '';
+  });
   // Only this form's feedback handler makes its controls and fallback ready.
   form.dataset.practiceReady = 'true';
   for (const button of form.querySelectorAll('button[type="submit"]')) button.disabled = false;

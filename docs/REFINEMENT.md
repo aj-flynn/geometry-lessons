@@ -1,5 +1,13 @@
 # Independent refinement status
 
+## Focused print correction and latest score
+
+The independent review of `a437deb63775ad50b001cebae1308a15f458b1b9` scores geometry **98/100**. Pacing and visual-density deductions are resolved. The remaining two points concern actual 200% zoom, native print preview, an OS reduced-motion change and screen-reader operation, which have not been verified.
+
+The reviewer also identified an imprecise no-script print instruction: named path disclosures cannot all remain open together. The instruction now explicitly says to open and print **one path at a time**, repeat for the next path, and print the glossary separately. The JavaScript-enabled before/after-print helper is unchanged. This correction does not claim that native print preview has been exercised.
+
+The available-tool inventory was checked again: it still exposes neither the native skill's separate JavaScript executor nor a Windows window-activation action. The previous native inspection consistently reported Edge minimized; browser-level keyboard dispatch did not expose native zoom or print controls. Repeating those same unavailable operations would not establish new evidence. The smallest helpful user action is to restore the Edge window from the taskbar and leave the geometry lesson visible. That may make the supported native inspection usable for zoom and print; screen-reader speech/output access may still need a brief user-observed test. No accessibility pass is claimed until the actual surface is exercised and observed.
+
 ## Geometry pacing revision
 
 The independent review of `e6f418ed7e72ccd3238fdc6fbe06de3737c2aa94` scores the geometry lesson **96/100**: one point remains for pacing, one for scroll density, and two for incomplete accessibility evidence. This replaces the older lesson score as the latest actual assessment; it does not establish the requested 100/100.

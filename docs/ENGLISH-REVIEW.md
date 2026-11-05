@@ -13,3 +13,10 @@ Input tree `46971b78c58b3f21322350208a923d2037e0268bea10a5538949954cd07afb4b`. E
 
 
 The second Opus 5.5 High review of the deployed compact English revision scored the lesson 86.4/100 and its process 89/100. This is the opinion for the preceding compact input tree, not a score for later drafts. Findings guide further work on quotation selection, older forms and control announcements.
+
+
+## Focused English and Geometry revision
+
+Sol 6.1 High added checked modern phrasing and shortest-complete-quotation practice, bounded tone evidence, and improved reading-lens announcements. Astra scored the revised lesson and English process 100/100. Current keyboard, feedback, adjacent fallback, and narrow-layout checks passed. The updated printable guide links to the library. Current Opus review is pending.
+
+Reviewed input tree `33ca81a44a87a9e433fa95396c19c6ddfa1cc279c5f7dec2ca73593a84f43525`. Exact lesson, asset and contract hashes are in the manifest.

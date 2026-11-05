@@ -3,7 +3,7 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
   const buttons = [...explorer.querySelectorAll('[data-lens]')];
   const title = explorer.querySelector('[data-lens-title]');
   const prompt = explorer.querySelector('[data-lens-prompt]');
-  const result = explorer.querySelector('#lens-result');
+  const result = explorer.querySelector('[data-lens-result]');
   const reveal = explorer.querySelector('[data-lens-reveal]');
   const restart = explorer.querySelector('[data-restart]');
   const fallback = explorer.nextElementSibling;
@@ -16,6 +16,7 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
     prompt.textContent = button.dataset.prompt;
     result.replaceChildren();
     reveal.setAttribute('aria-expanded', 'false');
+    reveal.textContent = 'Compare after trying';
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   }
 
@@ -24,6 +25,7 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
     if (reveal.getAttribute('aria-expanded') === 'true') {
       result.replaceChildren();
       reveal.setAttribute('aria-expanded', 'false');
+      reveal.textContent = 'Compare after trying';
       return;
     }
 
@@ -35,6 +37,7 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
     note.textContent = activeLens.dataset.note;
     result.replaceChildren(copy, note);
     reveal.setAttribute('aria-expanded', 'true');
+    reveal.textContent = 'Hide comparison';
   });
   restart.addEventListener('click', () => {
     selectLens(buttons[0]);
@@ -84,7 +87,7 @@ for (const form of document.querySelectorAll('[data-question] form')) {
   form.addEventListener('submit', event => {
     event.preventDefault();
     const selected = form.querySelector('input:checked');
-    feedback.textContent = !selected ? 'Choose an explanation, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : (selected.dataset.feedback || form.dataset.hint || 'Use the hint and compare the wording before trying again.');
+    feedback.textContent = !selected ? 'Choose an option, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : (selected.dataset.feedback || form.dataset.hint || 'Use the hint and compare the wording before trying again.');
   });
   form.addEventListener('change', () => { feedback.textContent = ''; });
   // Bind prevention before enabling controls: no-script mode cannot submit choices.

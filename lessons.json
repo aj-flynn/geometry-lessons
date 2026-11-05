@@ -15,18 +15,18 @@
         "homeworkSeparation": true,
         "math": true,
         "accessibility": true,
-        "sha256": "0b0bfef4b1d1b971211bdb8dbcdb4abbc14b7a00d0b4c371fcc9450d8b0528cc",
+        "sha256": "e65bc44c6c55176711cfed52609b2c02dd155187283f36f8bfa44157e1850c87",
         "accuracy": true,
         "dependencies": {
           "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
           "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
           "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
           "assets/similarity.css": "e7ebc637b24bdc27646529c13c012e75be74282c821e1d6b98dcc7b946c68820",
-          "assets/similarity.js": "1b6e4309eec44f79f88651dc35bd1feb83faa6881ac017338c7f474a08a0a301",
+          "assets/similarity.js": "a55767b389a63def45bfb3dce7e58efa9d9c7b1c39378f6095d53f5fdb4e3615",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf"
         },
         "contract": {
-          ".agents/skills/geometry-teach/SKILL.md": "296bfd41d70ff3a80209642f9c28deb270d538c4bc5df029cd53293c57f64840",
+          ".agents/skills/geometry-teach/SKILL.md": "31bc43f4782cc57edac8cb06207870b4edf6e508c4fe0e7aceebe90c94b20b40",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",
@@ -74,17 +74,17 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "2cc9fd39b3abda918dde4ec33fb07243b39e2cc64dcb1d2037ee037f86093b48",
+        "sha256": "4ce8af7f9fbc3e882b4bff8e3aa423d2173fcda8bcd6db2908bc04139fe9471a",
         "dependencies": {
           "assets/english.css": "ea84c5a70f7c45316a57ad3704ecaec6313d7527ce4bb291ff4e0fb56535ba6d",
           "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
           "assets/reading.css": "ff96479ef805c1831a449a61cb01f716cca3cc032df6492895dd129fc79c1f12",
-          "assets/reading.js": "65c93fc548a48beb9ada35f43a53e3404dc7c71650e5c7ae5090dfc526b97bcf",
+          "assets/reading.js": "d38a5121e144c905320dd0b99b2e89a8905a0a8ff63078030e4d4eebae0d4568",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
-          "reference/close-reading.html": "e24ca98a128731cb8938789f82e4d5548089d415e8fb46cf511729c3c1a92bbc"
+          "reference/close-reading.html": "b1413830e34885f68585f364850b5e1a7de212d65791d25d0b05566507e4e7a2"
         },
         "contract": {
-          ".agents/skills/english-teach/SKILL.md": "c178593dc5188139e4fb64687a153ab1e29b53a1efa3612bfd1773cbbede1e39",
+          ".agents/skills/english-teach/SKILL.md": "e78e76758d4da647fa1a3234004c245af59d26beb1b61fe6944ac0e8b15afa20",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",

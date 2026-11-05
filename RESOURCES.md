@@ -5,6 +5,7 @@
 
 - [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md): source of the mission-led, short HTML lesson, reusable asset, retrieval practice, and feedback approach. Adapted here for public concept lessons without private learning records or homework answers. [MIT notice](.agents/skills/homework-teach/LICENSE-MATT-POCOCK.txt).
 
+- [Illustrative Mathematics: Connecting Similarity and Transformations](https://im.kendallhunt.com/HS/students/2/3/6/index.html) supports the high-school connection between matching outlines, transformations, and scaling.
 - [Illustrative Mathematics: What are scaled copies?](https://im.kendallhunt.com/MS/students/2/1/1/index.html): visual scaling and a consistent multiplier across corresponding lengths.
 - [Math Open Reference: Similar triangles and area](https://www.mathopenref.com/similartrianglesareas.html): author verification of the scale and area relationship.
 - [Math Open Reference: Triangle area](https://www.mathopenref.com/trianglearea.html) supplies the base-and-height prerequisite for the area explanation.

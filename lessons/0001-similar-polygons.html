@@ -8,7 +8,7 @@
   <title>Similar polygons | Geometry lessons</title>
   <link rel="stylesheet" href="../assets/site.css?v=20261105-r9">
   <link rel="stylesheet" href="../assets/similarity.css?v=20261105-sol2">
-  <script src="../assets/similarity.js?v=20261105-sol2" type="module"></script>
+  <script src="../assets/similarity.js?v=20261105-sol3" type="module"></script>
   <script src="../assets/geometry-paths.js?v=20261105d" defer></script>
 </head>
 <body>
@@ -24,31 +24,31 @@
   <p class="goal-note"><strong>Your goal</strong> is to match sides and angles, choose how to compare measurements, and explain what the givens support.</p>
 <details class="lesson-path" name="geometry-path" id="path-match" open><summary><span>Match and scale</span><small>Match parts · Find lengths</small></summary><div class="path-content"><section aria-labelledby="match">
     <h2 id="match">Match the parts</h2><p>Start with an ordered statement below. When no matching list is supplied, <a href="#mark-branch">use the angle marks</a> to build one.</p>
-    <details class="prerequisite"><summary>Start here if ratios feel unfamiliar</summary><p>A <strong>ratio</strong> compares quantities by division. A short ribbon is 8 cm long and a long ribbon is 12 cm. What multiplier takes the short ribbon to the long one?</p><div data-choice-quiz data-correct="divide" data-success="Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. A multiplier tells how many times as long, while subtraction tells how much longer." data-hint="The target is 12 and the original is 8. Ask how many copies of 8 make 12, rather than how much was added."><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="subtract">12 − 8 = 4</button><button type="button" data-choice="divide">12 ÷ 8 = 1.5</button><button type="button" data-choice="reverse">8 ÷ 12 ≈ 0.67</button></div><div data-static-only><p>Choose one:</p><ul><li>12 − 8 = 4</li><li>12 ÷ 8 = 1.5</li><li>8 ÷ 12 ≈ 0.67</li></ul><details><summary>Compare your reasoning</summary><p>Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. A multiplier tells how many times as long, while subtraction tells how much longer.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p></div><details><summary>See the ratio bridge</summary><p>12 ÷ 8 = 1.5 compares the long ribbon with the short one. Multiplying checks it: 8 × 1.5 = 12. A factor above 1 enlarges; a factor between 0 and 1 reduces.</p></details></details>
+    <details class="prerequisite"><summary>Start here if ratios feel unfamiliar</summary><p>A <strong>ratio</strong> compares quantities by division. A short ribbon is 8 cm long and a long ribbon is 12 cm. What multiplier takes the short ribbon to the long one?</p><div data-choice-quiz data-correct="divide" data-success="Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. Check by multiplying: 8 × 1.5 = 12." data-hint="The target is 12 and the original is 8. Ask how many copies of 8 make 12, rather than how much was added."><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="subtract">12 − 8 = 4</button><button type="button" data-choice="divide">12 ÷ 8 = 1.5</button><button type="button" data-choice="reverse">8 ÷ 12 ≈ 0.67</button></div><div data-static-only><p>Choose one:</p><ul><li>12 − 8 = 4</li><li>12 ÷ 8 = 1.5</li><li>8 ÷ 12 ≈ 0.67</li></ul><details><summary>Compare your reasoning</summary><p>Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. Check by multiplying: 8 × 1.5 = 12.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p></div></details>
     <p>A <strong>polygon</strong> is a closed flat shape made of straight sides. A <strong>vertex</strong> is a corner; <em>vertices</em> means more than one corner.</p>
-    <p><strong>Similar</strong> means the same shape: matching angles have equal measures and all matching lengths share one multiplier. A <strong>corresponding</strong> part is the part that matches.</p>
-    <p>A similarity statement is an ordered matching list. In this new example, <strong>JKLMN ∼ TUVWX</strong> means the first letters match, then the second letters, and so on. The symbol <strong>∼</strong> (also written ~) means “is similar to”; <strong>↔</strong> means “matches.”</p>
-    <p class="mapping">J ↔ T · K ↔ U · L ↔ V<br>M ↔ W · N ↔ X</p>
+    <p><strong>Similar</strong> means the same shape: matching angles have equal measures and all matching lengths share one multiplier. A <a href="#term-correspondence">corresponding</a> part is the part that matches. The polygons need the same number of corners so each corner has exactly one partner.</p>
+    <p>A similarity statement is an ordered matching list. In this new example, <strong>ACGOR ∼ BINSU</strong> means the first letters match, then the second letters, and so on. The symbol <strong>∼</strong> (also written ~) means “is similar to”; <strong>↔</strong> means “matches.”</p>
+    <p class="mapping">A ↔ B · C ↔ I · G ↔ N<br>O ↔ S · R ↔ U</p>
     <div class="diagram-pair">
       <figure><svg viewBox="0 0 300 260" role="img" aria-labelledby="pentagon-a-title pentagon-a-desc">
-        <title id="pentagon-a-title">Pentagon JKLMN</title><desc id="pentagon-a-desc">An upright house-shaped pentagon. J is lower left, K upper left, L at the roof tip, M upper right, and N lower right. Side KL is bold.</desc>
+        <title id="pentagon-a-title">Pentagon ACGOR</title><desc id="pentagon-a-desc">An upright house-shaped pentagon. A is lower left, C upper left, G at the roof tip, O upper right, and R lower right. Side CG is bold.</desc>
         <path class="polygon" d="M70 190 70 90 140 35 210 90 210 190Z"/>
         <path class="emphasis-side" d="M70 90 140 35" fill="none"/>
-        <text x="46" y="215">J</text><text x="42" y="88">K</text><text x="152" y="33">L</text><text x="220" y="88">M</text><text x="218" y="215">N</text>
+        <text x="46" y="215">A</text><text x="42" y="88">C</text><text x="152" y="33">G</text><text x="220" y="88">O</text><text x="218" y="215">R</text>
       </svg><figcaption>Follow the order around the outline.</figcaption></figure>
       <figure><svg viewBox="0 0 300 260" role="img" aria-labelledby="pentagon-b-title pentagon-b-desc">
-        <title id="pentagon-b-title">The matching pentagon, turned</title><desc id="pentagon-b-desc">The same pentagon rotated a quarter turn clockwise. T matches J, U matches K, V matches L, W matches M, and X matches N. Bold side UV matches KL.</desc>
+        <title id="pentagon-b-title">The matching pentagon, turned</title><desc id="pentagon-b-desc">The same pentagon rotated a quarter turn clockwise. B matches A, I matches C, N matches G, S matches O, and U matches R. Bold side IN matches CG.</desc>
         <path class="polygon" d="M80 70 180 70 235 140 180 210 80 210Z"/>
         <path class="emphasis-side" d="M180 70 235 140" fill="none"/>
-        <text x="54" y="64">T</text><text x="172" y="52">U</text><text x="250" y="148">V</text><text x="176" y="239">W</text><text x="54" y="232">X</text>
+        <text x="54" y="64">B</text><text x="172" y="52">I</text><text x="250" y="148">N</text><text x="176" y="239">S</text><text x="54" y="232">U</text>
       </svg><figcaption>The bold sides correspond, even though they face different directions.</figcaption></figure>
     </div>
     <p>These drawings have the same size to isolate the matching step. A similar copy could also be resized. Use the matching order in the statement, even when the figure has turned or is reflected like a mirror image.</p>
-    <p>Side KL matches UV because both endpoints match. The bold edges in the diagrams follow that pairing.</p>
-    <p>The symbol <strong>∠K</strong> means “the angle at corner K.” Angles with equal measures are <strong>congruent</strong>. Write ∠K ≅ ∠U, where <strong>≅</strong> means “is congruent to.” Resizing changes lengths while the matching angles keep their measures.</p>
+    <p>Side CG matches IN because both endpoints match. The bold edges in the diagrams follow that pairing.</p>
+    <p>The symbol <strong>∠C</strong> means “the angle at corner C.” Angles with equal measures are <strong>congruent</strong>. Write ∠C ≅ ∠I, where <strong>≅</strong> means “is congruent to.” Resizing changes lengths while the matching angles keep their measures.</p>
     <details><summary>Record the full match</summary>
-      <p>Start at J and follow the list once around both boundaries. Write each angle pair as ∠J ≅ ∠T, ∠K ≅ ∠U, ∠L ≅ ∠V, ∠M ≅ ∠W, and ∠N ≅ ∠X.</p>
-      <p>For the sides, start with JK and TU. Step forward by one letter to KL and UV, then continue. After MN and WX, return to the starting corners to include NJ and XT. Count five side pairs for five vertices.</p>
+      <p>Start at A and follow the list once around both boundaries. Write each angle pair as ∠A ≅ ∠B, ∠C ≅ ∠I, ∠G ≅ ∠N, ∠O ≅ ∠S, and ∠R ≅ ∠U.</p>
+      <p>For the sides, start with AC and BI. Step forward by one letter to CG and IN, then continue. After OR and SU, return to the starting corners to include RA and UB. Count five side pairs for five vertices.</p>
     </details>
     <div class="practice" data-choice-quiz data-correct="VT" data-success="You matched both endpoints in this new hexagon: J maps to V and H maps to T. VT and TV name the same side; reversing the letters does not change the segment." data-hint="Make a two-row list from the statement. Locate J and H separately, then join their partners.">
       <h3>Try a new correspondence</h3><p>Two hexagons are similar, <strong>BDFHJL ~ NPRTVX</strong>. Which side matches <strong>JH</strong>? Then record the matching angle for ∠J and the side pair that closes the two outlines. Compare after you choose.</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="VT">VT</button><button type="button" data-choice="RV" data-hint="R is the partner of F. Check the position of H before joining the endpoints.">RV</button><button type="button" data-choice="VX" data-hint="VX joins the partners of J and L. The requested side ends at H, so locate that partner instead.">VX</button></div><div data-static-only><p>Choose one:</p><ul><li>VT</li><li>RV</li><li>VX</li></ul><details><summary>Compare your reasoning</summary><p>You matched both endpoints in this new hexagon: J maps to V and H maps to T. VT and TV name the same side; reversing the letters does not change the segment.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p><details><summary>Hint for the match</summary><p>Line up the two names in rows. Start at the first letter in each row, and for the closing edge look at the last letter too.</p></details>
@@ -56,10 +56,9 @@
     </div>
   </section>
 
-  <details class="mark-branch" id="mark-branch"><summary>If the figures use angle marks</summary>
-<section aria-labelledby="angle-marks">
+  <section class="mark-branch" id="mark-branch" aria-labelledby="angle-marks">
   <h2 id="angle-marks">Read the angle marks</h2>
-  <p>A <a href="#glossary">vertex</a> is a corner. The small curved lines inside a corner are <strong>angle arcs</strong>. Within a diagram, angles with the same arc count are marked as equal in measure. Two arcs identify a group; they do not mean two degrees. Different arc counts do not, by themselves, say that angles are unequal.</p>
+  <p>The small curved lines inside a corner are <a href="#term-angle-arcs">angle arcs</a>. Within a diagram, angles with the same arc count are marked as equal in measure. Two arcs identify a group; they do not mean two degrees. Different arc counts do not, by themselves, say that angles are unequal.</p>
   <p><strong>The two figures in each pair below are given to be similar.</strong> The marks identify matching corners. Equal angle marks alone would not prove that general polygons are similar; their corresponding side lengths must also share one scale factor. Use the givens, not the apparent size or position.</p>
   <h3>Match corners before sides</h3>
   <p>Predict: which corner matches K, even after the figure turns?</p>
@@ -164,21 +163,19 @@
       <details><summary>After your attempt: compare and retry</summary><p>H matches X because each has two arcs. Z matches W because each has four. HZ therefore corresponds to XW, also named WX. UV joins the three-arc and one-arc groups; UX matches only one required group. If you chose either, cover this explanation, track both endpoints, and try again.</p></details>
     </div>
   </div>
-</section>
-
-  </details>
+  </section>
 
   <section aria-labelledby="scale">
     <h2 id="scale">Keep one direction</h2>
     <p>Write <strong>original → target</strong> above your work. Then use matching sides in that direction:</p>
-    <p>The <strong>scale factor</strong>, written <var>k</var>, is the positive multiplier for a length. It has no unit because the matching length units cancel in the division.</p><p class="big-rule"><var>k</var> = target length ÷ original length<br>target length = <var>k</var> × original length</p>
+    <p>The <a href="#term-scale-factor">scale factor</a>, written <var>k</var>, is the positive multiplier for a length. It has no unit because the matching length units cancel in the division.</p><p class="big-rule"><var>k</var> = target length ÷ original length<br>target length = <var>k</var> × original length</p>
     <p>A <strong>ratio</strong> compares quantities by division. A <strong>proportion</strong> says two ratios are equal. Read the pentagon pairs from their ordered names. Put a side from the target in every numerator (the top of a fraction) and its original partner in the denominator (the bottom).</p>
-    <p class="math-line">TU / JK = UV / KL = VW / LM = WX / MN = XT / NJ = <var>k</var></p>
+    <p class="math-line">BI / AC = IN / CG = NS / GO = SU / OR = UB / RA = <var>k</var></p>
     <p>Use the same units before dividing. A larger target gives <var>k</var> greater than 1. A smaller target gives <var>k</var> between 0 and 1.</p>
     <p>To reverse the direction, use the <strong>reciprocal</strong>, meaning one divided by the factor. Read a ratio named “first to second” as first ÷ second, even when that reverses your scaling direction.</p>
     <p class="scale-anchor"><strong>Start with an easy anchor.</strong> Doubling a length uses a factor of 2. Returning to the original uses a factor of one half. Try a 6 cm ribbon: doubling gives 12 cm; halving 12 returns to 6. The two factors undo each other because 2 × one half = 1.</p>
     <h3>Resize a clipped panel</h3>
-    <p>A maker wants a smaller panel with the same shape as a five-sided template. The original bottom edge is 26 cm, and the copy’s matching edge is 16.9 cm. Both drawings use the same unit scale. Before opening the steps, predict whether the copy’s boundary is longer or shorter. The <strong>perimeter</strong> is the total length of that boundary.</p>
+    <p>A maker wants a smaller panel with the same shape as a five-sided template. The original bottom edge is 26 cm, and the copy’s matching edge is 16.9 cm. Both drawings use the same unit scale. Before opening the steps, predict whether the copy’s boundary is longer or shorter. The <a href="#term-perimeter-area">perimeter</a> is the total length of that boundary.</p>
     <div class="diagram-pair worked-diagrams">
       <figure><svg viewBox="0 0 360 240" role="img" aria-labelledby="worked-original-title worked-original-desc">
         <title id="worked-original-title">Original five-sided panel</title><desc id="worked-original-desc">Starting from the top left, the lengths going clockwise are 14, 13, 14, 26, and 19 centimeters. The bottom edge is highlighted.</desc>
@@ -233,8 +230,8 @@
     <div class="scale-controls" data-interactive-only hidden>
       <label for="scale-factor">Scale factor <var>k</var>: <output for="scale-factor" data-metric="scale">1.6</output></label>
       <input id="scale-factor" data-scale type="range" min="0.8" max="2.4" step="0.1" value="1.6" aria-describedby="scale-help">
-      <p id="scale-help" class="static-note">Drag, or use the arrow keys. Below 1 shrinks the print; above 1 enlarges it.</p>
-      <div class="controls"><button type="button" data-play aria-pressed="false">Play enlargement</button><button type="button" data-pause disabled>Pause</button><button type="button" data-reset-scale>Reset example</button></div>
+      <p id="scale-help" class="static-note">Use the slider or arrow keys to choose a factor from 0.8 to 2.4. Below 1 the copy is smaller. Above 1 it is larger.</p>
+      <div class="controls"><button type="button" data-play aria-pressed="false">Play from 0.8 to 2.4</button><button type="button" data-pause disabled>Pause</button><button type="button" data-reset-scale>Reset example</button></div>
       <label class="motion-option"><input type="checkbox" data-reduce-motion>Use reduced motion (show the end state)</label>
       <p class="motion-status" data-motion-status role="status" aria-live="polite">Ready. The example starts at scale 1.6.</p>
     </div>
@@ -324,7 +321,19 @@
 <section aria-labelledby="never-reasoning-title">
   <h3 id="never-reasoning-title">Rule out every case</h3>
   <p><strong>Never</strong> needs a reason that rules out every allowed case. A <a href="#term-contradiction">contradiction</a> is a conflict between facts that cannot both be true.</p>
-  <p>Can a polygon and its uniform enlargement have equal perimeters? An enlargement makes every side longer, so the sum of the sides must grow. Equal perimeters would require the sum to stay the same. The conflict rules out every allowed enlargement.</p>
+  <p>Could a four-sided sign with an inward notch be similar to a four-sided sign with all its interior angles below 180°? Look for an angle that could never find a match.</p>
+  <div class="diagram-pair">
+    <figure><svg viewBox="0 0 270 215" role="img" aria-labelledby="notched-title notched-desc">
+      <title id="notched-title">One possible notched sign</title><desc id="notched-desc">The marked vertex bends inward. Its interior angle opens toward the sign and is greater than 180 degrees.</desc>
+      <path class="polygon" d="M47 42 225 107 47 172 94 107Z"/>
+      <circle cx="94" cy="107" r="6" fill="currentColor"/>
+    </svg><figcaption>The marked corner bends inward. Its interior angle, measured through the filled region, is greater than 180°.</figcaption></figure>
+    <figure><svg viewBox="0 0 270 215" role="img" aria-labelledby="outward-title outward-desc">
+      <title id="outward-title">One possible sign with outward corners</title><desc id="outward-desc">Four outward corners on a trapezoid. Every interior angle is less than 180 degrees.</desc>
+      <path class="polygon" d="M67 51 205 51 229 162 42 162Z"/>
+    </svg><figcaption>All four interior angles are less than 180°.</figcaption></figure>
+  </div>
+  <details><summary>Check the incompatible angle rules</summary><p>The signs are <strong>never similar</strong> under these rules. The notch forces an interior angle greater than 180°. The other rule forbids any angle that large. A turn, reflection, or uniform resize cannot supply a match. This rules out every pair in the two classes, whatever their side lengths.</p></details>
 
   <div class="practice" data-choice-quiz data-correct="b" data-success="B rules out every allowed case. A larger perimeter would require a length factor greater than 1. Its square is also greater than 1, which would make the area larger and contradict the given smaller area." data-hint="A never claim needs a reason covering every allowed case. Reconsider what each piece of evidence rules out, then choose again.">
     <h4>New check: choose enough evidence</h4>
@@ -375,12 +384,12 @@
     <div class="practice">
       <h3>Read a perimeter ratio in the requested order</h3>
       <p>A park map shows similar six-sided garden beds. A 4 m edge on the small bed matches a 7 m edge on the large bed. The small bed’s perimeter is 32 m. Find the ratio of <strong>small perimeter to large perimeter</strong>. Enter a decimal rounded to three places (the nearest thousandth).</p>
-      <form data-practice data-expected="0.5714285714285714" data-tolerance="0.0005" data-success="That fits. The large perimeter is 56 m. The requested order puts the small perimeter first, so 32 ÷ 56 ≈ 0.571." data-hint="Check the two perimeters and keep the calculator digits until you round the final ratio to three places." data-mistakes='{"1.75": "That compares large to small. The question asks for small to large.", "56": "That is the large perimeter in meters. Now divide the small perimeter by the large one.", "0.57": "If your ratio is about 0.57, keep one more decimal place. Round the original division result to the nearest thousandth."}' data-interactive-only hidden>
+      <form data-practice data-expected="0.5714285714285714" data-tolerance="0.0005" data-success="That fits. In the requested order, the perimeter ratio 32 ÷ 56 equals the matching side ratio 4 ÷ 7, about 0.571." data-hint="Compare small ÷ large, whether you use the two perimeters or the matching sides. Keep the calculator digits until the end and round the result to three places." data-mistakes='{"1.75": "That compares large to small. The question asks for small to large.", "56": "That is the large perimeter in meters. Now divide the small perimeter by the large one."}' data-interactive-only hidden>
         <label for="reduction-height">Small perimeter ÷ large perimeter</label>
         <div class="controls"><input id="reduction-height" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check ratio</button></div>
         <p data-feedback class="feedback" role="status" aria-live="polite"></p>
       </form>
-      <details data-static-only><summary>Compare your reasoning</summary><p>From small to large the length factor is 7 ÷ 4 = 1.75. The large perimeter is 32 × 1.75 = 56 m. In the requested order, 32 ÷ 56 = 4/7 ≈ 0.571. The ratio is below 1 and has no unit.</p></details>
+      <details data-static-only><summary>Compare your reasoning</summary><p>From small to large the length factor is 7 ÷ 4 = 1.75. The large perimeter is 32 × 1.75 = 56 m. Small ÷ large gives 32 ÷ 56 ≈ 0.571. You can also divide the matching sides, 4 ÷ 7. The ratios are equal because every side in the perimeter scales by the same factor. The result is below 1 and has no unit.</p></details>
       <details><summary>Hint about the ratio order</summary><p>Read “small to large” as small divided by large. Should the answer be above or below 1?</p></details>
     </div>
     <div class="practice"><h3>An icon returns</h3><p>An outline icon was enlarged with a length factor of 1.25. What length multiplier takes the enlarged icon back to its original size?</p><form data-practice data-expected="0.8" data-success="That reverses the enlargement. The outward and return multipliers have a product of one." data-hint="The return factor must undo multiplication by 1.25. Use its reciprocal." data-mistakes='{"1.25":"That repeats the enlargement. The return step must undo it.","0.64":"That squares the return factor. The question asks about a length multiplier, not area."}' data-interactive-only hidden><label for="return-factor">Return multiplier</label><div class="controls"><input id="return-factor" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check direction</button></div><p data-feedback class="feedback" role="status" aria-live="polite"></p></form><details data-static-only><summary>Compare your reasoning</summary><p>The return length multiplier is 1 ÷ 1.25 = 0.8. Check: 1.25 × 0.8 = 1, so the two changes undo each other.</p></details><details><summary>Hint about undoing a change</summary><p>What number multiplied by 1.25 would give one?</p></details></div>
@@ -397,12 +406,12 @@
     <h2 id="ideas">Your glossary</h2>
     <dl>
       <dt>Similar polygons</dt><dd>Polygons with the same shape: corresponding angles have equal measures, and every corresponding side length has the same scale factor. Size and orientation may differ.</dd>
-      <dt>Corresponding parts</dt><dd>Vertices, angles, and sides that match under the similarity. Their order matters.</dd>
-      <dt>Angle arcs</dt><dd>Curved marks inside an angle. The same arc pattern marks equal angle measures; its arc count identifies a group rather than a number of degrees. Different patterns alone do not assert unequal angles.</dd>
+      <dt id="term-correspondence">Corresponding parts</dt><dd>Vertices, angles, and sides that match under the similarity. Their order matters.</dd>
+      <dt id="term-angle-arcs">Angle arcs</dt><dd>Curved marks inside an angle. The same arc pattern marks equal angle measures; its arc count identifies a group rather than a number of degrees. Different patterns alone do not assert unequal angles.</dd>
       <dt>Congruent angles</dt><dd>Angles with equal measures. Enlarging a similar figure does not enlarge its angles.</dd>
       <dt>Symbols ∼, ≅, ∠, ↔, and °</dt><dd>∼ means similar to. ≅ means congruent to. ∠ names an angle. ↔ marks corresponding parts. ° means degrees, a unit of angle measure. A superscript ² means squared, or multiplied by itself.</dd>
-      <dt>Scale factor, <var>k</var></dt><dd>The positive multiplier that takes each original length to its matching target length.</dd>
-      <dt>Perimeter and area</dt><dd>Perimeter measures the boundary in length units. Area measures the interior in square units.</dd>
+      <dt id="term-scale-factor">Scale factor, <var>k</var></dt><dd>The positive multiplier that takes each original length to its matching target length.</dd>
+      <dt id="term-perimeter-area">Perimeter and area</dt><dd>Perimeter measures the boundary in length units. Area measures the interior in square units.</dd>
     </dl>
     <details><summary>More words in this lesson</summary><dl>
       <dt>Polygon and vertex</dt><dd>A polygon is a closed flat shape made of straight sides. A vertex is a corner where two sides meet; vertices is the plural.</dd>
@@ -419,7 +428,7 @@
   </section>
 
 
-  <section class="sources" aria-labelledby="sources"><h2 id="sources">See scaling in other pictures</h2><p>Try spotting whether one multiplier works on each part of a block letter. <a href="https://im.kendallhunt.com/MS/students/2/1/1/index.html">Illustrative Mathematics: What are Scaled Copies?</a></p><p>Move the top corner of a triangle and watch which height the area formula uses. <a href="https://www.mathopenref.com/trianglearea.html">Math Open Reference: Area of a triangle</a>.</p><p><a class="return-link" href="../index.html">Return to the lesson library</a></p></section>
+  <section class="sources" aria-labelledby="sources"><h2 id="sources">See scaling in other pictures</h2><p>See how turning and resizing can make two outlines line up exactly. <a href="https://im.kendallhunt.com/HS/students/2/3/6/index.html">Illustrative Mathematics: Connecting Similarity and Transformations</a>.</p><p>Try spotting whether one multiplier works on each part of a block letter. <a href="https://im.kendallhunt.com/MS/students/2/1/1/index.html">Illustrative Mathematics: What are Scaled Copies?</a></p><p>Move the top corner of a triangle and watch which height the area formula uses. <a href="https://www.mathopenref.com/trianglearea.html">Math Open Reference: Area of a triangle</a>.</p><p><a class="return-link" href="../index.html">Return to the lesson library</a></p></section>
 </details>
 </main>
 </body>

@@ -67,12 +67,12 @@ function initializeExplorer(explorer) {
     if(reduce.checked){draw(2.4);announce('Reduced motion: showing the end state.');return;}
     const started=performance.now();
     play.setAttribute('aria-pressed','true');pause.disabled=false;
-    status.textContent='Playing one enlargement. Pause at any time.';
+    status.textContent='Playing from scale 0.8 to 2.4. Pause at any time.';
     const tick=now=>{
       const progress=Math.min((now-started)/4000,1);
       draw(0.8+1.6*progress);
       if(progress<1)frame=requestAnimationFrame(tick);
-      else{stop();announce('Enlargement complete.');}
+      else{stop();announce('Resize complete.');}
     };
     frame=requestAnimationFrame(tick);
   });
@@ -90,11 +90,14 @@ for(const quiz of document.querySelectorAll('[data-choice-quiz]')) {
   for (const button of choices) {
     button.setAttribute('aria-pressed', 'false');
     button.addEventListener('click', () => {
+      const repeated = button.getAttribute('aria-pressed') === 'true';
       for (const choice of choices) {
         choice.setAttribute('aria-pressed', String(choice === button));
       }
-      feedback.textContent = button.dataset.choice===quiz.dataset.correct
+      const message = button.dataset.choice === quiz.dataset.correct
         ? quiz.dataset.success : (button.dataset.hint || quiz.dataset.hint);
+      feedback.textContent = repeated && feedback.textContent === message
+        ? 'Checked again. ' + message : message;
     });
   }
   revealReadyRegion(quiz);

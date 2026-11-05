@@ -34,3 +34,4 @@ The chemistry sequence uses original prerequisite models and independently selec
 
 - Author verification for the fresh structure examples: [NIST dimethylamine](https://webbook.nist.gov/cgi/formula?ID=C124403&Mask=4) and [NIST chloroacetylene](https://cccbdb.nist.gov/exp2x.asp?casno=593635&charge=0).
 - RSC author verification of Pauling values for [silicon](https://periodic-table.rsc.org/element/14/silicon) and [sulfur](https://periodic-table.rsc.org/element/16/sulfur).
+- Author evidence for group clues and original formula examples includes [OpenStax group and ion relationships](https://openstax.org/books/chemistry-2e/pages/2-6-ionic-and-molecular-compounds), [PubChem rubidium sulfide](https://pubchem.ncbi.nlm.nih.gov/compound/Rubidium-sulfide), and [NIST germanium disulfide](https://webbook.nist.gov/cgi/cbook.cgi?ID=12025342).

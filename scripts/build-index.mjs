@@ -95,7 +95,7 @@ export function renderIndex(manifest, template, registry = defaultRegistry) {
   validateManifest(manifest, registry);
   const count = manifest.lessons.length;
   const content = registry.map(({ id, label }) => {
-    const lessons = manifest.lessons.filter(lesson=>subjectOf(lesson)===label).sort((a,b)=>b.file.localeCompare(a.file));
+    const lessons = manifest.lessons.filter(lesson=>subjectOf(lesson)===label).sort((a,b)=>a.file.localeCompare(b.file));
     const headingId = 'subject-'+id;
     const entries = lessons.length ? `<ul class="lesson-list">\n${lessons.map(lesson => `        <li><a class="lesson-link" href="lessons/${escape(lesson.file)}"><div><h4>${escape(lesson.title)}</h4><span class="topic-line">${lesson.topics.map(escape).join(' · ')}</span></div><p>${escape(lesson.summary)} <span aria-hidden="true">↗</span></p></a></li>`).join('\n')}\n      </ul>` : `<p class="subject-empty">No ${escape(label.toLowerCase())} lessons yet. A concept lesson will appear here when one is added.</p>`;
     return `<section class="subject-group" aria-labelledby="${headingId}"><div class="subject-heading"><h3 id="${headingId}">${escape(label)}</h3><p>${lessons.length} ${lessons.length===1?'lesson':'lessons'}</p></div>${entries}</section>`;

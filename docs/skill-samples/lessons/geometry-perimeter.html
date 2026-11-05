@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Trace the edge, find missing lengths, and tell when to count squares instead.">
+  <title>Around the edge | Geometry lesson</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/around-the-edge.css">
+  <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/around-the-edge.js" defer></script>
+</head>
+<body class="edge-lesson">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <header class="edge-header">
+      <p class="eyebrow">Geometry <span>·</span> Grade 3</p>
+      <h1>Around the edge</h1>
+      <p class="lead">Find how far it is around a shape, even when some side lengths are missing. Learn when you need to count squares instead.</p>
+      <ul class="edge-jumps" aria-label="On this page">
+        <li><a href="#trace">Trace the edge</a></li>
+        <li><a href="#pairs">Use matching sides</a></li>
+        <li><a href="#missing">Find missing lengths</a></li>
+        <li><a href="#inside">Count the inside</a></li>
+        <li><a href="#your-turn">Try a mix</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </header>
+
+    <section id="trace" aria-labelledby="trace-title">
+      <p class="eyebrow">01 <span>·</span> Follow the line</p>
+      <h2 id="trace-title">One trip around</h2>
+      <p>Imagine a robot rolling on the edge of a mat. The <strong>perimeter</strong> is the distance all the way around that edge. Start at a corner. Follow each side once until you get back to where you started.</p>
+      <aside class="quick"><strong>Quick start.</strong> On a grid, moving from one dot to the next is one step. Start at a dot and move right three steps. Did you pass along three short lines or four?
+        <details><summary>Check the quick start</summary><p>Three lines. You can touch four dots, including the start. Count the spaces you travel between dots.</p></details>
+      </aside>
+      <h3>Test the robot’s route</h3>
+      <p><strong>Predict:</strong> How many unit steps will the robot travel? Will it count any squares? Use the picture before moving the robot.</p>
+      <div class="trace-panel" data-trace>
+        <figure class="trace-figure">
+          <svg viewBox="0 0 320 249" role="img" aria-labelledby="route-name route-desc">
+            <title id="route-name">A robot route on a grid</title>
+            <desc id="route-desc">The start is the upper left corner of the mat. The outline goes right four steps, down one, left two, down two, left two, then up three back to the start. Each small grid edge is one unit.</desc>
+            <rect x="38" y="39" width="244" height="183" rx="10" class="diagram-card"/>
+            <path d="M64 56H256V104H160V200H64Z" class="route-fill"/>
+            <path d="M64 56H256M64 104H256M64 152H256M64 200H256M64 56V200M112 56V200M160 56V200M208 56V200M256 56V200" class="grid-lines"/>
+            <path d="M64 56H256V104H160V200H64Z" class="route-line"/>
+            <g class="traced-lines">
+              <path d="M64 56H256" data-leg="1"/><path d="M256 56V104" data-leg="2"/>
+              <path d="M256 104H160" data-leg="3"/><path d="M160 104V200" data-leg="4"/>
+              <path d="M160 200H64" data-leg="5"/><path d="M64 200V56" data-leg="6"/>
+            </g>
+            <circle cx="64" cy="56" r="7" class="route-start"/>
+            <circle cx="64" cy="56" r="6" class="route-robot" data-robot/>
+            <text x="48" y="25">Start</text>
+            <path d="M70 31L65 44" class="diagram-mark"/>
+            <path d="M64 232H112M64 227V237M112 227V237" class="diagram-mark"/>
+            <text x="122" y="238">1 unit</text>
+          </svg>
+          <figcaption>One short grid edge stands for one unit of length. The robot stays on the solid outline. A dotted line inside the mat is not part of its route.</figcaption>
+        </figure>
+        <div class="trace-controls" data-trace-controls hidden>
+          <p class="trace-readout" data-trace-status role="status" aria-live="polite" aria-atomic="true">At the start. Total: 0 units.</p>
+          <div class="controls">
+            <button type="button" data-prev disabled>Back</button>
+            <button type="button" data-next disabled>Next stretch</button>
+            <button type="button" data-reset disabled>Start over</button>
+          </div>
+        </div>
+      </div>
+      <details class="print-reveal">
+        <summary>Compare your prediction</summary>
+        <p>Follow the turns: right 4, down 1, left 2, down 2, left 2, up 3. The last stretch matters: it brings the robot back to the start.</p>
+        <p class="equation">4 + 1 + 2 + 2 + 2 + 3 = 14</p>
+        <p>The perimeter is <strong>14 units</strong>. The robot counts lengths along lines, not squares.</p>
+      </details>
+      <div class="try">
+        <h3>Try it: a route that stops early</h3>
+        <p>A cart goes right 2 units, down 1 unit, then right 4 units. It stops there. How far did it go? Is that a perimeter?</p>
+        <form data-practice data-expected="7" data-hint="Add only the three lengths the cart traveled. Try again." data-mistakes='{"6":"That adds the two right turns. The cart traveled down, too. Add that stretch and retry.","3":"There are three stretches, but they are not one unit each. Add their lengths and retry."}' data-success="Yes, 7 units. The cart never returns to its start, so this is a route length. Explain why you would not add a fourth stretch.">
+          <label for="cart-length">Distance traveled (units)</label>
+          <div class="answer-row"><input id="cart-length" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
+          <p class="feedback" data-feedback role="status"></p>
+        </form>
+        <details class="static-feedback print-reveal"><summary>Compare or retry</summary>
+          <p>2 + 1 + 4 = 7. That is 7 units of travel. The cart never returns to its start. If it went 2 units right, 1 down, then only 3 right, what would change?</p>
+          <details><summary>Check the retry</summary><p>One unit less: 2 + 1 + 3 = 6. The route still ends away from its start.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section id="pairs" aria-labelledby="pairs-title">
+      <p class="eyebrow">02 <span>·</span> Find what repeats</p>
+      <h2 id="pairs-title">A rectangle has two pairs</h2>
+      <p><strong>Opposite sides</strong> are across from each other. In a rectangle, opposite sides match in length: top matches bottom, and left matches right. A blank label does not mean a side has no length.</p>
+      <div class="example">
+        <figure>
+          <svg viewBox="0 0 330 154" role="img" aria-labelledby="plate-name plate-desc">
+            <title id="plate-name">A rectangular nameplate</title>
+            <desc id="plate-desc">The top is labeled 11 centimeters and has one mark, just like the bottom. The left is labeled 3 centimeters and has two marks, just like the right.</desc>
+            <rect x="60" y="46" width="209" height="57" rx="0" class="shape-fill diagram-mark"/>
+            <path d="M60 55H69V46M260 103V94H269" class="diagram-mark"/>
+            <path d="M163 39V53M163 96V110" class="match-one"/>
+            <path d="M53 71H67M53 78H67M262 71H276M262 78H276" class="match-two"/>
+            <text x="164" y="28" text-anchor="middle">11 cm</text>
+            <text x="10" y="80">3 cm</text>
+          </svg>
+          <figcaption>Matching marks show matching lengths. <strong>cm</strong> stands for centimeters, a unit of length. Read the labels rather than measuring your screen.</figcaption>
+        </figure>
+        <div class="worked">
+          <h3>Seal the nameplate</h3>
+          <p><strong>Given:</strong> A rectangle with sides of 11 cm and 3 cm that meet at a corner.</p>
+          <p><strong>Find:</strong> The length of seal needed around the edge, with no gap or overlap.</p>
+          <p><strong>Work:</strong> Copy each length to its opposite side. Add the four lengths. Here the numbers are all in centimeters.</p>
+          <p class="equation">11 + 3 + 11 + 3 = 14 + 14 = 28</p>
+          <p>The seal needs to be <strong>28 cm</strong> long. Each side of an equals sign (=) has the same value. Here both sums equal 28.</p>
+        </div>
+      </div>
+      <p>A <strong>square</strong> is a rectangle with four equal sides. You can add the same length four times or multiply that length by 4. The sign <strong>×</strong> means multiply: <span class="math">4 × 5</span> means four groups of five.</p>
+      <div class="try">
+        <h3>Try it: do the edges match?</h3>
+        <p>A square has sides of 5 meters. A different rectangle has sides of 7 meters and 3 meters. Can one piece of cord fit exactly around either shape? Find the perimeter of each before you decide.</p>
+        <details class="print-reveal"><summary>Compare or retry</summary>
+          <p>For the square, <span class="math">5 + 5 + 5 + 5 = 4 × 5 = 20</span>. For the other rectangle, <span class="math">7 + 3 + 7 + 3 = 20</span>. Both perimeters are 20 meters, so a 20-meter cord fits either one with no overlap. If you got 10 meters for the rectangle, you counted only two of the four sides.</p>
+          <p>Retry with a 6-meter square and a rectangle that is 10 meters by 2 meters. Will one cord fit both?</p>
+          <details><summary>Check the retry</summary><p>Yes. Each perimeter is 24 meters: four groups of 6 or two groups of 12.</p></details>
+        </details>
+      </div>
+    </section>
+
+
+    <section id="missing" aria-labelledby="missing-title">
+      <p class="eyebrow">03 <span>·</span> Work back from the total</p>
+      <h2 id="missing-title">What part is missing?</h2>
+      <p>When you know the perimeter, you know the whole length around. The side lengths are its parts. Mark the known sides first. Then ask whether the part left over is one side or is shared by equal sides.</p>
+
+      <div class="example">
+        <figure>
+          <svg viewBox="0 0 314 205" role="img" aria-labelledby="triangle-name triangle-desc">
+            <title id="triangle-name">A triangle with one missing label</title>
+            <desc id="triangle-desc">The triangle has a bottom edge of 9 centimeters and a left edge of 7 centimeters. The right edge is marked with a question mark. A separate strip shows 7, then 9, then an unknown part of the 22-centimeter total.</desc>
+            <path d="M48 127L163 24L246 127Z" class="shape-fill diagram-mark"/>
+            <path d="M163 24L246 127" class="match-two unknown-line"/>
+            <text x="60" y="71">7 cm</text>
+            <text x="211" y="71">?</text>
+            <text x="126" y="148">9 cm</text>
+            <rect x="43" y="162" width="220" height="35" rx="5" class="shape-fill diagram-mark"/>
+            <path d="M113 162V197M203 162V197" class="diagram-mark"/>
+            <text x="78" y="185" text-anchor="middle">7</text><text x="158" y="185" text-anchor="middle">9</text><text x="233" y="185" text-anchor="middle">?</text>
+          </svg>
+          <figcaption>The strip puts the side lengths end to end. The whole strip stands for 22 cm. The question mark is one part.</figcaption>
+        </figure>
+        <div class="worked">
+          <h3>One side is missing</h3>
+          <p><strong>Given:</strong> A triangle has perimeter 22 cm. Two sides measure 7 cm and 9 cm.</p>
+          <p><strong>Find:</strong> The third side.</p>
+          <p><strong>Work:</strong> Add the known lengths. Subtract that sum from the whole perimeter. All lengths here are in centimeters.</p>
+          <ol class="math-steps">
+            <li><span class="equation">7 + 9 = 16</span><span>Two known sides together</span></li>
+            <li><span class="equation">22 − 16 = 6</span><span>One side left</span></li>
+          </ol>
+          <p><strong>Check:</strong> <span class="math">7 + 9 + 6 = 22</span>. The 6 cm side makes the given total.</p>
+        </div>
+      </div>
+      <div class="try">
+        <h3>Try it: spot the wrong total</h3>
+        <p>A three-sided sign has sides of 10 cm, 14 cm, and a missing length. Its perimeter is 33 cm. Someone wrote 24 cm on the missing side. What does 24 cm actually measure?</p>
+        <details class="print-reveal"><summary>Compare or retry</summary>
+          <p>24 cm is the total for the two known sides: <span class="math">10 + 14 = 24</span>. It is not what’s left. Subtract: <span class="math">33 − 24 = 9</span>. Check that <span class="math">10 + 14 + 9 = 33</span>.</p>
+          <p>Retry: the sign’s perimeter is 35 cm instead. The two known sides stay the same. What is the missing length now?</p>
+          <details><summary>Check the retry</summary><p><span class="math">35 − 24 = 11</span>, so the missing side is 11 cm.</p></details>
+        </details>
+      </div>
+
+      <div class="example">
+        <figure>
+          <svg viewBox="0 0 330 174" role="img" aria-labelledby="frame-name frame-desc">
+            <title id="frame-name">Two corner pieces form a rectangle</title>
+            <desc id="frame-desc">The solid upper and left sides form one corner piece. The dashed lower and right sides form the matching piece. Each short arm is 6 millimeters. The longer arms are unknown and equal.</desc>
+            <path d="M62 119V47H194V119Z" class="shape-fill"/>
+            <path d="M62 119V47H194" class="match-one heavy"/>
+            <path d="M194 47V119H62" class="match-two heavy dashed"/>
+            <text x="128" y="27" text-anchor="middle">?</text><text x="128" y="146" text-anchor="middle">?</text>
+            <text x="6" y="89">6 mm</text><text x="210" y="89">6 mm</text>
+          </svg>
+          <figcaption>Each corner piece covers one short side and one long side. <strong>mm</strong> stands for millimeters, a unit of length.</figcaption>
+        </figure>
+        <div class="worked">
+          <h3>Two missing sides match</h3>
+          <p><strong>Given:</strong> Two matching corner pieces snap together to make a rectangle. The two arms on each piece measure 17 mm in all. The short arm is 6 mm.</p>
+          <p><strong>Find:</strong> The lengths of all four sides.</p>
+          <p><strong>Work:</strong> Find the long arm of one piece. The other piece has the same lengths. All lengths here are in millimeters.</p>
+          <p class="equation">17 − 6 = 11</p>
+          <p><strong>Check:</strong> The sides are 6 mm, 11 mm, 6 mm, and 11 mm. They make a perimeter of 34 mm because <span class="math">6 + 11 + 6 + 11 = 34</span>.</p>
+          <details class="print-reveal"><summary>What if you start with the whole perimeter?</summary>
+            <p>For this same rectangle, start with 34 mm and take out <em>both</em> short sides. The two equal sides share what’s left. The sign <strong>÷</strong> means divide, here to split into equal parts.</p>
+            <ol class="math-steps">
+              <li><span class="equation">6 + 6 = 12</span><span>Both short sides</span></li>
+              <li><span class="equation">34 − 12 = 22</span><span>Both long sides</span></li>
+              <li><span class="equation">22 ÷ 2 = 11</span><span>One long side</span></li>
+            </ol>
+          </details>
+        </div>
+      </div>
+      <div class="try">
+        <h3>Try it: read a shape maker’s note</h3>
+        <p>For a rectangle, the top and bottom together measure 30 cm. All four sides together measure 38 cm. How long is the <em>left</em> side?</p>
+        <form data-practice data-expected="4" data-hint="Take away the total for top and bottom. Share what remains between the matching left and right sides. Try again." data-mistakes='{"8":"8 cm is the total for left and right together. They are equal, so divide that length in two and retry.","15":"15 cm is the length of one of the two sides in the note. You need a side from the other pair. Try again."}' data-success="Yes, 4 cm. Check by adding 4 cm twice to the 30 cm already counted.">
+          <label for="left-length">Left side (cm)</label>
+          <div class="answer-row"><input id="left-length" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
+          <p class="feedback" data-feedback role="status"></p>
+        </form>
+        <details class="static-feedback print-reveal"><summary>Compare or retry</summary>
+          <p><span class="math">38 − 30 = 8</span> and <span class="math">8 ÷ 2 = 4</span>. The left and right sides measure 8 cm together, so each measures 4 cm. Now try a perimeter of 44 cm with the same top-and-bottom total.</p>
+          <details><summary>Check the retry</summary><p><span class="math">44 − 30 = 14</span> and <span class="math">14 ÷ 2 = 7</span>. Each remaining side is 7 cm.</p></details>
+        </details>
+      </div>
+
+      <div class="example">
+        <figure>
+          <svg viewBox="0 0 300 176" role="img" aria-labelledby="equal-name equal-desc">
+            <title id="equal-name">Eight sides marked equal</title>
+            <desc id="equal-desc">A closed shape with eight equal sides. There is one short mark across each side. Each mark means that side has the same length as all the others.</desc>
+            <path d="M120 20H180L222.43 62.43V122.43L180 164.85H120L77.57 122.43V62.43Z" class="shape-fill diagram-mark"/>
+            <path d="M150 13V27M196 46L206 36M215 92H229M196 139L206 149M150 158V172M94 149L104 139M71 92H85M94 36L104 46" class="match-two"/>
+            <text x="150" y="98" text-anchor="middle">8 sides</text>
+          </svg>
+          <figcaption>One matching mark on every side means all eight lengths are equal. The shape’s looks alone would not tell us that.</figcaption>
+        </figure>
+        <div class="worked">
+          <h3>All the sides match</h3>
+          <p><strong>Given:</strong> An eight-sided game board has eight equal sides and a perimeter of 48 cm.</p>
+          <p><strong>Find:</strong> The length of one side.</p>
+          <p><strong>Work:</strong> Share the whole perimeter among eight sides. Each gets the same length.</p>
+          <p class="equation">48 ÷ 8 = 6</p>
+          <p><strong>Check:</strong> One side is 6 cm. Eight copies make the whole length because <span class="math">8 × 6 = 48</span>.</p>
+        </div>
+      </div>
+      <div class="try">
+        <h3>Try it: choose a set of sticks</h3>
+        <p>Build a triangle with three equal sides and a perimeter of 21 cm. You have sets of 3 cm, 7 cm, and 10 cm sticks. Use one set only. What length works? How can you prove it with multiplication?</p>
+        <form data-practice data-expected="7" data-hint="Look for a stick length that gives 21 cm when you use three copies. Try again." data-mistakes='{"3":"3 is how many sticks you need. Check whether three 3 cm sticks add up to 21 cm.","10":"Three 10 cm sticks add to 30 cm. Try a shorter set."}' data-success="Yes, 7 cm works because three copies of 7 cm make 21 cm.">
+          <label for="stick-length">Length of each stick (cm)</label>
+          <div class="answer-row"><input id="stick-length" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
+          <p class="feedback" data-feedback role="status"></p>
+        </form>
+        <details class="static-feedback print-reveal"><summary>Compare or retry</summary>
+          <p>Three 7 cm sticks work: <span class="math">3 × 7 = 21</span>. The 3 cm sticks make only 9 cm, and the 10 cm sticks make 30 cm. If the only sticks available were 10 cm each, what perimeter could your triangle have?</p>
+          <details><summary>Check the retry</summary><p>30 cm. Three equal lengths of 10 cm make 30 cm altogether.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section id="inside" aria-labelledby="inside-title">
+      <p class="eyebrow">04 <span>·</span> Edge or inside?</p>
+      <h2 id="inside-title">Same shape, two things to measure</h2>
+      <p>To put tape around an edge, measure its <strong>perimeter</strong>. To cover the inside, measure its <strong>area</strong>. Area tells how much space a flat shape covers.</p>
+      <figure class="area-figure">
+        <svg viewBox="0 0 320 191" role="img" aria-labelledby="area-name area-desc">
+          <title id="area-name">A label on a square grid</title>
+          <desc id="area-desc">The label is six centimeters wide and four centimeters high. A thick outline marks the perimeter. Four rows of six squares cover the inside. One highlighted square measures one centimeter on each side.</desc>
+          <rect x="69" y="33" width="180" height="120" class="area-fill"/>
+          <rect x="69" y="123" width="30" height="30" class="tile-example"/>
+          <path d="M99 33V153M129 33V153M159 33V153M189 33V153M219 33V153M69 63H249M69 93H249M69 123H249" class="grid-lines"/>
+          <rect x="69" y="33" width="180" height="120" class="route-line"/>
+          <text x="159" y="23" text-anchor="middle">6 cm</text><text x="256" y="100">4 cm</text>
+          <path d="M83 153V170H106" class="diagram-mark"/>
+          <text x="114" y="176">1 square cm</text>
+        </svg>
+        <figcaption>Each square is 1 cm by 1 cm. It covers one <strong>square centimeter</strong>. An edge of that square is 1 cm long. The grid models squares that fit with no gaps or overlaps.</figcaption>
+      </figure>
+      <div class="worked area-worked">
+        <p><strong>Given:</strong> A label measures 6 cm by 4 cm.</p>
+        <p><strong>Find:</strong> The length of tape for its edge and the area to cover with ink.</p>
+        <div class="two-measures">
+          <div>
+            <h3>Edge · tape</h3>
+            <p>Follow the four sides. Add lengths in centimeters.</p>
+            <p class="equation">6 + 4 + 6 + 4 = 20</p>
+            <p><strong>20 cm</strong> of tape</p>
+          </div>
+          <div>
+            <h3>Inside · ink</h3>
+            <p>Count the squares. There are four rows of six squares.</p>
+            <p class="equation">4 × 6 = 24</p>
+            <p><strong>24 square cm</strong> of space</p>
+          </div>
+        </div>
+      </div>
+      <div class="try">
+        <h3>Try it: compare two signs</h3>
+        <p>One sign has 2 rows of 7 unit squares. The other has 3 rows of 6. Each is a rectangle. Which takes more paint to cover, if both get the same coat of paint? Would the same length of tape go around each?</p>
+        <details class="print-reveal"><summary>Compare or retry</summary>
+          <p>Compare the insides for paint: <span class="math">2 × 7 = 14</span> and <span class="math">3 × 6 = 18</span>. The second sign covers more square units. Compare the edges for tape: <span class="math">7 + 2 + 7 + 2 = 18</span> and <span class="math">6 + 3 + 6 + 3 = 18</span>. Both take 18 units of tape. An area of 18 square units measures something different from 18 units of length.</p>
+          <p>Retry: change the second sign to 3 rows of 5 squares. Compare paint and tape again.</p>
+          <details><summary>Check the retry</summary><p>The new sign still uses more paint: 15 square units is more than 14. It uses less tape: <span class="math">5 + 3 + 5 + 3 = 16</span>, which is less than 18.</p></details>
+        </details>
+      </div>
+    </section>
+
+    <section id="your-turn" aria-labelledby="turn-title">
+      <p class="eyebrow">05 <span>·</span> Pick your method</p>
+      <h2 id="turn-title">Which tool fits?</h2>
+      <p>Say what you would measure before you do any math. Then try each one on paper or out loud.</p>
+      <ol class="mixed">
+        <li>Two test mats are each 1 meter by 4 meters. They touch along their 4-meter sides to form one rectangle. How many meters of cord would go around the new shape?</li>
+        <li>A loop has 45 cm of wire, bent into three equal sides. Could each side be 14 cm? Explain how you can tell.</li>
+        <li>A design is 5 squares wide and 3 squares tall. Each square gets one stamp. How many stamps do you need?</li>
+      </ol>
+      <details class="print-reveal"><summary>Check your methods</summary>
+        <ol class="mixed">
+          <li>Add the outside lengths. The joined edge is now inside. <span class="math">4 + 2 + 4 + 2 = 12</span>, so you need 12 meters of cord. Adding both old perimeters counts the joined edge twice.</li>
+          <li>Test the length: <span class="math">3 × 14 = 42</span>. That is 3 cm short of the full loop. Split 45 cm into three equal lengths, so <span class="math">45 ÷ 3 = 15</span>. Each side is 15 cm.</li>
+          <li>Count the inside squares: <span class="math">3 × 5 = 15</span>. You need 15 stamps. Adding side lengths would measure only the outside.</li>
+        </ol>
+      </details>
+      <p class="quick"><strong>Exit check.</strong> Finish both sentences: “I know it’s perimeter when …” and “If a length is missing, I can check it by …” Draw a tiny picture for one of your explanations.</p>
+      <p><strong>Back at your work:</strong> Point to what the question asks you to measure. Mark all the lengths you know. Write a number sentence and name the unit. If you found missing sides, add all sides to check the total.</p>
+      <p><strong>Next time:</strong> Before opening this page, draw a rectangle that is 4 units long and 2 units wide. Trace its perimeter, then sketch the squares inside. Can you say what each count measures?</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt>Perimeter</dt><dd>The total length around the edge of a flat shape.</dd>
+        <dt>Opposite sides</dt><dd>Sides across from each other in a rectangle. Each pair has equal lengths.</dd>
+        <dt>Square</dt><dd>A rectangle with four sides of equal length.</dd>
+        <dt>Area</dt><dd>The amount of flat space inside a shape, measured in square units.</dd>
+        <dt>Unit of length</dt><dd>A set length, such as a meter, a centimeter (cm), or a millimeter (mm).</dd>
+        <dt>Square unit</dt><dd>The space a square covers when each side is one unit long. A 1 cm by 1 cm square covers 1 square centimeter.</dd>
+        <dt>=, +, −, ×, ÷</dt><dd>Equals (=) says both sides have the same value. Add (+) joins parts. Subtract (−) can tell how much is left. Multiply (×) can count equal groups. Divide (÷) can split a total into equal groups.</dd>
+      </dl>
+    </section>
+    <section class="sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Read a little more</h2>
+      <p>See more examples of <a href="https://www.mathsisfun.com/definitions/perimeter.html">measuring around shapes</a> and <a href="https://www.mathsisfun.com/definitions/area.html">counting squares to find area</a> at Math Is Fun.</p>
+    </section>
+  </main>
+</body>
+</html>

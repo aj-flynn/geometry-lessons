@@ -20,15 +20,16 @@ for (const model of document.querySelectorAll('[data-chem-steps]')) {
   const notes = [...model.querySelectorAll('.step-notes li')];
   const status = model.querySelector('[data-step-status]');
   const play = model.querySelector('[data-play]');
+  const description = model.querySelector('svg desc');
   let step = 0, timer = null;
   function pause() { clearInterval(timer); timer = null; play.setAttribute('aria-pressed','false'); }
   function draw(announce=true) {
     if(announce) model.querySelector('.observations').open=true;
     for (const node of model.querySelectorAll('[data-stage]')) {
-      if(model.dataset.exclusive !== undefined) node.style.display = Number(node.dataset.stage) === step ? 'inline' : 'none';
+      if(model.dataset.exclusive !== undefined) node.style.display = Number(node.dataset.stage) === step ? 'revert' : 'none';
       else node.style.opacity = Number(node.dataset.stage) <= step ? '1' : '0';
     }
-    model.querySelector('svg desc').textContent=notes[step].textContent;
+    if (description) description.textContent = notes[step].textContent;
     notes.forEach((note,i)=>note.classList.toggle('current-step',i===step));
     if(type==='separate') {
       const distance = step*45;

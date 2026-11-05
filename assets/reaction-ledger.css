@@ -1,0 +1,43 @@
+.reaction-ledger .ledger-display {
+  background: #fff;
+  border: 2px solid #146875;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.reaction-ledger .ledger-stage-label {
+  margin: 0;
+}
+
+.reaction-ledger .ledger-equation {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-block: .35em .5em;
+}
+
+.reaction-ledger .ledger-term {
+  white-space: nowrap;
+}
+
+.reaction-ledger .ledger-totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em 2em;
+  border-top: 1px solid #68807a;
+  padding-top: .5em;
+}
+
+.reaction-ledger .ledger-totals dt,
+.reaction-ledger .ledger-totals dd {
+  margin: 0;
+}
+
+.reaction-ledger .enhanced:not([hidden]) ~ .observations .ledger-static-equation {
+  display: none;
+}
+
+@media print {
+  .reaction-ledger .enhanced:not([hidden]) ~ .observations .ledger-static-equation {
+    display: block;
+  }
+}

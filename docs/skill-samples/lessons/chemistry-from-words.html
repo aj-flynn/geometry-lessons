@@ -8,8 +8,9 @@
   <title>From reaction words to a balanced equation</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
   <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
+  <link rel="stylesheet" href="../../../assets/reaction-ledger.css">
   <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
-  <script src="../../../assets/chemistry.js?v=20261105-r9" defer></script>
+  <script src="../../../assets/chemistry.js?v=ledger-notation" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,40 +32,42 @@
     <section aria-labelledby="translate">
       <h2 id="translate">Read the description before you balance</h2>
       <ol>
-        <li>Put the <strong>reactants</strong> (starting substances) left of the arrow and the <strong>products</strong> (substances formed) on the right. Use a plus sign between substances on the same side. In “Y is produced when X reacts,” X goes on the left.</li>
-        <li>Write each substance’s formula and state. Copy a formula when it is given. Look up an element’s symbol for a solid metal, use the given molecular formula or its name for a molecular substance, and use ion charges to write a neutral formula for an ionic compound.</li>
-        <li>Keep those formulas fixed. Balance by changing only <strong>coefficients</strong>, the numbers in front. A <strong>subscript</strong>, the small number after a symbol or group, tells you what one molecule or one ionic formula unit contains. A missing coefficient or subscript means 1.</li>
+        <li>Put the <strong><a href="#term-reactants">reactants</a></strong> (starting substances) left of the arrow and the <strong><a href="#term-products">products</a></strong> (substances formed) on the right. Use a plus sign between substances on the same side. In “Y is produced when X reacts,” X goes on the left.</li>
+        <li>Write each substance’s formula and state. Copy a formula when it is given. Look up an element’s symbol for a solid metal, use the given molecular formula or its name for a molecular substance, and use the charges on <a href="#term-ion">ions</a> (atoms or bonded groups with a net charge) to write a neutral formula for an ionic compound.</li>
+        <li>Keep those formulas fixed. Balance by changing only <strong><a href="#term-coefficient">coefficients</a></strong> (the numbers in front). A <strong><a href="#term-subscript">subscript</a></strong> (the small number after a symbol or group) tells you what one molecule or one ionic <a href="#term-formula-unit">formula unit</a> (the simplest ratio of ions) contains. A missing coefficient or subscript means 1.</li>
         <li>Check the number of atoms of every element on both sides. Divide all coefficients by any shared factor greater than 1. Omit coefficients of 1 in the final equation.</li>
       </ol>
-      <p>Use <strong>(s)</strong> for solid, <strong>(l)</strong> for liquid, <strong>(g)</strong> for gas or vapor, and <strong>(aq)</strong> for a substance dissolved in water. A <strong>molecular equation</strong> writes each compound as a whole formula, even for dissolved ionic compounds. An ionic formula unit gives an ion ratio. It represents neither a separate molecule in a crystal nor a cluster that stays together in water.</p>
+      <p>Use <strong>(s)</strong> for solid, <strong>(l)</strong> for liquid, <strong>(g)</strong> for gas or vapor, and <strong><a href="#term-aqueous">(aq)</a></strong> for a substance dissolved in water. Use a <strong><a href="#term-molecular-equation">molecular equation</a></strong> (an equation with whole formulas), even for dissolved ionic compounds. An ionic formula unit gives an ion ratio. It represents neither a separate molecule in a crystal nor a cluster that stays together in water.</p>
       <p>A balanced equation conserves atoms and total charge. The substances here all have neutral formulas, so the total charge is zero on each side. Balancing uses the products given in the description and cannot establish which products will form.</p>
       <h3>One coefficient changes every count in its formula</h3>
-      <p>Gaseous nitrogen monoxide and diatomic oxygen gas form gaseous nitrogen dioxide. A <strong>diatomic</strong> molecule has two atoms. The names give NO, O<sub>2</sub>, and NO<sub>2</sub>, each labeled (g). Start with one of each. Predict what happens to both product counts if you double only nitrogen dioxide. Which reactant would you adjust next?</p>
-      <figure data-chem-steps="counts" data-exclusive>
-        <svg viewBox="0 0 320 130" role="img" aria-labelledby="count-title count-desc">
-          <title id="count-title">Atom ledger for forming nitrogen dioxide</title>
-          <desc id="count-desc">One NO molecule plus one oxygen molecule contains one nitrogen and three oxygen atoms. One nitrogen dioxide molecule contains one nitrogen and two oxygen atoms.</desc>
-          <rect class="packet" x="2" y="2" width="316" height="126" rx="6"/>
-          <g data-stage="1" font-size="18">
-            <text x="13" y="33">Left: 1 NO + 1 O₂</text>
-            <text x="13" y="57">N = 1, O = 3</text>
-            <text x="13" y="90">Right: 2 NO₂</text>
-            <text x="13" y="114">N = 2, O = 4</text>
-          </g>
-          <g data-stage="2" font-size="18">
-            <text x="13" y="33">Left: 2 NO + 1 O₂</text>
-            <text x="13" y="57">N = 2, O = 4</text>
-            <text x="13" y="90">Right: 2 NO₂</text>
-            <text x="13" y="114">N = 2, O = 4</text>
-          </g>
-          <g data-stage="0" font-size="18">
-            <text x="13" y="33">Left: 1 NO + 1 O₂</text>
-            <text x="13" y="57">N = 1, O = 3</text>
-            <text x="13" y="90">Right: 1 NO₂</text>
-            <text x="13" y="114">N = 1, O = 2</text>
-          </g>
-        </svg>
-        <figcaption>An atom ledger compares totals on each side. It tracks amounts in the equation and leaves out molecular shape and the reaction pathway.</figcaption>
+      <p>Gaseous nitrogen monoxide and oxygen gas form gaseous nitrogen dioxide. Oxygen gas is <strong><a href="#term-diatomic">diatomic</a></strong> (two atoms per molecule). The names give NO, O<sub>2</sub>, and NO<sub>2</sub>, each labeled (g). Start with one of each. Predict what happens to both product counts if you double only nitrogen dioxide. Which reactant would you adjust next?</p>
+      <figure class="reaction-ledger" data-chem-steps="counts" data-exclusive>
+        <div class="ledger-display">
+          <div data-stage="1">
+            <p class="ledger-stage-label"><strong>Trial 2 · Unbalanced</strong></p>
+            <p class="ledger-equation"><span role="img" aria-label="This trial has one nitrogen monoxide gas molecule and one oxygen gas molecule on the reactant side, with two nitrogen dioxide gas molecules on the product side."><span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span></span></p>
+            <dl class="ledger-totals">
+              <div><dt>Reactant atoms</dt><dd>N = 1, O = 3</dd></div>
+              <div><dt>Product atoms</dt><dd>N = 2, O = 4</dd></div>
+            </dl>
+          </div>
+          <div data-stage="2">
+            <p class="ledger-stage-label"><strong>Balanced equation</strong></p>
+            <p class="ledger-equation"><span role="img" aria-label="Two nitrogen monoxide gas molecules plus one oxygen gas molecule yield two nitrogen dioxide gas molecules."><span class="ledger-term">2NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span></span></p>
+            <dl class="ledger-totals">
+              <div><dt>Reactant atoms</dt><dd>N = 2, O = 4</dd></div>
+              <div><dt>Product atoms</dt><dd>N = 2, O = 4</dd></div>
+            </dl>
+          </div>
+          <div data-stage="0">
+            <p class="ledger-stage-label"><strong>Trial 1 · Unbalanced</strong></p>
+            <p class="ledger-equation"><span role="img" aria-label="This trial has one nitrogen monoxide gas molecule and one oxygen gas molecule on the reactant side, with one nitrogen dioxide gas molecule on the product side."><span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ NO<sub>2</sub>(g)</span></span></p>
+            <dl class="ledger-totals">
+              <div><dt>Reactant atoms</dt><dd>N = 1, O = 3</dd></div>
+              <div><dt>Product atoms</dt><dd>N = 1, O = 2</dd></div>
+            </dl>
+          </div>
+        </div>
         <div class="enhanced" hidden>
           <div class="controls">
             <button type="button" data-step>Next step</button>
@@ -77,11 +80,13 @@
         <details class="observations">
           <summary>Compare the three counts</summary>
           <ol class="step-notes">
-            <li>One of each formula gives 1 N and 3 O on the left, and 1 N and 2 O on the right.</li>
-            <li>Doubling only nitrogen dioxide gives 2 N and 4 O on the right. The left still has 1 N and 3 O.</li>
-            <li>Doubling nitrogen monoxide adds 1 N and 1 O on the left. Both sides now have 2 N and 4 O.</li>
+            <li>Trial 1 is unbalanced. One molecule of each substance gives 1 nitrogen and 3 oxygen atoms on the reactant side, and 1 nitrogen and 2 oxygen atoms on the product side.</li>
+            <li>Trial 2 is unbalanced. Doubling only nitrogen dioxide gives 2 nitrogen and 4 oxygen atoms on the product side. The reactants still have 1 nitrogen and 3 oxygen atoms.</li>
+            <li>The equation is balanced. Doubling nitrogen monoxide adds 1 nitrogen and 1 oxygen atom to the reactant side. Both sides now have 2 nitrogen and 4 oxygen atoms.</li>
           </ol>
+          <p class="ledger-static-equation">Trial 2 in symbols <span class="ledger-term">NO(g)</span> <span class="ledger-term">+ O<sub>2</sub>(g)</span> <span class="ledger-term">→ 2NO<sub>2</sub>(g)</span>.</p>
         </details>
+        <figcaption>An atom ledger compares totals on each side. It tracks amounts in the equation and leaves out molecular shape and the reaction pathway.</figcaption>
       </figure>
       <p><strong>Final</strong> 2NO(g) + O<sub>2</sub>(g) → 2NO<sub>2</sub>(g). The reactant O<sub>2</sub> has coefficient 1, so the coefficients have no shared factor greater than 1.</p>
       <form class="practice" data-chem-choice>
@@ -99,7 +104,7 @@
 
     <section aria-labelledby="decompose">
       <h2 id="decompose">When is the first draft already balanced?</h2>
-      <p>In a <strong>decomposition</strong>, one reactant forms two or more products. Compare two heated solids. The first equation needs no adjustment. The second has an oxygen-pair constraint.</p>
+      <p>In a <strong><a href="#term-decomposition">decomposition</a></strong> (a reaction in which one substance breaks down), one reactant forms two or more products. Compare two heated solids. The first equation needs no adjustment. The second has an oxygen-pair constraint.</p>
       <h3>Copper(II) hydroxide gives copper(II) oxide and water vapor</h3>
       <p><strong>Given</strong> Heated solid copper(II) hydroxide forms solid copper(II) oxide and water vapor. <strong>Goal</strong> Write its balanced molecular equation.</p>
       <ol>
@@ -115,7 +120,7 @@
         <li>Two formula units supply four silver atoms. Use a 4 in front of Ag. The final equation is 2Ag<sub>2</sub>O(s) → 4Ag(s) + O<sub>2</sub>(g).</li>
         <li>Check Ag 4 and O 2 on each side. One coefficient is 1, so the ratio is already simplest.</li>
       </ol>
-      <p>Heat can be shown with Δ over the reaction arrow. It is a reaction condition. The equation includes only the substances when you count atoms.</p>
+      <p>Heat can be shown with <a href="#term-heat">Δ over the reaction arrow</a>. It is a reaction condition. The equation includes only the substances when you count atoms.</p>
 
       <form class="practice" data-chem-choice>
         <fieldset>
@@ -165,10 +170,10 @@
 
     <section aria-labelledby="solutions">
       <h2 id="solutions">Keep whole formulas when an aqueous mixture forms a solid</h2>
-      <p>A <strong>precipitate</strong> is a solid that forms in a solution. The description tells you which product is solid and which remains dissolved. In a molecular equation, write each dissolved compound with its full neutral formula and (aq).</p>
+      <p>Look for a <strong><a href="#term-precipitate">precipitate</a></strong> (a solid that forms in a solution). The description tells you which product is solid and which remains dissolved. In a molecular equation, write each dissolved compound with its full neutral formula and (aq).</p>
       <p><strong>Given</strong> Mixing aqueous barium nitrate and aqueous potassium sulfate produces solid barium sulfate and aqueous potassium nitrate. <strong>Goal</strong> Write the balanced molecular equation.</p>
       <ol>
-        <li>Look up the ion symbols and charges. Barium is Ba<sup>2+</sup>, potassium is K<sup>+</sup>, nitrate is NO<sub>3</sub><sup>−</sup>, and sulfate is SO<sub>4</sub><sup>2−</sup>. Nitrate and sulfate are <strong>polyatomic ions</strong>, charged groups made of several atoms.</li>
+        <li>Look up the ion symbols and charges. Barium is Ba<sup>2+</sup>, potassium is K<sup>+</sup>, nitrate is NO<sub>3</sub><sup>−</sup>, and sulfate is SO<sub>4</sub><sup>2−</sup>. Nitrate and sulfate are <strong><a href="#term-polyatomic-ion">polyatomic ions</a></strong> (charged groups made of several atoms).</li>
         <li>One Ba<sup>2+</sup> needs two NO<sub>3</sub><sup>−</sup> groups, so +2 + 2(−1) = 0. Write Ba(NO<sub>3</sub>)<sub>2</sub>. One SO<sub>4</sub><sup>2−</sup> needs two K<sup>+</sup>, so 2(+1) − 2 = 0. Write K<sub>2</sub>SO<sub>4</sub>. The products pair +2 with −2 in BaSO<sub>4</sub> and +1 with −1 in KNO<sub>3</sub>.</li>
         <li>Draft Ba(NO<sub>3</sub>)<sub>2</sub>(aq) + K<sub>2</sub>SO<sub>4</sub>(aq) → BaSO<sub>4</sub>(s) + KNO<sub>3</sub>(aq). Sulfate matches, but potassium and nitrate do not. Since nitrate stays NO<sub>3</sub> in the formulas on both sides, count those groups together. Two nitrate groups and two potassium ions on the left require 2KNO<sub>3</sub> on the right.</li>
         <li><strong>Final equation</strong> Ba(NO<sub>3</sub>)<sub>2</sub>(aq) + K<sub>2</sub>SO<sub>4</sub>(aq) → BaSO<sub>4</sub>(s) + 2KNO<sub>3</sub>(aq). Expand the groups to check Ba 1, K 2, N 2, S 1, and O 10 on each side. All formulas are neutral. The coefficients include 1.</li>
@@ -275,17 +280,19 @@
     <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt>Aqueous (aq)</dt><dd>Dissolved in water. (l) is the label for a liquid substance, (s) for a solid, and (g) for a gas or vapor.</dd>
-        <dt>Coefficient</dt><dd>Number in front of a formula that multiplies all of its atom counts. The final equation uses the smallest positive whole-number ratio.</dd>
-        <dt>Decomposition</dt><dd>A reaction in which one reactant forms more than one product.</dd>
-        <dt>Diatomic</dt><dd>Made of two atoms per molecule. A sample of diatomic elemental gas is counted in pairs.</dd>
-        <dt>Formula unit</dt><dd>The set of atom or ion counts represented by an ionic compound’s formula. An ionic solid is an extended array, with the formula describing the ion ratio.</dd>
-        <dt>Ion and polyatomic ion</dt><dd>An atom or bonded group with a net charge. A polyatomic ion contains multiple atoms, as in nitrate.</dd>
-        <dt>Molecular equation</dt><dd>An equation written with whole formulas for all substances, including dissolved ionic compounds.</dd>
-        <dt>Precipitate</dt><dd>A solid formed from a solution.</dd>
-        <dt>Reactants and products</dt><dd>Starting substances and substances formed. The arrow points from reactants to products.</dd>
-        <dt>Subscript</dt><dd>Small number in a formula that counts atoms of the preceding element or repeats a preceding parenthesized group.</dd>
-        <dt>Δ over the arrow</dt><dd>The reaction is carried out with heat.</dd>
+        <dt id="term-aqueous">Aqueous (aq)</dt><dd>Dissolved in water. (l) is the label for a liquid substance, (s) for a solid, and (g) for a gas or vapor.</dd>
+        <dt id="term-coefficient">Coefficient</dt><dd>Number in front of a formula that multiplies all of its atom counts. The final equation uses the smallest positive whole-number ratio.</dd>
+        <dt id="term-decomposition">Decomposition</dt><dd>A reaction in which one reactant forms more than one product.</dd>
+        <dt id="term-diatomic">Diatomic</dt><dd>Made of two atoms per molecule. A sample of diatomic elemental gas is counted in pairs.</dd>
+        <dt id="term-formula-unit">Formula unit</dt><dd>The set of atom or ion counts represented by an ionic compound’s formula. An ionic solid is an extended array, with the formula describing the ion ratio.</dd>
+        <dt id="term-ion">Ion</dt><dd>An atom or bonded group with a net charge.</dd>
+        <dt id="term-polyatomic-ion">Polyatomic ion</dt><dd>An ion containing multiple atoms, as in nitrate.</dd>
+        <dt id="term-molecular-equation">Molecular equation</dt><dd>An equation written with whole formulas for all substances, including dissolved ionic compounds.</dd>
+        <dt id="term-precipitate">Precipitate</dt><dd>A solid formed from a solution.</dd>
+        <dt id="term-reactants">Reactants</dt><dd>The starting substances, written before the arrow.</dd>
+        <dt id="term-products">Products</dt><dd>The substances formed, written after the arrow.</dd>
+        <dt id="term-subscript">Subscript</dt><dd>Small number in a formula that counts atoms of the preceding element or repeats a preceding parenthesized group.</dd>
+        <dt id="term-heat">Δ over the arrow</dt><dd>The reaction is carried out with heat.</dd>
       </dl>
     </section>
 

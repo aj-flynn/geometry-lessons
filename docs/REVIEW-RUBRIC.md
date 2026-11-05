@@ -1,6 +1,6 @@
 # Assignment-to-lesson evaluation rubric
 
-Rubric edition: **2026-11-05 — assignment focus and grade-level fit**.
+Rubric edition: **2026-11-05 — assignment focus, grade-level fit, and in-context notation and definitions**.
 
 Evaluate how well a lesson turns an assignment's underlying concepts into accurate, engaging, accessible teaching that helps a learner at the approximate level of the assignment return to the work independently. The lesson teaches the thinking without completing the assigned work.
 
@@ -23,7 +23,7 @@ The six groups retain the existing weights. Score the 23 categories within them;
 | A1 | Assignment alignment and coverage | 7 | The lesson addresses the assignment's underlying concepts and required reasoning, including recognizing when to use a method. Its scope is clear, and any linked continuation covers the remaining demands. Shared topic words alone do not establish alignment. |
 | A2 | Subject correctness and reasoning | 12 | Definitions, explanations, calculations, conditions, units, and feedback are correct. Worked calculations distinguish givens from goals and show justified, readable steps with valid equality, approximation, symbols and units. The lesson explains why methods work and makes relevant assumptions, exceptions, uncertainty, and model limitations clear. |
 | A3 | Sources and evidence | 3 | Reliable, relevant educational sources support the claims and offer useful further reference. Evidence supports interpretations; simplifications preserve the underlying meaning. |
-| A4 | Consistency across representations | 3 | Prose, formulas, diagrams, graphs, tables, animations, and feedback agree. Labels, scales, units, markings, and changes in a model communicate the same relationships. Schematic representations are identified. |
+| A4 | Consistency across representations | 3 | Prose, formulas, diagrams, graphs, tables, animations, and feedback agree. Labels, scales, units, markings, and model states communicate the same relationships. Where the task requires conventional notation, the worked example, interactive states, feedback, and fallbacks use it for that relationship. Identified schematics and labels can support the notation. |
 
 ### B. Sequencing and grade-level fit — 20 points
 
@@ -32,7 +32,7 @@ The six groups retain the existing weights. Score the 23 categories within them;
 | B1 | Goals and relevance | 3 | A focused, understandable goal explains what the learner will be able to do and why it matters. The lesson follows through on that goal. |
 | B2 | Prerequisites and starting point | 3 | Needed prior knowledge is made clear, with an approachable starting point and support for missing foundations. The lesson accommodates uncertainty about the learner's starting knowledge. |
 | B3 | Grade-level fit and cognitive load | 5 | Use the stated grade or course, or infer the approximate level from vocabulary and prerequisites. Judge whether sentence complexity, terminology, examples, and step size suit that level and teach each required decision. Cite concrete evidence from the core teaching and feedback. |
-| B4 | Vocabulary, notation, and glossary | 3 | Unfamiliar terms, symbols, and units are explained when introduced and supported by a useful linked glossary. Language is accessible without sacrificing precision. |
+| B4 | Vocabulary, notation, and glossary | 3 | Unfamiliar terms, symbols, and units are explained where introduced. A glossary term’s first meaningful use links directly to its entry, with a brief inline definition where needed. Language is accessible without sacrificing precision. |
 | B5 | Scaffolding and learner independence | 4 | Original worked examples, guidance, and hints build understanding while progressively leaving more thinking to the learner. The learner is prepared to choose, justify, and check a method independently. |
 | B6 | Pacing and emotional usability | 2 | The lesson has manageable sections, useful stopping points, and clear next actions. Its tone is respectful and age-appropriate, and mistakes invite productive revision. |
 

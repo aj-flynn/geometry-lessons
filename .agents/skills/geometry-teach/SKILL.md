@@ -1,17 +1,16 @@
 ---
 name: geometry-teach
-description: Teach the reasoning behind private geometry homework through accurate original diagrams and practice.
+description: Teach geometry from private assignments with justified relationships, accurate diagrams, and fresh practice.
 license: MIT
 ---
 
 # Geometry
 
-Apply [homework-teach](../homework-teach/SKILL.md) to the verified Geometry route. Read printed givens, order, and angle arcs, ticks, parallel arrows, and right-angle boxes. Ask about essential illegible marks. Show what the marks establish. Arc count identifies an equality group. Appearance, rotation, and handwritten work do not establish a given.
+Apply [homework-teach](../homework-teach/SKILL.md). Read stated givens, order, ticks, angle arcs, arrows and right-angle boxes. Explain what the marks prove. Verify essential illegible marks. Treat appearance and handwriting as insufficient evidence.
 
-- Model the complete record the task requires. Check equal vertex counts, then pair vertices and both endpoints of each edge, including the closing edge. Use that pairing in angle and proportion statements. Use a fresh marked pair without a supplied order. Teach ratio order and proportion notation before the learner writes the complete record and uses it to solve a length.
-- Check theorem conditions. To establish general polygon similarity check corresponding angles and a uniform side factor. Apply triangle shortcuts only with their hypotheses. Start with a small ratio example if needed.
-- Name target and original before computing. Keep ratios consistent, undo a scale with its reciprocal, and distinguish the stated order of a requested ratio from the direction used to calculate. Angles stay equal, lengths and perimeter scale once, and area scales twice. Explain why with a side sum and two dimensions. Connect factors to quantities with units. If lengths are given on both figures, recover their missing counterparts before summing. Practice a reduction and a fresh nonrectangular transfer when applicable. State rounding and give feedback that distinguishes reversing a ratio from rounding the correct one.
-- For always/sometimes/never, demonstrate evidence covering all allowed cases, examples in both directions, and a contradiction covering all allowed cases. Match the kind of claim the work requires, including a distinct original class-of-figures comparison when relevant. For a never claim about two classes, identify an incompatible necessary property. Verify every example satisfies its givens and leaves the assigned classifications to the learner.
-- Use computed coordinates and equal display scales for comparable figures. Check labels and text equivalents at phone width, endpoints and an intermediate state. Allow room for the longest animated label. Check visible current-state text, reset, pause, reduced motion, and meaningful static comparisons.
+Use only the relevant reasoning.
 
-End with a fresh method choice and a check of evidence, direction, units and reasonableness. Check full learner destinations for assignment overlap, including theorem and ratio summaries. Apply shared source-aware and browser review.
+- **Correspondence and similarity.** Pair all vertices and edge endpoints, including the closing edge. Derive an order from fresh marks before using it. To establish polygon similarity, check corresponding angles and a common side factor. Apply triangle shortcuts with their hypotheses. Have the learner find a new mapping or compare ratios before revealing the matching order or verdict.
+- **Measure and scale.** Show the boundary for perimeter and the region for area. Pair fresh diagrams with one decisive clue changed. Have the learner point to that clue and choose the operation before showing the calculation. Infer equal sides from givens. If the whole boundary is known, subtract known lengths and split what remains among equal unknowns. Show the split for a compound area. In scaling, name original and target, keep ratio order, and use the reciprocal to undo a scale. Label corresponding dimensions in a scale drawing. Use a boundary trace and a tile comparison to explain why perimeter scales once and area twice. Show substitution with readable fractions, units and rounding. Offer a smaller arithmetic example if needed.
+- **Class claims.** For always, reason from properties every allowed example has. For sometimes, show both a case and a counterexample. For never, find incompatible necessary conditions. Draw contrasting marked cases and verify they satisfy the givens.
+- **Drawings.** Compute coordinates and use comparable scales. Check marks, labels and text equivalents at phone width and across model states. Use a visual at each step where spatial structure changes the choice. In the final fresh problem, leave the full route from givens to justified answer to the learner.

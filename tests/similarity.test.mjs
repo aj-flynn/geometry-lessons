@@ -17,7 +17,12 @@ test('linear measurements and perimeter scale once; area scales twice',()=>{
   assert.equal(formatNumber(initial.height),'14.4');
   assert.equal(formatNumber(initial.perimeter),'70.4');
   assert.equal(formatNumber(initial.area),'299.52');
-  assert.equal(formatNumber(23*(27.2/17)),'36.8');
+  assert.equal(formatNumber(14*(33/22)),'21');
+  assert.equal(formatNumber(17*(35/25)),'23.8');
+  assert.equal(formatNumber(11*(20.3/29)),'7.7');
+  assert.equal(formatNumber(1/1.25),'0.8');
+  assert.notEqual(40/25,25.2/14);
+  assert.equal(formatNumber(1.9**2),'3.61');
   assert.equal(formatNumber(rectangleMetrics(1.7).areaFactor),'2.89');
 });
 

@@ -50,6 +50,9 @@ test('practice gives local feedback for fresh examples without revealing expecte
   input.value='5';form.fire('submit');assert.equal(feedback.textContent,'Recall the relationship.');
   assert.doesNotMatch(feedback.textContent,/6/);
   input.value='6';form.fire('submit');assert.equal(feedback.textContent,'Explain why it fits.');
+  form.dataset.mistakes='{"3":"You used half the required factor. Revisit the direction."}';
+  input.value='3';form.fire('submit');assert.equal(feedback.textContent,'You used half the required factor. Revisit the direction.');
+  form.dataset.mistakes='invalid JSON';input.value='5';form.fire('submit');assert.equal(feedback.textContent,'Recall the relationship.');
   form.dataset.expected='invalid';form.fire('submit');assert.match(feedback.textContent,/unavailable/);
 });
 

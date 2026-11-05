@@ -73,7 +73,7 @@ for(const quiz of document.querySelectorAll('[data-choice-quiz]')) {
   for(const button of quiz.querySelectorAll('button[data-choice]')) {
     button.addEventListener('click',()=>{
       feedback.textContent = button.dataset.choice===quiz.dataset.correct
-        ? quiz.dataset.success : quiz.dataset.hint;
+        ? quiz.dataset.success : (button.dataset.hint || quiz.dataset.hint);
     });
   }
 }

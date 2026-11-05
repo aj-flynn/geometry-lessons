@@ -1,5 +1,7 @@
 # Setup verification
 
+Historical setup record from 2026-11-04. Current lesson/refinement status is recorded in `docs/REFINEMENT.md`; later native repository skill support supersedes the personal-installation limitation below. No personal installation is claimed.
+
 Verified 2026-11-04. This records setup evidence, not a learner's progress.
 
 ## Completed

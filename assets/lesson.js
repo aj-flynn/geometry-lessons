@@ -67,9 +67,17 @@ for (const form of document.querySelectorAll('form[data-practice]')) {
       feedback.textContent = 'This practice check is unavailable. Explain your reasoning in the chat.';
       return;
     }
-    feedback.textContent = Math.abs(entered - expected) <= tolerance
+    const correct = Math.abs(entered - expected) <= tolerance;
+    let hint = form.dataset.hint || 'Look again at the relationship in the diagram. Try the first hint.';
+    try {
+      const mistakes = JSON.parse(form.dataset.mistakes || '{}');
+      for (const [value, explanation] of Object.entries(mistakes)) {
+        if (typeof explanation === 'string' && Math.abs(entered - Number(value)) < 0.025) { hint = explanation; break; }
+      }
+    } catch { /* Optional authored misconception hints must not break practice. */ }
+    feedback.textContent = correct
       ? (form.dataset.success || 'That fits this practice example. Can you explain why?')
-      : (form.dataset.hint || 'Look again at the relationship in the diagram. Try the first hint.');
+      : hint;
   });
 }
 

@@ -56,9 +56,10 @@ test('science requires subject accuracy review; legacy geometry remains readable
 test('a new registry entry controls subject validation, grouping, and heading IDs',()=>{
   const lesson=entry('0004-spanish-concept.html',spanish.label);
   const manifest={version:2,lessons:[lesson]};
-  assert.throws(()=>validateManifest(manifest),/supported lesson subject/);
+  const existing=loadSubjectRegistry().filter(({id})=>id!==spanish.id);
+  assert.throws(()=>validateManifest(manifest,existing),/supported lesson subject/);
   const label='Spanish & Culture';
-  const registry=[...loadSubjectRegistry(),{...spanish,label}];
+  const registry=[...existing,{...spanish,label}];
   lesson.subject=label;
   const html=renderIndex(manifest,'<nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}',registry);
   assert.match(html,/<a href="#subject-spanish">Spanish &amp; Culture<\//);

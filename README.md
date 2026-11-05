@@ -1,6 +1,6 @@
 # Homework lessons
 
-[Open the lesson library](https://aj-flynn.github.io/geometry-lessons/).
+[Open the lesson library](https://aj-flynn.github.io/geometry-lessons/). [Browse public skill samples](docs/skill-samples/index.html).
 
 Use [homework-teach](.agents/skills/homework-teach/SKILL.md) with an authorized private assignment. It selects or creates the subject skill in subjects.json. GPT-6.1 Sol High authors focused HTML, checks the lesson, and publishes reviewed output. During [skill refinement](.agents/skills/homework-teach/references/independent-refinement.md), independent Astra and Claude Code reviews test what fresh Sol authors produce across multiple assignments.
 

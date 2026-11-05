@@ -1,0 +1,64 @@
+.two-sources .case-map {
+  background: var(--surface);
+}
+
+.case-path {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-path > div {
+  background: white;
+  border-top: 3px solid #315ea5;
+  padding: 1rem;
+}
+
+.two-sources .case-path p {
+  margin: .5rem 0 0;
+}
+
+.case-path blockquote {
+  margin: .75rem 0;
+  font: 1.2em/1.45 Georgia, serif;
+}
+
+.two-sources .case-arrow {
+  max-width: none;
+  margin: .15rem 0;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.two-sources .case-claim {
+  max-width: none;
+  margin: 0;
+  padding: 1rem;
+  background: #162c48;
+  color: white;
+}
+
+.two-sources .draft-label {
+  display: block;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .case-path {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .two-sources .case-claim {
+    color: black;
+    background: white;
+    border: 1px solid black;
+  }
+
+  .two-sources form button,
+  .two-sources form .feedback {
+    display: none;
+  }
+}

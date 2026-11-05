@@ -523,7 +523,8 @@ export function check(base = root) {
       errors.push(`${name}: Expected text without binary data.`);
       continue;
     }
-    const publicPageOrAsset = name === 'index.html' || /^(?:assets|lessons|reference)\//.test(name);
+    const publicPageOrAsset = name === 'index.html' || /^(?:assets|lessons|reference)\//.test(name) ||
+      (name.startsWith('docs/skill-samples/') && extname(path) === '.html');
     if (!publicPageOrAsset) {
       errors.push(...inspectPrivateIdentifiers(source, name));
       continue;

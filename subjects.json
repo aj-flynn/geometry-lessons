@@ -18,5 +18,10 @@
     "id": "english",
     "label": "English",
     "skill": ".agents/skills/english-teach/SKILL.md"
+  },
+  {
+    "label": "Spanish",
+    "id": "spanish",
+    "skill": ".agents/skills/spanish-teach/SKILL.md"
   }
 ]

@@ -82,7 +82,7 @@
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf"
         },
         "contract": {
-          ".agents/skills/english-teach/SKILL.md": "398f739c76bf24a9d58ffd434f9d6f6d2c759f80a23bd708f0df2dc0684f3a86",
+          ".agents/skills/english-teach/SKILL.md": "e15882abdddb0f0813e73287f28efe799c4ae4fffb4a1666037d792693f02a62",
           ".agents/skills/homework-teach/SKILL.md": "46acdb540aad7dfc49cf294570b79eccf9fb15b294957bbdc6ad7dfa7d41f3ad",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",

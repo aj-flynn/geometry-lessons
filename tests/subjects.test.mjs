@@ -60,7 +60,8 @@ test('a new registry entry controls subject validation, grouping, and heading ID
   const label='Spanish & Culture';
   const registry=[...loadSubjectRegistry(),{...spanish,label}];
   lesson.subject=label;
-  const html=renderIndex(manifest,'{{LESSONS}}',registry);
+  const html=renderIndex(manifest,'<nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}',registry);
+  assert.match(html,/<a href="#subject-spanish">Spanish &amp; Culture<\//);
   assert.match(html,/id="subject-spanish">Spanish &amp; Culture<\//);
   assert.match(html,/href="lessons\/0004-spanish-concept\.html"/);
 });
@@ -82,7 +83,16 @@ test('a science publication requires a glossary, a current hash, and the updated
   const temp=mkdtempSync(join(tmpdir(),'homework-subject-check-'));
   try{
     for(const dir of ['templates','assets','lessons'])mkdirSync(join(temp,dir));
-    for(const file of ['templates/index.html','assets/site.css','assets/lesson.js'])cpSync(join(root,file),join(temp,file));
+    for(const file of ['assets/site.css','assets/lesson.js'])cpSync(join(root,file),join(temp,file));
+    writeFileSync(join(temp,'templates/index.html'),'<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
+    const scienceSkill='.agents/skills/science-teach/SKILL.md';
+    const englishSkill='.agents/skills/english-teach/SKILL.md';
+    const sharedSkill='.agents/skills/homework-teach/SKILL.md';
+    for(const file of [scienceSkill,englishSkill,sharedSkill])mkdirSync(dirname(join(temp,file)),{recursive:true});
+    writeFileSync(join(temp,'subjects.json'),JSON.stringify([{id:'science',label:'Science',skill:scienceSkill},{id:'english',label:'English',skill:englishSkill}]));
+    writeFileSync(join(temp,sharedSkill),'---\nname: homework-teach\ndescription: Synthetic shared skill.\n---\n');
+    writeFileSync(join(temp,scienceSkill),'---\nname: science-teach\ndescription: Synthetic science skill.\n---\n[Shared](../homework-teach/SKILL.md)');
+    writeFileSync(join(temp,englishSkill),'---\nname: english-teach\ndescription: Synthetic English skill.\n---\n[Shared](../homework-teach/SKILL.md)');
     const prefix='<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title></head><body><a href="../index.html">Lesson library</a><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A synthetic QA diagram</desc></svg>';
     const glossary='<a href="#glossary">Glossary</a><section id="glossary"><h2>Glossary</h2><dl><dt>Model</dt><dd>A simplified representation.</dd></dl></section>';
     const file='0002-synthetic-science-qa.html';
@@ -97,6 +107,18 @@ test('a science publication requires a glossary, a current hash, and the updated
     write(prefix+glossary+'</body></html>');assert.equal(check(temp).lessons,1);
     writeFileSync(join(temp,'lessons',file),prefix+glossary+'changed</body></html>');
     assert.throws(()=>check(temp),/changed since review/);
+
+    const withoutSvg=prefix.replace(/<svg\b.*<\/svg>/,'')+glossary;
+    const figure='<figure><blockquote>The hallway was <mark>a tunnel</mark>.</blockquote><p>The comparison emphasizes the narrow space.</p><figcaption>Read the highlighted image beside its interpretation.</figcaption></figure>';
+    write(withoutSvg+figure+'</body></html>');
+    assert.throws(()=>check(temp),/needs a reviewed SVG diagram/);
+    record.subject='English';
+    write(withoutSvg+figure+'</body></html>');
+    assert.equal(check(temp).lessons,1);
+    for(const invalid of [figure.replace('<p>The comparison emphasizes the narrow space.</p>',''),figure.replace(/<mark>|<\/mark>/g,''),figure.replace(/<figcaption>.*<\/figcaption>/,'')]){
+      write(withoutSvg+invalid+'</body></html>');
+      assert.throws(()=>check(temp),/annotated passage figure/);
+    }
   }finally{
     assert.ok(temp.startsWith(join(tmpdir(),'homework-subject-check-')));
     rmSync(temp,{recursive:true});
@@ -111,22 +133,32 @@ test('publication requires a complete registry with valid skill names and local 
       mkdirSync(dirname(file),{recursive:true});
       writeFileSync(file,text);
     };
+    const manifest={version:2,lessons:[]};
+    const template='<html lang="en"><meta name="viewport"><h1>Library</h1>{{LESSONS}}</html>';
+    put('lessons.json',JSON.stringify(manifest));
+    put('templates/index.html',template);
+    put('index.html',renderIndex(manifest,template));
+    assert.throws(()=>generateIndex(temp),/ENOENT.*subjects\.json/);
+    assert.throws(()=>check(temp),/ENOENT.*subjects\.json/);
+
     put('subjects.json',JSON.stringify([spanish]));
-    put('lessons.json',JSON.stringify({version:2,lessons:[]}));
-    put('templates/index.html','<html lang="en"><meta name="viewport"><h1>Library</h1>{{LESSONS}}</html>');
     put('index.html','stale');
     assert.throws(()=>check(temp),/Root index is stale/);
     put('index.html',generateIndex(temp));
     const shared='.agents/skills/homework-teach/SKILL.md';
-    put(shared,'---\nname: homework-teach\n---\n[Reference](references/guide.md)');
+    put(shared,'---\nname: homework-teach\ndescription: Synthetic shared skill.\n---\n[Reference](references/guide.md)');
     const guide='.agents/skills/homework-teach/references/guide.md';
     put(guide,'[External](https://example.com/unvisited)');
     assert.throws(()=>check(temp),/Missing publishable skill file: .*spanish-teach\/SKILL.md/);
 
     const contract='[Shared](../homework-teach/SKILL.md)';
-    put(spanish.skill,`---\nname: english-teach\n---\n${contract}`);
+    put(spanish.skill,`---\nname: english-teach\ndescription: Synthetic Spanish skill.\n---\n${contract}`);
     assert.throws(()=>check(temp),/expected frontmatter name spanish-teach/);
-    const header='---\nname: spanish-teach\n---\n';
+    for(const description of ['', 'description: " "\n','description: # empty\n']){
+      put(spanish.skill,`---\nname: spanish-teach\n${description}---\n${contract}`);
+      assert.throws(()=>check(temp),/needs a nonempty frontmatter description/);
+    }
+    const header='---\nname: spanish-teach\ndescription: Synthetic Spanish skill.\n---\n';
     put(spanish.skill,header+`<!-- ${contract} -->`);
     assert.throws(()=>check(temp),/needs a link to the shared homework-teach contract/);
     put(spanish.skill,header+contract);

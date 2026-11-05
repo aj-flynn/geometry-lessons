@@ -1,3 +1,109 @@
+# English skill-led regeneration: independent review evidence
+
+Date: 2026-11-05 UTC. Reviewer for each pass: a separate fresh-context `gpt-6-astra`, reasoning `high`. Scores below are the reviewers' judgments, not author scores. Both reviewers privately visually inspected both authorized English input pages. Source details, comparisons, and learner information are intentionally absent. No privacy, assigned-answer, or consequential subject-accuracy violation was found.
+
+## Baseline and first regenerated candidate
+
+Baseline: **86.25/100**. Candidate 1: **98.5/100**. The requested 100-point threshold remains unmet. Base HEAD for both passes: `87326fc77a7c96ba1cb78da312f2626b7438c96c`; candidate working-file hashes below identify the actual reviewed bytes.
+
+| Category | Maximum | Baseline | Candidate 1 |
+|---|---:|---:|---:|
+| A1 Assignment alignment and coverage | 7 | 6 | 7 |
+| A2 Subject correctness and reasoning | 12 | 11 | 12 |
+| A3 Sources and evidence | 3 | 2.5 | 3 |
+| A4 Consistency across representations | 3 | 2.75 | 3 |
+| B1 Goals and relevance | 3 | 3 | 3 |
+| B2 Prerequisites and starting point | 3 | 1.75 | 3 |
+| B3 Explanations and cognitive load | 5 | 4.5 | 5 |
+| B4 Vocabulary, notation, glossary | 3 | 2.25 | 3 |
+| B5 Scaffolding and independence | 4 | 3.25 | 4 |
+| B6 Pacing and emotional usability | 2 | 1.75 | 2 |
+| C1 Originality and practice quality | 3 | 2.5 | 2.5 |
+| C2 Purposeful interaction and checks | 4 | 2.75 | 4 |
+| C3 Feedback, misconceptions, retry | 3 | 2.75 | 3 |
+| C4 Retrieval and retention | 2 | 2 | 2 |
+| C5 Transfer and independent work | 3 | 2.25 | 2.5 |
+| D1 Beautiful design | 8 | 7 | 8 |
+| D2 Instructional visuals | 7 | 5.25 | 7 |
+| E1 Accessibility | 10 | 9 | 10 |
+| E2 Interaction correctness/control | 3 | 3 | 3 |
+| E3 Resilience/navigation | 2 | 1.5 | 2 |
+| F1 Privacy and authority | 3 | 3 | 3 |
+| F2 Homework separation | 4 | 4 | 4 |
+| F3 Traceability and delivery | 3 | 2.5 | 2.5 |
+| **Total** | **100** | **86.25** | **98.5** |
+
+Baseline weaknesses: no optional observation/inference prerequisite check; confusing “Literal paraphrase” heading; several assumed grammar terms; reading lenses reveal answers immediately and duplicate them visibly; limited independently selected evidence and method choice; a flowchart mostly repeats prose; tablet panels become narrow; print hides practice questions and leaves comparison details closed. Baseline controls and homework separation passed.
+
+Candidate 1 was regenerated from the revised English skill and the same authorized private input. Correct existing teaching and the lesson URL were preserved. New sequences include a prerequisite check, an annotated original passage, prediction/reveal reading lenses, a context-changing evidence workshop, and a longer original transfer dialogue. The subject skill now guides these decisions across English tasks, including writing/grammar tasks, rather than prescribing the particular example. English-only CSS avoids altering chemistry's shared reading styles. Authored-disabled forms prevent no-JavaScript GET submission; print preserves prompts, opens comparisons, and restores prior disclosure states after repeated print events.
+
+Candidate 1 strengths: precise observation/paraphrase/inference distinctions; careful behavior-versus-motive reasoning; meaningful context manipulation; progressive original practice; polished responsive annotations; accessible controllable interactions; private local responses; verified no-script and print alternatives.
+
+Remaining candidate 1 findings:
+
+- **C1:** Mapmaker distractors about travel refusal and concealment lack substantial textual footholds. Replace at least one with a credible competing reading based on a real detail but an unsupported leap; keep option lengths balanced.
+- **C5:** Final tasks still announce the operation, including a supplied device label. Add a brief final diagnosis asking what needs checking first and why, without giving that operation in the prompt or placeholder. Keep operation-specific hints closed.
+- **F3:** At review time, manifest/checker integration and required tests remained incomplete. Accept semantic annotated-passage visuals in the checker rather than adding decorative SVG, synchronize hashes, repair fixtures, and verify publication separately. This review makes no live delivery claim.
+
+## English-scoped reusable process
+
+Candidate 1 process score: **97/100**. This is an English-scoped assessment, not certification of the cross-subject process.
+
+| Category | Maximum | Score | Finding |
+|---|---:|---:|---|
+| Privacy, no-answer, authority | 30 | 30 | Explicit source, proposed-answer, follow-up, private-state and definition boundaries. |
+| Teaching contract | 20 | 19 | Strengthen genuinely uncued method selection and credible evidence-based distractors. |
+| Subject accuracy | 20 | 20 | Sound fidelity, uncertainty, speaker distinctions, historical wording and revision guidance. |
+| Repeatability and compatibility | 15 | 14 | Appropriate English annotation format still rejected by checker at review time. |
+| Validation and delivery | 15 | 14 | Sound traceability rules; integration failing and delivery not yet verified. |
+
+Geometry/science process performance, other input formats, learner outcomes and live publication were unassessed by this English reviewer. Baseline process was not numerically scored.
+
+## Checks actually observed
+
+Baseline reviewer: full lesson/dependency/reference inspection; private source visual comparison; headless Edge at 390, 768, 1440px with no overflow; every multiple-choice option, blank submit, retry, lens, reset and local library return; keyboard, reduced motion, no-script and print inspection. No actual 200% zoom, screen reader or live deployment checked in baseline.
+
+Candidate reviewer: Edge at 320, 390, 768, 1440 CSS pixels, screenshots visually inspected, no horizontal overflow; all four forms' blank/wrong/change/correct retry; no query-string submission; all three lenses with keyboard/reveal/reset; both context variants/reset; no JavaScript errors; no-script fieldsets disabled and static comparison usable; no-script printed PDF visually inspected with explanations visible; repeated beforeprint/afterprint correctly restore states; reduced-motion scroll behavior; library and printable-reference links plus return navigation.
+
+Candidate author additionally exercised actual Edge browser zoom in isolated profiles. Chromium `partition.default_zoom_level.x` was set to `log(factor)/log(1.2)`. With outer width 1440: 100% yielded innerWidth 1408, devicePixelRatio 1; 200% yielded innerWidth 704, devicePixelRatio 2. visualViewport.scale stayed 1; this was browser zoom rather than CSS zoom or pinch. Both had no overflow, and lens/context controls worked. Full physical-viewport screenshots used CDP Page.captureScreenshot. The independent reviewer inspected this script and the 200% screenshot; it was not an independent screen-reader audit.
+
+Sources: Folger and Shakespeare's Words loaded successfully. Poetry Foundation returned HTTP 403, a direct-verification limitation. Its appropriateness was assessed without pretending a successful fetch.
+
+At candidate review time, `node scripts/check.mjs` failed six stale hashes and the English SVG requirement. Non-sandbox `node --test tests/*.test.mjs` passed 20/22: fixtures at subjects.test.mjs:103 and workflow.test.mjs:62 lacked expected subject anchors. Initial sandbox execution also encountered temporary-fixture ENOENT. These results describe the reviewed state, not later integration fixes.
+
+Author checks: reading.js syntax and selected diff whitespace passed; owned files normalized to LF. English skill frontmatter name/description and all relative references validated. Bundled quick_validate.py was unavailable because the Python environment lacks PyYAML; no success claim is made for that command.
+
+## Fixed file hashes
+
+SHA-256 values:
+
+| File | Baseline | Candidate 1 |
+|---|---|---|
+| lessons/0002-close-reading-dialogue.html | bfd1bec929f3575ee30832ffd1b1ed5c76a2d197b5efaf545a970ab99d239b4d | 406d5ff16a7ce35a73154cef3ca67fec822f706f0c9e52ecb9f44fae486862f6 |
+| assets/site.css | 9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a | unchanged |
+| assets/lesson.js | b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c | unchanged |
+| assets/reading.css | 6a82ad7381b54dbc55130da83d92920bc460f9cbd0a6777b5b54383d100e264e | unchanged |
+| assets/reading.js | 10606ade36fb83a3c617c1f7d36829c3fa091cd21681dfe2218e70ba9998d6ba | 6d6bf497f58d9bbca428df05f915453e0fc26c279ea69c3af6a8a9193afdda73 |
+| assets/english.css | absent | b507f13d66c5c15996300f7c01e2b7339697de4adb984461a0ec1eb0e57dc286 |
+| reference/close-reading.html | 8b1ca8778b1f739069fd075c11e09c20d37719b4f930451f6bf11d0326ef4f6a | unchanged |
+| .agents/skills/english-teach/SKILL.md | absent | ea903ee87ca0ae8edb21af835af13c9dd5b6d8d0af5adc421fabdb5b1b58bba1 |
+| docs/REVIEW-RUBRIC.md | f805065d7bd3a668f94dccdfcb84688784c03d8d38d7c08c1b4df68d440a985a | c4688ff7d5454661de5da7184c479732bd8d3cf5ee59192a9b3cf98b6df55e66 |
+
+Candidate 1 supporting process hashes:
+
+- .agents/skills/homework-teach/SKILL.md: `d54a88add0e5d5d5c2546e6c033a9f87ab6038d3c8d831fd1cc0a989f36718d6`
+- .agents/skills/homework-teach/references/lesson-workflow.md: `c29c2e6ded3b2b8a8d616b9333c04d9c5ba9b58273c389db02d9234048da1d42`
+- .agents/skills/homework-teach/references/independent-refinement.md: `74e6366100da9f03af4cac2ea04452e7f5a748a42326dd9b58c21c2d72eaf89c`
+
+Changed English-owned files selected for this iteration: the English skill, lesson 0002, new assets/english.css, and assets/reading.js. No source material, private notes, browser profiles, screenshots or test scratch files belong in this publication set. Parent owns manifest/index/checker integration, selected commit/push, live verification and subsequent Claude review.
+
+
+---
+
+## Historical assessments under earlier rubric editions
+
+The following record certifies only its original revisions, not the current candidate above.
+
 # Close-reading lesson review
 
 Independent reviewer: Astra, high reasoning. Rubric: [independent quality review](REVIEW-RUBRIC.md), lesson criteria. The broader reusable process is reviewed separately.

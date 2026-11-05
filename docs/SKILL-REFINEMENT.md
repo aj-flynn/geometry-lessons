@@ -27,3 +27,18 @@ Claude Code returned `claude-opus-5-5` in `modelUsage` for a minimal availabilit
 | Chemistry: between molecules | Astra / high, fresh context | 82.5/100 | `bba376e9c84eeb650c0f8769fee671f6c3967b1a49f8ae757a394b94ff82e11f` |
 
 These baseline scores are judgments about the inspected artifacts and evidence, not learner measurements. Detailed subject evidence is maintained in the corresponding lesson review records as improved candidates are published. Historical reviews under earlier rubric editions do not certify this run.
+
+
+## First incremental delivery
+
+Commit `b15c62fe3c47181bc3151226eed73627c63238e0` published the independently assessed shared-skill restructuring. Git normalizes text line endings; working-file hashes in assessments identify the inspected source. The live index returned HTTP 200 with six lesson links and Chemistry grouping. This was an intermediate shared-process update, not dual-model completion.
+
+The next frozen publication includes English at 98.5/100 and Chemistry pages at 97.5, 97.5, 100, and 100 from fresh Astra/high reviews; English process 97 and Chemistry process 98. Geometry's 94-point candidate remains unpublished because the reviewer identified a learner-source homework-separation concern. The selected publication snapshot passed the checker and all 22 Node tests. Strict per-library registry validation, dynamic subject navigation, and English annotated-passage validation resolve the integration findings. Shared-process re-review and all final Opus reviews remain pending.
+
+
+Publication line endings were normalized to LF by Git. This changes byte hashes, not teaching content. The prepublication score tables retain the exact inspected working-file hashes; the manifest records the canonical published bytes below. These intermediate reviews are not final dual-model certifications.
+
+- `0003-reading-particle-formulas.html`: `b98a810cbb0ced5ce95199b12bea31d8d35cc56bfef4421149f3720e7ac09041`
+- `0004-electrons-and-bonds.html`: `32b650c8e04e1764852fc2b3c6769374fa082d5a382e383d3cda46b90f795222`
+- `0005-shape-and-polarity.html`: `f7f2fb14d0546d89be3a99ba5ac08b49fa73db35ee3311e92d9b93273f6053bd`
+- `0006-between-molecules.html`: `bde337b15a20982daee3c5d93db839b1fafaf393482a55618d94ac01577ca24b`

@@ -1,3 +1,137 @@
+# Chemistry candidate 1 — independent Astra assessment
+
+Reviewer: gpt-6-astra, high effort, fresh context, independent of author. Rubric edition: 2026-11-04 — independent judgment. Review scope: four chemistry lessons, linked field guide, loaded assets, and reusable chemistry process. No repository edits or publication performed by reviewer. This is a fixed prepublication candidate assessment, not completed deployment or dual-review certification.
+
+| Category | Maximum | 0003 | 0004 | 0005 | 0006 | Linked sequence |
+|---|---:|---:|---:|---:|---:|---:|
+| A1 | 7 | 7 | 7 | 7 | 7 | 7 |
+| A2 | 12 | 12 | 12 | 12 | 12 | 12 |
+| A3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| A4 | 3 | 3 | 3 | 3 | 3 | 3 |
+| B1 | 3 | 3 | 3 | 3 | 3 | 3 |
+| B2 | 3 | 3 | 3 | 3 | 3 | 3 |
+| B3 | 5 | 5 | 5 | 5 | 5 | 5 |
+| B4 | 3 | 3 | 3 | 3 | 3 | 3 |
+| B5 | 4 | 3.5 | 3 | 4 | 4 | 3 |
+| B6 | 2 | 2 | 2 | 2 | 2 | 2 |
+| C1 | 3 | 2 | 3 | 3 | 3 | 2.5 |
+| C2 | 4 | 4 | 3.5 | 4 | 4 | 3.5 |
+| C3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| C4 | 2 | 2 | 2 | 2 | 2 | 2 |
+| C5 | 3 | 2 | 2 | 3 | 3 | 2 |
+| D1 | 8 | 8 | 8 | 8 | 8 | 8 |
+| D2 | 7 | 7 | 7 | 7 | 7 | 7 |
+| E1 | 10 | 10 | 10 | 10 | 10 | 10 |
+| E2 | 3 | 3 | 3 | 3 | 3 | 3 |
+| E3 | 2 | 2 | 2 | 2 | 2 | 2 |
+| F1 | 3 | 3 | 3 | 3 | 3 | 3 |
+| F2 | 4 | 4 | 4 | 4 | 4 | 4 |
+| F3 | 3 | 3 | 3 | 3 | 3 | 3 |
+| **Total** | **100** | 97.5 | 97.5 | 100 | 100 | 97.0 |
+
+## Findings
+
+No consequential chemistry error, private-input disclosure, assigned-answer reproduction, or inaccessible core task was identified. All categories assessed.
+
+- 0003: replace the repeated introductory symbol check, vary correct-choice positions, and add independent authentic formula-reading transfer connecting the token model to a complete chemical formula or diagram. All choice answers currently occupy the second position.
+- 0004: the complete worked electron construction is accurate and meaningfully separated. Add a new complete construction task requiring electron placement, whole-diagram conservation, local-shell checks, and explanation of any revision. A scratch-paper attempt followed by a closed accessible worked reveal is sufficient.
+- Reusable process: require the transfer task to reproduce the kind of reasoning or product taught. A construction goal needs construction transfer. Audit repeated example answers and fixed correct positions explicitly.
+
+The other categories receive full credit: accurate quantity and representation distinctions, appropriate conditions and model limits, relevant reviewed sources, clear definitions and glossary, useful feedback/retry, retrieval, coherent visual design, controllable diagrams, accessible evidence, and honest traceability. The linked field guide was assessed within the sequence, not as a fifth lesson. Photography, video, and automatic decorative motion are not needed for this educational rubric.
+
+## Reusable chemistry process
+
+| Category | Score |
+|---|---:|
+| Privacy, no-answer, authority | 30/30 |
+| Teaching contract | 18/20 |
+| Subject accuracy | 20/20 |
+| Repeatability and compatibility | 15/15 |
+| Validation and delivery requirements | 15/15 |
+| **Total** | **98/100** |
+
+This process score covers the instructions and their chemistry exercise; it is not exhaustive validation of future inputs or learner outcomes.
+
+## Verification and limits
+
+The reviewer visually inspected all authorized source pages privately, read all candidate HTML/reference/assets/instructions, opened all six learner-facing destinations, and compared the approach with the official teach skill. Source-specific comparisons are not part of this public-safe report.
+
+The reviewer independently ran all repository tests: 22 passed, 0 failed. At review time the checker failed pending manifest hashes for the five concurrently improved lessons. Manifest integration belongs to the parent. This review credits exact identity and honest prepublication status; it does not claim publication readiness, a live deployment, or delivery.
+
+The reviewer inspected the author’s browser-probe implementation/results, mobile/tablet/desktop screenshots, all current model-state images, and native browser zoom evidence. They support all choice-feedback paths, numeric retry, keyboard range input, model progression, reduced motion, static/print fallback, no-script Enter URL stability, and activated library navigation. Actual 200% browser zoom retained the outer viewport, halved CSS width, doubled device-pixel ratio, and had no horizontal overflow. The reviewer did not personally drive those sessions or perform a screen-reader user test. Accessibility scoring is an evidence-based judgment, not WCAG certification.
+
+The author first revised the chemistry skill, then re-exercised its branches against the same private input to regenerate the affected teaching sequences while preserving stable URLs. Drafts and evidence remained outside the public repository.
+
+## Learner-facing sources checked
+
+- https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism
+- https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations
+- https://openstax.org/books/college-physics-2e/pages/3-2-vector-addition-and-subtraction-graphical-methods
+- https://periodic-table.rsc.org/Help/AtomicData
+- https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions
+- https://openstax.org/books/chemistry-2e/pages/10-2-properties-of-liquids
+
+## Fixed candidate hashes
+
+Reviewed working-tree base HEAD: 87326fc77a7c96ba1cb78da312f2626b7438c96c. Working bytes, not that HEAD alone, define the candidate.
+
+```text
+.agents/skills/chemistry-teach/SKILL.md
+1d1eaca75f298a61be6862942c37b127e6f1b67efa7a3634545353741bb362bd
+
+lessons/0003-reading-particle-formulas.html
+b73bd0849d5eecd18e4e73fee0912e12297674468862b5125b9a653ff2880f1e
+
+lessons/0004-electrons-and-bonds.html
+4479e25d785619286f68ce775a997d0bf2c6ad761576f0de953cbb32c9423e2a
+
+lessons/0005-shape-and-polarity.html
+cc93f9b19940ac43a5e50e8f560e30b612be14b010bffd88621571dad5a6b904
+
+lessons/0006-between-molecules.html
+21cb06d6892cee8ad017d57709b41604b4bc01027fa44c1a1d0a9308a09c9af4
+
+reference/chemistry-field-guide.html
+dd56cf0866d252277f5f58ab6824a61a3b8099a4ab8afb56ee1c16d1535d7a50
+
+assets/chemistry.js
+7776e61843e700cd0617c04a2058d5db607e93693aa2b4b2f845b6c6daa770a0
+
+assets/chemistry.css
+b771cb3b6415c5c7acc3699615b6e48615803ff93be6440937322d976d53e50d
+
+assets/site.css
+9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a
+
+assets/lesson.js
+b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c
+
+.agents/skills/homework-teach/SKILL.md
+d54a88add0e5d5d5c2546e6c033a9f87ab6038d3c8d831fd1cc0a989f36718d6
+
+.agents/skills/homework-teach/references/lesson-workflow.md
+c29c2e6ded3b2b8a8d616b9333c04d9c5ba9b58273c389db02d9234048da1d42
+
+.agents/skills/homework-teach/references/science.md
+e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843
+
+.agents/skills/homework-teach/references/independent-refinement.md
+74e6366100da9f03af4cac2ea04452e7f5a748a42326dd9b58c21c2d72eaf89c
+
+subjects.json
+378425085d9a71cd7f0aec8a8dd1d17dc0dc34f4ff90063b1ab1b0049e113115
+
+docs/REVIEW-RUBRIC.md
+c4688ff7d5454661de5da7184c479732bd8d3cf5ee59192a9b3cf98b6df55e66
+```
+
+
+---
+
+## Historical assessments under earlier rubric editions
+
+The following record certifies only its original revisions, not the current candidate above.
+
 # Chemistry sequence: independent review
 
 Current independent result: **100/100 for the lesson sequence and 100/100 for the reusable process**. The refinement record and current hashes appear below; the earlier scores are retained as review history.

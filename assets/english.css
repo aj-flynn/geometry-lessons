@@ -1,0 +1,19 @@
+/* English-only annotation and reading controls. */
+.english .route,.english .stage,.english footer,.english .practice-item+.practice-item{border:0}
+.english .route{background:var(--surface);padding:18px 22px;gap:8px 24px}
+.english .opening{gap:32px}.english h1{max-width:16ch}.english .stage{grid-template-columns:120px minmax(0,1fr);gap:28px;padding-top:24px;margin-top:64px}
+.english .stage-tag{font-size:16px;padding-top:10px}.english .prerequisite{margin:28px 0}
+.english .margin-note{border:0}.english .margin-note>p:first-child{font-size:18px}
+.english .annotation{padding:26px;background:#d9e7ff;margin-inline:0}
+.english .annotation blockquote,.english .explorer blockquote{margin:0 0 22px;font:26px/1.45 Georgia,serif}
+.english mark{background:white;color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em}
+.english .annotation-notes{display:grid;grid-template-columns:1fr 1fr;gap:24px}.english .annotation-notes p{margin:0;font-size:18px}
+.english .annotation figcaption{font-size:16px}.english .explorer{border:0;background:#e9eef7}
+.english .explorer [data-lens-reveal]{background:#162c48;color:white;border:0}.english .explorer [data-restart]{margin-left:10px}
+.english .context-lab{margin-top:32px;padding:26px;background:#e9eef7}.english .context-result{background:white;padding:20px;margin:20px 0}
+.english .context-lab button{font-size:16px}.english .context-lab button[aria-pressed=true]{background:#315ea5}
+.english .context-result p:first-child{margin-top:0}.english .context-result p:last-child{margin-bottom:0}
+.english .stop-point{font-size:16px;padding:12px 0;color:#244469}.english .scene strong{font-size:16px;letter-spacing:0}
+@media(max-width:1050px){.english .opening,.english .pair{grid-template-columns:1fr}.english .opening{gap:24px}.english h1{font-size:clamp(42px,6.8vw,68px)}.english .stage{grid-template-columns:1fr;gap:8px}.english .stage-tag{padding:0}.english .annotation-notes{grid-template-columns:1fr;gap:18px}}
+@media(max-width:480px){.english .annotation,.english .context-lab{padding:18px}.english .annotation blockquote,.english .explorer blockquote{font-size:24px}.english .explorer [data-restart]{margin:12px 0 0}.english .context-lab .controls{align-items:stretch;flex-direction:column}}
+@media print{.english .stage-tag,.english .stop-point{display:none}.english form{display:block!important}.english .choice input{display:none}.english .choice{padding:4px;border:0}.english .annotation-notes{display:block}.english .annotation,.english .context-lab{background:white;padding:8px 0}.english .context-result{display:none}.english .static-reading{display:block!important}.english details::details-content{display:block!important;content-visibility:visible!important}.english details::after{content:none}.english details{break-inside:auto}.english textarea{min-height:60px}}

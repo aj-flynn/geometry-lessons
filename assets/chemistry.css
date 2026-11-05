@@ -1,5 +1,5 @@
 .chemistry header{border-top:7px solid #146875;padding-top:24px;margin-top:28px}
-.chemistry .eyebrow{font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:.1em}
+
 .chemistry .lead{font-size:25px;margin-top:24px}
 .chem-path{display:flex;flex-wrap:wrap;gap:8px 22px;margin-block:20px}
 .chem-path a{padding:4px 8px;text-decoration:underline}
@@ -26,9 +26,32 @@
 .chemistry .feedback:empty{border:0;padding:0}
 .chemistry [hidden]{display:none!important}
 .chemistry output{display:block;font-weight:bold}
-.chemistry section+section{border-top:1px solid #b7c7c3;padding-top:30px}
+.chemistry section+section{padding-top:24px}
 .chemistry p,.chemistry li,.chemistry dd{overflow-wrap:break-word}
 @media(max-width:600px){.chemistry .lead{font-size:22px}.chemistry figure{margin-inline:-4px;padding:8px}.chemistry svg{font-size:27px}.chem-path{gap:6px}.chemistry fieldset{padding:10px}.chemistry .controls{gap:10px}.chemistry button{padding:12px 14px}.chemistry h1{font-size:38px}}
 @media print{.chemistry .enhanced{display:none!important}.chemistry [data-stage]{opacity:1!important}.chemistry .step-notes li{background:none!important;border:0!important}.chemistry .chem-path{display:none}.chemistry figure{background:#fff}.chemistry .option{background:none}.chemistry header{border-top:0}.chemistry .lead{font-size:15pt}.chemistry fieldset{break-inside:avoid}}
 @media print{.chemistry details::details-content{display:block;content-visibility:visible;height:auto}.chemistry details>summary{display:none}}
 @media print{.chemistry details::after{content:none}.chemistry [data-step-status]{display:none}}
+.chemistry header{border:0;background:#d4e8e8;padding:32px;margin-top:24px}
+.chemistry header h1{font-size:clamp(40px,5vw,64px);max-width:18ch}
+.chemistry header .lead{font-size:24px;max-width:45ch}
+.chemistry section{margin-top:70px}
+.chemistry figure{border:0;padding:24px;background:#e5eeee}
+.chemistry svg{font-size:28px}
+.chemistry svg .diagram-note{display:none}
+.chemistry table{border-collapse:collapse;width:100%;max-width:650px;background:#e5eeee}
+.chemistry caption{text-align:left;font-weight:bold;padding-bottom:12px}
+.chemistry th,.chemistry td{text-align:left;padding:12px 16px;border-bottom:2px solid #fff}
+.chemistry th{background:#d4e8e8}
+.chemistry .callout{background:#d4e8e8}
+.chemistry fieldset{border:0;background:#e5eeee}
+.chemistry .option{background:#fff;margin-block:12px;align-items:flex-start}
+.chemistry .option input{margin-top:5px}
+.chemistry button:disabled{cursor:not-allowed;opacity:.65}
+.chemistry [data-exclusive] [data-stage]{display:none}
+.chemistry [data-exclusive] [data-stage]:last-of-type{display:inline}
+.chemistry.is-enhanced .static-feedback{display:none}
+.chemistry .step-notes{font-size:18px}
+.chemistry .step-notes .current-step{border:0}
+@media(max-width:600px){.chemistry header{padding:22px;margin-inline:0}.chemistry header h1{font-size:38px}.chemistry header .lead{font-size:22px}.chemistry figure{padding:12px;margin-inline:0}.chemistry section{margin-top:48px}.chemistry h2{font-size:27px}.chemistry .option{padding:12px}.chemistry th,.chemistry td{padding:10px}}
+@media print{.chemistry.is-enhanced .static-feedback{display:block}.chemistry [data-exclusive] [data-stage]{display:none!important}.chemistry [data-exclusive] [data-stage]:last-of-type{display:inline!important}.chemistry header{padding:0;background:#fff}.chemistry section{margin-top:24px}}

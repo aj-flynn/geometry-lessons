@@ -17,7 +17,10 @@ for (const model of document.querySelectorAll('[data-chem-steps]')) {
   function pause() { clearInterval(timer); timer = null; play.setAttribute('aria-pressed','false'); }
   function draw(announce=true) {
     if(announce) model.querySelector('.observations').open=true;
-    for (const node of model.querySelectorAll('[data-stage]')) node.style.opacity = Number(node.dataset.stage) <= step ? '1' : '0';
+    for (const node of model.querySelectorAll('[data-stage]')) {
+      if(model.dataset.exclusive !== undefined) node.style.display = Number(node.dataset.stage) === step ? 'inline' : 'none';
+      else node.style.opacity = Number(node.dataset.stage) <= step ? '1' : '0';
+    }
     model.querySelector('svg desc').textContent=notes[step].textContent;
     notes.forEach((note,i)=>note.classList.toggle('current-step',i===step));
     if(type==='separate') {
@@ -81,3 +84,10 @@ for(const model of document.querySelectorAll('[data-polarity]')) {
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
   draw(180);
 }
+
+// Native submit remains disabled until every local handler is ready.
+for (const form of document.querySelectorAll('form[data-practice], form[data-chem-choice]')) {
+  form.addEventListener('submit', event => event.preventDefault());
+  for (const button of form.querySelectorAll('button[type="submit"]')) button.disabled = false;
+}
+for (const lesson of document.querySelectorAll('.chemistry')) lesson.classList.add('is-enhanced');

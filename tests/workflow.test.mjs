@@ -44,7 +44,16 @@ test('publication checks reject changed reviewed HTML, raw documents, and uninde
   const temp = mkdtempSync(join(tmpdir(),'geometry-check-'));
   try {
     for (const dir of ['templates','assets','lessons']) mkdirSync(join(temp,dir));
-    for (const file of ['templates/index.html','assets/site.css','assets/lesson.js']) cpSync(join(root,file),join(temp,file));
+    for (const file of ['assets/site.css','assets/lesson.js']) cpSync(join(root,file),join(temp,file));
+    writeFileSync(join(temp,'templates/index.html'),'<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
+    const geometrySkill = '.agents/skills/geometry-teach/SKILL.md';
+    const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
+    for (const name of ['geometry-teach','homework-teach']) {
+      mkdirSync(join(temp,'.agents','skills',name),{recursive:true});
+    }
+    writeFileSync(join(temp,'subjects.json'),JSON.stringify([{id:'geometry',label:'Geometry',skill:geometrySkill}]));
+    writeFileSync(join(temp,sharedSkill),'---\nname: homework-teach\ndescription: Synthetic shared skill.\n---\n');
+    writeFileSync(join(temp,geometrySkill),'---\nname: geometry-teach\ndescription: Synthetic geometry skill.\n---\n[Shared](../homework-teach/SKILL.md)');
     const html = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title><link rel="stylesheet" href="../assets/site.css?v=qa"></head><body><a href="../index.html">Lesson library</a><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A test shape</desc></svg></body></html>';
     const file = '0001-synthetic-qa.html';
     writeFileSync(join(temp,'lessons',file),html);

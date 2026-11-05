@@ -3,7 +3,7 @@ import { resolve, relative, extname, dirname, isAbsolute, sep } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { root, generateIndex, loadSubjectRegistry, validateManifest } from './build-index.mjs';
+import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest } from './build-index.mjs';
 
 export function inspectPublicCode(source, name) {
   const findings = [];
@@ -36,6 +36,20 @@ export function hasLibraryLink(html) {
 
 const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
 
+function hasAnnotatedPassage(html) {
+  const source = html.replace(/<!--[\s\S]*?-->|<(script|style|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');
+  const hasText = markup => /\p{L}/u.test(markup.replace(/<[^>]*>/g, '').replace(/&(?:\w+|#\w+);/g, ''));
+  for (const [, figure] of source.matchAll(/<figure\b[^>]*>([\s\S]*?)<\/figure\s*>/gi)) {
+    const quote = figure.match(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote\s*>/i);
+    const caption = figure.match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption\s*>/i);
+    if (!quote || !caption || !hasText(caption[1])) continue;
+    const marks = [...quote[1].matchAll(/<mark\b[^>]*>([\s\S]*?)<\/mark\s*>/gi)];
+    const notes = figure.replace(quote[0], '').replace(caption[0], '');
+    if (marks.some(([, mark]) => hasText(mark)) && hasText(notes)) return true;
+  }
+  return false;
+}
+
 function inspectSkillFiles(base, registry, candidates, skillFolders) {
   const errors = [];
   const entries = new Map([[sharedSkill, 'homework-teach'], ...registry.map(({ id, skill }) => [skill, `${id}-teach`])]);
@@ -55,7 +69,11 @@ function inspectSkillFiles(base, registry, candidates, skillFolders) {
     const expectedName = entries.get(name);
     const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
     const skillName = frontmatter?.match(/^name:[ \t]*([^\r\n]+)$/m)?.[1].trim();
+    const description = frontmatter?.match(/^description:[ \t]*([^\r\n]*)$/m)?.[1].trim();
     if (expectedName && skillName !== expectedName) errors.push(`${name}: expected frontmatter name ${expectedName}.`);
+    if (expectedName && (!description || /^(?:#|(["'])\s*\1(?:\s*(?:#.*)?)$|(?:~|null)(?:\s*(?:#.*)?)$)/i.test(description))) {
+      errors.push(`${name}: needs a nonempty frontmatter description.`);
+    }
 
     let linksSharedSkill = false;
     const body = text.replace(/<!--[\s\S]*?-->/g, '');
@@ -81,7 +99,8 @@ export function check(base = root) {
   const errors = [];
   const registry = loadSubjectRegistry(base);
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
-  if (readFileSync(resolve(base,'index.html'),'utf8') !== generateIndex(base, registry)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
+  const template = readFileSync(resolve(base,'templates/index.html'),'utf8');
+  if (readFileSync(resolve(base,'index.html'),'utf8') !== renderIndex(manifest, template, registry)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
@@ -93,7 +112,12 @@ export function check(base = root) {
     const html = readFileSync(file,'utf8');
     if (!hasLibraryLink(html)) errors.push(`${lesson.file}: needs a visible Lesson library link to ../index.html.`);
     if (manifest.version === 2 && (!/\bid="glossary"/.test(html) || !/<dl[\s>]/i.test(html) || !/href="#glossary"/.test(html))) errors.push(`${lesson.file}: needs a linked glossary with a definition list.`);
-    if (!/<svg\b/i.test(html) || !/<desc[\s>]/i.test(html)) errors.push(`${lesson.file}: needs a reviewed SVG diagram with a text equivalent.`);
+    const hasDiagram = /<svg\b/i.test(html) && /<desc[\s>]/i.test(html);
+    const isEnglish = subjectOf(lesson) === 'English';
+    if (!hasDiagram && !(isEnglish && hasAnnotatedPassage(html))) {
+      const visual = isEnglish ? 'a reviewed SVG diagram with a text equivalent or an annotated passage figure' : 'a reviewed SVG diagram with a text equivalent';
+      errors.push(`${lesson.file}: needs ${visual}.`);
+    }
     if (!/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8'))) errors.push('Shared style needs reduced-motion support.');
   }
   const collect = directory => existsSync(resolve(base,directory)) ? readdirSync(resolve(base,directory),{withFileTypes:true}).flatMap(entry => entry.isDirectory() ? collect(directory+'/'+entry.name) : [directory+'/'+entry.name]) : [];
@@ -137,7 +161,7 @@ export function check(base = root) {
   }
   const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
   const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
-  if (existsSync(resolve(base, 'subjects.json'))) errors.push(...inspectSkillFiles(base, registry, candidates, allowedSkillFolders));
+  errors.push(...inspectSkillFiles(base, registry, candidates, allowedSkillFolders));
   for (const file of candidates) {
     if (!allowedRoots.has(file) && !/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(file) && !allowedSkillFolders.some(folder => file.startsWith(folder))) errors.push(`Unexpected public repository path: ${file}`);
     if (!/\.(?:html|css|js|mjs|json|md|txt|py)$/.test(file) && !allowedRoots.has(file)) errors.push(`Unsafe repository file type: ${file}`);

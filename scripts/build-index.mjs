@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -29,9 +29,7 @@ export function validateSubjectRegistry(registry) {
 
 export function loadSubjectRegistry(base = root) {
   const file = resolve(base, 'subjects.json');
-  // Older standalone fixture trees can use the registry bundled with the scripts.
-  const source = resolve(base) === resolve(root) || existsSync(file) ? file : resolve(root, 'subjects.json');
-  return validateSubjectRegistry(JSON.parse(readFileSync(source, 'utf8')));
+  return validateSubjectRegistry(JSON.parse(readFileSync(file, 'utf8')));
 }
 
 const defaultRegistry = Object.freeze(loadSubjectRegistry().map(entry => Object.freeze(entry)));
@@ -69,10 +67,14 @@ export function renderIndex(manifest, template, registry = defaultRegistry) {
     const entries = lessons.length ? `<ul class="lesson-list">\n${lessons.map(lesson => `        <li><a class="lesson-link" href="lessons/${escape(lesson.file)}"><div><h4>${escape(lesson.title)}</h4><span class="topic-line">${lesson.topics.map(escape).join(' · ')}</span></div><p>${escape(lesson.summary)} <span aria-hidden="true">↗</span></p></a></li>`).join('\n')}\n      </ul>` : `<p class="subject-empty">No ${escape(label.toLowerCase())} lessons yet. A concept lesson will appear here when one is added.</p>`;
     return `<section class="subject-group" aria-labelledby="${headingId}"><div class="subject-heading"><h3 id="${headingId}">${escape(label)}</h3><p>${lessons.length} ${lessons.length===1?'lesson':'lessons'}</p></div>${entries}</section>`;
   }).join('\n      ');
-  return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`).replace('{{LESSONS}}', () => content);
+  const subjectNav = registry.map(({ id, label }) => `<a href="#subject-${id}">${escape(label)}</a>`).join('');
+  return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`)
+    .replace('{{SUBJECT_NAV}}', () => subjectNav)
+    .replace('{{LESSONS}}', () => content);
 }
 
-export function generateIndex(base = root, registry = loadSubjectRegistry(base)) {
+export function generateIndex(base = root) {
+  const registry = loadSubjectRegistry(base);
   return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'), registry);
 }
 

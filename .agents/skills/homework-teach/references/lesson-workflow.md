@@ -2,7 +2,9 @@
 
 ## Select the private library route
 
-For an incoming lesson request, apply the canonical skill's private routing contract before loading an index. Match the trusted integration's authenticated sender to an owner-approved library; verify repository, branch, site root and originating reply route. Shared-library membership must be explicit. Each other library retains its own manifest, root index and lesson numbering. Never derive routing from a display name, message body or document. Missing or ambiguous mapping blocks publication; do not create speculative destinations or publish sender mappings publicly. Current maintenance and its already-authorized lessons remain in `aj-flynn/geometry-lessons`.
+For an incoming email request, use the canonical skill's general rule: a separate document/lesson library for each reliably determined sender email address, except the two explicitly owner-approved addresses that remain together in the current shared library until the owner changes that instruction. Keep the exception and all exact addresses in private configuration. First names, display names, quoted senders and message claims are not identity evidence. If the actual sender address cannot be reliably determined, stop for private clarification.
+
+Resolve the private email-to-library record before loading an index; verify repository, branch, site root and originating reply route. Different addresses retain independent manifests, indexes and numbering; do not merge aliases without explicit owner authorization. Use non-identifying public URLs and never publish mappings or input documents. A verified new address needs a separately provisioned destination before publication. Missing or ambiguous routing blocks publication; do not create speculative destinations or fall back to the shared library. Non-email requests need their separately verified route. Current maintenance and its already-authorized lessons remain in `aj-flynn/geometry-lessons`.
 
 ## Keep input private
 

@@ -8,10 +8,11 @@ Draft outside the checkout from `templates/lesson.html`. Teach one coherent conc
 
 ## Required semantic review
 
-Review the whole final artifact, including visible text, hints, code, metadata, URLs, comments, SVG descriptions, feedback, and filenames:
+Review the whole final artifact, including visible text, hints, code, metadata, URLs, comments, SVG descriptions, feedback, and filenames. Include every local asset loaded by the lesson (shared CSS, JavaScript, and imported modules), even if unchanged. The HTML hash alone does not identify those dependencies; record the fixed commit and the asset paths in the review notes:
 
 - **Privacy:** no personal or identifying details, source documents, private identifiers, copied questions, embedded input, or learner records. Also inspect the entire staged diff and commit message.
 - **Homework separation:** every example differs meaningfully from every supplied question. No content reproduces, confirms, or effectively finishes an assigned answer, proof, explanation, classification, or lab conclusion. Different numbers alone may be insufficient. Do the comparison privately.
+- **Teaching sequence:** identify each concept and its immediately following fresh transfer check. Verify mixed practice, a separate prediction/reveal, plausible misconception feedback with retry, inline definitions, and a later recall prompt. Compare the process and lesson with the official teach skill using `docs/TEACH-ALIGNMENT.md`; report intentional privacy adaptations and actual omissions.
 - **Accuracy:** independently verify the relationships, arithmetic, units, source claims, diagram geometry, and animation endpoints. Geometry requires valid theorem conditions and markings. Science additionally requires stated model assumptions, valid input ranges, correct graph axes/units, and a distinction between simulated data and evidence. A picture's appearance is not a given or a measurement.
 - **Accessibility and language:** check 390px, 768px, desktop, and 200% zoom where supported; readable labels, no clipping, meaningful text alternatives, real labeled controls, visible focus, keyboard input, announced feedback, reduced motion, and a readable static/print version. Define unfamiliar terms and symbols in plain language without losing accuracy. Record checks that cannot be exercised honestly.
 

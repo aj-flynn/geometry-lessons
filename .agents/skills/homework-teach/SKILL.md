@@ -37,6 +37,16 @@ Each lesson contains:
 - A brief retrieval prompt for later and an invitation to ask about a confusing step in the private chat.
 - Verified topic-specific educational source links. Add public references to `RESOURCES.md`; retain private learner observations only in the private conversation.
 
+### Make practice part of the teaching sequence
+
+Place a short transfer check immediately after each major concept, before moving on. Change the representation, configuration, context, or direction from the worked example; never ask the learner to repeat an answer just displayed. Finish with a small mixed set that requires choosing among methods, then an exit explanation. Select a useful minimum rather than adding repetitive questions.
+
+For each check, author one plausible misconception and feedback that explains what to reconsider, followed by a retry. Do not make success visible through answer length, styling, or a fixed button position. Keep automatic checking limited to new practice; a typed explanation invites reflection and is not a claim of graded mastery.
+
+Place a prediction prompt outside the initially closed answer reveal. The learner must be able to read the prompt without seeing the result. Begin an unfamiliar numerical relationship with an easy anchor such as doubling/halving before harder factors. Define each new term inline as well as in the glossary. Use a visual comparison when a misconception concerns how shapes, graphs, or models differ.
+
+Offer short stopping points and a later recall prompt. The learner may return to an earlier concept when needed; retain any personal progress only in the private conversation. For independent review, compare against the official teach skill using `docs/TEACH-ALIGNMENT.md`, applying the owner's privacy and no-answer constraints first.
+
 Start from `templates/lesson.html` outside the public checkout. Reuse `assets/site.css`, `assets/lesson.js`, and suitable subject components. Place only complete, sanitized HTML at `lessons/NNNN-concept-name.html`. The library index groups reviewed lessons by subject; science support alone is not a reason to invent a science lesson.
 
 ## Incoming messages and email

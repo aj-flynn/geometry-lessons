@@ -31,6 +31,8 @@ A candidate cannot pass if it publishes PII/input, reveals or validates actual h
 
 ## Iterate on evidence
 
+Also compare the fixed lesson and process with [Matt Pocock's official teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md), using [the alignment guide](TEACH-ALIGNMENT.md). Report fidelity, intentional privacy/no-answer adaptations, and actual gaps within the existing criteria. Review all loaded shared assets and imported modules along with the HTML; name those paths and the fixed commit in the evidence.
+
 For each review, report the candidate revision, both actual scores with criterion breakdowns, gate results, checks actually performed, and concrete deductions with artifact/behavior evidence. Mark unavailable checks as unavailable; do not invent their results.
 
 Fix the highest-impact demonstrated issues, run affected checks, and publish a coherent improved version when ready. Send the new fixed revision for independent re-review. Keep this rubric stable; do not relax it or ask the reviewer to inflate a score to cross the target. Record review outcomes and meaningful fixes in the existing task's review notes without private input. Completion requires the independent review evidence meeting the threshold.

@@ -1,5 +1,7 @@
 # Similar polygons lesson review
 
+**Historical baseline only:** this record describes revision `5769c410385de1af1b8eefcb38e4e96e8d671081`, before independent refinement. Its counts and the final statement about no independent reviewer apply only to that baseline author check. See [REFINEMENT.md](REFINEMENT.md) for later independent scores and current verification. It does not attest the current lesson or shared assets.
+
 Reviewed 2026-11-05. No learner record or private input is stored here.
 
 ## Content

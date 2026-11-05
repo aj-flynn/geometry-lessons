@@ -4,7 +4,7 @@ import {mkdtempSync,mkdirSync,writeFileSync,cpSync,rmSync,readFileSync} from 'no
 import {tmpdir} from 'node:os';
 import {join,resolve,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
-import {root,renderIndex,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry} from '../scripts/build-index.mjs';
+import {root,renderIndex,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry,reviewContractCoreFiles} from '../scripts/build-index.mjs';
 import {check,collectReviewContractHashes} from '../scripts/check.mjs';
 
 const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{},contract:{}};
@@ -83,6 +83,11 @@ test('a science publication requires a glossary, a current hash, and the updated
   const temp=mkdtempSync(join(tmpdir(),'homework-subject-check-'));
   try{
     for(const dir of ['templates','assets','lessons','docs'])mkdirSync(join(temp,dir));
+    for(const name of reviewContractCoreFiles){
+      const target=join(temp,name);
+      mkdirSync(dirname(target),{recursive:true});
+      writeFileSync(target,'Synthetic contract input.');
+    }
     for(const file of ['assets/site.css','assets/lesson.js'])cpSync(join(root,file),join(temp,file));
     writeFileSync(join(temp,'templates/index.html'),'<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
     const scienceSkill='.agents/skills/science-teach/SKILL.md';

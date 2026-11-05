@@ -28,7 +28,7 @@ When shared JavaScript or CSS changes, identify every lesson that loads it and r
 
 ## Metadata and index
 
-Use globally unique sequential names `lessons/NNNN-concept-name.html`: choose the current library's highest identifier plus one for a new lesson, and preserve existing identifiers when revising. The library identifier is unrelated to assignment numbering. Add entries to the version-2 `lessons.json` schema:
+Use unique sequential names within the selected library, `lessons/NNNN-concept-name.html`: choose that library's highest identifier plus one for a new lesson, and preserve existing identifiers when revising. Independent libraries have independent numbering. The library identifier is unrelated to assignment numbering. Add entries to the version-2 `lessons.json` schema:
 
 ```json
 {
@@ -53,7 +53,7 @@ Use globally unique sequential names `lessons/NNNN-concept-name.html`: choose th
 }
 ```
 
-`subject` is an exact registered label from the library's `subjects.json`. Current skills include Geometry, Science, Chemistry, and English; new subjects are added through the [new-subject workflow](new-subject.md). Version 2 requires `accuracy`, `dependencies`, and `contract` hash maps for every subject; the example above is abbreviated. Preserve version-1 geometry compatibility and existing Science labels/URLs. Older version-2 records need their reviewed maps added before publication. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update hashes only after the affected review.
+`subject` is an exact registered label from the library's `subjects.json`; consult that registry for current subjects and use the [new-subject workflow](new-subject.md) for additions. Version 2 requires `accuracy`, `dependencies`, and `contract` hash maps for every subject; the example above is abbreviated. Preserve version-1 geometry compatibility and existing Science labels/URLs. Older version-2 records need their reviewed maps added before publication. Preserve an existing `math` attestation when migrating an unchanged geometry lesson. Update hashes only after the affected review.
 
 Use the repository's static-loading authoring profile: declare local JavaScript dependencies with one literal, semicolon-terminated static import per line in a leading declaration block; keep local exported functions/constants, but use no dynamic imports, reexports, import maps, or runtime resource loading. Bind controls with `addEventListener` in reviewed scripts. HTML permits approved script elements but no executable `on*` attributes, executable URL schemes, `srcdoc`, base-URL changes, meta refresh, or embedded browsing/plugin documents. A standards-aware HTML parser checks these surfaces, including entity-decoded attributes and template contents. CSS uses literal local resource URLs or same-document fragments such as `url(#arrow)`, with no `@import` or escaped resource syntax. The guard conservatively rejects reserved loading syntax even in comments or strings; rewrite that prose instead of bypassing the guard. This profile matches the existing shared components and avoids pretending to parse arbitrary JavaScript.
 

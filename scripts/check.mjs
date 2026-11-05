@@ -4,23 +4,35 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, contractPath, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
 const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
 const sharedReferences = '.agents/skills/homework-teach/references';
+const auxiliaryDirectories = new Set(['node_modules', '__pycache__', 'dist']);
+const unexpectedAuxiliaryPath = path => path.split('/').some((part, index) =>
+  auxiliaryDirectories.has(part) || (part.startsWith('.') && !(index === 0 && part === '.agents'))
+);
 
 export function inspectPrivateIdentifiers(source, name) {
   const findings = [];
   const addresses = source.matchAll(/[A-Z0-9._%+-]+@([A-Z0-9.-]+\.[A-Z]{2,})/gi);
   const exampleDomain = /(?:^|\.)example\.(?:com|net|org)$|\.(?:example|invalid|test)$/i;
-  if ([...addresses].some(([, domain]) => !exampleDomain.test(domain))) {
+  const spelledAddresses = source.matchAll(/\b[A-Z0-9._%+-]+\s+(?:at|\[at\]|\(at\))\s+([A-Z0-9.-]+)\s+(?:dot|\[dot\]|\(dot\))\s+(com|org|net|edu|gov|test|example|invalid)\b/gi);
+  if ([...addresses].some(([, domain]) => !exampleDomain.test(domain)) ||
+      [...spelledAddresses].some(([, domain, suffix]) => !exampleDomain.test(domain + '.' + suffix))) {
     findings.push(`${name}: Email-like personal identifier`);
   }
+  const phone = /(?:^|[^\w])(?:\+1[ .-]?)?(?:\([2-9]\d{2}\)[ .-]?|[2-9]\d{2}[ .-])[2-9]\d{2}[ .-]\d{4}(?!\w)/;
+  const learner = /^\s*(?:[-*]\s+)?(?:student|learner|pupil)[ -]+(?:name|id|number)\s*[:=]\s*(?=[\p{L}\p{N}])[\p{L}\p{N}_.-]{2,}/imu;
+  if (phone.test(source)) findings.push(`${name}: Phone-like personal identifier`);
+  if (learner.test(source)) findings.push(`${name}: Labeled learner identifier`);
   const windowsHome = /\b[A-Z]:[\\/]+(?:Users|Documents and Settings)[\\/]+[^\\/\s"'<>]+/i;
   const unixHome = /(?:^|[\s"'<>=(]|file:\/\/)\/(?:Users|home)\/[^/\s"'<>]+/i;
+  const homeworkPath = /(?:\b[A-Z]:[\\/]+|(?:^|[\s"'<>=(])(?:\/|\\\\)|file:\/\/\/)(?:[^\\/\r\n"'<>]+[\\/]+)*(?:private[ _-]+homework|homework[ _-]+(?:assignments?|inputs?|submissions?|uploads?))[\\/]/i;
   if (windowsHome.test(source) || unixHome.test(source)) findings.push(`${name}: Absolute private home path`);
+  if (homeworkPath.test(source)) findings.push(`${name}: Absolute private homework path`);
   return findings;
 }
 
@@ -31,7 +43,7 @@ export function inspectPublicCode(source, name) {
     [/<(?:img|iframe|object|embed)\b/i, 'Input-capable embedded media; use reviewed inline SVG'],
     [/<(?:script|link)\b[^>]*(?:src|href)\s*=\s*["'](?:https?:)?\/\//i, 'External script or stylesheet'],
     [/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource|sendBeacon)\s*\(/, 'Network request'],
-    [/\b(?:localStorage|sessionStorage|indexedDB)\b|document\.cookie/, 'Persistent browser data'],
+    [/\b(?:localStorage|sessionStorage|indexedDB|caches|CacheStorage|cookieStore)\b|document\s*(?:\.\s*cookie\b|\[\s*["'\x60]cookie["'\x60]\s*\])|navigator\s*(?:\.\s*storage\b|\[\s*["'\x60]storage["'\x60]\s*\])/, 'Persistent browser data'],
     [/<form\b[^>]*\baction\s*=/i, 'Form submission destination'],
     [/url\(\s*["']?(?:https?:)?\/\//i, 'External CSS resource'],
     [/\bAUTHOR:|\{\{[A-Z_]+\}\}/, 'Unfinished authoring scaffold']
@@ -79,9 +91,14 @@ function moduleReferences(source) {
   const cssUrls = /\burl\(/i;
   const locationCalls = /\blocation\s*(?:\.|\?\.)\s*(?:assign|replace)\s*(?:\?\.\s*)?\(/;
   const locationWrites = /\blocation(?:\s*\.\s*(?:href|protocol|host|hostname|port|pathname|search|hash)\b)?\s*=(?!=|>)/;
-  const popupCalls = /\bwindow\s*(?:\.|\?\.)\s*open\s*(?:\?\.\s*)?\(/;
+  const popupCalls = /(?<![\w$.])open\s*(?:\?\.\s*)?\(|\b(?:window|self|globalThis)\s*(?:\.|\?\.)\s*open\s*(?:\?\.\s*)?\(/;
   if ([locationCalls, locationWrites, popupCalls].some(pattern => pattern.test(source))) {
     throw new Error('Use reviewed HTML links instead of JavaScript navigation.');
+  }
+  const formDestinationWrites = /(?:\.\s*(?:action|formAction)\b|\[\s*["'\x60](?:action|formAction)["'\x60]\s*\])\s*=(?!=|>)|\bsetAttribute\s*\(\s*["'\x60](?:action|formaction)["'\x60]/i;
+  const formSubmissionCalls = /(?:\.\s*(?:submit|requestSubmit)\b|\[\s*["'\x60](?:submit|requestSubmit)["'\x60]\s*\])\s*(?:\?\.\s*)?\(/;
+  if (formDestinationWrites.test(source) || formSubmissionCalls.test(source)) {
+    throw new Error('Practice JavaScript must avoid assigning form destinations or submitting forms.');
   }
   if ([runtimeLoaders, resourceChanges, documentWrites, cssUrls].some(pattern => pattern.test(source))) {
     throw new Error('Declare lesson resources in HTML, CSS, or leading static imports. Runtime resource loaders are outside the lesson dependency profile.');
@@ -120,6 +137,35 @@ const embeddedElements = new Set([
 const urlAttributes = new Set(['href', 'src', 'action', 'formaction', 'data', 'poster', 'background', 'cite', 'longdesc']);
 const svgStyleAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'cursor', 'marker', 'marker-start', 'marker-mid', 'marker-end'];
 
+function checkInitialFormSafety(document) {
+  const forms = new Map();
+  let unownedEnabledSubmitter = false;
+  for (const node of htmlElements(document)) {
+    if (node.namespaceURI !== 'http://www.w3.org/1999/xhtml') continue;
+    const attrs = new Map(node.attrs.map(({ name, value }) => [name, value]));
+    if (attrs.has('form')) throw new Error('Keep practice controls inside their form without explicit form associations.');
+    if (node.tagName === 'form') forms.set(node, false);
+    const type = attrs.get('type')?.toLowerCase();
+    const submitter = (node.tagName === 'button' && type !== 'button' && type !== 'reset') ||
+      (node.tagName === 'input' && (type === 'submit' || type === 'image'));
+    if (!submitter) continue;
+    let form = node.parentNode;
+    while (form && !forms.has(form)) form = form.parentNode;
+    if (!form) {
+      if (!attrs.has('disabled')) unownedEnabledSubmitter = true;
+      continue;
+    }
+    if (!attrs.has('disabled')) throw new Error('Practice submit controls must start disabled until a reviewed handler is bound.');
+    forms.set(form, true);
+  }
+  if ([...forms.values()].some(disabledSubmitter => !disabledSubmitter)) {
+    throw new Error('Practice forms need a disabled submit control to block implicit submission before JavaScript binds.');
+  }
+  if (forms.size && unownedEnabledSubmitter) {
+    throw new Error('Use type="button" for non-submit buttons outside practice forms.');
+  }
+}
+
 function inspectHtml(source) {
   const references = new Set();
   const links = new Set();
@@ -132,6 +178,7 @@ function inspectHtml(source) {
   };
   // Inspect both trees so markup in the JavaScript-disabled fallback is checked.
   const documents = [parse(source), parse(source, { scriptingEnabled: false })];
+  for (const document of documents) checkInitialFormSafety(document);
   for (const node of documents.flatMap(document => [...htmlElements(document)])) {
     const tag = node.tagName.toLowerCase();
     const isSvg = node.namespaceURI === 'http://www.w3.org/2000/svg';
@@ -232,7 +279,7 @@ function dependencyHashes(base, page, markup) {
       throw new Error(`${from}: Invalid publication dependency URL. Use a literal relative resource path.`);
     }
     const name = dependencyName(from, local);
-    if (!dependencyPath.test(name) || !textExtension.test(name)) {
+    if (!dependencyPath.test(name) || !textExtension.test(name) || unexpectedAuxiliaryPath(name)) {
       throw new Error(`${from}: Publication dependency must be a supported file within assets/.`);
     }
     const source = readDependency(from, name);
@@ -252,7 +299,7 @@ function dependencyHashes(base, page, markup) {
       const name = dependencyName(from, local);
       // Library and other lesson links navigate to separately checked pages.
       if (!name.startsWith('reference/') || !name.endsWith('.html')) continue;
-      if (!referenceDependencyPath.test(name)) {
+      if (!referenceDependencyPath.test(name) || unexpectedAuxiliaryPath(name)) {
         throw new Error(`${from}: Use a literal relative HTML path for a learner reference page.`);
       }
       const source = readDependency(from, name);
@@ -279,7 +326,7 @@ export function collectReviewContractHashes(base, subject) {
   if (!registered) throw new Error('Review contract discovery requires a registered subject label.');
   const realBase = realpathSync(base);
   const references = resolve(base, sharedReferences);
-  const names = [sharedSkill, registered.skill, 'docs/REVIEW-RUBRIC.md'];
+  const names = [sharedSkill, registered.skill, ...reviewContractCoreFiles];
   if (existsSync(references)) {
     if (!lstatSync(references).isDirectory() || realpathSync(references) !== resolve(realBase, sharedReferences)) {
       throw new Error('Missing or unsafe shared review references directory.');
@@ -290,7 +337,7 @@ export function collectReviewContractHashes(base, subject) {
   }
   return Object.fromEntries(names.sort().map(name => {
     const path = resolve(base, name);
-    if (!contractPath.test(name) || !isRegularLocalFile(path, resolve(realBase, name))) {
+    if (!isReviewContractPath(name) || unexpectedAuxiliaryPath(name) || !isRegularLocalFile(path, resolve(realBase, name))) {
       throw new Error(`Missing or unsafe review contract file: ${name}.`);
     }
     return [name, hashBytes(readFileSync(path))];
@@ -377,21 +424,24 @@ function inspectSkillFiles(base, registry, candidates, skillFolders) {
   return errors;
 }
 
+export function archiveCandidatePaths(base) {
+  function walk(dir, prefix = '') {
+    return readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+      const name = prefix + entry.name;
+      if (!entry.isDirectory()) return [name];
+      const children = walk(resolve(dir, entry.name), name + '/');
+      return children.length ? children : [name + '/'];
+    });
+  }
+  return walk(base).sort();
+}
+
 function repositoryCandidates(base) {
   // Include tracked files even when their names match an ignore rule.
-  try {
-    return new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
-      cwd: base, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
-    }).split('\0').filter(Boolean));
-  } catch {
-    // Source archives and disposable check fixtures do not contain .git.
-    const walk = (dir, prefix = '') => readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
-      const name = prefix + entry.name;
-      if (['.git', '.taste-skill', '.qa', 'node_modules', '__pycache__', 'dist'].includes(entry.name)) return [];
-      return entry.isDirectory() ? walk(resolve(dir, entry.name), name + '/') : [name];
-    });
-    return new Set(walk(base));
-  }
+  if (!existsSync(resolve(base, '.git'))) return new Set(archiveCandidatePaths(base));
+  return new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z'], {
+    cwd: base, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore']
+  }).split('\0').filter(Boolean));
 }
 
 export function check(base = root) {
@@ -450,8 +500,8 @@ export function check(base = root) {
       errors.push(...pathFindings);
       continue;
     }
-    const allowedPath = allowedRoots.has(name) || /^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name)
-      || allowedSkillFolders.some(folder => name.startsWith(folder));
+    const allowedPath = allowedRoots.has(name) || (!unexpectedAuxiliaryPath(name) &&
+      (/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name) || allowedSkillFolders.some(folder => name.startsWith(folder))));
     const allowedType = textExtension.test(name) || allowedRoots.has(name);
     if (!allowedPath) errors.push(`Unexpected public repository path: ${name}`);
     if (!allowedType) errors.push(`Unsafe repository file type: ${name}`);
@@ -516,7 +566,7 @@ export function check(base = root) {
       }
     }
   }
-  errors.push(...inspectSkillFiles(base, registry, candidates, allowedSkillFolders));
+  errors.push(...inspectSkillFiles(base, registry, [...candidates].filter(name => !unexpectedAuxiliaryPath(name)), allowedSkillFolders));
   if (errors.length) throw new Error(errors.join('\n'));
   return { lessons: manifest.lessons.length, checkedFiles, repositoryFiles: candidates.size };
 }

@@ -99,3 +99,29 @@ Publication line endings were normalized to LF by Git. This changes byte hashes,
 - `0004-electrons-and-bonds.html`: `32b650c8e04e1764852fc2b3c6769374fa082d5a382e383d3cda46b90f795222`
 - `0005-shape-and-polarity.html`: `f7f2fb14d0546d89be3a99ba5ac08b49fa73db35ee3311e92d9b93273f6053bd`
 - `0006-between-molecules.html`: `bde337b15a20982daee3c5d93db839b1fafaf393482a55618d94ac01577ca24b`
+
+
+## Verified refinement: runtime recovery and control visibility
+
+The tested subject routes remain Geometry, English and Chemistry in the existing shared library. Unknown disciplines create their own reusable skill before generation; hypothetical routing observations distinguish Algebra from Geometry and French from Spanish, while retaining regional variants within a language skill. Those observations do not certify actual unknown-subject generation. No email integration, partition migration, new recipient or synthetic assignment was published.
+
+The shared construction instructions now require complete static teaching before interactive enhancement, component-owned readiness and visible comparison guidance when initialization fails. Concrete repairs preserve print explanations, isolate malformed explorers, reject invalid numeric metadata before enabling controls, and retain functioning practice when another script fails. The template supplies an executable fresh-practice specimen whose teaching must be rebuilt for the actual subject. The English skill now checks rendered essential control-boundary contrast; the affected blue borders were strengthened.
+
+Fresh source-aware `gpt-6-astra` reviewers at high effort assessed all 23 lesson categories and five process categories for each tested subject. Geometry and all four Chemistry lessons/processes received 100/100. English first received 99.5/100 for both lesson and process because an editable-field boundary lacked sufficient contrast. After the skill and stylesheet revision, a new independent Astra/high review gave English 100/100 for both. Geometry/Chemistry lesson, dependency and contract identities are unchanged between those two candidates; their exact scoped evidence remains applicable. These are rubric judgments, not measurements of learner mastery or certification of absent disciplines.
+
+The broader earlier public-only Opus assessments are preserved: an intervening candidate scored 84.5/100, then another 82/100. A subsequent bounded infrastructure review returned no complete total: privacy 26/30, teaching 16/20, subject accuracy unassessed, repeatability 12/15 and validation/delivery 10/15. Its assessed subtotal was 64/80, not 64/100 or a full certification. Concrete findings drove the repairs above, HTTP-based Chemistry browser checks, exact adjacent-fallback matching, cache revision updates, and full-publication verification including unused registered skills and ancillary files. The latest independent Astra infrastructure investigation found no actionable blocker in the repaired behavior; it did not assign a universal process score. These distinct scopes and historical opinions are not averaged or overwritten.
+
+Independent brainstorming considered at least three new approaches at the impasse: paired failure-driven regeneration, auditing the reasoning left to the learner, and a compiled task runbook. Paired failure-driven regeneration was selected. Identical synthetic operations reproduce two failures with the previously deployed assets and pass with the repaired assets. This supports the concrete infrastructure improvement without inventing absent-subject homework. Publication proceeds under the incremental Astra-stage improvement and separately reviewed infrastructure provisions; final dual-model completion remains open.
+
+Validation: the checker passed six lessons and 68 selected files; all 40 JavaScript tests passed. The 16 Python fixture tests passed on identical tooling inputs. Current generic browser checks passed 26 page/mode cases and 146 form cases; independent subject checks cover the models and non-form controls outside that helper's scope. The Chemistry reviewer observed 135 subject checks passing. Current English control boundaries measured at least 5.508:1 against the relevant adjacent backgrounds. Browser evidence is bounded to Edge/Chromium and described print/enlargement checks; it is not an exhaustive accessibility or all-browser certification.
+
+| Selected skill | SHA-256 |
+| --- | --- |
+| homework-teach | 95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad |
+| english-teach | 2022d0c7e194679aa57e60f275c9f16b778510d800bd92f91dd2586481383846 |
+| geometry-teach | 45fb9494f76f126312acd842b580050c5a2140e332b30e065c3c425970ca0a24 |
+| chemistry-teach | ffd50c65be37d4529625811a5b89e28c3df32c8f9a71fe5d5b376d647d83c649 |
+
+Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
+
+This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.

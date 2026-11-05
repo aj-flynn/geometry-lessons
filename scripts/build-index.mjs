@@ -8,7 +8,18 @@ export const subjectOf = lesson => lesson.subject ?? 'Geometry';
 export const lessonFilename = /^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
 export const dependencyPath = /^assets\/(?:[\w-]+\/)*[\w.-]+\.[a-z0-9]+$/i;
 export const referenceDependencyPath = /^reference\/(?:[\w-][\w.-]*\/)*[\w.-]+\.html$/;
-export const contractPath = /^(?:docs\/REVIEW-RUBRIC\.md|\.agents\/skills\/(?:[a-z]+(?:-[a-z0-9]+)*-teach\/SKILL\.md|homework-teach\/references\/(?:[\w-][\w.-]*\/)*[\w.-]+\.md))$/;
+export const reviewContractCoreFiles = Object.freeze([
+  'AGENTS.md', 'README.md', 'docs/REVIEW-RUBRIC.md', 'subjects.json', 'package.json', 'package-lock.json',
+  '.agents/skills/homework-teach/scripts/read-docx.py',
+  'scripts/build-index.mjs', 'scripts/check.mjs', 'scripts/check-live.py',
+  'scripts/check-routing.mjs', 'scripts/check-chemistry-browser.py', 'scripts/check-practice-browser.py', 'scripts/review-candidate.mjs',
+  'templates/index.html', 'templates/lesson.html',
+  'tests/chemistry.test.mjs', 'tests/fixtures/routing-cases.json', 'tests/geometry-paths.test.mjs',
+  'tests/interactions.test.mjs', 'tests/routing.test.mjs', 'tests/similarity.test.mjs',
+  'tests/subjects.test.mjs', 'tests/test_docx.py', 'tests/test_live.py', 'tests/workflow.test.mjs'
+]);
+export const isReviewContractPath = name => reviewContractCoreFiles.includes(name) ||
+  /^\.agents\/skills\/(?:[a-z]+(?:-[a-z0-9]+)*-teach\/SKILL\.md|homework-teach\/references\/(?:[\w-][\w.-]*\/)*[\w.-]+\.md)$/.test(name);
 const sha256 = /^[a-f0-9]{64}$/i;
 
 export function validateSubjectRegistry(registry) {
@@ -74,7 +85,7 @@ export function validateManifest(manifest, registry = defaultRegistry) {
     }
     if (manifest.version === 2) {
       validateHashMap(lesson.file, 'dependency', lesson.review.dependencies, name => dependencyPath.test(name) || referenceDependencyPath.test(name));
-      validateHashMap(lesson.file, 'contract', lesson.review.contract, name => contractPath.test(name));
+      validateHashMap(lesson.file, 'contract', lesson.review.contract, isReviewContractPath);
     }
   }
   return manifest;

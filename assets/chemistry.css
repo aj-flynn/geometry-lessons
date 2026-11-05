@@ -50,8 +50,8 @@
 .chemistry button:disabled{cursor:not-allowed;opacity:.65}
 .chemistry [data-exclusive] [data-stage]{display:none}
 .chemistry [data-exclusive] [data-stage]:last-of-type{display:inline}
-.chemistry.is-enhanced .static-feedback{display:none}
+.chemistry form[data-practice-ready="true"] + .static-feedback{display:none}
 .chemistry .step-notes{font-size:18px}
 .chemistry .step-notes .current-step{border:0}
 @media(max-width:600px){.chemistry header{padding:22px;margin-inline:0}.chemistry header h1{font-size:38px}.chemistry header .lead{font-size:22px}.chemistry figure{padding:12px;margin-inline:0}.chemistry section{margin-top:48px}.chemistry h2{font-size:27px}.chemistry .option{padding:12px}.chemistry th,.chemistry td{padding:10px}}
-@media print{.chemistry.is-enhanced .static-feedback{display:block}.chemistry [data-exclusive] [data-stage]{display:none!important}.chemistry [data-exclusive] [data-stage]:last-of-type{display:inline!important}.chemistry header{padding:0;background:#fff}.chemistry section{margin-top:24px}}
+@media print{.chemistry form[data-practice-ready="true"] + .static-feedback{display:block}.chemistry [data-exclusive] [data-stage]{display:none!important}.chemistry [data-exclusive] [data-stage]:last-of-type{display:inline!important}.chemistry header{padding:0;background:#fff}.chemistry section{margin-top:24px}}

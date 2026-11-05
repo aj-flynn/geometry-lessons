@@ -227,3 +227,14 @@ After the 98/100 assessment, the no-script print instruction was corrected to op
 Actual 200% browser zoom, native print preview, an operating-system reduced-motion change, and screen-reader operation remain **unverified** in this record. The prior environment could not expose those native surfaces; responsive/CSS evidence is not a substitute.
 
 To close the gaps on the fixed candidate, exercise navigation and controls at native 200% zoom; confirm all paths and hints in print preview and restoration afterward; change the OS animation preference during playback; and use a screen reader to inspect disclosure states, control names/values, and feedback announcements. Record actual observations for independent reassessment. These artifact checks do not establish durable learner mastery or end-to-end email delivery.
+
+
+## Verified refinement: runtime recovery and control visibility
+
+Fresh independent `gpt-6-astra` / high source-aware review: lesson 100/100 across all 23 categories; Geometry process 100/100 across all five categories. The reviewed HTML is `14d1384f9281b57a94160d62c471fb9b6cf0b0556ed942ab77d25466cb31f8ce`. All Geometry HTML, dependency and contract identities remain unchanged in the selected publication.
+
+The revision preserves static comparisons until their own controls initialize, isolates malformed explorers, rejects invalid numeric metadata before readiness, and keeps closed explanations readable in print. The visible feedback note and print advice match actual behavior. Seven numeric forms, eight choice quizzes, interactive geometry controls, dependency failures, keyboard navigation and responsive layouts were exercised. Private source comparison remains outside the public repository.
+
+Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
+
+This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.

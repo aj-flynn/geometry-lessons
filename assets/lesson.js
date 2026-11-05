@@ -54,6 +54,10 @@ for (const form of document.querySelectorAll('form[data-practice]')) {
   const feedback = form.querySelector('[data-feedback]');
   const input = form.querySelector('input');
   if (!feedback || !input) continue;
+  const authoredExpected = form.dataset.expected;
+  const authoredTolerance = Number(form.dataset.tolerance || 0.001);
+  if (typeof authoredExpected !== 'string' || !authoredExpected.trim() ||
+      !Number.isFinite(Number(authoredExpected)) || !Number.isFinite(authoredTolerance) || authoredTolerance < 0) continue;
   form.addEventListener('submit', event => {
     event.preventDefault();
     const entered = Number(input.value);
@@ -79,5 +83,8 @@ for (const form of document.querySelectorAll('form[data-practice]')) {
       ? (form.dataset.success || 'That fits this practice example. Can you explain why?')
       : hint;
   });
+  form.dataset.practiceReady = 'true';
+  const submit = form.querySelector('button[type="submit"]');
+  if (submit) submit.disabled = false;
 }
 

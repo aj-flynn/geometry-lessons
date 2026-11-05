@@ -571,3 +571,21 @@ The fresh reviewer independently ran the checker and 18 Node tests, inspected th
 | `assets/lesson.js` | `b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c` |
 | `tests/chemistry.test.mjs` | `27564f7a537e3d14fe0b77b0b0e2cc64563ab962ad88ca7c16803c60b9c27f2b` |
 | `scripts/check-chemistry-browser.py` | `deafaead18390c746f775655620e8f61a3a27d2b637ed494f958201423529a4a` |
+
+
+## Verified refinement: runtime recovery and control visibility
+
+Fresh independent source-aware `gpt-6-astra` / high review assessed every category of each Chemistry lesson and the Chemistry reusable process. Each lesson and the process received 100/100. These scoped judgments apply to the inspected sequence and available input, not every possible Chemistry topic or other sciences.
+
+| Lesson | Astra | Reviewed HTML SHA-256 |
+| --- | --- | --- |
+| 0003-reading-particle-formulas.html | 100/100 | `d08e8ca3272468b99915f9c3d8a75f8781d51b75df279133bc7036418e80087b` |
+| 0004-electrons-and-bonds.html | 100/100 | `c052ff1a5790fca9040cd9047669f4a59dcc2a505fab54667896f24b6e822409` |
+| 0005-shape-and-polarity.html | 100/100 | `006e92fc8d91a577a0f0b77b143082363cbb82edd0b39b38947643cb6f424d5e` |
+| 0006-between-molecules.html | 100/100 | `3d9b605e5b2296802a84297e54d3b7492629f4ff2359b0587b8b30ff15625aee` |
+
+All Chemistry HTML, dependency and contract identities remain unchanged in the selected publication. Component-local readiness now keeps failed regions' comparisons available while working regions remain interactive. The browser checker discovers Chemistry through the manifest and reviewed reference closure, and serves pages over local HTTP so JavaScript modules can run. The independent review observed 135 subject checks, four library returns and 46 closed print disclosures; generic per-dependency form checks also passed. Private source comparison and raw review evidence remain outside the repository.
+
+Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
+
+This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.

@@ -1,12 +1,16 @@
 // Original practice and illustrative models only. All state lasts for this page visit.
 const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
 for (const form of document.querySelectorAll('[data-chem-choice]')) {
+  const feedback = form.querySelector('.feedback');
+  if (!feedback) continue;
   form.addEventListener('submit', event => {
     event.preventDefault();
     const selected = form.querySelector('input:checked');
-    const feedback = form.querySelector('.feedback');
     feedback.textContent = selected ? selected.dataset.explanation : 'Choose an option, then explain what evidence supports it.';
   });
+  // Only this form's feedback handler makes its controls and fallback ready.
+  form.dataset.practiceReady = 'true';
+  for (const button of form.querySelectorAll('button[type="submit"]')) button.disabled = false;
 }
 for (const model of document.querySelectorAll('[data-chem-steps]')) {
   const type = model.dataset.chemSteps;
@@ -84,10 +88,3 @@ for(const model of document.querySelectorAll('[data-polarity]')) {
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
   draw(180);
 }
-
-// Native submit remains disabled until every local handler is ready.
-for (const form of document.querySelectorAll('form[data-practice], form[data-chem-choice]')) {
-  form.addEventListener('submit', event => event.preventDefault());
-  for (const button of form.querySelectorAll('button[type="submit"]')) button.disabled = false;
-}
-for (const lesson of document.querySelectorAll('.chemistry')) lesson.classList.add('is-enhanced');

@@ -6,8 +6,8 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="AUTHOR: a public concept summary, with no homework details.">
   <title>AUTHOR: concept title</title>
-  <link rel="stylesheet" href="../assets/site.css">
-  <script src="../assets/lesson.js" defer></script>
+  <link rel="stylesheet" href="../assets/site.css?v=20261105-r9">
+  <script src="../assets/lesson.js?v=20261105-r9" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,6 +44,24 @@
     </section>
     <section aria-labelledby="practice"><h2 id="practice">Your turn</h2>
       <p>AUTHOR: a short mixed set that makes the learner choose among methods already checked beside their concepts. Add an exit explanation and accessible feedback. Do not repeat the just-worked example. Avoid answer clues from option length, position or formatting. No actual-homework grader or mastery claim.</p>
+      <!-- AUTHOR: this executable specimen demonstrates construction, not reusable lesson content.
+           Rebuild its context, quantities, reasoning, misconception and transfer from the selected
+           subject skill after privately comparing every supplied question. Keep the safe markup. -->
+      <h3>A working authoring specimen: count the chosen signal</h3>
+      <p>A fictional beacon repeats one long flash and two short flashes in each complete cycle. Before checking, predict how many <em>short</em> flashes occur in four complete cycles. Explain what should be counted and what should be left out.</p>
+      <details><summary>Notice what repeats</summary><p>Count only the requested kind of flash in one cycle, then use the number of complete cycles.</p></details>
+      <form class="practice" data-practice data-expected="8"
+        data-hint="Separate short flashes from all flashes, then count the short flashes across four cycles. Try again."
+        data-mistakes='{"12":"That counts both kinds of flash. Count only the two short flashes in each cycle, then retry.","2":"That counts one cycle. Account for all four complete cycles, then retry."}'
+        data-success="Eight short flashes fit four groups of two. Explain why the long flashes were left out.">
+        <label for="specimen-count">Short flashes in four complete cycles</label>
+        <input id="specimen-count" type="number" min="0" step="1" required>
+        <button type="submit" disabled>Check this new example</button>
+        <p data-feedback role="status" aria-live="polite"></p>
+      </form>
+      <details class="static-feedback"><summary>Compare your reasoning, including without scripts</summary><p>Each complete cycle contributes two short flashes, so four cycles give 2 + 2 + 2 + 2 = 8 short flashes. Twelve counts all flashes, and two counts only one cycle. Retry with a different case: three complete cycles and five short flashes per cycle. Predict before opening the next comparison.</p>
+        <details><summary>Compare the retry</summary><p>Three groups of five short flashes give fifteen. The method depends on complete cycles and a fixed pattern; part of a cycle needs information about where it stops.</p></details>
+      </details>
     </section>
     <section aria-labelledby="remember"><h2 id="remember">Keep the idea</h2>
       <p>AUTHOR: next time, before opening this lesson, recall one relationship and try one new transfer example. If unsure, use a hint and revisit the smallest relevant section. Keep all learner responses private; do not create reminders or public learning records.</p>

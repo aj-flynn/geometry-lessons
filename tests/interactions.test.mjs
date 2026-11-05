@@ -43,9 +43,19 @@ test('angle explorer keeps rays accurate as keyboard/input values change and sto
 });
 
 test('practice gives local feedback for fresh examples without revealing expected values',()=>{
-  const input=control(),feedback=control();
-  const form=control({dataset:{expected:'6',hint:'Recall the relationship.',success:'Explain why it fits.'},querySelector:selector=>selector==='input'?input:feedback});
-  vm.runInNewContext(code,{document:{querySelectorAll:selector=>selector==='form[data-practice]'?[form]:[]},matchMedia:()=>({matches:true})});
+  const input=control(),feedback=control(),submit=control({disabled:true});
+  const form=control({dataset:{expected:'6',hint:'Recall the relationship.',success:'Explain why it fits.'},querySelector:selector=>({'input':input,'[data-feedback]':feedback,'button[type="submit"]':submit})[selector]});
+  form.addEventListener=(name,handler)=>{assert.equal(submit.disabled,true);assert.equal(form.dataset.practiceReady,undefined);form.listeners[name]=handler;};
+  const unavailableSubmit=control({disabled:true});
+  const unavailable=control({querySelector:selector=>selector==='button[type="submit"]'?unavailableSubmit:null});
+  vm.runInNewContext(code,{document:{querySelectorAll:selector=>selector==='form[data-practice]'?[form,unavailable]:[]},matchMedia:()=>({matches:true})});
+  assert.equal(submit.disabled,false);
+  assert.equal(form.dataset.practiceReady,'true');
+  assert.equal(unavailableSubmit.disabled,true);
+  assert.equal(unavailable.dataset.practiceReady,undefined);
+  let prevented=false;
+  form.listeners.submit({preventDefault(){prevented=true;}});
+  assert.equal(prevented,true);
   input.value='';form.fire('submit');assert.match(feedback.textContent,/Enter a number/);
   input.value='5';form.fire('submit');assert.equal(feedback.textContent,'Recall the relationship.');
   assert.doesNotMatch(feedback.textContent,/6/);

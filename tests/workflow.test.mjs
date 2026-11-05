@@ -1,11 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { dirname, join } from 'node:path';
+import { basename, dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { renderIndex, validateManifest, generateIndex } from '../scripts/build-index.mjs';
+import { renderIndex, validateManifest, generateIndex, reviewContractCoreFiles } from '../scripts/build-index.mjs';
 import { check, collectLessonDependencyHashes, collectReviewContractHashes, inspectPublicCode, hasLibraryLink } from '../scripts/check.mjs';
+import { createInputReceipt, verifyPublicationEnvelope } from '../scripts/review-candidate.mjs';
 
 const syntheticAddress = ['synthetic-learner', ['synthetic-school', 'edu'].join('.')].join('@');
 const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
@@ -26,6 +29,7 @@ function publicationFixture(t) {
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, content);
   };
+  for (const name of reviewContractCoreFiles) put(name, 'Synthetic contract input.');
   put('templates/index.html', '<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
   put('subjects.json', JSON.stringify([{ id: 'geometry', label: 'Geometry', skill: geometrySkill }]));
   put(sharedSkill, sharedSkillText);
@@ -91,6 +95,22 @@ test('publication checks all candidate text for private identifiers', t => {
   });
   put(doc, Buffer.from([0, 1, 2]));
   assert.throws(() => check(base), /docs\/synthetic-guide\.md: Expected text without binary data/);
+  const privateExamples = [
+    [['learner', '[at]', 'synthetic-school', '[dot]', 'edu'].join(' '), 'Email-like'],
+    [['(202)', '555-0199'].join(' '), 'Phone-like'],
+    [['Student', 'ID: SYNTHETIC42'].join(' '), 'Labeled learner'],
+    [['Q:', 'Synthetic Sync', 'Homework Assignments', 'example.txt'].join('/'), 'Absolute private homework path'],
+    [['', 'fixtures', 'private-homework', 'example.txt'].join('/'), 'Absolute private homework path'],
+    [['', '', 'synthetic-host', 'fixture', 'Homework_Inputs', 'example.txt'].join('\\'), 'Absolute private homework path']
+  ];
+  put(sharedSkill, sharedSkillText);
+  put('scripts/synthetic.mjs', '// No private state.');
+  for (const [value, diagnostic] of privateExamples) {
+    put(doc, value);
+    assert.throws(() => check(base), error => error.message.includes(diagnostic) && !error.message.includes(value));
+  }
+  put(doc, 'Homework Assignments is an illustrative folder name. The public resource is https://example.com/homework-inputs/guide.');
+  assert.equal(check(base).lessons, 0);
 });
 
 test('version 2 checks exact transitive hashes even when lesson HTML is unchanged', t => {
@@ -174,10 +194,21 @@ test('version 2 checks exact transitive hashes even when lesson HTML is unchange
     'location.assign("https://example.com/");',
     'window.location.replace("https://example.com/");',
     'window.open("https://example.com/");',
+    'open("https://example.com/");',
     'location = "https://example.com/";',
     'window.location.href = "https://example.com/";'
   ]) {
     checkRejectedDependency('assets/nested/middle.mjs', navigation, /Use reviewed HTML links instead of JavaScript navigation/);
+  }
+  for (const submission of [
+    'form.action = "https://example.com/";',
+    'button["formAction"] = "https://example.com/";',
+    'form.setAttribute("action", "https://example.com/");',
+    'form.submit();',
+    'form.requestSubmit?.();',
+    'form["submit"]();'
+  ]) {
+    checkRejectedDependency('assets/nested/middle.mjs', submission, /Practice JavaScript must avoid assigning form destinations or submitting forms/);
   }
   checkRejectedDependency('assets/nested/middle.mjs', 'import "../../templates/outside.js";', /Publication dependency must be a supported file within assets/);
   put('assets/nested/middle.mjs', middle);
@@ -297,6 +328,34 @@ test('the index and reference pages enforce the parsed resource profile', t => {
   put('assets/index.js', 'document.addEventListener("DOMContentLoaded", () => {});');
   put('assets/reference.css', '@import "https://example.com/unsafe.css";');
   assert.throws(() => check(base), /reference\/guide\.html: CSS must avoid escapes and @import/);
+  put('reference/guide.html', page('Guide', reference));
+  put('assets/reference.css', 'body { color: black; }');
+  for (const persistence of ['caches.open("fixture");', 'cookieStore.set("answer", "synthetic");', 'navigator.storage.persist();']) {
+    put('assets/index.js', persistence);
+    assert.throws(() => check(base), /assets\/index\.js: Persistent browser data/);
+  }
+});
+
+test('practice forms block native and implicit submission before JavaScript binds', t => {
+  const { base, put } = publicationFixture(t);
+  put('lessons.json', JSON.stringify({ version: 2, lessons: [] }));
+  put('index.html', generateIndex(base));
+  const putPractice = markup => put('reference/practice.html',
+    `<html lang="en"><head><meta name="viewport"></head><body><h1>Practice</h1>${markup}</body></html>`);
+  const safe = '<form id=practice><input name=fixture><button type=submit disabled>Check</button></form>';
+  putPractice(safe);
+  assert.equal(check(base).lessons, 0);
+  for (const [markup, diagnostic] of [
+    ['<form><input name=fixture><button>Check</button></form>', /submit controls must start disabled/],
+    ['<form hidden><input name=fixture><input type=submit></form>', /submit controls must start disabled/],
+    ['<form><input name=fixture><button type=button>Check</button></form>', /disabled submit control to block implicit submission/],
+    ['<form><input name=fixture><template><button type=submit disabled>Check</button></template></form>', /disabled submit control to block implicit submission/],
+    [safe + '<button form=practice>Check elsewhere</button>', /without explicit form associations/],
+    [safe + '<input form=practice name=fixture>', /without explicit form associations/]
+  ]) {
+    putPractice(markup);
+    assert.throws(() => check(base), diagnostic);
+  }
 });
 
 test('review binds linked reference cycles and their assets plus the current teaching contract', t => {
@@ -321,7 +380,7 @@ test('review binds linked reference cycles and their assets plus the current tea
   put('assets/reference-model.js', referenceModel);
 
   const contract = collectReviewContractHashes(base, 'Geometry');
-  assert.deepEqual(Object.keys(contract), [geometrySkill, sharedSkill, sharedGuide, rubric]);
+  assert.deepEqual(Object.keys(contract), [geometrySkill, sharedSkill, sharedGuide, ...reviewContractCoreFiles].sort());
   const record = (file, html) => ({
     file, subject: 'Geometry', title: 'Synthetic reference', summary: 'Fixture only', topics: ['QA'],
     review: {
@@ -345,6 +404,10 @@ test('review binds linked reference cycles and their assets plus the current tea
     ['reference/nested/detail.html', detail, 'dependency'],
     ['assets/reference-model.js', referenceModel, 'dependency'],
     [rubric, '# Synthetic review rubric', 'contract file'],
+    ['subjects.json', readFileSync(join(base, 'subjects.json'), 'utf8'), 'contract file'],
+    ['scripts/check-live.py', 'Synthetic contract input.', 'contract file'],
+    ['scripts/check-routing.mjs', 'Synthetic contract input.', 'contract file'],
+    ['tests/fixtures/routing-cases.json', 'Synthetic contract input.', 'contract file'],
     [geometrySkill, geometrySkillText, 'contract file'],
     [sharedGuide, '# Synthetic shared guidance', 'contract file']
   ]) {
@@ -364,6 +427,66 @@ test('review binds linked reference cycles and their assets plus the current tea
   delete reviewed.review.contract;
   writeManifest();
   assert.throws(() => check(base), /missing reviewed contract SHA-256 map/);
+});
+
+test('frozen release receipts bind the whole file set and allow only approved report appends', t => {
+  const { base, put } = publicationFixture(t);
+  const report = 'docs/SKILL-REFINEMENT.md';
+  const otherReport = 'docs/CHEMISTRY-REVIEW.md';
+  const baseline = '# Earlier public review\n';
+  put(report, baseline);
+  put(otherReport, baseline);
+  put('package-lock.json', '{}\n');
+  put('lessons.json', JSON.stringify({ version: 2, lessons: [] }));
+  put('index.html', generateIndex(base));
+  const receipt = createInputReceipt(base, [report]);
+  for (const path of [...reviewContractCoreFiles, 'package-lock.json', 'index.html', 'lessons.json', report]) {
+    assert.ok(receipt.files[path]?.sha256);
+  }
+  assert.throws(() => createInputReceipt(base, [rubric]), /approved list/);
+  assert.throws(() => verifyPublicationEnvelope(base, { ...receipt, appendOnly: [otherReport] }), /valid private review-input receipt/);
+  put(report, baseline + '\nIndependent review update.\n');
+  const envelope = verifyPublicationEnvelope(base, receipt);
+  assert.deepEqual(envelope.appendedReports, [report]);
+  assert.equal(envelope.inputReceiptSha256, receipt.receiptSha256);
+  assert.notEqual(envelope.treeSha256, receipt.treeSha256);
+  assert.equal(envelope.files['index.html'].sha256, receipt.files['index.html'].sha256);
+
+  put(report, '# Rewritten review\n');
+  assert.throws(() => verifyPublicationEnvelope(base, receipt), /Existing review report bytes changed/);
+  put(report, baseline + '\n' + syntheticAddress);
+  assert.throws(() => verifyPublicationEnvelope(base, receipt), /Email-like personal identifier/);
+  put(report, baseline);
+  put(otherReport, baseline + '\nUnapproved addition.\n');
+  assert.throws(() => verifyPublicationEnvelope(base, receipt), /Frozen input changed: docs\/CHEMISTRY-REVIEW\.md/);
+  put(otherReport, baseline);
+  put('scripts/check.mjs', 'Changed governing input.');
+  assert.throws(() => verifyPublicationEnvelope(base, receipt), /Frozen input changed: scripts\/check\.mjs/);
+  put('scripts/check.mjs', 'Synthetic contract input.');
+
+  const cli = fileURLToPath(new URL('../scripts/review-candidate.mjs', import.meta.url));
+  const run = (...args) => execFileSync(process.execPath, [cli, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+  const privateReceipt = join(dirname(base), basename(base) + '-input.json');
+  const privateEnvelope = join(dirname(base), basename(base) + '-envelope.json');
+  t.after(() => {
+    rmSync(privateReceipt, { force: true });
+    rmSync(privateEnvelope, { force: true });
+  });
+  assert.throws(() => run('create', base, join(base, 'receipt.json'), report), /outside the frozen archive/);
+  run('create', base, privateReceipt, report);
+  assert.throws(() => run('create', base, privateReceipt, report), /EEXIST/);
+  put(report, baseline + '\nVerified report addition.\n');
+  run('verify', base, privateReceipt, privateEnvelope);
+  assert.deepEqual(JSON.parse(readFileSync(privateEnvelope, 'utf8')).appendedReports, [report]);
+
+  put('.qa/unexpected.txt', 'Synthetic hidden artifact.');
+  assert.throws(() => check(base), /Unexpected public repository path: \.qa\/unexpected\.txt/);
+  assert.throws(() => createInputReceipt(base, [report]), /Unexpected public repository path: \.qa\/unexpected\.txt/);
+  assert.throws(() => verifyPublicationEnvelope(base, receipt), /frozen candidate file set changed/);
+  rmSync(join(base, '.qa', 'unexpected.txt'));
+  rmdirSync(join(base, '.qa'));
+  put('docs/.qa/nested.txt', 'Synthetic hidden artifact.');
+  assert.throws(() => check(base), /Unexpected public repository path: docs\/\.qa\/nested\.txt/);
 });
 
 test('publication checks reject changed reviewed HTML, raw documents, and unindexed lessons', t => {

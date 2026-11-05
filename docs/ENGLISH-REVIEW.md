@@ -228,3 +228,16 @@ After review, the candidate was integrated with concurrent revision `e6f418ed7e7
 Chromium checks covered 320/390/768/1440px without horizontal overflow, 17px mobile step labels, all four empty/incorrect/correct practice flows, lens selection/reset, keyboard controls and skip link, progressive disclosures, reload clearing of optional notes, reduced motion, JavaScript-disabled reading, and print fallback. The repository checker and 13 Node tests passed, including English indexing alongside existing subjects. Parent QA also checked 200% content zoom on the original layout; this is not a native browser-zoom or screen-reader audit.
 
 The independent reviewer inspected the full public artifact and detected no private source text or identifying information. The original private assignment was not supplied to that reviewer; direct comparison with it remains an originating-context responsibility. Review scores do not attest to unobserved learning outcomes.
+
+
+## Verified refinement: runtime recovery and control visibility
+
+Fresh independent `gpt-6-astra` / high review first scored the lesson and English process 99.5/100: the unfocused textarea boundary measured 2.589:1 against its surroundings. The English skill was revised to require rendered essential-control contrast checks, and the affected control borders were changed to the established darker blue. A new independent source-aware Astra/high reviewer scored the revised lesson and process 100/100, with every category assessed.
+
+Reviewed HTML: `fab1082ec033ce0ccb887461b0ffa9a72a3c814481e46f408529679441e8d954`. Reading stylesheet: `ff96479ef805c1831a449a61cb01f716cca3cc032df6492895dd129fc79c1f12`. English skill: `2022d0c7e194679aa57e60f275c9f16b778510d800bd92f91dd2586481383846`.
+
+Actual textarea borders measured 6.080:1 against the page and 6.412:1 against white; pale-panel controls measured 5.508:1. Keyboard focus remains visible. Four practice forms, all choices and retries, reading/context controls, repeated print restoration, normal/no-JavaScript/each-script-failed modes, narrow layouts, enlarged text and library return passed the bounded browser review. Teaching text and the existing URL were preserved. Full source comparison and learner material remain private.
+
+Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
+
+This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.

@@ -1,9 +1,19 @@
 // Numeric checking must initialize before any interactive practice is exposed.
-import './lesson.js';
+import './lesson.js?v=20261105-r9';
 import { rectangleMetrics, rectangleDrawing, formatNumber } from './similarity-model.js';
 
+function revealReadyRegion(owner) {
+  const owners = '[data-similarity-explorer], [data-choice-quiz], form[data-practice]';
+  for (const element of owner.querySelectorAll('[data-interactive-only], [data-static-only]')) {
+    if (element.closest(owners) !== owner) continue;
+    // Numeric comparisons are siblings of their form and belong to that binder.
+    if (element.previousElementSibling?.matches('form[data-practice]')) continue;
+    element.hidden = element.hasAttribute('data-static-only');
+  }
+}
+
 const explorer = document.querySelector('[data-similarity-explorer]');
-if (explorer) {
+function initializeExplorer(explorer) {
   const slider = explorer.querySelector('[data-scale]');
   const shape = explorer.querySelector('[data-scaled-rectangle]');
   const widthLabel = explorer.querySelector('[data-width-label]');
@@ -14,6 +24,7 @@ if (explorer) {
   const reset = explorer.querySelector('[data-reset-scale]');
   const reduce = explorer.querySelector('[data-reduce-motion]');
   const status = explorer.querySelector('[data-motion-status]');
+  if (![slider, shape, widthLabel, heightLabel, description, play, pause, reset, reduce, status].every(Boolean)) return;
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   let frame = null;
   reduce.checked = preference.matches;
@@ -68,19 +79,23 @@ if (explorer) {
   reduce.addEventListener('change',()=>{stop();announce(reduce.checked?'Reduced motion on.':'Motion available.');});
   preference.addEventListener('change',event=>{stop();reduce.checked=event.matches;announce('Motion preference updated.');});
   draw(1.6);
+  revealReadyRegion(explorer);
 }
+if (explorer) initializeExplorer(explorer);
 
 for(const quiz of document.querySelectorAll('[data-choice-quiz]')) {
   const feedback=quiz.querySelector('[data-choice-feedback]');
+  if (!feedback) continue;
   for(const button of quiz.querySelectorAll('button[data-choice]')) {
     button.addEventListener('click',()=>{
       feedback.textContent = button.dataset.choice===quiz.dataset.correct
         ? quiz.dataset.success : (button.dataset.hint || quiz.dataset.hint);
     });
   }
+  revealReadyRegion(quiz);
 }
-for(const element of document.querySelectorAll('[data-interactive-only]'))element.hidden=false;
-
-
-// Keep complete paper-style practice available if enhancement fails.
-for(const element of document.querySelectorAll("[data-static-only]"))element.hidden=true;
+for (const form of document.querySelectorAll('form[data-practice][data-practice-ready="true"]')) {
+  form.hidden = false;
+  const fallback = form.nextElementSibling;
+  if (fallback?.matches('[data-static-only]')) fallback.hidden = true;
+}

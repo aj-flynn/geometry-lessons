@@ -241,3 +241,10 @@ Actual textarea borders measured 6.080:1 against the page and 6.412:1 against wh
 Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
 
 This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.
+
+
+## Sol-authored refinement
+
+Sol revised quotation selection, evidence-to-claim links, and the learner's independent reading exit. Independent source-aware Astra scored the lesson and English process 100/100 each. Opus 5.5 High scored them 81.3 and 83/100. Findings include older-language practice, person-directed comparisons and control state.
+
+Input tree `a19729eb3a0bf1c5aa12689c0e085a340212190d98b770d994153cefea736f7b`. The manifest identifies the exact lesson, dependency and contract bytes. This is an intermediate release. Current live verification follows the push.

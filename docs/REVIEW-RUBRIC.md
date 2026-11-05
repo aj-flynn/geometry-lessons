@@ -1,6 +1,6 @@
 # Assignment-to-lesson evaluation rubric
 
-Rubric edition: **2026-11-04 — independent judgment**.
+Rubric edition: **2026-11-05 — assignment-focused independent judgment**.
 
 Evaluate how well a lesson turns an assignment's underlying concepts into accurate, engaging, accessible teaching that helps a high school freshman return to the assignment independently. The lesson teaches the thinking without completing the assigned work.
 
@@ -85,6 +85,8 @@ Repository privacy and no-answer requirements apply throughout the review. Keep 
 
 An assignment is needed to judge assignment alignment and homework separation. Without authorized access to it, explain that limitation and assess the aspects that can be judged. A focused lesson can cover part of an assignment; distinguish its declared scope from whole-assignment coverage.
 
+Judge focus against the reasoning needed for the supplied problems. Teach prerequisites that help the learner make those decisions, and keep optional background off the main path. Assess coverage across the declared lesson and its linked sequence. Record any unavailable assignment material and limit coverage claims to the supplied material.
+
 The repository's [homework-teach skill](../.agents/skills/homework-teach/SKILL.md) and [lesson workflow](../.agents/skills/homework-teach/references/lesson-workflow.md) remain the sources for authoring and publication requirements. This rubric defines quality dimensions; it does not prescribe the reviewer's investigation procedure or authorize publication.
 
 ## Separate opinions
@@ -97,13 +99,13 @@ The owner's completion target is 100/100 for each lesson and the reusable proces
 
 ## Reusable process — separate optional assessment
 
-Use this table when the lesson-generation process itself is in scope. Its score is separate from lesson scores. The reviewer exercises the same discretion over evaluation and awards points directly within the stated weights.
+Use this table when the lesson-generation process itself is in scope. Its score is separate from lesson scores. Judge each subject skill and the shared workflow as exercised on the supplied assignments, and state which subjects or input paths were outside the review. Award points directly within the stated weights.
 
 | Category | Maximum points | Meaning |
 | --- | ---: | --- |
 | Privacy, no-answer, and authority boundaries | 30 | The process consistently protects private input and learner state, teaches without completing assignments, and respects authorization across subjects, input formats, and follow-up requests. |
 | Teaching contract | 20 | The process supports clear freshman-level explanations, useful vocabulary support, reliable sources, original examples, purposeful visuals and interaction, and feedback that builds independence. |
-| Subject accuracy | 20 | The process supports sound reasoning and representations across geometry, science, and English, including conditions, units, assumptions, model limitations, and evidence-based interpretation. |
+| Subject accuracy | 20 | The process supports sound reasoning and representations for the subject and assignment in scope, including applicable conditions, units, assumptions, model limitations, and evidence-based interpretation. |
 | Repeatability and compatibility | 15 | Instructions and shared components support consistent production, preserve existing lessons and links, and fit the repository's metadata and library structure. |
 | Validation and delivery | 15 | Review, validation, traceability, publication, and live delivery provide credible evidence that the intended artifact reached its authorized destination. |
 

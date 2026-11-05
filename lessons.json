@@ -15,7 +15,7 @@
         "homeworkSeparation": true,
         "math": true,
         "accessibility": true,
-        "sha256": "14d1384f9281b57a94160d62c471fb9b6cf0b0556ed942ab77d25466cb31f8ce",
+        "sha256": "1a9109ca98d0ee0401cb847256434d9d5c391362249eb7225b76e1e4e72ae4cb",
         "accuracy": true,
         "dependencies": {
           "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
@@ -26,8 +26,8 @@
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf"
         },
         "contract": {
-          ".agents/skills/geometry-teach/SKILL.md": "45fb9494f76f126312acd842b580050c5a2140e332b30e065c3c425970ca0a24",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/geometry-teach/SKILL.md": "cac429bb7ef6fddce88701d49d0a7e42a2c5752beddeae0e739874bc71f6051e",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -38,7 +38,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",
@@ -80,7 +80,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "fab1082ec033ce0ccb887461b0ffa9a72a3c814481e46f408529679441e8d954",
+        "sha256": "ae4aac2f54f3722cd171093a28d0cd9c8dd86c0911a2a0dea1948db47cc41791",
         "dependencies": {
           "assets/english.css": "b507f13d66c5c15996300f7c01e2b7339697de4adb984461a0ec1eb0e57dc286",
           "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
@@ -90,8 +90,8 @@
           "reference/close-reading.html": "e24ca98a128731cb8938789f82e4d5548089d415e8fb46cf511729c3c1a92bbc"
         },
         "contract": {
-          ".agents/skills/english-teach/SKILL.md": "2022d0c7e194679aa57e60f275c9f16b778510d800bd92f91dd2586481383846",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/english-teach/SKILL.md": "abbc8cb9657d9f8a8b50d1ac2899dae2c7c9bd774ee758ebc2947adfd32bf1e5",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -102,7 +102,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",
@@ -143,7 +143,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "d08e8ca3272468b99915f9c3d8a75f8781d51b75df279133bc7036418e80087b",
+        "sha256": "7a6e38003606db164fd5dcaef5dc0cac74914360eb8b599f13e5ccaa46c2e4fa",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -152,8 +152,8 @@
           "reference/chemistry-field-guide.html": "a895eb3ac93b2b26ecd7a7aa4155e9cdfc6bcb402f9ebbf3a18f8194c66e6e5b"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "ffd50c65be37d4529625811a5b89e28c3df32c8f9a71fe5d5b376d647d83c649",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/chemistry-teach/SKILL.md": "be8943092323dd451047ab4a0faa744ba63733c5db471f9626f8184e5f63d398",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -164,7 +164,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",
@@ -205,7 +205,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "c052ff1a5790fca9040cd9047669f4a59dcc2a505fab54667896f24b6e822409",
+        "sha256": "0094f82d60a155ff8419c194ba5422bc3f17b8f5edc5707bef4f255c5e4441de",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -214,8 +214,8 @@
           "reference/chemistry-field-guide.html": "a895eb3ac93b2b26ecd7a7aa4155e9cdfc6bcb402f9ebbf3a18f8194c66e6e5b"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "ffd50c65be37d4529625811a5b89e28c3df32c8f9a71fe5d5b376d647d83c649",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/chemistry-teach/SKILL.md": "be8943092323dd451047ab4a0faa744ba63733c5db471f9626f8184e5f63d398",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -226,7 +226,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",
@@ -267,7 +267,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "006e92fc8d91a577a0f0b77b143082363cbb82edd0b39b38947643cb6f424d5e",
+        "sha256": "1f9003faee403fbf1e9ee2a078e08a82c8d3780cc1103c2c7dd4d7d1e46c8dd7",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -276,8 +276,8 @@
           "reference/chemistry-field-guide.html": "a895eb3ac93b2b26ecd7a7aa4155e9cdfc6bcb402f9ebbf3a18f8194c66e6e5b"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "ffd50c65be37d4529625811a5b89e28c3df32c8f9a71fe5d5b376d647d83c649",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/chemistry-teach/SKILL.md": "be8943092323dd451047ab4a0faa744ba63733c5db471f9626f8184e5f63d398",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -288,7 +288,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",
@@ -329,7 +329,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "3d9b605e5b2296802a84297e54d3b7492629f4ff2359b0587b8b30ff15625aee",
+        "sha256": "61e97b282a7efe37f01acf8c4abfba9c571a7491f08d97414cfb510953fc0d1b",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -338,8 +338,8 @@
           "reference/chemistry-field-guide.html": "a895eb3ac93b2b26ecd7a7aa4155e9cdfc6bcb402f9ebbf3a18f8194c66e6e5b"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "ffd50c65be37d4529625811a5b89e28c3df32c8f9a71fe5d5b376d647d83c649",
-          ".agents/skills/homework-teach/SKILL.md": "95083a3c13b3bc7ba05181f7bf03b8b30413a74fdfe2a6837b88c160ca12e5ad",
+          ".agents/skills/chemistry-teach/SKILL.md": "be8943092323dd451047ab4a0faa744ba63733c5db471f9626f8184e5f63d398",
+          ".agents/skills/homework-teach/SKILL.md": "acc03e2e5e4b3843cee7b22c39870d95156d4d46ffd1e5f06f8ac833b52030d5",
           ".agents/skills/homework-teach/references/independent-refinement.md": "1752d5211136158792cc9ce9b511108fdd0053dc1bba22f86db0f495fca80659",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "1a5ceb4f550fe67a13a9678b5466050b431063b1fcae83aec692adb20e235e21",
           ".agents/skills/homework-teach/references/new-subject.md": "c85ad84f68741d0d6f7b274bd453c5bd1fac1c35ab70259efec3c7f873249da7",
@@ -350,7 +350,7 @@
           ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
           "AGENTS.md": "e2fe399bb668a053984c92cde194c1781dc6d9c301cec46d2b117cfd1ca103f8",
           "README.md": "61f1e04d8c5e9a09395a14ea616c386c7687be7fccbaee8e69c146bead47e3aa",
-          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87",
+          "docs/REVIEW-RUBRIC.md": "f947eb66977f236e1128b2ff0e815dc8e6126f814f22fab27a0d15bc7daca948",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
           "scripts/build-index.mjs": "dac6ea8d9a00026749419df079f07bcb895bf7e677281269a22c2d7043d94e4d",

@@ -125,3 +125,10 @@ Validation: the checker passed six lessons and 68 selected files; all 40 JavaScr
 Reviewed input tree: `4c84074cd207bf70b8686ffea88eca08e23d182e51f035fe0bcebd5709cd1db5`. Input receipt identity: `12f8de716e63a0d31cdf49794d73e573305446ad16293864860910d1e40621d2`. The final publication envelope separately includes these sanitized append-only review results; it is not the reviewed-input identity. The rubric remains unchanged. Exact per-lesson HTML, dependency and contract hashes are recorded in `lessons.json`.
 
 This is an intermediate publication. Source-aware Claude Code Opus 5.5 at high effort remains pending explicit authorization for private-source transfer. No public-only review replaces that stage. Live byte and navigation verification is required after the push and is not claimed by this prepublication record.
+
+
+## Sol-authored refinement
+
+GPT-6.1 Sol High authored the six lesson revisions from the authorized source corpus. The updated rubric keeps all weights and assesses the reasoning needed by supplied problems. Independent Astra awarded 100/100 to all six lessons and three exercised subject processes. English and Geometry source-aware Opus 5.5 High scored 81.3 and 86.6 for the lessons, and 83 and 87 for the processes. Their findings are being addressed. Chemistry's source-aware Opus stage is pending. The checker, 40 Node tests and 138 practice cases across 26 modes passed.
+
+Input tree `a19729eb3a0bf1c5aa12689c0e085a340212190d98b770d994153cefea736f7b`. The manifest identifies the exact lesson, dependency and contract bytes. This is an intermediate release. Current live verification follows the push.

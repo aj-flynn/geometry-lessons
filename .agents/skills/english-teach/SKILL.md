@@ -38,7 +38,7 @@ For writing and grammar, model a revision on an original sentence and explain it
 
 ## Build thinking before revealing an explanation
 
-Sequence a small model, a fresh guided attempt, and an independent transfer. An annotated passage can show exact words, their plain meaning, and the supported inference. Keep the source wording visible when a learner changes a reading lens so the evidence remains inspectable.
+Sequence a small model, a fresh guided attempt, and an independent transfer. An annotated passage can show exact words, their plain meaning, and the supported inference. If selecting quotations is part of the assignment, ask the learner to choose a short sufficient passage from several original lines and explain why it supports the claim. When comparing characters, require a distinct evidence-to-claim link for each. Keep the source wording visible when a learner changes a reading lens so the evidence remains inspectable.
 
 Make the learner do something before displaying the interpretation: predict an effect, choose the strongest evidence, compare two plausible readings, revise an overclaim, or identify what additional context would distinguish readings. Put the prompt outside any closed reveal and keep the explanatory result closed initially. A manipulative should change one meaningful feature or question at a time, offer repeat/reset, preserve the text, and invite an explanation of the result. Do not count tab switching through already-visible answers as substantive practice.
 

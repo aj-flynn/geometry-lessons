@@ -138,7 +138,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "49be00f8320528b940ce892a53b5df9cda11af6ed3a6387217ba050515a1b4d9",
+          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
           ".agents/skills/homework-teach/SKILL.md": "46acdb540aad7dfc49cf294570b79eccf9fb15b294957bbdc6ad7dfa7d41f3ad",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
@@ -194,7 +194,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "49be00f8320528b940ce892a53b5df9cda11af6ed3a6387217ba050515a1b4d9",
+          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
           ".agents/skills/homework-teach/SKILL.md": "46acdb540aad7dfc49cf294570b79eccf9fb15b294957bbdc6ad7dfa7d41f3ad",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
@@ -241,16 +241,17 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "843079760c367adb60f962c268fa06759164d5b2f555a6a8cc48a4d6f5af138e",
+        "sha256": "f3cd0d550de6c591232c9d49d1ab0fac7adce1fdc5cc3154e51e77db77c7cfa5",
         "dependencies": {
           "assets/chemistry.css": "67a0691de4a18d68b9f9db977ee1c91d2e571b6c2fd3d5fe8263e3ab913e16e5",
           "assets/chemistry.js": "09946cce6df8348c5b6a371978721e43d7905e65236326bab9c01311db78caae",
           "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
+          "assets/polarity.css": "caab1b4f3ab96abf0b37acd308527bfd8b76392fbdf2f5658fae2bed3123721f",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "49be00f8320528b940ce892a53b5df9cda11af6ed3a6387217ba050515a1b4d9",
+          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
           ".agents/skills/homework-teach/SKILL.md": "46acdb540aad7dfc49cf294570b79eccf9fb15b294957bbdc6ad7dfa7d41f3ad",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",
@@ -306,7 +307,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "49be00f8320528b940ce892a53b5df9cda11af6ed3a6387217ba050515a1b4d9",
+          ".agents/skills/chemistry-teach/SKILL.md": "047e2a02d4ba2927d739323916e392edb0e01396fcc19083a6b99ddb9173595d",
           ".agents/skills/homework-teach/SKILL.md": "46acdb540aad7dfc49cf294570b79eccf9fb15b294957bbdc6ad7dfa7d41f3ad",
           ".agents/skills/homework-teach/references/independent-refinement.md": "24f55f37fe46699db9b470d6f59e8a1a52bf2ad2037a26baeb745dd5bc038e73",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "18f9e599692ffbee77f3d3308e5a2fcf47bae11e42fcb96d51d2cc1c19efacde",

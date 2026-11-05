@@ -1,0 +1,2 @@
+.chemistry header h1 { overflow-wrap: anywhere; }
+.chemistry [data-polarity] input[type=range] { margin-inline: 0; }

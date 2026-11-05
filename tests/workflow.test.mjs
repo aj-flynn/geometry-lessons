@@ -5,12 +5,15 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { renderIndex, validateManifest, generateIndex } from '../scripts/build-index.mjs';
-import { check, collectLessonDependencyHashes, inspectPublicCode, hasLibraryLink } from '../scripts/check.mjs';
+import { check, collectLessonDependencyHashes, collectReviewContractHashes, inspectPublicCode, hasLibraryLink } from '../scripts/check.mjs';
 
 const syntheticAddress = ['synthetic-learner', ['synthetic-school', 'edu'].join('.')].join('@');
 const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
 const geometrySkill = '.agents/skills/geometry-teach/SKILL.md';
 const sharedSkillText = '---\nname: homework-teach\ndescription: Synthetic shared skill.\n---\n';
+const geometrySkillText = '---\nname: geometry-teach\ndescription: Synthetic geometry skill.\n---\n[Shared](../homework-teach/SKILL.md)';
+const rubric = 'docs/REVIEW-RUBRIC.md';
+const sharedGuide = '.agents/skills/homework-teach/references/nested/guide.md';
 
 function publicationFixture(t) {
   const base = mkdtempSync(join(tmpdir(), 'geometry-check-'));
@@ -26,7 +29,9 @@ function publicationFixture(t) {
   put('templates/index.html', '<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
   put('subjects.json', JSON.stringify([{ id: 'geometry', label: 'Geometry', skill: geometrySkill }]));
   put(sharedSkill, sharedSkillText);
-  put(geometrySkill, '---\nname: geometry-teach\ndescription: Synthetic geometry skill.\n---\n[Shared](../homework-teach/SKILL.md)');
+  put(geometrySkill, geometrySkillText);
+  put(rubric, '# Synthetic review rubric');
+  put(sharedGuide, '# Synthetic shared guidance');
   return { base, put };
 }
 
@@ -113,7 +118,8 @@ test('version 2 checks exact transitive hashes even when lesson HTML is unchange
 
   const review = {
     privacy: true, homeworkSeparation: true, accuracy: true, accessibility: true,
-    sha256: createHash('sha256').update(html).digest('hex'), dependencies
+    sha256: createHash('sha256').update(html).digest('hex'), dependencies,
+    contract: collectReviewContractHashes(base, 'Geometry')
   };
   const manifest = { version: 2, lessons: [{ file, subject: 'Geometry', title: 'Synthetic QA', summary: 'Fixture only', topics: ['QA'], review }] };
   const writeManifest = () => put('lessons.json', JSON.stringify(manifest));
@@ -134,7 +140,7 @@ test('version 2 checks exact transitive hashes even when lesson HTML is unchange
   const { 'assets/site.css': hash, ...missing } = dependencies;
   review.dependencies = { ...missing, 'assets/extra.css': hash };
   writeManifest();
-  assert.throws(() => check(base), /missing reviewed dependency assets\/site\.css[\s\S]*reviewed dependency assets\/extra\.css is not loaded/);
+  assert.throws(() => check(base), /missing reviewed dependency assets\/site\.css[\s\S]*reviewed dependency assets\/extra\.css is outside the current review scope/);
   delete review.dependencies;
   writeManifest();
   assert.throws(() => check(base), /missing reviewed dependency SHA-256 map/);
@@ -164,7 +170,16 @@ test('version 2 checks exact transitive hashes even when lesson HTML is unchange
     checkRejectedDependency('assets/nested/middle.mjs', writer + '(' + insertedScript + ');', /Runtime resource loaders/);
   }
   checkRejectedDependency('assets/nested/middle.mjs', 'shape.style.backgroundImage = "url(../late.txt)";', /Runtime resource loaders/);
-  checkRejectedDependency('assets/nested/middle.mjs', 'import "../../templates/outside.js";', /Lesson dependency must be a supported file within assets/);
+  for (const navigation of [
+    'location.assign("https://example.com/");',
+    'window.location.replace("https://example.com/");',
+    'window.open("https://example.com/");',
+    'location = "https://example.com/";',
+    'window.location.href = "https://example.com/";'
+  ]) {
+    checkRejectedDependency('assets/nested/middle.mjs', navigation, /Use reviewed HTML links instead of JavaScript navigation/);
+  }
+  checkRejectedDependency('assets/nested/middle.mjs', 'import "../../templates/outside.js";', /Publication dependency must be a supported file within assets/);
   put('assets/nested/middle.mjs', middle);
 
   checkRejectedDependency('assets/site.css', '@import "./nested/palette.css";\n' + css, /CSS must avoid escapes and @import/);
@@ -200,7 +215,10 @@ test('HTML publication checks parsed execution surfaces and hashes approved inli
   assert.deepEqual(Object.keys(dependencies), [
     'assets/initializer.js', 'assets/nested/deep.js', 'assets/resource.txt', 'assets/site.css'
   ]);
-  const review = { privacy: true, homeworkSeparation: true, accuracy: true, accessibility: true, dependencies };
+  const review = {
+    privacy: true, homeworkSeparation: true, accuracy: true, accessibility: true,
+    dependencies, contract: collectReviewContractHashes(base, 'Geometry')
+  };
   const manifest = { version: 2, lessons: [{ file, subject: 'Geometry', title: 'Synthetic markup', summary: 'Fixture only', topics: ['QA'], review }] };
   const writePage = source => {
     put('lessons/' + file, source);
@@ -241,6 +259,111 @@ test('HTML publication checks parsed execution surfaces and hashes approved inli
   }
   writePage(html.replace('</body>', '<!-- <button onclick=example()>Example comment</button> --></body>'));
   assert.equal(check(base).lessons, 1);
+});
+
+test('the index and reference pages enforce the parsed resource profile', t => {
+  const { base, put } = publicationFixture(t);
+  const page = (title, head = '') => `<!doctype html><html lang="en"><head><meta name="viewport">${head}</head><body><h1>${title}</h1></body></html>`;
+  put('lessons.json', JSON.stringify({ version: 2, lessons: [] }));
+  put('assets/index.js', 'document.addEventListener("DOMContentLoaded", () => {});');
+  put('assets/reference.css', 'body { color: black; }');
+  const index = '<script src=assets/index.js></script>';
+  const reference = '<link rel=stylesheet href=../assets/reference.css>';
+  const writeIndex = head => {
+    put('templates/index.html', page('Library', head));
+    put('index.html', generateIndex(base));
+  };
+  writeIndex(index);
+  put('reference/guide.html', page('Guide', reference));
+  assert.equal(check(base).lessons, 0);
+
+  for (const remote of [
+    '<script src=https://example.com/unsafe.js></script>',
+    '<link rel=stylesheet href="  https://example.com/unsafe.css">'
+  ]) {
+    writeIndex(remote);
+    assert.throws(() => check(base), /index\.html: .*Invalid publication dependency URL/);
+    writeIndex(index);
+    put('reference/guide.html', page('Guide', remote));
+    assert.throws(() => check(base), /reference\/guide\.html: .*Invalid publication dependency URL/);
+    put('reference/guide.html', page('Guide', reference));
+  }
+  put('assets/source.txt', 'location.assign("https://example.com/");');
+  writeIndex('<script src=assets/source.txt></script>');
+  assert.throws(() => check(base), /index\.html: Script sources must point to \.js or \.mjs resources/);
+  writeIndex(index);
+  put('assets/index.js', 'location.assign("https://example.com/");');
+  assert.throws(() => check(base), /index\.html: Use reviewed HTML links instead of JavaScript navigation/);
+  put('assets/index.js', 'document.addEventListener("DOMContentLoaded", () => {});');
+  put('assets/reference.css', '@import "https://example.com/unsafe.css";');
+  assert.throws(() => check(base), /reference\/guide\.html: CSS must avoid escapes and @import/);
+});
+
+test('review binds linked reference cycles and their assets plus the current teaching contract', t => {
+  const { base, put } = publicationFixture(t);
+  const file = '0001-synthetic-reference.html';
+  const otherFile = '0002-synthetic-reference.html';
+  const page = (title, head, body) => `<!doctype html><html lang="en"><head><meta name="viewport">${head}</head><body><h1>${title}</h1>${body}</body></html>`;
+  const lessonBody = '<a href="../index.html">Lesson library</a><svg><desc>A diagram</desc></svg><a href="#glossary">Glossary</a><dl id="glossary"><dt>Example</dt><dd>Practice concept.</dd></dl>';
+  const lesson = page('Example', '', lessonBody + '<a href=../reference/guide.html?mode=print#topic>Read the guide</a>');
+  const other = page('Another example', '<script src=../assets/other.js></script>', lessonBody);
+  const guide = page('Guide', '', `<h2 id="topic">Topic</h2><a href=nested/detail.html>Detail</a><a href=../index.html>Library</a><a href=../lessons/${otherFile}>Another lesson</a>`);
+  const detail = page('Detail', '<script type=module src=../../assets/reference.js></script>', '<a href=../guide.html#topic>Guide</a>');
+  const referenceModule = 'import "./reference-model.js";';
+  const referenceModel = 'export const model = 1;';
+  put('lessons/' + file, lesson);
+  put('lessons/' + otherFile, other);
+  put('reference/guide.html', guide);
+  put('reference/nested/detail.html', detail);
+  put('assets/site.css', '@media (prefers-reduced-motion: reduce) {}');
+  put('assets/other.js', 'document.addEventListener("DOMContentLoaded", () => {});');
+  put('assets/reference.js', referenceModule);
+  put('assets/reference-model.js', referenceModel);
+
+  const contract = collectReviewContractHashes(base, 'Geometry');
+  assert.deepEqual(Object.keys(contract), [geometrySkill, sharedSkill, sharedGuide, rubric]);
+  const record = (file, html) => ({
+    file, subject: 'Geometry', title: 'Synthetic reference', summary: 'Fixture only', topics: ['QA'],
+    review: {
+      privacy: true, homeworkSeparation: true, accuracy: true, accessibility: true, contract,
+      sha256: createHash('sha256').update(html).digest('hex'),
+      dependencies: collectLessonDependencyHashes(base, file)
+    }
+  });
+  const reviewed = record(file, lesson);
+  assert.deepEqual(Object.keys(reviewed.review.dependencies), [
+    'assets/reference-model.js', 'assets/reference.js', 'reference/guide.html', 'reference/nested/detail.html'
+  ]);
+  const manifest = { version: 2, lessons: [reviewed, record(otherFile, other)] };
+  const writeManifest = () => put('lessons.json', JSON.stringify(manifest));
+  writeManifest();
+  put('index.html', generateIndex(base));
+  assert.equal(check(base).lessons, 2);
+
+  for (const [path, text, kind] of [
+    ['reference/guide.html', guide, 'dependency'],
+    ['reference/nested/detail.html', detail, 'dependency'],
+    ['assets/reference-model.js', referenceModel, 'dependency'],
+    [rubric, '# Synthetic review rubric', 'contract file'],
+    [geometrySkill, geometrySkillText, 'contract file'],
+    [sharedGuide, '# Synthetic shared guidance', 'contract file']
+  ]) {
+    put(path, text + '\n');
+    assert.throws(() => check(base), error => error.message.includes(kind + ' ' + path + ' changed since review'));
+    put(path, text);
+  }
+
+  const { [rubric]: rubricHash, ...withoutRubric } = contract;
+  const extra = '.agents/skills/homework-teach/references/extra.md';
+  reviewed.review.contract = { ...withoutRubric, [extra]: rubricHash };
+  writeManifest();
+  assert.throws(() => check(base), error =>
+    error.message.includes('missing reviewed contract file ' + rubric) &&
+    error.message.includes('reviewed contract file ' + extra + ' is outside the current review scope')
+  );
+  delete reviewed.review.contract;
+  writeManifest();
+  assert.throws(() => check(base), /missing reviewed contract SHA-256 map/);
 });
 
 test('publication checks reject changed reviewed HTML, raw documents, and unindexed lessons', t => {

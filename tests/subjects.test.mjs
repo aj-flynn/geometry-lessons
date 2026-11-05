@@ -5,9 +5,9 @@ import {tmpdir} from 'node:os';
 import {join,resolve,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
 import {root,renderIndex,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry} from '../scripts/build-index.mjs';
-import {check} from '../scripts/check.mjs';
+import {check,collectReviewContractHashes} from '../scripts/check.mjs';
 
-const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{}};
+const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{},contract:{}};
 const entry=(file,subject)=>({file,subject,title:subject+' concept',summary:'Synthetic metadata only.',topics:['Concept'],review:{...review}});
 const spanish={id:'spanish',label:'Spanish',skill:'.agents/skills/spanish-teach/SKILL.md'};
 
@@ -82,7 +82,7 @@ test('registry rejects duplicate subjects and unsafe labels, IDs, and skill path
 test('a science publication requires a glossary, a current hash, and the updated index',()=>{
   const temp=mkdtempSync(join(tmpdir(),'homework-subject-check-'));
   try{
-    for(const dir of ['templates','assets','lessons'])mkdirSync(join(temp,dir));
+    for(const dir of ['templates','assets','lessons','docs'])mkdirSync(join(temp,dir));
     for(const file of ['assets/site.css','assets/lesson.js'])cpSync(join(root,file),join(temp,file));
     writeFileSync(join(temp,'templates/index.html'),'<html lang="en"><meta name="viewport"><h1>Library</h1><nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}</html>');
     const scienceSkill='.agents/skills/science-teach/SKILL.md';
@@ -93,6 +93,7 @@ test('a science publication requires a glossary, a current hash, and the updated
     writeFileSync(join(temp,sharedSkill),'---\nname: homework-teach\ndescription: Synthetic shared skill.\n---\n');
     writeFileSync(join(temp,scienceSkill),'---\nname: science-teach\ndescription: Synthetic science skill.\n---\n[Shared](../homework-teach/SKILL.md)');
     writeFileSync(join(temp,englishSkill),'---\nname: english-teach\ndescription: Synthetic English skill.\n---\n[Shared](../homework-teach/SKILL.md)');
+    writeFileSync(join(temp,'docs/REVIEW-RUBRIC.md'),'# Synthetic review rubric');
     const prefix='<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title></head><body><a href="../index.html">Lesson library</a><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A synthetic QA diagram</desc></svg>';
     const glossary='<a href="#glossary">Glossary</a><section id="glossary"><h2>Glossary</h2><dl><dt>Model</dt><dd>A simplified representation.</dd></dl></section>';
     const file='0002-synthetic-science-qa.html';
@@ -100,6 +101,7 @@ test('a science publication requires a glossary, a current hash, and the updated
     const write=(html)=>{
       writeFileSync(join(temp,'lessons',file),html);
       record.review.sha256=createHash('sha256').update(html).digest('hex');
+      record.review.contract=collectReviewContractHashes(temp,record.subject);
       writeFileSync(join(temp,'lessons.json'),JSON.stringify({version:2,lessons:[record]}));
       writeFileSync(join(temp,'index.html'),generateIndex(temp));
     };

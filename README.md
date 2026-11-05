@@ -25,7 +25,7 @@ Photos, PDFs, Word documents, and text stay outside this public checkout, includ
 | `lessons/` | Reviewed concept lessons with stable URLs |
 | `assets/` | Shared styles, interactions, and subject models |
 | `reference/` | Learner-facing reading and chemistry guides |
-| `lessons.json` | Lesson metadata, semantic review attestations, and reviewed HTML/dependency hashes |
+| `lessons.json` | Lesson metadata, semantic review attestations, and reviewed HTML/dependency/contract hashes |
 | `index.html` | Generated library page; edit the manifest/template instead |
 | `scripts/`, `tests/` | Index generation and publication/behavior checks |
 | `RESOURCES.md` | Educational source links |
@@ -44,6 +44,8 @@ node --test tests/*.test.mjs
 When changing the DOCX helper, run `python -m unittest discover -s tests -p test_docx.py`. It uses synthetic inputs outside the checkout; `GEOMETRY_QA_TEMP` can select a writable temporary directory. For chemistry browser checks and optional Playwright setup, see [the chemistry review](docs/CHEMISTRY-REVIEW.md#repeat-the-chemistry-checks).
 
 Review the diff and stage only selected safe files. Publish lessons, their assets, the manifest, and generated index together. This library uses GitHub Pages from `main`, `/ (root)`, with `.nojekyll`. Verify the actual live lesson and its library link before returning a URL. Incoming requests for other libraries must first satisfy the skill's private routing rules; this repository does not install a router or send messages during maintenance.
+
+For repeatable live verification, install Python Playwright and its Chromium browser (`python -m pip install playwright`, then `python -m playwright install chromium`) or pass an installed compatible executable with `--browser`. Run `python scripts/check-live.py --base-url https://aj-flynn.github.io/geometry-lessons/` against the reviewed checkout after deployment. The command compares live HTML and dependency bytes with the manifest, checks the generated index, and activates every lesson's library link by keyboard plus every subject link. `--repo` can select a frozen reviewed checkout. A mismatch is a failed or pending deployment, not permission to refresh reviewed hashes. This check complements subject interaction and semantic review.
 
 Automated checks supplement semantic review. The [review rubric](docs/REVIEW-RUBRIC.md) preserves the owner's quality targets; [geometry](docs/LESSON-0001-REVIEW.md), [English](docs/ENGLISH-REVIEW.md), and [chemistry](docs/CHEMISTRY-REVIEW.md) records state the assessed revisions and verification limits. Historical scores do not certify later changes.
 

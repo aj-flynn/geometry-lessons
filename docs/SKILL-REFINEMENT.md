@@ -1,3 +1,26 @@
+# Latest shared-process increment: Astra 100, Opus 87
+
+The next fixed shared candidate earned **Astra/high 100/100** (30,20,20,15,15) and then **Claude Code `claude-opus-5-5`/high 87/100** (26,18,17,13,13). Both reviews were independent and read-only; actual modelUsage confirmed the Claude model. This improves the Opus-stage baseline of 86 but does not meet the dual-100 completion target. No private homework entered either shared-process review.
+
+Changes include resource checks for every public HTML page, exact linked-reference dependency hashes, ordinary runtime-navigation guards, skill/rubric/shared-guidance contract hashes, explicit advisory status for reviewer output, private-only evidence pointers, clarified same-library subject creation, portable optional authoring-helper discovery, integrated-science decisions, ten committed routing cases, and a repeatable live delivery script. Existing lesson URLs and private routing policy remain intact.
+
+Astra ran all 27 Node tests and two DOCX tests, independently mutated references/contracts to verify invalidation, and exercised the live helper against 20 files, six keyboard library returns and four subject links. Opus independently ran all 27 tests, the checker and the same successful live helper, plus in-memory and temporary synthetic probes. Frozen hashes remained unchanged. The independent blind routing exercise produced decisions consistent with all ten synthetic cases; it did not generate lessons or install integrations. A first sandbox browser launch stalled and was terminated before the successful escalated run; an initial helper locator was corrected for the existing arrow-prefixed English link before the scored candidate was frozen.
+
+Remaining Opus findings include default form submission, additional browser-storage APIs, broader common-identifier heuristics, source separation when replacing a lesson from an earlier assignment, incomplete execution-contract identity, explicit handling of untested affected subjects, more reproducible loop/routing cases, and live-helper edge cases. Opus also retains deductions for semantic teaching/accuracy judgments that cannot be established by the static checker alone. These differences are preserved; the next iteration will address evidence-backed issues without changing the rubric or representing automation as proof of teaching quality.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| references/independent-refinement.md | 2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1 |
+| references/lesson-workflow.md | 2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee |
+| references/routing.md | 099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266 |
+| scripts/check.mjs | 5f413a489f9c7e4f20e4384db4daf18a35d97f1293e8be95fb932677f82569d7 |
+| scripts/build-index.mjs | aae32ef0a968a4971f6af3a98ebddaf0a730c2925edac9a7ef536f6107d323db |
+| scripts/check-live.py | 7a8fd45486fb7b4bea32b1378c513ab51ec0de13282d0f00484b127fedaa85e5 |
+
+These hashes identify the assessed process changes. Publication metadata is regenerated for the independently reviewed current subject artifacts; their separate review records retain their actual scores and limits. Shared-process scores do not confer lesson certification.
+
+---
+
 # Current shared workflow refinement
 
 | Fixed candidate | Independent assessment | Category scores | Total |

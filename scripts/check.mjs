@@ -4,10 +4,12 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, contractPath, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
+const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
+const sharedReferences = '.agents/skills/homework-teach/references';
 
 export function inspectPrivateIdentifiers(source, name) {
   const findings = [];
@@ -75,6 +77,12 @@ function moduleReferences(source) {
   const resourceChanges = /\.(?:src|srcset|href)\s*=|\b(?:createElement|createElementNS)\s*\([^)]*?["'](?:script|link|iframe|img|object|embed|audio|video|source)["']|\bsetAttribute(?:NS)?\s*\([^)]*?["'](?:src|srcset|href|xlink:href)["']/i;
   const documentWrites = /\bdocument\s*(?:(?:\.|\?\.)\s*write(?:ln)?\b|(?:\?\.\s*)?\[\s*(["'\x60])write(?:ln)?\1\s*\])/;
   const cssUrls = /\burl\(/i;
+  const locationCalls = /\blocation\s*(?:\.|\?\.)\s*(?:assign|replace)\s*(?:\?\.\s*)?\(/;
+  const locationWrites = /\blocation(?:\s*\.\s*(?:href|protocol|host|hostname|port|pathname|search|hash)\b)?\s*=(?!=|>)/;
+  const popupCalls = /\bwindow\s*(?:\.|\?\.)\s*open\s*(?:\?\.\s*)?\(/;
+  if ([locationCalls, locationWrites, popupCalls].some(pattern => pattern.test(source))) {
+    throw new Error('Use reviewed HTML links instead of JavaScript navigation.');
+  }
   if ([runtimeLoaders, resourceChanges, documentWrites, cssUrls].some(pattern => pattern.test(source))) {
     throw new Error('Declare lesson resources in HTML, CSS, or leading static imports. Runtime resource loaders are outside the lesson dependency profile.');
   }
@@ -115,8 +123,13 @@ const svgStyleAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'cu
 function inspectHtml(source) {
   const references = new Set();
   const links = new Set();
+  const pageLinks = new Set();
   const ids = new Set();
   const addReferences = urls => urls.forEach(url => references.add(url));
+  const addDeclaredResource = (url, extension, label) => {
+    if (!url || !extension.test(url.split(/[?#]/, 1)[0])) throw new Error(label);
+    references.add(url);
+  };
   // Inspect both trees so markup in the JavaScript-disabled fallback is checked.
   const documents = [parse(source), parse(source, { scriptingEnabled: false })];
   for (const node of documents.flatMap(document => [...htmlElements(document)])) {
@@ -135,6 +148,7 @@ function inspectHtml(source) {
         throw new Error('Executable or embedded URL schemes are outside the lesson HTML profile.');
       }
       if (attribute === 'href' || attribute === 'src') links.add(url);
+      if (attribute === 'href' && (tag === 'a' || tag === 'area')) pageLinks.add(url);
       attrs.set(prefix ? prefix + ':' + attribute : attribute, url);
     }
     if (embeddedElements.has(tag)) throw new Error('Embedded media, documents, and plug-ins are outside the lesson HTML profile. Use inline SVG.');
@@ -171,9 +185,11 @@ function inspectHtml(source) {
     const body = () => node.childNodes.filter(child => child.nodeName === '#text').map(child => child.value).join('');
     if (tag === 'link') {
       const rel = attrs.get('rel')?.trim().toLowerCase();
-      const preload = rel === 'preload' && /^(?:script|style)$/i.test(attrs.get('as'));
-      if (rel === 'stylesheet' || rel === 'modulepreload' || preload) {
-        references.add(attrs.get('href'));
+      const as = attrs.get('as')?.trim().toLowerCase();
+      if (rel === 'stylesheet' || (rel === 'preload' && as === 'style')) {
+        addDeclaredResource(attrs.get('href'), /\.css$/, 'Stylesheet links must point to .css resources.');
+      } else if (rel === 'modulepreload' || (rel === 'preload' && as === 'script')) {
+        addDeclaredResource(attrs.get('href'), /\.m?js$/, 'Script preloads must point to .js or .mjs resources.');
       } else if (attrs.has('href')) {
         throw new Error('Lesson link elements must declare stylesheets or script/style preloads.');
       }
@@ -187,40 +203,64 @@ function inspectHtml(source) {
         if (src === undefined && /^(?:application\/(?:ld\+)?json|text\/plain)$/.test(type)) continue;
         throw new Error('Use a standard script type for lesson JavaScript.');
       }
-      if (src !== undefined) references.add(src);
+      if (src !== undefined) addDeclaredResource(src, /\.m?js$/, 'Script sources must point to .js or .mjs resources.');
       else addReferences(moduleReferences(body()));
     }
   }
-  return { references, links, ids };
+  return { references, links, pageLinks, ids };
 }
 
-function dependencyHashes(base, lesson, references) {
+function dependencyHashes(base, page, markup) {
   const realBase = realpathSync(base);
   const dependencies = new Map();
-  function visit(from, url) {
-    const local = url?.trim().split(/[?#]/, 1)[0];
-    if (!local || isAbsolute(local) || /[:\\%&\s]/.test(local)) {
-      throw new Error(`${from}: Invalid lesson dependency URL.`);
-    }
-    const file = resolve(base, dirname(from), local);
-    const name = relative(base, file).split(sep).join('/');
-    if (!dependencyPath.test(name) || !textExtension.test(name)) {
-      throw new Error(`${from}: Lesson dependency must be a supported file within assets/.`);
-    }
-    if (dependencies.has(name)) return;
+  const dependencyName = (from, local) => relative(base, resolve(base, dirname(from), local)).split(sep).join('/');
+  const urlPath = url => url?.trim().split(/[?#]/, 1)[0];
+  function readDependency(from, name) {
+    if (name === page || dependencies.has(name)) return;
+    const file = resolve(base, name);
     if (!isRegularLocalFile(file, resolve(realBase, name))) {
-      throw new Error(`${from}: Missing or unsafe lesson dependency ${name}.`);
+      throw new Error(`${from}: Missing or unsafe publication dependency ${name}.`);
     }
     const bytes = readFileSync(file);
     dependencies.set(name, hashBytes(bytes));
-    const ext = extname(name);
-    const source = bytes.toString('utf8');
-    const references = ext === '.css' ? cssReferences(source)
-      : ext === '.js' || ext === '.mjs' ? moduleReferences(source) : [];
-    for (const reference of references) visit(name, reference);
+    return bytes.toString('utf8');
   }
 
-  for (const url of references) visit(lesson, url);
+  function visitResource(from, url) {
+    const local = urlPath(url);
+    if (!local || isAbsolute(local) || /[:\\%&\s]/.test(local)) {
+      throw new Error(`${from}: Invalid publication dependency URL. Use a literal relative resource path.`);
+    }
+    const name = dependencyName(from, local);
+    if (!dependencyPath.test(name) || !textExtension.test(name)) {
+      throw new Error(`${from}: Publication dependency must be a supported file within assets/.`);
+    }
+    const source = readDependency(from, name);
+    if (source === undefined) return;
+    const ext = extname(name);
+    const references = ext === '.css' ? cssReferences(source)
+      : ext === '.js' || ext === '.mjs' ? moduleReferences(source) : [];
+    for (const reference of references) visitResource(name, reference);
+  }
+
+  function visitMarkup(from, { references, pageLinks }) {
+    for (const url of references) visitResource(from, url);
+    for (const url of pageLinks) {
+      const local = urlPath(url);
+      if (!local || isAbsolute(local) || /^[a-z][a-z0-9+.-]*:/i.test(local)) continue;
+      if (/[\\%]/.test(local)) throw new Error(`${from}: Use literal relative URLs for local navigation.`);
+      const name = dependencyName(from, local);
+      // Library and other lesson links navigate to separately checked pages.
+      if (!name.startsWith('reference/') || !name.endsWith('.html')) continue;
+      if (!referenceDependencyPath.test(name)) {
+        throw new Error(`${from}: Use a literal relative HTML path for a learner reference page.`);
+      }
+      const source = readDependency(from, name);
+      if (source !== undefined) visitMarkup(name, inspectHtml(source));
+    }
+  }
+
+  visitMarkup(page, markup);
   return Object.fromEntries([...dependencies.entries()].sort(([left], [right]) => left.localeCompare(right)));
 }
 
@@ -231,19 +271,40 @@ export function collectLessonDependencyHashes(base, lessonFile) {
   const lesson = 'lessons/' + lessonFile;
   const file = resolve(base, lesson);
   if (!isRegularLocalFile(file, resolve(realpathSync(base), lesson))) throw new Error('Missing or unsafe lesson file.');
-  return dependencyHashes(base, lesson, inspectHtml(readFileSync(file, 'utf8')).references);
+  return dependencyHashes(base, lesson, inspectHtml(readFileSync(file, 'utf8')));
 }
 
-function inspectReviewedDependencies(base, name, references, reviewed, candidates) {
-  const errors = [];
-  const dependencies = dependencyHashes(base, name, references);
-  for (const [asset, hash] of Object.entries(dependencies)) {
-    if (!candidates.has(asset)) errors.push(`${name}: dependency ${asset} is not a publication candidate.`);
-    if (!Object.hasOwn(reviewed, asset)) errors.push(`${name}: missing reviewed dependency ${asset}.`);
-    else if (hash !== reviewed[asset].toLowerCase()) errors.push(`${name}: dependency ${asset} changed since review.`);
+export function collectReviewContractHashes(base, subject) {
+  const registered = loadSubjectRegistry(base).find(entry => entry.label === subject);
+  if (!registered) throw new Error('Review contract discovery requires a registered subject label.');
+  const realBase = realpathSync(base);
+  const references = resolve(base, sharedReferences);
+  const names = [sharedSkill, registered.skill, 'docs/REVIEW-RUBRIC.md'];
+  if (existsSync(references)) {
+    if (!lstatSync(references).isDirectory() || realpathSync(references) !== resolve(realBase, sharedReferences)) {
+      throw new Error('Missing or unsafe shared review references directory.');
+    }
+    for (const file of readdirSync(references, { recursive: true })) {
+      if (file.endsWith('.md')) names.push(sharedReferences + '/' + file.split(sep).join('/'));
+    }
   }
-  for (const asset of Object.keys(reviewed)) {
-    if (!Object.hasOwn(dependencies, asset)) errors.push(`${name}: reviewed dependency ${asset} is not loaded.`);
+  return Object.fromEntries(names.sort().map(name => {
+    const path = resolve(base, name);
+    if (!contractPath.test(name) || !isRegularLocalFile(path, resolve(realBase, name))) {
+      throw new Error(`Missing or unsafe review contract file: ${name}.`);
+    }
+    return [name, hashBytes(readFileSync(path))];
+  }));
+}
+
+function inspectReviewedHashes(name, kind, hashes, reviewed) {
+  const errors = [];
+  for (const [path, hash] of Object.entries(hashes)) {
+    if (!Object.hasOwn(reviewed, path)) errors.push(`${name}: missing reviewed ${kind} ${path}.`);
+    else if (hash !== reviewed[path].toLowerCase()) errors.push(`${name}: ${kind} ${path} changed since review.`);
+  }
+  for (const path of Object.keys(reviewed)) {
+    if (!Object.hasOwn(hashes, path)) errors.push(`${name}: reviewed ${kind} ${path} is outside the current review scope.`);
   }
   return errors;
 }
@@ -259,8 +320,6 @@ export function hasLibraryLink(html) {
     return !hidden && href === '../index.html' && /\blesson library\b/i.test(label);
   });
 }
-
-const sharedSkill = '.agents/skills/homework-teach/SKILL.md';
 
 function hasAnnotatedPassage(html) {
   const source = html.replace(/<!--[\s\S]*?-->|<(script|style|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');
@@ -348,6 +407,7 @@ export function check(base = root) {
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
   const lessons = new Map(manifest.lessons.map(lesson => ['lessons/' + lesson.file, lesson]));
+  const contracts = new Map();
   for (const [name, lesson] of lessons) {
     if (!regularFile(name)) { errors.push(`Missing or unsafe lesson ${lesson.file}`); continue; }
     if (!candidates.has(name)) errors.push(`${name}: lesson is not a publication candidate.`);
@@ -362,6 +422,19 @@ export function check(base = root) {
     if (!hasDiagram && !(isEnglish && hasAnnotatedPassage(html))) {
       const visual = isEnglish ? 'a reviewed SVG diagram with a text equivalent or an annotated passage figure' : 'a reviewed SVG diagram with a text equivalent';
       errors.push(`${lesson.file}: needs ${visual}.`);
+    }
+    if (manifest.version === 2) {
+      try {
+        const subject = subjectOf(lesson);
+        if (!contracts.has(subject)) contracts.set(subject, collectReviewContractHashes(base, subject));
+        const hashes = contracts.get(subject);
+        for (const contractFile of Object.keys(hashes)) {
+          if (!candidates.has(contractFile)) errors.push(`${name}: contract file ${contractFile} is not a publication candidate.`);
+        }
+        errors.push(...inspectReviewedHashes(name, 'contract file', hashes, lesson.review.contract));
+      } catch (error) {
+        errors.push(`${name}: ${error.message}`);
+      }
     }
   }
   if (manifest.lessons.length && (!regularFile('assets/site.css') || !/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8')))) {
@@ -413,8 +486,12 @@ export function check(base = root) {
       let markup;
       try {
         markup = inspectHtml(source);
+        const dependencies = dependencyHashes(base, name, markup);
+        for (const dependency of Object.keys(dependencies)) {
+          if (!candidates.has(dependency)) errors.push(`${name}: dependency ${dependency} is not a publication candidate.`);
+        }
         if (manifest.version === 2 && lessons.has(name)) {
-          errors.push(...inspectReviewedDependencies(base, name, markup.references, lessons.get(name).review.dependencies, candidates));
+          errors.push(...inspectReviewedHashes(name, 'dependency', dependencies, lessons.get(name).review.dependencies));
         }
       } catch (error) {
         errors.push(`${name}: ${error.message}`);

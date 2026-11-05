@@ -7,6 +7,8 @@ export const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'
 export const subjectOf = lesson => lesson.subject ?? 'Geometry';
 export const lessonFilename = /^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
 export const dependencyPath = /^assets\/(?:[\w-]+\/)*[\w.-]+\.[a-z0-9]+$/i;
+export const referenceDependencyPath = /^reference\/(?:[\w-][\w.-]*\/)*[\w.-]+\.html$/;
+export const contractPath = /^(?:docs\/REVIEW-RUBRIC\.md|\.agents\/skills\/(?:[a-z]+(?:-[a-z0-9]+)*-teach\/SKILL\.md|homework-teach\/references\/(?:[\w-][\w.-]*\/)*[\w.-]+\.md))$/;
 const sha256 = /^[a-f0-9]{64}$/i;
 
 export function validateSubjectRegistry(registry) {
@@ -38,6 +40,17 @@ export function loadSubjectRegistry(base = root) {
 const defaultRegistry = Object.freeze(loadSubjectRegistry().map(entry => Object.freeze(entry)));
 export const subjects = Object.freeze(defaultRegistry.map(({ label }) => label));
 
+function validateHashMap(file, kind, hashes, acceptsPath) {
+  if (!hashes || Object.getPrototypeOf(hashes) !== Object.prototype) {
+    throw new Error(`${file}: missing reviewed ${kind} SHA-256 map.`);
+  }
+  for (const [name, hash] of Object.entries(hashes)) {
+    if (!acceptsPath(name) || typeof hash !== 'string' || !sha256.test(hash)) {
+      throw new Error(`${file}: invalid reviewed ${kind} path or SHA-256.`);
+    }
+  }
+}
+
 export function validateManifest(manifest, registry = defaultRegistry) {
   const labels = validateSubjectRegistry(registry).map(({ label }) => label);
   if (![1,2].includes(manifest.version) || !Array.isArray(manifest.lessons)) throw new Error('Unsupported lesson manifest.');
@@ -60,15 +73,8 @@ export function validateManifest(manifest, registry = defaultRegistry) {
       throw new Error(`${lesson.file}: missing final HTML SHA-256.`);
     }
     if (manifest.version === 2) {
-      const { dependencies } = lesson.review;
-      if (!dependencies || Object.getPrototypeOf(dependencies) !== Object.prototype) {
-        throw new Error(`${lesson.file}: missing reviewed dependency SHA-256 map.`);
-      }
-      for (const [name, hash] of Object.entries(dependencies)) {
-        if (!dependencyPath.test(name) || typeof hash !== 'string' || !sha256.test(hash)) {
-          throw new Error(`${lesson.file}: invalid reviewed dependency path or SHA-256.`);
-        }
-      }
+      validateHashMap(lesson.file, 'dependency', lesson.review.dependencies, name => dependencyPath.test(name) || referenceDependencyPath.test(name));
+      validateHashMap(lesson.file, 'contract', lesson.review.contract, name => contractPath.test(name));
     }
   }
   return manifest;

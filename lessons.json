@@ -24,6 +24,17 @@
           "assets/similarity.css": "03051d7759eb886c05140b7b7727e2b582e82bcf69861311d41f64473d4f7b01",
           "assets/similarity.js": "1f3a3da260d55bf2cc1b4c3e2593b0ead28e294d56f299b81c3675933e5de0f9",
           "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+        },
+        "contract": {
+          ".agents/skills/geometry-teach/SKILL.md": "45fb9494f76f126312acd842b580050c5a2140e332b30e065c3c425970ca0a24",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       },
       "subject": "Geometry"
@@ -49,7 +60,19 @@
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
           "assets/reading.css": "6a82ad7381b54dbc55130da83d92920bc460f9cbd0a6777b5b54383d100e264e",
           "assets/reading.js": "6d6bf497f58d9bbca428df05f915453e0fc26c279ea69c3af6a8a9193afdda73",
-          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+          "reference/close-reading.html": "7650e5c23bd15a8f655e599d5b0fcccaebb4ee52e8c5c2ca211ee029c4995b1c"
+        },
+        "contract": {
+          ".agents/skills/english-teach/SKILL.md": "681500f6684e7acc4c785825e4189fe689ca82ebc44e98de6ddf53a08d90cb13",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       }
     },
@@ -73,7 +96,19 @@
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
-          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+        },
+        "contract": {
+          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       }
     },
@@ -97,7 +132,19 @@
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
-          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+        },
+        "contract": {
+          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       }
     },
@@ -121,7 +168,19 @@
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
-          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+        },
+        "contract": {
+          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       }
     },
@@ -145,7 +204,19 @@
           "assets/chemistry.css": "ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f",
           "assets/chemistry.js": "67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561",
           "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
-          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a"
+          "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+          "reference/chemistry-field-guide.html": "1cecd586dd4592b345c4eafab1aa6502c77615f0fff29df5d949073928c8da59"
+        },
+        "contract": {
+          ".agents/skills/chemistry-teach/SKILL.md": "9d5ffff5a84b6ee69197185e25b31f12801396639930dd2643963d3a88c3ddb4",
+          ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "2ee217f0b5d44f101adaea754291b6272ee313d521bff2dbd178a18257f53ed1",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "2461bd6c7baad0ae54dc0acd74ca6a2c8432410733a39764af9400fde5666fee",
+          ".agents/skills/homework-teach/references/new-subject.md": "17ce5f359b271dddc6a820f51c24cb2d4a3b485dcb6249e5c4b8aa9762edf272",
+          ".agents/skills/homework-teach/references/routing-cases.md": "847ab858fb5dcc66c7d52ab4286e717e4bed875b6844262044d1100ee27ad83f",
+          ".agents/skills/homework-teach/references/routing.md": "099d53f8606ed9de2150a9a5b87be025eee9cdf246041e9a519753c41d64a266",
+          ".agents/skills/homework-teach/references/science.md": "e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843",
+          "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
         }
       }
     }

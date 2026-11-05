@@ -1,5 +1,22 @@
 {
   "version": 1,
-  "lessons": []
+  "lessons": [
+    {
+      "file": "0001-similar-polygons.html",
+      "title": "Similar polygons",
+      "summary": "Match corresponding parts, keep scale factors consistent, and explore how lengths, perimeters, and areas change.",
+      "topics": [
+        "Similarity",
+        "Scale factors",
+        "Perimeter and area"
+      ],
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "math": true,
+        "accessibility": true,
+        "sha256": "83eb0da43b15bdd870ae65bbccf8edc3a5a236c76348d90f29254bb18d3ef1d3"
+      }
+    }
+  ]
 }
-

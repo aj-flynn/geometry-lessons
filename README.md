@@ -7,7 +7,7 @@ A public library of short, visual geometry concept lessons. Each lesson explains
 - **Output:** concept lessons with definitions, accurate diagrams, useful accessible animation, analogous practice, and source links.
 - **Boundary:** never provide or confirm answers, completed proofs, or disguised worked solutions to actual homework. Never publish input documents, their text, personal information, or learner records.
 
-The library starts empty. No real homework has been supplied and no learner-specific lesson has been invented. This is a static teaching library plus an agent workflow; the website itself has no upload service, model API, tracking, or background inbox listener.
+Start with [Similar polygons](https://aj-flynn.github.io/geometry-lessons/lessons/0001-similar-polygons.html): correspondence, consistent proportions, a controllable scale explorer, and length/perimeter/area relationships. It uses original examples and no private input. This is a static teaching library plus an agent workflow; the website itself has no upload service, model API, tracking, or background inbox listener.
 
 ## Use it with an agent
 

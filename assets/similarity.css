@@ -1,0 +1,33 @@
+[hidden]{display:none!important}
+.lesson .intro{font-size:22px;line-height:1.45;max-width:46ch}
+.lesson .jump-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px}
+.lesson .jump-links a{display:flex;align-items:center;min-height:44px;font-size:16px}
+.lesson .big-rule{background:var(--accent);padding:22px 26px;font-size:22px;line-height:1.5;margin-block:26px}
+.lesson .diagram-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.lesson .diagram-pair figure{margin:0;min-width:0;padding:14px}
+.lesson svg text{font-family:var(--font);font-size:22px;fill:var(--ink)}
+.lesson .polygon{fill:var(--accent);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+.lesson .emphasis-side{stroke:var(--ink);stroke-width:8;stroke-linecap:round}
+.lesson .mapping{font-size:22px;font-weight:700;letter-spacing:.01em}
+.lesson .math-line{font-size:21px;line-height:1.7;overflow-wrap:anywhere}
+.lesson .ratio-rows{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.lesson .ratio-rows div{background:var(--surface);padding:18px}
+.lesson .ratio-rows dt{margin:0;font-size:17px}.lesson .ratio-rows dd{font-size:25px;font-weight:700;margin-top:8px}
+.lesson .scale-controls{background:var(--surface);padding:22px;margin:24px 0}
+.lesson .scale-controls label{display:block;font-weight:700}
+.lesson .scale-controls .motion-option{display:flex;gap:12px;align-items:center;font-size:16px;font-weight:400;min-height:44px}
+.lesson .motion-option input{width:22px;height:22px;accent-color:var(--ink)}
+.lesson .metric-table{width:100%;border-collapse:collapse;font-size:18px;margin:24px 0}
+.lesson .metric-table th,.lesson .metric-table td{text-align:left;padding:12px 10px}
+.lesson .metric-table thead,.lesson .metric-table tbody tr:nth-child(even){background:var(--surface)}
+.lesson .metric-table th[scope=row]{font-weight:400}
+.lesson .motion-status{min-height:3em;font-size:16px}
+.lesson button:disabled{opacity:.5;cursor:default;transform:none}
+.lesson .choice-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-block:18px}
+.lesson .practice + .practice{margin-top:24px}
+.lesson .reasoning-list{padding-left:1.3em}.lesson .reasoning-list li+li{margin-top:16px}
+.lesson .end-note{background:var(--ink);color:var(--paper);padding:26px}
+.lesson .end-note a:focus-visible{outline-color:var(--accent)}
+@media(max-width:600px){.lesson .diagram-pair{grid-template-columns:1fr}.lesson .diagram-pair svg{max-height:300px}.lesson .ratio-rows{grid-template-columns:1fr}.lesson .ratio-rows div{display:flex;justify-content:space-between;gap:18px;align-items:center}.lesson .ratio-rows dd{margin:0}.lesson .metric-table{font-size:16px}.lesson .metric-table th,.lesson .metric-table td{padding:12px 6px}.lesson .big-rule{padding:20px;font-size:20px}.lesson .intro{font-size:21px}.lesson .scale-controls{padding:18px}}
+@media print{.lesson [data-interactive-only]{display:none!important}.lesson .diagram-pair{grid-template-columns:1fr 1fr}.lesson .diagram-pair svg{max-height:220px}.lesson .big-rule,.lesson .practice{background:#fff}.lesson .end-note{color:#000;background:#fff}.lesson .metric-table{font-size:11pt}.lesson details p{display:block!important}.lesson .ratio-rows{display:flex}.lesson .ratio-rows>div{flex:1}.lesson .intro{font-size:14pt}}
+

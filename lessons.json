@@ -118,8 +118,8 @@
     },
     {
       "file": "0003-reading-particle-formulas.html",
-      "title": "Read a formula as a particle recipe",
-      "summary": "Separate a recipe from its number of copies using original token groups.",
+      "title": "Read particle recipes",
+      "summary": "Start the Chemistry sequence by reading atom inventories and distinguishing a particle recipe from its number of copies.",
       "topics": [
         "Particle counting",
         "Notation",
@@ -131,7 +131,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "ec99143346426b3d79a0e8dad52d29737ac24c7e60674d105f9b21dba1fd54f8",
+        "sha256": "4e5ebe73561d84b7c77dd2994c748ec321616ffeaf1bf90075ac3214dfaac457",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -140,7 +140,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "f1d96a98d01fe4693cc8dcd0e37807cf8df83835a8d900268eae33829ff6d19e",
+          ".agents/skills/chemistry-teach/SKILL.md": "b252dd80a59793cf3f4559575937b618268aceb39d96065fb475e33c703f653c",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",
@@ -175,7 +175,7 @@
     {
       "file": "0004-electrons-and-bonds.html",
       "title": "Follow the electrons",
-      "summary": "Audit an abstract electron budget and distinguish counting from classification.",
+      "summary": "Use evidence to choose a model and check both the electron budget and the local structure.",
       "topics": [
         "Electron accounting",
         "Charge",
@@ -187,7 +187,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "de1f866e6af755ec47828c969f6e35796883f3a1a89cb79b7a30897b5bcc2314",
+        "sha256": "e992a9f6e77f3df4546df8437888c543dacd3fdce432b49923a0cd8eba4e5fb8",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -196,7 +196,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "f1d96a98d01fe4693cc8dcd0e37807cf8df83835a8d900268eae33829ff6d19e",
+          ".agents/skills/chemistry-teach/SKILL.md": "b252dd80a59793cf3f4559575937b618268aceb39d96065fb475e33c703f653c",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",
@@ -230,8 +230,8 @@
     },
     {
       "file": "0005-shape-and-polarity.html",
-      "title": "Put bond arrows in space",
-      "summary": "Compare electron-pull values and explore how equal arrows combine in supplied geometry.",
+      "title": "Combine bond effects",
+      "summary": "Compare electronegativity values, apply a classification key, and distinguish one bond’s pull from the effect across a whole molecule.",
       "topics": [
         "Electronegativity",
         "Geometry",
@@ -243,7 +243,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "7387d44af13555d69816c5336d47cc5b452ff06a8e289deeecc91da63eab73c4",
+        "sha256": "27fa12cf9955856a56e07eb40662e0cba921c5dfab6c8bb744ae3551f235f16e",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -252,7 +252,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "f1d96a98d01fe4693cc8dcd0e37807cf8df83835a8d900268eae33829ff6d19e",
+          ".agents/skills/chemistry-teach/SKILL.md": "b252dd80a59793cf3f4559575937b618268aceb39d96065fb475e33c703f653c",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",
@@ -286,7 +286,7 @@
     },
     {
       "file": "0006-between-molecules.html",
-      "title": "Look between the molecules",
+      "title": "Look between particles",
       "summary": "Compare intact-particle motion and conditional physical-property trends.",
       "topics": [
         "Particle models",
@@ -299,7 +299,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "a660ee7b014bd9627dd34f46d42af671dc8504758941e471b5c80f70e24c5e4e",
+        "sha256": "40d7daece2e071e08720d96946e6f363b5d71409661f9287b1348065442f865e",
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
@@ -308,7 +308,7 @@
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
         "contract": {
-          ".agents/skills/chemistry-teach/SKILL.md": "f1d96a98d01fe4693cc8dcd0e37807cf8df83835a8d900268eae33829ff6d19e",
+          ".agents/skills/chemistry-teach/SKILL.md": "b252dd80a59793cf3f4559575937b618268aceb39d96065fb475e33c703f653c",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",

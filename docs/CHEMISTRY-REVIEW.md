@@ -22,3 +22,6 @@ Independent Astra gave the four revised lessons and Chemistry process 100/100 ea
 The Chemistry lessons, dependency maps and contract identities remain unchanged from their assessed scope in this release. The independent source-aware Opus round on that published Chemistry scope is underway.
 
 Reviewed input tree `33ca81a44a87a9e433fa95396c19c6ddfa1cc279c5f7dec2ca73593a84f43525`. Exact lesson, asset and contract hashes are in the manifest.
+
+
+The second source-aware Opus 5.5 High review scored the prior Chemistry lessons 85.6, 84.6, 84.4, and 84.0, and the process 87/100. Its findings led to a paper terminology task, a distinct three-neighbor structure, a real value lookup, clearer time snapshots, and a marked library entry point. Fresh Astra scored all four revised lessons and the exercised process 100/100. Current input tree `9e5b6553ccded92c41fb6539fee173511b1127cf3a6b099058c1b631979d77b4`. The learner uses their own course reference for the term lookup. Available evidence covers the public feature practice and workflow. Opus and deployment checks are pending for these bytes.

@@ -26,3 +26,8 @@ Sol 6.1 High revised the four Chemistry pages and field guide to cover the neede
 Sol 6.1 High refined the English and Geometry lessons and their compact subject skills. Fresh independent Astra awarded 100/100 to both lessons and exercised processes. The Chemistry lesson and contract identities match their reviewed published scope. Current checker, 28 Node tests and 134 practice checks across 26 modes passed. Current Opus opinions and live verification are pending.
 
 Reviewed input tree `33ca81a44a87a9e433fa95396c19c6ddfa1cc279c5f7dec2ca73593a84f43525`. Exact lesson, asset and contract hashes are in the manifest.
+
+
+## Chemistry terminology and model refinement
+
+Independent brainstorming compared a learner-built terminology exercise, an integrated construction, and a decision-based route. The paper terminology exercise was chosen because it practices the missing feature-to-language step while keeping assigned terms with the learner. Sol 6.1 High revised the four pages and Chemistry skill. Astra scored all four lessons and the exercised process 100/100. The checker, 28 Node tests, 134 browser practice checks, and focused library entry check passed. Current input tree `9e5b6553ccded92c41fb6539fee173511b1127cf3a6b099058c1b631979d77b4`. Source-aware Opus and live verification follow this stage.

@@ -32,4 +32,5 @@ Additional sources verified during subject-skill regeneration:
 
 The chemistry sequence uses original prerequisite models and independently selected worked structures and transfer cases. The printable field guide links the four lessons and their glossaries. Numerical classification cutoffs are left to the learner's course convention; no assignment-specific label map or element list is supplied. This resource list records author verification; each lesson's learner-facing source selection is reviewed separately against its supplied input.
 
-- Author verification for the fresh structure examples: [NIST methanethiol](https://webbook.nist.gov/cgi/cbook.cgi?ID=C74931) and [NIST chloroacetylene](https://cccbdb.nist.gov/exp2x.asp?casno=593635&charge=0).
+- Author verification for the fresh structure examples: [NIST dimethylamine](https://webbook.nist.gov/cgi/formula?ID=C124403&Mask=4) and [NIST chloroacetylene](https://cccbdb.nist.gov/exp2x.asp?casno=593635&charge=0).
+- RSC author verification of Pauling values for [silicon](https://periodic-table.rsc.org/element/14/silicon) and [sulfur](https://periodic-table.rsc.org/element/16/sulfur).

@@ -6,7 +6,7 @@ license: MIT
 
 # Chemistry
 
-Apply [homework-teach](../homework-teach/SKILL.md) to the verified Chemistry route. Map the visible demands to a short required sequence and give it a complete exit. Place extra mathematical models behind an optional route. Keep course-specific classifications, lookup lists, lab conclusions, and assigned diagrams for the learner.
+Apply [homework-teach](../homework-teach/SKILL.md) to the verified Chemistry route. Map the visible demands to a short required sequence and give it a complete exit. Place extra mathematical models behind an optional route. Keep course-specific classifications, lookup lists, lab conclusions, and assigned diagrams for the learner. When vocabulary is assessed, ask the learner to match an original feature to a term in their course reference on paper, justify it without the term, and retest on a changed case. Give feedback on the feature.
 
 - **Composition.** Name the counted unit. Distinguish symbols from counts, coefficients from subscripts, composition from amount, and molecule from extended-solid ratio. Translate a fresh real representation in both directions. If elemental form matters, interpret a new observation under stated conditions. Check elements, total charge, signs and units.
 - **Model choice.** Decide which particle and scale the question concerns. Audit all givens, including names and captions. An inventory can be insufficient, element properties can support a tentative prediction, and a charge or structure observation can justify a specific model. Use an affirmative case for each required model and an insufficient-evidence case. Ask for the deciding fact. Models can apply at different scales in one system.

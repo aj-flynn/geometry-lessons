@@ -39,3 +39,6 @@ The chemistry sequence uses original prerequisite models and independently selec
 ## Close reading and quotation
 
 - Purdue OWL supports selecting exact quotations, restating meaning and checking interpretations against a passage. [Quoting, Paraphrasing, and Summarizing](https://owl.purdue.edu/owl/research_and_citation/using_research/quoting_paraphrasing_and_summarizing/index.html) and [Close Reading a Text and Avoiding Pitfalls](https://owl.purdue.edu/owl/subject_specific_writing/writing_in_literature/writing_about_fiction/index.html).
+
+- [Perimeters and Areas of Similar Polygons](https://www.onemathematicalcat.org/Math/Geometry_obj/per_area_similar_figures.htm) explains the perimeter and area scale factors.
+- [Evidence](https://writingcenter.unc.edu/tips-and-tools/evidence/) from the University of North Carolina Writing Center supports selecting evidence and explaining what it establishes.

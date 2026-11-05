@@ -33,3 +33,7 @@ Reviewed input tree `dbffa7f713776a395b312289380b38c6102ca5b7ffcf010d6deac6535e6
 
 
 The current Geometry lesson and assets are unchanged. A fresh source-aware Astra review of the revised shared contract and exact tree `f392171bc5218611b2514d7c5afbee83c21fac6ed60defd66dd3ff92d8adc4e1` scored the lesson and exercised Geometry process 100/100. The next independent Opus assessment remains pending.
+
+## Assignment-level benchmark
+
+Under the same grade-level rubric, independent Astra reviews scored the prior lesson 92.8/100 and the new Sol 6.1 High lesson 94.6/100. The replacement gives worked scale steps and uses one geometry record for the model, measurements and labels. It keeps the original lesson URL.

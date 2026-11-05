@@ -1,0 +1,45 @@
+.workshop { max-width: 800px; overflow-wrap: break-word; }
+.workshop header { margin-top: 24px; }
+.workshop .eyebrow { font-size: .9rem; font-weight: 700; letter-spacing: .06em; }
+.workshop .workshop-nav { display: flex; flex-wrap: wrap; gap: 0 18px; margin-block: 20px; }
+.workshop .workshop-nav a { text-decoration: underline; }
+.workshop .rule { padding: 12px 20px; background: #e8efcf; border-inline-start: 4px solid #356144; }
+.workshop .rule details { background: transparent; padding: 0; }
+.workshop .method { padding-inline-start: 1.5em; }
+.workshop .method li + li { margin-top: .7rem; }
+.workshop .math { margin-top: .25rem; font-weight: 700; }
+.workshop .figure-pair, .workshop .rail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-block: 20px;
+}
+.workshop .rail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.workshop .figure-pair figure, .workshop .rail-grid figure { margin: 0; min-width: 0; padding: 12px; }
+.workshop svg { max-width: 380px; margin-inline: auto; }
+.workshop svg text { fill: #0d2a1c; font: 15px Arial, sans-serif; }
+.workshop .plate { fill: #cfdfb8; stroke: #183e28; stroke-width: 2; stroke-linejoin: round; }
+.workshop .angle { stroke: #183e28; stroke-width: 1.5; fill: none; }
+.workshop .tile-line { stroke: #183e28; stroke-width: 1.3; stroke-dasharray: 4 3; }
+.workshop .model-controls button[aria-pressed="true"] {
+  outline: 3px solid #0d2a1c;
+  outline-offset: -6px;
+  text-decoration: underline;
+  background: #e8efcf;
+  color: #0d2a1c;
+}
+.workshop .model-controls button[aria-pressed="true"]:focus-visible { outline-offset: 4px; }
+.workshop .practice { margin-top: 24px; }
+.workshop .practice details { background: #f7f7f7; }
+.workshop .claim-cards dd { padding-inline-start: .85rem; border-inline-start: 2px solid #356144; }
+.workshop #measure h3 { margin-top: 28px; }
+@media (max-width: 620px) {
+  .workshop .figure-pair, .workshop .rail-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  .workshop [data-numeric-comparison] { display: block !important; }
+  .workshop form { display: none !important; }
+  .workshop .figure-pair, .workshop .rail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workshop svg { max-height: 145px; }
+  .workshop .practice, .workshop .rule { background: none; }
+}

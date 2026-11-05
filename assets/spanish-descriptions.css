@@ -1,0 +1,22 @@
+.descriptions header { margin-bottom: 2rem; }
+.descriptions .unit { font-size: 0.85rem; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; }
+.descriptions .worked { background: #e4eee7; border-inline-start: 0.25rem solid #2f5a42; padding: 0.1rem 1rem; }
+.descriptions .example { font-size: 1.25em; font-weight: 700; }
+.descriptions .patterns { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); gap: 0.75rem; }
+.descriptions .patterns div { border-block-start: 1px solid #688276; padding: 0.5rem; }
+.descriptions .patterns dt { margin-top: 0; }
+.descriptions fieldset { border: 0; padding: 0; margin: 0 0 0.75rem; min-width: 0; }
+.descriptions fieldset label { display: block; min-height: 44px; padding-block: 0.3rem; }
+.descriptions input[type="radio"] { accent-color: #234b36; }
+.descriptions button { margin: 0 0.4rem 0.4rem 0; }
+.descriptions .rack { background: #f7f0df; }
+.descriptions .rack svg { max-height: 22rem; }
+.descriptions .word-shelf { margin-bottom: 1.5rem; }
+.descriptions .writing { margin-bottom: 1.5rem; }
+.descriptions .writing label { display: block; }
+.descriptions textarea { display: block; width: 100%; min-height: 3rem; margin: 0.25rem 0 1rem; padding: 0.5rem; border: 1px solid #2f5a42; background: #fff; color: inherit; font: inherit; resize: vertical; }
+.descriptions textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+@media print {
+  .descriptions form[data-choice] { display: none; }
+  .descriptions .choice-comparison[hidden] { display: block; }
+}

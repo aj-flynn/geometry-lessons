@@ -1,6 +1,6 @@
 # Review and publish
 
-Apply the [shared skill](../SKILL.md) to the exact lesson and its local dependencies. The author performs this check. For a material doubt that needs another judgment, use a fresh GPT-6.1 Sol agent for the specific issue. Keep source maps and comparisons private.
+Apply the [shared skill](../SKILL.md) to the exact lesson and its local dependencies. The author performs this check. If the assignment combines distinct decisions and a first draft may skip one, use one fresh GPT-6.1 Sol agent to compare the hardest cue, decision, grade-level demand and response against the source. Give only the source, draft and this question, then correct any supported omission once. Keep source maps and comparisons private.
 
 1. Compare every visible or hidden example, hint, answer key, feedback attribute, glossary, and direct learner destination against the supplied assignment. Inspect filenames, comments, metadata, visuals and text alternatives for privacy and homework separation.
 2. Verify claims, arithmetic, notation, units, theorem conditions, assumptions, representation agreement, and credible sources. Read worked steps in order and check that each relation is valid. Check that each required decision has original practice and a way back to independent work. Compare core instructions, examples and feedback with the grade or course demands.

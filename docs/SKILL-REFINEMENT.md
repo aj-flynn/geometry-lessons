@@ -48,3 +48,7 @@ Reviewed input tree `dbffa7f713776a395b312289380b38c6102ca5b7ffcf010d6deac6535e6
 ## Ordered Chemistry route and clear practice checks
 
 Sol 6.1 High revised the Chemistry lesson pages and the corresponding subject skill. The library lists the sequence by lesson number. The compact shared skill separates the practice readiness and fallback checks. Fresh source-aware Astra awarded 100/100 to all six lessons and three exercised subject processes. The checker, 28 Node tests, 140 practice checks, and 124 Chemistry browser checks on the current index passed. Reviewed input tree `f392171bc5218611b2514d7c5afbee83c21fac6ed60defd66dd3ff92d8adc4e1`. Exact Opus reviews and deployment verification follow this stage.
+
+## Assignment-level benchmark
+
+The Grade 10 two-reading argument sample earned 100/100 in a fresh independent Astra lesson review. One focused Sol 6.1 check during generation found a lighter evidence-selection demand. The author restored the missing reading demand and revised once. The independent process score was 99/100 on the clean test packet, where a linked references file was absent. The publication includes that file. The sample index links to the public assignment and the generated lesson. Private source comparisons stay outside GitHub.

@@ -4,444 +4,208 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Match corresponding parts, explore scale factors, and distinguish length, perimeter, and area ratios using new examples.">
-  <title>Similar polygons | Geometry lessons</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../assets/similarity.css?v=20261105-sol2">
-  <script src="../assets/similarity.js?v=20261105-sol4" type="module"></script>
-  <script src="../assets/geometry-paths.js?v=20261105d" defer></script>
+  <meta name="description" content="Match similar polygons, scale lengths and areas, and test general claims about shapes.">
+  <title>Same shape at a new scale</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="../assets/scale-workshop.css">
+  <script src="../assets/lesson.js" defer></script>
+  <script src="../assets/scale-workshop.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<main id="main" class="lesson geometry-guide">
-  <a class="return-link" href="../index.html">Lesson library</a>
-  <h1>Similar polygons</h1>
-  <p class="intro">When one shape is a resized copy of another, what changes and what stays the same? Match the parts, choose a direction, and explain what the measurements tell you.</p>
-  <p>Choose a short path. Try its checks before opening the comparisons. Use your results to decide whether to revisit a step or move on.</p>
-  <noscript><p>Use your browser's Print command for a paper copy. Check the preview for all three learning paths and the glossary. If a section is missing, open that path and its hints, print it, then repeat for the next path.</p></noscript>
-  <p>Work on paper or explain aloud. Use the practice feedback to check your reasoning after an attempt.</p>
-  <p><strong>Returning?</strong> Before choosing a path, recall what stays equal and how you find a length multiplier.</p>
-  <nav class="path-picks" aria-label="Choose a learning path"><a href="#path-match">Match &amp; scale</a><a href="#path-area">Area &amp; shape</a><a href="#path-practice">Reason &amp; practice</a><a href="#glossary">Glossary</a></nav>
-  <p class="goal-note"><strong>Your goal</strong> is to match sides and angles, choose how to compare measurements, and explain what the givens support.</p>
-<details class="lesson-path" name="geometry-path" id="path-match" open><summary><span>Match and scale</span><small>Match parts · Find lengths</small></summary><div class="path-content"><section aria-labelledby="match">
-    <h2 id="match">Match the parts</h2><p>Start with an ordered statement below. When no matching list is supplied, <a href="#mark-branch">use the angle marks</a> to build one.</p>
-    <details class="prerequisite"><summary>Start here if ratios feel unfamiliar</summary><p>A <strong>ratio</strong> compares quantities by division. A short ribbon is 8 cm long and a long ribbon is 12 cm. What multiplier takes the short ribbon to the long one?</p><div data-choice-quiz data-correct="divide" data-success="Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. Check by multiplying: 8 × 1.5 = 12." data-hint="The target is 12 and the original is 8. Ask how many copies of 8 make 12, rather than how much was added."><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="subtract">12 − 8 = 4</button><button type="button" data-choice="divide">12 ÷ 8 = 1.5</button><button type="button" data-choice="reverse">8 ÷ 12 ≈ 0.67</button></div><div data-static-only><p>Choose one:</p><ul><li>12 − 8 = 4</li><li>12 ÷ 8 = 1.5</li><li>8 ÷ 12 ≈ 0.67</li></ul><details><summary>Compare your reasoning</summary><p>Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. Check by multiplying: 8 × 1.5 = 12.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p></div></details>
-    <p>A <strong>polygon</strong> is a closed flat shape made of straight sides. A <strong>vertex</strong> is a corner; <em>vertices</em> means more than one corner.</p>
-    <p><strong>Similar</strong> means the same shape: matching angles have equal measures and all matching lengths share one multiplier. A <a href="#term-correspondence">corresponding</a> part is the part that matches. The polygons need the same number of corners so each corner has exactly one partner.</p>
-    <p>A similarity statement is an ordered matching list. In this new example, <strong>ACGOR ∼ BINSU</strong> means the first letters match, then the second letters, and so on. The symbol <strong>∼</strong> (also written ~) means “is similar to”; <strong>↔</strong> means “matches.”</p>
-    <p class="mapping">A ↔ B · C ↔ I · G ↔ N<br>O ↔ S · R ↔ U</p>
-    <div class="diagram-pair">
-      <figure><svg viewBox="0 0 300 260" role="img" aria-labelledby="pentagon-a-title pentagon-a-desc">
-        <title id="pentagon-a-title">Pentagon ACGOR</title><desc id="pentagon-a-desc">An upright house-shaped pentagon. A is lower left, C upper left, G at the roof tip, O upper right, and R lower right. Side CG is bold.</desc>
-        <path class="polygon" d="M70 190 70 90 140 35 210 90 210 190Z"/>
-        <path class="emphasis-side" d="M70 90 140 35" fill="none"/>
-        <text x="46" y="215">A</text><text x="42" y="88">C</text><text x="152" y="33">G</text><text x="220" y="88">O</text><text x="218" y="215">R</text>
-      </svg><figcaption>Follow the order around the outline.</figcaption></figure>
-      <figure><svg viewBox="0 0 300 260" role="img" aria-labelledby="pentagon-b-title pentagon-b-desc">
-        <title id="pentagon-b-title">The matching pentagon, turned</title><desc id="pentagon-b-desc">The same pentagon rotated a quarter turn clockwise. B matches A, I matches C, N matches G, S matches O, and U matches R. Bold side IN matches CG.</desc>
-        <path class="polygon" d="M80 70 180 70 235 140 180 210 80 210Z"/>
-        <path class="emphasis-side" d="M180 70 235 140" fill="none"/>
-        <text x="54" y="64">B</text><text x="172" y="52">I</text><text x="250" y="148">N</text><text x="176" y="239">S</text><text x="54" y="232">U</text>
-      </svg><figcaption>The bold sides correspond, even though they face different directions.</figcaption></figure>
-    </div>
-    <p>These drawings have the same size to isolate the matching step. A similar copy could also be resized. Use the matching order in the statement, even when the figure has turned or is reflected like a mirror image.</p>
-    <p>Side CG matches IN because both endpoints match. The bold edges in the diagrams follow that pairing.</p>
-    <p>The symbol <strong>∠C</strong> means “the angle at corner C.” Angles with equal measures are <strong>congruent</strong>. Write ∠C ≅ ∠I, where <strong>≅</strong> means “is congruent to.” Resizing changes lengths while the matching angles keep their measures.</p>
-    <details><summary>Record the full match</summary>
-      <p>Start at A and follow the list once around both boundaries. Write each angle pair as ∠A ≅ ∠B, ∠C ≅ ∠I, ∠G ≅ ∠N, ∠O ≅ ∠S, and ∠R ≅ ∠U.</p>
-      <p>For the sides, start with AC and BI. Step forward by one letter to CG and IN, then continue. After OR and SU, return to the starting corners to include RA and UB. Count five side pairs for five vertices.</p>
-    </details>
-    <div class="practice" data-choice-quiz data-correct="VT" data-success="You matched both endpoints in this new hexagon: J maps to V and H maps to T. VT and TV name the same side; reversing the letters does not change the segment." data-hint="Make a two-row list from the statement. Locate J and H separately, then join their partners.">
-      <h3>Try a new correspondence</h3><p>Two hexagons are similar, <strong>BDFHJL ~ NPRTVX</strong>. Which side matches <strong>JH</strong>? Then record the matching angle for ∠J and the side pair that closes the two outlines. Compare after you choose.</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="VT">VT</button><button type="button" data-choice="RV" data-hint="R is the partner of F. Check the position of H before joining the endpoints.">RV</button><button type="button" data-choice="VX" data-hint="VX joins the partners of J and L. The requested side ends at H, so locate that partner instead.">VX</button></div><div data-static-only><p>Choose one:</p><ul><li>VT</li><li>RV</li><li>VX</li></ul><details><summary>Compare your reasoning</summary><p>You matched both endpoints in this new hexagon: J maps to V and H maps to T. VT and TV name the same side; reversing the letters does not change the segment.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p><details><summary>Hint for the match</summary><p>Line up the two names in rows. Start at the first letter in each row, and for the closing edge look at the last letter too.</p></details>
-      <details><summary>Check your angle and closing edge</summary><p>J and V are in the fifth slot, so ∠J ≅ ∠V. The last-to-first edges are LB and XN. In the direction from the first hexagon to the second, their ratio is XN / LB, in the same order as TV / HJ.</p></details>
-    </div>
-  </section>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson workshop">
+    <a class="return-link" href="../index.html">← Lesson library</a>
+    <header>
+      <p class="eyebrow">Geometry · Similar polygons</p>
+      <h1>Same shape at a new scale</h1>
+      <p class="lead">Match corners and edges, decide which measurement changes, and justify when two shapes are similar.</p>
+    </header>
+    <nav class="workshop-nav" aria-label="Lesson sections">
+      <a href="#match">Match</a><a href="#measure">Measure</a><a href="#test">Test a claim</a><a href="#transfer">Your turn</a><a href="#glossary">Glossary</a>
+    </nav>
+    <aside class="rule" aria-label="Before you start">
+      <p><strong>Quick check.</strong> A 5 cm strip becomes 8 cm long. What do you multiply 5 by? What undoes the change?</p>
+      <details><summary>Check the starting idea</summary><p>Multiply by 8/5, the target divided by the original. Multiply by 5/8 to undo the change. These fractions are reciprocals, meaning their product is 1.</p></details>
+    </aside>
 
-  <section class="mark-branch" id="mark-branch" aria-labelledby="angle-marks">
-  <h2 id="angle-marks">Read the angle marks</h2>
-  <p>The small curved lines inside a corner are <a href="#term-angle-arcs">angle arcs</a>. Across a marked pair of figures, angles with the same arc count are marked as equal in measure. Two arcs identify a group; they do not mean two degrees. Different arc counts do not, by themselves, say that angles are unequal.</p>
-  <p><strong>The two figures in each pair below are given to be similar.</strong> The marks identify matching corners. Equal angle marks alone would not prove that general polygons are similar; their corresponding side lengths must also share one scale factor. Use the givens, not the apparent size or position.</p>
-  <h3>Match corners before sides</h3>
-  <p>Predict: which corner matches K, even after the figure turns?</p>
-  <figure>
-    <div class="mark-diagrams"><svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-worked-original-title marks-worked-original-desc" xmlns="http://www.w3.org/2000/svg">
-<title id="marks-worked-original-title">Original figure with angle marks</title>
-<desc id="marks-worked-original-desc">Four-sided figure. K has one angle arc; L has two; M has three; N has four.</desc>
-<polygon points="50.00,55.00 205.00,45.00 230.00,165.00 70.00,190.00" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
-<path d="M 51.759 66.870 A 12 12 0 0 0 61.975 54.227" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="33.32" y="43.96" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">K</text>
-<path d="M 193.025 45.773 A 12 12 0 0 0 207.447 56.748" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 188.035 46.094 A 17 17 0 0 0 208.467 61.643" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="218.88" y="30.60" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">L</text>
-<path d="M 227.553 153.252 A 12 12 0 0 0 218.144 166.853" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 226.533 148.357 A 17 17 0 0 0 213.204 167.624" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 225.513 143.462 A 22 22 0 0 0 208.264 168.396" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="247.44" y="174.79" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">M</text>
-<path d="M 81.856 188.147 A 12 12 0 0 0 68.241 178.130" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 86.796 187.376 A 17 17 0 0 0 67.509 173.184" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 91.736 186.604 A 22 22 0 0 0 66.776 168.238" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 96.676 185.832 A 27 27 0 0 0 66.043 163.292" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="56.61" y="204.85" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">N</text>
-</svg>
-<svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-worked-turned-title marks-worked-turned-desc" xmlns="http://www.w3.org/2000/svg">
-<title id="marks-worked-turned-title">Turned figure with angle marks</title>
-<desc id="marks-worked-turned-desc">A turned, smaller similar figure. R has one angle arc; W has two; T has three; S has four.</desc>
-<polygon points="212.00,181.00 88.00,189.00 68.00,93.00 196.00,73.00" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
-<path d="M 210.241 169.130 A 12 12 0 0 0 200.025 181.773" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="228.68" y="192.04" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">R</text>
-<path d="M 99.975 188.227 A 12 12 0 0 0 85.553 177.252" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 104.965 187.906 A 17 17 0 0 0 84.533 172.357" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="74.12" y="203.40" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">W</text>
-<path d="M 70.447 104.748 A 12 12 0 0 0 79.856 91.147" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 71.467 109.643 A 17 17 0 0 0 84.796 90.376" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 72.487 114.538 A 22 22 0 0 0 89.736 89.604" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="50.56" y="83.21" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">T</text>
-<path d="M 184.144 74.853 A 12 12 0 0 0 197.759 84.870" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 179.204 75.624 A 17 17 0 0 0 198.491 89.816" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 174.264 76.396 A 22 22 0 0 0 199.224 94.762" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<path d="M 169.324 77.168 A 27 27 0 0 0 199.957 99.708" fill="none" stroke="#163a32" stroke-width="1.6"/>
-<text x="209.39" y="58.15" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">S</text>
-</svg></div>
-    <figcaption>Use the arc patterns, not the position of a corner. The second figure is a turned, smaller copy; similarity is given.</figcaption>
-  </figure>
-  <details><summary>Compare your match and follow the endpoints</summary>
-    <p>K matches R because both have one arc. Continuing by the marks gives L with W, M with T, and N with S. The symbol ↔ means “corresponds to,” so we can record K ↔ R, L ↔ W, M ↔ T, and N ↔ S.</p>
-    <p>Now match a side by <strong>both</strong> endpoints: side KL joins the one-arc and two-arc corners. Its corresponding side is RW, joining those same marked groups in the other figure. Turning the figure does not change the match.</p>
-  </details>
-  </section>
-
-  <section aria-labelledby="scale">
-    <h2 id="scale">Keep one direction</h2>
-    <p>Write <strong>original → target</strong> above your work. Then use matching sides in that direction:</p>
-    <p>The <a href="#term-scale-factor">scale factor</a>, written <var>k</var>, is the positive multiplier for a length. It has no unit because the matching length units cancel in the division.</p><p class="big-rule"><var>k</var> = target length ÷ original length<br>target length = <var>k</var> × original length</p>
-    <p>A <strong>ratio</strong> compares quantities by division. A <strong>proportion</strong> says two ratios are equal. Read the pentagon pairs from their ordered names. Put a side from the target in every numerator (the top of a fraction) and its original partner in the denominator (the bottom).</p>
-    <p class="math-line">BI / AC = IN / CG = NS / GO = SU / OR = UB / RA = <var>k</var></p>
-    <p>Use the same units before dividing. A larger target gives <var>k</var> greater than 1. A smaller target gives <var>k</var> between 0 and 1.</p>
-    <p>To reverse the direction, use the <strong>reciprocal</strong>, meaning one divided by the factor. Read a ratio named “first to second” as first ÷ second, even when that reverses your scaling direction.</p>
-    <p class="scale-anchor"><strong>Start with an easy anchor.</strong> Doubling a length uses a factor of 2. Returning to the original uses a factor of one half. Try a 6 cm ribbon: doubling gives 12 cm; halving 12 returns to 6. The two factors undo each other because 2 × one half = 1.</p>
-  <div class="practice">
-    <h3>From corner marks to a missing length</h3>
-    <p>A maker cuts two similar plates. Use the marks to match all four corners. On paper, write the similarity statement, every pair of equal angles, and the chain of four side ratios, all in copy-over-original order.</p>
-    <div class="mark-diagrams">
-      <figure><svg viewBox="0 0 280 220" role="img" aria-labelledby="marks-transfer-original-title marks-transfer-original-desc">
-        <title id="marks-transfer-original-title">Original plate with corner marks</title><desc id="marks-transfer-original-desc">Around the outline: P, Y, A, K. Arc counts: A 2, K 4, P 1, Y 3.</desc>
-        <polygon class="polygon" points="64.00,57.00 181.00,57.00 208.00,93.00 64.00,165.00"/>
-        <path d="M64.00,68.00 A11,11 0 0 0 75.00,57.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="43.86" y="45.89" text-anchor="middle" dominant-baseline="middle">P</text>
-        <path d="M170.00,57.00 A11,11 0 0 0 187.60,65.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M165.00,57.00 A16,16 0 0 0 190.60,69.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M160.00,57.00 A21,21 0 0 0 193.60,73.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="199.88" y="43.87" text-anchor="middle" dominant-baseline="middle">Y</text>
-        <path d="M201.40,84.20 A11,11 0 0 0 198.16,97.92" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M198.40,80.20 A16,16 0 0 0 193.69,100.16" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="231.00" y="93.00" text-anchor="middle" dominant-baseline="middle">A</text>
-        <path d="M73.84,160.08 A11,11 0 0 0 64.00,154.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M78.31,157.84 A16,16 0 0 0 64.00,149.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M82.78,155.61 A21,21 0 0 0 64.00,144.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M87.26,153.37 A26,26 0 0 0 64.00,139.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="48.56" y="182.04" text-anchor="middle" dominant-baseline="middle">K</text>
-      </svg><figcaption>Original plate. Around the outline: P, Y, A, K. Arc counts: A 2, K 4, P 1, Y 3.</figcaption></figure>
-      <figure><svg viewBox="0 0 280 220" role="img" aria-labelledby="marks-transfer-reflected-title marks-transfer-reflected-desc">
-        <title id="marks-transfer-reflected-title">Reflected copy with corner marks</title><desc id="marks-transfer-reflected-desc">Around the outline: D, R, F, C. Arc counts: C 2, D 3, F 4, R 1.</desc>
-        <polygon class="polygon" points="216.00,60.00 122.40,60.00 100.80,88.80 216.00,146.40"/>
-        <path d="M216.00,71.00 A11,11 0 0 1 205.00,60.00" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="236.14" y="48.89" text-anchor="middle" dominant-baseline="middle">R</text>
-        <path d="M133.40,60.00 A11,11 0 0 1 115.80,68.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M138.40,60.00 A16,16 0 0 1 112.80,72.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M143.40,60.00 A21,21 0 0 1 109.80,76.80" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="103.52" y="46.87" text-anchor="middle" dominant-baseline="middle">D</text>
-        <path d="M107.40,80.00 A11,11 0 0 1 110.64,93.72" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M110.40,76.00 A16,16 0 0 1 115.11,95.96" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="77.80" y="88.80" text-anchor="middle" dominant-baseline="middle">C</text>
-        <path d="M206.16,141.48 A11,11 0 0 1 216.00,135.40" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M201.69,139.24 A16,16 0 0 1 216.00,130.40" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M197.22,137.01 A21,21 0 0 1 216.00,125.40" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M192.74,134.77 A26,26 0 0 1 216.00,120.40" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        <text x="231.44" y="163.44" text-anchor="middle" dominant-baseline="middle">F</text>
-      </svg><figcaption>Reflected copy. Around the outline: D, R, F, C. Arc counts: C 2, D 3, F 4, R 1.</figcaption></figure>
-    </div>
-    <p>On the original, PY is 13 cm and YA is 5 cm. On the copy, RD is 10.4 cm. Find the copy’s side DC using a proportion from your chain. Write the equation before checking the number.</p>
-    <details><summary>Hint about starting a chain</summary><p>Match P and Y by their marks. Check both ends of RD, then use that pair to get a multiplier. Include the side that returns to the first corner.</p></details>
-    <form data-practice data-expected="4" data-hint="Check both ends of PY and YA, then keep copy over original in both ratios." data-success="That length fits. Now compare the full record below and check that each fraction follows copy over original." data-mistakes='{"0.8":"That is the unitless multiplier. Use it to find a length in centimeters.","6.25":"That would enlarge the side. Check which figure belongs on top in both ratios."}' data-interactive-only hidden>
-      <label for="marked-copy-length">Length of DC in centimeters</label>
-      <div class="controls"><input id="marked-copy-length" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check length</button></div>
-      <p class="feedback" data-feedback role="status" aria-live="polite"></p>
-    </form>
-    <details><summary>Compare your full record and calculation</summary>
-      <p>PYAK ∼ RDCF. The pairs are ∠P ≅ ∠R, ∠Y ≅ ∠D, ∠A ≅ ∠C, and ∠K ≅ ∠F.</p>
-      <p class="math-line">RD / PY = DC / YA = CF / AK = FR / KP</p>
-      <p>Let <var>x</var> be the length of DC in centimeters. Using the first two ratios gives 10.4 / 13 = <var>x</var> / 5. Multiply both sides by 5. Then <var>x</var> = 0.8 × 5 = 4 cm. If your result was larger than 5 cm, check whether you reversed one ratio.</p>
-    </details>
-  </div>
-    <h3>Resize a clipped panel</h3>
-    <p>A maker wants a smaller panel with the same shape as a five-sided template. The original bottom edge is 26 cm, and the copy’s matching edge is 16.9 cm. Both drawings use the same unit scale. Before opening the steps, predict whether the copy’s boundary is longer or shorter. The <a href="#term-perimeter-area">perimeter</a> is the total length of that boundary.</p>
-    <div class="diagram-pair worked-diagrams">
-      <figure><svg viewBox="0 0 360 240" role="img" aria-labelledby="worked-original-title worked-original-desc">
-        <title id="worked-original-title">Original five-sided panel</title><desc id="worked-original-desc">Starting from the top left, the lengths going clockwise are 14, 13, 14, 26, and 19 centimeters. The bottom edge is highlighted.</desc>
-        <path class="polygon" d="M74 56H158L230 86V170H74Z"/><path class="emphasis-side" d="M74 170H230" fill="none"/>
-        <g text-anchor="middle"><text x="116" y="40">14 cm</text><text x="205" y="54">13 cm</text><text x="273" y="135">14 cm</text><text x="152" y="201">26 cm</text><text x="38" y="118">19 cm</text></g>
-      </svg><figcaption>Original. From the top edge clockwise, the sides are 14, 13, 14, 26, and 19 cm.</figcaption></figure>
-      <figure><svg viewBox="0 0 360 240" role="img" aria-labelledby="worked-target-title worked-target-desc">
-        <title id="worked-target-title">Scaled copy of the panel</title><desc id="worked-target-desc">A smaller similar panel. Its matching bottom edge, highlighted, measures 16.9 centimeters. Its right vertical edge is marked with a question mark.</desc>
-        <path class="polygon" d="M74 95.9H128.6L175.4 115.4V170H74Z"/><path class="emphasis-side" d="M74 170H175.4" fill="none"/>
-        <g text-anchor="middle"><text x="124.7" y="201">16.9 cm</text><text x="216" y="149">? cm</text></g>
-      </svg><figcaption>Copy. The bold edges match. How long is the copy’s right edge? How far is it around each panel?</figcaption></figure>
-    </div>
-    <details><summary>Use the complete side pair</summary>
-      <p>Call the copy’s right edge <var>x</var> cm. Write the two copy-over-original ratios as a proportion.</p>
-      <p class="math-line"><var>x</var> / 14 = 16.9 / 26</p>
-      <p>Both ratios equal 0.65. Multiply both sides by 14 to get <var>x</var> = 14 × 0.65 = 9.1. The copy’s right edge is 9.1 cm.</p>
-    </details>
-    <details><summary>Find both perimeters</summary><p>Add each original side once: 14 + 13 + 14 + 26 + 19 = 86 cm. Each side of the copy gets multiplied by 0.65. You could scale all five sides and add, or multiply the whole sum once: 0.65 × 86 = 55.9 cm.</p></details>
-    <details><summary>Read the order of the requested ratio</summary><p>“Copy to original” asks for 55.9 ÷ 86 = 0.65. “Original to copy” asks for 86 ÷ 55.9 = 20/13. Compare the sizes first. The original’s boundary is longer, so original ÷ copy is greater than 1.</p></details>
-    <div class="practice">
-      <h3>Work back to the original</h3>
-      <p>Two similar flat game tokens have a matching pair of sides measuring 25 mm on the original and 35 mm on the copy. A different side of the <strong>copy</strong> is 21.7 mm. How long is that side on the original?</p>
-      <form data-practice data-expected="15.5" data-success="That fits. Original-to-copy uses 1.4, so going back divides by 1.4. Check that 15.5 × 1.4 = 21.7 mm." data-hint="Find the factor from the complete pair. To get back from the copy to the original, undo that change." data-mistakes='{"30.38": "You applied the enlargement again. Go back to the original by undoing the enlargement.", "1.4": "You have the factor. The question asks for the original side length."}' data-interactive-only hidden>
-        <label for="missing-side">Original length in millimeters</label>
-        <div class="controls"><input id="missing-side" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check length</button></div>
-        <p data-feedback class="feedback" role="status" aria-live="polite"></p>
-      </form>
-      <details data-static-only><summary>Compare your reasoning</summary><p>The forward factor is 35 ÷ 25 = 1.4. To find the original length, divide 21.7 by 1.4 to get 15.5 mm. Multiplying 15.5 mm by 1.4 returns the given copy length.</p></details>
-      <details><summary>Hint about going back</summary><p>If <var>x</var> stands for the missing original length, then 1.4 × <var>x</var> = 21.7 mm. What undoes multiplication?</p></details>
-    </div>
-  </section>
-
-<aside class="path-stop"><strong>Pause here.</strong> Can you name the matching parts and explain which way your multiplier goes? That is enough for this visit if you are working on side lengths.<p><a href="#path-area">Next: area and shape</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
-<details class="lesson-path" name="geometry-path" id="path-area"><summary><span>Area and shape</span><small>Resize · Compare shapes</small></summary><div class="path-content">  <section aria-labelledby="explore" data-similarity-explorer>
-    <h2 id="explore">Explore the change</h2>
-    <p>Imagine enlarging a rectangular art print. The original is <strong>13 cm by 9 cm</strong>. Its perimeter is 44 cm and its <strong>area</strong> (space inside) is 117 cm². The notation cm² means square centimeters. Resize both dimensions together. Try 2, then 0.8. Compare the width, boundary, and interior with the original at both settings. At each setting, which measurement changes by a greater fraction of its original amount: the perimeter or the area? Explain why.</p>
-    <div class="prediction" data-choice-quiz data-correct="twice" data-success="Good prediction. Area combines width and height, so look for the scale factor twice. Watch both dimensions as the print changes." data-hint="Perimeter follows lengths. For area, count the two dimensions in width × height, then try again."><h3>Predict before you move</h3><p>When both dimensions change by the same factor, does the area use that factor once or twice?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="once">Use it once</button><button type="button" data-choice="twice">Use it twice</button></div><div data-static-only><p>Choose one:</p><ul><li>Use it once</li><li>Use it twice</li></ul><details><summary>Compare your reasoning</summary><p>Good prediction. Area combines width and height, so look for the scale factor twice. Watch both dimensions as the print changes.</p></details></div><p class="feedback" data-choice-feedback role="status" aria-live="polite"></p></div>
-    <div class="diagram-pair">
-      <figure><svg viewBox="0 0 400 300" role="img" aria-labelledby="original-title original-desc">
-        <title id="original-title">Original art print</title><desc id="original-desc">A rectangle thirteen centimeters wide and nine centimeters high. Perimeter forty-four centimeters; area one hundred seventeen square centimeters.</desc>
-        <rect class="polygon" x="45" y="177" width="91" height="63"/>
-        <path d="M45 226H59V240" fill="none" stroke="currentColor" stroke-width="2"/>
-        <text x="90.5" y="163" text-anchor="middle">13 cm</text><text x="148" y="215">9 cm</text>
-      </svg><figcaption>Original. The corner mark indicates a right angle; all four corners of a rectangle are right angles.</figcaption></figure>
-      <figure><svg viewBox="0 0 400 300" role="img" aria-labelledby="scaled-title scaled-desc">
-        <title id="scaled-title">Target art print</title><desc id="scaled-desc" data-diagram-description>The target rectangle is twenty point eight by fourteen point four centimeters, using a scale factor of one point six. Its perimeter is seventy point four centimeters and its area is two hundred ninety-nine point five two square centimeters.</desc>
-        <rect class="polygon" data-scaled-rectangle x="45" y="139.2" width="145.6" height="100.8"/>
-        <path d="M45 226H59V240" fill="none" stroke="currentColor" stroke-width="2"/>
-        <text data-width-label x="117.8" y="127.2" text-anchor="middle">20.8 cm</text><text data-height-label x="202.6" y="196.6">14.4 cm</text>
-      </svg><figcaption>Target. Both drawings use the same unit scale. Their dimensions change together, so their shape stays the same.</figcaption></figure>
-    </div>
-    <div class="scale-controls" data-interactive-only hidden>
-      <label for="scale-factor">Scale factor <var>k</var>: <output for="scale-factor" data-metric="scale">1.6</output></label>
-      <input id="scale-factor" data-scale type="range" min="0.8" max="2.4" step="0.1" value="1.6" aria-describedby="scale-help">
-      <p id="scale-help" class="static-note">Use the slider or arrow keys to choose a factor from 0.8 to 2.4. Below 1 the copy is smaller. Above 1 it is larger. Playback rounds the displayed values. Pause for a settled slider value.</p>
-      <div class="controls"><button type="button" data-play aria-pressed="false">Play from 0.8 to 2.4</button><button type="button" data-pause disabled>Pause</button><button type="button" data-reset-scale>Reset example</button></div>
-      <label class="motion-option"><input type="checkbox" data-reduce-motion>Use reduced motion (show the end state)</label>
-      <p class="motion-status" data-motion-status role="status" aria-live="polite">Ready. The example starts at scale 1.6.</p>
-    </div>
-    <noscript><p>This is the fixed example at scale 1.6. The diagrams, table, and explanations work without JavaScript; the slider and animation need it.</p></noscript>
-    <table class="metric-table"><caption>Original and current target measurements</caption><thead><tr><th scope="col">Measurement</th><th scope="col">Original</th><th scope="col">Target</th></tr></thead><tbody>
-      <tr><th scope="row">Width (cm)</th><td>13</td><td data-metric="width">20.8</td></tr>
-      <tr><th scope="row">Height (cm)</th><td>9</td><td data-metric="height">14.4</td></tr>
-      <tr><th scope="row">Perimeter (cm)</th><td>44</td><td data-metric="perimeter">70.4</td></tr>
-      <tr><th scope="row">Area (cm²)</th><td>117</td><td data-metric="area">299.52</td></tr>
-    </tbody></table>
-    <p><var>k</var>² means <var>k</var> × <var>k</var>, read “k squared.” It is a multiplier; cm² instead names an area unit.</p><dl class="ratio-rows"><div><dt>Target length ÷ original length</dt><dd><var>k</var></dd></div><div><dt>Target perimeter ÷ original perimeter</dt><dd><var>k</var></dd></div><div><dt>Target area ÷ original area</dt><dd><var>k</var>²</dd></div></dl>
-    <p class="tiling-prediction"><strong>Pause and predict:</strong> if each length doubles, how many original rectangles fit inside? Say your prediction and describe the rows and columns before opening the picture.</p>
-    <details class="area-tiling"><summary>Reveal the doubled picture</summary><figure><svg viewBox="0 0 360 260" role="img" aria-labelledby="tiles-title tiles-desc"><title id="tiles-title">A two-by-two area model</title><desc id="tiles-desc">Four equal rectangular copies are arranged in two columns and two rows. Each original has area A. The outer rectangle has twice the original width and twice the original height, so its area contains four copies of A.</desc><g fill="#f6e016" stroke="#0d2a1c" stroke-width="3"><rect x="56" y="48" width="117" height="81"/><rect x="173" y="48" width="117" height="81"/><rect x="56" y="129" width="117" height="81"/><rect x="173" y="129" width="117" height="81"/></g><g text-anchor="middle"><text x="114.5" y="98">A</text><text x="231.5" y="98">A</text><text x="114.5" y="179">A</text><text x="231.5" y="179">A</text><text x="173" y="242">2 across × 2 rows = 4 copies</text></g></svg><figcaption>Each small rectangle is one original. Doubling each length creates four copies of its area, not two. A represents area, not a side length.</figcaption></figure></details>
-    <p><strong>Why the square?</strong> Area uses two lengths. The target area is (<var>k</var> × width) × (<var>k</var> × height), so it contains two factors of <var>k</var>. Perimeter adds lengths, and each length gets only one factor.</p>
-    <p>In the fixed starting example, at <var>k</var> = 1.6, the perimeter factor is 1.6 and the area factor is 2.56. Ratios must use the same original-to-target direction. The same rules apply to other similar polygons. Imagine splitting a polygon into triangles with no overlap. Each triangle’s base and its height, measured at a right angle to the base, both scale by <var>k</var>, so each piece’s area scales by <var>k</var>². Add the pieces to get the whole area.</p>
-    <details><summary>From a multiplier to a measurement</summary><p>For a different hexagonal stencil, the original perimeter is 42 cm, the original area is 70 cm², and every length grows by 1.2. Predict whether both measurements grow before reading on.</p><details><summary>See the two calculations</summary><p>Perimeter: 42 × 1.2 = 50.4 cm. Area: 70 × 1.2² = 100.8 cm². The perimeter adds lengths, while area combines two dimensions. You can use the original area directly: you do not need to find a base and height.</p></details></details>
-    <div class="practice">
-      <h3>Find the area of a smaller stencil</h3>
-      <p>A similar seven-sided stencil is made from an original that covers 200 mm². A matching edge measures 34 mm on the original and 15.3 mm on the copy. Find the area covered by the copy. Before calculating, decide what kind of measurement the edge pair gives you.</p>
-      <form data-practice data-expected="40.5" data-success="That fits. The edge pair gives a length factor of 0.45. The copy covers 40.5 mm² because its area uses that factor twice." data-hint="Divide the copy edge by the original edge. Square that length factor, then apply it to the given area." data-mistakes='{"90": "You used the length factor once. Area combines two scaled dimensions.", "0.2025": "You have the area multiplier. Apply it to the original area to get square millimeters.", "0.45": "You have the length multiplier. Area uses it twice, then you still need to scale the original area."}' data-interactive-only hidden>
-        <label for="area-factor">Copy area in square millimeters</label>
-        <div class="controls"><input id="area-factor" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check area</button></div>
-        <p data-feedback class="feedback" role="status" aria-live="polite"></p>
-      </form>
-      <details data-static-only><summary>Compare your reasoning</summary><p>The length factor is 15.3 ÷ 34 = 0.45. The area factor is 0.45 × 0.45 = 0.2025. The copy covers 200 × 0.2025 = 40.5 mm². The factor has no unit. The area is in square millimeters and is smaller than 200 mm².</p></details>
-      <details><summary>Hint about what is given</summary><p>You know the area of the whole original, so you can scale that area directly. You do not need to reconstruct the stencil.</p></details>
-    </div>
-  </section>
-
-  <section aria-labelledby="rectangles">
-    <h2 id="rectangles">Test the shape</h2>
-    <p>Right angles alone do not settle whether two rectangles are similar. Pair the longer sides, then pair the shorter sides. The two target-over-original length ratios must agree.</p>
-    <p>For the art-print example, compare <strong>20.8 / 13</strong> with <strong>14.4 / 9</strong>. Each is 1.6, so one uniform scale works for both dimensions. You can also compare long-side / short-side within each rectangle. A turn does not change that <strong>aspect ratio</strong>: the longer length divided by the shorter length.</p>
-    <p>If the side factors differ, one uniform scale cannot produce the target. The difference tells you that at least one dimension changed by a different factor. For general polygons, check the corresponding angle condition as well as all corresponding side ratios.</p>
-    <h3>Same scale, or just a stretch?</h3>
-    <p>Both targets below get wider. Compare the width and height factors to see which keeps the original shape. All three drawings use the same unit scale.</p>
-    <div class="shape-comparison">
-      <figure><svg viewBox="0 0 320 220" role="img" aria-labelledby="stretch-original-title stretch-original-desc"><title id="stretch-original-title">Original rectangle</title><desc id="stretch-original-desc">A rectangle eighteen centimeters wide and ten centimeters high.</desc><rect class="polygon" x="38" y="90" width="108" height="60"/><text x="92" y="75" text-anchor="middle">18 cm</text><text x="158" y="127">10 cm</text></svg><figcaption><strong>Original</strong><br>18 cm by 10 cm</figcaption></figure>
-      <figure><svg viewBox="0 0 320 220" role="img" aria-labelledby="uniform-title uniform-desc"><title id="uniform-title">Both dimensions scaled</title><desc id="uniform-desc">A rectangle twenty-seven centimeters wide and fifteen centimeters high. Both lengths have a factor of one point five.</desc><rect class="polygon" x="38" y="60" width="162" height="90"/><text x="119" y="45" text-anchor="middle">27 cm</text><text x="212" y="112">15 cm</text></svg><figcaption><strong>Uniform scale</strong><br>Width × 1.5; height × 1.5.<br>Both ratios agree: same shape.</figcaption></figure>
-      <figure><svg viewBox="0 0 320 220" role="img" aria-labelledby="stretch-title stretch-desc"><title id="stretch-title">Only the width stretched</title><desc id="stretch-desc">A rectangle twenty-seven centimeters wide and ten centimeters high. The width factor is one point five and the height factor is one, so the shape is wider relative to its height.</desc><rect class="polygon" x="38" y="90" width="162" height="60"/><path d="M38 60H200M38 60l9 -6M38 60l9 6M200 60l-9 -6M200 60l-9 6" fill="none" stroke="currentColor" stroke-width="2"/><text x="119" y="45" text-anchor="middle">27 cm</text><text x="212" y="127">10 cm</text></svg><figcaption><strong>One-axis stretch</strong><br>Width × 1.5; height × 1.<br>Different ratios: changed shape.</figcaption></figure>
-    </div>
-    <p>The stretched rectangle still has four right angles. Its proportions changed because only one dimension grew. This is why matching angles alone is not enough for rectangles.</p>
-    <details><summary>A useful checking routine</summary><p>Write the correspondence. Put both ratios in the same direction and units. Compare exact fractions before rounding. Then check that every required condition is supported by the givens, not merely the appearance of a drawing.</p></details>
-    <div class="practice" data-choice-quiz data-correct="unequal" data-success="Yes. Width uses 40/25 while height uses 25.2/14. The unequal factors indicate a stretch rather than one uniform scale." data-hint="Compare target/original for the long sides and for the short sides."><h3>Try it here: diagnose a stretch</h3><p>One rectangular fabric patch is 25 cm by 14 cm. Another is 40 cm by 25.2 cm. Which observation settles whether one uniform scale can make the second patch?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="perimeter" data-hint="Different perimeters can occur in similar figures. Compare the matching side ratios.">The perimeters differ</button><button type="button" data-choice="angle" data-hint="The rectangles both have right angles. That alone does not check their proportions.">The angles are right</button><button type="button" data-choice="unequal">The side factors differ</button></div><div data-static-only><p>Choose one:</p><ul><li>The perimeters differ</li><li>The angles are right</li><li>The side factors differ</li></ul><details><summary>Compare your reasoning</summary><p>Yes. Width uses 40/25 while height uses 25.2/14. The unequal factors indicate a stretch rather than one uniform scale.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p><details><summary>Hint about what must match</summary><p>A uniform scale needs the same factor in both dimensions. Check the two ratios before making your conclusion.</p></details></div>
-  </section>
-
-<aside class="path-stop"><strong>Pause here.</strong> Explain why a length factor appears twice in an area. If that is unclear, revisit the tiled picture before moving on.<p><a href="#path-practice">Next: reason and practice</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
-<details class="lesson-path" name="geometry-path" id="path-practice"><summary><span>Reason and practice</span><small>Test claims · Choose a method</small></summary><div class="path-content">  <section aria-labelledby="reason">
-    <h2 id="reason">Reason about a claim</h2>
-    <p>For an “always, sometimes, or never” claim, decide what evidence would support your choice before choosing a label.</p>
-    <ul class="reasoning-list">
-      <li><strong>Always:</strong> give a reason that works for every allowed pair. A few successful drawings cannot prove “always.” Try to break your claim with a <strong>counterexample</strong>: one allowed case that makes it false.</li>
-      <li><strong>Sometimes:</strong> build an allowed example where the claim holds <em>and</em> an allowed counterexample where it fails.</li>
-      <li><strong>Never:</strong> find a requirement that makes the claim impossible for every allowed pair. One failing example is not enough.</li>
-    </ul>
-    <h3>Are two non-square rhombuses similar?</h3>
-    <p>A <strong>rhombus</strong> is a four-sided shape with four equal sides. Here we allow only rhombuses with no right angles. All three drawings use the same unit scale. Compare A with B and then A with C. Which requirement for similarity is guaranteed by the side lengths? Which can change?</p>
-    <div class="shape-comparison">
-      <figure><svg viewBox="0 0 250 172" role="img" aria-labelledby="class-a-title class-a-desc">
-        <title id="class-a-title">Rhombus A</title><desc id="class-a-desc">Every side is 6 centimeters. The upper left angle is 55 degrees.</desc>
-        <polygon class="polygon" points="54,44 144,44 195.622,117.724 105.622,117.724"/>
-        <path d="M80 44 A26 26 0 0 1 68.913 65.298" fill="none" stroke="currentColor" stroke-width="2"/>
-        <text x="99" y="31" text-anchor="middle">6 cm</text>
-        <text x="90" y="72">55°</text>
-      </svg><figcaption><strong>A</strong> · All sides 6 cm. One corner 55°.</figcaption></figure>
-      <figure><svg viewBox="0 0 250 172" role="img" aria-labelledby="class-b-title class-b-desc">
-        <title id="class-b-title">Rhombus B</title><desc id="class-b-desc">Every side is 8 centimeters. The upper left angle is 55 degrees.</desc>
-        <polygon class="polygon" points="54,44 174,44 242.829,142.298 122.829,142.298"/>
-        <path d="M80 44 A26 26 0 0 1 68.913 65.298" fill="none" stroke="currentColor" stroke-width="2"/>
-        <text x="114" y="31" text-anchor="middle">8 cm</text>
-        <text x="90" y="72">55°</text>
-      </svg><figcaption><strong>B</strong> · All sides 8 cm. One corner 55°.</figcaption></figure>
-      <figure><svg viewBox="0 0 250 172" role="img" aria-labelledby="class-c-title class-c-desc">
-        <title id="class-c-title">Rhombus C</title><desc id="class-c-desc">Every side is 6 centimeters. The upper left angle is 70 degrees.</desc>
-        <polygon class="polygon" points="54,44 144,44 174.782,128.572 84.782,128.572"/>
-        <path d="M80 44 A26 26 0 0 1 62.893 68.432" fill="none" stroke="currentColor" stroke-width="2"/>
-        <text x="99" y="31" text-anchor="middle">6 cm</text>
-        <text x="90" y="72">70°</text>
-      </svg><figcaption><strong>C</strong> · All sides 6 cm. One corner 70°.</figcaption></figure>
-    </div>
-    <details><summary>Check the cases</summary>
-      <p>For any pair in this class, the side ratios agree because all four sides within each figure have the same length. You still need to check the angles.</p>
-      <p>A and B are similar. B is built by multiplying both side lengths at the marked corner by 8/6, keeping its angle, and completing the four-sided shape. C has angles of 70° and 110°. Neither matches A’s 55° or 125°, so A and C are a counterexample. Both pairs satisfy the rule of four equal sides and no right angles. This establishes <strong>sometimes</strong>.</p>
-    </details>
-  </section>
-
-<section aria-labelledby="never-reasoning-title">
-  <h3 id="never-reasoning-title">Rule out every case</h3>
-  <p><strong>Never</strong> needs a reason that rules out every allowed case. A <a href="#term-contradiction">contradiction</a> is a conflict between facts that cannot both be true.</p>
-  <p>Could a four-sided sign with an inward notch be similar to a four-sided sign with all its interior angles below 180°? Look for an angle that could never find a match.</p>
-  <div class="diagram-pair">
-    <figure><svg viewBox="0 0 270 215" role="img" aria-labelledby="notched-title notched-desc">
-      <title id="notched-title">One possible notched sign</title><desc id="notched-desc">An arc sweeps through the filled sign around the inward corner. This interior angle is greater than 180 degrees.</desc>
-      <path class="polygon" d="M47 42 225 107 47 172 94 107Z"/>
-      <path d="M79.94 87.55 A24 24 0 1 1 79.94 126.45" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    </svg><figcaption>The arc shows the inside turn at the notch. It sweeps through more than 180° of the filled region.</figcaption></figure>
-    <figure><svg viewBox="0 0 270 215" role="img" aria-labelledby="outward-title outward-desc">
-      <title id="outward-title">One possible sign with outward corners</title><desc id="outward-desc">Four outward corners on a trapezoid. Every interior angle is less than 180 degrees.</desc>
-      <path class="polygon" d="M67 51 205 51 229 162 42 162Z"/>
-    </svg><figcaption>All four interior angles are less than 180°.</figcaption></figure>
-  </div>
-  <details><summary>Check the incompatible angle rules</summary><p>The signs are <strong>never similar</strong> under these rules. The notch forces an interior angle greater than 180°. The other rule forbids any angle that large. A turn, reflection, or uniform resize cannot supply a match. This rules out every pair in the two classes, whatever their side lengths.</p></details>
-
-  <div class="practice" data-choice-quiz data-correct="b" data-success="B rules out every allowed case. A larger perimeter would require a length factor greater than 1. Its square is also greater than 1, which would make the area larger and contradict the given smaller area." data-hint="A never claim needs a reason covering every allowed case. Reconsider what each piece of evidence rules out, then choose again.">
-    <h4>New check: choose enough evidence</h4>
-    <p>Two similar polygons enclose positive areas. The copy has a smaller area than the original. Claim: “The copy can have a larger perimeter.” Which evidence is enough to show that this claim is <strong>never</strong> true?</p>
-    <p>Use copy ÷ original for every ratio. Recall: the length factor multiplies perimeter, and its square multiplies area.</p>
-    <ol type="A">
-      <li>For one copy made with half-sized lengths, both area and perimeter decrease; that example disagrees with the claim.</li>
-      <li>A larger perimeter would require a factor greater than 1; squaring that factor would make the area larger too.</li>
-      <li>For many different smaller-area copies, the measured perimeters decrease; all those drawings disagree with the claim.</li>
-    </ol>
-    <div class="choice-buttons" data-interactive-only hidden>
-      <button type="button" data-choice="a" data-hint="One allowed example can disprove an always claim, but it cannot rule out every other case. Look for a reason that covers all similar copies, then try again.">Choose A</button>
-      <button type="button" data-choice="b">Choose B</button>
-      <button type="button" data-choice="c" data-hint="Many measurements still leave untested cases, and drawings may be imprecise. Look for a relationship that forces a contradiction in every allowed case, then try again.">Choose C</button>
-      <p class="feedback" data-choice-feedback role="status" aria-live="polite"></p>
-    </div>
-    <details>
-      <summary>After choosing, compare the evidence</summary>
-      <p><strong>B is sufficient.</strong> Suppose the copy did have a larger perimeter. Its length factor would be greater than 1. The area factor is that number squared, so it would also exceed 1. The copy would have a larger area, contradicting the given smaller area. This rules out every allowed pair.</p>
-      <p>A tests one case; C tests many cases. Neither covers all cases. If you chose either, retry by asking: “Which option uses a relationship that applies to every similar pair?” Then explain the contradiction in your own words.</p>
-    </details>
-  </div>
-</section>
-
-
-  <section aria-labelledby="claim-transfer">
-    <h2 id="claim-transfer">Try a class with tighter rules</h2>
-    <div class="practice" data-choice-quiz data-correct="always" data-success="Always. The 63° corner forces the same angles in each frame. The 3-to-1 side rule gives matching side ratios for every pair. Your reasoning applies at any allowed size." data-hint="Check what the rules force about angles and then what they force about the side ratios.">
-      <h3>Frames built from the same instructions</h3>
-      <p>A <strong>parallelogram</strong> has two pairs of opposite parallel sides. Its opposite angles match, and any two neighboring angles add to 180°. Two parallelogram frames each have a 63° corner and a long edge three times the length of their short edge. Are the frames always, sometimes, or never similar?</p>
-      <details><summary>Hint about the rules</summary><p>What are the other three angles? If the short edge is <var>s</var>, what are all four edge lengths? Then imagine the second frame’s short edge is a different length.</p></details>
-      <div class="choice-buttons" data-interactive-only hidden>
-        <button type="button" data-choice="sometimes" data-hint="Different frame sizes are allowed. Look for a pair where the angles or side ratios would actually fail to match.">Sometimes</button>
-        <button type="button" data-choice="never" data-hint="Start by drawing one frame. Can you build a scaled copy that still has a 63° corner and the same long-to-short ratio?">Never</button>
-        <button type="button" data-choice="always">Always</button>
+    <section aria-labelledby="match">
+      <h2 id="match">1. Match the corners first</h2>
+      <p>Two polygons are <strong>similar</strong> when matching angles have equal measures and all matching side lengths share one multiplier. A shape can be turned or reflected (flipped) and still have the same shape. The corners and sides that match are called <strong>corresponding</strong>.</p>
+      <h3>Match two metal badges</h3>
+      <p><strong>Given.</strong> These pentagonal badges are similar. Equal arc marks identify matching angles. Small boxes mark right angles. The first badge has AB = 7 cm, BC = 3 cm, EA = 6 cm, and m∠D ≈ 143.1°. The target has VW = 9.8 cm, XY = 7 cm, YZ = 4.2 cm, and ZV = 8.4 cm. Here AB means the length of the segment from A to B, and m∠D means the measure of angle D.</p>
+      <div class="figure-pair">
+        <figure><svg viewBox="0 0 216 178" role="img" aria-labelledby="original-badge-title original-badge-desc"><title id="original-badge-title">Original pentagonal plate</title><desc id="original-badge-desc">Boundary order A, B, C, D, E. Right-angle boxes at A, B and E; one arc at C and two at D.</desc><polygon class="plate" points="43,140 134,140 134,101 82,62 43,62"/><path data-mark="A" class="angle" d="M 43 131 L 52 131 L 52 140"/><path data-mark="B" class="angle" d="M 125 140 L 125 131 L 134 131"/><path data-mark="C" class="angle" d="M 134 113 A 12 12 0 0 1 124.4 93.8"/><path data-mark="D" class="angle" d="M 91.6 69.2 A 12 12 0 0 1 70 62 M 96.4 72.8 A 18 18 0 0 1 64 62"/><path data-mark="E" class="angle" d="M 52 62 L 52 71 L 43 71"/><text x="32" y="159" text-anchor="middle">A</text><text x="145" y="159" text-anchor="middle">B</text><text x="147" y="103" text-anchor="middle">C</text><text x="83" y="52" text-anchor="middle">D</text><text x="32" y="58" text-anchor="middle">E</text></svg><figcaption>Original. Walk A → B → C → D → E → A. One arc at C, two at D. Right angles at A, B and E.</figcaption></figure>
+        <figure><svg viewBox="0 0 216 178" role="img" aria-labelledby="mirror-badge-title mirror-badge-desc"><title id="mirror-badge-title">Reflected target plate</title><desc id="mirror-badge-desc">Boundary walk X, W, V, Z, Y, X. Right-angle boxes at V, W and Z; one arc at X and two at Y.</desc><polygon class="plate" points="183,145 55.60000000000001,145 55.60000000000001,90.4 128.4,35.80000000000001 183,35.80000000000001"/><path data-mark="V" class="angle" d="M 183 136 L 174 136 L 174 145"/><path data-mark="W" class="angle" d="M 64.6 145 L 64.6 136 L 55.6 136"/><path data-mark="X" class="angle" d="M 55.6 102.4 A 12 12 0 0 0 65.2 83.2"/><path data-mark="Y" class="angle" d="M 118.8 43 A 12 12 0 0 0 140.4 35.8 M 114 46.6 A 18 18 0 0 0 146.4 35.8"/><path data-mark="Z" class="angle" d="M 174 35.8 L 174 44.8 L 183 44.8"/><text x="191" y="165" text-anchor="middle">V</text><text x="45" y="165" text-anchor="middle">W</text><text x="45" y="91" text-anchor="middle">X</text><text x="127" y="28" text-anchor="middle">Y</text><text x="194" y="31" text-anchor="middle">Z</text></svg><figcaption>Target. Walk X → W → V → Z → Y → X. One arc at X, two at Y. Right angles at V, W and Z.</figcaption></figure>
       </div>
-      <p class="feedback" data-choice-feedback role="status" aria-live="polite"></p>
-      <div data-static-only>
-        <p>Choose one: sometimes, never, or always.</p>
-        <details><summary>Compare your evidence</summary><p>Always. Each frame has two angles of 63° and two of 117°, in the same order. If the short edges are <var>s</var> and <var>t</var>, then the long edges are 3<var>s</var> and 3<var>t</var>. Comparing the long edges gives 3<var>t</var> / 3<var>s</var> = <var>t</var> / <var>s</var>, the same ratio as the short edges. The angles and ratios match for every allowed pair. If your choice differed, use the two construction rules and try again.</p></details>
+      <p><strong>Goal.</strong> Write the matching order, every angle pair and the side-length proportion. Then find one missing length in each badge and the marked angle in the target.</p>
+      <ol class="method">
+        <li>One arc gives C ↔ X and two arcs give D ↔ Y. Follow the edge from the one-arc corner toward the two-arc corner and continue around both outlines. This gives <strong>ABCDE ∼ VWXYZ</strong>. The symbol ∼ means “is similar to.”</li>
+        <li>The matched angles are congruent (equal in measure). Write ∠A ≅ ∠V, ∠B ≅ ∠W, ∠C ≅ ∠X, ∠D ≅ ∠Y and ∠E ≅ ∠Z. So ∠Y measures about 143.1°, because its partner does. Angle measures stay the same when you scale.</li>
+        <li>Pair both endpoints of each edge, including the edge that closes the walk. The <strong>scale factor</strong> <var>k</var> is the target length divided by its original partner.
+          <div class="math">VW/AB = WX/BC = XY/CD = YZ/DE = ZV/EA = <var>k</var></div>
+          <div class="math"><var>k</var> = (9.8 cm)/(7 cm) = 7/5.</div>
+        </li>
+        <li>Original → target. Multiply to find WX from BC.
+          <div class="math">WX = (7/5)(3 cm) = 4.2 cm.</div>
+        </li>
+        <li>Target → original. Divide by 7/5, or multiply by its reciprocal 5/7.
+          <div class="math">DE = (5/7)(4.2 cm) = 3 cm.</div>
+        </li>
+      </ol>
+      <p>Use the marks and givens as evidence. Zooming or printing changes the physical size of these drawings.</p>
+      <div class="practice">
+        <h3>Try a different direction</h3>
+        <p>The original is polygon KLMNP and the target is similar polygon UTQSR, in matching order. RU = 8.8 cm, PK = 5.5 cm, and QS = 12 cm. Write every angle pair and a complete proportion. Find MN and give the factor from target to original.</p>
+        <details><summary>Check your work and retry</summary>
+          <p>∠K ≅ ∠U, ∠L ≅ ∠T, ∠M ≅ ∠Q, ∠N ≅ ∠S and ∠P ≅ ∠R. With original on top, KL/UT = LM/TQ = MN/QS = NP/SR = PK/RU = 5/8. The last-to-first edge gives the factor, and MN = (5/8)(12 cm) = 7.5 cm.</p>
+          <p>If you got a larger length, check which figure belongs on top. Retry by writing the five fractions in the opposite direction. What does the new factor mean?</p>
+          <details><summary>Compare the retry</summary><p>Reverse every fraction. The factor becomes 8/5, which turns each original length into its target length.</p></details>
+        </details>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section aria-labelledby="practice">
-    <h2 id="practice">Practice and explain</h2>
-    <p>You have checked each idea as you learned it. Now mix them: choose the method before calculating. Use a hint and retry if needed, then finish with the exit check.</p>
-    <div class="practice">
-      <h3>Read a perimeter ratio in the requested order</h3>
-      <p>A park map shows similar six-sided garden beds. A 4 m edge on the small bed matches a 7 m edge on the large bed. The small bed’s perimeter is 32 m. Find the ratio of <strong>small perimeter to large perimeter</strong>. Enter a decimal rounded to three places (the nearest thousandth).</p>
-      <form data-practice data-expected="0.5714285714285714" data-tolerance="0.0005" data-success="That fits. In the requested order, the perimeter ratio 32 ÷ 56 equals the matching side ratio 4 ÷ 7, about 0.571." data-hint="Compare small ÷ large, whether you use the two perimeters or the matching sides. Keep the calculator digits until the end and round the result to three places." data-mistakes='{"1.75": "That compares large to small. The question asks for small to large.", "56": "That is the large perimeter in meters. Now divide the small perimeter by the large one."}' data-interactive-only hidden>
-        <label for="reduction-height">Small perimeter ÷ large perimeter</label>
-        <div class="controls"><input id="reduction-height" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check ratio</button></div>
-        <p data-feedback class="feedback" role="status" aria-live="polite"></p>
-      </form>
-      <details data-static-only><summary>Compare your reasoning</summary><p>From small to large the length factor is 7 ÷ 4 = 1.75. The large perimeter is 32 × 1.75 = 56 m. Small ÷ large gives 32 ÷ 56 ≈ 0.571. You can also divide the matching sides, 4 ÷ 7. The ratios are equal because every side in the perimeter scales by the same factor. The result is below 1 and has no unit.</p></details>
-      <details><summary>Hint about the ratio order</summary><p>Read “small to large” as small divided by large. Should the answer be above or below 1?</p></details>
-    </div>
-    <div class="practice"><h3>An icon returns</h3><p>An outline icon was enlarged with a length factor of 1.25. What length multiplier takes the enlarged icon back to its original size?</p><form data-practice data-expected="0.8" data-success="That reverses the enlargement. The outward and return multipliers have a product of one." data-hint="The return factor must undo multiplication by 1.25. Use its reciprocal." data-mistakes='{"1.25":"That repeats the enlargement. The return step must undo it.","0.64":"That squares the return factor. The question asks about a length multiplier, not area."}' data-interactive-only hidden><label for="return-factor">Return multiplier</label><div class="controls"><input id="return-factor" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check direction</button></div><p data-feedback class="feedback" role="status" aria-live="polite"></p></form><details data-static-only><summary>Compare your reasoning</summary><p>The return length multiplier is 1 ÷ 1.25 = 0.8. Check: 1.25 × 0.8 = 1, so the two changes undo each other.</p></details><details><summary>Hint about undoing a change</summary><p>What number multiplied by 1.25 would give one?</p></details></div>
-    <div class="practice" data-choice-quiz data-correct="angle" data-success="The target angle stays 118°. Similarity keeps corresponding angles equal, even when lengths grow. 1.8 describes lengths; it is not an angle multiplier." data-hint="Separate what changes from what stays equal under similarity. Is this measurement a length, an area, or an angle?"><h3>A badge corner</h3><p>Two seven-sided badges are similar. A corner of the original measures 118° (degrees), and the target length factor is 1.8. Which statement about the matching corner is justified?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="length">Multiply the angle by 1.8</button><button type="button" data-choice="area">Multiply the angle by 1.8²</button><button type="button" data-choice="angle">Keep the angle equal</button></div><div data-static-only><p>Choose one:</p><ul><li>Multiply the angle by 1.8</li><li>Multiply the angle by 1.8²</li><li>Keep the angle equal</li></ul><details><summary>Compare your reasoning</summary><p>The target angle stays 118°. Similarity keeps corresponding angles equal, even when lengths grow. 1.8 describes lengths; it is not an angle multiplier.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p></div>
-    <div class="practice"><h3>A cut-paper pattern</h3><p>A hexagonal paper pattern has area 88 mm². A similar copy uses a length factor of 0.6. What is the copy’s area? First name the relationship you need.</p><form data-practice data-expected="31.68" data-success="That fits the new pattern. You multiplied 88 by 0.6 twice. The result is an area in square millimeters, and shrinking both dimensions makes it smaller." data-hint="The given factor applies to a length. Decide how many length dimensions area combines, then apply the area multiplier to 88." data-mistakes='{"52.8":"That applies the factor once, as you would for a length. Area combines two scaled dimensions.","0.36":"That is the area multiplier. Apply it to the original area to get square millimeters."}' data-interactive-only hidden><label for="pattern-area">Copy area in square millimeters</label><div class="controls"><input id="pattern-area" type="number" step="any" min="0" required><button type="submit" disabled>Check area</button></div><p data-feedback class="feedback" role="status" aria-live="polite"></p></form><details data-static-only><summary>Compare your reasoning</summary><p>The area multiplier is 0.6 × 0.6 = 0.36. The copy area is 88 × 0.36 = 31.68 mm². The factor has no unit; the resulting area uses square millimeters.</p></details><details><summary>Hint about units</summary><p>Your final answer is a measurement in mm², not a unitless factor.</p></details></div>
-    <div class="practice">
-      <h3>Finish both borders</h3>
-      <p>Two similar five-sided emblems need edging. Each row pairs matching sides. Find the missing lengths and both perimeters. Enter the copy’s perimeter.</p>
-      <table class="metric-table"><caption>Matched edge lengths in centimeters</caption><thead><tr><th scope="col">Pair</th><th scope="col">Original</th><th scope="col">Copy</th></tr></thead>
-        <tbody><tr><th scope="row">1</th><td>2.4</td><td>?</td></tr><tr><th scope="row">2</th><td>?</td><td>5.27</td></tr><tr><th scope="row">3</th><td>4.6</td><td>?</td></tr><tr><th scope="row">4</th><td>?</td><td>4.59</td></tr><tr><th scope="row">5</th><td>3.2</td><td>5.44</td></tr></tbody>
-      </table>
-      <details><summary>Hint about moving between columns</summary><p>Pair 5 tells you the factor from original to copy. Which operation fills the copy column? Which operation gets you back to the original?</p></details>
-      <form data-practice data-expected="27.2" data-success="That fits. After filling the missing edges, the original perimeter is 16 cm and the copy’s is 27.2 cm. Check that their ratio agrees with pair 5." data-hint="Fill every missing length before you add. A length known only on the copy must be divided by the original-to-copy factor to get its partner." data-mistakes='{"16":"That is the original perimeter. Sum the copy’s five sides to find its edging length.","15.3":"That sum leaves out the two missing copy lengths. Use the given matching pair to find them, then add all five sides."}' data-interactive-only hidden>
-        <label for="border-length">Copy perimeter in centimeters</label>
-        <div class="controls"><input id="border-length" type="number" step="any" min="0" inputmode="decimal" required><button type="submit" disabled>Check border</button></div>
-        <p class="feedback" data-feedback role="status" aria-live="polite"></p>
-      </form>
-      <details data-static-only><summary>Compare your reasoning</summary><p>The factor is 5.44 ÷ 3.2 = 1.7. Divide 5.27 and 4.59 by 1.7 to fill the original column with 3.1 and 2.7 cm. Multiply 2.4 and 4.6 by 1.7 to fill the copy column with 4.08 and 7.82 cm. The original sides sum to 16 cm and the copy sides sum to 27.2 cm. The check is 27.2 ÷ 16 = 1.7.</p></details>
-    </div>
-    <div class="practice exit-check"><h3>Exit check: use the whole idea</h3><p>A fresh similar floor-plan outline has a perimeter multiplier of 1.9. Without looking back, find its area multiplier and explain why the two multipliers differ.</p><form data-practice data-expected="3.61" data-success="Your new area multiplier fits. Read your explanation: does it mention that perimeter adds lengths while area combines two length dimensions? Then try the method on your own work." data-hint="A similar figure's perimeter factor equals its length factor. Decide how many length factors area uses." data-mistakes='{"1.9":"That is the perimeter factor. Your explanation needs to account for two dimensions of area.","3.8":"Doubling the factor is different from applying it to two multiplied dimensions."}' data-interactive-only hidden><label for="exit-factor">Area multiplier</label><div class="controls"><input id="exit-factor" type="number" step="any" min="0" inputmode="decimal" required></div><label for="exit-reason">Explain in your own words</label><textarea id="exit-reason" rows="3" minlength="12" required></textarea><button type="submit" disabled>Check and reflect</button><p data-feedback class="feedback" role="status" aria-live="polite"></p></form><details data-static-only><summary>Compare your reasoning</summary><p>The perimeter factor is also the length factor. The area multiplier is 1.9 × 1.9 = 3.61. Check your explanation: perimeter adds lengths, while area combines two length dimensions. Your explanation is a reflection, not an automatically graded response.</p></details><p class="static-note">Your explanation stays on this page. Only the number is checked automatically. Read your explanation against the feedback yourself; this is not a grade or a record of mastery.</p></div>
-    <noscript><p>Write your responses on paper. You can still open the hints and explain the reasoning in your private chat.</p></noscript>
-  </section>
+    <section aria-labelledby="measure">
+      <h2 id="measure">2. Trace the edge or cover the face</h2>
+      <p><strong>Perimeter</strong> measures the distance around the boundary. <strong>Area</strong> measures the region inside it. Both depend on how you scale, but they count different things.</p>
+      <p><strong>Predict.</strong> A rectangular stamp starts 7 cm wide and 5 cm tall. If both lengths double, how many copies of the original face cover the target? How many times as long is the trip around its edge?</p>
+      <div class="figure-pair">
+        <figure>
+          <svg viewBox="0 0 242 178" role="img" aria-labelledby="stamp-original-title stamp-original-desc">
+            <title id="stamp-original-title">Original stamp</title><desc id="stamp-original-desc">A rectangle 7 cm wide by 5 cm tall, with perimeter 24 cm and area 35 square centimeters.</desc>
+            <rect class="plate" x="24" y="94" width="84" height="60"/>
+            <text x="66" y="84" text-anchor="middle">7 cm</text><text x="116" y="129">5 cm</text>
+          </svg>
+          <figcaption>Original · 24 cm around · 35 cm² inside</figcaption>
+        </figure>
+        <figure id="stamp-target">
+          <svg viewBox="0 0 242 178" role="img" aria-labelledby="stamp-target-title stamp-target-desc">
+            <title id="stamp-target-title">Target stamp</title><desc id="stamp-target-desc" data-desc>At factor 1 the rectangle is 7 cm wide by 5 cm tall, with perimeter 24 cm and area 35 square centimeters. One original tile fills the region.</desc>
+            <rect class="plate" data-shape x="24" y="94" width="84" height="60"/>
+            <path class="tile-line" data-seam hidden/>
+            <text data-width x="66" y="84" text-anchor="middle">7 cm</text><text data-height x="116" y="129">5 cm</text>
+          </svg>
+          <figcaption data-caption role="status">Target at factor 1 · 24 cm around · 35 cm² inside. One original tile fills the region.</figcaption>
+        </figure>
+      </div>
+      <div class="model-controls controls" id="stamp-controls" hidden aria-label="Resize the target stamp" role="group">
+        <button type="button" data-factor="0.75" aria-controls="stamp-target" aria-pressed="false">× ¾</button>
+        <button type="button" data-factor="1.5" aria-controls="stamp-target" aria-pressed="false">× 1½</button>
+        <button type="button" data-factor="2" aria-controls="stamp-target" aria-pressed="false">× 2</button>
+        <button type="button" data-factor="1" aria-controls="stamp-target" aria-pressed="true">Reset to × 1</button>
+      </div>
+      <details>
+        <summary>Compare your prediction at factor 2</summary>
+        <figure>
+          <svg viewBox="0 0 242 178" role="img" aria-labelledby="tile-title tile-desc">
+            <title id="tile-title">Four original faces in the doubled stamp</title><desc id="tile-desc">A 14 cm by 10 cm rectangle divided into two rows and two columns. Each of the four tiles is 7 cm by 5 cm. The interior dashed seams are excluded from the perimeter.</desc>
+            <rect class="plate" x="24" y="34" width="168" height="120"/>
+            <path class="tile-line" d="M108 34V154 M24 94H192"/>
+            <text x="108" y="24" text-anchor="middle">14 cm</text><text x="200" y="99">10 cm</text>
+          </svg>
+          <figcaption>Trace only the solid outline. Count the two rows of two tiles to cover the face.</figcaption>
+        </figure>
+      </details>
+      <p>At factor 2 the boundary is twice as long because each of its four sides doubles. The area is four times as large because the face is twice as wide <em>and</em> twice as tall.</p>
+      <p class="rule"><strong>For any similar polygons:</strong> Side length and perimeter use one factor <var>k</var>. Area uses <var>k</var>². For area, you can split the region into triangles. Each triangle’s base and height scale by <var>k</var>, so each area scales by <var>k</var>². The sum of the areas does too.</p>
+      <p>The stamp model changes both dimensions together. Its dashed seams mark whole original tiles when they fit as a complete grid. Use the labeled dimensions to reason about fractional factors.</p>
 
-  <section class="end-note" aria-labelledby="remember"><h2 id="remember">Keep the method</h2><p>Start by asking whether similarity is given or whether you need to establish it. Match the parts, mark the ratio direction, and name the relationship before you calculate. At the end, check the direction, units, and whether the size change makes sense. For a claim about all cases, ask which cases your evidence actually covers.</p><p>Next time, recall why a perimeter scales once and an area scales twice before opening the lesson. Then try this new question aloud: a stamp’s border is made 20% longer by uniform scaling. Would its inked area increase by more or less than 20%? Explain. If you get stuck, say which decision was unclear in the private chat.</p></section>
-<aside class="path-stop"><strong>Pause here.</strong> You can stop after the exit check. Next time, recall the method before opening a path; use a hint only when needed.<p><a href="#path-match">Revisit: match and scale</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
-<details class="reference-drawer"><summary>Keep nearby: glossary and sources</summary>  <section id="glossary" aria-labelledby="ideas">
-    <h2 id="ideas">Your glossary</h2>
-    <dl>
-      <dt>Similar polygons</dt><dd>Polygons with the same shape: corresponding angles have equal measures, and every corresponding side length has the same scale factor. Size and orientation may differ.</dd>
-      <dt id="term-correspondence">Corresponding parts</dt><dd>Vertices, angles, and sides that match under the similarity. Their order matters.</dd>
-      <dt id="term-angle-arcs">Angle arcs</dt><dd>Curved marks inside an angle. The same arc pattern marks equal angle measures; its arc count identifies a group rather than a number of degrees. Different patterns alone do not assert unequal angles.</dd>
-      <dt>Congruent angles</dt><dd>Angles with equal measures. Enlarging a similar figure does not enlarge its angles.</dd>
-      <dt>Symbols ∼, ≅, ∠, ↔, and °</dt><dd>∼ means similar to. ≅ means congruent to. ∠ names an angle. ↔ marks corresponding parts. ° means degrees, a unit of angle measure. A superscript ² means squared, or multiplied by itself.</dd>
-      <dt id="term-scale-factor">Scale factor, <var>k</var></dt><dd>The positive multiplier that takes each original length to its matching target length.</dd>
-      <dt id="term-perimeter-area">Perimeter and area</dt><dd>Perimeter measures the boundary in length units. Area measures the interior in square units.</dd>
-    </dl>
-    <details><summary>More words in this lesson</summary><dl>
-      <dt>Polygon and vertex</dt><dd>A polygon is a closed flat shape made of straight sides. A vertex is a corner where two sides meet; vertices is the plural.</dd>
-      <dt>Proportion</dt><dd>A statement that two ratios are equal. A ratio compares two quantities by division.</dd>
-      <dt>Reciprocal</dt><dd>One divided by a nonzero number. It reverses a multiplication scale factor.</dd>
-      <dt>Aspect ratio</dt><dd>A comparison of a rectangle's longer side to its shorter side. It describes the rectangle's proportions.</dd>
-<dt id="term-contradiction">Contradiction</dt>
-<dd>A conflict between facts that cannot both be true. To rule out a claim, show that accepting it would conflict with the givens or an established relationship.</dd>
+      <h3>Find trim and ink for a smaller proof</h3>
+      <p><strong>Given.</strong> A print shop has a 14 cm by 11 cm sample with a rectangular edge. A similar proof is 8.25 cm tall. <strong>Goal.</strong> Find the edge trim for both prints, the ratio of proof trim to sample trim, and the proof’s ink area.</p>
+      <div class="figure-pair">
+        <figure>
+          <svg viewBox="0 0 216 140" role="img" aria-labelledby="trim-a-title trim-a-desc"><title id="trim-a-title">Sample print</title><desc id="trim-a-desc">Rectangle 14 cm wide and 11 cm tall.</desc><rect class="plate" x="20" y="35" width="112" height="88"/><text x="76" y="25" text-anchor="middle">14 cm</text><text x="140" y="83">11 cm</text></svg>
+          <figcaption>Sample · 14 cm wide, 11 cm tall.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 216 140" role="img" aria-labelledby="trim-b-title trim-b-desc"><title id="trim-b-title">Reduced proof</title><desc id="trim-b-desc">Similar rectangle 8.25 cm tall. Its width is the unknown length w.</desc><rect class="plate" x="20" y="57" width="84" height="66"/><text x="62" y="47" text-anchor="middle">w</text><text x="112" y="94">8.25 cm</text></svg>
+          <figcaption>Proof · width <var>w</var>, 8.25 cm tall.</figcaption>
+        </figure>
+      </div>
+      <ol class="method">
+        <li>Pair height with height. <var>k</var> = (8.25 cm)/(11 cm) = 3/4.</li>
+        <li>Scale the other dimension. <var>w</var> = (3/4)(14 cm) = 10.5 cm.</li>
+        <li>Trace the sample’s four sides. Its perimeter is 2(14 cm + 11 cm) = 50 cm.</li>
+        <li>Each side of the proof is 3/4 as long. Its perimeter is (3/4)(50 cm) = 37.5 cm. The proof-to-sample perimeter ratio is 3/4. Check by tracing its four sides, 2(10.5 cm + 8.25 cm) = 37.5 cm.</li>
+        <li>The sample’s area is (14 cm)(11 cm) = 154 cm². The proof’s area is (3/4)²(154 cm²) = 86.625 cm². If you report to the nearest hundredth, write approximately 86.63 cm².</li>
+      </ol>
+      <p><strong>Reverse the job.</strong> If the proof’s exact area is the given value, find the sample’s area by dividing by (3/4)². That is the same as multiplying by (4/3)², so 86.625 cm² × 16/9 = 154 cm².</p>
+      <div class="practice">
+        <h3>Choose a factor before calculating</h3>
+        <p>A display maker reduces a pentagonal design. A 26 mm edge becomes a 19.5 mm edge. The new design covers 207 mm². Find the area of the larger design and explain whether you multiply or divide by the area factor.</p>
+        <form data-practice hidden data-expected="368" data-tolerance="0" data-hint="Write the factor from the large figure to the small figure. Square it, then decide which area you are given. Try again." data-mistakes='{"276":"That undoes the length change. The given measure is area, so undo the squared factor. Try again.","116.4375":"That shrinks the given area. Start from the small figure and reverse the area change. Try again."}' data-success="368 mm² fits. Reducing its lengths by three quarters reduces its area to nine sixteenths of 368 mm².">
+          <label for="large-area">Larger area in mm²</label>
+          <div class="controls"><input id="large-area" type="number" step="any" required><button type="submit" disabled>Check area</button></div>
+          <p class="feedback" data-feedback role="status"></p>
+        </form>
+        <details class="static-feedback" data-numeric-comparison><summary>Compare your setup</summary><p>Small/large length = 19.5/26 = 3/4. Small/large area = (3/4)² = 9/16. The known area is the small one. Divide 207 mm² by 9/16 to get 368 mm². Dividing by 3/4 undoes only one dimension.</p></details>
+        <p><strong>Retry with perimeter.</strong> If the small design has perimeter 90 mm, find the large perimeter.</p>
+        <details><summary>Check the perimeter retry</summary><p>Perimeter is a sum of lengths, so divide 90 mm by 3/4 to get 120 mm. The unit remains mm.</p></details>
+      </div>
+    </section>
 
-      <dt>Rhombus and parallelogram</dt><dd>A parallelogram has two pairs of opposite parallel sides. A rhombus is a parallelogram with four equal sides.</dd>
-      <dt>Counterexample</dt><dd>An allowed example that shows a claim is not true in every case.</dd>
-      <dt>Linear and square units</dt><dd>Linear measurements describe lengths, such as centimeters. Square units measure area, such as square centimeters, written cm².</dd>
-    </dl></details>
-  </section>
+    <section aria-labelledby="test">
+      <h2 id="test">3. Test a claim about every pair</h2>
+      <h3>Do matching angles settle it?</h3>
+      <p>Compare three rail plates. Each is a parallelogram, a four-sided shape whose opposite sides are parallel. The marked 60° corner forces the same angle measures in all three. Compare short with short and long with long.</p>
+      <div class="rail-grid">
+        <figure><svg viewBox="0 0 190 144" role="img" aria-labelledby="A-title A-desc"><title id="A-title">A rail</title><desc id="A-desc">Base 7 cm and slanted side 4 cm meet at 60 degrees.</desc><polygon class="plate" points="21,114 98,114 120,75.89488223348471 43,75.89488223348471"/><path class="angle" d="M 36 114 A 15 15 0 0 0 28.5 101.00961894323342"/><text x="39" y="102">60°</text><text x="59.5" y="137" text-anchor="middle">7 cm</text><text x="114" y="92.94744111674235">4</text></svg><figcaption>Rail A · 7 cm and 4 cm.</figcaption></figure>
+        <figure><svg viewBox="0 0 190 144" role="img" aria-labelledby="B-title B-desc"><title id="B-title">B rail</title><desc id="B-desc">Base 10.5 cm and slanted side 6 cm meet at 60 degrees.</desc><polygon class="plate" points="21,114 136.5,114 169.5,56.842323350227055 54,56.842323350227055"/><path class="angle" d="M 36 114 A 15 15 0 0 0 28.5 101.00961894323342"/><text x="39" y="102">60°</text><text x="78.75" y="137" text-anchor="middle">10.5 cm</text><text x="158" y="83.42116167511352">6</text></svg><figcaption>Rail B · 10.5 cm and 6 cm.</figcaption></figure>
+        <figure><svg viewBox="0 0 190 144" role="img" aria-labelledby="C-title C-desc"><title id="C-title">C rail</title><desc id="C-desc">Base 10.5 cm and slanted side 5 cm meet at 60 degrees.</desc><polygon class="plate" points="21,114 136.5,114 164,66.36860279185588 48.5,66.36860279185588"/><path class="angle" d="M 36 114 A 15 15 0 0 0 28.5 101.00961894323342"/><text x="39" y="102">60°</text><text x="78.75" y="137" text-anchor="middle">10.5 cm</text><text x="155.25" y="88.18430139592795">5</text></svg><figcaption>Rail C · 10.5 cm and 5 cm.</figcaption></figure>
+      </div>
+      <p>A → B gives the same factor on the long and short edges. Both 10.5/7 and 6/4 equal 1.5. Since opposite edges are equal and the angles match, all the similarity conditions hold.</p>
+      <p>A → C keeps the same long-edge ratio, 10.5/7 = 1.5. The short-edge ratio is now 5/4 = 1.25. A single change in the short edge breaks similarity. So two parallelograms with a 60° corner are <strong>sometimes</strong> similar. A and B show a match, and A and C give a <strong>counterexample</strong>, a case that breaks the general claim.</p>
+      <dl class="claim-cards">
+        <dt>Always · prove it for any allowed pair</dt>
+        <dd>Two triangles with angles 40°, 55° and 85° always match. Any pair shares two angle measures, so the triangle angle-angle similarity test applies.</dd>
+        <dt>Sometimes · give a match and a counterexample</dt>
+        <dd>The rails show both outcomes with the same kind of polygon and the same angle condition.</dd>
+        <dt>Never · find a condition that cannot match</dt>
+        <dd>A convex pentagon has every interior angle under 180° (use corners without straight angles). A concave pentagon has an inward corner with interior angle above 180°. That angle has no partner in the convex shape.</dd>
+      </dl>
+      <div class="practice">
+        <h3>Build your own evidence</h3>
+        <p>Two triangles each have exactly one 40° angle. Are they always, sometimes or never similar? Write complete angle sets for any examples you need, and check that each set can form a triangle.</p>
+        <details><summary>Check your claim and retry</summary>
+          <p>Sometimes. For a match use the set 40°, 65°, 75° for both. For a counterexample compare that set with 40°, 50°, 90°. Each set has three positive angles totaling 180°. Each contains exactly one 40° angle. The second pair has different angle sets.</p>
+          <p>Retry by adding the condition that both triangles also have a 70° angle. Which kind of evidence do you need now?</p>
+          <details><summary>Compare the retry</summary><p>Always. Every allowed pair has both 40° and 70°, so angle-angle proves similarity. The remaining angle is 70° in both.</p></details>
+        </details>
+      </div>
+    </section>
 
+    <section aria-labelledby="transfer">
+      <h2 id="transfer">Your turn · Make a press seal</h2>
+      <p>The proof and press seals are similar. A single arc marks one pair of corners, and a double arc marks another pair. On the proof, PQ = 5 cm, SP = √40 cm, and the enclosed area is 24 cm². On the press seal, LN = 7.5 cm and ∠K measures approximately 102.5°. A fabricator offers a third seal whose matching side lengths are all doubled from the proof, but its double-arc corner measures 110°.</p>
+      <div class="figure-pair">
+        <figure><svg viewBox="0 0 216 178" role="img" aria-labelledby="seal-one-title seal-one-desc"><title id="seal-one-title">Proof seal</title><desc id="seal-one-desc">Boundary order P, Q, R, S. A single arc marks Q, and a double arc marks R.</desc><polygon class="plate" points="36,143 96,143 108,95 60,71"/><path data-mark="Q" class="angle" d="M 84.000 143.000 A 12 12 0 0 1 98.910 131.358"/><path data-mark="R" class="angle" d="M 105.090 106.642 A 12 12 0 0 1 97.267 89.633 M 103.634 112.463 A 18 18 0 0 1 91.900 86.950"/><text x="25" y="159" text-anchor="middle">P</text><text x="104" y="162" text-anchor="middle">Q</text><text x="123" y="98" text-anchor="middle">R</text><text x="60" y="58" text-anchor="middle">S</text></svg><figcaption>Proof. Walk P → Q → R → S → P. One arc at Q, two at R.</figcaption></figure>
+        <figure><svg viewBox="0 0 216 178" role="img" aria-labelledby="seal-two-title seal-two-desc"><title id="seal-two-title">Press seal</title><desc id="seal-two-desc">Boundary walk K, N, L, M, K. A single arc marks N, and a double arc marks K.</desc><polygon class="plate" points="57,30 57,120 129,138 165,66"/><path data-mark="N" class="angle" d="M 57.000 108.000 A 12 12 0 0 1 68.642 122.910"/><path data-mark="K" class="angle" d="M 117.358 135.090 A 12 12 0 0 1 134.367 127.267 M 111.537 133.634 A 18 18 0 0 1 137.050 121.900"/><text x="45" y="27" text-anchor="middle">L</text><text x="45" y="129" text-anchor="middle">N</text><text x="137" y="157" text-anchor="middle">K</text><text x="178" y="62" text-anchor="middle">M</text></svg><figcaption>Press. Walk K → N → L → M → K. One arc at N, two at K.</figcaption></figure>
+      </div>
+      <p>On paper, write the matching order and all angle pairs. Give the side proportion with press lengths on top. Find the length of ML, the measure of ∠R, and the press area. Which seal could use the same outline template after resizing, the press seal, the offered seal, or both? Use the givens to justify your decision.</p>
+      <details><summary>Compare after you have a complete argument</summary>
+        <p>PQRS ∼ LNKM. ∠P ≅ ∠L, ∠Q ≅ ∠N, ∠R ≅ ∠K and ∠S ≅ ∠M. LN/PQ = NK/QR = KM/RS = ML/SP = 7.5/5 = 3/2. Therefore ML = (3/2)√40 cm, which is about 9.49 cm. The angle at R measures about 102.5° because it corresponds to K. The press area is (3/2)²(24 cm²) = 54 cm².</p>
+        <p>The press seal uses the same resized template. The offered seal fails the angle condition because its matching angle differs from the proof’s. Matching length ratios alone do not guarantee similarity here.</p>
+      </details>
+      <p class="rule"><strong>Recall tomorrow.</strong> Sketch any similar pair. Name the original and the target. Explain how to get the new perimeter and area from one known side pair, then explain how you would reverse the two changes.</p>
+    </section>
 
-  <section class="sources" aria-labelledby="sources"><h2 id="sources">See scaling in other pictures</h2><p>See how turning and resizing can make two outlines line up exactly. <a href="https://im.kendallhunt.com/HS/students/2/3/6/index.html">Illustrative Mathematics: Connecting Similarity and Transformations</a>.</p><p>Try spotting whether one multiplier works on each part of a block letter. <a href="https://im.kendallhunt.com/MS/students/2/1/1/index.html">Illustrative Mathematics: What are Scaled Copies?</a></p><p>Move the top corner of a triangle and watch which height the area formula uses. <a href="https://www.mathopenref.com/trianglearea.html">Math Open Reference: Area of a triangle</a>.</p><p><a class="return-link" href="../index.html">Return to the lesson library</a></p></section>
-</details>
-</main>
+    <section aria-labelledby="glossary">
+      <h2 id="glossary">Glossary</h2>
+      <dl>
+        <dt>Polygon and vertex</dt><dd>A polygon is a closed shape bounded by line segments. A vertex is a corner. The plural is vertices.</dd>
+        <dt>Corresponding and congruent</dt><dd>Corresponding parts are matched partners. Congruent angles have equal measures, shown with ≅.</dd>
+        <dt>Similar (∼)</dt><dd>Matching angles are congruent and matching side lengths all have the same target-to-original ratio.</dd>
+        <dt>Ratio, proportion and scale factor</dt><dd>A ratio compares quantities by division. A proportion equates ratios. The scale factor is the ratio of a target length to the corresponding original length.</dd>
+        <dt>Reciprocal</dt><dd>The number that multiplies with a given nonzero number to give 1.</dd>
+        <dt>Perimeter and area</dt><dd>Perimeter measures the outline in length units such as centimeters (cm). Area measures the face in square units such as square centimeters (cm²) or square millimeters (mm²).</dd>
+        <dt>Interior angle, convex and concave</dt><dd>An interior angle is measured inside the shape at a vertex. A convex polygon has no inward corner. A concave polygon has at least one inward corner.</dd>
+        <dt>Counterexample</dt><dd>An allowed case that disproves a claim about every allowed case.</dd>
+        <dt>Approximation (≈)</dt><dd>A value close to the exact value, often obtained by rounding.</dd>
+      </dl>
+    </section>
+    <section class="sources" aria-labelledby="sources">
+      <h2 id="sources">Read a little more</h2>
+      <p><a href="https://www.onemathematicalcat.org/Math/Geometry_obj/per_area_similar_figures.htm">One Mathematical Cat · Perimeters and Areas of Similar Polygons</a></p>
+    </section>
+  </main>
 </body>
 </html>

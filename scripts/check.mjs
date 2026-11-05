@@ -22,6 +22,18 @@ export function inspectPublicCode(source, name) {
   return findings;
 }
 
+// Enforce the shared authoring convention. Browser review still checks visibility
+// and activation: source inspection cannot determine inherited CSS behavior.
+export function hasLibraryLink(html) {
+  const content = html.replace(/<!--[\s\S]*?-->|<(script|style|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');
+  return [...content.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/gi)].some(([, attrs, body]) => {
+    const href = attrs.match(/(?:^|\s)href\s*=\s*(["'])(.*?)\1/i)?.[2];
+    const hidden = /(?:^|\s)hidden(?:\s|=|$)|\baria-hidden\s*=\s*["']true["']/i.test(attrs);
+    const label = body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    return !hidden && href === '../index.html' && /\blesson library\b/i.test(label);
+  });
+}
+
 export function check(base = root) {
   const errors = [];
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')));
@@ -35,6 +47,7 @@ export function check(base = root) {
     const sha = createHash('sha256').update(readFileSync(file)).digest('hex');
     if (sha !== lesson.review.sha256.toLowerCase()) errors.push(`${lesson.file}: changed since review; review again and update hash.`);
     const html = readFileSync(file,'utf8');
+    if (!hasLibraryLink(html)) errors.push(`${lesson.file}: needs a visible Lesson library link to ../index.html.`);
     if (manifest.version === 2 && (!/\bid="glossary"/.test(html) || !/<dl[\s>]/i.test(html) || !/href="#glossary"/.test(html))) errors.push(`${lesson.file}: needs a linked glossary with a definition list.`);
     if (!/<svg\b/i.test(html) || !/<desc[\s>]/i.test(html)) errors.push(`${lesson.file}: needs a reviewed SVG diagram with a text equivalent.`);
     if (!/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8'))) errors.push('Shared style needs reduced-motion support.');

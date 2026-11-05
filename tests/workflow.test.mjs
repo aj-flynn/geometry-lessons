@@ -5,7 +5,21 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { root, renderIndex, validateManifest, generateIndex } from '../scripts/build-index.mjs';
-import { check, inspectPublicCode } from '../scripts/check.mjs';
+import { check, inspectPublicCode, hasLibraryLink } from '../scripts/check.mjs';
+
+test('library navigation requires an explicit labeled root-index anchor',()=>{
+  assert.ok(hasLibraryLink('<a href="../index.html">Back to the lesson library</a>'));
+  assert.ok(hasLibraryLink("<a class='return-link' href='../index.html'><span>Lesson library</span></a>"));
+  for (const html of [
+    '<p>Lesson library</p>',
+    '<a href="../missing.html">Lesson library</a>',
+    '<a href="../index.html">Click here</a>',
+    '<!-- <a href="../index.html">Lesson library</a> -->',
+    '<script>const sample = `<a href="../index.html">Lesson library</a>`;</script>',
+    '<a hidden href="../index.html">Lesson library</a>',
+    '<a aria-hidden="true" href="../index.html">Lesson library</a>'
+  ]) assert.equal(hasLibraryLink(html),false,html);
+});
 
 test('index escapes metadata, encodes only safe filenames, and preserves all lessons', () => {
   const entry = { file:'0001-practice-concept.html',title:'<Triangle> & angle',summary:'Think "why" < first',topics:['<angle>'],review:{privacy:true,homeworkSeparation:true,math:true,accessibility:true,sha256:'a'.repeat(64)} };
@@ -31,13 +45,20 @@ test('publication checks reject changed reviewed HTML, raw documents, and uninde
   try {
     for (const dir of ['templates','assets','lessons']) mkdirSync(join(temp,dir));
     for (const file of ['templates/index.html','assets/site.css','assets/lesson.js']) cpSync(join(root,file),join(temp,file));
-    const html = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title><link rel="stylesheet" href="../assets/site.css?v=qa"></head><body><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A test shape</desc></svg></body></html>';
+    const html = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title><link rel="stylesheet" href="../assets/site.css?v=qa"></head><body><a href="../index.html">Lesson library</a><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A test shape</desc></svg></body></html>';
     const file = '0001-synthetic-qa.html';
     writeFileSync(join(temp,'lessons',file),html);
     const manifest = {version:1,lessons:[{file,title:'Synthetic QA',summary:'Temporary test only',topics:['QA'],review:{privacy:true,homeworkSeparation:true,math:true,accessibility:true,sha256:createHash('sha256').update(html).digest('hex')}}]};
     writeFileSync(join(temp,'lessons.json'),JSON.stringify(manifest));
     writeFileSync(join(temp,'index.html'),generateIndex(temp));
     assert.equal(check(temp).lessons,1);
+    const noLibrary = html.replace('<a href="../index.html">Lesson library</a>','');
+    writeFileSync(join(temp,'lessons',file),noLibrary);
+    manifest.lessons[0].review.sha256=createHash('sha256').update(noLibrary).digest('hex');
+    writeFileSync(join(temp,'lessons.json'),JSON.stringify(manifest));
+    assert.throws(()=>check(temp),/Lesson library link/);
+    manifest.lessons[0].review.sha256=createHash('sha256').update(html).digest('hex');
+    writeFileSync(join(temp,'lessons.json'),JSON.stringify(manifest));
     writeFileSync(join(temp,'lessons',file),html+'changed');
     assert.throws(()=>check(temp),/changed since review/);
     writeFileSync(join(temp,'lessons',file),html);

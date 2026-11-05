@@ -57,7 +57,7 @@ test('a science publication requires a glossary, a current hash, and the updated
   try{
     for(const dir of ['templates','assets','lessons'])mkdirSync(join(temp,dir));
     for(const file of ['templates/index.html','assets/site.css','assets/lesson.js'])cpSync(join(root,file),join(temp,file));
-    const prefix='<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title></head><body><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A synthetic QA diagram</desc></svg>';
+    const prefix='<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic QA</title></head><body><a href="../index.html">Lesson library</a><h1>Synthetic QA</h1><svg viewBox="0 0 10 10"><desc>A synthetic QA diagram</desc></svg>';
     const glossary='<a href="#glossary">Glossary</a><section id="glossary"><h2>Glossary</h2><dl><dt>Model</dt><dd>A simplified representation.</dd></dl></section>';
     const file='0002-synthetic-science-qa.html';
     const record=entry(file,'Science');

@@ -1,6 +1,6 @@
 # Independent quality review
 
-The requested completion threshold is at least **95/100 for both the lesson and the reusable process**. A self-review, an average hiding a lower score, or passing automated tests does not meet it. Use an independent reviewer with the requested Astra/high settings when available. If the setting or review surface is unavailable, report the limitation.
+The owner has raised the lesson completion target to **100/100 for every geometry, chemistry, and English lesson**. The earlier reusable-process target remains at least **95/100**. This changes the requested threshold, not the criterion weights below. A self-review, an average hiding a lower score, or passing automated tests does not meet it. Use an independent reviewer with the requested Astra/high settings when available. If the setting or review surface is unavailable, report the limitation. Do not inflate scores or claim unavailable accessibility checks passed; report each remaining deduction and continue useful remediation.
 
 Give the reviewer a fixed candidate revision, the user requirements, this rubric, and the minimal authorized evidence needed to assess privacy/separation. Do not prime the reviewer with the implementer's verdict, desired deductions, or proposed score. Private homework is not part of this public review record. The reviewer must keep any inspected private material out of artifacts and replies.
 

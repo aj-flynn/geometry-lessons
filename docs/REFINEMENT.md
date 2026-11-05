@@ -1,5 +1,15 @@
 # Independent refinement status
 
+## Current target and library navigation
+
+The owner subsequently raised the target to an honest independent **100/100 for each geometry, chemistry, and English lesson**. Earlier 95/96 scores remain historical evidence for their fixed revisions, not completion of this new target. The criterion weights are unchanged. Request a fresh geometry assessment with every remaining deduction; unverified accessibility surfaces must remain explicit. Other subject refinements are coordinated separately.
+
+At revision `da5ecedbf96e639e8f829838c92d89c84d098de8`, all six published lessons already have a clear library link near the top: similar polygons, close reading, and the four chemistry lessons. Each live link was activated through the browser and reached `https://aj-flynn.github.io/geometry-lessons/index.html`, showing the six-lesson shelf. No lesson content or shared runtime asset needed changing for this navigation audit.
+
+The native skill now requires a visible, keyboard-accessible `Lesson library` anchor to `../index.html` in every lesson, including a no-JavaScript path and actual browser activation during verification. The publication checker enforces the labeled anchor and existing local-link checks verify its target. Regression tests reject absent, wrong-target, unclear-label, commented-out, script-only and directly hidden anchors; an integration fixture proves publication fails even with a current review hash when the library link is absent. Source checks cannot establish inherited CSS visibility, so browser review remains required. All 14 Node tests and the checker pass across the six-lesson library.
+
+The skill also defines private authenticated sender routing: explicit shared-library membership, separate indexes for separate library targets, workspace/destination verification before writes, and a publication stop for missing or ambiguous mappings. No sender identities or mappings are published, no new libraries are created, and no new recipients are contacted. Exact identities, private configuration and access are coordinated separately; these instructions do not claim an installed router or completed end-to-end delivery test.
+
 ## Actual review results
 
 The independent Astra reviewer assessed baseline `5769c410385de1af1b8eefcb38e4e96e8d671081` at **78/100**: accuracy 24/25, sequencing 14/20, practice 8/15, visual clarity 11/15, interaction/accessibility 12/15, privacy/workflow 9/10.

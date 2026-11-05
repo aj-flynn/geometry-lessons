@@ -64,3 +64,11 @@ Line endings were normalized without changing reviewed text before the final bro
 ## Publication verification
 
 The release must serve the four lesson URLs, their linked assets and field guide, and the six-entry subject index through GitHub Pages. Successful push alone is not a live-deployment check. Verify the served lesson hashes against this record before returning a link; the originating conversation handles any message delivery.
+
+## Repeat the chemistry checks
+
+The repository now preserves the chemistry regression checks in `tests/chemistry.test.mjs`, run by the standard `node --test tests/*.test.mjs` command. They verify vector addition and scale, current-state descriptions, stage visibility, particle separation, motion controls, reduced motion, and misconception-specific numeric feedback using the actual shipped scripts and authored forms.
+
+For browser evidence, use `scripts/check-chemistry-browser.py`. Install Python Playwright with `python -m pip install playwright`, then its browser with `python -m playwright install chromium`, and run `python scripts/check-chemistry-browser.py` from the repository. Dependencies are optional for the Node suite. `CHEMISTRY_BROWSER` may point to an existing compatible Chromium executable. `CHEMISTRY_QA_OUTPUT` may choose an evidence directory; by default a new temporary directory outside the checkout holds screenshots and JSON results. Do not place private input in that directory or in the public repository.
+
+The browser script uses only the original public lesson files and local assets. It checks 390/768/1440 widths, CSS 200% zoom, keyboard focus, every authored choice, general and specific numeric retries, step and angle controls, reduced motion, vector endpoints, static reading, and print screenshots. It records the browser version and exact artifact hashes. It does not claim native zoom or a human screen-reader assessment. Re-run affected checks when lessons or shared dependencies change and inspect the screenshots before publication.

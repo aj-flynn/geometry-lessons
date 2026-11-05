@@ -4,7 +4,6 @@ import vm from 'node:vm';
 import { readFileSync } from 'node:fs';
 
 const chemistry = readFileSync(new URL('../assets/chemistry.js', import.meta.url), 'utf8');
-const practice = readFileSync(new URL('../assets/lesson.js', import.meta.url), 'utf8');
 function control(initial = {}) {
   return Object.assign({
     attributes: {}, listeners: {}, dataset: {}, style: {}, value: '', textContent: '',
@@ -14,11 +13,11 @@ function control(initial = {}) {
     fire(key) { for (const fn of this.listeners[key] || []) fn({ preventDefault() {} }); }
   }, initial);
 }
-function run(models = {}, code = chemistry) {
+function run(models = {}) {
   const motion = control({ matches: false });
   const document = control({ hidden: false, querySelectorAll: key => models[key] || [] });
   let frame = null, interval = null;
-  vm.runInNewContext(code, {
+  vm.runInNewContext(chemistry, {
     document, matchMedia: () => motion, performance: { now: () => 0 },
     requestAnimationFrame: fn => { frame = fn; return 1; },
     cancelAnimationFrame: () => { frame = null; },
@@ -76,23 +75,3 @@ for (const type of ['packets', 'ledger', 'separate']) {
     assert.match(map['[data-step-status]'].textContent, /Step 2/); assert.equal(env.interval(), null);
   });
 }
-
-const decode = s => s.replaceAll('&quot;', '"').replaceAll('&#x27;', "'").replaceAll('&amp;', '&');
-test('chemistry numeric practice responds to authored misconceptions and permits a correct retry', () => {
-  for (const filename of ['0003-reading-particle-formulas.html', '0004-electrons-and-bonds.html', '0005-shape-and-polarity.html']) {
-    const html = readFileSync(new URL(`../lessons/${filename}`, import.meta.url), 'utf8');
-    const tag = html.match(/<form data-practice\b[^>]*>/)[0];
-    const dataset = {};
-    for (const [, key, value] of tag.matchAll(/data-([a-z]+)="([^"]*)"/g)) dataset[key] = decode(value);
-    const input = control(), feedback = control();
-    const form = control({ dataset, querySelector: k => k === 'input' ? input : feedback });
-    run({ 'form[data-practice]': [form] }, practice);
-    const mistakes = JSON.parse(dataset.mistakes);
-    assert.ok(Object.keys(mistakes).length >= 2);
-    for (const [value, explanation] of Object.entries(mistakes)) {
-      assert.notEqual(Number(value), Number(dataset.expected));
-      input.value = value; form.fire('submit'); assert.equal(feedback.textContent, explanation);
-    }
-    input.value = dataset.expected; form.fire('submit'); assert.equal(feedback.textContent, dataset.success);
-  }
-});

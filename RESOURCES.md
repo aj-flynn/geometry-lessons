@@ -30,3 +30,5 @@ Additional sources verified during subject-skill regeneration:
 - [NIST Chemistry WebBook: normal-boiling-point measurements](https://webbook.nist.gov/cgi/cbook.cgi?ID=C74986&Type=TBOIL): optional practice reading measured values with units, provenance, and uncertainty. These data do not establish a force-name ranking or a controlled comparison between substances.
 
 The chemistry sequence uses original prerequisite models and independently selected worked structures and transfer cases. The printable field guide links the four lessons and their glossaries. Numerical classification cutoffs are left to the learner's course convention; no assignment-specific label map or element list is supplied. This resource list records author verification; each lesson's learner-facing source selection is reviewed separately against its supplied input.
+
+- Author verification for the fresh structure examples: [NIST methanethiol](https://webbook.nist.gov/cgi/cbook.cgi?ID=C74931) and [NIST chloroacetylene](https://cccbdb.nist.gov/exp2x.asp?casno=593635&charge=0).

@@ -4,16 +4,18 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
   const title = explorer.querySelector('[data-lens-title]');
   const prompt = explorer.querySelector('[data-lens-prompt]');
   const result = explorer.querySelector('[data-lens-result]');
+  const announcement = explorer.querySelector('[data-lens-announcement]');
   const reveal = explorer.querySelector('[data-lens-reveal]');
   const restart = explorer.querySelector('[data-restart]');
   const fallback = explorer.nextElementSibling;
-  if (!buttons.length || !title || !prompt || !result || !reveal || !restart) continue;
+  if (!buttons.length || !title || !prompt || !result || !announcement || !reveal || !restart) continue;
 
   let activeLens;
-  function selectLens(button) {
+  function selectLens(button, announce = true) {
     activeLens = button;
     title.textContent = button.dataset.title;
     prompt.textContent = button.dataset.prompt;
+    if (announce) announcement.textContent = `${button.dataset.title}. ${button.dataset.prompt}`;
     result.replaceChildren();
     reveal.setAttribute('aria-expanded', 'false');
     reveal.textContent = 'Compare after trying';
@@ -44,7 +46,7 @@ for (const explorer of document.querySelectorAll('[data-explorer]')) {
     buttons[0].focus();
   });
 
-  selectLens(buttons[0]);
+  selectLens(buttons[0], false);
   explorer.hidden = false;
   if (fallback?.matches('[data-lens-fallback]')) fallback.hidden = true;
 }
@@ -84,12 +86,25 @@ addEventListener('afterprint', () => {
 });
 for (const form of document.querySelectorAll('[data-question] form')) {
   const feedback = form.querySelector('.feedback');
+  let pendingFeedback;
   form.addEventListener('submit', event => {
     event.preventDefault();
     const selected = form.querySelector('input:checked');
-    feedback.textContent = !selected ? 'Choose an option, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : (selected.dataset.feedback || form.dataset.hint || 'Use the hint and compare the wording before trying again.');
+    const message = !selected ? 'Choose an option, then check your reasoning.' : selected.value === form.dataset.correct ? form.dataset.success : (selected.dataset.feedback || form.dataset.hint || 'Use the hint and compare the wording before trying again.');
+    clearTimeout(pendingFeedback);
+    if (feedback.textContent !== message) {
+      feedback.textContent = message;
+      return;
+    }
+
+    // Give the live region time to register the clearing before repeating a message.
+    feedback.textContent = '';
+    pendingFeedback = setTimeout(() => { feedback.textContent = message; }, 100);
   });
-  form.addEventListener('change', () => { feedback.textContent = ''; });
+  form.addEventListener('change', () => {
+    clearTimeout(pendingFeedback);
+    feedback.textContent = '';
+  });
   // Bind prevention before enabling controls: no-script mode cannot submit choices.
   form.querySelector('fieldset').disabled = false;
   form.querySelector('button[type="submit"]').disabled = false;

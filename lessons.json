@@ -74,17 +74,17 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "4ce8af7f9fbc3e882b4bff8e3aa423d2173fcda8bcd6db2908bc04139fe9471a",
+        "sha256": "8a930bd35deebc11faf96b06273ceaeb18a441961d913fb551d447248cede4f4",
         "dependencies": {
-          "assets/english.css": "ea84c5a70f7c45316a57ad3704ecaec6313d7527ce4bb291ff4e0fb56535ba6d",
+          "assets/english.css": "f1178a6db4f124892cf31bb71a2e865b9eaa2dc7552581b723c534554cbe7d9d",
           "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
           "assets/reading.css": "ff96479ef805c1831a449a61cb01f716cca3cc032df6492895dd129fc79c1f12",
-          "assets/reading.js": "d38a5121e144c905320dd0b99b2e89a8905a0a8ff63078030e4d4eebae0d4568",
+          "assets/reading.js": "d89058c14099456f27557492dcc04f9891658748aeae2b3ce9231a9842216fd8",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/close-reading.html": "b1413830e34885f68585f364850b5e1a7de212d65791d25d0b05566507e4e7a2"
         },
         "contract": {
-          ".agents/skills/english-teach/SKILL.md": "e78e76758d4da647fa1a3234004c245af59d26beb1b61fe6944ac0e8b15afa20",
+          ".agents/skills/english-teach/SKILL.md": "039b111aba1df16df620ee78010a6906ca9e85b51c4f6262d33c139a99bf9f47",
           ".agents/skills/homework-teach/SKILL.md": "bdca389bc080c3f84e6282bee3742d35f924499b445c94b04cad2c9ebf33fb37",
           ".agents/skills/homework-teach/references/independent-refinement.md": "37d4195cae1cd0b3e688adb14a6fdef77eda752e51e735bb03cbd5cc6a447ef6",
           ".agents/skills/homework-teach/references/lesson-workflow.md": "260e6718ac27dc1b1f94d95df7216db57fb8957ff11317282b130d07fd9419af",

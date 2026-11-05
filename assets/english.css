@@ -14,6 +14,7 @@
 .english .context-lab button{font-size:16px}
 .english .context-lab button[data-context]{background:#e9eef7;color:#162c48;border:2px solid #315ea5}
 .english .context-lab button[data-context][aria-pressed=true]{background:#162c48;color:white;border-color:#162c48}
+.english .reading-announcement{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .english .context-selection{visibility:hidden;font-weight:700}
 .english [aria-pressed=true] .context-selection{visibility:visible}
 .english .reading-chain{margin:20px 0;padding-left:24px}

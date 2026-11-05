@@ -31,3 +31,8 @@ Reviewed input tree `33ca81a44a87a9e433fa95396c19c6ddfa1cc279c5f7dec2ca73593a84f
 ## Chemistry terminology and model refinement
 
 Independent brainstorming compared a learner-built terminology exercise, an integrated construction, and a decision-based route. The paper terminology exercise was chosen because it practices the missing feature-to-language step while keeping assigned terms with the learner. Sol 6.1 High revised the four pages and Chemistry skill. Astra scored all four lessons and the exercised process 100/100. The checker, 28 Node tests, 134 browser practice checks, and focused library entry check passed. Current input tree `9e5b6553ccded92c41fb6539fee173511b1127cf3a6b099058c1b631979d77b4`. Source-aware Opus and live verification follow this stage.
+
+
+## English translation and image practice
+
+Sol 6.1 High connected natural modern phrasing, figurative device, shared quality and effect in original practice, and refined announcements and repeated feedback. Fresh independent Astra scored the revised lesson and exercised English process 100/100. The selected English scope matches its assessed hashes. The checker, 28 Node tests and 134 browser practice checks passed. The fixed input tree is 12177e6b25f3e2338b8e43b0bf1cc157066e4d444a8ae0ee75483a5348a892aa. Current Opus and live checks are pending.

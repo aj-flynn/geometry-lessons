@@ -7,7 +7,7 @@
   <meta name="description" content="Match corresponding parts, explore scale factors, and distinguish length, perimeter, and area ratios using new examples.">
   <title>Similar polygons | Geometry lessons</title>
   <link rel="stylesheet" href="../assets/site.css?v=20261105d">
-  <link rel="stylesheet" href="../assets/similarity.css?v=20261105f">
+  <link rel="stylesheet" href="../assets/similarity.css?v=20261105h">
   <script src="../assets/similarity.js?v=20261105g" type="module"></script>
   <script src="../assets/geometry-paths.js?v=20261105d" defer></script>
 </head>
@@ -23,7 +23,7 @@
   <nav class="path-picks" aria-label="Choose a learning path"><a href="#path-match">Match &amp; scale</a><a href="#path-area">Area &amp; shape</a><a href="#path-practice">Reason &amp; practice</a><a href="#glossary">Glossary</a></nav>
   <p class="goal-note"><strong>Your goal:</strong> match parts, choose a length or area rule, and explain what the evidence supports.</p>
 <details class="lesson-path" name="geometry-path" id="path-match" open><summary><span>Match and scale</span><small>Match parts · Find lengths</small></summary><div class="path-content"><section aria-labelledby="match">
-    <h2 id="match">Match the parts</h2>
+    <h2 id="match">Match the parts</h2><p>Start with an ordered statement below. When no matching list is supplied, <a href="#mark-branch">use the angle marks</a> to build one.</p>
     <details class="prerequisite"><summary>Start here if ratios feel unfamiliar</summary><p>A <strong>ratio</strong> compares quantities by division. A short ribbon is 8 cm long and a long ribbon is 12 cm. What multiplier takes the short ribbon to the long one?</p><div data-choice-quiz data-correct="divide" data-success="Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. A multiplier tells how many times as long, while subtraction tells how much longer." data-hint="The target is 12 and the original is 8. Ask how many copies of 8 make 12, rather than how much was added."><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="subtract">12 − 8 = 4</button><button type="button" data-choice="divide">12 ÷ 8 = 1.5</button><button type="button" data-choice="reverse">8 ÷ 12 ≈ 0.67</button></div><div data-static-only><p>Choose one:</p><ul><li>12 − 8 = 4</li><li>12 ÷ 8 = 1.5</li><li>8 ÷ 12 ≈ 0.67</li></ul><details><summary>Compare your reasoning</summary><p>Yes. 12 divided by 8 is 1.5: one whole short ribbon plus half of it. A multiplier tells how many times as long, while subtraction tells how much longer.</p></details></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p></div><details><summary>See the ratio bridge</summary><p>12 ÷ 8 = 1.5 compares the long ribbon with the short one. Multiplying checks it: 8 × 1.5 = 12. A factor above 1 enlarges; a factor between 0 and 1 reduces.</p></details></details>
     <p>A <strong>polygon</strong> is a closed flat shape made of straight sides. A <strong>vertex</strong> is a corner; <em>vertices</em> means more than one corner.</p>
     <p><strong>Similar</strong> means the same shape: matching angles have equal measures and all matching lengths share one multiplier. A <strong>corresponding</strong> part is the part that matches.</p>
@@ -51,6 +51,118 @@
     </div>
   </section>
 
+  <details class="mark-branch" id="mark-branch"><summary>If the figures use angle marks</summary>
+<section aria-labelledby="angle-marks">
+  <h2 id="angle-marks">Read the angle marks</h2>
+  <p>A <a href="#glossary">vertex</a> is a corner. The small curved lines inside a corner are <strong>angle arcs</strong>. Within a diagram, angles with the same arc count are marked as equal in measure. Two arcs identify a group; they do not mean two degrees. Different arc counts do not, by themselves, say that angles are unequal.</p>
+  <p><strong>The two figures in each pair below are given to be similar.</strong> The marks identify matching corners. Equal angle marks alone would not prove that general polygons are similar; their corresponding side lengths must also share one scale factor. Use the givens, not the apparent size or position.</p>
+  <h3>Match corners before sides</h3>
+  <p>Predict: which corner matches K, even after the figure turns?</p>
+  <figure>
+    <div class="mark-diagrams"><svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-worked-original-title marks-worked-original-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="marks-worked-original-title">Original figure with angle marks</title>
+<desc id="marks-worked-original-desc">Four-sided figure. K has one angle arc; L has two; M has three; N has four.</desc>
+<polygon points="50.00,55.00 205.00,45.00 230.00,165.00 70.00,190.00" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
+<path d="M 51.759 66.870 A 12 12 0 0 0 61.975 54.227" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="33.32" y="43.96" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">K</text>
+<path d="M 193.025 45.773 A 12 12 0 0 0 207.447 56.748" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 188.035 46.094 A 17 17 0 0 0 208.467 61.643" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="218.88" y="30.60" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">L</text>
+<path d="M 227.553 153.252 A 12 12 0 0 0 218.144 166.853" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 226.533 148.357 A 17 17 0 0 0 213.204 167.624" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 225.513 143.462 A 22 22 0 0 0 208.264 168.396" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="247.44" y="174.79" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">M</text>
+<path d="M 81.856 188.147 A 12 12 0 0 0 68.241 178.130" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 86.796 187.376 A 17 17 0 0 0 67.509 173.184" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 91.736 186.604 A 22 22 0 0 0 66.776 168.238" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 96.676 185.832 A 27 27 0 0 0 66.043 163.292" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="56.61" y="204.85" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">N</text>
+</svg>
+<svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-worked-turned-title marks-worked-turned-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="marks-worked-turned-title">Turned figure with angle marks</title>
+<desc id="marks-worked-turned-desc">A turned, smaller similar figure. R has one angle arc; W has two; T has three; S has four.</desc>
+<polygon points="212.00,181.00 88.00,189.00 68.00,93.00 196.00,73.00" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
+<path d="M 210.241 169.130 A 12 12 0 0 0 200.025 181.773" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="228.68" y="192.04" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">R</text>
+<path d="M 99.975 188.227 A 12 12 0 0 0 85.553 177.252" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 104.965 187.906 A 17 17 0 0 0 84.533 172.357" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="74.12" y="203.40" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">W</text>
+<path d="M 70.447 104.748 A 12 12 0 0 0 79.856 91.147" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 71.467 109.643 A 17 17 0 0 0 84.796 90.376" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 72.487 114.538 A 22 22 0 0 0 89.736 89.604" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="50.56" y="83.21" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">T</text>
+<path d="M 184.144 74.853 A 12 12 0 0 0 197.759 84.870" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 179.204 75.624 A 17 17 0 0 0 198.491 89.816" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 174.264 76.396 A 22 22 0 0 0 199.224 94.762" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 169.324 77.168 A 27 27 0 0 0 199.957 99.708" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="209.39" y="58.15" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">S</text>
+</svg></div>
+    <figcaption>Use the arc patterns, not the position of a corner. The second figure is a turned, smaller copy; similarity is given.</figcaption>
+  </figure>
+  <details><summary>Compare your match and follow the endpoints</summary>
+    <p>K matches R because both have one arc. Continuing by the marks gives L with W, M with T, and N with S. The symbol ↔ means “corresponds to,” so we can record K ↔ R, L ↔ W, M ↔ T, and N ↔ S.</p>
+    <p>Now match a side by <strong>both</strong> endpoints: side KL joins the one-arc and two-arc corners. Its corresponding side is RW, joining those same marked groups in the other figure. Turning the figure does not change the match.</p>
+  </details>
+  <div class="practice" data-choice-quiz data-correct="wx" data-success="Yes. H matches X (two arcs), and Z matches W (four arcs), so HZ corresponds to XW, also called WX. Both endpoints agree. Explain why the reflection does not change that match." data-hint="Match the marks at both endpoints, then retry.">
+    <h3>Match a reflected pair</h3>
+    <p>This is a different pair of similar figures. Which side in the first figure corresponds to <strong>HZ</strong> in the reflected figure? Side names list their two endpoints; HZ and ZH name the same side.</p>
+    <figure>
+      <div class="mark-diagrams"><svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-transfer-original-title marks-transfer-original-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="marks-transfer-original-title">New original marked figure</title>
+<desc id="marks-transfer-original-desc">Four-sided figure. U has three angle arcs; V has one; W has four; X has two.</desc>
+<polygon points="50.00,65.00 190.00,40.00 225.00,130.00 95.00,195.00" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
+<path d="M 53.925 76.340 A 12 12 0 0 0 61.813 62.891" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 55.561 81.065 A 17 17 0 0 0 66.735 62.012" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 57.196 85.790 A 22 22 0 0 0 71.657 61.133" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="31.92" y="56.46" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">U</text>
+<path d="M 178.187 42.109 A 12 12 0 0 0 194.349 51.184" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="201.90" y="23.93" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">V</text>
+<path d="M 220.651 118.816 A 12 12 0 0 0 214.267 135.367" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 218.838 114.156 A 17 17 0 0 0 209.795 137.603" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 217.026 109.496 A 22 22 0 0 0 205.323 139.839" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 215.214 104.836 A 27 27 0 0 0 200.850 142.075" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="244.33" y="135.12" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">W</text>
+<path d="M 105.733 189.633 A 12 12 0 0 0 91.075 183.660" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 110.205 187.397 A 17 17 0 0 0 89.439 178.935" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="85.85" y="212.79" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">X</text>
+</svg>
+<svg viewBox="0 0 280 250" role="img" aria-labelledby="marks-transfer-reflected-title marks-transfer-reflected-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="marks-transfer-reflected-title">Reflected marked figure</title>
+<desc id="marks-transfer-reflected-desc">A reflected, smaller similar figure. J has three angle arcs; D has one; Z has four; H has two.</desc>
+<polygon points="216.50,74.00 97.50,52.75 67.75,129.25 178.25,184.50" fill="#edf3ef" stroke="#163a32" stroke-width="2.5"/>
+<path d="M 212.575 85.340 A 12 12 0 0 1 204.687 71.891" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 210.939 90.065 A 17 17 0 0 1 199.765 71.012" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 209.304 94.790 A 22 22 0 0 1 194.843 70.133" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="234.58" y="65.46" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">J</text>
+<path d="M 109.313 54.859 A 12 12 0 0 1 93.151 63.934" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="85.60" y="36.68" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">D</text>
+<path d="M 72.099 118.066 A 12 12 0 0 1 78.483 134.617" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 73.912 113.406 A 17 17 0 0 1 82.955 136.853" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 75.724 108.746 A 22 22 0 0 1 87.427 139.089" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 77.536 104.086 A 27 27 0 0 1 91.900 141.325" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="48.42" y="134.37" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">Z</text>
+<path d="M 167.517 179.133 A 12 12 0 0 1 182.175 173.160" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<path d="M 163.045 176.897 A 17 17 0 0 1 183.811 168.435" fill="none" stroke="#163a32" stroke-width="1.6"/>
+<text x="187.40" y="202.29" text-anchor="middle" dominant-baseline="middle" font-family="system-ui,sans-serif" font-size="21" font-weight="650" fill="#152820">H</text>
+</svg></div>
+      <figcaption>First figure: U has three arcs, V one, W four, and X two. Reflected figure: J has three arcs, D one, Z four, and H two. The pair is given to be similar.</figcaption>
+    </figure>
+    <details><summary>Hint: notice the endpoints</summary><p>Find the arc count at H and at Z. In the first figure, find the corner in each of those two groups. The side must join both corners.</p></details>
+    <div class="controls" data-interactive-only hidden>
+      <button type="button" data-choice="uv" data-hint="UV joins the three-arc and one-arc corners. Read the marks at H and Z, then try a side with both matching endpoints.">UV</button>
+      <button type="button" data-choice="wx">WX</button>
+      <button type="button" data-choice="ux" data-hint="UX includes the two-arc corner, but its other end has three arcs. A similar position on the page is not enough. Match both ends and try again.">UX</button>
+    </div>
+    <p class="feedback" data-choice-feedback role="status" aria-live="polite"></p>
+    <div data-static-only>
+      <p>Choose one and explain both endpoint marks:</p><ul><li>UV</li><li>WX</li><li>UX</li></ul>
+      <details><summary>After your attempt: compare and retry</summary><p>H matches X because each has two arcs. Z matches W because each has four. HZ therefore corresponds to XW, also named WX. UV joins the three-arc and one-arc groups; UX matches only one required group. If you chose either, cover this explanation, track both endpoints, and try again.</p></details>
+    </div>
+  </div>
+</section>
+
+  </details>
+
   <section aria-labelledby="scale">
     <h2 id="scale">Keep one direction</h2>
     <p>Write <strong>original → target</strong> above your work. Then use matching sides in that direction:</p>
@@ -77,13 +189,13 @@
     <p>Imagine enlarging a rectangular art print. The original is <strong>13 cm by 9 cm</strong>. Its <strong>perimeter</strong> (distance around the boundary) is 44 cm and its <strong>area</strong> (space inside) is 117 cm². The notation cm² means square centimeters. Resize both dimensions together and watch the boundary and interior change.</p>
     <div class="prediction" data-choice-quiz data-correct="twice" data-success="Good prediction. Area combines width and height, so look for the scale factor twice. Watch both dimensions as the print changes." data-hint="Perimeter follows lengths. For area, count the two dimensions in width × height, then try again."><h3>Predict before you move</h3><p>When both dimensions change by the same factor, does the area use that factor once or twice?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="once">Use it once</button><button type="button" data-choice="twice">Use it twice</button></div><div data-static-only><p>Choose one:</p><ul><li>Use it once</li><li>Use it twice</li></ul><details><summary>Compare your reasoning</summary><p>Good prediction. Area combines width and height, so look for the scale factor twice. Watch both dimensions as the print changes.</p></details></div><p class="feedback" data-choice-feedback role="status" aria-live="polite"></p></div>
     <div class="diagram-pair">
-      <figure><svg viewBox="0 0 360 300" role="img" aria-labelledby="original-title original-desc">
+      <figure><svg viewBox="0 0 400 300" role="img" aria-labelledby="original-title original-desc">
         <title id="original-title">Original art print</title><desc id="original-desc">A rectangle thirteen centimeters wide and nine centimeters high. Perimeter forty-four centimeters; area one hundred seventeen square centimeters.</desc>
         <rect class="polygon" x="45" y="177" width="91" height="63"/>
         <path d="M45 226H59V240" fill="none" stroke="currentColor" stroke-width="2"/>
         <text x="90.5" y="163" text-anchor="middle">13 cm</text><text x="148" y="215">9 cm</text>
       </svg><figcaption>Original. The corner mark indicates a right angle; all four corners of a rectangle are right angles.</figcaption></figure>
-      <figure><svg viewBox="0 0 360 300" role="img" aria-labelledby="scaled-title scaled-desc">
+      <figure><svg viewBox="0 0 400 300" role="img" aria-labelledby="scaled-title scaled-desc">
         <title id="scaled-title">Target art print</title><desc id="scaled-desc" data-diagram-description>The target rectangle is twenty point eight by fourteen point four centimeters, using a scale factor of one point six. Its perimeter is seventy point four centimeters and its area is two hundred ninety-nine point five two square centimeters.</desc>
         <rect class="polygon" data-scaled-rectangle x="45" y="139.2" width="145.6" height="100.8"/>
         <text data-width-label x="117.8" y="127.2" text-anchor="middle">20.8 cm</text><text data-height-label x="202.6" y="196.6">14.4 cm</text>
@@ -197,6 +309,7 @@
     <dl>
       <dt>Similar polygons</dt><dd>Polygons with the same shape: corresponding angles have equal measures, and every corresponding side length has the same scale factor. Size and orientation may differ.</dd>
       <dt>Corresponding parts</dt><dd>Vertices, angles, and sides that match under the similarity. Their order matters.</dd>
+      <dt>Angle arcs</dt><dd>Curved marks inside an angle. The same arc pattern marks equal angle measures; its arc count identifies a group rather than a number of degrees. Different patterns alone do not assert unequal angles.</dd>
       <dt>Congruent angles</dt><dd>Angles with equal measures. Enlarging a similar figure does not enlarge its angles.</dd>
       <dt>Symbols ∼, ∠, ↔, and °</dt><dd>∼ means similar to; ∠ names an angle; ↔ marks corresponding parts; ° means degrees, a unit of angle measure. A superscript ² means squared: multiply the number by itself.</dd>
       <dt>Scale factor, <var>k</var></dt><dd>The positive multiplier that takes each original length to its matching target length.</dd>

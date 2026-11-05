@@ -1,3 +1,21 @@
+# Current chemistry incremental improvements
+
+Two fresh independent Astra/high reviews assessed successive fixed candidates. Candidate 4 scored lessons 0003/0004/0005/0006 at 100/100/99.5/100 and the reusable process at 99.5. Candidate 5 scored them at 100/99.5/100/100 and the process at 99. The latest process breakdown is boundaries 30/30, teaching 20/20, subject accuracy 19/20, repeatability 15/15, validation/delivery 15/15. Linked conceptual coverage was assessed at 7/7. Scores are not averaged or promoted to dual-model completion.
+
+This publication includes the improved applied-condition practice in 0006 (99 to 100) and corrected hint plus vector reference in 0005 (99.75 to 100). Both lessons earned full weights in all 23 categories in the latest review. The chemistry skill adds reusable requirements for applied-condition checks and independent arithmetic/counterexample inspection of source claims. Its lower latest score reflects a newly discovered defect in an unchanged retained external reference in 0004: its definition omits a condition needed for the stated classification. That source-quality issue deducts 0.5 from 0004 A3 and one process accuracy point; local main-group instruction is correct. It remains open and is not hidden by earlier higher scores. No weaker local lesson replaces a stronger published one.
+
+The private input was visually compared with the complete learner route. No unresolved privacy, homework-separation, consequential local accuracy, or inaccessible-core-task boundary was reported. Independent browser checks covered every practice option, retries, controls, keyboard, 390/768/1440 layouts, no-JavaScript safety, reduced motion, print behavior and library navigation. Supplied native-zoom evidence was inspected and identified as supplied rather than independently executed. All 25 current infrastructure tests and the checker passed in the reviewer run. No screen-reader certification or learner-retention claim is made. Opus review remains pending.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| lessons/0005-shape-and-polarity.html | 3fd7115f418b465155a2f5fd9bcfa8bf2207736bf6bce7f9437d9db8702309ee |
+| lessons/0006-between-molecules.html | cd9a63dabf079770baea6b46add100061f75672dfb45e4a58d109d2a4659e538 |
+| .agents/skills/chemistry-teach/SKILL.md | bd58f05236c07ddc6f7b8dc4d7767f2745c2b2f38ec0ecf4a20694f13b53201a |
+
+The four loaded chemistry asset bytes and linked field guide are unchanged from the preceding review below. The final manifest identifies published HTML bytes.
+
+---
+
 # Independent chemistry candidate 3 review
 
 Reviewer: fresh independent Codex subagent, configured as `gpt-6-astra`, high effort, `fork_turns: none` (orchestrator-confirmed model configuration; no separate modelUsage record exists for this Codex review). Reviewed 2026-11-04/05. Rubric edition: 2026-11-04, independent judgment. No author verdict or other reviewer score supplied. Read-only review; no candidate files edited, staged, or published.

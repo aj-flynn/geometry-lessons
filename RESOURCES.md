@@ -1,6 +1,6 @@
 # Teaching resources
 
-- [Poetry Foundation: Glossary of Poetic Terms](https://www.poetryfoundation.org/education/glossary): reference definitions for metaphor, simile, personification, and hyperbole. English lesson examples are original.
+- [Pasco-Hernando State College Writing Center: Figures of Speech](https://writing-center.phsc.edu/writing/literature/fiction/fiction-figures-speech): accessible institutional reference for figurative-language distinctions. The full destination was reviewed for accuracy and separation; English lesson examples remain original.
 - [Folger Shakespeare Library: Reading Shakespeare's Language](https://www.folger.edu/explore/shakespeares-works/shakespeares-sonnets/reading-shakespeares-language-sonnets/): historical word meanings, unusual word order, and sentence structure. No source passages are reproduced in the English lesson.
 
 - [Matt Pocock's teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md): source of the mission-led, short HTML lesson, reusable asset, retrieval practice, and feedback approach. Adapted here for public concept lessons without private learning records or homework answers. [MIT notice](.agents/skills/homework-teach/LICENSE-MATT-POCOCK.txt).
@@ -25,7 +25,7 @@ Additional sources verified during subject-skill regeneration:
 - [OpenStax: Atomic structure and symbolism](https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism): atomic number, particle counts, and symbols.
 - [OpenStax: Electronic structure of atoms](https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations): main-group valence reasoning and electron configurations.
 - [Royal Society of Chemistry: Atomic data](https://periodic-table.rsc.org/Help/AtomicData): meanings and limits of tabulated atomic quantities.
-- [OpenStax: Vector addition and subtraction](https://openstax.org/books/college-physics-2e/pages/3-2-vector-addition-and-subtraction-graphical-methods): direction-dependent vector combination.
+- [Math Is Fun: Vectors](https://www.mathsisfun.com/algebra/vectors.html): direction-dependent addition and subtraction, with representative calculations independently checked during source review.
 - [OpenStax: Phase transitions](https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions): physical phase changes and energy.
 
 The chemistry sequence uses original prerequisite models and independently selected worked structures and transfer cases. The printable field guide links the four lessons and their glossaries. Numerical classification cutoffs are left to the learner's course convention; no assignment-specific label map or element list is supplied. This resource list records author verification; each lesson's learner-facing source selection is reviewed separately against its supplied input.

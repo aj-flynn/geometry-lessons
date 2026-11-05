@@ -1,3 +1,19 @@
+# Current English reference correction: Astra 100/100
+
+A fresh independent Astra/high reviewer assessed all 23 lesson categories at their full rubric weights, total 100/100, and the English-scoped process at 30/30, 20/20, 20/20, 15/15, 15/15, total 100/100. A blocked learner reference was replaced with the accessible PHSC figures-of-speech reference in both the lesson and printable reference. Full learner destinations and both private input pages were independently inspected. The score ties the previous candidate, with a demonstrated source-access improvement.
+
+The reviewer exercised every practice branch, retries, keyboard navigation, responsive layouts, actual browser 200% zoom, reduced motion, no-JavaScript submission safety, print restoration, and library/reference navigation. No unresolved English boundary was found. There was no native screen-reader audit or learner-retention study. Shared infrastructure changed during this review; the final publication checks below cover integration. Opus review remains pending.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| lessons/0002-close-reading-dialogue.html | 8e9d52e2229bbd3fb07210f783847ac0a4934c0664ae268edd9cf09934563933 |
+| reference/close-reading.html | 7650e5c23bd15a8f655e599d5b0fcccaebb4ee52e8c5c2ca211ee029c4995b1c |
+| .agents/skills/english-teach/SKILL.md | 681500f6684e7acc4c785825e4189fe689ca82ebc44e98de6ddf53a08d90cb13 |
+
+Loaded asset bytes are unchanged from the preceding review below.
+
+---
+
 # English candidate 2 independent assessment
 
 Date: 2026-11-05 UTC. Reviewer: fresh-context `gpt-6-astra`, reasoning `high`. **Lesson 100/100; English-scoped reusable process 100/100.** No material defect found. These are independent judgments about this fixed candidate, not proof of learner mastery or current-candidate deployment.

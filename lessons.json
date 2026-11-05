@@ -15,7 +15,7 @@
         "homeworkSeparation": true,
         "math": true,
         "accessibility": true,
-        "sha256": "3bab9fce8409140bf7abd1f38563ec5f5fb99f361d3d15b59cbb3c0c0f95ee63",
+        "sha256": "eb93b583ad0d51813058270db18486f621982a74d8a8dadb72adc570525662f6",
         "accuracy": true
       },
       "subject": "Geometry"
@@ -35,7 +35,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "64b12e8ada56774cd7c585df47c45f37832655f810b7fdc4475d22a6111fa188"
+        "sha256": "8e9d52e2229bbd3fb07210f783847ac0a4934c0664ae268edd9cf09934563933"
       }
     },
     {
@@ -89,7 +89,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "def6db4e1c986729ca639d78442fb696fbc489398b4e842502a2c978a59ec6dc"
+        "sha256": "3fd7115f418b465155a2f5fd9bcfa8bf2207736bf6bce7f9437d9db8702309ee"
       }
     },
     {
@@ -107,7 +107,7 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "bde337b15a20982daee3c5d93db839b1fafaf393482a55618d94ac01577ca24b"
+        "sha256": "cd9a63dabf079770baea6b46add100061f75672dfb45e4a58d109d2a4659e538"
       }
     }
   ]

@@ -1,3 +1,67 @@
+# Current geometry candidate: Astra 100/100
+
+Fresh independent Astra/high assessed the lesson and geometry-scoped reusable process at 100/100. This revision adds worked and transferred mark-derived correspondence and resolves diagram label clipping. The preceding unpublished candidate scored 98/100 for missing this teaching branch; it was corrected before publication. Opus review is pending.
+
+```json
+{
+  "reviewer": "Independent fresh gpt-6-astra high geometry_candidate_five",
+  "lessonScore": 100,
+  "processScore": 100,
+  "categories": {
+    "A1": 7,
+    "A2": 12,
+    "A3": 3,
+    "A4": 3,
+    "B1": 3,
+    "B2": 3,
+    "B3": 5,
+    "B4": 3,
+    "B5": 4,
+    "B6": 2,
+    "C1": 3,
+    "C2": 4,
+    "C3": 3,
+    "C4": 2,
+    "C5": 3,
+    "D1": 8,
+    "D2": 7,
+    "E1": 10,
+    "E2": 3,
+    "E3": 2,
+    "F1": 3,
+    "F2": 4,
+    "F3": 3
+  },
+  "processCategories": [
+    30,
+    20,
+    20,
+    15,
+    15
+  ],
+  "unassessed": [],
+  "unresolvedFindings": [],
+  "evidenceSummary": "Ordered and mark-derived correspondence each have worked explanations and distinct transfer. Uniform scale separates angle invariance, lengths, perimeter and area with units and direction. Always/sometimes/never burdens are taught and checked. Private input visually compared; no reproduced assigned solution, identifying material or insufficiently separated example found. Full learner source destinations and diagrams inspected.",
+  "checks": "128 independent Chrome assertions; supplemental marked-branch deep link and keyboard wrong/retry; local-only requests, empty storage, no named form responses. Repository checker and24tests passed. Manifest/dependency hashes match. Fresh generation artifacts demonstrate actual skill-induced teaching changes.",
+  "limits": "Local candidate assessment only, not publication or dual-review completion. No screen-reader conformance audit or learner-retention evidence. Cross-subject instructions reviewed but other private-input generation not rerun. Optional Illustrative Mathematics embeds blank while relevant static explanations/diagrams available. Sandbox browser stall and incorrect supplemental selector resolved before successful verification.",
+  "hashes": {
+    "lessons/0001-similar-polygons.html": "eb93b583ad0d51813058270db18486f621982a74d8a8dadb72adc570525662f6",
+    "assets/similarity.css": "03051d7759eb886c05140b7b7727e2b582e82bcf69861311d41f64473d4f7b01",
+    "assets/similarity.js": "1f3a3da260d55bf2cc1b4c3e2593b0ead28e294d56f299b81c3675933e5de0f9",
+    "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
+    "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
+    "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+    "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+    ".agents/skills/geometry-teach/SKILL.md": "45fb9494f76f126312acd842b580050c5a2140e332b30e065c3c425970ca0a24",
+    ".agents/skills/homework-teach/SKILL.md": "da60e72e895939edcbbce254212e0547f9af38e764a593b86f7bba154d4f2212",
+    ".agents/skills/homework-teach/references/lesson-workflow.md": "8ee9f2626d17cc175d46ef1a6f9122a9dadf7d08b63100a8115976f9767d1485",
+    "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
+  }
+}
+```
+
+---
+
 # Geometry refinement: independent Astra 99.5/100
 
 The lesson and geometry process each scored99.5/100. Dependency-failure resilience was fixed and tested. The remaining label-width finding is retained below; no hard-boundary failure was reported.

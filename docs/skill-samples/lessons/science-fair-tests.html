@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Use a cooling model to make a prediction, read a test record, and explain what makes a fair comparison.">
+  <meta name="description" content="Read temperature changes, test a cooling prediction, and design a fair comparison.">
   <title>What made it cool more?</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
   <link rel="stylesheet" href="../../../assets/cooling.css">
@@ -16,174 +16,201 @@
   <main id="main" class="lesson cooling">
     <a class="return-link" href="../index.html">← Lesson library</a>
     <h1>What made it cool more?</h1>
-    <p class="lead">Make a prediction about cooling, then figure out whether a test can tell you what caused the change.</p>
-    <aside class="warm-up" aria-label="Before you start">
-      <p>A sensor reads 28 °C at first and 24 °C later. How many degrees did the sample cool?</p>
-      <details><summary>Check your start</summary><p>It cooled by 4 °C. Count down from 28 to 24, or subtract 24 from 28. The last reading tells how cool it ended up. The difference tells how much it cooled.</p></details>
+    <p class="lead">Follow energy into or out of a sample. Then decide what a temperature change can tell you.</p>
+    <aside aria-label="Before you start">
+      <p>Two drinks are both at 20 °C now. One started warmer. Which cooled more? If you’re unsure, read the two rows below.</p>
     </aside>
-    <p><a href="#glossary">Open the glossary</a> for words and units.</p>
+    <p><a href="#glossary">Glossary</a></p>
 
-    <section aria-labelledby="prediction">
-      <h2 id="prediction">1. Give your prediction a reason</h2>
-      <p>A <strong>hypothesis</strong> is a possible answer to a question that a test can check. To judge one, say what you expect to happen and give a reason based on how the system works.</p>
-      <p>A model workshop makes two kinds of solid spacers. In a small trial, taking 8 joules (J) of energy out of a 1-gram (g) piece of gray spacer lowered its temperature by 4 °C. Taking 8 J out of a 1 g piece of tan spacer lowered its temperature by 2 °C. These trial values are invented.</p>
-      <p><strong>Hypothesis.</strong> If two larger pieces of equal mass lose the same amount of energy, the gray spacer will cool by more degrees.</p>
-      <p><strong>I agree with this prediction</strong> for a similar temperature range. With the mass and energy loss matched in the trial, gray cooled by more. Tan needs more energy taken away per gram for each degree it cools. That material property is called <strong>specific heat</strong>. The trial gives a reason to expect a larger drop for gray in the new test. The new readings will show whether the prediction holds.</p>
+    <section aria-labelledby="readings">
+      <h2 id="readings">Read the change</h2>
+      <table>
+        <caption>Made-up thermometer readings for two drinks</caption>
+        <thead><tr><th scope="col">Drink</th><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">A</th><td>26 °C</td><td>20 °C</td></tr>
+          <tr><th scope="row">B</th><td>23 °C</td><td>20 °C</td></tr>
+        </tbody>
+      </table>
+      <p>The thermometer gives a reading at each time. Both drinks end at 20 °C. Drink A has farther to fall from its starting reading.</p>
+      <p><strong>Goal.</strong> Find each drink’s signed temperature change, written ΔT (say “delta T”). The sign shows the direction.</p>
+      <ol class="steps">
+        <li>Subtract the before reading from the after reading. Use degrees Celsius (°C) for the calculation.</li>
+        <li>For A, ΔT = (20 − 26) °C = −6 °C.</li>
+        <li>For B, ΔT = (20 − 23) °C = −3 °C.</li>
+      </ol>
+      <p>Both negative signs show cooling. A dropped 6 °C and B dropped 3 °C. The two <em>readings</em> are measured. The <em>change</em> is calculated.</p>
       <div class="practice">
-        <h3>Try a new prediction</h3>
-        <p>In another trial, an equal-mass cork bead and a glass bead lose the same amount of energy and cool by the same number of degrees, within the sensor’s precision. A teammate predicts that a repeat under the same conditions will give the glass bead a larger drop. Do you agree? Give a reason from the trial.</p>
-        <details><summary>Compare and retry</summary><p>The trial gives you a reason to disagree with that prediction. When both beads lost the same energy, their measured drops were alike. The fact that they are made of different materials leaves the size of the drops open. Try again with a new trial result. If the glass bead had cooled by more degrees, how would that change your reason?</p></details>
-      </div>
-    </section>
-
-    <section aria-labelledby="mechanism">
-      <h2 id="mechanism">2. Follow the energy</h2>
-      <p><strong>Thermal energy transfer</strong> is energy moving from a warmer place to a cooler one. A warm tile on a colder surface can lose energy to that surface. How far its temperature drops depends on how much energy the tile loses, its material and its <strong>mass</strong>, the amount of matter in it.</p>
-      <p>Think of a whole sample and the energy it needs to lose to cool by one degree. That amount is its <strong>heat capacity</strong>. A stack of two identical tiles has twice the heat capacity of a single tile. It must lose twice the energy to cool by the same number of degrees. The material’s specific heat stays the same.</p>
-      <figure>
-        <svg viewBox="0 0 330 184" role="img" aria-labelledby="tiles-title tiles-desc">
-          <title id="tiles-title">Equal energy removed from different masses of the same material</title>
-          <desc id="tiles-desc">Both samples lose 24 joules. A single tile with heat capacity 4 joules per degree Celsius cools by 6 degrees. A pair of tiles with total heat capacity 8 joules per degree Celsius cools by 3 degrees.</desc>
-          <g fill="none" stroke="#163f3c" stroke-width="3">
-            <path d="M83 72V20m-7 7 7-7 7 7M248 49V20m-7 7 7-7 7 7"/>
-            <rect x="33" y="74" width="100" height="24" rx="3" fill="#c4e2d8"/>
-            <rect x="198" y="74" width="100" height="24" rx="3" fill="#c4e2d8"/>
-            <rect x="198" y="50" width="100" height="24" rx="3" fill="#c4e2d8"/>
-          </g>
-          <g fill="#133431" text-anchor="middle" font-family="Arial, sans-serif" font-size="17">
-            <text x="83" y="17">24 J out</text><text x="248" y="17">24 J out</text>
-            <text x="83" y="124">One tile</text><text x="248" y="124">Two tiles</text>
-            <text x="83" y="148">4 J per °C</text><text x="248" y="148">8 J per °C</text>
-            <text x="83" y="174" font-weight="700">Cools by 6 °C</text><text x="248" y="174" font-weight="700">Cools by 3 °C</text>
-          </g>
-        </svg>
-        <figcaption>In this made-up model, each sample loses 24 J. One tile needs to lose 4 J per °C and drops 6 °C. Two identical tiles together need to lose 8 J per °C and drop 3 °C. The arrows show energy leaving. The drawing shows the number of tiles and has no length scale.</figcaption>
-      </figure>
-      <p><strong>Predict before testing.</strong> If the same 24 J leaves three tiles together, will they drop by more or fewer degrees than the pair? Why?</p>
-      <div class="model-controls" data-cooling-model hidden>
-        <label for="tile-count">Number of identical tiles</label>
-        <select id="tile-count">
-          <option value="1">1 tile</option>
-          <option value="2" selected>2 tiles</option>
-          <option value="3">3 tiles</option>
-          <option value="4">4 tiles</option>
-        </select>
-        <button type="button" data-model-test>Test prediction</button>
-        <button type="button" data-model-reset>Reset</button>
-        <p data-model-result role="status"></p>
-      </div>
-      <details data-model-static><summary>Compare all four model settings</summary><p>One, two, three and four tiles drop by 6 °C, 3 °C, 2 °C and 1.5 °C. Three tiles need to lose 12 J for each degree. The 24 J loss is enough for a 2 °C drop.</p></details>
-      <p>The model follows the tiles only. It assumes every tile in a sample reaches the same temperature, with no melting or freezing and no other energy changes. It starts with a known amount of energy lost. A real cold surface can remove energy at different rates, so you would need evidence of how much energy each sample lost.</p>
-      <div class="practice">
-        <h3>Check the temperature readings</h3>
-        <p>Two reusable blocks go into a cool chamber. One goes from 31 °C to 26 °C. The other goes from 38 °C to 30 °C. How many more degrees did the second block cool than the first?</p>
-        <form data-practice data-expected="3" data-tolerance="0"
-          data-hint="Work out the temperature drop for each block first. Compare the two drops, then retry."
-          data-mistakes='{"8":"Eight degrees is the second block’s full drop. Compare it with the first block’s drop, then retry.","4":"Four degrees is the gap between the final readings. Compare how much each block cooled, then retry.","5":"Five degrees is the first block’s full drop. Find the second drop too, then compare and retry."}'
-          data-success="The second block dropped 8 °C and the first dropped 5 °C. Their drops differ by 3 °C. Explain why the warmer block at the end could still cool by more.">
-          <label for="drop-gap">Difference between the drops in °C</label>
-          <div class="controls">
-            <input id="drop-gap" type="number" min="0" step="1" required>
-            <button type="submit" disabled>Check</button>
-          </div>
+        <h3>A new reading</h3>
+        <p>A thermos warms from 16 °C to 21 °C. Write the signed change and explain its sign.</p>
+        <form class="controls" data-practice data-expected="5" data-tolerance="0"
+          data-hint="Subtract the starting reading from the ending reading and check the sign. Try again."
+          data-mistakes='{"-5":"You subtracted in the opposite order. Start with the after reading and try again.","21":"That is the after reading. Subtract the before reading to find the change."}'
+          data-success="Yes. The change is +5 °C. The positive sign shows that the thermos warmed.">
+          <label for="change">Signed change (°C)</label>
+          <input type="number" id="change" step="any" required>
+          <button type="submit" disabled>Check the change</button>
           <p class="feedback" data-feedback role="status"></p>
         </form>
-        <details class="static-feedback"><summary>Compare your calculation</summary><p>The first drop is 31 °C − 26 °C = 5 °C. The second drop is 38 °C − 30 °C = 8 °C. The difference is 8 °C − 5 °C = 3 °C. The second block started much warmer, so it can end warmer even after dropping farther.</p></details>
-        <p>Retry with two new readings, 33 °C to 27 °C and 30 °C to 29 °C. How much larger is the first drop?</p>
-        <details><summary>Check the retry</summary><p>The drops are 6 °C and 1 °C. The first drop is 5 °C larger.</p></details>
+        <details class="static-feedback"><summary>Compare your calculation</summary>
+          <p>ΔT = (21 − 16) °C = +5 °C. If you got −5 °C, check which reading came first in your subtraction. If you got 21 °C, you used the ending reading alone.</p>
+        </details>
+        <details><summary>Try another pair</summary>
+          <p>A jar cools from 24 °C to 17 °C. Give the signed change.</p>
+          <details><summary>Check the retry</summary><p>ΔT = (17 − 24) °C = −7 °C.</p></details>
+        </details>
       </div>
     </section>
 
-    <section aria-labelledby="fairness">
-      <h2 id="fairness">3. Find a second cause</h2>
-      <p><strong>Question.</strong> Do two equal-mass handle materials cool by different amounts when they lose the same energy?</p>
-      <p>In a workshop’s first trial, both handle blanks have the same mass and start at 35 °C. They rest on the same cold bench for one minute. Blank P sits directly on the bench. A thick felt pad sits under blank Q. Each sensor measures the temperature of its blank.</p>
-      <figure class="causal">
-        <ol aria-label="Trace the workshop test from setup to claim">
-          <li><strong>Set up the test.</strong> Change the material. Match the mass and set up the energy transfer.</li>
-          <li><strong>Trace what changes the drop.</strong> The energy lost and the sample’s heat capacity both affect the drop.
-            <p class="side-path"><strong>Another path in this trial.</strong> The felt makes it harder for energy to move to the cold bench. That can change the energy lost during the minute, and in turn the temperature drop.</p>
-          </li>
-          <li><strong>Measure and compare.</strong> Measure the starting and ending temperatures. Then calculate each drop as starting reading minus ending reading. Compare the calculated drops.</li>
-          <li><strong>Make a claim.</strong> If two causes could explain the difference, the readings alone leave the cause uncertain. A matched test can give evidence about material for these samples and conditions.</li>
-        </ol>
-        <figcaption>Both paths lead to the same sensor result. A material change can change heat capacity. A change in contact with the bench can change energy loss.</figcaption>
+    <section aria-labelledby="prediction">
+      <h2 id="prediction">Give a prediction a reason</h2>
+      <p>A sample is the portion you test. When a warmer sample touches a cooler surface, energy moves from the sample to the surface. The sample cools. If the sample starts cooler than the surface, the energy moves into the sample and the sample warms. Here we look at small changes with no melting or boiling.</p>
+      <figure class="energy-transfer">
+        <svg viewBox="0 0 290 78" role="img" aria-labelledby="energy-title energy-desc">
+          <title id="energy-title">Energy leaves a warm sample</title>
+          <desc id="energy-desc">The arrow points from the warmer sample on the left to the cooler surface on the right.</desc>
+          <rect x="3" y="4" width="97" height="68" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <rect x="190" y="4" width="97" height="68" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M110 48 H178 M168 41 L178 48 L168 55" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g fill="currentColor" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+            <text x="51" y="32">Warmer</text><text x="51" y="51">sample</text>
+            <text x="145" y="35">Energy</text>
+            <text x="238" y="32">Cooler</text><text x="238" y="51">surface</text>
+          </g>
+        </svg>
+        <figcaption>Energy moves from the warmer sample to the cooler surface when they touch. The arrow shows direction only.</figcaption>
       </figure>
-      <p><strong>Repair and reason.</strong> Give both blanks matching contact with the cold surface. Use a meter set up to track the energy leaving each blank, and stop each run at the same energy loss. That matches the energy loss going into the comparison. Equal time on the same bench alone leaves the amount of energy lost uncertain. In a real setup, check for energy leaving through other paths, such as into the air.</p>
-      <p><strong>Check the mass link too.</strong> Suppose one blank had an extra layer of its own material. Even with equal energy loss, that blank could cool less because more material must change temperature. Weigh the blanks and use equal masses. This repair matches how much material cools, while the energy repair matches how much energy leaves.</p>
+      <p>Some materials take more energy per gram to change by one degree than others. That property is called <strong>specific heat</strong>. A gram is a unit of mass, or how much matter a sample contains. A joule (J) is a unit of energy.</p>
+      <h3>Worked prediction · Two handle inserts</h3>
+      <p>A designer asks if two solid inserts will cool by the same number of degrees when each loses 240 J. Both test pieces have the same mass. Earlier tests of equal-mass pieces found that insert P takes 120 J to warm by 1 °C and insert R takes 60 J. These values are made up for practice.</p>
+      <p>The designer’s <strong>hypothesis</strong>, a testable idea, is that the drops will match. I disagree with the prediction that the drops will match. With the same mass, P takes more energy per degree to warm. P also has to <em>lose</em> more energy per degree to cool. So removing the same energy from each should give P the smaller drop. That’s a reason to test the prediction. We still need to measure the two drops.</p>
       <div class="practice">
-        <h3>Try the same reasoning with a different clue</h3>
-        <p>Two samples of the same material lose the same measured energy. One is a whole strip, and the other is a piece cut from an identical strip. Both are solid and start at the same temperature. A student says the smaller piece must have lost more energy because it cooled farther. How would you reply?</p>
-        <details><summary>Compare and retry</summary><p>Both energy losses were measured and match. The piece has less mass, so it needs to lose less energy per degree of cooling. Try this again with the same energy loss from two identical whole strips. Which cause from this check goes away?</p></details>
+        <h3>Make a call · Chilled bottles</h3>
+        <p>Equal masses of two liquids begin at 8 °C. Each gains the same amount of energy from a warm bath. Earlier tests showed that the same mass of liquid L needed more energy to warm by one degree than liquid M. A student predicts that L will have the bigger rise. Do you agree? Explain what happens to the same energy in the two liquids.</p>
+        <details><summary>Compare your reasoning</summary>
+          <p>I’d predict the smaller rise for L. Each degree of rise uses more energy for L, so the same gain buys fewer degrees. If you chose L for the bigger rise, reread what the earlier tests measured. They compared the energy needed for one degree.</p>
+        </details>
+        <details><summary>Retry with one fact changed</summary>
+          <p>The earlier tests now show that L and M need the same energy per degree at this mass. Predict the rises and explain.</p>
+          <details><summary>Check the retry</summary><p>Expect the same rise for the same energy gain. Two materials can give the same change if they need the same energy per degree at that mass.</p></details>
+        </details>
       </div>
     </section>
 
-    <section aria-labelledby="audit">
-      <h2 id="audit">4. Audit a new test record</h2>
-      <p>A team wants to test a prediction about two prototype case liners, R and S. They predict R will cool farther than S if equal masses lose equal amounts of energy. Here is their first run. The numbers are invented for practice.</p>
-      <p>Both liners start at 32 °C and use identical 12 g trays. The same cooling fan runs at the same setting in both trials whenever it is on. A latch stops the fan during a pause. The sensors read the liners themselves.</p>
-      <div class="test-record" aria-label="Two trial cards">
-        <article>
-          <h3>Liner R</h3>
-          <p>Scale with tray <strong>42 g</strong></p>
-          <ol class="run-strip" aria-label="Fan record for R">
-            <li><strong>0 min</strong> fan starts</li>
-            <li><strong>4 min</strong> final reading</li>
-          </ol>
-          <p>Final reading <strong>23 °C</strong></p>
-        </article>
-        <article>
-          <h3>Liner S</h3>
-          <p>Scale with tray <strong>57 g</strong></p>
-          <ol class="run-strip" aria-label="Fan record for S">
-            <li><strong>0 min</strong> fan starts</li>
-            <li><strong>1 min</strong> fan pauses</li>
-            <li><strong>3 min</strong> fan restarts</li>
-            <li><strong>4 min</strong> final reading</li>
-          </ol>
-          <p>Final reading <strong>28 °C</strong></p>
-        </article>
-      </div>
-      <ol class="audit-prompts">
-        <li>Find and compare the temperature drops. What does the record show about this run?</li>
-        <li>Find two changes you would make to the procedure. For each, use a clue from the cards and explain how the change helps test the prediction.</li>
-        <li>Do you agree with the team that this run shows R’s <em>material</em> made it cool farther? Explain what more you would need to see.</li>
+    <section aria-labelledby="path">
+      <h2 id="path">Trace what could change the result</h2>
+      <figure>
+        <ol class="causal">
+          <li><strong>Ask.</strong> Would the material change the temperature drop?</li>
+          <li><strong>Set up.</strong> Choose the samples and how to cool them.</li>
+          <li><strong>Transfer.</strong> Energy leaves each warmer sample for the cooler device.
+            <ul class="side-paths">
+              <li>Different mass → different energy needed per degree</li>
+              <li>Different run → possibly different energy transferred</li>
+            </ul>
+          </li>
+          <li><strong>Measure.</strong> Read each sample before and after.</li>
+          <li><strong>Calculate.</strong> Subtract before from after for each sample.</li>
+          <li><strong>Claim.</strong> Compare the drops. Judge whether the setup lets you credit the material.</li>
+        </ol>
+        <figcaption>Follow the arrows from the question to the claim. A different mass can change the energy needed per degree at the transfer step. A different run can change how much energy leaves there. Either can affect the same calculated change.</figcaption>
+      </figure>
+      <h3>Worked repair · A longer run on the same cooler</h3>
+      <p>A test cooler removes energy from a warm pad at a steady 30 joules each minute (30 J/min). A short run takes 2 min and a long run takes 4 min. Imagine the same kind and mass of pad in both runs.</p>
+      <p><strong>Goal.</strong> Decide if reusing the cooler gives the pads equal energy losses.</p>
+      <ol class="steps">
+        <li>Short run loses (30 J/min) × (2 min) = 60 J.</li>
+        <li>Long run loses (30 J/min) × (4 min) = 120 J.</li>
+        <li>The longer run removes more energy. It can produce a larger drop even with the same material.</li>
       </ol>
-      <details><summary>Compare your audit after trying it</summary>
-        <p><strong>Read the result.</strong> R cooled by 32 °C − 23 °C = 9 °C. S cooled by 32 °C − 28 °C = 4 °C. R cooled farther in this run.</p>
-        <p><strong>Match the sample masses.</strong> The tray accounts for 12 g in each reading. R is 42 g − 12 g = 30 g. S is 57 g − 12 g = 45 g. Weigh equal masses of the liners before loading the trays. For the same material and energy loss, a larger mass would cool less. The mass difference alone could help explain the pattern.</p>
-        <p><strong>Match and check energy loss.</strong> R got four minutes of moving air. S got one minute before the pause and one minute after it, for two minutes of moving air. Moving air can take energy away faster than still air. Remove the pause and use matching fan conditions. Check energy loss with a setup that can track the energy leaving each liner, and compare at the same energy loss. Even steady fans at the same setting can cool samples at different rates.</p>
-        <p><strong>Decide what the evidence supports.</strong> The run shows a difference in cooling. It leaves the team’s explanation open. The larger mass and the pause could both help explain S’s smaller drop. If R cools farther in repeated tests with matched mass, measured energy loss and comparable temperature readings, that would support the prediction for those conditions.</p>
-      </details>
+      <p>For this cooler, set both runs to the same time and check that the rate stays the same. A real device can transfer energy at different rates as contact or temperature changes. A meter that tracks how much energy actually leaves the sample can check the total.</p>
+
+      <h3>Worked repair · More of the same material</h3>
+      <p>Imagine two identical warm gel pouches that each lose the same share of energy. Compare them with one pouch losing that whole amount. The pair has more mass, so less energy leaves each gram. The pair cools fewer degrees. When you want to compare <em>materials</em>, weigh out the same mass so that an extra amount of material can’t explain the drop.</p>
+      <figure class="model">
+        <h3>Test one change</h3>
+        <p>In this made-up cooler, each 50 g of gel takes 30 J to cool by 1 °C. The cooler removes 30 J/min from the whole sample. It takes 2 min to cool 50 g from 24 °C to 22 °C.</p>
+        <p>Predict the final temperature if you use 150 g for those same 2 min. Then predict what happens if you keep 50 g and run it for 3 min. Which link changed in each case?</p>
+        <form class="model-form" data-cooling hidden>
+          <fieldset>
+            <legend>Choose a test</legend>
+            <label><input type="radio" name="test" value="mass" required> Use 150 g for 2 min</label>
+            <label><input type="radio" name="test" value="time"> Use 50 g for 3 min</label>
+          </fieldset>
+          <div class="controls">
+            <button type="submit" disabled>Show the result</button>
+            <button type="reset">Reset model</button>
+          </div>
+          <p role="status" class="feedback" data-result></p>
+        </form>
+        <details data-model-fallback><summary>Compare both tests</summary>
+          <p>At 150 g for 2 min, 60 J still leaves the sample. Each degree takes 90 J, so it cools about 0.7 °C to about 23.3 °C.</p>
+          <p>At 50 g for 3 min, 90 J leaves the sample. Each degree still takes 30 J, so it cools 3 °C to 21 °C.</p>
+        </details>
+        <figcaption>The system we track is the gel. This model assumes an even temperature inside it, no energy passing to the air or holder, a steady rate into the cooler, and no change of state. A real cooler may remove energy at a changing rate.</figcaption>
+      </figure>
       <div class="practice">
-        <h3>Try a repair again</h3>
-        <p>The team now uses 36 g of each liner, the fan runs without a pause, and the sensor records the middle of R and the edge of S. Which part of the test would you check first now? Explain how it could change the reading.</p>
-        <details><summary>Compare your retry</summary><p>Check where and when the temperature is read. An edge in moving air can be cooler than the middle. Use comparable sensor positions and let each sample reach an even temperature before taking the final reading, accounting for any energy it loses while you wait. Keep checking that the two samples lose the same energy.</p></details>
+        <h3>Check a boundary</h3>
+        <p>One run still removes 30 J every minute. In another run, poor contact lets only 15 J leave each minute. Both last 2 min. Can you treat the energy losses as equal? How would you check?</p>
+        <details><summary>Compare your check</summary>
+          <p>The second run removes 30 J and the first removes 60 J. The same time allows different totals at different rates. Check the actual energy removed or check the rate during each run as well as timing it.</p>
+        </details>
+        <details><summary>Retry with a new setting</summary>
+          <p>The second run still removes 15 J/min. Choose a time for it to match the first run’s loss.</p>
+          <details><summary>Check the retry</summary><p>(15 J/min) × (4 min) = 60 J. This works while that rate stays steady.</p></details>
+        </details>
       </div>
+    </section>
+
+    <section aria-labelledby="transfer">
+      <h2 id="transfer">Judge a trial on your own</h2>
+      <p>A shop compares resin and rubber seals. If the same energy leaves each sample, will the two materials cool by different amounts?</p>
+      <p>Each seal blank has a mass of 25 g, regardless of material. The shop uses the same insulated test chamber on the same setting for each run. The log shows when the chamber is switched on and off. The shop measured temperatures just before and after each run. These records are made up.</p>
+      <table>
+        <caption>Pilot log · seal batches</caption>
+        <thead><tr><th scope="col">Batch</th><th scope="col">Blanks</th><th scope="col">Chamber on</th><th scope="col">Chamber off</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Resin</th><td>3</td><td>10:12</td><td>10:15</td></tr>
+          <tr><th scope="row">Rubber</th><td>5</td><td>10:31</td><td>10:37</td></tr>
+        </tbody>
+      </table>
+      <p>Both batches began at 30 °C. The resin ended at 29 °C and the rubber ended at 28 °C. The tester claims the material caused the difference. Decide whether the log supports that claim. Write two specific changes to the plan and a separate reason for each. Explain what you’d compare after the new runs.</p>
+      <details><summary>Compare after you have a plan</summary>
+        <p>The readings show drops of 1 °C and 2 °C. They leave the cause uncertain. Here’s one plan for a second trial:</p>
+        <ul>
+          <li>Load three blanks of each material. The pilot used (3 × 25) g = 75 g and (5 × 25) g = 125 g. Changing the mass changes how much energy the batch must lose per degree.</li>
+          <li>Use an automatic three-minute shutoff on both runs. The pilot runs lasted 3 min and 6 min. The second run had more time to remove energy, even at the same setting. Keep the contact with the cooler the same. Check with an energy meter at the cooling surface that the two batches actually lose the same energy.</li>
+        </ul>
+        <p>Compare the changes from the before readings. A difference after matching conditions would support a material effect for these batches under this setup. If you only changed the batch size, check whether the two old run lengths still affect the result.</p>
+      </details>
+      <details><summary>Retry with a revised log</summary>
+        <p>A coworker uses three blanks in each batch. Both runs last 3 min. A meter reports losses of 120 J for resin and 90 J for rubber. Explain what needs repair now and why the timer alone missed it.</p>
+        <details><summary>Check the retry</summary><p>Keep the batch masses matched and use the meter to stop each run at the same energy removed. The new readings show different amounts removed over the same time, so the average rates differed. The temperature changes can reflect that difference.</p></details>
+      </details>
+      <p><strong>Explain your choice.</strong> When do you subtract thermometer readings, and when do you inspect a procedure? Tell a partner why one method can’t do both jobs.</p>
     </section>
 
     <section aria-labelledby="recall">
-      <h2 id="recall">Choose your next move</h2>
-      <p>In a new cooling report, one person says “X ended colder,” and another says “X’s material caused a bigger drop.” Which should you tackle first, calculating a change or checking the setup? Explain which move answers each part of the report.</p>
-      <p>Next time, before opening this page, sketch one path from a setup choice to a temperature drop. Then add a second path that could explain the same drop. Bring any question about your reasoning to the private chat.</p>
+      <h2 id="recall">Come back to it</h2>
+      <p>Tomorrow, recall two reasons the same material could cool by different amounts in two runs. For each, explain which part of the path changes. Then reread the diagram to check.</p>
     </section>
-
     <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt>Hypothesis</dt><dd>A possible answer to a question that a test can check.</dd>
-        <dt>Thermal energy transfer</dt><dd>Energy moving from warmer matter to cooler matter because of a difference in temperature.</dd>
-        <dt>Joule (J)</dt><dd>A unit for measuring energy.</dd>
-        <dt>Mass (g for grams)</dt><dd>The amount of matter in an object. A gram is a unit of mass.</dd>
-        <dt>Degree Celsius (°C)</dt><dd>A unit for a temperature reading or a difference between readings.</dd>
-        <dt>Heat capacity</dt><dd>The energy a whole sample needs to gain or lose to change temperature by one degree, while staying in the same state.</dd>
-        <dt>Specific heat</dt><dd>The energy needed per unit mass of a material for a temperature change of one degree, while staying in the same state.</dd>
+        <dt>Sample</dt><dd>The portion being tested.</dd>
+        <dt>Mass (g)</dt><dd>How much matter is in the sample, measured here in grams.</dd>
+        <dt>Energy transfer (J)</dt><dd>Energy moving into or out of the sample, measured in joules.</dd>
+        <dt>Rate (J/min)</dt><dd>How many joules transfer each minute.</dd>
+        <dt>Temperature (°C)</dt><dd>How warm or cold a sample is, measured here in degrees Celsius.</dd>
+        <dt>Temperature change (ΔT)</dt><dd>The after reading minus the before reading.</dd>
+        <dt>Specific heat</dt><dd>The energy needed to warm one gram of a material by one degree Celsius.</dd>
+        <dt>Hypothesis</dt><dd>A testable idea about what happens or why.</dd>
+        <dt>System</dt><dd>The sample or group of objects we choose to track.</dd>
       </dl>
     </section>
-
     <section class="sources" aria-labelledby="sources">
       <h2 id="sources">Read a little more</h2>
-      <p>Figure 14.4 shows how mass, material and temperature change are related. <a href="https://openstax.org/books/college-physics-2e/pages/14-2-temperature-change-and-heat-capacity">OpenStax, Temperature Change and Heat Capacity</a></p>
+      <p>Read about the energy needed to warm small and large iron pans. <a href="https://openstax.org/books/chemistry/pages/5-1-energy-basics">OpenStax · Energy Basics</a></p>
     </section>
   </main>
 </body>

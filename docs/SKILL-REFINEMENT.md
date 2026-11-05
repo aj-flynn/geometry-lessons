@@ -52,3 +52,5 @@ Sol 6.1 High revised the Chemistry lesson pages and the corresponding subject sk
 ## Assignment-level benchmark
 
 The Grade 10 two-reading argument sample earned 100/100 in a fresh independent Astra lesson review. One focused Sol 6.1 check during generation found a lighter evidence-selection demand. The author restored the missing reading demand and revised once. The independent process score was 99/100 on the clean test packet, where a linked references file was absent. The publication includes that file. The sample index links to the public assignment and the generated lesson. Private source comparisons stay outside GitHub.
+
+A fresh Astra assessment of the exact assembled English release scored the exercised process 100/100. It verified the restored references, all 28 repository tests, and the unchanged teaching content after relocation into the sample gallery.

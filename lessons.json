@@ -19,7 +19,7 @@
         "accuracy": true,
         "dependencies": {
           "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
           "assets/similarity.css": "e7ebc637b24bdc27646529c13c012e75be74282c821e1d6b98dcc7b946c68820",
           "assets/similarity.js": "80e5deac7d6a7a6f1606767de4bdf8142f199e528e21209186255d24cddde1f4",
@@ -49,7 +49,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
@@ -77,7 +77,7 @@
         "sha256": "8a930bd35deebc11faf96b06273ceaeb18a441961d913fb551d447248cede4f4",
         "dependencies": {
           "assets/english.css": "f1178a6db4f124892cf31bb71a2e865b9eaa2dc7552581b723c534554cbe7d9d",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/reading.css": "ff96479ef805c1831a449a61cb01f716cca3cc032df6492895dd129fc79c1f12",
           "assets/reading.js": "d89058c14099456f27557492dcc04f9891658748aeae2b3ce9231a9842216fd8",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
@@ -107,7 +107,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
@@ -135,7 +135,7 @@
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
@@ -163,7 +163,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
@@ -191,7 +191,7 @@
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
@@ -219,7 +219,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
@@ -247,7 +247,7 @@
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
@@ -275,7 +275,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
@@ -303,7 +303,7 @@
         "dependencies": {
           "assets/chemistry.css": "fefd396304d27c29e0cfbc2c315a767ece0103fd7666a3473a4ac2850a5ef17a",
           "assets/chemistry.js": "15ca3aa5afb0c74643667b289c7a2add7c61b5f5fa0ebdbf9984a889ed268c9c",
-          "assets/lesson.js": "cbec41eb8ca9dc4576785e848440b91b06ee3f26f48b745f50c6ef2f015de0e3",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
           "assets/site.css": "95c6c303fe33fcc66125e82a26669aed8bed91af9e3e761105e4702681f1acbf",
           "reference/chemistry-field-guide.html": "f4f4349c61c6309103e78733a95fa82f72ffeb3a1780bdef5828b1dc5ab773a5"
         },
@@ -331,7 +331,7 @@
           "templates/lesson.html": "2a0d0225f08f364bab88b644fd1461f6c941585c33a459089e6700d4135b8473",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
           "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
-          "tests/interactions.test.mjs": "517b4580c627eee1b946b9f2ac9847fe35023ee7586bb61f753469f16c3cd529",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
           "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",

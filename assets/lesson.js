@@ -71,7 +71,10 @@ for (const form of document.querySelectorAll('form[data-practice]')) {
       feedback.textContent = 'This practice check is unavailable. Explain your reasoning in the chat.';
       return;
     }
-    const correct = Math.abs(entered - expected) <= tolerance;
+    const difference = Math.abs(entered - expected);
+    // Keep authored decimal boundaries inclusive despite binary rounding.
+    const rounding = Number.EPSILON * Math.max(Math.abs(entered), Math.abs(expected));
+    const correct = difference <= tolerance || (tolerance > 0 && difference - tolerance <= rounding);
     let hint = form.dataset.hint || 'Look again at the relationship in the diagram. Try the first hint.';
     try {
       const mistakes = JSON.parse(form.dataset.mistakes || '{}');

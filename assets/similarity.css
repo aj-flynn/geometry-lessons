@@ -46,3 +46,16 @@
 @media print{.geometry-guide .lesson-path{border:0;margin:0}.geometry-guide .lesson-path>summary{background:#fff!important;color:#000!important;padding:14px 0}.geometry-guide .path-content{padding:0}.geometry-guide .lesson-path::after,.geometry-guide .reference-drawer::after,.geometry-guide .goal-note::after{display:none}.geometry-guide .path-stop{display:none}.geometry-guide .path-content section{margin-top:20px}.geometry-guide .lesson-path>summary small{margin-left:0}.geometry-guide details{break-inside:auto}.geometry-guide .shape-comparison svg{max-height:150px}}
 @media print{.geometry-guide details::after{display:none!important}}
 .geometry-guide .shape-comparison svg text{font-size:24px}
+
+/* Geometry reading paths use full-sized diagrams and quieter hint surfaces. */
+.geometry-guide .lesson-path{border:0}.geometry-guide .goal-note{padding:16px 20px;background:var(--accent);max-width:none}
+.geometry-guide .diagram-pair svg{max-height:290px}.geometry-guide svg text{font-size:25px}
+.geometry-guide .path-content details{background:transparent;padding:10px 0}.geometry-guide .path-content details>summary{color:var(--ink);text-decoration:underline;text-underline-offset:.2em}
+.geometry-guide .path-content .practice details{padding:4px 0}.geometry-guide .path-content .area-tiling{background:var(--surface);padding:14px}
+.geometry-guide .practice{margin-block:24px;padding:24px}.geometry-guide .path-content section+section{margin-top:42px}
+.geometry-guide .shape-comparison svg{max-height:230px}.geometry-guide .path-content .prerequisite{padding:8px 18px;background:var(--surface)}
+@media(max-width:600px){.geometry-guide .diagram-pair svg{max-height:270px}.geometry-guide .practice{padding:18px}.geometry-guide .lesson-path>summary small{margin-left:0}.geometry-guide .path-content h2{font-size:26px}.geometry-guide .shape-comparison svg{max-height:220px}}
+
+@media print{.geometry-guide [data-static-only]{display:block!important}.geometry-guide [data-interactive-only]{display:none!important}}
+
+.geometry-guide .practice h4{font-size:21px;line-height:1.2;letter-spacing:-.025em;margin:0 0 12px}.geometry-guide .practice ol{padding-left:1.5em}.geometry-guide .practice li+li{margin-top:12px}

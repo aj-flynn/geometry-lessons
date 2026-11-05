@@ -1,3 +1,80 @@
+# English candidate 2 independent assessment
+
+Date: 2026-11-05 UTC. Reviewer: fresh-context `gpt-6-astra`, reasoning `high`. **Lesson 100/100; English-scoped reusable process 100/100.** No material defect found. These are independent judgments about this fixed candidate, not proof of learner mastery or current-candidate deployment.
+
+Both authorized private input pages were visually inspected. No private source details belong in this report. No privacy, assigned-answer, or consequential subject-accuracy violation was found. The reviewer made no repository edits.
+
+| ID | Category | Score | Main evidence |
+|---|---|---:|---|
+| A1 | Assignment alignment | 7/7 | Meaning, language effects, character inference, evidence selection and unfamiliar wording covered. |
+| A2 | Subject reasoning | 12/12 | Stated events, intended meaning, interpretation, behavior and motives distinguished accurately. |
+| A3 | Sources | 3/3 | Relevant public references and explicitly original examples. |
+| A4 | Representations | 3/3 | Annotations, controls, feedback, glossary and printable reference agree. |
+| B1 | Goals | 3/3 | Practical goal followed through in final practice. |
+| B2 | Prerequisites | 3/3 | Optional observation/inference starting check. |
+| B3 | Cognitive load | 5/5 | Concrete examples before abstractions, manageable sections. |
+| B4 | Vocabulary | 3/3 | Inline definitions and linked glossary/reference. |
+| B5 | Independence | 4/4 | Models through guided checks to independently chosen checking method. |
+| B6 | Pacing | 2/2 | Respectful tone, optional material, navigation and productive retry. |
+| C1 | Original practice | 3/3 | Distinct contexts, varied practice, no answer-position/length dependence. |
+| C2 | Interaction | 4/4 | Retained evidence, prediction, context comparison and explanation. |
+| C3 | Feedback | 3/3 | Misconception-specific reasoning and working retries. |
+| C4 | Retrieval | 2/2 | Immediate recall and later new-line retrieval without mastery claims. |
+| C5 | Transfer | 3/3 | Mixed tasks and uncued diagnosis require a justified next move. |
+| D1 | Design | 8/8 | Coherent typography, palette, spacing and responsive composition. |
+| D2 | Visuals | 7/7 | Exact-word annotation makes evidence-to-claim links visible. |
+| E1 | Accessibility | 10/10 | Semantics, labels, focus, live feedback, keyboard, motion control and layout. |
+| E2 | Control | 3/3 | Reveals/resets/context/practice/print events behave correctly. |
+| E3 | Resilience | 2/2 | Working assets/navigation and useful no-script/print alternatives. |
+| F1 | Privacy | 3/3 | No private input, learner records, transmission or persistent responses. |
+| F2 | Separation | 4/4 | Meaningful separation across all examples, hints, feedback and reference. |
+| F3 | Traceability | 3/3 | Exact hashes; current checker and 22 tests pass; deployment pending honestly. |
+| **Total** | | **100/100** | |
+
+English-scoped process: privacy/authority **30/30**, teaching contract **20/20**, subject accuracy **20/20**, repeatability/compatibility **15/15**, validation/delivery **15/15**. This covers English generation and shared requirements exercised here, not other disciplines or input formats.
+
+Skill-first regeneration: the English instructions were revised to require text-grounded competing interpretations and one genuinely uncued final diagnosis. The affected sequence was then regenerated from those instructions and the same private homework concepts: mapmaker alternatives now use real details but make weaker inferences; a new original organizer scene asks the learner what to check first, without announcing the method. The lesson URL and correct existing content remain stable. Only the English skill and lesson HTML changed from candidate 1; loaded assets are unchanged.
+
+Observed checks: Edge at 1440/768/390px, opening/instructional screenshots; actual 200% browser zoom (outer1440, inner704, DPR2, visualViewport.scale1), no overflow and usable controls; keyboard lens/context operation; every wrong-to-correct practice retry; resets; reduced motion; repeated print-state restoration; local library navigation; no-script disabled controls and static comparisons; 15-page no-script expanded print output with misconceptions and final comparisons. `node scripts/check.mjs` and all22 tests passed independently.
+
+Limits: no full WCAG audit, screen-reader session, additional engine or learner study. Current-candidate publication remains the coordinator's step. Poetry Foundation direct automated retrieval returned403; indexed glossary entries were available. Folger and Shakespeare's Words were accessible. Official teach instructions were inspected; keeping learner records private is an intentional local adaptation. Private source renders were removed after inspection.
+
+Exact SHA-256:
+
+```text
+lessons/0002-close-reading-dialogue.html
+64b12e8ada56774cd7c585df47c45f37832655f810b7fdc4475d22a6111fa188
+assets/site.css
+9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a
+assets/lesson.js
+b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c
+assets/reading.css
+6a82ad7381b54dbc55130da83d92920bc460f9cbd0a6777b5b54383d100e264e
+assets/english.css
+b507f13d66c5c15996300f7c01e2b7339697de4adb984461a0ec1eb0e57dc286
+assets/reading.js
+6d6bf497f58d9bbca428df05f915453e0fc26c279ea69c3af6a8a9193afdda73
+reference/close-reading.html
+8b1ca8778b1f739069fd075c11e09c20d37719b4f930451f6bf11d0326ef4f6a
+.agents/skills/english-teach/SKILL.md
+681500f6684e7acc4c785825e4189fe689ca82ebc44e98de6ddf53a08d90cb13
+.agents/skills/homework-teach/SKILL.md
+d54a88add0e5d5d5c2546e6c033a9f87ab6038d3c8d831fd1cc0a989f36718d6
+.agents/skills/homework-teach/references/lesson-workflow.md
+c29c2e6ded3b2b8a8d616b9333c04d9c5ba9b58273c389db02d9234048da1d42
+.agents/skills/homework-teach/references/independent-refinement.md
+74e6366100da9f03af4cac2ea04452e7f5a748a42326dd9b58c21c2d72eaf89c
+docs/REVIEW-RUBRIC.md
+e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87
+```
+
+Current-candidate independent browser evidence remains outside the public repository in the `english-review-two` scratch directory. Parent owns selected publication, live verification, and subsequent independent Claude review. No score or verdict from this report should be supplied to that reviewer.
+
+
+---
+
+## Earlier fixed-revision reviews
+
 # English skill-led regeneration: independent review evidence
 
 Date: 2026-11-05 UTC. Reviewer for each pass: a separate fresh-context `gpt-6-astra`, reasoning `high`. Scores below are the reviewers' judgments, not author scores. Both reviewers privately visually inspected both authorized English input pages. Source details, comparisons, and learner information are intentionally absent. No privacy, assigned-answer, or consequential subject-accuracy violation was found.

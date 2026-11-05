@@ -1,3 +1,69 @@
+# Geometry refinement: independent Astra 99/100
+
+Lesson and geometry process each scored99/100. No hard-boundary failure. The remaining enhancement-dependency failure is recorded below; the next revision addresses it.
+
+```json
+{
+  "reviewer": "Independent fresh gpt-6-astra high geometry_candidate_two",
+  "lessonScore": 99,
+  "processScore": 99,
+  "categories": {
+    "A1": 7,
+    "A2": 12,
+    "A3": 3,
+    "A4": 3,
+    "B1": 3,
+    "B2": 3,
+    "B3": 5,
+    "B4": 3,
+    "B5": 4,
+    "B6": 2,
+    "C1": 3,
+    "C2": 4,
+    "C3": 3,
+    "C4": 2,
+    "C5": 3,
+    "D1": 8,
+    "D2": 7,
+    "E1": 10,
+    "E2": 3,
+    "E3": 1,
+    "F1": 3,
+    "F2": 4,
+    "F3": 3
+  },
+  "processCategories": [
+    30,
+    20,
+    20,
+    15,
+    14
+  ],
+  "finding": "Blocking lesson.js alone exposes numeric forms while hiding static comparisons. A correct submission reloads the page, clears input, and has no feedback. Gate enhancement on checking-handler readiness and test each required script independently.",
+  "strengths": "All private inputs visually inspected; no source-specific answers, identity or tracking found. Correspondence, directional ratios, dimensional reasoning, all three evidence burdens, fresh transfer, feedback, responsive design and source destinations assessed at full category scores.",
+  "checks": "Independent Chrome157.0.8103.38:93 passing harness assertions; extra blocked lesson.js failure reproduced; fresh screenshots visually inspected; checker and22tests passed.",
+  "limits": "Local candidate only; publication pending at review. No screen-reader session, physical device or full WCAG audit; no claim of learner mastery. Process assessment applies to shared contract as exercised in geometry, not newly tested other subjects.",
+  "hashes": {
+    "lessons/0001-similar-polygons.html": "d0a2927df18e8bd0fa4f34b33ef4848c1a844435d32df83082ccf853f73fca9a",
+    "assets/similarity.css": "c84f8c54c83ef0a03ad24489f22413b901ef3cf710901a2598d3081a376c671e",
+    "assets/similarity.js": "0b3697aaccd920a605817a1caf725ccd5402012c0aa39c4c3c91049163d1331b",
+    "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
+    "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
+    "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+    "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+    ".agents/skills/geometry-teach/SKILL.md": "8cf3755bd3539db7a2f115f830846f62df788511c84625fcfe80cfe920dd3feb",
+    ".agents/skills/homework-teach/SKILL.md": "d54a88add0e5d5d5c2546e6c033a9f87ab6038d3c8d831fd1cc0a989f36718d6",
+    ".agents/skills/homework-teach/references/lesson-workflow.md": "c29c2e6ded3b2b8a8d616b9333c04d9c5ba9b58273c389db02d9234048da1d42",
+    "docs/REVIEW-RUBRIC.md": "e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87"
+  }
+}
+```
+
+
+---
+
+## Earlier fixed-revision reviews
+
 # Similar polygons: review evidence
 
 These are historical assessments of fixed revisions, consolidated from the baseline and refinement records. They do not attest subsequent changes or meet the owner's current 100/100 lesson target. The [review rubric](REVIEW-RUBRIC.md) owns the targets and criteria.

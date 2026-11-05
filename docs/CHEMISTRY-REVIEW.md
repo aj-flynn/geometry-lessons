@@ -1,3 +1,108 @@
+# Independent chemistry candidate 2 review
+
+Configured reviewer model: `gpt-6-astra`, high effort, fresh context. Reviewer: independent Codex subagent `/root/chemistry_iteration/chem_review2`; parent must record the configured model from spawn metadata rather than infer it from this report. Date: 2026-11-04 local. Rubric: 2026-11-04 independent judgment. Scope: four chemistry lessons, linked field guide, loaded CSS/JS, shared teaching contract and chemistry-specific reusable process. This is a fixed prepublication candidate assessment, not a live delivery certification. No author scores or prior review reports were consulted. No repository files were edited.
+
+## Scores
+
+|Category|max|0003|0004|0005|0006|
+|---|---:|---:|---:|---:|---:|
+|A1 Assignment alignment and coverage|7|7|6.5|7|7|
+|A2 Subject correctness and reasoning|12|12|11.5|12|12|
+|A3 Sources and evidence|3|3|3|3|3|
+|A4 Consistency across representations|3|3|3|3|3|
+|B1 Goals and relevance|3|3|3|3|3|
+|B2 Prerequisites and starting point|3|3|3|3|3|
+|B3 Explanations and cognitive load|5|5|5|5|5|
+|B4 Vocabulary, notation, and glossary|3|3|3|3|3|
+|B5 Scaffolding and learner independence|4|4|3.5|4|4|
+|B6 Pacing and emotional usability|2|2|2|2|2|
+|C1 Originality and practice quality|3|3|3|2.5|3|
+|C2 Purposeful interactive learning and formative checks|4|4|3.5|4|4|
+|C3 Feedback, misconceptions, and retry|3|3|3|3|3|
+|C4 Retrieval and retention support|2|2|2|2|2|
+|C5 Transfer and return to independent work|3|3|3|2.5|3|
+|D1 Beautiful design|8|8|8|8|8|
+|D2 High-quality instructional visuals|7|7|7|7|7|
+|E1 Accessibility|10|10|10|10|10|
+|E2 Interaction correctness and control|3|3|3|3|3|
+|E3 Technical resilience and navigation|2|2|2|2|2|
+|F1 Privacy and authority|3|3|3|3|3|
+|F2 Homework separation|4|4|4|4|4|
+|F3 Review traceability and delivery|3|3|3|3|3|
+|Total|100|100|98|99|100|
+
+All categories assessed. These are judgments within the stated scope and evidence, not certification of learner mastery or a full WCAG conformance audit. F3 assesses accurate prepublication identification and restrained claims; subsequent publication needs its own exact-byte/live verification.
+
+## Findings and explanations
+
+1. **0004 prediction and local-count wording:** In `Build a new structure`, the four visible numbered steps disclose the pair move and its result before `Predict before stepping`. Moreover, the prompt asks whether moving the pair can `change two local shell counts`. In this illustrated move the left carbon remains at eight locally while the right changes from six to eight. The worked arithmetic and drawing are correct, but the prompt does not clearly ask the learner to distinguish the unchanged and changed counts. Place a genuine prediction before revealing the move, and ask separately what happens to each carbon's local count and the whole budget. This accounts for the A2 and C2 deductions. It is a localized teaching ambiguity, not an incorrect final structure.
+
+2. **0004 connection-pattern bridge:** Both the complete worked structure and full transfer task supply their connection pattern. The page explains why hydrogen is terminal and acknowledges that formulas can be ambiguous, which is sound, but it never gives a usable general starting strategy for proposing or checking the rest of an unfamiliar simple skeleton. `Propose or obtain` in the field guide does not fill that step. Learners are better prepared to place and audit electrons once connections are supplied than to begin an independently requested drawing. Add a brief bounded skeleton-choice method and a fresh decision check, with assumptions and ambiguity explicit. A1 and B5 each lose half a point for this specific remaining independence gap. Do not remove the supplied-pattern construction practice; it is valuable and scientifically honest.
+
+3. **0005 transfer is too close to its worked comparison:** The worked head-to-tail diagram shows unequal opposite arrows leaving a remainder. The later `Your turn` asks whether two unequal opposite arrows leave a remainder, changing only the size ratio. Thus the result is already displayed, and the exit asks which method to use without requiring a new vector combination. Retain that recognition check if useful, but add a brief fresh arrangement or inverse design task that requires the learner to construct, combine, or justify a new result before a closed comparison. A three-arrow or changed-direction abstract arrangement can do this without requiring new chemical classification. C1 and C5 each lose half a point.
+
+0003 earns full credit: fictional composition/copy models develop into an authentic, new atom-inventory task, then reverse representation; symbol casing, absent subscripts, and coefficients are distinguished. The source boundary is respected without making the lesson merely a token exercise.
+
+0004's strengths are substantial: complete electron construction, explicit budget versus local-shell distinction, neutral-atom valence lookup, shell limits, a genuinely different complete transfer structure, every atom's local audit, and recovery after a faulty drawing. The missing connection-pattern bridge and prediction issue are narrow fixes.
+
+0005's strongest features are a correctly scaled vector model, an explicit distinction between shape evidence and a flat Lewis drawing, reliable boundary-key practice, correct equality handling, partial-charge explanation, and clear model limitations. Its new-context practice should require one more independent combination.
+
+0006 earns full credit for its declared scope: it distinguishes internal connections from between-particle attractions, demonstrates coexistence of contributions, avoids a universal ranking, states comparison conditions, includes a fair-comparison check, and mixes earlier electron reasoning into exit practice. Its diagrams explicitly distinguish a snapshot from evidence of persistence.
+
+The coherent layout is restrained and polished: readable typographic hierarchy, ample section spacing, consistent colors, sharp schematic visuals, large labeled controls, useful captions and glossary links, and usable mobile layouts. No visual clipping was found in the inspected imagery or independent width checks. The lack of a screen-reader session is an evidence limit, not evidence of a defect.
+
+## Linked coverage and separation
+
+Both authorized private source images were visually inspected, including notation and handwritten material. Handwriting was treated as unverified learner work. The four lessons and field guide cover composition/counting, electron supply and allocation, distinctions among bonding models, electronegativity comparison with a course convention, spatial combination, and particle-attraction/property reasoning. Vocabulary completion, supplied classifications, lists, and exact assigned structures remain the learner's work. Original examples change the response context and construction meaningfully. I found no reproduced or confirmed assigned answer in the reviewed local artifacts. The skeleton bridge is the remaining coverage weakness for independent construction; linked coverage is therefore strong but not yet complete at the intended target.
+
+The field guide is a helpful compact route through the sequence and accurately links to the relevant local methods. It shares the skeleton-choice gap and should gain a concise route to the added support when fixed. It is included in coverage, privacy, and source review rather than separately scored as a fifth lesson.
+
+The six learner-facing source destinations were opened. Relevant explanatory passages and examples support the scoped foundational claims; no direct answer-key route was identified in those inspected destinations. Sources are appropriate: [atomic symbolism](https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism), [electron configurations](https://openstax.org/books/chemistry-2e/pages/6-4-electronic-structure-of-atoms-electron-configurations), [RSC atomic-data definitions](https://periodic-table.rsc.org/Help/AtomicData), [vector addition](https://openstax.org/books/college-physics-2e/pages/3-2-vector-addition-and-subtraction-graphical-methods), [phase transitions](https://openstax.org/books/chemistry-2e/pages/10-3-phase-transitions), and [liquid properties](https://openstax.org/books/chemistry-2e/pages/10-2-properties-of-liquids). This review does not certify every destination reachable through those publishers' navigation.
+
+## Reusable process, chemistry-scoped
+
+|Category|max|score|
+|---|---:|---:|
+|Privacy, no-answer, and authority boundaries|30|30|
+|Teaching contract|20|19|
+|Subject accuracy|20|20|
+|Repeatability and compatibility|15|14.5|
+|Validation and delivery|15|15|
+|Total|100|98.5|
+
+The chemistry skill explicitly requires genuine constructions, authentic notation transfer, response-level separation, meaningful distractors, state-text agreement, local forms, source-destination inspection, and honest model limitations. The shared workflow strongly protects privacy and requires independent fixed-candidate validation. The implemented candidate nevertheless leaves the skeleton-starting step implicit, allows a prediction after its answer, and permits a changed-ratio exercise to repeat an already-demonstrated conclusion. These are small but real gaps in enforcing its teaching contract and in repeatable generation. Clarify that when independent construction is required the author must exercise a skeleton-choice step, and audit prediction/transfer prompts against all preceding revealed content, not only their adjacent disclosure. Accuracy guidance itself is sound. This process score is chemistry-scoped; it is not a new certification of unexamined geometry/English generation.
+
+## Evidence and limits
+
+Observed directly: complete local HTML, field guide, loaded JavaScript/CSS, specified shared and chemistry skill instructions and rubric; both private images; targeted mobile/desktop/tablet and new-transfer screenshots; all six primary reference destinations; exact hash comparison against candidate2-hashes.json (all ten match); repository checker success; all22tests pass. Own read-only Edge run at390/768/1440 found no horizontal overflow or page errors in all four lessons, visible solid focus styling, and successful keyboard-only choice feedback. Own animation pause checks remained unchanged after2.6seconds, and reset controls succeeded. Script: `review2-independent.cjs` in this private chemistry evidence folder. The sandbox Edge launch failed before page inspection with pipe/profile errors; the approved escalated read-only run succeeded.
+
+Separately inspected author evidence: browser-probe.mjs/json, native-zoom.cjs/json and screenshots, recipe/structure-transfer screenshots and full-page inspection images. Author probe supports all choice feedback, numeric wrong/correct retries, stepped states, angle endpoints, no-script disabled submissions staying local on Enter, print fallback, reduced motion, and library navigation. Native zoom evidence shows1440outer width and704inner width with DPR2 at200%, not merely CSS scaling. These are inspected evidence, not claimed as my own reruns of each check.
+
+No screen-reader session, long-term learner study, exhaustive assistive-technology/browser matrix, or live candidate2 deployment was performed. Publication is pending separately and must not be inferred from this report. No private source transcription, assigned answer, or question-by-question concordance is included here.
+
+## Exact SHA-256 identity
+
+- lessons/0003-reading-particle-formulas.html: 2e1b67ecfc35046618868d8f0ba769d4066d13a9faf3a49dbe13341a845e7cf3
+- lessons/0004-electrons-and-bonds.html: b47a76d9fb1a20d654054fb7b3e27f7a9e4834918d582ab0c4ee1b3d3668359a
+- lessons/0005-shape-and-polarity.html: f7f2fb14d0546d89be3a99ba5ac08b49fa73db35ee3311e92d9b93273f6053bd
+- lessons/0006-between-molecules.html: bde337b15a20982daee3c5d93db839b1fafaf393482a55618d94ac01577ca24b
+- reference/chemistry-field-guide.html: e9d0f9aeb1d163a20b45be9474c6c82a056618a9b23a237102d7670c3dbe4d84
+- assets/chemistry.js: 67ff4149af54d165fb8ed995b4dcb1d5ef0852d915ec84dcdf29320d19799561
+- assets/chemistry.css: ac54cc693054f41b51a5e8b9cb39e9a72daa4777ba9fe915d8525e4ea308975f
+- assets/site.css: 9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a
+- assets/lesson.js: b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c
+- .agents/skills/chemistry-teach/SKILL.md: d14dca3585a19244865ea9e893bab00814ebb77e0bb7e6c743d918b96733695f
+- .agents/skills/homework-teach/SKILL.md: d54a88add0e5d5d5c2546e6c033a9f87ab6038d3c8d831fd1cc0a989f36718d6
+- .agents/skills/homework-teach/references/lesson-workflow.md: c29c2e6ded3b2b8a8d616b9333c04d9c5ba9b58273c389db02d9234048da1d42
+- .agents/skills/homework-teach/references/science.md: e185666374046bdc03569400e87fa8065dd48005839e2c15567ab67faa3e5843
+- .agents/skills/homework-teach/references/independent-refinement.md: 74e6366100da9f03af4cac2ea04452e7f5a748a42326dd9b58c21c2d72eaf89c
+- docs/REVIEW-RUBRIC.md: e211e43881ccea2c3d19dd89d5bdeda128f9d053f9bf52c3736b418ac3666d87
+
+
+---
+
+## Earlier fixed-revision reviews
+
 # Chemistry candidate 1 — independent Astra assessment
 
 Reviewer: gpt-6-astra, high effort, fresh context, independent of author. Rubric edition: 2026-11-04 — independent judgment. Review scope: four chemistry lessons, linked field guide, loaded assets, and reusable chemistry process. No repository edits or publication performed by reviewer. This is a fixed prepublication candidate assessment, not completed deployment or dual-review certification.

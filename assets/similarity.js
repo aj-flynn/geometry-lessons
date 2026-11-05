@@ -79,3 +79,6 @@ for(const quiz of document.querySelectorAll('[data-choice-quiz]')) {
 }
 for(const element of document.querySelectorAll('[data-interactive-only]'))element.hidden=false;
 
+
+// Keep complete paper-style practice available if enhancement fails.
+for(const element of document.querySelectorAll("[data-static-only]"))element.hidden=true;

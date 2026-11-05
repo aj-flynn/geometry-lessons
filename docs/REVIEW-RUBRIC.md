@@ -31,8 +31,22 @@ A candidate cannot pass if it publishes PII/input, reveals or validates actual h
 
 ## Iterate on evidence
 
-Also compare the fixed lesson and process with [Matt Pocock's official teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md), using [the alignment guide](TEACH-ALIGNMENT.md). Report fidelity, intentional privacy/no-answer adaptations, and actual gaps within the existing criteria. Review all loaded shared assets and imported modules along with the HTML; name those paths and the fixed commit in the evidence.
+Also compare the fixed lesson and process with [Matt Pocock's official teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md), using the teaching alignment checklist below. Report fidelity, intentional privacy/no-answer adaptations, and actual gaps within the existing criteria. Review all loaded shared assets and imported modules along with the HTML; name those paths and the fixed commit in the evidence.
 
 For each review, report the candidate revision, both actual scores with criterion breakdowns, gate results, checks actually performed, and concrete deductions with artifact/behavior evidence. Mark unavailable checks as unavailable; do not invent their results.
 
 Fix the highest-impact demonstrated issues, run affected checks, and publish a coherent improved version when ready. Send the new fixed revision for independent re-review. Keep this rubric stable; do not relax it or ask the reviewer to inflate a score to cross the target. Record review outcomes and meaningful fixes in the existing task's review notes without private input. Completion requires the independent review evidence meeting the threshold.
+
+## Teaching alignment
+
+| Principle to examine | Repository evidence or adaptation |
+| --- | --- |
+| Mission and appropriate challenge | The README goal; lesson goals, easy anchors, optional hints and short stopping points. |
+| Trusted knowledge before practice | RESOURCES.md and topic-specific links; check source claims. |
+| Retrieval, spacing and mixed practice | Checks after concepts, a mixed finish, exit explanation and later recall. Verify actual placement and fresh transfer. |
+| Immediate feedback | Exercise wrong answers and retries; inspect explanation quality and answer cues. |
+| Focused, readable HTML and reusable components | Lesson, linked glossary/reference, shared assets and index. Inspect working-memory demands, mobile diagrams and static reading. |
+| Follow-up and application | Private questions and independent return to homework. No automatic claim of mastery. |
+| Stateful teaching | Personal notes and learning records remain private, outside this public repository. |
+
+Report remaining gaps, including lesson length, delayed retrieval and reference usefulness. Do not infer successful long-term learning from immediate answers. Community contact is not part of this child's authorized workflow. Privacy, no assigned answers, and no unsolicited external actions override incompatible source practices. Retain the MIT notice for adapted material.

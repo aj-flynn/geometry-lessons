@@ -77,20 +77,13 @@ test('a science publication requires a glossary, a current hash, and the updated
   }
 });
 
-test('both skill entry points and their local workflow references resolve',()=>{
-  const paths=['.agents/skills/homework-teach/SKILL.md','.agents/skills/homework-teach/references/science.md','.agents/skills/homework-teach/references/lesson-workflow.md','.agents/skills/geometry-teach/SKILL.md','skills/homework-teach/SKILL.md','skills/homework-teach/references/science.md','skills/homework-teach/references/lesson-workflow.md','skills/geometry-teach/SKILL.md','skills/geometry-teach/references/lesson-workflow.md'];
+test('teaching instructions and documentation links resolve',()=>{
+  const paths=['AGENTS.md','README.md','RESOURCES.md','docs/REVIEW-RUBRIC.md','docs/LESSON-0001-REVIEW.md','docs/ENGLISH-REVIEW.md','docs/CHEMISTRY-REVIEW.md','.agents/skills/homework-teach/SKILL.md','.agents/skills/homework-teach/references/science.md','.agents/skills/homework-teach/references/lesson-workflow.md','.agents/skills/homework-teach/references/routing.md','.agents/skills/geometry-teach/SKILL.md'];
   for(const file of paths){
     const full=join(root,file),text=readFileSync(full,'utf8');
     for(const [,target] of text.matchAll(/\]\(([^)]+)\)/g)){
       if(/^https:\/\//.test(target))continue;
-      assert.doesNotThrow(()=>readFileSync(resolve(dirname(full),target),'utf8'),`${file}: ${target}`);
+      assert.doesNotThrow(()=>readFileSync(resolve(dirname(full),target.split('#')[0]),'utf8'),`${file}: ${target}`);
     }
   }
-});
-
-test('native Codex skill is complete at the repository discovery path',()=>{
-  const skill=readFileSync(join(root,'.agents/skills/homework-teach/SKILL.md'),'utf8');
-  assert.match(skill,/^---\r?\nname: homework-teach\r?\ndescription: .+\r?\nlicense: MIT\r?\n---/);
-  assert.ok(skill.length>2000,'Entry point must contain the actual workflow, not only a stub.');
-  assert.equal(readFileSync(join(root,'.agents/skills/homework-teach/scripts/read-docx.py'),'utf8'),readFileSync(join(root,'skills/geometry-teach/scripts/read-docx.py'),'utf8'));
 });

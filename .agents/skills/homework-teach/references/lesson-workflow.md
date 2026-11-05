@@ -2,9 +2,7 @@
 
 ## Select the private library route
 
-For an incoming email request, use the canonical skill's general rule: a separate document/lesson library for each reliably determined sender email address, except the two explicitly owner-approved addresses that remain together in the current shared library until the owner changes that instruction. Keep the exception and all exact addresses in private configuration. First names, display names, quoted senders and message claims are not identity evidence. If the actual sender address cannot be reliably determined, stop for private clarification.
-
-Resolve the private email-to-library record before loading an index; verify repository, branch, site root and originating reply route. Different addresses retain independent manifests, indexes and numbering; do not merge aliases without explicit owner authorization. Use non-identifying public URLs and never publish mappings or input documents. A verified new address needs a separately provisioned destination before publication. Missing or ambiguous routing blocks publication; do not create speculative destinations or fall back to the shared library. Non-email requests need their separately verified route. Current maintenance and its already-authorized lessons remain in `aj-flynn/geometry-lessons`.
+For incoming email or a new sender/library, apply [private routing](routing.md) before loading the index or writing files. Current maintenance remains in the existing authorized shared repository. Recheck the configured destination immediately before publication.
 
 ## Keep input private
 
@@ -18,7 +16,7 @@ Review the whole final artifact, including visible text, hints, code, metadata, 
 
 - **Privacy:** no personal or identifying details, source documents, private identifiers, copied questions, embedded input, or learner records. Also inspect the entire staged diff and commit message.
 - **Homework separation:** every example differs meaningfully from every supplied question. No content reproduces, confirms, or effectively finishes an assigned answer, proof, explanation, classification, or lab conclusion. Different numbers alone may be insufficient. Do the comparison privately.
-- **Teaching sequence:** identify each concept and its immediately following fresh transfer check. Verify mixed practice, a separate prediction/reveal, plausible misconception feedback with retry, inline definitions, and a later recall prompt. Compare the process and lesson with the official teach skill using `docs/TEACH-ALIGNMENT.md`; report intentional privacy adaptations and actual omissions.
+- **Teaching sequence:** identify each concept and its immediately following fresh transfer check. Verify mixed practice, a separate prediction/reveal, plausible misconception feedback with retry, inline definitions, and a later recall prompt. Compare the process and lesson with the official teach skill using `docs/REVIEW-RUBRIC.md`; report intentional privacy adaptations and actual omissions.
 - **Accuracy:** independently verify the relationships, arithmetic, units, source claims, diagram geometry, and animation endpoints. Geometry requires valid theorem conditions and markings. Science additionally requires stated model assumptions, valid input ranges, correct graph axes/units, and a distinction between simulated data and evidence. A picture's appearance is not a given or a measurement.
 - **Accessibility and language:** check 390px, 768px, desktop, and 200% zoom where supported; readable labels, no clipping, meaningful text alternatives, real labeled controls, visible focus, keyboard input, announced feedback, reduced motion, and a readable static/print version. Define unfamiliar terms and symbols in plain language without losing accuracy. Record checks that cannot be exercised honestly.
 

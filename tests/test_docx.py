@@ -6,7 +6,7 @@ import tempfile
 import unittest
 import zipfile
 
-script = Path(__file__).resolve().parents[1] / "skills/geometry-teach/scripts/read-docx.py"
+script = Path(__file__).resolve().parents[1] / ".agents/skills/homework-teach/scripts/read-docx.py"
 spec = importlib.util.spec_from_file_location("read_docx", script)
 reader = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(reader)

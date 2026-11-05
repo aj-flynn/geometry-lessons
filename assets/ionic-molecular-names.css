@@ -1,0 +1,99 @@
+:root {
+  --paper: #f8f5ed;
+  --surface: #eeebe2;
+  --ink: #232822;
+  --teal: #1e584f;
+  --accent: #f3cc7a;
+}
+.nomenclature { width: min(46rem, 100% - 2rem); }
+.nomenclature .lesson-head {
+  background: #193d36;
+  color: #fffaf0;
+  padding: clamp(1.2rem, 6vw, 3.3rem);
+  border-block-end: .42rem solid var(--accent);
+}
+.nomenclature .lesson-head p:last-child { max-width: 38ch; margin-block-end: 0; font-size: 1.12em; }
+@media screen {
+  .nomenclature .lesson-head a:focus-visible { outline-color: var(--accent); }
+}
+.nomenclature h1, .nomenclature h2 { font-family: Georgia, serif; font-weight: 600; line-height: 1.14; }
+.nomenclature h1 { max-width: 13ch; font-size: clamp(2.05rem, 7vw, 4rem); }
+.nomenclature h2 { font-size: clamp(1.6rem, 4.5vw, 2.2rem); }
+.nomenclature h3 { font-size: 1.16em; line-height: 1.24; }
+.nomenclature .kicker {
+  color: var(--teal);
+  font-size: .84rem;
+  font-weight: 700;
+  margin-block: 0 .7rem;
+}
+.nomenclature .lesson-head .kicker { color: var(--accent); }
+.nomenclature .starting { margin-block: 2rem; }
+.nomenclature .jump { display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; }
+.nomenclature .jump a { display: inline-flex; min-height: 2.75rem; align-items: center; }
+.nomenclature section { border-block-start: 1px solid #9aada2; padding-block-start: 1.15rem; }
+.nomenclature .formula { display: inline-block; white-space: nowrap; }
+.nomenclature sub, .nomenclature sup { line-height: 0; }
+.nomenclature .worked { padding: 1rem 0 1rem clamp(.8rem, 3.5vw, 1.65rem); border-inline-start: .23rem solid var(--teal); margin-block: 1.7rem; }
+.nomenclature ol, .nomenclature ul { padding-inline-start: 1.35rem; }
+.nomenclature li + li { margin-block-start: .48rem; }
+.nomenclature .charge-picture { background: #e1ebe5; margin: 1.3rem 0 0; padding: clamp(.5rem, 3vw, 1.2rem); }
+.nomenclature .charge-picture svg { max-width: 32rem; margin-inline: auto; fill: #142c25; font: 18px Arial, sans-serif; }
+.nomenclature .charge-picture figcaption { font-size: 1em; margin-block-start: .4rem; }
+.nomenclature .svg-heading { font-size: 16px; font-weight: 700; }
+.nomenclature .positive { fill: #ffebba; stroke: #604b20; }
+.nomenclature .negative { fill: #f6fcf8; stroke: #1e584f; }
+.nomenclature .lookup { background: #e1ebe5; margin-block: 1.2rem; padding: 1rem; }
+.nomenclature .lookup ul { margin-block: .5rem; }
+.nomenclature .lookup li span { margin-inline-end: .42rem; }
+.nomenclature .lookup p { margin-block-end: 0; }
+.nomenclature .attempt { margin-block: 1.4rem; padding: clamp(.65rem, 3vw, 1.2rem); background: #fffaf0; border-block-start: 3px solid #a96a23; }
+.nomenclature details { background: var(--surface); padding: .35rem .8rem; margin-block: .7rem; }
+.nomenclature details p { margin-block-start: .4rem; }
+.nomenclature .trial-buttons { display: flex; flex-wrap: wrap; gap: .6rem; }
+.nomenclature .trial-buttons button { min-width: 0; padding: .6rem .75rem; text-align: left; background: var(--teal); }
+.nomenclature .trial-buttons .trial-reset { color: var(--teal); background: transparent; border: 2px solid var(--teal); }
+.nomenclature .trial-buttons button[aria-pressed=true] { background: #fad78d; color: #232822; box-shadow: inset 0 0 0 2px #79551f; }
+.nomenclature [data-trial-status] { font-weight: 700; }
+.nomenclature [data-trial-ready=true] .trial-fallback { display: none; }
+.nomenclature [hidden] { display: none !important; }
+.nomenclature .prefix-key { display: flex; flex-wrap: wrap; gap: .35rem .9rem; padding: .7rem .9rem; background: #e1ebe5; }
+.nomenclature .prefix-key span { white-space: nowrap; }
+.nomenclature .call-back { border-block-start: 1px solid #9aada2; margin-block: 1.8rem; padding-block-start: 1rem; }
+.nomenclature .glossary-list { margin-inline: 0; }
+.nomenclature .sources { font-size: 1em; }
+@media (max-width: 450px) {
+  .nomenclature { width: calc(100% - 24px); }
+  .nomenclature .lesson-head { padding-inline: clamp(9px, 4vw, 18px); }
+  .nomenclature .attempt, .nomenclature details { padding-inline: max(8px, 2.5vw); }
+  .nomenclature ol, .nomenclature ul { padding-inline-start: max(20px, .85em); }
+  .nomenclature p, .nomenclature li { hyphens: auto; overflow-wrap: break-word; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .nomenclature button { transform: none; }
+}
+@media print {
+  :root { --paper: #fff; }
+  .nomenclature { width: 100%; font-size: 11pt; line-height: 1.35; }
+  .nomenclature .lesson-head { background: #fff; color: #232822; padding: 0 0 .6rem; border-color: #4c6258; }
+  .nomenclature .lesson-head .kicker { color: #232822; }
+  .nomenclature h1 { max-width: none; font-size: 29pt; }
+  .nomenclature h2 { font-size: 19pt; margin-block-end: .5rem; }
+  .nomenclature h3 { margin-block-end: .4rem; }
+  .nomenclature h1, .nomenclature h2, .nomenclature h3, .nomenclature .kicker, .nomenclature dt { break-after: avoid; }
+  .nomenclature h2 + p, .nomenclature .call-back p { break-inside: avoid; }
+  .nomenclature p { margin-block: .42rem; }
+  .nomenclature section, .nomenclature .starting { margin-block-start: .95rem; padding-block-start: .5rem; }
+  .nomenclature .jump, .nomenclature .trial-controls { display: none; }
+  .nomenclature [data-trial-ready=true] .trial-fallback { display: block; }
+  .nomenclature .worked, .nomenclature .attempt, .nomenclature .lookup, .nomenclature .starting { break-inside: avoid; }
+  .nomenclature .worked:has(figure) { break-inside: auto; }
+  .nomenclature .worked, .nomenclature .attempt, .nomenclature .lookup, .nomenclature .call-back { margin-block: .6rem; }
+  .nomenclature .attempt, .nomenclature .lookup { padding: .5rem .75rem; }
+  .nomenclature .charge-picture { margin-block-start: .4rem; }
+  .nomenclature .charge-picture svg { max-width: 17rem; }
+  .nomenclature .glossary-list dt { margin-block-start: .35rem; }
+  .nomenclature .glossary-list dd { margin-block-start: 0; }
+  .nomenclature details { break-inside: avoid; margin-block: .3rem; padding: .25rem .5rem; }
+  .nomenclature summary { min-height: 0; padding-block: .15rem; }
+}

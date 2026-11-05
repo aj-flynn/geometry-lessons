@@ -4,232 +4,217 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Read and write compound labels by balancing ions or counting atoms in a molecule.">
-  <title>Names and formulas | Chemistry</title>
+  <meta name="description" content="Name ionic and molecular compounds and write formulas using either charge balance or atom counts.">
+  <title>From formula to name and back</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/names.css">
-  <script src="../../../assets/names.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/ionic-molecular-names.css">
+  <script src="../../../assets/ionic-molecular-names.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson naming" tabindex="-1">
+  <main id="main" class="lesson nomenclature">
+    <a class="return-link" href="../index.html">← Lesson library</a>
     <header class="lesson-head">
-      <a class="return-link" href="../index.html">← Lesson library</a>
-      <p class="eyebrow">Chemistry · Compound labels</p>
-      <h1>Names and formulas</h1>
-      <p class="mission">Decide what a formula counts. Then use either charge balance or atom counts to translate between a compound’s name and formula.</p>
+      <p class="kicker">Introductory chemistry</p>
+      <h1>From formula to name and back</h1>
+      <p>A chemical name tells you what to count. Learn to read and write names using the charges of <a href="#term-ion">ions</a> (charged particles) or the atom counts in a <a href="#term-molecule">molecule</a> (a distinct group of bonded atoms).</p>
     </header>
-    <aside class="start" aria-label="Before you start">
-      <p><strong>Warm up.</strong> In O<sub>2</sub> and O<sup>2−</sup>, which small number counts atoms? Which shows charge?</p>
-      <details><summary>Compare the two symbols</summary><p>The low 2 is a <a href="#term-subscript">subscript</a> that counts two oxygen atoms in O<sub>2</sub>. The raised 2− is a <a href="#term-charge">charge</a> that applies to one oxygen <a href="#term-ion">ion</a>, a particle with an electrical charge. When a count is one, the subscript is left blank.</p></details>
+    <aside class="starting" aria-label="Before you start">
+      <h2>Read the small numbers</h2>
+      <p>What does the 2 tell you in <span class="formula">Br<sub>2</sub></span>? What does it tell you in <span class="formula">Mg<sup>2+</sup></span>?</p>
+      <details><summary>Compare the two positions</summary><p>A <a href="#term-subscript">subscript</a> is a small lowered number. Here it counts two bromine atoms. The raised <sup>2+</sup> gives the charge of one magnesium ion. A symbol with no subscript counts as one.</p></details>
     </aside>
-    <p class="jump"><a href="#reference">Ion and prefix lookup</a> <a href="#glossary">Open the glossary</a></p>
+    <nav class="jump" aria-label="Lesson sections">
+      <a href="#charge">Charge in a name</a>
+      <a href="#groups">Groups in a formula</a>
+      <a href="#atoms">Atoms in a molecule</a>
+      <a href="#your-turn">Mixed practice</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
 
-    <section aria-labelledby="routes">
-      <h2 id="routes">Decide what you are counting</h2>
-      <div class="routes">
-        <div><h3>Ions in a solid</h3><p>An <a href="#term-ionic">ionic compound</a> contains positive and negative ions. Its <a href="#term-unit">formula unit</a> gives the smallest whole-number ratio of those ions. Their total charge must be zero.</p></div>
-        <div><h3>Atoms in a molecule</h3><p>A <a href="#term-molecular">molecular compound</a> contains molecules, separate groups of bonded atoms. A molecular formula gives the actual number of atoms of each element in one molecule.</p></div>
+    <section aria-labelledby="charge">
+      <p class="kicker">01 / Read an ionic formula</p>
+      <h2 id="charge">Find the charge of one metal ion</h2>
+      <p>An <a href="#term-ionic">ionic compound</a> contains positive and negative ions in a ratio that gives zero total charge. A metal paired with a single nonmetal is a useful clue for the ionic examples here. The metal is written first and the nonmetal gets an <em>-ide</em> ending.</p>
+      <p>If the metal can form ions with different charges, the name includes a <a href="#term-roman">Roman numeral</a> in parentheses. It tells you the charge of <em>one</em> metal ion. Use the count in the formula to work backward from the total negative charge.</p>
+      <p class="prefix-key"><strong>Numeral key</strong> <span>+1 → I</span> <span>+2 → II</span> <span>+3 → III</span> <span>+4 → IV</span> <span>+5 → V</span> <span>+6 → VI</span></p>
+      <div class="worked">
+        <h3>Name <span class="formula">Cu<sub>2</sub>O</span></h3>
+        <p><strong>Given:</strong> Two copper ions for each oxide ion, <span class="formula">O<sup>2−</sup></span>. <strong>Find:</strong> The charge of each copper ion, then the name.</p>
+        <ol>
+          <li>One oxide ion contributes 1 × (−2) = −2.</li>
+          <li>The two copper ions together must contribute +2 to make zero.</li>
+          <li>Divide by the number of copper ions. (+2) ÷ 2 = +1 per copper ion.</li>
+          <li>Write <strong>copper(I) oxide</strong>. The <strong>I</strong> records +1 per copper ion. The lowered 2, a <a href="#term-subscript">subscript</a>, counts copper ions.</li>
+        </ol>
+        <p>Here and below, charge numbers are in units of the elementary charge, the size of a proton’s charge.</p>
       </div>
-      <p>For the simple compounds here, look for a metal with a nonmetal or a named group ion as an ionic clue. Two nonmetals with a count word such as <em>tetra-</em> point to the molecular method. A name ending in <em>-ide</em> can occur in either method. Use the compound type given by your course if the clues are ambiguous.</p>
-    </section>
-
-    <section aria-labelledby="infer">
-      <p class="eyebrow">01 · Formula → name</p>
-      <h2 id="infer">Find the charge on one metal ion</h2>
-      <p><strong>Given</strong> Cu<sub>3</sub>N, with a nitride ion N<sup>3−</sup>. Copper can form ions of different charges. <strong>Goal</strong> Name the compound and identify which copper ion the label describes.</p>
-      <ol class="steps">
-        <li>One nitride ion gives a negative total of 1 × (−3) = −3.</li>
-        <li>To make the compound neutral, the three copper ions must give a positive total of +3.</li>
-        <li>Divide the positive total by the number of copper ions. (+3) ÷ 3 = +1 per ion, so the ion is Cu<sup>+</sup>.</li>
-        <li>Write <strong>copper(I) nitride</strong>. The <a href="#term-roman">Roman numeral</a> (I) reports the charge on each copper ion. Nitride is the name of the negative ion.</li>
-      </ol>
-      <p class="note">Charge arithmetic here uses units of the elementary charge, the size of a proton’s charge. The low 3 on Cu counts the copper ions in the ratio. The (I) in the name describes each one.</p>
-
-      <div class="practice">
-        <h3>Finish a label</h3>
-        <p>The formula card reads Sn<sub>3</sub>P<sub>4</sub>. Write the compound’s full name and explain how the two subscripts enter your calculation. Use the <a href="#reference">lookup</a> if you need a symbol or charge.</p>
-        <form data-label-check data-key="tin(iv) phosphide" data-success="Tin(IV) phosphide fits. Four phosphide ions give −12, so each of the three tin ions contributes +4." data-mistakes='{"tin(iii) phosphide":"The 3 counts tin ions. First find the charge of all four phosphide ions, then share the balancing charge across three tin ions.","tin(xii) phosphide":"The three tin ions together contribute +12. Divide that charge among them before choosing the numeral."}' hidden>
-          <label for="tin-label">Compound name</label>
-          <input id="tin-label" type="text" autocomplete="off" required>
-          <button type="submit" disabled>Check name</button>
-          <p role="status" data-result></p>
-        </form>
-        <details class="static-feedback"><summary>Compare the tin label</summary><p>Four P<sup>3−</sup> contribute 4 × (−3) = −12. The positive total must be +12. Divide by the three tin ions to get (+12) ÷ 3 = +4 per ion. The label is <strong>tin(IV) phosphide</strong>.</p></details>
-        <details><summary>Retry with a charge claim</summary><p>A classmate says that three ions with a combined charge of +12 each carry +12. Test that claim by multiplying the claimed charge by three. What charge per ion gives the required total?</p><details><summary>Compare your retry</summary><p>Three at +12 would give +36. Three at +4 give +12.</p></details></details>
+      <div class="attempt">
+        <h3>Try a different formula</h3>
+        <p>Name <span class="formula">Cr<sub>2</sub>S<sub>3</sub></span>. Use <span class="formula">S<sup>2−</sup></span> for sulfide. Write the total negative charge, the charge of each chromium ion and the full name before opening the comparison.</p>
+        <details><summary>Compare your reasoning</summary><p>Three sulfide ions contribute 3 × (−2) = −6. Two chromium ions together supply +6, so (+6) ÷ 2 = +3 per chromium ion. Write <strong>chromium(III) sulfide</strong>. If you wrote (VI), you used the charge of both chromium ions. Check by adding two +3 charges to −6.</p></details>
+        <p><strong>Retry.</strong> What name fits <span class="formula">SnF<sub>4</sub></span> with <span class="formula">F<sup>−</sup></span>? How would the tin numeral change if there were only two fluoride ions per tin ion?</p>
+        <details><summary>Compare the retry</summary><p>Four fluoride ions contribute −4, so one tin ion must supply +4. The name is <strong>tin(IV) fluoride</strong>. With two fluoride ions per tin ion, the total negative charge would be −2 and the numeral would be (II).</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="build">
-      <p class="eyebrow">02 · Ions → formula and name</p>
-      <h2 id="build">Balance whole ions</h2>
-      <p><strong>Given</strong> Zn<sup>2+</sup> and PO<sub>4</sub><sup>3−</sup>. Find their names in the <a href="#reference">ion list</a>. PO<sub>4</sub><sup>3−</sup> is a <a href="#term-poly">polyatomic ion</a>, a bonded group of atoms that carries one charge for the whole group. <strong>Goal</strong> Find the smallest neutral ratio and name the compound.</p>
-      <div class="trial-block">
-        <h3>Predict, then test a ratio</h3>
-        <p>One of each gives (+2) + (−3) = −1. How many of each ion would you use to reach zero? Try doubling your proposed counts. Will neutrality alone tell you when to stop?</p>
-        <form class="balance-form" data-balance hidden>
-          <div class="ion-counts">
-            <label for="zinc-count">Number of Zn<sup>2+</sup><input id="zinc-count" type="number" min="1" max="6" step="1" value="1" required></label>
-            <label for="phosphate-count">Number of PO<sub>4</sub><sup>3−</sup><input id="phosphate-count" type="number" min="1" max="6" step="1" value="1" required></label>
+    <section aria-labelledby="groups">
+      <p class="kicker">02 / Build an ionic formula</p>
+      <h2 id="groups">Keep each group together</h2>
+      <p>A <a href="#term-polyatomic">polyatomic ion</a> is a group of bonded atoms with one overall charge. Match the whole formula in a reference, including its small numbers and charge. Similar names can belong to different groups.</p>
+      <div class="lookup" id="ion-key">
+        <h3>Ion key for this lesson</h3>
+        <ul>
+          <li><span class="formula">SO<sub>4</sub><sup>2−</sup></span> <span>sulfate</span></li>
+          <li><span class="formula">SO<sub>3</sub><sup>2−</sup></span> <span>sulfite</span></li>
+          <li><span class="formula">HPO<sub>4</sub><sup>2−</sup></span> <span>hydrogen phosphate</span></li>
+          <li><span class="formula">PO<sub>4</sub><sup>3−</sup></span> <span>phosphate</span></li>
+          <li><span class="formula">NH<sub>4</sub><sup>+</sup></span> <span>ammonium</span></li>
+          <li><span class="formula">C<sub>2</sub>O<sub>4</sub><sup>2−</sup></span> <span>oxalate</span></li>
+        </ul>
+        <p>Compare the four oxygens in sulfate with the three in sulfite. Both have charge −2, so charge alone cannot tell you which name to use.</p>
+      </div>
+      <div class="worked">
+        <h3>Write a formula and name from two ions</h3>
+        <p><strong>Given:</strong> <span class="formula">Al<sup>3+</sup></span> and <span class="formula">SO<sub>4</sub><sup>2−</sup></span>. <strong>Find:</strong> The smallest neutral ratio, then the formula and name.</p>
+        <ol>
+          <li>Match <span class="formula">SO<sub>4</sub><sup>2−</sup></span> in the key. The full formula matches sulfate.</li>
+          <li>Positive charge comes in threes and negative charge in twos. The smallest shared charge size is six. Two aluminum ions give 2 × (+3) = +6. Three sulfate ions give 3 × (−2) = −6.</li>
+          <li>Write the positive ion first and leave out the charge marks. In <span class="formula">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span>, the 3 outside the parentheses counts whole sulfate ions. The 4 still counts oxygen atoms in each sulfate ion.</li>
+          <li>Write <strong>aluminum sulfate</strong>. In this naming convention, aluminum has a fixed +3 charge, so its name needs no Roman numeral.</li>
+        </ol>
+        <figure class="charge-picture">
+          <svg role="img" aria-labelledby="charge-visual-title charge-visual-desc" viewBox="0 0 320 168">
+            <title id="charge-visual-title">Two aluminum ions balance three sulfate ions</title>
+            <desc id="charge-visual-desc">Two labeled aluminum three-plus tokens give plus six. Three labeled sulfate two-minus tokens give minus six.</desc>
+            <text x="16" y="23" class="svg-heading">Aluminum</text>
+            <text x="304" y="23" text-anchor="end" class="svg-heading">+6 total</text>
+            <rect x="16" y="34" width="88" height="40" rx="5" class="positive"/>
+            <rect x="116" y="34" width="88" height="40" rx="5" class="positive"/>
+            <g text-anchor="middle">
+              <text x="60" y="59">Al<tspan baseline-shift="super" font-size="12">3+</tspan></text>
+              <text x="160" y="59">Al<tspan baseline-shift="super" font-size="12">3+</tspan></text>
+            </g>
+            <text x="16" y="108" class="svg-heading">Sulfate</text>
+            <text x="304" y="108" text-anchor="end" class="svg-heading">−6 total</text>
+            <rect x="16" y="119" width="88" height="40" rx="5" class="negative"/>
+            <rect x="116" y="119" width="88" height="40" rx="5" class="negative"/>
+            <rect x="216" y="119" width="88" height="40" rx="5" class="negative"/>
+            <g text-anchor="middle">
+              <text x="60" y="144">SO<tspan baseline-shift="sub" font-size="12">4</tspan><tspan baseline-shift="super" font-size="12">2−</tspan></text>
+              <text x="160" y="144">SO<tspan baseline-shift="sub" font-size="12">4</tspan><tspan baseline-shift="super" font-size="12">2−</tspan></text>
+              <text x="260" y="144">SO<tspan baseline-shift="sub" font-size="12">4</tspan><tspan baseline-shift="super" font-size="12">2−</tspan></text>
+            </g>
+          </svg>
+          <figcaption>Two aluminum ions give +6. Three intact sulfate ions give −6. The tiles show what to count. A solid salt contains an extended arrangement of ions, and this diagram shows only the ratio.</figcaption>
+        </figure>
+      </div>
+
+      <div class="attempt" id="charge-trials">
+        <h3>Test a count before writing a formula</h3>
+        <p>Pair <span class="formula">Mg<sup>2+</sup></span> with phosphate, <span class="formula">PO<sub>4</sub><sup>3−</sup></span>. Predict which trial count gives the simplest neutral ratio. The charges of the ions and the composition of phosphate are fixed. Change only how many of each ion you count.</p>
+        <div class="trial-controls" hidden>
+          <div class="trial-buttons" role="group" aria-label="Trial counts in magnesium then phosphate order">
+            <button type="button" data-trial="one">Test 1 to 1</button>
+            <button type="button" data-trial="smallest">Test 3 to 2</button>
+            <button type="button" data-trial="larger">Test 6 to 4</button>
+            <button type="button" data-trial="reset" class="trial-reset">Reset trial</button>
           </div>
-          <button type="submit" disabled>Test charge</button>
-          <button type="reset" disabled>Reset counts</button>
-          <div data-ledger aria-hidden="true" class="ledger">
-            <div><strong>Zinc ions</strong><div data-tokens="zinc" class="tokens"><span>Zn<sup>2+</sup></span></div></div>
-            <div><strong>Phosphate ions</strong><div data-tokens="phosphate" class="tokens"><span>PO<sub>4</sub><sup>3−</sup></span></div></div>
-          </div>
-          <p role="status" data-balance-result>Starting trial: 1 × (+2) + 1 × (−3) = −1. Change the counts to test your prediction.</p>
-        </form>
-        <details class="static-feedback"><summary>Compare three trial ratios</summary><ul><li>1 zinc to 1 phosphate gives +2 − 3 = −1.</li><li>3 zinc to 2 phosphate gives +6 − 6 = 0.</li><li>6 zinc to 4 phosphate gives +12 − 12 = 0. Divide both counts by two to return to the simplest ratio.</li></ul></details>
-      </div>
-      <h3>Put the ratio on the label</h3>
-      <ol class="steps">
-        <li>Match positive and negative totals at their first shared multiple. A zinc ion adds +2 and a phosphate ion adds −3. The smallest matching magnitudes are 6 and 6.</li>
-        <li>Three zinc ions contribute 3 × (+2) = +6. Two phosphate ions contribute 2 × (−3) = −6.</li>
-        <li>Write <strong>Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></strong>. The outer 2 repeats the whole phosphate group. Each group keeps its one P and four O atoms.</li>
-        <li>Write <strong>zinc phosphate</strong>. Say the positive ion first and keep the group’s name. In this naming system zinc has a fixed 2+ charge, so the label needs no numeral. If a metal can have different charges and the ion is given, turn that given charge into a Roman numeral. A supplied 3+ goes on the name as (III).</li>
-      </ol>
-      <figure class="model">
-        <svg viewBox="0 0 300 140" role="img" aria-labelledby="charge-title charge-desc">
-          <title id="charge-title">Zinc phosphate charge inventory</title>
-          <desc id="charge-desc">Three tiles labeled Zn two plus make a total of positive six. Two tiles labeled PO four three minus make a total of negative six. The two totals sum to zero.</desc>
-          <g stroke="#46695a" fill="#e9eeeb">
-            <rect x="1" y="3" width="55" height="32" rx="4"/>
-            <rect x="62" y="3" width="55" height="32" rx="4"/>
-            <rect x="123" y="3" width="55" height="32" rx="4"/>
-          </g>
-          <g stroke="#795980" fill="#f2eaf4">
-            <rect x="1" y="54" width="73" height="32" rx="4"/>
-            <rect x="80" y="54" width="73" height="32" rx="4"/>
-          </g>
-          <path d="M185 19h12m-37 51h37m57-51h16v51h-16m16 0v36h-24" stroke="#586861" stroke-width="1.5" fill="none"/>
-          <g text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#122c27">
-            <text x="28" y="25">Zn²⁺</text><text x="90" y="25">Zn²⁺</text><text x="150" y="25">Zn²⁺</text>
-            <text x="37" y="75">PO₄³⁻</text><text x="116" y="75">PO₄³⁻</text>
-            <text x="224" y="25">+6</text><text x="224" y="75">−6</text>
-            <text x="208" y="112" font-weight="bold">Net 0</text>
-          </g>
-        </svg>
-        <figcaption>Charge inventory for one Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> ratio. Three zinc ions give +6 and two intact phosphate ions give −6, so the net charge is zero. Tiles show counts. Their positions, colors and sizes do not describe the solid’s arrangement.</figcaption>
-      </figure>
-
-      <div class="practice">
-        <h3>Check a new stockroom label</h3>
-        <p>A supplier lists Ti<sup>3+</sup> and SO<sub>4</sub><sup>2−</sup>. Write the formula and full name. Use the <a href="#reference">lookup</a> to name both SO<sub>4</sub><sup>2−</sup> and SO<sub>3</sub><sup>2−</sup>. What distinguishes the two ions even though their charges match?</p>
-        <form data-label-check data-mode="formula" data-key="Ti2(SO4)3" data-success="Ti₂(SO₄)₃ fits. Two titanium ions give +6. Three sulfate ions give −6 and contain twelve oxygen atoms." data-mistakes='{"Ti3(SO4)2":"Multiply the ion counts by their own charges. Three titanium ions and two sulfate ions would give +9 − 4 = +5.","Ti2(SO3)3":"That uses the ion with three oxygens. Match the entire supplied group SO₄²⁻ to its lookup row.","Ti2SO43":"Use parentheses so the final 3 repeats the whole SO₄ group."}' hidden>
-          <label for="ti-formula">Formula (type subscripts as ordinary digits)</label>
-          <input id="ti-formula" type="text" autocomplete="off" spellcheck="false" required>
-          <button type="submit" disabled>Check formula</button>
-          <p role="status" data-result></p>
-        </form>
-        <form data-label-check data-key="titanium(iii) sulfate" data-success="Titanium(III) sulfate fits. The given charge is 3+ per titanium ion. The group with four oxygens is sulfate." data-mistakes='{"titanium sulfate":"Titanium can form ions with different charges. Include the Roman numeral for the supplied 3+ charge.","titanium(ii) sulfate":"The two titanium ions in the ratio each carry 3+. Use the charge per ion for the Roman numeral.","titanium(iii) sulfite":"Sulfite has three oxygen atoms. Find the name of the supplied four-oxygen group in the lookup."}' hidden>
-          <label for="ti-label">Full compound name</label>
-          <input id="ti-label" type="text" autocomplete="off" required>
-          <button type="submit" disabled>Check name</button>
-          <p role="status" data-result></p>
-        </form>
-        <details><summary>Compare the formula and name</summary><p>Two Ti<sup>3+</sup> and three SO<sub>4</sub><sup>2−</sup> give +6 and −6. Write <strong>Ti<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></strong>, <strong>titanium(III) sulfate</strong>. The Roman numeral comes from the given titanium charge. Sulfate has four oxygen atoms per ion, while sulfite has three. Both carry charge 2−.</p></details>
-        <details><summary>Retry with a doubled batch</summary><p>If you count four titanium ions and six sulfate ions, is the batch neutral? What ratio goes on the label?</p><details><summary>Compare your retry</summary><p>Yes, +12 and −12 cancel. Reduce 4:6 to 2:3 for the formula unit.</p></details></details>
-      </div>
-    </section>
-
-    <section aria-labelledby="prefix">
-      <p class="eyebrow">03 · Formula ↔ name</p>
-      <h2 id="prefix">Keep the molecule’s actual counts</h2>
-      <p>In a <a href="#term-binary">binary</a> molecular compound, exactly two elements appear. A <a href="#term-prefix">prefix</a>, a word part at the start of an element name, tells how many atoms of that element are in the molecule.</p>
-      <div class="routes">
-        <div>
-          <h3>Read the formula</h3>
-          <p><strong>Given</strong> P<sub>4</sub>S<sub>10</sub>. <strong>Goal</strong> Write its molecular name.</p>
-          <ol class="steps">
-            <li>Keep 4 phosphorus atoms. Use <em>tetra-</em> with the first element name.</li>
-            <li>Keep 10 sulfur atoms. Use <em>deca-</em> with the second element’s <em>-ide</em> form, sulfide.</li>
-            <li>Write <strong>tetra<wbr>phosphorus decasulfide</strong>. Reducing 4:10 to 2:5 would halve the count of each atom in the molecule.</li>
-          </ol>
+          <p data-trial-status role="status" aria-live="polite" aria-atomic="true">No trial selected.</p>
         </div>
-        <div>
-          <h3>Read the name</h3>
-          <p><strong>Given</strong> sulfur hexafluoride. <strong>Goal</strong> Write its molecular formula.</p>
-          <ol class="steps">
-            <li>The first element has no prefix, so count one sulfur atom, S.</li>
-            <li><em>Hexa-</em> gives six fluorine atoms, F<sub>6</sub>. Keep the order in the name.</li>
-            <li>Write <strong>SF<sub>6</sub></strong>. The count of one S is understood.</li>
+        <details class="trial-fallback">
+          <summary>Compare the three trial counts</summary>
+          <ul>
+            <li>One to one gives 1 × (+2) + 1 × (−3) = −1. The trial has extra negative charge.</li>
+            <li>Three to two gives 3 × (+2) + 2 × (−3) = 0. The ratio is neutral and already smallest.</li>
+            <li>Six to four gives 6 × (+2) + 4 × (−3) = 0. The ratio is neutral and both counts can be divided by two.</li>
+          </ul>
+        </details>
+        <p>Use the smallest neutral trial to write the formula. Check what your outside subscript counts.</p>
+        <details><summary>Compare your formula</summary><p><span class="formula"><strong>Mg<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></strong></span> is magnesium phosphate. The outer 2 counts two phosphate ions, for a total of two phosphorus atoms and eight oxygen atoms per ratio written.</p></details>
+      </div>
+
+      <div class="attempt">
+        <h3>Let the ion key settle the name</h3>
+        <p>Given <span class="formula">NH<sub>4</sub><sup>+</sup></span> and <span class="formula">HPO<sub>4</sub><sup>2−</sup></span>, write a formula and a name. Use the <a href="#ion-key">ion key</a> for both labels. Mark which group repeats and explain how you know.</p>
+        <details><summary>Compare your reasoning</summary><p>Two ammonium ions supply +2 and one hydrogen phosphate supplies −2. The formula is <span class="formula"><strong>(NH<sub>4</sub>)<sub>2</sub>HPO<sub>4</sub></strong></span> and the name is <strong>ammonium hydrogen phosphate</strong>. The H at the start of <span class="formula">HPO<sub>4</sub><sup>2−</sup></span> is part of that ion. If you bracketed the negative ion, check the counts. Only the positive group occurs more than once.</p></details>
+        <p><strong>Retry.</strong> Given <span class="formula">Mg<sup>2+</sup></span> and <span class="formula">SO<sub>3</sub><sup>2−</sup></span>, write a formula and a name. Which parts of the ion key row helped?</p>
+        <details><summary>Compare the retry</summary><p>One ion of each kind balances the charges. Write <span class="formula"><strong>MgSO<sub>3</sub></strong></span>, <strong>magnesium sulfite</strong>. The three oxygens identify sulfite. No parentheses are needed because just one sulfite ion is counted in the ratio.</p></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="atoms">
+      <p class="kicker">03 / Read and write molecular names</p>
+      <h2 id="atoms">Count atoms in one molecule</h2>
+      <p>A <a href="#term-binary">binary</a> molecular compound contains exactly two different elements per molecule. Use the prefix method when the problem identifies a molecule. These compounds often combine two nonmetals and can also include elements such as boron. A <a href="#term-prefix">prefix</a> at the start of an element name tells you the count of that element in one molecule. Keep the element order. Give the second element an <em>-ide</em> ending.</p>
+      <p class="prefix-key"><strong>Prefix key</strong> <span>1 mono-</span> <span>2 di-</span> <span>3 tri-</span> <span>4 tetra-</span> <span>5 penta-</span> <span>6 hexa-</span> <span>7 hepta-</span> <span>8 octa-</span> <span>9 nona-</span> <span>10 deca-</span></p>
+      <div class="worked">
+        <h3>Formula to name</h3>
+        <p><span class="formula">Cl<sub>2</sub>O</span> has two chlorine atoms and one oxygen atom. Write <strong>dichlorine monoxide</strong>. Keep <em>mono-</em> for one atom of the second element. <em>Mono-</em> and <em>oxide</em> combine as <em>monoxide</em>.</p>
+        <p>When there is one atom of the <em>first</em> element, leave off <em>mono-</em>. For <span class="formula">SF<sub>4</sub></span>, one sulfur and four fluorine atoms give <strong>sulfur tetrafluoride</strong>.</p>
+      </div>
+      <div class="attempt">
+        <h3>Name a molecule from its formula</h3>
+        <p>Name <span class="formula">SeF<sub>6</sub></span>. Mark where each count comes from. Then explain which position would take <em>mono-</em> if both atom counts were one.</p>
+        <details><summary>Compare your reasoning</summary><p>There is one selenium atom, so start with selenium. Six fluorine atoms give hexafluoride. Write <strong>selenium hexafluoride</strong>. If both counts were one, only the second element would take <em>mono-</em>.</p></details>
+        <p><strong>Retry.</strong> Name <span class="formula">P<sub>4</sub>S<sub>10</sub></span>, and say whether either count is implied.</p>
+        <details><summary>Compare the retry</summary><p><strong>Tetraphosphorus decasulfide</strong> states both counts. Use <em>tetra-</em> for four phosphorus atoms and <em>deca-</em> for ten sulfur atoms. Sulfur changes to sulfide in second position.</p></details>
+      </div>
+      <div class="worked">
+        <h3>Name to formula</h3>
+        <p>For <strong>disulfur decafluoride</strong>, <em>di-</em> sets sulfur to two and <em>deca-</em> sets fluorine to ten. Keep the order and write <span class="formula"><strong>S<sub>2</sub>F<sub>10</sub></strong></span>. Dividing the subscripts by two would give a different atom count per molecule.</p>
+        <p>Read an unprefixed first element as one. <strong>Boron trifluoride</strong> gives <span class="formula"><strong>BF<sub>3</sub></strong></span>. The symbol B has no subscript because one is implied.</p>
+      </div>
+      <div class="attempt">
+        <h3>Write a formula from a molecule’s name</h3>
+        <p>Write the formula for <strong>tetraphosphorus trisulfide</strong>. Match each prefix to the element that follows it.</p>
+        <details><summary>Compare your reasoning</summary><p><em>Tetra-</em> sets phosphorus to four, and <em>tri-</em> sets sulfur to three. The formula is <span class="formula"><strong>P<sub>4</sub>S<sub>3</sub></strong></span>. If you switched the 3 and 4, read the names in order and place each subscript right after its element.</p></details>
+        <p><strong>Retry.</strong> Write a formula for <strong>disulfur dichloride</strong>. Explain whether you should reduce any subscripts.</p>
+        <details><summary>Compare the retry</summary><p><span class="formula"><strong>S<sub>2</sub>Cl<sub>2</sub></strong></span> has two atoms of each element in a molecule. Keep both subscripts to preserve those counts.</p></details>
+      </div>
+    </section>
+
+    <section aria-labelledby="your-turn">
+      <p class="kicker">04 / Choose your method</p>
+      <h2 id="your-turn">Three labels to complete</h2>
+      <p>Imagine putting these labels into a chemical inventory. For each, write the requested label and explain which part of the clue told you what to count. Try all three before checking.</p>
+      <div class="attempt exit-set">
+        <ol>
+          <li><span class="formula">Cr<sup>3+</sup></span> and <span class="formula">C<sub>2</sub>O<sub>4</sub><sup>2−</sup></span>. Write one formula and the full name for the compound.</li>
+          <li><span class="formula">CuCl<sub>2</sub></span>. Write its name. Use <span class="formula">Cl<sup>−</sup></span> for chloride.</li>
+          <li><strong>Diphosphorus tetrafluoride</strong>. Write its formula.</li>
+        </ol>
+        <details><summary>Compare the three labels</summary>
+          <ol>
+            <li>The charges mark ions. Several rows in the ion key have charge −2 and four oxygens. Only oxalate has two carbon atoms. Two chromium ions give +6 and three oxalate ions give −6. Write <span class="formula"><strong>Cr<sub>2</sub>(C<sub>2</sub>O<sub>4</sub>)<sub>3</sub></strong></span>, <strong>chromium(III) oxalate</strong>. The (III) is the charge on each chromium ion. The outside subscript 3 counts whole oxalate ions.</li>
+            <li>Copper paired with a nonmetal suggests the charge method here. Two chlorides contribute −2, so one copper contributes +2. Write <strong>copper(II) chloride</strong>.</li>
+            <li>The prefixes give the counts. Write <span class="formula"><strong>P<sub>2</sub>F<sub>4</sub></strong></span>. A ratio of one to two would lose the number of atoms in one molecule.</li>
           </ol>
-        </div>
+        </details>
       </div>
-      <p class="note">When the second element has one atom, keep <em>mono-</em>. In Cl<sub>2</sub>O the single oxygen gives <em>monoxide</em> (mono + oxide with one o dropped), so the name is dichlorine monoxide. Follow your course’s spelling for other prefix–oxide combinations.</p>
-      <div class="practice">
-        <h3>Translate in both directions</h3>
-        <p>Write the names of BrF<sub>5</sub> and S<sub>2</sub>O. Explain what happens when a single atom appears in the first position or in the second. Then write the formula for disulfur decafluoride.</p>
-        <form data-label-check data-key="bromine pentafluoride" data-success="Bromine pentafluoride fits. The first element has one atom, so mono- is omitted. Penta- counts five fluorine atoms." data-mistakes='{"monobromine pentafluoride":"Your atom counts are right. Drop mono- from the first element name.","bromine(v) fluoride":"The 5 counts fluorine atoms in the molecule. Use a count prefix for those atoms."}' hidden>
-          <label for="br-label">Name of BrF<sub>5</sub></label>
-          <input id="br-label" type="text" autocomplete="off" required>
-          <button type="submit" disabled>Check name</button>
-          <p role="status" data-result></p>
-        </form>
-        <form data-label-check data-key="disulfur monoxide" data-success="Disulfur monoxide fits. Di- counts the two sulfur atoms. The second element has one atom, so mono- stays and joins oxide as monoxide." data-mistakes='{"disulfur oxide":"Include the one-atom prefix on the second element. Join mono- and oxide by dropping one o.","disulfur monooxide":"The two adjacent o letters contract to one in this name."}' hidden>
-          <label for="oxide-label">Name of S<sub>2</sub>O</label>
-          <input id="oxide-label" type="text" autocomplete="off" required>
-          <button type="submit" disabled>Check name</button>
-          <p role="status" data-result></p>
-        </form>
-        <form data-label-check data-mode="formula" data-key="S2F10" data-success="S₂F₁₀ fits. Di- gives two sulfur atoms and deca- gives ten fluorine atoms in one molecule." data-mistakes='{"SF5":"Those counts are half the counts specified. Keep the two sulfur atoms and ten fluorine atoms in the molecule.","S10F2":"Read each prefix with the element word it starts. Di- belongs to sulfur."}' hidden>
-          <label for="s-formula">Formula for disulfur decafluoride</label>
-          <input id="s-formula" type="text" autocomplete="off" spellcheck="false" required>
-          <button type="submit" disabled>Check formula</button>
-          <p role="status" data-result></p>
-        </form>
-        <details><summary>Compare the molecular labels</summary><p>BrF<sub>5</sub> is <strong>bromine pentafluoride</strong>. One Br takes no prefix in the first position and five F take <em>penta-</em>. S<sub>2</sub>O is <strong>disulfur monoxide</strong>. Two S take <em>di-</em>, and one O in the second position takes <em>mono-</em>, giving <em>monoxide</em>. Disulfur decafluoride is <strong>S<sub>2</sub>F<sub>10</sub></strong>. Keep both counts even though they share a factor of two.</p></details>
-        <details><summary>Retry with a one-atom ending</summary><p>In OF<sub>2</sub>, which element takes a prefix? If you saw <em>monofluoride</em> at the end of a molecular name, how many fluorine atoms would that give?</p><details><summary>Compare your retry</summary><p>Only fluorine takes a prefix in oxygen difluoride. A second-position <em>monofluoride</em> would give one F atom.</p></details></details>
+      <div class="call-back">
+        <h3>Take the check with you</h3>
+        <p>For an ionic formula, account for all charges and verify the smallest ratio. For an ionic name, check the charge per metal ion. For a group you have not seen before, look in your course’s polyatomic ion table and match the entire formula and charge. For a molecular formula or name, read back the actual count of each kind of atom.</p>
+        <p>Tomorrow, before reopening the lesson, recall what a Roman numeral, a subscript outside parentheses and a molecular prefix each tell you. Then write the formula for <strong>silicon tetrafluoride</strong> using <strong>Si</strong> for silicon and explain what the prefix counts.</p>
+        <details><summary>Check on your return</summary><p>Write <span class="formula"><strong>SiF<sub>4</sub></strong></span>. <em>Tetra-</em> counts four fluorine atoms in one molecule. The first element has no prefix, so it contributes one atom.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="transfer">
-      <p class="eyebrow">04 · Choose your method</p>
-      <h2 id="transfer">Finish two labels</h2>
-      <div class="practice">
-        <p>A label printer has <strong>Cr<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></strong> on one card and <strong>dichlorine heptoxide</strong> on another. Write the missing name and formula. Explain what told you which method to use and what each number in your completed labels represents.</p>
-        <details><summary>Get a cue</summary><p>Look up the symbol Cr and check whether a group in either card is listed as an ion. For a word with a count prefix, read the prefix together with the element it begins.</p></details>
-        <details><summary>Compare the completed labels</summary><p><strong>Chromium(III) sulfate.</strong> The metal Cr and the sulfate groups point to charge balance. Three sulfate ions give 3 × (−2) = −6. Divide the balancing +6 by two chromium ions to get +3 per chromium. The (III) records that charge.</p><p><strong>Cl<sub>2</sub>O<sub>7</sub>.</strong> The name’s prefixes give two chlorine atoms and seven oxygen atoms in one molecule. In this spelling <em>heptoxide</em> uses the seven-count prefix <em>hepta-</em>.</p></details>
-        <details><summary>Retry by explaining a bad edit</summary><p>The printer changes (III) to (II) on the first label and replaces the 7 with a 1 on the second. Which edit breaks a charge check? Which edit changes an atom count?</p><details><summary>Compare your explanation</summary><p>Two chromium ions at +2 would give +4, short of the +6 required. On the second label the edit changes seven oxygen atoms to one.</p></details></details>
-      </div>
-      <p><strong>Next time.</strong> Before opening the lookup, write what a Roman numeral, a prefix, and a subscript outside parentheses each tell you. On a new label, underline the clue that picks your method and check your answer by translating it back.</p>
-    </section>
-
-    <section id="reference" aria-labelledby="lookup">
-      <h2 id="lookup">Look up only what you need</h2>
-      <p>Match the exact symbol and internal subscripts. Notice how changing the oxygen count distinguishes sulfite and sulfate while leaving the group charge the same. For a variable-charge metal such as copper, tin, titanium or chromium, use the given charge or find it from charge balance.</p>
-      <div class="routes reference">
-        <div><h3>Selected ions</h3><dl class="lookup">
-          <dt>Zn<sup>2+</sup></dt><dd>zinc, fixed</dd>
-          <dt>N<sup>3−</sup></dt><dd>nitride</dd>
-          <dt>P<sup>3−</sup></dt><dd>phosphide</dd>
-          <dt>PO<sub>4</sub><sup>3−</sup></dt><dd>phosphate</dd>
-          <dt>SO<sub>3</sub><sup>2−</sup></dt><dd>sulfite</dd>
-          <dt>SO<sub>4</sub><sup>2−</sup></dt><dd>sulfate</dd>
-        </dl></div>
-        <div><h3>Count prefixes</h3><dl class="lookup">
-          <dt>1</dt><dd>mono-</dd><dt>2</dt><dd>di-</dd><dt>3</dt><dd>tri-</dd><dt>4</dt><dd>tetra-</dd><dt>5</dt><dd>penta-</dd>
-          <dt>6</dt><dd>hexa-</dd><dt>7</dt><dd>hepta-</dd><dt>8</dt><dd>octa-</dd><dt>9</dt><dd>nona-</dd><dt>10</dt><dd>deca-</dd>
-        </dl></div>
-      </div>
-      <p>Use the <a href="https://iupac.org/wp-content/uploads/2022/07/IUPAC_Periodic_Table-04May22_CRA.pdf">IUPAC periodic table (one-page PDF)</a> to check an element’s name and symbol. For example, find Br and confirm that its name is bromine. Use your course’s ion list for charges and group names beyond this lesson.</p>
-    </section>
-
-    <section id="glossary" aria-labelledby="glossary-title">
-      <h2 id="glossary-title">Glossary</h2>
-      <dl>
-        <dt id="term-subscript">Subscript</dt><dd>A small lower number that counts atoms or groups. An omitted count is one.</dd>
-        <dt id="term-charge">Charge</dt><dd>An electrical property. An ion’s superscript, such as 2−, shows the sign and size of its net charge.</dd>
-        <dt id="term-ion">Ion</dt><dd>An atom or bonded group with a net electrical charge. A cation is positive and an anion is negative.</dd>
-        <dt id="term-ionic">Ionic compound</dt><dd>A compound of positive and negative ions with zero total charge.</dd>
-        <dt id="term-unit">Formula unit</dt><dd>The simplest ratio of the ions in an ionic compound.</dd>
-        <dt id="term-molecular">Molecular compound</dt><dd>A substance made of distinct molecules that each contain more than one element.</dd>
-        <dt id="term-roman">Roman numeral</dt><dd>In the ionic names here, the numeral in parentheses records the positive charge of one metal ion. I = 1, II = 2, III = 3, IV = 4, V = 5, VI = 6.</dd>
-        <dt id="term-poly">Polyatomic ion</dt><dd>A group of bonded atoms with a net charge. Parentheses show which group an outside subscript repeats.</dd>
-        <dt id="term-binary">Binary compound</dt><dd>A compound with two distinct elements, even if it has several atoms of either element.</dd>
-        <dt id="term-prefix">Prefix</dt><dd>A word part attached at the beginning. In these molecular names it gives an atom count.</dd>
+    <section id="glossary" aria-labelledby="glossary-title"><h2 id="glossary-title">Glossary</h2>
+      <dl class="glossary-list">
+        <dt id="term-subscript">Subscript</dt><dd>A lowered number that counts the preceding atom or the group in preceding parentheses.</dd>
+        <dt id="term-ion">Ion</dt><dd>An atom or bonded group with an electric charge. A raised sign and number show that charge. A lone sign means a charge of +1 or −1.</dd>
+        <dt id="term-ionic">Ionic compound</dt><dd>A substance made of positive and negative ions with zero total charge. Its formula gives the simplest neutral ratio of those ions.</dd>
+        <dt id="term-roman">Roman numeral</dt><dd>A number written with letters, such as I, II, III or IV. In the ionic names here it gives the positive charge of a single metal ion.</dd>
+        <dt id="term-polyatomic">Polyatomic ion</dt><dd>A bonded group of atoms that acts as one charged unit when you balance charges and write a formula.</dd>
+        <dt id="term-molecule">Molecule</dt><dd>A distinct group of bonded atoms. Its molecular formula gives the number of atoms of each element in one such group.</dd>
+        <dt id="term-binary">Binary compound</dt><dd>A compound containing exactly two different elements. A molecule with four atoms of one element and three of another is still binary.</dd>
+        <dt id="term-prefix">Prefix</dt><dd>A beginning such as <em>di-</em> or <em>tri-</em> that records an atom count in the molecular names in this lesson.</dd>
       </dl>
+    </section>
+    <section class="sources" aria-labelledby="sources">
+      <h2 id="sources">Reference lookups</h2>
+      <p>Look for the superscript charge in the synonym list in the <a href="https://www.ebi.ac.uk/chebi/CHEBI%3A16189">ChEBI sulfate entry</a>. You can also check how the formula and name are recorded in the <a href="https://www.ebi.ac.uk/chebi/CHEBI%3A43474">ChEBI hydrogen phosphate entry</a>.</p>
     </section>
   </main>
 </body>

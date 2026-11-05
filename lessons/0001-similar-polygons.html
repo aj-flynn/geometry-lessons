@@ -6,22 +6,23 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Match corresponding parts, explore scale factors, and distinguish length, perimeter, and area ratios using new examples.">
   <title>Similar polygons | Geometry lessons</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261105c">
-  <link rel="stylesheet" href="../assets/similarity.css?v=20261105c">
-  <script src="../assets/lesson.js?v=20261105c" defer></script>
-  <script src="../assets/similarity.js?v=20261105c" type="module"></script>
+  <link rel="stylesheet" href="../assets/site.css?v=20261105d">
+  <link rel="stylesheet" href="../assets/similarity.css?v=20261105d">
+  <script src="../assets/lesson.js?v=20261105d" defer></script>
+  <script src="../assets/similarity.js?v=20261105d" type="module"></script>
+  <script src="../assets/geometry-paths.js?v=20261105d" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<main id="main" class="lesson">
+<main id="main" class="lesson geometry-guide">
   <a class="return-link" href="../index.html">Back to the lesson library</a>
   <h1>Similar polygons</h1>
   <p class="intro">Match the parts. Keep the direction. Then decide whether you are scaling a length or an area.</p>
-  <p>Work through this in short stops. Start with sections 1–2 for matching and side lengths; return for sections 3–4 on area and shape. Use the final practice when you are ready. Every example here is new; use the method to return to your own work independently.</p>
-  <aside class="lesson-goals" aria-label="Learning goals"><strong>Your goals</strong><ul><li>Match corners and sides, even when a figure turns.</li><li>Use one scale factor in the direction you need.</li><li>Explain why perimeter and area grow differently.</li></ul></aside>
-  <nav class="jump-links" aria-label="Lesson sections"><a href="#glossary">Glossary</a><a href="#match">Match</a><a href="#scale">Scale</a><a href="#explore">Explore</a><a href="#rectangles">Test</a><a href="#reason">Reason</a><a href="#practice">Practice</a></nav>
-
-<section aria-labelledby="match">
+  <p>Choose one short path. Try its checks, then stop or continue. Every example is new; return to your own homework to use the method independently.</p>
+  <noscript><p>Open each path and hint you want to print before using your browser's Print command.</p></noscript>
+  <nav class="path-picks" aria-label="Choose a learning path"><a href="#path-match">Match &amp; scale</a><a href="#path-area">Area &amp; shape</a><a href="#path-practice">Reason &amp; practice</a><a href="#glossary">Glossary</a></nav>
+  <details class="goal-note"><summary>What will I be able to do?</summary><ul><li>Match corners and sides, even when a figure turns.</li><li>Use one scale factor in the direction you need.</li><li>Explain why perimeter and area grow differently.</li></ul></details>
+<details class="lesson-path" name="geometry-path" id="path-match"><summary><span>Match and scale</span><small>Match the endpoints → keep one direction → try a missing side</small></summary><div class="path-content"><section aria-labelledby="match">
     <h2 id="match">1. Match the parts</h2>
     <p><strong>Similar</strong> means the same shape: matching angles have equal measures and all matching lengths share one multiplier. A <strong>corresponding</strong> part is the part that matches.</p>
     <p>A similarity statement is an ordered matching list. In this new example, <strong>JKLMN ∼ TUVWX</strong> means the first letters match, then the second letters, and so on.</p>
@@ -68,7 +69,8 @@
     <div class="practice"><h3>Try it here: a missing side</h3><p>Two similar flat game tokens have a matching pair of sides measuring 25 mm on the original and 35 mm on the target. Another original side is 17 mm. Find its matching target length.</p><form data-practice data-expected="23.8" data-success="That fits this new token. You used the same enlargement factor for both pairs. Explain how your units and direction stayed consistent." data-hint="Find target/original from the complete pair, then multiply the other original length." data-mistakes='{"12.14":"That shrinks the side. The target is larger; check whether you divided by the enlargement factor.","1.4":"That is the multiplier. Apply it to the other original length to find a length."}' data-interactive-only hidden><label for="missing-side">Target length in millimeters</label><div class="controls"><input id="missing-side" type="number" step="any" min="0" inputmode="decimal" required><button type="submit">Check length</button></div><p data-feedback class="feedback" role="status" aria-live="polite"></p></form><details><summary>Hint about the known pair</summary><p>Compare 35 to 25 in that order. The other original side gets the same multiplier.</p></details></div>
   </section>
 
-  <section aria-labelledby="explore" data-similarity-explorer>
+<aside class="path-stop"><strong>Pause here.</strong> Can you name the matching parts and explain which way your multiplier goes? That is enough for this visit if you are working on side lengths.<p><a href="#path-area">Next: area and shape</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
+<details class="lesson-path" name="geometry-path" id="path-area"><summary><span>Area and shape</span><small>Predict → resize → explain area → recognize a stretch</small></summary><div class="path-content">  <section aria-labelledby="explore" data-similarity-explorer>
     <h2 id="explore">3. Explore the change</h2>
     <p>Imagine enlarging a rectangular art print. The original is <strong>13 cm by 9 cm</strong>. Its perimeter is 44 cm and its area is 117 cm². Resize both dimensions together and watch the boundary and interior change.</p>
     <div class="prediction" data-choice-quiz data-correct="twice" data-success="Good prediction. Area combines width and height, so look for the scale factor twice. Watch both dimensions as the print changes." data-hint="Perimeter follows lengths. For area, count the two dimensions in width × height, then try again."><h3>Predict before you move</h3><p>When both dimensions change by the same factor, does the area use that factor once or twice?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="once">Use it once</button><button type="button" data-choice="twice">Use it twice</button></div><p class="feedback" data-choice-feedback role="status" aria-live="polite"></p></div>
@@ -126,7 +128,8 @@
     <div class="practice" data-choice-quiz data-correct="unequal" data-success="Yes. Width uses 40/25 while height uses 25.2/14. The unequal factors indicate a stretch rather than one uniform scale." data-hint="Compare target/original for the long sides and for the short sides."><h3>Try it here: diagnose a stretch</h3><p>One rectangular fabric patch is 25 cm by 14 cm. Another is 40 cm by 25.2 cm. Which observation settles whether one uniform scale can make the second patch?</p><div class="choice-buttons" data-interactive-only hidden><button type="button" data-choice="perimeter" data-hint="Different perimeters can occur in similar figures. Compare the matching side ratios.">The perimeters differ</button><button type="button" data-choice="angle" data-hint="The rectangles both have right angles. That alone does not check their proportions.">The angles are right</button><button type="button" data-choice="unequal">The side factors differ</button></div><p data-choice-feedback class="feedback" role="status" aria-live="polite"></p><details><summary>Hint about what must match</summary><p>A uniform scale needs the same factor in both dimensions. Check the two ratios before making your conclusion.</p></details></div>
   </section>
 
-  <section aria-labelledby="reason">
+<aside class="path-stop"><strong>Pause here.</strong> Explain why a length factor appears twice in an area. If that is unclear, revisit the tiled picture before moving on.<p><a href="#path-practice">Next: reason and practice</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
+<details class="lesson-path" name="geometry-path" id="path-practice"><summary><span>Reason and practice</span><small>Test a claim → mix the methods → explain your exit check</small></summary><div class="path-content">  <section aria-labelledby="reason">
     <h2 id="reason">5. Reason about a claim</h2>
     <p>For an “always, sometimes, or never” claim, decide what evidence would support your choice before choosing a label.</p>
     <ul class="reasoning-list">
@@ -146,7 +149,9 @@
     <noscript><p>Write your responses on paper. You can still open the hints and explain the reasoning in your private chat.</p></noscript>
   </section>
 
-  <section id="glossary" aria-labelledby="ideas">
+  <section class="end-note" aria-labelledby="remember"><h2 id="remember">8. Keep the method</h2><p>On your own problem: name the matching parts, mark the comparison direction, choose length or area, and justify the relationship before calculating. Do the calculation yourself.</p><p>Later, without looking: explain why a perimeter scales once while an area scales twice. Ask in the private chat if a step is unclear; say where your reasoning got stuck.</p></section>
+<aside class="path-stop"><strong>Pause here.</strong> You can stop after the exit check. Next time, recall the method before opening a path; use a hint only when needed.<p><a href="#path-match">Revisit: match and scale</a> · <a href="../index.html">Lesson library</a></p></aside></div></details>
+<details class="reference-drawer"><summary>Keep nearby: glossary and sources</summary>  <section id="glossary" aria-labelledby="ideas">
     <h2 id="ideas">7. Your glossary</h2>
     <dl>
       <dt>Similar polygons</dt><dd>Polygons with the same shape: corresponding angles have equal measures, and every corresponding side length has the same scale factor. Size and orientation may differ.</dd>
@@ -167,8 +172,8 @@
   </section>
 
   
-  <section class="end-note" aria-labelledby="remember"><h2 id="remember">8. Keep the method</h2><p>On your own problem: name the matching parts, mark the comparison direction, choose length or area, and justify the relationship before calculating. Do the calculation yourself.</p><p>Later, without looking: explain why a perimeter scales once while an area scales twice. Ask in the private chat if a step is unclear; say where your reasoning got stuck.</p></section>
   <section class="sources" aria-labelledby="sources"><h2 id="sources">Read a little more</h2><p><a href="https://courseware.cemc.uwaterloo.ca/46/assignments/1239/5">University of Waterloo CEMC: Similarity and Congruence</a> has further explanations and interactive explorations. <a href="https://www.mathopenref.com/similarpolygons.html">Math Open Reference</a> explains correspondence and orientation. Choose your own work when you return to the homework.</p><p><a class="return-link" href="../index.html">Return to the lesson library</a></p></section>
+</details>
 </main>
 </body>
 </html>

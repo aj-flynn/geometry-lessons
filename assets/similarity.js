@@ -1,3 +1,5 @@
+// Numeric checking must initialize before any interactive practice is exposed.
+import './lesson.js';
 import { rectangleMetrics, rectangleDrawing, formatNumber } from './similarity-model.js';
 
 const explorer = document.querySelector('[data-similarity-explorer]');

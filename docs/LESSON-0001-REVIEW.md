@@ -1,3 +1,65 @@
+# Geometry refinement: independent Astra 99.5/100
+
+The lesson and geometry process each scored99.5/100. Dependency-failure resilience was fixed and tested. The remaining label-width finding is retained below; no hard-boundary failure was reported.
+
+```json
+{
+  "reviewer": "Independent fresh gpt-6-astra high geometry_candidate_three",
+  "lessonScore": 99.5,
+  "processScore": 99.5,
+  "categories": {
+    "A1": 7,
+    "A2": 12,
+    "A3": 3,
+    "A4": 3,
+    "B1": 3,
+    "B2": 3,
+    "B3": 5,
+    "B4": 3,
+    "B5": 4,
+    "B6": 2,
+    "C1": 3,
+    "C2": 4,
+    "C3": 3,
+    "C4": 2,
+    "C5": 3,
+    "D1": 8,
+    "D2": 6.5,
+    "E1": 10,
+    "E2": 3,
+    "E3": 2,
+    "F1": 3,
+    "F2": 4,
+    "F3": 3
+  },
+  "processCategories": [
+    30,
+    20,
+    20,
+    15,
+    14.5
+  ],
+  "finding": "At k2.4 target height label bounding box right edge364.383 exceeds SVG viewBox360, clipping final unit glyph. Widen diagram space equally for both figures or adjust placement; verify text bounds at endpoints and intermediate.",
+  "checks": "Independent110 Chrome157.0.8103.38 checks pass; supplemental endpoint measurement and screenshot confirm clipping. Current checker/test publication fixtures fail newly introduced dependency-map requirement; manifest refresh pending.",
+  "strengths": "All private inputs visually compared. No hard privacy, separation, math, or core-accessibility boundary found. Remaining learning, interactive, design, accessibility and delivery categories full.",
+  "limits": "Chrome only, CSS zoom not native browser UI zoom; no screen-reader or learner testing. Local candidate only. Process score covers geometry application of shared contract, not independently tested other subjects.",
+  "hashes": {
+    "lessons/0001-similar-polygons.html": "3bab9fce8409140bf7abd1f38563ec5f5fb99f361d3d15b59cbb3c0c0f95ee63",
+    "assets/similarity.css": "c84f8c54c83ef0a03ad24489f22413b901ef3cf710901a2598d3081a376c671e",
+    "assets/similarity.js": "1f3a3da260d55bf2cc1b4c3e2593b0ead28e294d56f299b81c3675933e5de0f9",
+    "assets/similarity-model.js": "ff52c0213fef160ff39a202e31e22f1dec6e68c78aa8e009655af04594dc463b",
+    "assets/geometry-paths.js": "49e17d3887bf1c92b6b743b23298ac15de32d6ebd1fe62aff6a34b3b2f804c9c",
+    "assets/site.css": "9fc107f9225c00cd17075f52d776f2ecf61982d53b0eec24fac1cc0043d78f5a",
+    "assets/lesson.js": "b3b3f5341a3bb095f3f5ddc70ae4604df345c18e9aec7df12e657742cad74d6c",
+    ".agents/skills/geometry-teach/SKILL.md": "ee773547c1aec52d2e7bfcba22f1ed48ec140b11a08e548cb10d002c3a367f65"
+  }
+}
+```
+
+---
+
+## Earlier fixed-revision reviews
+
 # Geometry refinement: independent Astra 99/100
 
 Lesson and geometry process each scored99/100. No hard-boundary failure. The remaining enhancement-dependency failure is recorded below; the next revision addresses it.

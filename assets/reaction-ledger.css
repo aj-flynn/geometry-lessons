@@ -1,3 +1,7 @@
+.chemistry header h1 {
+  overflow-wrap: anywhere;
+}
+
 .reaction-ledger .ledger-display {
   background: #fff;
   border: 2px solid #146875;

@@ -1,0 +1,60 @@
+.ionic-lesson {
+  font-size: 1.0625rem;
+  overflow-wrap: anywhere;
+}
+.ionic-lesson h1 { font-size: clamp(2rem, 6vw, 3.6rem); }
+.ionic-lesson h2 { font-size: 1.75rem; }
+.ionic-lesson h3 { font-size: 1.3rem; }
+.ionic-lesson aside {
+  padding: .55rem 1rem;
+  border-inline-start: .25rem solid #324f41;
+  background: #e6ede7;
+}
+.ionic-lesson .route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.3rem;
+}
+.ionic-lesson .route a { font-size: inherit; text-decoration: underline; }
+.ionic-lesson .equation {
+  padding: .6em .7em;
+  border-inline-start: .18rem solid #324f41;
+  background: #f7faf7;
+  line-height: 1.65;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.ionic-lesson .formula { white-space: nowrap; }
+.ionic-lesson .operator { padding-inline: .1em; }
+.ionic-lesson .arrow { font-weight: 700; }
+.ionic-lesson sub, .ionic-lesson sup { line-height: 0; }
+.ionic-lesson .ion-figure { padding: .6rem; }
+.ionic-lesson .ion-figure svg { max-width: 24rem; margin-inline: auto; }
+.ionic-lesson figcaption { font-size: inherit; }
+.ionic-lesson .coefficient-check[hidden][data-practice-ready] { display: block; }
+.ionic-lesson input[type=number] { box-sizing: border-box; width: min(7rem, 100%); font: inherit; }
+.ionic-lesson .controls > button {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font: inherit;
+}
+.ionic-lesson dt { scroll-margin-top: 1rem; }
+@media (max-width: 400px) {
+  .ionic-lesson details, .ionic-lesson .practice { padding-inline: .75rem; }
+  .ionic-lesson details details { padding-inline: .45rem; }
+  .ionic-lesson .equation { padding-inline: .25rem; }
+}
+@media print {
+  .ionic-lesson { font-size: 11pt; }
+  .ionic-lesson .route, .ionic-lesson .coefficient-check { display: none !important; }
+  .ionic-lesson section { margin-top: 1rem; }
+  .ionic-lesson p { margin-block: .45rem; }
+  .ionic-lesson details, .ionic-lesson .practice { padding: .4rem .65rem; }
+  .ionic-lesson details { margin-block: .4rem; }
+  .ionic-lesson summary { min-height: 0; padding-block: .2rem; }
+  .ionic-lesson .equation { break-inside: avoid; }
+  .ionic-lesson .ion-figure { max-width: 6in; margin-block: .5rem; }
+  .ionic-lesson .ion-figure svg { max-width: 3.2in; }
+  .ionic-lesson h2, .ionic-lesson h3, .ionic-lesson summary, .ionic-lesson dt { break-after: avoid; }
+}

@@ -176,24 +176,22 @@ class LivePublicationTests(unittest.TestCase):
         self.page.emulate_media(media='screen')
         self.assertFalse(self.page.locator('#reason').is_visible())
 
-    def test_geometry_preserves_unready_component_comparisons(self):
-        for name in ('lesson.js', 'similarity.js', 'similarity-model.js'):
+    def test_shared_practice_preserves_unready_component_comparisons(self):
+        for name in ('lesson.js', 'scale-workshop.js'):
             self.publish('assets/' + name, (script.parents[1] / 'assets' / name).read_text(encoding='utf-8'))
-        self.publish('components.html', '''<!doctype html><script type="module" src="assets/similarity.js"></script>
-          <section data-similarity-explorer><p id="static-explorer">Static diagram explanation remains.</p></section>
-          <form id="broken" data-practice data-interactive-only hidden><input type="number"><button type="submit" disabled>Check</button></form>
-          <details id="broken-fallback" data-static-only><summary>Compare</summary><p>Static reasoning remains.</p></details>
-          <form id="bad-expected" data-practice data-expected="unknown" data-interactive-only hidden><input type="number"><button type="submit" disabled>Check</button><p data-feedback></p></form>
-          <details id="bad-expected-fallback" data-static-only><summary>Compare</summary><p>Authored comparison remains.</p></details>
-          <form id="working" data-practice data-expected="6" data-success="Reasoning checked." data-interactive-only hidden><input type="number"><button type="submit" disabled>Check</button><p data-feedback></p></form>
-          <details id="working-fallback" data-static-only><summary>Compare</summary><p>Static reasoning.</p></details>
-          <div id="bad-choice" data-choice-quiz><div data-interactive-only hidden><button data-choice="a" type="button">A</button></div><details data-static-only><summary>Compare</summary><p>Choice reasoning remains.</p></details></div>
-          <div id="good-choice" data-choice-quiz data-correct="a" data-success="Choice checked."><div data-interactive-only hidden><button data-choice="a" type="button">A</button></div><p data-choice-feedback></p><details data-static-only><summary>Compare</summary><p>Choice reasoning.</p></details></div>''')
+        self.publish('components.html', '''<!doctype html><script src="assets/lesson.js" defer></script>
+          <script src="assets/scale-workshop.js" defer></script>
+          <form id="broken" data-practice hidden><input type="number"><button type="submit" disabled>Check</button></form>
+          <details id="broken-fallback" data-numeric-comparison><summary>Compare</summary><p>Static reasoning remains.</p></details>
+          <form id="bad-expected" data-practice data-expected="unknown" hidden><input type="number"><button type="submit" disabled>Check</button><p data-feedback></p></form>
+          <details id="bad-expected-fallback" data-numeric-comparison><summary>Compare</summary><p>Authored comparison remains.</p></details>
+          <form id="working" data-practice data-expected="6" data-success="Reasoning checked." hidden><input type="number"><button type="submit" disabled>Check</button><p data-feedback></p></form>
+          <details id="working-fallback" data-numeric-comparison><summary>Compare</summary><p>Static reasoning.</p></details>
+          ''')
         self.page.goto(self.base + 'components.html', wait_until='networkidle')
         self.assertFalse(self.page.locator('#broken').is_visible())
         self.assertTrue(self.page.locator('#broken button').is_disabled())
         self.assertTrue(self.page.locator('#broken-fallback').is_visible())
-        self.assertTrue(self.page.locator('#static-explorer').is_visible())
         self.assertTrue(self.page.locator('#bad-expected button').is_disabled())
         self.assertTrue(self.page.locator('#bad-expected-fallback').is_visible())
         self.assertFalse(self.page.locator('#bad-expected').is_visible())
@@ -202,11 +200,6 @@ class LivePublicationTests(unittest.TestCase):
         self.page.locator('#working input').fill('6')
         self.page.locator('#working input').press('Enter')
         self.assertEqual(self.page.locator('#working [data-feedback]').inner_text(), 'Reasoning checked.')
-        self.assertFalse(self.page.locator('#bad-choice button').is_visible())
-        self.assertTrue(self.page.locator('#bad-choice details').is_visible())
-        self.page.locator('#good-choice button').click()
-        self.assertEqual(self.page.locator('#good-choice [data-choice-feedback]').inner_text(), 'Choice checked.')
-        self.assertFalse(self.page.locator('#good-choice details').is_visible())
 
 
 class ChemistrySelectionTests(unittest.TestCase):

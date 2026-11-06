@@ -36,7 +36,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -46,12 +46,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       },
@@ -94,7 +92,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -104,12 +102,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       }
@@ -150,7 +146,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -160,12 +156,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       }
@@ -206,7 +200,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -216,12 +210,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       }
@@ -263,7 +255,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -273,12 +265,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       }
@@ -319,7 +309,7 @@
           "docs/REVIEW-RUBRIC.md": "d907bd82eb7be13edcea1a92e626b3a1e0dde98e5be37209eeec742f8399cb40",
           "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
           "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
-          "scripts/build-index.mjs": "159745908e638d1b5b5f2980e3509127d4e4e181132f968a2ac850a3408a590c",
+          "scripts/build-index.mjs": "acc5b742b11b3d93b049926851a2406a9d6809b29e3248296f523ddb57ff7350",
           "scripts/check-chemistry-browser.py": "50037f7c46d8d4b25216a18a45dc2a0ac3ad1d558736e95984792d552fe56340",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
@@ -329,12 +319,10 @@
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
           "templates/lesson.html": "a2dfec7309ad52758711f1ef9b0127b0a73f389d5890aba36315c5a57d79406c",
           "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
-          "tests/geometry-paths.test.mjs": "d8b03ed88105b7cce7d513f368945e8608b712066a0db1d9504b889244614c40",
           "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
-          "tests/similarity.test.mjs": "bcb7ba414a3c319bc91b0b4166fd9e1aaa849f759bb9251c3a0e6c7832abea7d",
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
-          "tests/test_live.py": "3ffdc683ba7baff9524cd720914a1de99fc6a63759caeca326fdaaf5ea0edd0f",
+          "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
         }
       }

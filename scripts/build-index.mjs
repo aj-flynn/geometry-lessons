@@ -14,8 +14,8 @@ export const reviewContractCoreFiles = Object.freeze([
   'scripts/build-index.mjs', 'scripts/check.mjs', 'scripts/check-live.py',
   'scripts/check-chemistry-browser.py', 'scripts/check-practice-browser.py', 'scripts/review-candidate.mjs',
   'templates/index.html', 'templates/lesson.html',
-  'tests/chemistry.test.mjs', 'tests/geometry-paths.test.mjs',
-  'tests/interactions.test.mjs', 'tests/similarity.test.mjs',
+  'tests/chemistry.test.mjs',
+  'tests/interactions.test.mjs',
   'tests/subjects.test.mjs', 'tests/test_docx.py', 'tests/test_live.py', 'tests/workflow.test.mjs'
 ]);
 export const isReviewContractPath = name => reviewContractCoreFiles.includes(name) ||

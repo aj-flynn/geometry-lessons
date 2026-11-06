@@ -1,5 +1,7 @@
 # Teaching resources
 
+- [Open Up Resources Grade 3 glossary](https://access.openupresources.org/curricula/our-k5-math/en/grade-3/student_glossary.html) explains perimeter, area and units.
+
 - [Pasco-Hernando State College Writing Center: Figures of Speech](https://writing-center.phsc.edu/writing/literature/fiction/fiction-figures-speech): accessible institutional reference for figurative-language distinctions. The full destination was reviewed for accuracy and separation; English lesson examples remain original.
 - [Folger Shakespeare Library: Reading Shakespeare's Language](https://www.folger.edu/explore/shakespeares-works/shakespeares-sonnets/reading-shakespeares-language-sonnets/): historical word meanings, unusual word order, and sentence structure. No source passages are reproduced in the English lesson.
 
@@ -15,6 +17,9 @@
 
 
 ## Chemistry concepts
+
+- [Anoka-Ramsey balancing strategies](https://webs.anokaramsey.edu/lund/chem1020/Lecture/Handouts/Strategies%20for%20Balancing%20Chemical%20Equations.pdf) covers common multiples and clearing fractions.
+- [UW–Madison ion charge charts](https://www2.chem.wisc.edu/deptfiles/genchem/netorial/rottosen/tutorial/modules/chemical_reactions/module4_2/charges2.htm) lists common ion formulas and charges.
 
 - [OpenStax Chemistry 2e: Chemical formulas](https://openstax.org/books/chemistry-2e/pages/2-4-chemical-formulas): composition versus structure and particle counting.
 - [Lewis symbols and structures](https://openstax.org/books/chemistry-2e/pages/7-3-lewis-symbols-and-structures): electron budgets and model limitations.

@@ -1,0 +1,128 @@
+.table-lesson {
+  --rule: #a5bdb9;
+  --deep: #145453;
+}
+.table-lesson header { background: #e2eeea; border-top: .35rem solid var(--deep); }
+.table-lesson .eyebrow {
+  margin: 0 0 .65em;
+  color: var(--deep);
+  font-size: .78em;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.table-lesson header h1, .table-lesson h2, .table-lesson h3 {
+  font-size: 2.8rem;
+  overflow-wrap: anywhere;
+  line-height: 1.12;
+}
+.table-lesson h2 { font-size: 1.8rem; margin-bottom: .55em; }
+.table-lesson h3 { font-size: 1.3rem; margin-bottom: .4em; }
+.table-lesson header .lead { font-size: 1.25rem; line-height: 1.45; }
+.table-lesson .jump-links { display: flex; flex-wrap: wrap; gap: .35rem 1.2rem; }
+.table-lesson .jump-links a { min-height: 44px; display: flex; align-items: center; }
+.table-lesson .warm-up { margin-top: 1.6rem; }
+.table-lesson section { margin-top: 2.8rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+.table-lesson .formula { white-space: nowrap; }
+.table-lesson sup, .table-lesson sub { line-height: 0; }
+.table-lesson .work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+  align-items: start;
+}
+.table-lesson .activity-strip { margin: 0; padding: 1rem; }
+.table-lesson .activity-strip figcaption { margin: 0; font-size: 1em; }
+.table-lesson .activity-strip ol { margin: 0; padding: 0; list-style: none; }
+.table-lesson .activity-strip li { padding: .2em .35em; border-bottom: 1px solid var(--rule); }
+.table-lesson .activity-strip li span { font-weight: 700; display: inline-block; min-width: 2.5em; }
+.table-lesson .activity-strip .marked { background: #fff; }
+.table-lesson .direction { font-weight: 700; margin: .35em 0; }
+.table-lesson .fine { font-size: .88em; }
+.table-lesson .reaction { padding: .6em .75em; border-inline-start: 3px solid var(--deep); background: #e2eeea; }
+.table-lesson .exercise { padding: 1rem; border: 1px solid var(--rule); margin-top: 1.5rem; }
+.table-lesson fieldset { padding: .65rem; margin: .3rem 0 .75rem; }
+.table-lesson .option { padding: .5rem .65rem; overflow-wrap: anywhere; }
+.table-lesson .option input { flex: 0 0 22px; }
+.table-lesson .lookup { max-width: none; table-layout: fixed; margin-top: 1.2rem; }
+.table-lesson .lookup th, .table-lesson .lookup td { padding: .5em; vertical-align: top; }
+.table-lesson .lookup tbody th { font-weight: 600; }
+.table-lesson .reasoning { padding-left: 1.45em; }
+.table-lesson .reasoning li { margin-bottom: .45em; }
+.table-lesson .cups { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+.table-lesson .cup {
+  display: flex;
+  flex-direction: column;
+  gap: .55em;
+  background: #fff;
+  padding: .55em;
+  border: 1px solid var(--rule);
+}
+.table-lesson .charge-map svg { font-size: 17px; font-weight: 700; }
+.table-lesson .charge-map svg text { text-anchor: middle; dominant-baseline: central; }
+.table-lesson .positive { fill: #cce7de; stroke: #48766a; }
+.table-lesson .negative { fill: #fff3c9; stroke: #856e2d; }
+.table-lesson .charge-map { padding: .85rem; }
+.table-lesson .charge-map figcaption { font-size: .9em; }
+.table-lesson .task { padding: .6em .9em; border-left: 3px solid var(--rule); margin: 1em 0; }
+.table-lesson dt { scroll-margin-top: 1rem; }
+@media (max-width: 700px) {
+  .table-lesson .work-grid, .table-lesson .cups { grid-template-columns: 1fr; }
+  .table-lesson header { padding: 1rem; }
+  .table-lesson header h1 { font-size: 2rem; }
+  .table-lesson .exercise { padding: .7rem; }
+  .table-lesson .lookup { table-layout: auto; }
+}
+@media screen and (max-width: 430px) {
+  .table-lesson .formula-bridge, .table-lesson .formula-bridge details { padding-inline: .5rem; }
+  .table-lesson .lookup, .table-lesson .lookup caption, .table-lesson .lookup tbody,
+  .table-lesson .lookup tbody tr, .table-lesson .lookup tbody th, .table-lesson .lookup tbody td {
+    display: block;
+  }
+  .table-lesson .lookup thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .table-lesson .lookup tbody th, .table-lesson .lookup tbody td { overflow-wrap: normal; }
+  .table-lesson .lookup tbody tr + tr { margin-top: .45em; }
+}
+@media print {
+  .table-lesson { font-size: 10pt; line-height: 1.26; }
+  .table-lesson .return-link, .table-lesson .jump-links { display: none; }
+  .table-lesson header { margin: 0; padding: 0; background: white; }
+  .table-lesson .eyebrow { color: #000; }
+  .table-lesson header h1 { font-size: 25pt; max-width: none; }
+  .table-lesson h2 { font-size: 16pt; }
+  .table-lesson h3 { font-size: 12pt; }
+  .table-lesson header .lead { font-size: 12pt; max-width: none; }
+  .table-lesson section { margin-top: 12pt; padding-top: 9pt; }
+  .table-lesson section+section { padding-top: 5pt; }
+  .table-lesson .sources { font-size: inherit; margin-top: 6pt; }
+  .table-lesson p, .table-lesson details { margin-block: 4pt; max-width: none; }
+  .table-lesson form { margin-top: 4pt; }
+  .table-lesson .warm-up { margin-top: 8pt; }
+  .table-lesson #glossary dl { columns: 2; column-gap: 18pt; }
+  .table-lesson .reasoning, .table-lesson dd { break-inside: avoid; }
+  .table-lesson dt { margin-top: 5pt; }
+  .table-lesson dd { margin-top: 1pt; }
+  .table-lesson .charge-map { margin-block: 8pt; }
+  .table-lesson .charge-map figcaption { margin-top: 4pt; }
+  .table-lesson .work-grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); margin-block: 6pt; }
+  .table-lesson .cups { grid-template-columns: 1fr 1fr; }
+  .table-lesson .exercise, .table-lesson fieldset, .table-lesson .task, .table-lesson details { padding: 4pt 7pt; }
+  .table-lesson .exercise { margin-top: 5pt; break-inside: avoid; }
+  .table-lesson .activity-strip li { padding-block: 0; }
+  .table-lesson [aria-labelledby="metals"] .exercise { break-inside: auto; border: 0; padding-inline: 0; }
+  .table-lesson [aria-labelledby="metals"] .exercise > :is(p, form),
+  .table-lesson [aria-labelledby="transfer"] > p:nth-of-type(-n+2) { break-after: avoid; }
+  .table-lesson [aria-labelledby="metals"] .exercise > p:last-of-type { break-before: page; }
+  .table-lesson .task, .table-lesson details, .table-lesson tr, .table-lesson .worked { break-inside: avoid; }
+  .table-lesson h2, .table-lesson h3, .table-lesson caption, .table-lesson dt { break-after: avoid; }
+  .table-lesson .option { min-height: 0; margin: 2pt 0; padding: 1pt; }
+  .table-lesson .option input { min-height: 0; min-width: 0; margin-top: 1pt; flex: 0 0 12pt; }
+  .table-lesson details > summary { display: list-item; min-height: 0; padding: 0; }
+}

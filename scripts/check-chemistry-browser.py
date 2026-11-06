@@ -146,8 +146,15 @@ def main():
     page.emulate_media(reduced_motion='reduce');page.locator('[data-angle-play]').click();ok('angle reduced motion endpoint',slider.input_value()=='90' and page.locator('[data-angle-play]').get_attribute('aria-pressed')=='false')
     page.emulate_media(reduced_motion='no-preference')
    page.emulate_media(media='print');page.screenshot(path=str(out/f'{path.stem}-print.png'),full_page=True);page.emulate_media(media='screen')
-   if page.locator('figure').count():
-    page.set_viewport_size({'width':390,'height':950});page.locator('figure').first.screenshot(path=str(out/f'{path.stem}-figure.png'))
+   figure=page.locator('figure').first
+   if figure.count():
+    page.set_viewport_size({'width':390,'height':950})
+    figure.evaluate('''figure => {
+     for (let details = figure.closest('details'); details; details = details.parentElement?.closest('details')) {
+      details.open = true;
+     }
+    }''')
+    figure.screenshot(path=str(out/f'{path.stem}-figure.png'))
   ok('no browser script errors',not errors)
   nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':950});static=nojs.new_page()
   for path in paths:

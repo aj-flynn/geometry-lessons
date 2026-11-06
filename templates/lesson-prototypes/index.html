@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Prototype gallery for review: nine candidate lesson layouts rendered from one shared content model.">
+  <title>Lesson template prototypes · for review</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="templates.css">
+  <script src="kit.js" defer></script>
+  <script src="templates.js" defer></script>
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#stage">Skip to the lesson</a>
+
+  <header class="gal-bar">
+    <div class="gal-row">
+      <p class="gal-badge"><span>Prototype</span> For review only. Not a published lesson.</p>
+      <p class="gal-title">Lesson template gallery</p>
+      <a class="gal-library" href="../../index.html">← Lesson library</a>
+      <div class="gal-tools" data-js-only hidden>
+        <label for="gal-lesson">Sample lesson</label>
+        <select id="gal-lesson"></select>
+        <button type="button" id="gal-fav" class="gal-fav" aria-pressed="false">☆ Choose this template</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="gal-switch" id="gal-switch" aria-label="Lesson templates" data-js-only hidden>
+    <button type="button" id="gal-prev" class="gal-step"><span aria-hidden="true">‹</span> Prev</button>
+    <ol id="gal-chips" class="gal-chips"></ol>
+    <button type="button" id="gal-next" class="gal-step">Next <span aria-hidden="true">›</span></button>
+  </nav>
+
+  <div class="gal-info" data-js-only hidden>
+    <p class="gal-desc"><strong id="gal-name"></strong> <span id="gal-text"></span></p>
+    <p class="gal-meta"><span id="gal-fav-note"></span> <a id="gal-source" href="../../index.html">Open the published lesson</a> <span class="gal-keys">Keys: <kbd>[</kbd> <kbd>]</kbd> previous or next, <kbd>1</kbd>–<kbd>9</kbd> jump.</span></p>
+    <p id="gal-status" class="gal-status" role="status" aria-live="polite"></p>
+  </div>
+  <p id="gal-live" class="gal-sr" aria-live="polite"></p>
+
+  <main id="stage" class="stage" tabindex="-1">
+    <div id="fallback" class="fallback">
+      <h1>Lesson template prototypes</h1>
+      <p class="fallback-note"><strong>The interactive gallery is unavailable because JavaScript is off or did not load.</strong> The six sample lessons below use the plain shared content format that every template reads. Explanations, diagrams, hints and closed comparisons all work. The answer-check buttons stay disabled. Open a comparison after you try a question.</p>
+      <nav aria-label="Sample lessons">
+        <ul>
+          <li><a href="#src-0001">Geometry · Same shape at a new scale</a></li>
+          <li><a href="#src-0002">English · What a line lets you infer</a></li>
+          <li><a href="#src-0003">Chemistry · Read particle recipes</a></li>
+          <li><a href="#src-0004">Chemistry · Follow the electrons</a></li>
+          <li><a href="#src-0005">Chemistry · Combine bond effects</a></li>
+          <li><a href="#src-0006">Chemistry · Look between particles</a></li>
+        </ul>
+      </nav>
+
+      <!-- ===================================================== 0001 · Geometry -->
+      <article class="source-lesson" id="src-0001" data-lesson="0001" data-subject="Geometry" data-href="../../lessons/0001-similar-polygons.html" aria-labelledby="src-0001-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">Geometry · Similar polygons</p>
+          <h2 data-field="title" id="src-0001-title">Same shape at a new scale</h2>
+          <p data-field="objective">Match corners and edges, decide which measurement changes, and justify when two shapes are similar.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Quick check</h3>
+          <p>A 5 cm strip becomes 8 cm long. What do you multiply 5 by? What undoes the change?</p>
+          <details data-compare><summary>Check the starting idea</summary><p>Multiply by 8/5, the target divided by the original. Multiply by 5/8 to undo the change. These fractions are <a class="term" href="#term-0001-reciprocal">reciprocals</a>, meaning their product is 1.</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">Match the corners, then choose the factor</h3>
+          <p>Two polygons are <a class="term" href="#term-0001-similar">similar</a> when matching angles have equal measures and all matching side lengths share one multiplier. A shape can be turned or reflected (flipped) and still have the same shape. The corners and sides that match are called <a class="term" href="#term-0001-corresponding">corresponding</a>.</p>
+          <p>The <a class="term" href="#term-0001-scale-factor">scale factor</a> <var>k</var> is a target length divided by its original partner. Side lengths and <a class="term" href="#term-0001-perimeter-area">perimeter</a> use one factor <var>k</var>. Area uses <var>k</var>², because a face grows in two directions at once.</p>
+          <div class="stepper" data-stepper>
+            <p><strong>Predict.</strong> A rectangular stamp starts 7 cm wide and 5 cm tall. If both lengths double, how many copies of the original face cover the target? How many times as long is the trip around its edge?</p>
+            <figure>
+              <svg class="fig-sm" viewBox="0 0 242 178" role="img" aria-labelledby="s0001-stamp-t s0001-stamp-d"><title id="s0001-stamp-t">Stamp model</title><desc id="s0001-stamp-d">Stage 1 shows the original stamp, 7 cm wide and 5 cm tall. Stage 2 shows the doubled stamp, 14 cm by 10 cm, divided by dashed seams into four original tiles.</desc>
+                <g data-only="0"><rect class="plate" x="24" y="94" width="84" height="60"/><text x="66" y="84" text-anchor="middle">7 cm</text><text x="116" y="129">5 cm</text></g>
+                <g data-only="1"><rect class="plate" x="24" y="34" width="168" height="120"/><path class="tile-line" d="M108 34V154 M24 94H192"/><text x="108" y="24" text-anchor="middle">14 cm</text><text x="200" y="99">10 cm</text></g>
+              </svg>
+              <figcaption>Stamp model. Lengths come from the labels. Zooming or printing changes the drawn size.</figcaption>
+            </figure>
+            <details class="stage-notes"><summary>Read the stages after predicting</summary>
+              <ol>
+                <li>Original stamp: 7 cm by 5 cm. It is 24 cm around and covers 35 cm².</li>
+                <li>Factor 2: 14 cm by 10 cm. The trip around doubles to 48 cm. Two rows of two original tiles cover the face, so the area is 4 × 35 cm² = 140 cm².</li>
+              </ol>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="evidence" data-kind="diagram" data-prompt="Which corners carry the same marks? Which lengths are given, and which only look a certain size?">
+          <h3 data-field="heading">Two similar metal badges</h3>
+          <p><strong>Given.</strong> These pentagonal badges are similar. Equal arc marks identify matching angles, and small boxes mark right angles. The first badge has AB = 7 cm, BC = 3 cm, EA = 6 cm and m∠D ≈ 143.1° (≈ means “approximately”). The target has VW = 9.8 cm, XY = 7 cm, YZ = 4.2 cm and ZV = 8.4 cm.</p>
+          <div class="figure-pair">
+            <figure><svg class="fig-sm" viewBox="0 0 216 178" role="img" aria-labelledby="s0001-a-t s0001-a-d"><title id="s0001-a-t">Original pentagonal plate</title><desc id="s0001-a-d">Boundary order A, B, C, D, E. Right-angle boxes at A, B and E; one arc at C and two at D.</desc><polygon class="plate" points="43,140 134,140 134,101 82,62 43,62"/><path class="angle" d="M 43 131 L 52 131 L 52 140"/><path class="angle" d="M 125 140 L 125 131 L 134 131"/><path class="angle" d="M 134 113 A 12 12 0 0 1 124.4 93.8"/><path class="angle" d="M 91.6 69.2 A 12 12 0 0 1 70 62 M 96.4 72.8 A 18 18 0 0 1 64 62"/><path class="angle" d="M 52 62 L 52 71 L 43 71"/><text x="32" y="159" text-anchor="middle">A</text><text x="145" y="159" text-anchor="middle">B</text><text x="147" y="103" text-anchor="middle">C</text><text x="83" y="52" text-anchor="middle">D</text><text x="32" y="58" text-anchor="middle">E</text></svg><figcaption>Original. Walk A → B → C → D → E → A. One arc at C, two at D. Right angles at A, B and E.</figcaption></figure>
+            <figure><svg class="fig-sm" viewBox="0 0 216 178" role="img" aria-labelledby="s0001-b-t s0001-b-d"><title id="s0001-b-t">Reflected target plate</title><desc id="s0001-b-d">Boundary walk X, W, V, Z, Y, X. Right-angle boxes at V, W and Z; one arc at X and two at Y.</desc><polygon class="plate" points="183,145 55.6,145 55.6,90.4 128.4,35.8 183,35.8"/><path class="angle" d="M 183 136 L 174 136 L 174 145"/><path class="angle" d="M 64.6 145 L 64.6 136 L 55.6 136"/><path class="angle" d="M 55.6 102.4 A 12 12 0 0 0 65.2 83.2"/><path class="angle" d="M 118.8 43 A 12 12 0 0 0 140.4 35.8 M 114 46.6 A 18 18 0 0 0 146.4 35.8"/><path class="angle" d="M 174 35.8 L 174 44.8 L 183 44.8"/><text x="191" y="165" text-anchor="middle">V</text><text x="45" y="165" text-anchor="middle">W</text><text x="45" y="91" text-anchor="middle">X</text><text x="127" y="28" text-anchor="middle">Y</text><text x="194" y="31" text-anchor="middle">Z</text></svg><figcaption>Target. Walk X → W → V → Z → Y → X. One arc at X, two at Y. Right angles at V, W and Z.</figcaption></figure>
+          </div>
+          <p>Use the marks and givens as evidence. The drawings show shape, not measured length.</p>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">Match the badges and find missing parts</h3>
+          <p><strong>Goal.</strong> Write the matching order and the side-length proportion. Then find one missing length in each badge and the marked angle in the target.</p>
+          <ol data-steps>
+            <li>One arc gives C ↔ X and two arcs give D ↔ Y. Follow the edge from the one-arc corner toward the two-arc corner and continue around both outlines. This gives <strong>ABCDE ∼ VWXYZ</strong>. The symbol ∼ means “is similar to.”</li>
+            <li>Matched angles are <a class="term" href="#term-0001-corresponding">congruent</a>, so ∠Y measures about 143.1°, because its partner ∠D does. Angle measures stay the same when you scale.</li>
+            <li>Pair both endpoints of each edge, including the edge that closes the walk. The scale factor is the target length over its original partner.
+              <div class="math">VW/AB = WX/BC = XY/CD = YZ/DE = ZV/EA = <var>k</var></div>
+              <div class="math"><var>k</var> = (9.8 cm)/(7 cm) = 7/5</div>
+            </li>
+            <li>Original → target: multiply by <var>k</var>.
+              <div class="math">WX = (7/5)(3 cm) = 4.2 cm</div>
+            </li>
+            <li>Target → original: divide by 7/5, or multiply by its reciprocal 5/7.
+              <div class="math">DE = (5/7)(4.2 cm) = 3 cm</div>
+            </li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Try it in new situations</h3>
+          <div class="item" data-item>
+            <h4>Try a different direction</h4>
+            <p>The original is polygon KLMNP and the target is similar polygon UTQSR, in matching order. RU = 8.8 cm, PK = 5.5 cm and QS = 12 cm. Write every angle pair and a complete proportion. Find MN and give the factor from target to original.</p>
+            <details data-compare><summary>Check your work and retry</summary>
+              <p>∠K ≅ ∠U, ∠L ≅ ∠T, ∠M ≅ ∠Q, ∠N ≅ ∠S and ∠P ≅ ∠R. With the original on top:</p>
+              <div class="math">KL/UT = LM/TQ = MN/QS = NP/SR = PK/RU = 5/8</div>
+              <p>The last-to-first edge gives the factor, and MN = (5/8)(12 cm) = 7.5 cm. If you got a larger length, check which figure belongs on top. Retry by writing the five fractions in the opposite direction. What does the new factor mean?</p>
+              <details data-compare><summary>Compare the retry</summary><p>Reverse every fraction. The factor becomes 8/5, which turns each original length into its target length.</p></details>
+            </details>
+          </div>
+          <div class="item" data-item>
+            <h4>Choose a factor before calculating</h4>
+            <p>A display maker reduces a pentagonal design. A 26 mm edge becomes a 19.5 mm edge. The new design covers 207 mm². Find the area of the larger design and explain whether you multiply or divide by the area factor.</p>
+            <details data-hint><summary>Hint · which figure is given?</summary><p>Write the factor from the large figure to the small figure. Square it, then decide which area you already know.</p></details>
+            <form data-check="number" data-expected="368" data-tolerance="0" data-hint="Write the factor from the large figure to the small figure. Square it, then decide which area you are given. Try again." data-mistakes='{"276":"That undoes the length change only. The given measure is an area, so undo the squared factor. Try again.","116.4375":"That shrinks the given area. Start from the small figure and reverse the area change. Try again."}' data-success="368 mm² fits. Reducing its lengths to three quarters reduces its area to nine sixteenths of 368 mm².">
+              <label for="n0001-area">Larger area in mm²</label>
+              <div class="form-actions"><input id="n0001-area" type="number" step="any" inputmode="decimal" autocomplete="off" required><button type="submit" disabled>Check area</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare your setup</summary>
+              <p>Small/large length = 19.5/26 = 3/4. Small/large area = (3/4)² = 9/16. The known area is the small one, so divide.</p>
+              <div class="math">207 mm² ÷ (9/16) = 368 mm²</div>
+              <p>Dividing by 3/4 undoes only one dimension. <strong>Retry with perimeter:</strong> if the small design has perimeter 90 mm, find the large perimeter.</p>
+              <details data-compare><summary>Compare the perimeter retry</summary><p>Perimeter is a sum of lengths, so divide 90 mm by 3/4 to get 120 mm. The unit stays mm.</p></details>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0001-similar">Similar (∼)</dt><dd>Matching angles are congruent, and matching side lengths all have the same target-to-original ratio.</dd>
+            <dt id="term-0001-corresponding">Corresponding and congruent</dt><dd>Corresponding parts are matched partners. Congruent angles have equal measures, shown with ≅.</dd>
+            <dt id="term-0001-scale-factor">Scale factor</dt><dd>The ratio of a target length to the corresponding original length.</dd>
+            <dt id="term-0001-reciprocal">Reciprocal</dt><dd>The number that multiplies with a given nonzero number to give 1. The reciprocal of 7/5 is 5/7.</dd>
+            <dt id="term-0001-perimeter-area">Perimeter and area</dt><dd>Perimeter measures the outline in length units such as cm. Area measures the face in square units such as cm² or mm².</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Recall tomorrow</h3>
+          <p>Sketch any similar pair. Name the original and the target. Explain how to get the new perimeter and area from one known side pair, then explain how you would reverse both changes.</p>
+          <ul class="checklist">
+            <li>Match corners by their marks before pairing sides.</li>
+            <li>Lengths and perimeter scale by <var>k</var>. Area scales by <var>k</var>².</li>
+            <li>To reverse a change, use the reciprocal, or its square for area.</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===================================================== 0002 · English -->
+      <article class="source-lesson" id="src-0002" data-lesson="0002" data-subject="English" data-href="../../lessons/0002-close-reading-dialogue.html" aria-labelledby="src-0002-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">English · Close reading</p>
+          <h2 data-field="title" id="src-0002-title">What a line lets you infer</h2>
+          <p data-field="objective">Put older dialogue into today’s English. Then use the writer’s exact words to explain what an image does or what a character’s choices reveal.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Before you start</h3>
+          <p>In “Did you lock the cabinet?” is the speaker asking about a fact or stating one? Hold on to that difference when you rewrite a line.</p>
+          <details data-compare><summary>Check the starting idea</summary><p>The speaker is asking. The helping verb at the front (“Did you…”) and the question mark mark a question. A rewrite has to stay a question. It should not become “You locked the cabinet.”</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">Keep the meaning. Explain the image.</h3>
+          <p>Start with who speaks and who hears. A <a class="term" href="#term-0002-speaker">speaker</a> says the line and a character is a person in the story. A character’s judgment belongs to that character unless the text gives you a reason to attribute it elsewhere.</p>
+          <p>In older dialogue, <em>thou</em> and <em>thee</em> mean <em>you</em> and <em>thy</em> means <em>your</em>. <em>Dost thou trust?</em> puts the helping verb first, just as <em>Do you trust?</em> does today. Rewrite in two passes. First work out the words and their order. Then say the thought naturally, keeping any question, condition, uncertainty or negative.</p>
+          <p><a class="term" href="#term-0002-figurative">Figurative language</a> adds meaning through moves such as comparison or exaggeration. Each of these moves is a <a class="term" href="#term-0002-device">device</a>:</p>
+          <ul>
+            <li>A <a class="term" href="#term-0002-metaphor">metaphor</a> treats one thing as another. A simile marks the comparison with <em>like</em> or <em>as</em>: “The labels curled like dry leaves.”</li>
+            <li><a class="term" href="#term-0002-personification">Personification</a> gives a thing a human action: “The hinges protested.”</li>
+            <li>Hyperbole stretches the facts for emphasis: “That queue took a century.”</li>
+          </ul>
+          <p>To explain a character, make an <a class="term" href="#term-0002-inference">inference</a>, a conclusion drawn from clues, about a trait, a tendency in how the character behaves. Say what the words support, then stop where the evidence stops.</p>
+        </section>
+
+        <section data-part="evidence" data-kind="passage" data-prompt="Who is speaking, and to whom? Which words compare one thing to another, and what does the question ask?">
+          <h3 data-field="heading">A line from a counting room</h3>
+          <figure class="passage">
+            <blockquote><p><strong>Clerk</strong>&ensp;<mark>This ledger is a sieve.</mark> Dost thou trust it with the grain tally?</p></blockquote>
+            <figcaption>Original line. The clerk addresses a coworker. A ledger is a record book, a sieve lets small material pass through, and a tally is a count.</figcaption>
+          </figure>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">Read the line in four moves</h3>
+          <ol data-steps>
+            <li><strong>Observe and quote.</strong> Copy “This ledger is a sieve.” That sentence contains the book and the thing it is compared to. Keep the following question in view as context.</li>
+            <li><strong>Name the device.</strong> The line uses a metaphor because the clerk calls the book a sieve, treating one thing as another to suggest a shared quality.</li>
+            <li><strong>Put it plainly.</strong> First read the question as “Do you trust it with the grain count?” Then unpack the image: “This record book lets entries slip through. Can you trust it to keep track of the grain?”</li>
+            <li><strong>Explain the effect.</strong> A sieve has holes, which makes missing entries the likely concern. The question tests whether the coworker will rely on the book. The line gives the clerk’s view. The actual cause of the gaps is still open.</li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Read new scenes</h3>
+          <div class="item" data-item>
+            <h4>Check your reading</h4>
+            <div class="scene"><p class="direction">[A mapmaker looks at a rough draft.]</p><p><strong>Mapmaker</strong>&ensp;If thou dost use that sketch, wilt thou lose thy way? The ink has swallowed the footpaths.</p></div>
+            <p><em>Wilt thou</em> means <em>will you</em>. Rewrite both sentences aloud and identify the device in the second sentence. Then pick the explanation that keeps the meaning and explains the image.</p>
+            <form data-check="choice">
+              <fieldset>
+                <legend>Which explanation fits both sentences?</legend>
+                <label class="option"><input type="radio" name="c0002-map" value="a" data-response="Keep the question. The mapmaker asks whether the traveler will get lost, and the figure suggests the paths are hidden on the sketch." required> The sketch will make the traveler lose their way. The swallowing image shows that the paths are hard to see.</label>
+                <label class="option"><input type="radio" name="c0002-map" value="b" data-response="This keeps the condition and the question. The metaphor treats the ink like something that can swallow, making the paths seem hidden on the page."> If the traveler uses the sketch, will they get lost? The swallowing image shows that the paths are hard to see.</label>
+                <label class="option"><input type="radio" name="c0002-map" value="c" data-response="The first sentence fits. Check what is in front of the mapmaker. The ink hides marks on the sketch, so the line gives no evidence that the real paths are gone."> If the traveler uses the sketch, will they get lost? The swallowing image shows that the real paths have disappeared.</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check this reading</button><button type="reset" disabled>Clear choice</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare the three readings</summary><p>The middle reading keeps the question and the condition. “The ink has swallowed the footpaths” is a metaphor that treats ink like something that can swallow; in context the paths on the page are obscured. The first reading turns a question into a certainty. The last moves the effect from the page to the real paths.</p>
+              <details data-compare><summary>Retry with one changed clue</summary><p>Suppose the mapmaker asks “Wilt thou lose thy way even if thou dost leave that sketch here?” Say it in modern English first. Then compare: “Will you get lost even if you leave that sketch here?” Keep <em>even if</em> and keep the question.</p></details>
+            </details>
+          </div>
+          <div class="item" data-item>
+            <h4>Check your claim</h4>
+            <div class="scene"><p class="direction">[A team is about to hang a mural.]</p><p><strong>Installer</strong>&ensp;I brought a spare hook. Show me how you’d hang it. We can test both methods on this board.</p></div>
+            <p>Find the shortest continuous quotation that shows the installer is open to another person’s idea. Say how the words support the trait before choosing.</p>
+            <form data-check="choice">
+              <fieldset>
+                <legend>Which quotation gives the most direct evidence?</legend>
+                <label class="option"><input type="radio" name="c0002-mural" value="a" data-response="A spare hook supports being prepared. Look for an invitation to consider someone else’s approach." required> “I brought a spare hook.”</label>
+                <label class="option"><input type="radio" name="c0002-mural" value="b" data-response="The full speech contains the evidence, but the first sentence is unnecessary for this claim. Use the invitation itself."> The entire speech.</label>
+                <label class="option"><input type="radio" name="c0002-mural" value="c" data-response="The installer asks the other person to show their method. That invitation supports openness in this decision."> “Show me how you’d hang it.”</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check this evidence</button><button type="reset" disabled>Clear choice</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare the evidence</summary><p>“Show me how you’d hang it.” is enough to support the claim. The spare hook supports being prepared. The whole speech includes both clues, which makes it less precise for this claim.</p>
+              <details data-compare><summary>Retry with a different claim</summary><p>For “The installer wants a fair comparison,” try “We can test both methods on this board.” The installer proposes comparing both approaches on the same surface, which makes the conditions more alike.</p></details>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0002-speaker">Speaker and character</dt><dd>The speaker says a line. A character is a person in the story. The narrator tells the story and the author writes it.</dd>
+            <dt id="term-0002-figurative">Figurative language</dt><dd>Language that uses images, exaggeration or other moves beyond the ordinary literal meaning.</dd>
+            <dt id="term-0002-device">Device</dt><dd>A technique the writer uses to create an effect.</dd>
+            <dt id="term-0002-metaphor">Metaphor and simile</dt><dd>A metaphor treats one thing as another. A simile marks the comparison with a word such as <em>like</em> or <em>as</em>.</dd>
+            <dt id="term-0002-personification">Personification and hyperbole</dt><dd>Personification gives a thing a human action or quality. Hyperbole exaggerates for emphasis.</dd>
+            <dt id="term-0002-inference">Inference and trait</dt><dd>An inference is a conclusion drawn from clues. A trait is a tendency in how a character behaves.</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Take the method to another text</h3>
+          <p>Before reopening this lesson, write the three moves from memory: what you observe, what the words mean, and what the words let you infer. Try them on a line you have never read.</p>
+          <ul class="checklist">
+            <li>Put your exact quotation next to the original and check the wording.</li>
+            <li>Check that the plain meaning keeps any question, condition or uncertainty.</li>
+            <li>Underline the word your analysis depends on and explain what it contributes.</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===================================================== 0003 · Chemistry -->
+      <article class="source-lesson" id="src-0003" data-lesson="0003" data-subject="Chemistry" data-href="../../lessons/0003-reading-particle-formulas.html" aria-labelledby="src-0003-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">Chemistry · Formulas</p>
+          <h2 data-field="title" id="src-0003-title">Read particle recipes</h2>
+          <p data-field="objective">Count atoms by separating the recipe for one particle from the number of particles.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Count by groups</h3>
+          <p>One box holds 3 apples and 2 pears. How many pears are in 4 identical boxes? Which number did you leave out, and why?</p>
+          <details data-compare><summary>Check the starting idea</summary><p>4 × 2 = 8 pears. Count what is inside one box, then multiply by the number of boxes. The apples are left out because the question asks only about pears.</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">Start with one particle</h3>
+          <p>Imagine a tray holding groups of lettered tokens. Pick one group. Its <strong>recipe</strong> tells you which tokens it contains and how many of each. We use Q and R as pretend atom labels. An <a class="term" href="#term-0003-atom">atom</a> is one unit of an element. A <a class="term" href="#term-0003-particle">particle</a> is the unit you are counting, such as one atom or one whole group.</p>
+          <p>The recipe Q<sub>3</sub>R<sub>2</sub> means three Q tokens and two R tokens in one group. The small lower numbers are <a class="term" href="#term-0003-subscript">subscripts</a>. When a label has no subscript, count one.</p>
+          <p>A large number in front is a <a class="term" href="#term-0003-coefficient">coefficient</a>. It counts copies of the whole group. To count the tokens in a sample, multiply each count in one group by the number of groups.</p>
+          <div class="math">3 Q<sub>3</sub>R<sub>2</sub> → 3 × 3 = 9 Q and 3 × 2 = 6 R</div>
+        </section>
+
+        <section data-part="evidence" data-kind="diagram" data-prompt="What stays the same inside each outlined group? What changes as you add a group?">
+          <h3 data-field="heading">Add whole groups</h3>
+          <div class="stepper" data-stepper>
+            <p><strong>Predict.</strong> Start with one group. The display needs at least five R tokens, and you can add only whole groups. Will one or two added groups be enough? Write down how many Q and R tokens the display will have at that point.</p>
+            <figure>
+              <svg class="fig-lg" viewBox="0 0 600 250" role="img" aria-labelledby="s0003-pk-t s0003-pk-d"><title id="s0003-pk-t">Adding identical model particles</title><desc id="s0003-pk-d">Each group has three Q atoms and two R atoms. Groups are added one at a time; each added group has the same composition. Q and R are fictional labels.</desc>
+                <g data-layer="0"><rect x="15" y="35" width="180" height="165" rx="12" class="packet"/><text x="105" y="70" text-anchor="middle">Group 1</text><circle cx="50" cy="115" r="19" class="atom"/><text x="50" y="122" text-anchor="middle">Q</text><circle cx="100" cy="115" r="19" class="atom"/><text x="100" y="122" text-anchor="middle">Q</text><circle cx="150" cy="115" r="19" class="atom"/><text x="150" y="122" text-anchor="middle">Q</text><circle cx="75" cy="163" r="19" class="atom pale"/><text x="75" y="170" text-anchor="middle">R</text><circle cx="125" cy="163" r="19" class="atom pale"/><text x="125" y="170" text-anchor="middle">R</text></g>
+                <g data-layer="1"><rect x="210" y="35" width="180" height="165" rx="12" class="packet"/><text x="300" y="70" text-anchor="middle">Group 2</text><circle cx="245" cy="115" r="19" class="atom"/><text x="245" y="122" text-anchor="middle">Q</text><circle cx="295" cy="115" r="19" class="atom"/><text x="295" y="122" text-anchor="middle">Q</text><circle cx="345" cy="115" r="19" class="atom"/><text x="345" y="122" text-anchor="middle">Q</text><circle cx="270" cy="163" r="19" class="atom pale"/><text x="270" y="170" text-anchor="middle">R</text><circle cx="320" cy="163" r="19" class="atom pale"/><text x="320" y="170" text-anchor="middle">R</text></g>
+                <g data-layer="2"><rect x="405" y="35" width="180" height="165" rx="12" class="packet"/><text x="495" y="70" text-anchor="middle">Group 3</text><circle cx="440" cy="115" r="19" class="atom"/><text x="440" y="122" text-anchor="middle">Q</text><circle cx="490" cy="115" r="19" class="atom"/><text x="490" y="122" text-anchor="middle">Q</text><circle cx="540" cy="115" r="19" class="atom"/><text x="540" y="122" text-anchor="middle">Q</text><circle cx="465" cy="163" r="19" class="atom pale"/><text x="465" y="170" text-anchor="middle">R</text><circle cx="515" cy="163" r="19" class="atom pale"/><text x="515" y="170" text-anchor="middle">R</text></g>
+              </svg>
+              <figcaption>Symbolic packet diagram. Atom sizes and spacing are not measurements. Each outlined group is one model particle.</figcaption>
+            </figure>
+            <details class="stage-notes"><summary>Read the stages after predicting</summary>
+              <ol>
+                <li>One Q₃R₂ group contains 3 Q and 2 R, which is 5 atoms altogether.</li>
+                <li>Two groups give 6 Q and 4 R. Four R falls short of the goal.</li>
+                <li>Three groups give 9 Q and 6 R. Six R meets the goal, so you can stop after adding two groups.</li>
+              </ol>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">From a drawing to a recipe</h3>
+          <p>Use the same method with real symbols. This original schematic shows one chloroethane particle. C labels carbon, H labels hydrogen and Cl labels chlorine.</p>
+          <figure><svg class="fig-lg" viewBox="0 0 600 310" role="img" aria-labelledby="s0003-ce-t s0003-ce-d"><title id="s0003-ce-t">One chloroethane particle</title><desc id="s0003-ce-d">A carbon at left connects to three hydrogens and a carbon at right. The right carbon connects to two hydrogens and a chlorine. Lines show connections, not measured geometry.</desc><path d="M230 85 L230 125 M230 165 L230 210 M130 145 L200 145 M260 145 L340 145 M370 85 L370 125 M370 165 L370 210 M400 145 L470 145" class="bond" fill="none"/><text x="220" y="155">C</text><text x="360" y="155">C</text><text x="95" y="155">H</text><text x="220" y="65">H</text><text x="220" y="245">H</text><text x="360" y="65">H</text><text x="360" y="245">H</text><text x="485" y="155">Cl</text></svg><figcaption>One particle, every atom labeled. A connection sketch, not a scale drawing.</figcaption></figure>
+          <ol data-steps>
+            <li><strong>Find one particle.</strong> The drawing shows one particle, so every count below is for one particle.</li>
+            <li><strong>Read each symbol.</strong> A lowercase letter belongs with the capital before it, so <strong>Cl</strong> is one two-letter symbol, not C plus something else.</li>
+            <li><strong>Make an inventory inside the particle.</strong>
+              <div class="table-wrap"><table><caption>Atom labels in one drawn particle</caption><thead><tr><th scope="col">Symbol</th><th scope="col">Element</th><th scope="col">Count</th></tr></thead><tbody><tr><th scope="row">C</th><td>carbon</td><td>2</td></tr><tr><th scope="row">H</th><td>hydrogen</td><td>5</td></tr><tr><th scope="row">Cl</th><td>chlorine</td><td>1</td></tr></tbody></table></div>
+            </li>
+            <li><strong>Write the recipe.</strong> Put each count as a subscript after its symbol and leave out a subscript of 1.
+              <div class="math">C<sub>2</sub>H<sub>5</sub>Cl</div>
+            </li>
+            <li><strong>Read it back.</strong> C₂H₅Cl gives 2 C, 5 H and 1 Cl, matching the inventory. Three identical particles would be written 3 C₂H₅Cl: the coefficient changes and the subscripts stay fixed.</li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Your turn with new recipes</h3>
+          <div class="item" data-item>
+            <h4>Count one kind of token</h4>
+            <p>A fictional display contains four identical groups, each with two Q tokens and five R tokens. Count just the R tokens across the display.</p>
+            <details data-hint><summary>Hint 1 · Notice</summary><p>Find the number of complete groups.</p></details>
+            <details data-hint><summary>Hint 2 · Recall</summary><p>Each group contributes the same five R tokens.</p></details>
+            <form data-check="number" data-expected="20" data-hint="Count only R. Multiply the number of groups by the R count in one group." data-mistakes='{"5":"That is the R count in one group. Include all four groups.","7":"That adds both token types inside one group. Count only R, then include all groups.","28":"That counts both token types across the display. The question asks for R only."}' data-success="Yes: four groups each contribute five R tokens. Explain why Q is not included.">
+              <label for="n0003-count">How many R tokens are in the display?</label>
+              <div class="form-actions"><input id="n0003-count" type="number" step="any" inputmode="decimal" autocomplete="off" required><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>Four groups each contribute five R tokens: 4 × 5 = 20. The Q tokens are a different type, so they stay out of this count.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Read a two-letter symbol</h4>
+            <form data-check="choice">
+              <fieldset>
+                <legend>A label contains Zr with no subscript. How should the symbol and its count be read?</legend>
+                <label class="option"><input type="radio" name="c0003-zr" value="a" data-response="An absent subscript represents one in this convention, not zero." required> One symbol, counted zero times</label>
+                <label class="option"><input type="radio" name="c0003-zr" value="b" data-response="A lowercase letter belongs with the preceding capital. Zr is one complete symbol."> Two symbols, counted once each</label>
+                <label class="option"><input type="radio" name="c0003-zr" value="c" data-response="Yes. Zr is one two-letter symbol, and the missing subscript means one. Symbol letters and atom counts are different things."> One symbol, counted once</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>Zr is one two-letter symbol and the missing subscript means one. Symbol letters and atom counts are different things.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Exit check · read a new label</h4>
+            <p>A sample label gives only 2 C<sub>3</sub>H<sub>6</sub>O. The 2 counts complete molecules. List the number of each kind of atom in one molecule and in the whole sample. Can you tell from the label which atom or atoms the oxygen is bonded to?</p>
+            <details data-hint><summary>Hint · read the label in two passes</summary><p>Use each symbol and its subscript for the first inventory. Then apply the leading 2 to every count. For the last question, look for information about which atoms connect.</p></details>
+            <details data-compare><summary>Compare after trying all three questions</summary><p>One molecule has three carbon, six hydrogen and one oxygen atom. The two molecules together contain six carbon, twelve hydrogen and two oxygen atoms. The label gives counts, not connections. To find oxygen’s neighbors, you would need more information, such as a drawing.</p></details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0003-atom">Atom and symbol</dt><dd>An atom is one unit of an element. A symbol is a compact label for an element, such as C, H or Cl.</dd>
+            <dt id="term-0003-particle">Particle and molecule</dt><dd>A particle is a general word for a counted unit; say whether you mean an atom, a molecule or an ion. A molecule is a bounded group of bonded atoms.</dd>
+            <dt id="term-0003-subscript">Subscript</dt><dd>A small lower number attached to a symbol. It counts that atom inside one particle.</dd>
+            <dt id="term-0003-coefficient">Coefficient</dt><dd>A multiplier written before a complete recipe. It counts copies of the whole particle.</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Remember it tomorrow</h3>
+          <p>Close the lesson. Sketch one connected group of three matching tokens and explain how it differs from three separate tokens. Then explain coefficient versus subscript in one sentence each. Tomorrow, try again without looking.</p>
+        </section>
+      </article>
+
+      <!-- ===================================================== 0004 · Chemistry -->
+      <article class="source-lesson" id="src-0004" data-lesson="0004" data-subject="Chemistry" data-href="../../lessons/0004-electrons-and-bonds.html" aria-labelledby="src-0004-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">Chemistry · Electrons</p>
+          <h2 data-field="title" id="src-0004-title">Follow the electrons</h2>
+          <p data-field="objective">Build and audit an electron drawing: keep the total budget and each atom’s shell in balance.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Count in pairs</h3>
+          <p>If two dots mean one pair, how many electrons do three pairs use? Think “three groups of two.” If you are unsure, sketch three pairs before continuing.</p>
+          <details data-compare><summary>Check the starting idea</summary><p>Three pairs use 3 × 2 = 6 electrons. Every line or pair in an electron drawing costs two electrons.</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">An electron budget</h3>
+          <p><strong>Electrons</strong> carry negative charge. The outer electrons used in bonding are <a class="term" href="#term-0004-valence">valence electrons</a>. A <a class="term" href="#term-0004-lewis">Lewis drawing</a> is an electron-accounting model: dots track electrons and each line stands for one shared pair.</p>
+          <p>Build a <a class="term" href="#term-0004-budget">budget</a> before drawing. Add the valence electrons from every atom, add one for each unit of negative charge, and subtract one for each unit of positive charge.</p>
+          <div class="table-wrap"><table><caption>Valence electrons for main-group columns</caption><thead><tr><th scope="col">Periodic-table group</th><th scope="col">Valence electrons (neutral atom)</th></tr></thead><tbody><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>13 to 18</td><td>3 to 8 (group number minus 10)</td></tr><tr><td>Helium, group 18</td><td>2 (exception)</td></tr></tbody></table></div>
+          <p>A <a class="term" href="#term-0004-lone-pair">lone pair</a> is a pair not shared between atoms. Many introductory models aim for eight electrons around an atom, an <a class="term" href="#term-0004-octet">octet</a>. Hydrogen aims for two. These are limited guidelines, not universal rules.</p>
+          <p class="callout"><strong>Two different counts.</strong> In the whole budget, each pair counts once. When you check one atom’s shell, a shared pair counts around both of its atoms.</p>
+        </section>
+
+        <section data-part="evidence" data-kind="diagram" data-prompt="What does each line cost? At each stage, which atom is short of its goal, and does the total change?">
+          <h3 data-field="heading">Construct ethene, C₂H₄</h3>
+          <div class="stepper" data-stepper>
+            <p><strong>Predict.</strong> A trial drawing has 8 electrons around the left carbon, 6 around the right carbon, and 12 in its whole budget. If a lone pair on the left becomes shared between the carbons, what happens to each carbon’s count and to the whole budget? Make three separate predictions.</p>
+            <figure>
+              <svg class="fig-lg" viewBox="0 0 600 310" role="img" aria-labelledby="s0004-et-t s0004-et-d"><title id="s0004-et-t">Constructing ethene step by step</title><desc id="s0004-et-d">Four stages. The final drawing has each carbon with two lines to hydrogen and two lines to the other carbon. Six lines represent twelve electrons in total.</desc>
+                <g data-only="0"><text x="225" y="145">C</text><text x="365" y="145">C</text><text x="105" y="65">H</text><text x="105" y="225">H</text><text x="485" y="65">H</text><text x="485" y="225">H</text><text x="30" y="290">Atoms: 2 C + 4 H · budget 12</text></g>
+                <g data-only="1"><text x="225" y="145">C</text><text x="365" y="145">C</text><text x="105" y="65">H</text><text x="105" y="225">H</text><text x="485" y="65">H</text><text x="485" y="225">H</text><path d="M135 65 L210 115 M135 205 L210 155 M395 115 L475 65 M395 155 L475 205 M260 130 L355 130" class="bond" fill="none"/><text x="30" y="290">Five lines: 10 used, 2 left</text></g>
+                <g data-only="2"><text x="225" y="145">C</text><text x="365" y="145">C</text><text x="105" y="65">H</text><text x="105" y="225">H</text><text x="485" y="65">H</text><text x="485" y="225">H</text><path d="M135 65 L210 115 M135 205 L210 155 M395 115 L475 65 M395 155 L475 205 M260 130 L355 130" class="bond" fill="none"/><circle cx="220" cy="80" r="5"/><circle cx="238" cy="80" r="5"/><text x="30" y="290">12 used; right C has only 6</text></g>
+                <g data-only="3"><text x="225" y="145">C</text><text x="365" y="145">C</text><text x="105" y="65">H</text><text x="105" y="225">H</text><text x="485" y="65">H</text><text x="485" y="225">H</text><path d="M135 65 L210 115 M135 205 L210 155 M395 115 L475 65 M395 155 L475 205 M260 130 L355 130 M260 148 L355 148" class="bond" fill="none"/><text x="30" y="290">Same 12; both C shells have 8</text></g>
+              </svg>
+              <figcaption>Flat accounting diagrams, not atom sizes or three-dimensional shape. Each line stands for a pair; the two dots are a trial lone pair.</figcaption>
+            </figure>
+            <details class="stage-notes"><summary>Read the stages after predicting</summary>
+              <ol>
+                <li>Start with the six atoms and a twelve-electron budget.</li>
+                <li>Five connections use ten electrons. Two electrons remain.</li>
+                <li>A trial lone pair uses the remainder, but the right carbon is two electrons short of its octet.</li>
+                <li>Move the trial pair between the carbons. The same twelve electrons now complete both carbon octets and all hydrogen shells.</li>
+              </ol>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">Audit the ethene budget</h3>
+          <p>Ethene has two carbon atoms joined together, each attached to two hydrogens. This connection pattern is supplied; a formula alone does not always decide connections.</p>
+          <ol data-steps>
+            <li><strong>Find the supply.</strong> Carbon is in group 14, so it supplies 4. Hydrogen is in group 1, so it supplies 1.
+              <div class="math">2 × 4 + 4 × 1 = 12 electrons</div>
+            </li>
+            <li><strong>Draw the connections.</strong> Four C—H lines and one C—C line use 5 × 2 = 10 electrons. Two remain.</li>
+            <li><strong>Place the remainder and audit each atom.</strong> A lone pair on the left carbon uses the last two electrons, but the right carbon counts only 6.</li>
+            <li><strong>Repair without adding electrons.</strong> Move that pair between the carbons. The left carbon still counts it, and now the right carbon does too.</li>
+            <li><strong>Audit both ways.</strong> Whole drawing: 6 lines × 2 = 12 electrons, matching the budget. Each atom: both carbons count 8 and each hydrogen counts 2.</li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Construct and audit</h3>
+          <div class="item" data-item>
+            <h4>Check two kinds of counting</h4>
+            <form data-check="choice">
+              <fieldset>
+                <legend>Two atoms share a pair. A learner counts that pair twice in the total budget because both atoms use it in their shell check. Which audit repairs the mistake?</legend>
+                <label class="option"><input type="radio" name="c0004-double" value="a" data-response="Yes. One shared pair is still only two electrons in the entire structure. Both neighboring atoms include that pair when checking their own shells." required> Count it once in the total, around both atoms locally</label>
+                <label class="option"><input type="radio" name="c0004-double" value="b" data-response="The total budget counts actual electrons, not how many atoms use them. A shared pair is not duplicated."> Count it twice in the total, around both atoms locally</label>
+                <label class="option"><input type="radio" name="c0004-double" value="c" data-response="The pair does contribute to both local shells. The total and local checks answer different questions."> Count it once in the total, around neither atom locally</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>One shared pair is two electrons in the whole structure. Both neighboring atoms include that pair when checking their own shells.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Repair a short shell</h4>
+            <form data-check="choice">
+              <fieldset>
+                <legend>A new trial drawing uses exactly its budget, but one carbon has only six electrons around it. What should you inspect next?</legend>
+                <label class="option"><input type="radio" name="c0004-shell" value="a" data-response="The budget is already used. Adding electrons would change the charge or break conservation." required> Add two new electrons</label>
+                <label class="option"><input type="radio" name="c0004-shell" value="b" data-response="A valid total does not guarantee valid local shells. Audit both."> Ignore the local shell</label>
+                <label class="option"><input type="radio" name="c0004-shell" value="c" data-response="Yes. Look for an existing neighboring pair that can be shared while keeping the total. A move needs a fresh local audit."> Look for a pair that can be repositioned</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>Inspect whether an existing neighboring pair can be shared while preserving the total and every required shell count. After any move, audit each atom again.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Construct, then audit a new molecule</h4>
+            <p>Sketch the neutral molecule C<sub>2</sub>H<sub>4</sub>O in a sample whose oxygen has exactly one neighboring atom. Each carbon shares four pairs in all, oxygen shares two, and each hydrogen shares one. Two pairs can connect the same two neighbors. Propose the connections first, then show all shared and lone pairs.</p>
+            <details data-hint><summary>Hint 1 · place the ends</summary><p>Mark the atoms that can have only one neighbor. Which atoms can connect the rest of the molecule into one piece?</p></details>
+            <details data-hint><summary>Hint 2 · check both budgets</summary><p>Use groups 14, 1 and 16 to count the supplied electrons for C, H and O. Track each pair once in the total, then count the pairs around each atom.</p></details>
+            <details data-compare><summary>Compare the complete drawing after an attempt</summary>
+              <p>The two carbons must connect, because only they can be interior atoms here. Oxygen connects to one carbon with two shared pairs. The carbon bonded to oxygen has room for one H, and the other carbon connects to three H atoms. This structure is called ethanal.</p>
+              <figure><svg class="fig-lg" viewBox="0 0 600 235" role="img" aria-labelledby="s0004-an-t s0004-an-d"><title id="s0004-an-t">Ethanal electron accounting</title><desc id="s0004-an-d">The left carbon has one bond to each of three hydrogens and one bond to the right carbon. The right carbon has one bond to hydrogen and a double connection to oxygen. Oxygen has two lone pairs, drawn as two dots above and two below its symbol.</desc><path class="bond" fill="none" d="M105 116H151 M175 70V95 M175 135V170 M198 116H285 M310 70V95 M334 109H421 M334 123H421"/><g text-anchor="middle"><text x="83" y="124">H</text><text x="175" y="59">H</text><text x="175" y="200">H</text><text x="175" y="124">C</text><text x="310" y="124">C</text><text x="310" y="59">H</text><text x="445" y="124">O</text></g><circle cx="439" cy="81" r="4"/><circle cx="451" cy="81" r="4"/><circle cx="439" cy="150" r="4"/><circle cx="451" cy="150" r="4"/></svg><figcaption>Flat Lewis drawing of ethanal. Each line is a shared pair; the dots are oxygen’s two lone pairs.</figcaption></figure>
+              <div class="math">2 × 4 + 4 × 1 + 6 = 18 electrons = 7 lines × 2 + 2 lone pairs × 2</div>
+              <p>If your oxygen has two neighbors, revisit the sample evidence. Close the comparison, revise, and audit each atom again.</p>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0004-valence">Valence electrons</dt><dd>Outer electrons used in bonding. Electrons carry negative charge.</dd>
+            <dt id="term-0004-lewis">Lewis drawing</dt><dd>A flat model that tracks valence electrons and connections. It does not show the shape in space.</dd>
+            <dt id="term-0004-budget">Budget</dt><dd>The total number of valence electrons available for the whole drawing. Each represented pair costs two.</dd>
+            <dt id="term-0004-lone-pair">Lone pair</dt><dd>A pair of electrons that is not shared between atoms.</dd>
+            <dt id="term-0004-octet">Octet</dt><dd>An eight-electron outer-shell goal used in some simple models. Hydrogen uses two.</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Remember it tomorrow</h3>
+          <p>Close the lesson. Explain why one bond line costs two electrons in the total budget, even though both atoms count the pair when checking their shells. Tomorrow, try again without looking.</p>
+          <ul class="checklist">
+            <li>Budget first: supply, plus negative charge, minus positive charge.</li>
+            <li>Connections next, then lone pairs, never past the budget.</li>
+            <li>Audit globally once and locally around every atom.</li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- ===================================================== 0005 · Chemistry -->
+      <article class="source-lesson" id="src-0005" data-lesson="0005" data-subject="Chemistry" data-href="../../lessons/0005-shape-and-polarity.html" aria-labelledby="src-0005-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">Chemistry · Polarity</p>
+          <h2 data-field="title" id="src-0005-title">Combine bond effects</h2>
+          <p data-field="objective">Use a bond’s electron pull and a molecule’s supplied shape as two separate clues.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Distance on a number line</h3>
+          <p>How far apart are 2.9 and 2.1 on a number line? Does the order you subtract them change the distance?</p>
+          <details data-compare><summary>Check the starting idea</summary><p>They are 0.8 apart either way. Subtract the smaller from the larger. A distance is never negative.</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">How uneven is one bond?</h3>
+          <p><a class="term" href="#term-0005-en">Electronegativity</a> describes an atom’s pull on shared electrons. Find the <a class="term" href="#term-0005-difference">absolute difference</a> by subtracting the smaller value from the larger one. The values are unitless, and a greater difference usually means more uneven sharing.</p>
+          <div class="math">ΔEN = |EN<sub>A</sub> − EN<sub>B</sub>| = larger − smaller</div>
+          <p>When the pulls differ, label the stronger-pulling end <a class="term" href="#term-0005-partial">δ−</a> (partial negative) and the weaker-pulling end δ+ (partial positive). “Partial” means a fraction of a full unit of charge.</p>
+          <p>A <a class="term" href="#term-0005-dipole">bond dipole arrow</a> marks which end pulls more strongly. Put the crossed tail by δ+ and point the tip toward δ−. Different courses use different cutoffs for naming bond types, and real bonding changes gradually across those cutoffs.</p>
+        </section>
+
+        <section data-part="evidence" data-kind="data" data-prompt="Which rows include their boundary value? Which end of the arrow marks δ+, and which marks δ−?">
+          <h3 data-field="heading">A practice display key and a lookup table</h3>
+          <figure>
+            <svg class="fig-lg" viewBox="0 0 440 232" role="img" aria-labelledby="s0005-key-t s0005-key-d">
+              <title id="s0005-key-t">Bond arrow direction and three practice styles</title>
+              <desc id="s0005-key-d">The left atom has lower pull and is marked delta plus. The right atom has higher pull and is marked delta minus. A crossed-tail arrow above the bond points right toward the higher pull. The key shows three crossed-tail arrows with the same direction and different fills: outline, solid and striped.</desc>
+              <defs><pattern id="s0005-stripes" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#e5eeee"/><path d="M0 0L8 8" stroke="#0d2a1c" stroke-width="2"/></pattern></defs>
+              <path d="M130 54H301 M139 45V63 M287 44L301 54L287 64" fill="none" stroke="#146875" stroke-width="4"/>
+              <path class="bond" d="M112 103H328"/>
+              <circle class="atom pale" cx="94" cy="103" r="26"/><circle class="atom" cx="346" cy="103" r="26"/>
+              <g text-anchor="middle"><text x="94" y="111">δ+</text><text x="346" y="111">δ−</text><text x="94" y="151">Lower pull</text><text x="346" y="151">Higher pull</text></g>
+              <g stroke="#0d2a1c" stroke-width="2"><path d="M40 177H91V172L107 184L91 196V191H40Z" fill="none"/><path d="M187 177H238V172L254 184L238 196V191H187Z" fill="#146875"/><path d="M334 177H385V172L401 184L385 196V191H334Z" fill="url(#s0005-stripes)"/><path d="M47 169V199 M194 169V199 M341 169V199" fill="none" stroke-width="3"/></g>
+              <g text-anchor="middle"><text x="74" y="222">Outline</text><text x="221" y="222">Solid</text><text x="368" y="222">Striped</text></g>
+            </svg>
+            <figcaption>δ+ is at the lower-pull end and δ− at the higher-pull end. The arrow points toward δ−; the cross marks the positive end. Outline, solid and striped are practice fills.</figcaption>
+          </figure>
+          <div class="table-wrap"><table><caption>Practice display by electronegativity difference</caption><thead><tr><th scope="col">Range</th><th scope="col">Display</th></tr></thead><tbody><tr><td>0 ≤ ΔEN &lt; 0.37</td><td>Outline</td></tr><tr><td>0.37 ≤ ΔEN &lt; 1.23</td><td>Solid</td></tr><tr><td>ΔEN ≥ 1.23</td><td>Striped</td></tr></tbody></table></div>
+          <p>≤ and ≥ include equality; &lt; excludes the boundary. At a boundary, choose the row that includes equality.</p>
+          <div class="table-wrap"><table><caption>Electronegativity on the Pauling scale</caption><thead><tr><th scope="col">Element</th><th scope="col">Value (unitless)</th></tr></thead><tbody><tr><th scope="row">Si · silicon</th><td>1.90</td></tr><tr><th scope="row">S · sulfur</th><td>2.58</td></tr></tbody></table></div>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">Look up a real pair</h3>
+          <p><strong>Given.</strong> A diagram places sulfur (S) on the left and silicon (Si) on the right. <strong>Goal.</strong> Choose a fill and a direction for the bond dipole arrow.</p>
+          <ol data-steps>
+            <li><strong>Look up both values on one scale.</strong> From the Pauling table, S is 2.58 and Si is 1.90.</li>
+            <li><strong>Subtract smaller from larger.</strong>
+              <div class="math">ΔEN = 2.58 − 1.90 = 0.68</div>
+            </li>
+            <li><strong>Trace the difference to one row.</strong> 0.37 ≤ 0.68 &lt; 1.23, so the display is solid.</li>
+            <li><strong>Choose the direction.</strong> S has the higher value, so the tip points left toward S (δ−) and the crossed tail sits by Si (δ+).
+              <figure><svg class="fig-lg" viewBox="0 0 380 126" role="img" aria-labelledby="s0005-pair-t s0005-pair-d"><title id="s0005-pair-t">Solid crossed-tail arrow for the silicon–sulfur bond sketch</title><desc id="s0005-pair-d">Sulfur is on the left and is marked delta minus. Silicon is on the right and is marked delta plus. A solid arrow points left toward sulfur, with the tail crossed on the right by silicon.</desc><path class="bond" d="M105 88H275"/><path d="M258 43H136V36L117 50L136 64V57H258Z" fill="#146875"/><path d="M249 35V65" fill="none" stroke="#146875" stroke-width="4"/><circle class="atom" cx="80" cy="88" r="25"/><circle class="atom pale" cx="300" cy="88" r="25"/><g text-anchor="middle"><text x="80" y="96">S</text><text x="300" y="96">Si</text><text x="80" y="30">δ−</text><text x="300" y="30">δ+</text></g></svg><figcaption>Tip at S (δ−). Crossed tail at Si (δ+).</figcaption></figure>
+            </li>
+            <li><strong>State the limit.</strong> The display key is a practice convention. For a chemical classification, use your own course’s boundary and label.</li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Use the difference and the key</h3>
+          <div class="item" data-item>
+            <h4>Try the difference now</h4>
+            <form data-check="number" data-expected="1.2" data-mistakes='{"5.6":"That adds the two values. A difference compares their separation; subtract the smaller from the larger.","-1.2":"You found the separation with a negative sign. Use the absolute difference: larger minus smaller.","12":"Check the decimal place. The values are a little more than one unit apart."}' data-hint="Use larger minus smaller. The difference is unitless." data-success="Yes. The difference is 1.2; classifying it also requires the stated convention.">
+              <label for="n0005-diff">New model values are 3.4 and 2.2. What is the absolute electronegativity difference?</label>
+              <div class="form-actions"><input id="n0005-diff" type="number" step="any" inputmode="decimal" autocomplete="off" required><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>3.4 − 2.2 = 1.2. Switching the order gives −1.2, whose size is still 1.2, which is why the absolute difference is used.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Decide at a boundary</h4>
+            <p>In a training bond, the left end is rated 1.46 and the right end 2.69 on the same invented scale. Write ΔEN, trace it to a row, and sketch the arrow.</p>
+            <form data-check="choice">
+              <fieldset>
+                <legend>How should the display draw this arrow?</legend>
+                <label class="option"><input type="radio" name="c0005-boundary" value="a" data-response="Yes. The difference is 1.23, which is included in the striped row. The tip points right toward δ−, and the crossed tail is on the left at δ+." required> Striped, toward the right</label>
+                <label class="option"><input type="radio" name="c0005-boundary" value="b" data-response="Your tip points toward the higher value. For the fill, check which row includes 1.23 exactly."> Solid, toward the right</label>
+                <label class="option"><input type="radio" name="c0005-boundary" value="c" data-response="The fill follows the correct row. Recheck which end gets δ− and which gets the crossed tail."> Striped, toward the left</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare after an attempt</summary><p>2.69 − 1.46 = 1.23. The striped row includes 1.23 because of ≥. The tip points right toward the higher value (δ−), and the crossed tail is on the left (δ+).</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Exit check · one bond and a whole molecule</h4>
+            <p><strong>One bond.</strong> The left end is rated 3.3 and the right end 2.6. Choose a fill, draw the arrow, and label δ+ and δ−. A second line is then drawn between the same atoms, with the ratings held fixed. What changes in the drawing, and what happens to the difference?</p>
+            <p><strong>A whole molecule.</strong> A shape model shows two opposing bond effects, and one is stronger. Do they balance completely? What would you ask for if you had only a flat drawing of the connections?</p>
+            <details data-compare><summary>Compare after explaining both cases</summary><p>ΔEN = 3.3 − 2.6 = 0.7, in the solid row. The tip points left toward 3.3 (δ−) and the crossed tail is on the right (δ+). The extra line records an extra pair; the fixed ratings still give 0.7.</p><p>Opposing effects of unequal strength only partly balance, leaving a combined effect toward the stronger one. With only a connection drawing, ask for the shape in space and the relative strengths and directions of the bond effects.</p></details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0005-en">Electronegativity and ΔEN</dt><dd>Electronegativity describes attraction for shared electrons. ΔEN is the difference between two values on the same unitless scale.</dd>
+            <dt id="term-0005-difference">Absolute difference, ≤ and ≥</dt><dd>The distance between two values, including zero for equal values. ≤ and ≥ include their boundary.</dd>
+            <dt id="term-0005-partial">δ and partial charge</dt><dd>The Greek letter δ marks a partial charge, a fraction of a whole unit of charge.</dd>
+            <dt id="term-0005-dipole">Bond dipole arrow</dt><dd>The crossed tail marks the δ+ end of a bond. The tip points to the δ− end.</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Remember it tomorrow</h3>
+          <p>Name the two kinds of information needed before deciding whether local δ+ and δ− ends leave an uneven charge across a whole molecule. Sketch a case where two effects cancel. Tomorrow, try again without looking.</p>
+        </section>
+      </article>
+
+      <!-- ===================================================== 0006 · Chemistry -->
+      <article class="source-lesson" id="src-0006" data-lesson="0006" data-subject="Chemistry" data-href="../../lessons/0006-between-molecules.html" aria-labelledby="src-0006-title">
+        <header data-part="intro">
+          <p data-field="eyebrow">Chemistry · Attractions</p>
+          <h2 data-field="title" id="src-0006-title">Look between particles</h2>
+          <p data-field="objective">Explain a physical-property trend by identifying which particles attract and what separates.</p>
+        </header>
+
+        <section data-part="prerequisite">
+          <h3 data-field="heading">Within or between?</h3>
+          <p>When a pot of water boils, do the water molecules break apart into atoms, or do whole molecules move away from one another? Decide before reading on.</p>
+          <details data-compare><summary>Check the starting idea</summary><p>Whole molecules move apart. Boiling without decomposing is a physical change: the particles keep their chemical identity, and only the attractions between them are overcome.</p></details>
+        </section>
+
+        <section data-part="explanation">
+          <h3 data-field="heading">Zoom out one level</h3>
+          <p><a class="term" href="#term-0006-inter">Intermolecular forces</a> are attractions <em>between</em> molecules. When a molecular liquid boils without decomposing, molecules separate while their internal connections generally remain intact.</p>
+          <ul>
+            <li>All atoms and molecules experience <a class="term" href="#term-0006-dispersion">London dispersion</a> attractions from temporary uneven electron distributions.</li>
+            <li>Molecules with a <a class="term" href="#term-0006-dipole">permanent dipole</a> also attract through dipole–dipole contacts between partial charges.</li>
+            <li>In common introductory examples, <a class="term" href="#term-0006-hbond">hydrogen bonding</a> needs H bonded directly to N, O or F <em>and</em> a suitable lone pair on a nearby partner. Merely containing H is not enough.</li>
+          </ul>
+          <div class="stepper" data-stepper>
+            <p><strong>Predict → separate → explain.</strong> Two A—B pairs start near each other. If the pairs stay intact as the sample spreads out, what happens to the gap between the pairs and to the number of connected A—B groups?</p>
+            <figure>
+              <svg class="fig-lg" viewBox="0 0 600 250" role="img" aria-labelledby="s0006-sep-t s0006-sep-d"><title id="s0006-sep-t">Separating intact model molecules</title><desc id="s0006-sep-d">Two bonded A—B pairs move farther apart in three stages. The solid bonds inside each pair remain; the dotted attraction between pairs stretches. Schematic, not measured.</desc>
+                <g data-only="0"><circle cx="210" cy="120" r="25" class="atom"/><line x1="235" y1="120" x2="265" y2="120" class="bond"/><circle cx="290" cy="120" r="25" class="atom pale"/><text x="200" y="128">A</text><text x="280" y="128">B</text><line x1="315" y1="120" x2="345" y2="120" class="between"/><circle cx="370" cy="120" r="25" class="atom"/><line x1="395" y1="120" x2="425" y2="120" class="bond"/><circle cx="450" cy="120" r="25" class="atom pale"/><text x="360" y="128">A</text><text x="440" y="128">B</text></g>
+                <g data-only="1"><circle cx="165" cy="120" r="25" class="atom"/><line x1="190" y1="120" x2="220" y2="120" class="bond"/><circle cx="245" cy="120" r="25" class="atom pale"/><text x="155" y="128">A</text><text x="235" y="128">B</text><line x1="270" y1="120" x2="390" y2="120" class="between"/><circle cx="415" cy="120" r="25" class="atom"/><line x1="440" y1="120" x2="470" y2="120" class="bond"/><circle cx="495" cy="120" r="25" class="atom pale"/><text x="405" y="128">A</text><text x="485" y="128">B</text></g>
+                <g data-only="2"><circle cx="120" cy="120" r="25" class="atom"/><line x1="145" y1="120" x2="175" y2="120" class="bond"/><circle cx="200" cy="120" r="25" class="atom pale"/><text x="110" y="128">A</text><text x="190" y="128">B</text><line x1="225" y1="120" x2="435" y2="120" class="between"/><circle cx="460" cy="120" r="25" class="atom"/><line x1="485" y1="120" x2="515" y2="120" class="bond"/><circle cx="540" cy="120" r="25" class="atom pale"/><text x="450" y="128">A</text><text x="530" y="128">B</text></g>
+                <text x="75" y="220">Solid: inside · dotted: between</text>
+              </svg>
+              <figcaption>Invented A—B particles. The dotted line marks an attraction, not an extra internal connection.</figcaption>
+            </figure>
+            <details class="stage-notes"><summary>Read the stages after predicting</summary>
+              <ol>
+                <li>Four atoms in two connected A—B groups. The dotted gap between the groups is short.</li>
+                <li>The dotted gap is longer. There are still two connected A—B groups.</li>
+                <li>The groups are farther apart. Both A—B connections remain and there are still four atoms.</li>
+              </ol>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="evidence" data-kind="data" data-prompt="Read each column on its own. Which contacts pass the first check, and which pass the second?">
+          <h3 data-field="heading">Evidence for three proposed contacts</h3>
+          <p>Each fragment shows the atom directly bonded to H. The nearby partner is a separate particle. Treat the stated lone-pair availability as given; these are partial connection models.</p>
+          <div class="table-wrap"><table><caption>Three proposed hydrogen-bond contacts</caption><thead><tr><th scope="col">Contact</th><th scope="col">Connection to H</th><th scope="col">Suitable nearby lone pair?</th></tr></thead><tbody><tr><th scope="row">A</th><td>O—H</td><td>Available</td></tr><tr><th scope="row">B</th><td>C—H</td><td>Available</td></tr><tr><th scope="row">C</th><td>O—H</td><td>Unavailable</td></tr></tbody></table></div>
+        </section>
+
+        <section data-part="worked">
+          <h3 data-field="heading">Apply both conditions, one column at a time</h3>
+          <ol data-steps>
+            <li><strong>State both conditions.</strong> (1) H is bonded directly to N, O or F. (2) A nearby partner offers a suitable lone pair.</li>
+            <li><strong>Contact A.</strong> O—H passes condition 1, and the available lone pair passes condition 2. A meets both.</li>
+            <li><strong>Contact B.</strong> C—H fails condition 1, because C is not N, O or F. The available partner pair cannot rescue it.</li>
+            <li><strong>Contact C.</strong> O—H passes condition 1, but no suitable partner pair is available, so condition 2 fails.</li>
+            <li><strong>Conclude within the evidence.</strong> Only A supports the possibility of hydrogen bonding. Actual distance and orientation also matter, and this check does not rank boiling points.</li>
+          </ol>
+        </section>
+
+        <section data-part="practice">
+          <h3 data-field="heading">Compare fairly</h3>
+          <div class="item" data-item>
+            <h4>Compare a contact and a whole sample</h4>
+            <p>In a fictional model, each R contact takes four energy units to separate and each S contact takes two. Packet A has one R contact. Packet B has three S contacts. Add the contact energies to compare packets.</p>
+            <form data-check="choice">
+              <fieldset>
+                <legend>Which contact is stronger, and which packet takes more energy to separate?</legend>
+                <label class="option"><input type="radio" name="c0006-packets" value="a" data-response="Yes. One R takes four units and one S takes two. Packet B takes three times two units, which is more than packet A’s four." required> Contact R and packet B</label>
+                <label class="option"><input type="radio" name="c0006-packets" value="b" data-response="R takes more energy per contact. Recount the three S contacts together before comparing packets."> Contact R and packet A</label>
+                <label class="option"><input type="radio" name="c0006-packets" value="c" data-response="Packet B takes more energy in all. For one contact, compare the energy of one S with one R."> Contact S and packet B</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare after an attempt</summary><p>Per contact, R (4 units) beats S (2 units). Per packet, B needs 3 × 2 = 6 units and A needs 4. Real samples need separate evidence about their total attraction.</p></details>
+          </div>
+          <div class="item" data-item>
+            <h4>Compare boiling and melting fairly</h4>
+            <p>Invented liquids A and B have similarly sized and shaped molecules. B has stronger total attractions between molecules.</p>
+            <div class="table-wrap"><table><caption>Conditions for two simulated reports</caption><thead><tr><th scope="col">Report</th><th scope="col">Conditions</th><th scope="col">Question</th></tr></thead><tbody><tr><th scope="row">1</th><td>Same pressure</td><td>Which liquid will likely boil higher?</td></tr><tr><th scope="row">2</th><td>Solid packing unknown</td><td>Which solid melts higher?</td></tr></tbody></table></div>
+            <form data-check="choice">
+              <fieldset>
+                <legend>Which conclusion uses the stated evidence for both reports?</legend>
+                <label class="option"><input type="radio" name="c0006-trend" value="a" data-response="The boiling prediction uses the fixed pressure and stronger attractions. The melting claim also needs information about how the two solids pack." required> B likely boils higher. B must also melt higher.</label>
+                <label class="option"><input type="radio" name="c0006-trend" value="b" data-response="The stated pressure and stronger attractions are enough for a boiling trend. Solid packing is still needed for a melting comparison."> Both comparisons need more evidence.</label>
+                <label class="option"><input type="radio" name="c0006-trend" value="c" data-response="Yes. Fixed pressure supports a boiling trend for B. A melting comparison needs evidence about how each solid is arranged."> B likely boils higher. Melting needs more evidence.</label>
+              </fieldset>
+              <div class="form-actions"><button type="submit" disabled>Check my thinking</button></div>
+              <p class="feedback" role="status" aria-live="polite"></p>
+            </form>
+            <details data-compare><summary>Compare reasoning after an attempt</summary><p>Fixed pressure supports a boiling trend for B. Melting depends on how the solid packs, so it needs more evidence.</p>
+              <details data-compare><summary>Retry with a third report</summary><p>If A is measured at one pressure and B at a lower one, the temperatures cannot isolate the effect of attractions. Ask for data at the same pressure.</p></details>
+            </details>
+          </div>
+        </section>
+
+        <section data-part="glossary">
+          <h3 data-field="heading">Glossary</h3>
+          <dl>
+            <dt id="term-0006-inter">Intermolecular and intramolecular</dt><dd>Intermolecular means between molecules; intramolecular means within a molecule.</dd>
+            <dt id="term-0006-dispersion">Dispersion</dt><dd>Attraction arising from temporary uneven electron distributions. Every atom and molecule has it.</dd>
+            <dt id="term-0006-dipole">Permanent dipole</dt><dd>A lasting separation of partial positive and partial negative charge in a molecule.</dd>
+            <dt id="term-0006-hbond">Hydrogen bonding</dt><dd>An attraction involving H directly bonded to N, O or F and a suitable nearby lone-pair partner, in typical introductory examples.</dd>
+            <dt id="term-0006-boil">Boiling point and vapor pressure</dt><dd>Boiling happens when a liquid’s vapor pressure equals the external pressure. Compare boiling points only at the same pressure.</dd>
+          </dl>
+        </section>
+
+        <section data-part="recap">
+          <h3 data-field="heading">Remember it tomorrow</h3>
+          <p>Draw two bonded pairs. Mark a bond within a pair and an attraction between pairs. Explain which changes when the pairs separate without decomposing.</p>
+          <ul class="checklist">
+            <li>Locate the attraction: inside a particle or between particles?</li>
+            <li>Ask what separates during the change.</li>
+            <li>Check that the comparison holds conditions such as pressure fixed.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="gal-foot">
+    <section aria-labelledby="gal-about">
+      <h2 id="gal-about">About these prototypes</h2>
+      <p>Each layout below renders the same six public sample lessons from one shared content model, so you can compare structure instead of content. The page does not save anything. Your template, lesson and favourite live only in the address and in page memory, and practice responses disappear when you leave.</p>
+      <ol id="gal-catalogue" class="gal-catalogue">
+        <li data-template="column"><strong data-name>Reading Column</strong> <span data-desc>A calm, book-like single column. Every part appears in teaching order with numbered section markers and a short contents list. This is the baseline, with the least navigation and the most continuous reading.</span></li>
+        <li data-template="split"><strong data-name>Evidence Split</strong> <span data-desc>On wide screens the diagram, passage or data stays pinned beside the explanation, worked reasoning and practice, so learners never scroll away from what they are reasoning about. On phones the evidence sits inline after the explanation, with jump-back links.</span></li>
+        <li data-template="steps"><strong data-name>Guided Steps</strong> <span data-desc>One part at a time with a progress track and Back/Next buttons. Worked reasoning is revealed one step at a time, and the glossary stays one tap away in a drawer. Suited to phones and to learners who need a short visible goal.</span></li>
+        <li data-template="bento"><strong data-name>Bento Overview</strong> <span data-desc>A dashboard of tiles shows the whole lesson at a glance. Goal, warm-up, idea, evidence, worked steps, practice, glossary and recap each get a tile sized to their role, and worked steps become a row of cards.</span></li>
+        <li data-template="ladder"><strong data-name>Reasoning Ladder</strong> <span data-desc>A vertical route with a rail and stops. Every worked step and every practice task becomes its own rung, making the order of reasoning visible and easy to resume.</span></li>
+        <li data-template="inquiry"><strong data-name>Inquiry First</strong> <span data-desc>Opens with the evidence and a noticing prompt before any explanation. It then checks prior knowledge, makes sense of the idea, follows the reasoning, tests it and looks back. This is a predict–observe–explain order.</span></li>
+        <li data-template="reference"><strong data-name>Reference Three-Pane</strong> <span data-desc>A documentation layout. An outline tracks your place, the lesson sits in the centre, and a facts panel and an always-visible glossary fill the right rail. Built for looking things up and returning later.</span></li>
+        <li data-template="editorial"><strong data-name>Editorial Spread</strong> <span data-desc>A magazine treatment. It has a bold hero with the warm-up as a sidebar and the evidence as a full-width feature. Text-only explanations set in columns, worked steps get large numerals, practice sits in an inverted band, and the recap is a pull quote.</span></li>
+        <li data-template="worksheet"><strong data-name>Paper Worksheet</strong> <span data-desc>A printable handout on a desk, with lettered boxes and notes beside the evidence. Each practice task gets ruled working space, and the sheet ends with an exit ticket and a word bank. Designed to print well and to be worked on paper.</span></li>
+      </ol>
+      <h3>Shared content contract</h3>
+      <p>Every sample is an <code>&lt;article data-lesson&gt;</code> with these parts, read by every template:</p>
+      <ul class="gal-contract">
+        <li><code>intro</code>: eyebrow, title and objective</li>
+        <li><code>prerequisite</code>: a quick check with a closed comparison</li>
+        <li><code>explanation</code>: terms linked to the glossary, optional equations, tables and stepped models</li>
+        <li><code>evidence</code>: <code>data-kind</code> is <code>diagram</code>, <code>passage</code> or <code>data</code>, with an optional noticing prompt</li>
+        <li><code>worked</code>: a setup and an ordered list of justified steps</li>
+        <li><code>practice</code>: one or more items with hints, optional choice or number checks, and closed comparisons</li>
+        <li><code>glossary</code>: <code>dt</code> ids that terms link to</li>
+        <li><code>recap</code>: later recall and a return checklist</li>
+      </ul>
+      <p>See <code>README.md</code> in this folder for details. The template choice is pending review.</p>
+    </section>
+  </footer>
+</body>
+</html>

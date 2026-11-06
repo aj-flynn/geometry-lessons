@@ -1,0 +1,137 @@
+.similarity-lesson {
+  --proof-teal: #d7ebe4;
+  --proof-sand: #f3e6bd;
+}
+.lesson .lesson-label {
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.similarity-lesson section > .practice + .practice {
+  margin-top: 1rem;
+}
+.similarity-lesson .proof {
+  padding-inline-start: 1.5em;
+}
+.similarity-lesson .proof li + li {
+  margin-top: .45em;
+}
+.similarity-lesson .math {
+  display: inline-block;
+  max-width: 100%;
+}
+.similarity-lesson .segment {
+  text-decoration: overline;
+}
+.similarity-lesson svg {
+  max-width: 430px;
+  margin-inline: auto;
+  fill: currentColor;
+  font: 700 16px Arial, sans-serif;
+}
+.similarity-lesson svg path {
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+.similarity-lesson .small-triangle {
+  fill: var(--proof-teal);
+}
+.similarity-lesson .large-triangle {
+  fill: var(--proof-sand);
+}
+.similarity-lesson .diagram-mark,
+.similarity-lesson .outer-sides {
+  fill: none;
+}
+.similarity-lesson .outer-sides {
+  stroke-dasharray: 4 3;
+}
+.similarity-lesson .practice figure {
+  background: var(--paper);
+}
+.similarity-lesson .practice details {
+  background: var(--paper);
+}
+.similarity-lesson .practice details details {
+  border-inline-start: 2px solid currentColor;
+}
+.similarity-lesson h1 {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 360px) {
+  .lesson.similarity-lesson h1 {
+    font-size: 2rem;
+  }
+}
+@media print {
+  .similarity-lesson {
+    line-height: 1.28;
+  }
+  .lesson.similarity-lesson section {
+    margin-top: 12px;
+  }
+  .lesson.similarity-lesson :is(h2, h3) {
+    margin-bottom: 8px;
+    break-after: avoid;
+  }
+  .lesson.similarity-lesson p {
+    margin-block: 6px;
+    max-width: none;
+  }
+  .lesson.similarity-lesson figure {
+    margin-block: 10px;
+    padding: 10px;
+  }
+  .lesson.similarity-lesson figcaption {
+    font-size: 10pt;
+    margin-top: 6px;
+  }
+  .lesson.similarity-lesson .practice {
+    padding: 8px 12px;
+    break-inside: avoid;
+  }
+  .lesson.similarity-lesson details {
+    margin-block: 6px;
+    padding: 6px 10px;
+  }
+  .lesson.similarity-lesson summary {
+    min-height: 0;
+    padding-block: 2px;
+    break-after: avoid;
+  }
+  .lesson.similarity-lesson .rail-practice {
+    display: flow-root;
+  }
+  .lesson.similarity-lesson .rail-practice figure {
+    float: inline-start;
+    width: 32%;
+    margin: 0 12px 0 0;
+    padding: 0;
+  }
+  .lesson.similarity-lesson .rail-practice details {
+    display: flow-root;
+  }
+  .similarity-lesson section[aria-labelledby="angle-proof"] {
+    break-before: page;
+  }
+  .similarity-lesson aside,
+  .similarity-lesson section[aria-labelledby="return-title"],
+  .similarity-lesson #glossary dl > div {
+    break-inside: avoid;
+  }
+  .similarity-lesson #glossary dl {
+    column-count: 2;
+    column-gap: 24px;
+  }
+  .lesson.similarity-lesson dt {
+    margin-top: 8px;
+    break-after: avoid;
+  }
+  .similarity-lesson svg {
+    max-width: 245px;
+  }
+  .similarity-lesson .return-link {
+    display: none;
+  }
+}

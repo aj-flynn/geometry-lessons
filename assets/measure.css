@@ -1,115 +1,121 @@
-.measure {
-  --paper: #fffaf0;
-  --surface: #f1ede2;
-  --ink: #193132;
-  --rim: #9d351c;
-  --tile: #12635c;
-  width: min(940px, 100% - 2rem);
-  font-size: 1.125rem;
-  line-height: 1.55;
+.perimeter {
+  --track: #185852;
+  --tile: #f3d299;
+  --grid: #656d66;
+  --outline: #142f29;
   overflow-wrap: anywhere;
 }
-.measure h1 { font-size: clamp(3rem, 8vw, 5.9rem); }
-.measure h2 { font-size: clamp(1.65rem, 4vw, 2.35rem); margin-bottom: .7rem; }
-.measure h3 { font-size: 1.25rem; }
-.measure section { margin-top: 2.8rem; }
-.measure .workshop {
-  margin: .65rem 0 1.4rem;
-  padding: clamp(1rem, 4.6vw, 3rem);
-  background: #193132;
-  color: #fffaf0;
-  border-radius: 1.1rem 1.1rem 1.1rem .2rem;
+.perimeter header .eyebrow {
+  color: var(--track);
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
-.measure .eyebrow { color: var(--rim); font-size: .85rem; font-weight: 750; letter-spacing: .065em; text-transform: uppercase; }
-.measure .workshop .eyebrow { color: #f6c48d; margin-top: 0; }
-.measure .workshop .lead { font-size: 1.15rem; margin-bottom: 0; max-width: 38ch; }
-.measure .warm-start { border-left: .32rem solid var(--tile); padding: .25rem 1rem; }
-.measure .warm-start h2 { font-size: 1.25rem; }
-.measure .warm-start p { margin-top: .4rem; }
-.measure figure { margin: .8rem 0; background: #faf4e5; border-radius: .55rem; padding: .65rem; }
-.measure figure svg { max-width: 21rem; margin-inline: auto; }
-.measure figcaption { font-size: .95em; }
-.measure .tag-demo, .measure .two-up {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(.75rem, 3vw, 1.3rem);
-  align-items: start;
+.perimeter .warmup,
+.perimeter .task {
+  border-inline-start: 4px solid var(--track);
+  padding: 0.5em 1em;
+  background: #edf3ee;
 }
-.measure .tag-demo { margin: 1rem 0; padding: .75rem; border: 1px solid #bcb3a3; border-radius: .75rem; }
-.measure .tag-demo figure { margin: 0; }
-.measure .tag-controls { align-self: center; }
-.measure .tag-actions, .measure .check-controls { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; }
-.measure .tag-actions[hidden] { display: none; }
-.measure .tag-actions button { flex: 0 1 auto; }
-.measure button { border-radius: .35rem; min-height: 44px; padding: .5rem .7rem; }
-.measure button[aria-pressed="true"] { background: #d9eee5; color: #193132; box-shadow: inset 0 0 0 2px #193132; text-decoration: underline; }
-.measure button:disabled { opacity: .7; cursor: default; }
-.measure .tag-result:empty, .measure [data-feedback]:empty { margin: 0; }
-.measure .tag-result:not(:empty), .measure [data-feedback]:not(:empty) { border-left: .2rem solid var(--tile); padding-left: .65rem; }
-.measure .tag-face { fill: #c6e5da; }
-.measure .tag-rim, .measure .route { fill: none; stroke: #9d351c; stroke-width: 3; stroke-linejoin: round; }
-.measure .tile-grid { fill: none; stroke: #3b6965; stroke-width: 1.45; }
-.measure .start-dot { fill: #9d351c; }
-.measure .shape-line, .measure .unit-mark { fill: none; stroke: #193132; stroke-width: 2; stroke-linejoin: round; }
-.measure .svg-label { font: bold 15px Arial, sans-serif; fill: #193132; }
-.measure .tag-demo[data-mode="rim"] .tag-face { fill: #faf4e5; }
-.measure .tag-demo[data-mode="rim"] .tag-rim { stroke-width: 5; }
-.measure .tag-demo[data-mode="rim"] .tile-grid { visibility: hidden; }
-.measure .tag-demo[data-mode="face"] .tag-rim { stroke: #3b6965; stroke-width: 1.5; }
-.measure .tag-demo[data-mode="face"] .tile-grid { stroke-width: 2.25; }
-.measure .job { background: #f6f2e9; border-top: .25rem solid var(--tile); padding: 1rem; border-radius: .2rem .2rem .65rem .65rem; }
-.measure .job:first-child { border-top-color: var(--rim); }
-.measure .job p { margin-top: .5rem; }
-.measure .job figure { background: #fffaf0; }
-.measure .checks { margin-top: 1.5rem; }
-.measure .length-strip { display: grid; grid-template-columns: 2fr 1fr 2fr 1fr; gap: 3px; font-size: .95em; text-align: center; }
-.measure .length-strip span { padding: .3rem .12rem; background: #f6dec9; border: 1px solid #a65436; font-weight: 700; }
-.measure .length-strip span:nth-child(even) { background: #dceae3; border-color: #397571; }
-.measure .equal-parts { display: flex; }
-.measure .equal-parts span, .measure .equal-parts span:nth-child(even) { flex: 1; background: #dceae3; border-color: #397571; }
-.measure .strip-label, .measure .small-note, .measure .retry { font-size: .95em; }
-.measure .strip-label { text-align: center; margin-top: .35rem; }
-.measure .steps, .measure .orders, .measure details ol { margin: .65rem 0; padding-left: 1.4em; }
-.measure li + li { margin-top: .45rem; }
-.measure .check-heading { margin-top: 1.4rem; }
-.measure .practice { padding: .75rem; margin-top: .7rem; border-radius: .6rem; }
-.measure .practice label { display: block; margin-bottom: .4rem; font-weight: 650; }
-.measure input[type="number"] { width: min(6.5rem, 100%); }
-.measure .stop { padding: .65rem .9rem; border-left: .3rem solid #9d351c; background: #f6dec9; }
-.measure .finish { background: #e7f1ec; padding: 1rem; border-radius: .75rem; }
-.measure details { border-radius: .5rem; padding: .45rem .65rem; }
-.measure [id^="term-"]:target { background: #f6dec9; }
-.measure .sources { font-size: 1rem; }
-@media (max-width: 680px) {
-  .measure { width: calc(100% - 32px); }
-  .measure h1 { font-size: clamp(2rem, 15vw, 4rem); }
-  .measure .workshop { padding: 16px; }
-  .measure .tag-demo, .measure .two-up { grid-template-columns: minmax(0, 1fr); }
-  .measure .length-strip:not(.equal-parts) { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); }
+.perimeter .task {
+  margin-block-start: 1.3em;
 }
+.perimeter .picture {
+  background: #f4efe5;
+}
+.perimeter .picture svg {
+  max-width: 22rem;
+  margin-inline: auto;
+}
+.perimeter .labeled svg {
+  max-width: 18rem;
+}
+.perimeter .picture figcaption {
+  font-size: 0.95em;
+}
+.perimeter .picture text {
+  font: 700 18px var(--font);
+  fill: var(--outline);
+  text-anchor: middle;
+}
+.perimeter .grid-lines,
+.perimeter .outline,
+.perimeter .ticks,
+.perimeter .mosaic-edge,
+.perimeter .edge-marks {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.perimeter .grid-lines { stroke: var(--grid); stroke-width: 1; }
+.perimeter .outline,
+.perimeter .ticks,
+.perimeter .mosaic-edge { stroke: var(--outline); stroke-width: 3; }
+.perimeter .start { fill: var(--outline); stroke: #fff; stroke-width: 2; }
+.perimeter .mosaic-fill { fill: #fff; }
+.perimeter .edge-marks { display: none; }
+.perimeter [data-mode="edge"] .mosaic-edge { stroke: var(--track); stroke-width: 6; }
+.perimeter [data-mode="edge"] .edge-marks { display: block; stroke: var(--outline); stroke-width: 2; }
+.perimeter [data-mode="tiles"] .mosaic-fill { fill: var(--tile); }
+.perimeter [data-mode="tiles"] .grid-lines { stroke: var(--outline); stroke-width: 2; }
+.perimeter .controls[hidden] { display: none; }
+.perimeter button { max-width: 100%; text-align: start; }
+.perimeter form label,
+.perimeter form input { display: block; margin-block: 0 0.6em; }
+.perimeter form[data-practice-ready] { display: block; }
+.perimeter .math { font-weight: 700; }
+.perimeter .steps .math { display: block; }
+.perimeter .steps,
+.perimeter .mixed,
+.perimeter .mixed-compare ol,
+.perimeter .return-check { padding-inline-start: 1.45em; }
+.perimeter li { margin-block: 0.45em; }
 @media print {
-  .measure { width: 100%; font-size: 11pt; line-height: 1.32; }
-  .measure .workshop { background: none; color: #193132; padding: 0; margin: 0 0 .5rem; }
-  .measure .workshop .eyebrow { color: #9d351c; }
-  .measure h1 { font-size: 28pt; max-width: none; }
-  .measure h1 br { display: none; }
-  .measure h2 { font-size: 16pt; margin: .35em 0; }
-  .measure h3 { font-size: 12pt; margin-bottom: .3em; }
-  .measure section { margin-top: .9rem; }
-  .measure p { margin-block: .4em; }
-  .measure .tag-demo, .measure .two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
-  .measure .tag-demo { padding: .35rem; break-inside: avoid; }
-  .measure figure { margin: .35rem 0; padding: .35rem; }
-  .measure figure svg { max-height: 100px; }
-  .measure figcaption { margin-top: .3rem; }
-  .measure .job, .measure .finish { padding: .55rem; }
-  .measure .tag-actions, .measure .tag-result, .measure .practice, .measure .return-link { display: none !important; }
-  .measure .static-feedback[hidden], .measure .tag-static[hidden] { display: block; }
-  .measure .tag-demo[data-mode] .tile-grid { visibility: visible; stroke-width: 1.45; }
-  .measure .tag-demo[data-mode] .tag-face { fill: #c6e5da; }
-  .measure .tag-demo[data-mode] .tag-rim { stroke: #9d351c; stroke-width: 3; }
-  .measure details { margin-block: .35rem; padding: .25rem .4rem; break-inside: avoid; }
-  .measure summary { min-height: 0; padding-block: .2rem; }
-  .measure h2, .measure h3, .measure .eyebrow, .measure dt { break-after: avoid; }
-  .measure .job, .measure .checks article { break-inside: avoid; }
+  .perimeter {
+    --track: #000;
+    --outline: #000;
+    --grid: #555;
+    font-size: 11pt;
+    line-height: 1.32;
+  }
+  .perimeter .return-link,
+  .perimeter .job-pick,
+  .perimeter .feedback,
+  .perimeter form[data-practice-ready] { display: none; }
+  .perimeter h1 { font-size: 27pt; }
+  .perimeter h2 { font-size: 17pt; margin-bottom: 7pt; }
+  .perimeter h3 { font-size: 13pt; margin-bottom: 5pt; }
+  .perimeter section { margin-block-start: 13pt; }
+  .perimeter .print-start { break-before: page; margin-block-start: 0; }
+  .perimeter h2,
+  .perimeter h3,
+  .perimeter dt,
+  .perimeter section[aria-labelledby="solo"] > p { break-after: avoid; }
+  .perimeter .warmup,
+  .perimeter .task,
+  .perimeter .model-compare,
+  .perimeter .static-feedback,
+  .perimeter .route-task,
+  .perimeter .return-check,
+  .perimeter .steps,
+  .perimeter .mixed li { break-inside: avoid; }
+  .perimeter .picture {
+    display: grid;
+    grid-template-columns: 115pt 1fr;
+    align-items: center;
+    gap: 11pt;
+    padding: 5pt 9pt;
+    margin-block: 6pt;
+  }
+  .perimeter .picture svg { max-height: 62pt; }
+  .perimeter .picture figcaption { margin-block-start: 0; }
+  .perimeter details { padding: 4pt 8pt; margin-block: 6pt; border: 1px solid #aaa; }
+  .perimeter summary { min-height: 0; padding: 0; }
+  .perimeter p { max-width: none; margin-block: 4pt; }
+  .perimeter li { margin-block: 3pt; }
+  .perimeter .mixed > li,
+  .perimeter .mixed-compare li { margin-block: 1pt; }
+  .perimeter ol,
+  .perimeter ul { margin-block: 6pt; }
+  .perimeter dt { margin-top: 5pt; }
 }

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Choose whether to measure around a shape, cover it, or use its total length to find a missing side.">
-  <title>Go around or cover?</title>
+  <meta name="description" content="A Grade 3 lesson on measuring around shapes, covering surfaces, and finding missing side lengths.">
+  <title>Follow the edge</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
   <link rel="stylesheet" href="../../../assets/measure.css">
   <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
@@ -13,282 +13,218 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson measure">
-    <a class="return-link" href="../index.html">← Lesson library</a>
-    <header class="workshop">
-      <p class="eyebrow">Grade 3 · Shape workshop</p>
-      <h1>Go around<br> or cover?</h1>
-      <p class="lead">Pick what to measure. Then use the shape to find a total or a missing length.</p>
+  <main id="main" class="lesson perimeter">
+    <header>
+      <a class="return-link" href="../index.html">← Lesson library</a>
+      <p class="eyebrow">GRADE 3 · MEASURING SHAPES</p>
+      <h1>Follow the edge</h1>
+      <p>Find how far it is around a shape. Find the length of a side with a missing label.</p>
+      <p class="job-pick">Pick a job. Is the question about <a href="#edge">covering or going around</a>, <a href="#gaps">one missing length</a>, <a href="#pair">a rectangle with one label</a>, <a href="#share">equal sides</a>, or <a href="#turns">a path on a grid</a>? <a href="#glossary">Look up a word or unit</a>.</p>
     </header>
-    <aside class="warm-start" aria-labelledby="start-title">
-      <h2 id="start-title">Before you start</h2>
-      <p>Picture two square tiles touching side to side. How many tiles do you have? How many tile edges are on the outside?</p>
-      <details><summary>Check your start</summary>
-        <p>There are 2 tiles. Each tile shows 3 outside edges, so there are 6 outside edges. The edge where the tiles touch is inside.</p>
-      </details>
+
+    <aside class="warmup" aria-label="Before you start">
+      <p><strong>Try it with a book.</strong> Put a finger at a corner. Slide along the edges until you get back to that corner. Now put your hand flat on the cover. Which move went around?</p>
+      <details><summary>Check the two moves</summary><p>Your finger went around the edge. Your hand covered part of the inside of that outline.</p></details>
     </aside>
-    <p><a href="#glossary">Open the glossary</a> any time.</p>
 
-    <section aria-labelledby="tag-title">
-      <p class="eyebrow">Job 1 · The same tag, two jobs</p>
-      <h2 id="tag-title">Measure around or cover the face</h2>
-      <p>The tag is a <a href="#term-rectangle">rectangle</a>, a four-sided shape with four square corners. It is 4 <a href="#term-cm">centimeters (cm)</a> wide and 2 cm tall.</p>
-      <p>A metal rim goes along the <a href="#term-boundary">boundary</a>, the outside edge. Its total length is the <a href="#term-perimeter">perimeter</a>. A stamp covers the inside. The space it covers is the <a href="#term-area">area</a>. One <a href="#term-square-cm">square centimeter (cm²)</a> is the space inside a square 1 cm on each side.</p>
-
-      <div class="tag-demo" data-tag>
-        <figure>
-          <svg viewBox="0 0 240 140" role="img" aria-labelledby="tag-picture tag-description">
-            <title id="tag-picture">A tag with two rows of four squares</title>
-            <desc id="tag-description" data-tag-desc>The top and bottom are 4 centimeters each. The left and right are 2 centimeters each. The tag has two rows of four 1-centimeter squares.</desc>
-            <rect class="tag-face" x="48" y="38" width="144" height="72"/>
-            <path class="tile-grid" d="M84 38v72 M120 38v72 M156 38v72 M48 74h144"/>
-            <rect class="tag-rim" x="48" y="38" width="144" height="72"/>
-            <g class="svg-label" text-anchor="middle">
-              <text x="120" y="25">4 cm</text><text x="120" y="132">4 cm</text>
-              <text x="24" y="80">2 cm</text><text x="216" y="80">2 cm</text>
-            </g>
-          </svg>
-          <figcaption>Each small square is 1 cm on each side. The outline and the squares show two ways to measure the same tag.</figcaption>
-        </figure>
-        <div class="tag-controls">
-          <p><strong>Predict.</strong> Which marks will you count for the rim? Which marks will you count for the stamp? Point before you check.</p>
-          <div class="tag-actions" role="group" aria-label="Show what to measure on the tag" hidden>
-            <button type="button" data-show="rim" aria-pressed="false" disabled>Trace the rim</button>
-            <button type="button" data-show="face" aria-pressed="false" disabled>Show the tiles</button>
-            <button type="button" data-show="both" disabled>Reset</button>
-          </div>
-          <p class="tag-result" data-tag-result role="status"></p>
-          <details class="tag-static">
-            <summary>Compare the two jobs</summary>
-            <p>For the rim, trace the four outside sides. For the stamp, count the eight squares inside.</p>
-          </details>
+    <section aria-labelledby="edge">
+      <h2 id="edge">Around or inside?</h2>
+      <p>The <a href="#boundary">boundary</a> is the edge all the way around. The <a href="#perimeter">perimeter</a> is its total length. The <a href="#area">area</a> is how much space the shape covers.</p>
+      <p>Look at this mosaic, a picture made of tiles. Each small square has sides 1 inch long. How would you count for a strip along the edge? How would you count for tiles to fill the inside?</p>
+      <figure class="picture" data-mosaic data-mode="plain">
+        <svg viewBox="0 0 240 144" role="img" aria-labelledby="mosaic-title mosaic-desc">
+          <title id="mosaic-title">Tile picture with four columns and two rows</title>
+          <desc id="mosaic-desc">A rectangle made of eight square tiles. Each tile edge is one inch long. The heavy outline runs around the outside.</desc>
+          <rect class="mosaic-fill" x="24" y="24" width="192" height="96"/>
+          <path class="grid-lines" d="M72 24V120 M120 24V120 M168 24V120 M24 72H216"/>
+          <rect class="mosaic-edge" x="24" y="24" width="192" height="96"/>
+          <path class="edge-marks" d="M72 19V29 M120 19V29 M168 19V29 M72 115V125 M120 115V125 M168 115V125 M19 72H29 M211 72H221"/>
+        </svg>
+        <figcaption>Four tiles across and two down. One small edge is 1 inch long.</figcaption>
+        <div class="controls" data-mosaic-controls hidden>
+          <button type="button" data-show="edge">Trace the edge</button>
+          <button type="button" data-show="tiles">Shade the tiles</button>
+          <button type="button" data-show="plain">Reset picture</button>
         </div>
-      </div>
-
-      <div class="two-up">
-        <article class="job">
-          <h3>Cut the rim</h3>
-          <p><strong>Find</strong> the length of metal for one loop. Start at the top and trace clockwise, the way a clock hand moves. Count each side once.</p>
-          <div class="length-strip" role="group" aria-label="Top 4 centimeters, right 2 centimeters, bottom 4 centimeters, left 2 centimeters">
-            <span>4 cm</span><span>2 cm</span><span>4 cm</span><span>2 cm</span>
-          </div>
-          <ol class="steps">
-            <li>Match the sides across from each other.</li>
-            <li>The top and bottom together measure 4 cm + 4 cm = 8 cm.</li>
-            <li>The left and right together measure 2 cm + 2 cm = 4 cm.</li>
-            <li>Add both pairs. 8 cm + 4 cm = 12 cm around.</li>
-          </ol>
-        </article>
-        <article class="job">
-          <h3>Cover the tag</h3>
-          <p><strong>Find</strong> how much space the stamp covers. Fit the squares together with no gaps or overlaps.</p>
-          <ol class="steps">
-            <li>Each tile covers 1 cm².</li>
-            <li>There are 2 rows, with 4 tiles in each row.</li>
-            <li>Multiply to find the area. 2 × 4 cm² = 8 cm².</li>
-          </ol>
-          <p class="small-note">The 2 counts rows. The 4 cm² measures one row.</p>
-        </article>
-      </div>
-
-      <div class="two-up checks">
-        <article>
-          <h3>Try it · A cart’s loop</h3>
-          <figure class="cart">
-            <svg viewBox="0 0 228 144" role="img" aria-labelledby="cart-picture cart-description">
-              <title id="cart-picture">Cart route on a grid</title>
-              <desc id="cart-description">Start at the dot. The path goes right 5 grid edges, down 1, left 2, down 1, right 2, down 1, left 5, then up 3 to the dot. Each grid edge is 1 meter.</desc>
-              <path class="tile-grid" d="M26 24H166V108H26Z M54 24v84 M82 24v84 M110 24v84 M138 24v84 M26 52h140 M26 80h140"/>
-              <path class="route" d="M26 24h140v28h-56v28h56v28H26Z"/>
-              <circle class="start-dot" cx="26" cy="24" r="5"/>
-              <path class="unit-mark" d="M26 117v7 M26 121h28 M54 117v7"/>
-              <text class="svg-label" x="40" y="140" text-anchor="middle">1 m</text>
-              <text class="svg-label" x="77" y="17" text-anchor="middle">Start at dot</text>
-            </svg>
-            <figcaption>Follow the thick line from the dot. Each small grid edge is 1 <a href="#term-meter">meter (m)</a>.</figcaption>
-          </figure>
-          <p>How far does the cart roll in one loop?</p>
-          <form class="practice" data-practice data-expected="20" data-tolerance="0"
-            data-hint="Start at the dot. Count the grid edges on the thick line. Stop at the dot and try again."
-            data-mistakes='{"13":"Thirteen counts the squares inside. Count the short edges on the thick line and try again.","8":"Eight counts the turns. Some stretches go past several grid edges. Count those edges and try again.","16":"Sixteen follows the outside of the grid. The thick line bends inward and back out. Count those edges too."}'
-            data-success="Yes. In meters, 5 + 1 + 2 + 1 + 2 + 1 + 5 + 3 = 20. The cart rolls 20 m in one loop.">
-            <label for="cart-length">Distance in meters</label>
-            <div class="check-controls"><input id="cart-length" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
-            <p data-feedback role="status"></p>
-          </form>
-          <details class="static-feedback"><summary>Compare the loop</summary>
-            <p>In meters, 5 + 1 + 2 + 1 + 2 + 1 + 5 + 3 = 20. The cart rolls 20 m. A square inside is a different thing from one short edge on the route.</p>
-          </details>
-          <p class="retry">To retry, start from a different corner. Will the total change?</p>
-        </article>
-
-        <article>
-          <h3>Try it · A patch for a toy</h3>
-          <figure>
-            <svg viewBox="0 0 228 144" role="img" aria-labelledby="patch-picture patch-description">
-              <title id="patch-picture">A patch on a square grid</title>
-              <desc id="patch-description">The patch has three rows. The first two have three squares each. The last row has one square, lined up at the left.</desc>
-              <path class="tag-face" d="M53 12h120v80H93v40H53Z"/>
-              <path class="tile-grid" d="M53 52h120 M53 92h40 M93 12v80 M133 12v80"/>
-              <path class="tag-rim" d="M53 12h120v80H93v40H53Z"/>
-            </svg>
-            <figcaption>Each small square has an area of 1 cm².</figcaption>
-          </figure>
-          <p>How much cloth covers this whole patch?</p>
-          <form class="practice" data-practice data-expected="7" data-tolerance="0"
-            data-hint="Count the squares one row at a time. Include the short row. Then try again."
-            data-mistakes='{"12":"Twelve counts the short edges around the patch. Count the squares inside and try again.","9":"Nine would fill a whole 3-by-3 block. The bottom row has only one square. Try again."}'
-            data-success="Yes. Count the rows. 3 cm² + 3 cm² + 1 cm² = 7 cm².">
-            <label for="patch-area">Area in square centimeters</label>
-            <div class="check-controls"><input id="patch-area" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
-            <p data-feedback role="status"></p>
-          </form>
-          <details class="static-feedback"><summary>Compare the patch</summary>
-            <p>Two full rows and one extra tile give 3 cm² + 3 cm² + 1 cm² = 7 cm².</p>
-          </details>
-          <p class="retry">To retry, count down the columns. Check that you get the same area.</p>
-        </article>
-      </div>
-      <p class="stop"><strong>Good place to pause.</strong> Point to what you count for each job before you move on.</p>
-    </section>
-
-    <section aria-labelledby="repair-title">
-      <p class="eyebrow">Job 2 · The whole loop is known</p>
-      <h2 id="repair-title">Find what is missing</h2>
-      <div class="two-up">
-        <article class="job">
-          <h3>One piece left</h3>
-          <p><strong>Given</strong> a triangle with perimeter 24 cm. Two pieces are 6 cm and 8 cm. <strong>Find</strong> the length of the last piece.</p>
-          <figure>
-            <svg viewBox="0 0 206 126" role="img" aria-labelledby="triangle-picture triangle-description">
-              <title id="triangle-picture">A triangle with one missing length</title>
-              <desc id="triangle-description">The left side is 6 centimeters, the bottom is 8 centimeters, and the slanted side is unknown.</desc>
-              <path class="shape-line" d="M62 21v72h96Z"/>
-              <g class="svg-label" text-anchor="middle"><text x="36" y="62">6 cm</text><text x="111" y="114">8 cm</text><text x="130" y="48">?</text></g>
-            </svg>
-          </figure>
-          <ol class="steps">
-            <li>Add the known pieces. 6 cm + 8 cm = 14 cm.</li>
-            <li>Take them out of the total. 24 cm − 14 cm = 10 cm.</li>
-            <li>Check by putting the piece back. 14 cm + 10 cm = 24 cm.</li>
-          </ol>
-        </article>
-        <article class="job">
-          <h3>Two matching pieces left</h3>
-          <p><strong>Given</strong> a rectangle with perimeter 22 cm. The left side is 3 cm. <strong>Find</strong> the other three lengths.</p>
-          <figure>
-            <svg viewBox="0 0 206 126" role="img" aria-labelledby="frame-picture frame-description">
-              <title id="frame-picture">A rectangular frame with matching sides</title>
-              <desc id="frame-description">Left and right are the matching short sides. Left is labeled 3 centimeters. Top and bottom are the matching long sides. They have question marks.</desc>
-              <rect class="shape-line" x="55" y="41" width="96" height="36"/>
-              <path class="unit-mark" d="M50 59h10 M146 59h10 M101 36v10 M106 36v10 M101 72v10 M106 72v10"/>
-              <g class="svg-label" text-anchor="middle"><text x="31" y="64">3 cm</text><text x="176" y="64">?</text><text x="103" y="30">?</text><text x="103" y="100">?</text></g>
-            </svg>
-          </figure>
-          <ol class="steps">
-            <li>Across from 3 cm is another 3 cm.</li>
-            <li>Both short sides take 3 cm + 3 cm = 6 cm.</li>
-            <li>The two long sides have 22 cm − 6 cm = 16 cm left.</li>
-          </ol>
-          <div class="length-strip equal-parts" role="group" aria-label="The remaining 16 centimeters split into two equal lengths">
-            <span>Top ?</span><span>Bottom ?</span>
-          </div>
-          <p class="strip-label">16 cm left for these two <a href="#term-equal">equal lengths</a>, or lengths that match</p>
-          <ol class="steps" start="4">
-            <li>Share it equally. 16 cm ÷ 2 = 8 cm per long side.</li>
-            <li>Check by adding. 3 cm + 8 cm + 3 cm + 8 cm = 22 cm.</li>
-          </ol>
-        </article>
-      </div>
-
-      <h3 class="check-heading">Try it · Order a new strip</h3>
-      <p>A maker has a 27 cm loop made from four straight pieces. Three pieces measure 5 cm, 7 cm and 9 cm. How long is the fourth? Show how to check it with addition.</p>
-      <form class="practice" data-practice data-expected="6" data-tolerance="0"
-        data-hint="Add the three known lengths. Take that sum away from the whole loop and try again."
-        data-mistakes='{"21":"Twenty-one centimeters is the length already used. Find the length still left in the loop.","27":"That is the whole loop. Find the length of just the fourth piece.","11":"Check that you took away all three known pieces. Add them first, then try again."}'
-        data-success="Yes. The known pieces take 21 cm, and 27 cm − 21 cm = 6 cm. The check is 21 cm + 6 cm = 27 cm.">
-        <label for="strip-length">Fourth piece in centimeters</label>
-        <div class="check-controls"><input id="strip-length" type="number" min="0" step="1" required><button type="submit" disabled>Check</button></div>
-        <p data-feedback role="status"></p>
-      </form>
-      <details class="static-feedback"><summary>Compare the new strip</summary>
-        <p>5 cm + 7 cm + 9 cm = 21 cm. Then 27 cm − 21 cm = 6 cm. Check that 21 cm + 6 cm = 27 cm.</p>
+        <p class="feedback" data-mosaic-feedback role="status"></p>
+      </figure>
+      <details class="model-compare">
+        <summary>Compare the two counts</summary>
+        <p><strong>Strip around.</strong> Add the four side lengths, in inches.</p>
+        <p class="math">4 + 2 + 4 + 2 = 12</p>
+        <p>The strip is 12 inches long. The <a href="#opposite">opposite sides</a>, the ones across from each other, match in a rectangle. In a square all four sides match, so one side length tells you all four.</p>
+        <p><strong>Tiles inside.</strong> Count two rows of four tiles.</p>
+        <p class="math">4 + 4 = 8</p>
+        <p>The area is 8 <a href="#square-inch">square inches</a>. Each tile covers one square inch.</p>
       </details>
-      <p class="retry">If you got stuck, sketch four pieces in a strip. Label what you know and leave one gap. Try again.</p>
-      <p class="stop"><strong>Good place to pause.</strong> Tell someone why the frame needed an extra step after subtraction.</p>
-    </section>
-
-    <section aria-labelledby="share-title">
-      <p class="eyebrow">Job 3 · Every piece matches</p>
-      <h2 id="share-title">Share the whole loop</h2>
-      <div class="two-up share">
-        <figure>
-          <svg viewBox="0 0 206 132" role="img" aria-labelledby="kite-picture kite-description">
-            <title id="kite-picture">A diamond-shaped loop of four equal pieces</title>
-            <desc id="kite-description">One matching mark on each side shows all four sides are the same length.</desc>
-            <path class="shape-line" d="M103 10l52 52-52 52-52-52Z"/>
-            <path class="unit-mark" d="M124 41l10-10 M124 83l10 10 M72 93l10-10 M72 31l10 10"/>
-          </svg>
-          <figcaption>The same small mark on every side shows the pieces have <a href="#term-equal">equal lengths</a>, or the same length.</figcaption>
-        </figure>
-        <div>
-          <p><strong>Given</strong> a 28 cm loop with four equal pieces. <strong>Find</strong> the length of one piece.</p>
-          <div class="length-strip equal-parts" role="group" aria-label="The whole loop is 28 centimeters split into four equal lengths">
-            <span>?</span><span>?</span><span>?</span><span>?</span>
-          </div>
-          <p class="strip-label">28 cm for all four pieces</p>
-          <ol class="steps">
-            <li>Share the whole length. 28 cm ÷ 4 = 7 cm per piece.</li>
-            <li>Put the pieces back. 4 × 7 cm = 28 cm.</li>
-          </ol>
-        </div>
+      <div class="task">
+        <h3>Try a tray</h3>
+        <p>A tray is 7 inches long and 3 inches wide. A sheet of paper will cover the bottom. What will you count? Find the amount and tell why.</p>
+        <details><summary>Check the tray</summary><p>Cover the bottom with 3 rows of 7 one-inch squares. That is 21 square inches. The word <em>cover</em> tells you to measure the inside. Try a tray that is 9 inches by 2 inches. How much paper will cover the bottom? How long is a strip around the edge?</p></details>
       </div>
-      <h3 class="check-heading">Try it · Which cutting mark?</h3>
-      <p>Five equal bars join end to end to make a loop. Together they measure 45 cm. Where should the maker mark the length for one bar?</p>
-      <details><summary>Compare your mark</summary>
-        <p>45 cm ÷ 5 = 9 cm, so mark 9 cm. Check that 5 × 9 cm = 45 cm. A mark at 5 cm uses the number of bars as a length.</p>
-      </details>
-      <p class="retry">To retry, draw five equal boxes and write 45 cm over the whole row. Find what belongs in just one box.</p>
     </section>
 
-    <section class="finish" aria-labelledby="finish-title">
-      <p class="eyebrow">Your turn · Pick your method</p>
-      <h2 id="finish-title">Three new orders</h2>
-      <p>For each order, write a number with its unit. Circle or say the clue that helped you choose your first step.</p>
-      <ol class="orders">
-        <li><strong>Tray.</strong> Three rows of 5 foam squares fit the base with no gaps. Each square is 1 cm on a side. A clear sheet must fit the base, and a cord must fit around the edge. How much sheet and how much cord?</li>
-        <li><strong>Robot badge.</strong> A rectangle has 30 cm of trim all the way around it. Its two long sides use 18 cm together. What is the length of each short side?</li>
-        <li><strong>Signal sign.</strong> A triangle is made from three equal strips. A 33 cm roll makes one whole outline. Where would you make the first cut if no length is lost at the cut?</li>
+    <section class="print-start" aria-labelledby="gaps">
+      <h2 id="gaps">Find a missing side</h2>
+      <p>A bike flag has a perimeter of 24 centimeters. Two sides are 6 and 8 centimeters long. Find the third side. We write centimeters as <a href="#length-units">cm</a>.</p>
+      <figure class="picture labeled">
+        <svg viewBox="0 0 240 132" role="img" aria-labelledby="flag-title flag-desc">
+          <title id="flag-title">Three sides of a bike flag</title>
+          <desc id="flag-desc">The left side is six centimeters, the bottom is eight centimeters, and the slanted side is unknown.</desc>
+          <path class="outline" d="M62 13V97H174Z"/>
+          <text x="36" y="61">6</text><text x="118" y="124">8</text><text x="134" y="45">?</text>
+        </svg>
+        <figcaption>The labels are in centimeters. The question mark is one whole side.</figcaption>
+      </figure>
+      <ol class="steps">
+        <li>Add the sides you know. <span class="math">6 cm + 8 cm = 14 cm</span></li>
+        <li>Take that length out of the whole edge. <span class="math">24 cm − 14 cm = 10 cm</span></li>
+        <li>The side is 10 cm long. Check that all three sides add to 24 cm.</li>
       </ol>
-      <details>
-        <summary>Compare after you try all three</summary>
-        <ol>
-          <li><strong>Tray.</strong> The sheet covers space. One row covers 5 cm². Three rows cover 3 × 5 cm² = 15 cm². The cord goes around. One row is 5 cm long. Three rows make the tray 3 cm tall. Add the four sides. 5 cm + 3 cm + 5 cm + 3 cm = 16 cm.</li>
-          <li><strong>Robot badge.</strong> “All the way around” gives the perimeter. The long sides already use 18 cm together. The short pair has 30 cm − 18 cm = 12 cm left. Each short side is 12 cm ÷ 2 = 6 cm. Check by adding. 18 cm + 6 cm + 6 cm = 30 cm.</li>
-          <li><strong>Signal sign.</strong> “Three equal strips” tells you how many shares. 33 cm ÷ 3 = 11 cm per strip. Cut at 11 cm. Check by multiplying. 3 × 11 cm = 33 cm.</li>
-        </ol>
-        <p>Try again on paper. Say what your unit measures before doing any arithmetic.</p>
-      </details>
-      <p><strong>Tomorrow, before you look.</strong> Sketch a shape made of six tiles. How could you find the distance around it? How could you find the space it covers? Explain why the units differ.</p>
-      <p>When you go back to your work, point to the part being measured. For a missing length, add your pieces back and see if they fit the given total.</p>
+      <div class="task">
+        <h3>Try a four-sided badge</h3>
+        <p>The edge is 40 cm all the way around. Three sides measure 14 cm, 8 cm, and 8 cm. Find the last side. Show how you know it fits.</p>
+        <details><summary>Check the badge</summary><p>The three known sides add to 30 cm. That leaves 10 cm for the last side. Add the 10 cm back to check the full 40 cm.</p><p>Try a new badge. The whole edge is 39 cm. You know three sides are 12 cm, 9 cm, and 11 cm. What is the last length?</p></details>
+      </div>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
-      <h2 id="glossary-title">Glossary</h2>
-      <dl>
-        <dt id="term-rectangle">Rectangle</dt><dd>A four-sided shape with four square corners. The sides across from each other have the same length.</dd>
-        <dt id="term-cm">Centimeter (cm)</dt><dd>A unit of length. One small tile edge in the tag measures 1 cm.</dd>
-        <dt id="term-boundary">Boundary</dt><dd>The outside edge of the shape.</dd>
-        <dt id="term-perimeter">Perimeter</dt><dd>The total length all the way around the boundary.</dd>
-        <dt id="term-area">Area</dt><dd>How much flat space a shape covers. Measure it in square units.</dd>
-        <dt id="term-square-cm">Square centimeter (cm²)</dt><dd>The area of a square that is 1 cm on each side. Say “square centimeter.”</dd>
-        <dt id="term-meter">Meter (m)</dt><dd>A unit of length. One meter is 100 centimeters.</dd>
-        <dt id="term-equal">Equal lengths</dt><dd>Lengths that measure the same. Matching little marks on sides show equal lengths.</dd>
-      </dl>
+    <section aria-labelledby="pair">
+      <h2 id="pair">Find a pair of missing sides</h2>
+      <p>A rectangular game board has a perimeter of 34 cm. The top is 11 cm long. Find all three unlabeled sides.</p>
+      <figure class="picture labeled">
+        <svg viewBox="0 0 240 146" role="img" aria-labelledby="board-title board-desc">
+          <title id="board-title">A rectangular board labeled on top</title>
+          <desc id="board-desc">The top edge is eleven centimeters. The other three sides have question marks.</desc>
+          <rect class="outline" x="43" y="32" width="154" height="84"/>
+          <text x="120" y="23">11</text><text x="23" y="80">?</text><text x="217" y="80">?</text><text x="120" y="139">?</text>
+        </svg>
+        <figcaption>Top and bottom are across from each other. Left and right are across from each other.</figcaption>
+      </figure>
+      <ol class="steps">
+        <li>The bottom also measures 11 cm. Add that pair. <span class="math">11 cm + 11 cm = 22 cm</span></li>
+        <li>Take the pair out of the whole. <span class="math">34 cm − 22 cm = 12 cm</span></li>
+        <li>The 12 cm is shared by the left and right sides. They are the same length. <span class="math">12 cm ÷ 2 = 6 cm</span></li>
+      </ol>
+      <p>The other sides are 11 cm, 6 cm, and 6 cm. All four lengths add to 34 cm.</p>
+      <div class="task">
+        <h3>Try a book cover</h3>
+        <p>A rectangular book cover has a perimeter of 38 cm. Its left edge is 4 cm. Find the top, bottom, and right edge. Tell how you knew which edge was 4 cm.</p>
+        <details><summary>Check the cover</summary><p>Right and left match. They use 8 cm together. The top and bottom share the remaining 30 cm, so they are 15 cm each. Try the same idea with 42 cm around and a left edge of 5 cm.</p></details>
+      </div>
     </section>
-    <section class="sources" aria-labelledby="sources-title">
-      <h2 id="sources-title">Explore another shape</h2>
-      <p><a href="https://www.mathlearningcenter.org/apps/learning-activities/rectangle-riddle">Rectangle Riddle from The Math Learning Center</a></p>
+
+    <section aria-labelledby="share">
+      <h2 id="share">Split the whole into equal sides</h2>
+      <p>A triangle for a game has three sides of the same length. The perimeter is 21 inches. Find the length of one side.</p>
+      <figure class="picture labeled">
+        <svg viewBox="0 0 240 136" role="img" aria-labelledby="equal-title equal-desc">
+          <title id="equal-title">Triangle with a matching mark on each side</title>
+          <desc id="equal-desc">Each of the three sides has one short line across it. The marks show that the side lengths match.</desc>
+          <path class="outline" d="M120 16 62 116H178Z"/>
+          <path class="ticks" d="m84 62 14 8 m44 0 14-8 m-36 46v16"/>
+        </svg>
+        <figcaption>One matching mark on each side shows that all three lengths are equal.</figcaption>
+      </figure>
+      <p>Share the total length among three equal sides.</p>
+      <p class="math">21 inches ÷ 3 = 7 inches</p>
+      <p>Each side is 7 inches long. Check by adding 7 inches three times.</p>
+      <div class="task">
+        <h3>Try a maker's sign</h3>
+        <p>A sign has 8 sides. They all have the same length. The sign is 88 cm around. Find each side length. Tell how you chose how many shares to make.</p>
+        <details><summary>Check the sign</summary><p>Make one share for each side. Give 10 cm to each of the 8 sides. That uses 80 cm. Share the last 8 cm by giving each side 1 cm more. Each side is 11 cm long. Try again with 8 equal sides and a perimeter of 80 cm.</p></details>
+      </div>
+    </section>
+
+    <section class="route-task" aria-labelledby="turns">
+      <h2 id="turns">Count around a bend</h2>
+      <p>A cart follows the dark line from the dot and back to it. Each small grid edge stands for 1 meter. Find the distance the cart rolls. Show how you kept track.</p>
+      <figure class="picture">
+        <svg viewBox="0 0 240 194" role="img" aria-labelledby="cart-title cart-desc">
+          <title id="cart-title">A closed cart path with a bend in the right side</title>
+          <desc id="cart-desc">Start at the lower left dot. Each word is one grid edge. Up, up, up, up. Right, right, right, right, right. Down. Left, left, left. Down, down. Right, right, right. Down. Left, left, left, left, left. You are back at the dot.</desc>
+          <path class="grid-lines" d="M30 25H210 M30 61H210 M30 97H210 M30 133H210 M30 169H210 M30 25V169 M66 25V169 M102 25V169 M138 25V169 M174 25V169 M210 25V169"/>
+          <path class="outline" d="M30 169V25H210V61H102V133H210V169Z"/>
+          <circle class="start" cx="30" cy="169" r="7"/>
+        </svg>
+        <figcaption>The dot is the start and finish. One small grid edge stands for 1 meter.</figcaption>
+      </figure>
+      <form class="practice" hidden data-practice data-expected="24" data-tolerance="0"
+        data-hint="Start at the dot. Count the grid edges along each straight part, then add those counts."
+        data-mistakes='{"14":"Fourteen counts the squares inside. Follow only the dark line, even where it bends in.","18":"Eighteen goes around the full outer rectangle. Follow the dark line into the bend and back out."}'
+        data-success="The cart rolls 24 meters. Follow the dark line once and count each short edge you pass.">
+        <label for="cart-distance">Distance in meters</label>
+        <input id="cart-distance" type="number" min="0" step="1" required>
+        <button type="submit" disabled>Check the cart path</button>
+        <p class="feedback" data-feedback role="status"></p>
+      </form>
+      <details class="static-feedback">
+        <summary>Compare the cart path</summary>
+        <p>From the dot, go up first. Count the short edges on each part, in meters.</p>
+        <p class="math">4 + 5 + 1 + 3 + 2 + 3 + 1 + 5 = 24</p>
+        <p>The cart rolls 24 meters. Try going the other way. Then try the robot path below and keep track of its turns.</p>
+      </details>
+    </section>
+
+    <section aria-labelledby="solo">
+      <h2 id="solo">Choose your own way</h2>
+      <p>Work on paper or say your thinking. For each one, show your steps and say what clue told you what to do.</p>
+      <ol class="mixed">
+        <li>A rectangular stage mat is 6 feet wide and 9 feet long. Each foam pad covers 1 <a href="#square-foot">square foot</a>, the space in a 1-foot-by-1-foot square. How many pads will cover the mat?</li>
+        <li>A hiker walks 7 meters along the first side of a square path. How far is one full loop?</li>
+        <li>A toy truck drives once around a rectangular mat 15 cm long and 6 cm wide. How far does it drive?</li>
+        <li>A triangle has a perimeter of 27 cm. Two sides are 8 cm and 10 cm. Find the third side.</li>
+        <li>A rectangular stamp design is 46 cm around. Its bottom is 15 cm long. Find the other three side lengths.</li>
+        <li>A game token has 8 sides of the same length. It is 112 <a href="#length-units">mm</a> (millimeters) around. Find the length of one side.</li>
+        <li>
+          A robot follows the dark line once. How far does it roll? Each small grid edge stands for 1 meter.
+          <figure class="picture">
+            <svg viewBox="0 0 240 192" role="img" aria-labelledby="robot-title robot-desc">
+              <title id="robot-title">Robot track on a grid</title>
+              <desc id="robot-desc">Start at the upper dot. Each word is one grid edge. Right, right. Down. Right, right. Down, down. Left, left. Down, down. Left, left. Up, up. Left, left. Up, up. Right, right. Up. You are back at the dot.</desc>
+              <path class="grid-lines" d="M24 16H216 M24 48H216 M24 80H216 M24 112H216 M24 144H216 M24 176H216 M24 16V176 M56 16V176 M88 16V176 M120 16V176 M152 16V176 M184 16V176 M216 16V176"/>
+              <path class="outline" d="M88 16H152V48H216V112H152V176H88V112H24V48H88Z"/>
+              <circle class="start" cx="88" cy="16" r="6"/>
+            </svg>
+            <figcaption>Start and finish at the dot. One small grid edge stands for 1 meter.</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <details class="mixed-compare">
+        <summary>Compare after you try</summary>
+        <ol>
+          <li><em>Cover</em> tells you to fill the mat. Six rows of nine pads use 54 pads.</li>
+          <li><em>Square</em> tells you the four sides match. Add four 7-meter sides for 28 meters.</li>
+          <li><em>Around</em> tells you to count every edge once. Add 15 cm + 6 cm + 15 cm + 6 cm for 42 cm.</li>
+          <li>Two known sides use 18 cm. The last side uses the 9 cm left over.</li>
+          <li>The top and bottom use 30 cm. The other two sides share the 16 cm left over. The three unlabeled lengths are 15 cm, 8 cm, and 8 cm.</li>
+          <li><em>Same length</em> tells you to share the whole equally. Share 80 mm first. Each side gets 10 mm. Share the 32 mm left. Each side gets 4 mm more, for 14 mm in all.</li>
+          <li>The robot moves along 10 parts that are 2 meters long and two parts that are 1 meter long. It rolls 22 meters. Count the last part that takes it back to the dot.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section class="print-start" aria-labelledby="return">
+      <h2 id="return">Before you go back</h2>
+      <ul class="return-check">
+        <li>Point to the edge or the space inside.</li>
+        <li>Say what you know about each side you use.</li>
+        <li>Check your total and name your unit.</li>
+      </ul>
+      <p><strong>Next time.</strong> Draw a rectangle on grid paper. Trace the edge with a finger. Then explain to someone what you would count to cover it. Try it before looking back here.</p>
+    </section>
+
+    <section id="glossary" aria-labelledby="words">
+      <h2 id="words">Words and units</h2>
+      <dl>
+        <dt id="boundary">Boundary</dt><dd>The edge all the way around a shape.</dd>
+        <dt id="perimeter">Perimeter</dt><dd>The length of that whole edge.</dd>
+        <dt id="area">Area</dt><dd>How much space a flat shape covers. Count the unit squares that fill it.</dd>
+        <dt id="square-inch">Square inch</dt><dd>The space covered by a square that is 1 inch along each side.</dd>
+        <dt id="square-foot">Square foot</dt><dd>The space covered by a square that is 1 foot along each side.</dd>
+        <dt id="opposite">Opposite sides</dt><dd>Sides across from each other. In a rectangle, each side has the same length as the side across from it.</dd>
+        <dt id="length-units">cm and mm</dt><dd>Short ways to write centimeters and millimeters. Both are units for length.</dd>
+      </dl>
+      <p>Look for <strong>perimeter</strong> in the <a href="https://access.openupresources.org/curricula/our-k5-math/en/grade-3/student_glossary.html">Open Up Resources Grade 3 Glossary</a> for another short explanation.</p>
     </section>
   </main>
 </body>

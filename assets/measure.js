@@ -1,35 +1,21 @@
-const demo = document.querySelector('[data-tag]');
-if (demo) {
-  const actions = demo.querySelector('.tag-actions');
-  const buttons = actions.querySelectorAll('button');
-  const comparison = demo.querySelector('.tag-static');
-  const description = demo.querySelector('[data-tag-desc]');
-  const feedback = demo.querySelector('[data-tag-result]');
-  const original = description.textContent;
+const mosaic = document.querySelector('[data-mosaic]');
+const controls = mosaic?.querySelector('[data-mosaic-controls]');
+const feedback = mosaic?.querySelector('[data-mosaic-feedback]');
+
+if (controls && feedback) {
   const explanations = {
-    rim: 'Trace the four outside sides. The two 4 cm sides and two 2 cm sides make 12 cm around.',
-    face: 'Count the squares inside. Two rows of four square centimeters cover 8 square centimeters.',
-    both: 'Reset. The outline and the squares are both shown.'
+    edge: 'Trace around the four sides. Count 4, then 2, then 4, then 2 small edges. That is 12 inches.',
+    tiles: 'Look inside the outline. Count two rows of four tiles. That is 8 square inches.',
+    plain: 'Picture reset. Choose a way to count.'
   };
-  for (const button of buttons) {
+
+  for (const button of controls.querySelectorAll('[data-show]')) {
     button.addEventListener('click', () => {
       const mode = button.dataset.show;
-      demo.dataset.mode = mode;
+      mosaic.dataset.mode = mode;
       feedback.textContent = explanations[mode];
-      description.textContent = mode === 'both' ? original : explanations[mode];
-      for (const choice of buttons) {
-        if (choice.hasAttribute('aria-pressed')) {
-          choice.setAttribute('aria-pressed', String(choice === button));
-        }
-      }
     });
-    button.disabled = false;
   }
-  actions.hidden = false;
-  comparison.hidden = true;
-}
 
-for (const form of document.querySelectorAll('form[data-practice-ready="true"]')) {
-  const comparison = form.nextElementSibling;
-  if (comparison?.matches('.static-feedback')) comparison.hidden = true;
+  controls.hidden = false;
 }

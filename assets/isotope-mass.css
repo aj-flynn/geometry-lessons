@@ -1,0 +1,72 @@
+.isotope-lesson {
+  --tint: #e2efec;
+  --mark: #146875;
+}
+.isotope-lesson header {
+  border-top: 6px solid var(--mark);
+  margin-block: 22px 36px;
+  padding-block: 12px;
+}
+.isotope-lesson .kicker {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-block: 0 12px;
+}
+.isotope-lesson .lead { max-width: 37ch }
+.isotope-lesson h1, .isotope-lesson h2, .isotope-lesson h3 { overflow-wrap: anywhere }
+.isotope-lesson h3 { margin-top: 26px }
+.isotope-lesson figure { background: var(--tint); max-width: 36rem }
+.isotope-lesson figure svg { max-height: none }
+.isotope-lesson .axis { stroke: #0d2a1c; stroke-width: 3 }
+.isotope-lesson .mean-marker { fill: var(--mark); stroke: #0d2a1c; stroke-width: 2 }
+.isotope-lesson .scale-ends { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 8px }
+.isotope-lesson .scale-ends span, .isotope-lesson .num { white-space: nowrap }
+.isotope-lesson .model-controls, .isotope-lesson .checkpoint { border-block: 1px solid #6e8884; padding-block: 12px }
+.isotope-lesson .model-controls label, .isotope-lesson output, .isotope-lesson form label { display: block; font-weight: bold }
+.isotope-lesson output { margin-bottom: 12px }
+.isotope-lesson .model-controls input { max-width: 24rem; margin-inline: 0 }
+.isotope-lesson button { max-width: 100%; padding-inline: 0.8em }
+.isotope-lesson .checkpoint input { display: block; width: 100%; margin-block: 8px }
+.isotope-lesson .checkpoint .feedback { font-weight: bold }
+.isotope-lesson .checkpoint h3 { margin-top: 4px }
+.isotope-lesson button:disabled { cursor: default; opacity: 0.66 }
+.isotope-lesson table { border-collapse: collapse; width: min(100%, 30rem); line-height: 1.35 }
+.isotope-lesson caption { text-align: left; font-weight: bold; margin-bottom: 8px }
+.isotope-lesson th, .isotope-lesson td { border-bottom: 1px solid #6e8884; padding: 8px; text-align: start }
+.isotope-lesson thead { background: var(--tint) }
+.isotope-lesson .equation { background: var(--tint); font-variant-numeric: tabular-nums; margin-block: 8px; padding: 8px }
+.isotope-lesson .method { padding-inline-start: 1.4em }
+.isotope-lesson li { margin-block: 8px }
+.isotope-lesson details, .isotope-lesson p, .isotope-lesson dd, .isotope-lesson li { overflow-wrap: break-word }
+.isotope-lesson #glossary dd { max-width: 60ch }
+@media (max-width: 420px) {
+  .lesson.isotope-lesson { width: calc(100% - 12px) }
+  .isotope-lesson h1 { font-size: 32px }
+  .isotope-lesson h2 { font-size: 25px }
+  .isotope-lesson .lead { font-size: 1.2em }
+  .isotope-lesson figure { padding: 6px }
+  .isotope-lesson details, .isotope-lesson .equation { padding-inline: 6px }
+  .isotope-lesson .method { padding-inline-start: 1.2em }
+  .isotope-lesson table { font-size: 0.9em }
+  .isotope-lesson th, .isotope-lesson td { padding: 5px 1px }
+  .isotope-lesson tbody th { white-space: nowrap }
+  .isotope-lesson thead th { font-size: 0.92em }
+}
+@media print {
+  .isotope-lesson { line-height: 1.4 }
+  .isotope-lesson header { margin-block: 0 12px; padding-block: 4px }
+  .isotope-lesson .lead { font-size: 14pt; max-width: 62ch }
+  .isotope-lesson section { margin-top: 16px }
+  .isotope-lesson p { margin-block: 7px; max-width: 72ch }
+  .isotope-lesson h2 { margin-bottom: 8px }
+  .isotope-lesson h3 { margin-block: 12px 8px }
+  .isotope-lesson h2, .isotope-lesson h3, .isotope-lesson dt { break-after: avoid }
+  .isotope-lesson dt { margin-top: 9px }
+  .isotope-lesson figure { width: min(100%, 24rem); padding: 8px; margin-block: 8px }
+  .isotope-lesson figcaption { font-size: 11pt; margin-top: 6px }
+  .isotope-lesson details, .isotope-lesson table, .isotope-lesson .equation,
+  .isotope-lesson .print-task, .isotope-lesson .method li { break-inside: avoid }
+  .isotope-lesson details { margin-block: 6px; padding: 4px 10px }
+  .isotope-lesson summary { min-height: 0; padding-block: 3px }
+  .isotope-lesson .model-controls, .isotope-lesson .checkpoint form { display: none }
+}

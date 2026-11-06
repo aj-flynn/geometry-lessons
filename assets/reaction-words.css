@@ -1,215 +1,333 @@
-.reaction-lesson {
-  --chem-teal: #146875;
-  --chem-deep: #06393f;
-  --chem-soft: #e5eeee;
+.reaction-words {
+  --accent-ink: #14565c;
+  --tint: #e4f0ef;
 }
-
-.reaction-lesson header {
-  border-top: 5px solid var(--chem-teal);
-  background: linear-gradient(120deg, #d4e8e8, #eef3f0);
+.reaction-words header {
+  border-top: .45rem solid var(--accent-ink);
+  margin-top: 1rem;
+  padding-top: 1.25rem;
 }
-
-.reaction-lesson .eyebrow {
-  color: var(--chem-deep);
-  font-size: .85em;
+.reaction-words .eyebrow {
+  color: var(--accent-ink);
+  font-size: .9em;
   font-weight: 700;
-  letter-spacing: .045em;
+  letter-spacing: .09em;
+  text-transform: uppercase;
 }
-
-.reaction-lesson .route {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 2rem;
-  padding-left: 1.3em;
-  margin-bottom: 0;
+.reaction-words .lead {
+  font-size: 1.25em;
 }
-
-.reaction-lesson .route a { display: inline-block; padding-block: .35em; }
-.reaction-lesson aside { margin-top: 2.5rem; }
-.reaction-lesson aside h2 { margin-bottom: .4em; }
-
-.reaction-lesson .reaction-prompt {
-  border-left: 4px solid var(--chem-teal);
-  padding: .75em 1em;
-  background: var(--chem-soft);
-  font-weight: 600;
+.reaction-words :is(h1,h2,h3) {
+  text-wrap: balance;
 }
-
-.reaction-lesson .sentence-map {
+@media (max-width: 600px) {
+  .reaction-words h1 { font-size: clamp(1.65rem, 8.2vw, 2.4rem); }
+  .reaction-words h2 { font-size: clamp(1.3rem, 6vw, 1.75rem); }
+  .reaction-words h3 { font-size: 1.2em; }
+}
+.reaction-words .start,
+.reaction-words .attempt {
+  margin-block: 1.4rem;
+  border-left: .25rem solid var(--accent-ink);
+  padding: .15rem clamp(.55rem, 3vw, 1.25rem);
+}
+.reaction-words .attempt h3 { margin-top: 1rem; }
+.reaction-words .work { padding-inline-start: 1.5em; }
+.reaction-words .work li + li { margin-top: .8rem; }
+.reaction-words .chem { display: inline-block; white-space: nowrap; }
+.reaction-words .equation {
+  background: var(--tint);
+  padding: .55rem;
+  line-height: 1.8;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.reaction-words details {
+  padding: .4rem .55rem;
+}
+.reaction-words .lookup,
+.reaction-words .ledger {
+  border-collapse: collapse;
+  margin-block: 1rem;
+  max-width: 100%;
+}
+.reaction-words caption {
+  text-align: left;
+  font-weight: 700;
+}
+.reaction-words :is(th,td) {
+  padding: .25rem .45rem;
+  text-align: left;
+  border-bottom: 1px solid #769694;
+  overflow-wrap: anywhere;
+}
+.reaction-words .ion-tables {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: 8px;
-  max-width: 670px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: .8rem;
 }
-
-.reaction-lesson .sentence-map > div {
-  padding: .7em .85em;
-  background: var(--chem-soft);
+@media screen and (max-width: 600px) {
+  .reaction-words .ion-tables { grid-template-columns: minmax(0, 1fr); }
 }
-
-.reaction-lesson .sentence-map strong,
-.reaction-lesson .sentence-map span { display: block; }
-
-.reaction-lesson .sentence-map strong { color: var(--chem-deep); }
-.reaction-lesson .formula { white-space: nowrap; }
-
-.reaction-lesson .equation {
-  font-weight: 700;
-  line-height: 1.85;
-  padding: .55em .72em;
-  border-left: 3px solid var(--chem-teal);
-  background: #f0f4f3;
-  max-width: none;
-}
-
-.reaction-lesson .group-equation {
+.reaction-words .formula-check { margin-block: .6rem; }
+.reaction-words .formula-options {
   display: flex;
   flex-wrap: wrap;
-  gap: .4em;
+  gap: .4rem;
+  border: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0 0 .55rem;
+}
+.reaction-words .formula-options legend { font-weight: 700; margin-bottom: .4rem; }
+.reaction-words .formula-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  min-height: 44px;
+  padding: .15rem .45rem;
+  border: 1px solid #769694;
+}
+.reaction-words .formula-options input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: none;
+  margin: 0;
+  accent-color: var(--accent-ink);
+}
+.reaction-words .formula-check button:disabled,
+.reaction-words .formula-options:disabled input { display: none; }
+.reaction-words .formula-check [data-formula-feedback]:empty { margin: 0; }
+.reaction-words .next-move {
+  margin-block: .45rem;
+  line-height: 1.2;
+}
+.reaction-words .move-reason {
+  margin-block: .35rem 0;
+  padding: .15rem .5rem;
+  background: transparent;
+  border-left: 2px solid #769694;
+}
+@media screen {
+  .reaction-words details:not(.trial,.move-reason) {
+    background: transparent;
+    border-block-start: 1px solid #b1c6c1;
+  }
+}
+.reaction-words .trial { background: var(--tint); }
+.reaction-words .trial .moves label { background: #fff; }
+.reaction-words .checkpoint {
+  margin-block: 0 1.4rem;
+  padding: .7rem;
+  background: var(--tint);
+}
+.reaction-words .moves,
+.reaction-words .count-model {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(min(100%,12rem),1fr));
+  gap: .8rem;
+}
+.reaction-words .moves label,
+.reaction-words .count-stage {
+  display: grid;
+  align-content: start;
+  background: var(--tint);
+  padding: .6rem;
+}
+.reaction-words .moves {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 0;
+  padding: 0;
+  min-width: 0;
+  margin: .8rem 0;
+}
+.reaction-words .lesson-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .1rem .7rem;
+  margin-block: .55rem;
+}
+.reaction-words .lesson-jumps a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.reaction-words .formula-routes { padding-inline-start: 1.2em; margin-block: .3em; }
+.reaction-words .charge-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .55rem;
+  margin-top: .3rem;
+}
+.reaction-words .ion-cluster { padding: .16em .35em; }
+.reaction-words .ion-tiles { display: flex; flex-wrap: wrap; gap: .25em; }
+.reaction-words .ion-tiles > span {
+  border: 1px solid #769694;
+  background: var(--tint);
+  padding: .06em .25em;
+}
+.reaction-words .charge-strip + p { margin-top: .35rem; }
+.reaction-words .moves label {
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
 }
-
-.reaction-lesson .ion-chip {
-  display: inline-block;
-  color: var(--chem-deep);
-  border: 2px solid var(--chem-teal);
-  background: #fff;
-  padding: .16em .48em;
-  border-radius: 7px;
-}
-
-.reaction-lesson .metal { background: #d4e8e8; }
-
-.reaction-lesson .ion-tiles {
-  max-width: 300px;
-  margin-bottom: .55em;
-}
-
-.reaction-lesson .model-n { fill: var(--chem-teal); }
-
-.reaction-lesson .group-model figcaption,
-.reaction-lesson .ledger figcaption { font-size: 1em; }
-
-.reaction-lesson .ledger th,
-.reaction-lesson .ledger td,
-.reaction-lesson .lookup th,
-.reaction-lesson .lookup td {
-  padding: .4em min(2vw, .7em);
-}
-
-.reaction-lesson .ledger table { table-layout: fixed; }
-.reaction-lesson .ledger th { white-space: nowrap; }
-.reaction-lesson .ledger thead th { border-inline-end: 2px solid #fff; font-size: .88em; }
-.reaction-lesson .ledger td[data-match] { background: #d4e8e8; font-weight: 700; }
-.reaction-lesson .ledger .controls { gap: .5em; }
-.reaction-lesson .ledger button[aria-disabled="true"] { opacity: .65; cursor: default; }
-
-.reaction-lesson .independent {
-  border-top: 1px solid #68807a;
-  margin-block: 1.2rem;
-  padding-top: 1rem;
-}
-
-.reaction-lesson .callout ol { padding-inline-start: 1.35em; }
-
-.reaction-lesson .oxygen-task h4 {
-  font-size: 1.05em;
-  margin-block: 1.1em .4em;
-}
-
-.reaction-lesson .oxygen-trials button[aria-pressed="true"] {
-  background: #d4e8e8;
-  color: #06393f;
-  box-shadow: inset 0 0 0 2px var(--chem-teal);
-}
-
-.reaction-lesson .oxygen-sum {
+.reaction-words .coefficient-value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
   font-weight: 700;
 }
-
-.reaction-lesson .oxygen-parts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-  gap: .35em;
+.reaction-words .moves label > input { grid-column: 1 / -1; }
+.reaction-words .reaction-side { display: inline-block; max-width: 100%; }
+@media (min-width: 850px) {
+  .reaction-words .moves { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-
-.reaction-lesson .oxygen-parts > div {
-  background: #e5eeee;
-  padding: .35em .6em;
-}
-
-.reaction-lesson .oxygen-parts strong,
-.reaction-lesson .oxygen-parts span {
-  display: block;
-}
-
-.reaction-lesson .oxygen-parts > div:last-child {
-  border-left: 3px solid var(--chem-teal);
-}
-
-.reaction-lesson .trial-comparison {
-  padding-inline-start: 1.3em;
-}
-
-@media (max-width: 480px) {
-  .reaction-lesson .route { display: block; }
-  .reaction-lesson header { padding-inline: 12px; }
-  .reaction-lesson header h1 { font-size: 26px; }
-  .reaction-lesson h1, .reaction-lesson h2, .reaction-lesson h3 { overflow-wrap: anywhere; }
-  .reaction-lesson .option { padding: .5em; gap: .4em; }
-  .reaction-lesson form fieldset { padding-inline: .45em; }
-  .reaction-lesson details { padding-inline: .6em; }
-  .reaction-lesson .practice { padding: .75em; }
-  .reaction-lesson .equation { padding-inline: .4em; }
-  .reaction-lesson .oxygen-trials thead th { font-size: .76em; padding-inline: 2px; text-align: center; }
-}
-
-@media print {
-  .reaction-lesson { font-size: 11pt; line-height: 1.36; }
-  .reaction-lesson p { max-width: none; margin-block: .48em; }
-  .reaction-lesson .return-link { min-height: 0; }
-  .reaction-lesson header { background: #fff; margin-top: .55em; }
-  .reaction-lesson header h1 { max-width: none; font-size: 26pt; }
-  .reaction-lesson header .lead { max-width: none; margin-top: .5em; }
-  .reaction-lesson aside { margin-top: 1em; }
-  .reaction-lesson section { margin-top: 1em; }
-  .reaction-lesson h2, .reaction-lesson h3 { margin-bottom: .35em; }
-  .reaction-lesson figure { margin-block: .8em; padding: .7em; }
-  .reaction-lesson .ion-tiles { max-width: 200px; }
-  .reaction-lesson table th, .reaction-lesson table td { padding-block: .18em; }
-  .reaction-lesson .equation { padding-block: .25em; line-height: 1.45; }
-  .reaction-lesson .independent { break-inside: avoid; margin-block: .65em; padding-top: .6em; }
-  .reaction-lesson #glossary dl > div { break-inside: avoid; }
-  .reaction-lesson dt { margin-top: .6em; }
-  .reaction-lesson .route { display: none; }
-  .reaction-lesson details > summary { display: block; list-style: none; min-height: 0; padding-block: 0; }
-  .reaction-lesson details > summary::marker { content: ""; }
-  .reaction-lesson details { padding: .45em .65em; break-inside: avoid; }
-  .reaction-lesson h2, .reaction-lesson h3, .reaction-lesson h4, .reaction-lesson summary { break-after: avoid; }
-  .reaction-lesson .equation { break-inside: avoid; }
-  .reaction-lesson .practice { background: #fff; padding: 0; }
-  .reaction-lesson .role-task,
-  .reaction-lesson .role-retry,
-  .reaction-lesson .oxygen-task,
-  .reaction-lesson .return-checklist { break-inside: avoid; }
-  .reaction-lesson [data-practice] { display: none; }
-  .reaction-lesson .controls { display: none; }
-  .reaction-lesson .reaction-prompt { padding: .48em .75em; }
-  .reaction-lesson .sentence-map > div { padding: .4em .65em; }
-  .reaction-lesson aside details { padding-block: .3em; margin-block: .55em; }
-  .reaction-lesson .role-task form { margin-top: .35em; }
-  .reaction-lesson .role-task fieldset { margin: .4em 0; padding: .25em .65em .4em; }
-  .reaction-lesson .role-task .option {
+@media (min-width: 601px) {
+  .reaction-words .trial-readout {
+    display: grid;
+    grid-template-columns: minmax(0, max-content) auto;
+    justify-content: start;
+    gap: .85rem;
     align-items: center;
-    gap: .4em;
-    min-height: 0;
-    margin-block: .12em;
-    padding: .08em .35em;
   }
-  .reaction-lesson .role-task .option input { min-width: 0; min-height: 0; margin: 0; }
-  .reaction-lesson .role-task details { margin-block: .35em; }
-  .reaction-lesson .lookup td, .reaction-lesson .lookup th { padding-block: .10em; }
-  .reaction-lesson .lookup caption { padding-bottom: .3em; }
-  .reaction-lesson .callout { padding: .6em .8em; }
-  .reaction-lesson section + section { padding-top: 0; }
+  .reaction-words .trial-readout .ledger { margin-block: .25rem; }
+  .reaction-words .trial-actions { display: flex; flex-wrap: wrap; gap: .65rem; align-items: start; }
+}
+.reaction-words .moves legend { font-weight: 700; margin-bottom: .4rem; }
+.reaction-words .moves input { margin: 0; }
+@media (max-width: 600px) {
+  .reaction-words .moves {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .2rem;
+    margin: .35rem 0;
+  }
+  .reaction-words .moves label {
+    grid-template-columns: minmax(0, 1.3fr) 2ch minmax(0, 1fr);
+    align-items: center;
+    gap: .26rem;
+    padding: 0 .3rem;
+    line-height: 1.15;
+  }
+  .reaction-words .moves label > input { grid-column: 3; }
+  .reaction-words .moves label > .chem { font-size: .88em; }
+  .reaction-words .trial .equation {
+    margin-block: .25rem;
+    padding: .2rem .25rem;
+    line-height: 1.25;
+    font-size: .88em;
+  }
+  .reaction-words .trial .ledger {
+    margin-block: .25rem;
+    line-height: 1.12;
+    font-size: .88em;
+    width: 100%;
+  }
+  .reaction-words .trial .ledger :is(th,td) { padding: .1rem .25rem; white-space: nowrap; }
+  .reaction-words .trial .next-move { margin-block: .35rem; font-size: .9em; }
+}
+.reaction-words .initial { overflow-wrap: break-word; }
+@media screen {
+  .reaction-words [data-balance-controls]:not([hidden]) + .initial { display: none; }
+}
+.reaction-words .count-model {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: .5rem;
+}
+@media screen and (max-width: 700px) {
+  .reaction-words .count-model { grid-template-columns: minmax(0, 1fr); }
+}
+.reaction-words .count-stage {
+  container-type: inline-size;
+}
+.reaction-words .count-stage > p { margin-block: 0; }
+.reaction-words .count-stage > :is(.matched,.equation) { margin-block: .32rem; }
+.reaction-words .count-stage .equation { background: none; padding: 0; line-height: 1.45; }
+.reaction-words .oxygen-lane { margin-bottom: .2em; }
+.reaction-words .oxygen-lane svg {
+  /* All groups have a 28-unit viewBox height. Size to the widest row. */
+  width: auto;
+  height: min(1.85rem, 12cqi);
+}
+.reaction-words .oxygen-products {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: .25em;
+}
+.reaction-words .oxygen-product { min-width: 0; font-size: .9em; line-height: 1.25; }
+.reaction-words .tally-button {
+  border: 1px solid #769694;
+  background: var(--paper);
+  color: var(--ink);
+}
+.reaction-words .tally-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.reaction-words .packet circle { fill: #14565c; }
+.reaction-words .count-stage > .odd-count { margin-block: .32rem; }
+.reaction-words .packet rect {
+  fill: #fff;
+  stroke: #14565c;
+}
+.reaction-words .packet .unmatched {
+  fill: none;
+  stroke: #0d2a1c;
+  stroke-width: 2;
+  stroke-dasharray: 3 2;
+}
+.reaction-words .fraction-stage { border-top: 2px solid #769694; line-height: 1.38; }
+.reaction-words .fraction-stage math { margin-right: .14em; }
+.reaction-words .count-model figcaption {
+  grid-column: 1 / -1;
+  font-size: .93em;
+}
+.reaction-words .transfer-check fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: .4rem;
+  padding: .45rem;
+  margin: 0 0 .45rem;
+  border: 1px solid #769694;
+  min-width: 0;
+}
+.reaction-words .transfer-check label { display: grid; align-content: end; }
+.reaction-words .transfer-check input { width: 5rem; max-width: 100%; }
+.reaction-words [data-transfer-feedback]:empty { margin: 0; }
+@media print {
+  body { font-size: 11pt; line-height: 1.36; }
+  .reaction-words p { margin-block: .32rem; max-width: 88ch; }
+  .reaction-words .equation { padding-block: .24rem; line-height: 1.35; }
+  .reaction-words :is(h2,h3) { margin-bottom: .45rem; }
+  .reaction-words #glossary dl { column-count: 2; column-gap: 1.35rem; line-height: 1.19; }
+  .reaction-words #glossary dl > div { break-inside: avoid; margin-block-end: .1rem; }
+  .reaction-words #glossary :is(dt,dd) { display: inline; margin: 0; }
+  .reaction-words #glossary dt::after { content: " "; }
+  .reaction-words details { margin-block: .32rem; padding-block: .2rem; }
+  .reaction-words .count-model { margin-block: .45rem; gap: .3rem .65rem; }
+  .reaction-words .count-model figcaption { margin-top: .25rem; }
+  .reaction-words .ion-tables { break-inside: avoid; }
+  .reaction-words .formula-options input,
+  .reaction-words [data-formula-feedback] { display: none; }
+  .reaction-words .formula-options label { min-height: 0; }
+  .reaction-words .work li + li { margin-top: .4rem; }
+  .reaction-words .attempt, .reaction-words .start { margin-block: .55rem; }
+  .reaction-words .attempt h3 { margin-top: .45rem; }
+  .reaction-words :is(.lookup,.ledger) :is(th,td) { padding-block: .15rem; }
+  .reaction-words header { padding: 0; margin-top: 0; }
+  .reaction-words .return-link { display: none; }
+  .reaction-words .formula-routes { line-height: 1.22; }
+  .reaction-words .ion-tables .lookup { margin-block: .25rem; }
+  .reaction-words details,
+  .reaction-words .equation,
+  .reaction-words .count-stage { background: none; }
+  .reaction-words .attempt,
+  .reaction-words .start { break-inside: avoid; }
+  .reaction-words :is(h2,h3,summary) { break-after: avoid; }
+  .reaction-words section { margin-top: .9rem; }
+  .reaction-words details > summary { min-height: 0; padding-block: .2rem; }
+  .reaction-words :is([data-balance-controls],.transfer-check) { display: none; }
 }

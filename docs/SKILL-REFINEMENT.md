@@ -12,6 +12,8 @@ The revised word-to-equation Chemistry lesson earned 100/100 from Astra and 82.8
 
 A prior published word-to-equation sample scored 100/100 with Astra after bounded revisions and 83.5/100 with Opus 5.5 Medium on the same candidate. The fresh first-run draft scored 92.5/100. Two additional public transfer assignments from different courses tested how well the skill transfers. They are linked in the gallery.
 
-The latest published word-to-equation sample scored 100/100 with Astra after bounded revisions and 83.6/100 with Opus 5.5 Medium on the same candidate. The fresh first-run draft scored 97.2/100. Two additional public transfer assignments from different courses tested how well the skill transfers. They are linked in the gallery.
+A prior published word-to-equation sample scored 100/100 with Astra after bounded revisions and 83.6/100 with Opus 5.5 Medium on the same candidate. The fresh first-run draft scored 97.2/100. Two additional public transfer assignments from different courses tested how well the skill transfers. They are linked in the gallery.
+
+The latest word-to-equation revision earned 100/100 from Astra and 85/100 from Opus 5.5 Medium. It replaced a browser-blocked ion chart, modeled an in-page lookup, explained reaction cues, and distinguished the ion diagram by shape. These scores apply to the bounded revision.
 
 Earlier scores apply to their own revisions and rubric editions. See the [archived refinement record](https://github.com/aj-flynn/geometry-lessons/blob/b858e1112942f353513e508e80920735248dde96/docs/SKILL-REFINEMENT.md). Private inputs, comparisons and raw review evidence stay outside the repository.

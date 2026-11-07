@@ -4,197 +4,404 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Choose Spanish adjectives from clues, match their endings, and write short descriptions with ser.">
+  <meta name="description" content="Use picture clues and Spanish adjective endings to label stage props and introduce a cast.">
   <title>Describe it in Spanish</title>
-  <link rel="stylesheet" href="../../../assets/site.css">
-  <link rel="stylesheet" href="../../../assets/spanish-descriptions.css">
-  <script src="../../../assets/spanish-descriptions.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261107-r7">
+  <link rel="stylesheet" href="../../../assets/activity-layout.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/spanish-agreement.css">
+  <script src="../../../assets/spanish-agreement.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson descriptions">
-    <a class="return-link" href="../index.html">← Lesson library</a>
+  <main id="main" class="lesson activity-lesson spanish-agreement">
     <header>
-      <p class="unit">Spanish · Descriptions</p>
+      <a class="return-link" href="../../../index.html">← Lesson library</a>
+      <p class="stage-kicker">Beginner Spanish · Backstage workshop</p>
       <h1>Describe it in Spanish</h1>
-      <p class="lead">Pick a word that fits what you know, then make its ending fit who or what you’re describing.</p>
+      <p class="stage-lead">A crew needs labels for its props and short introductions for its program. Choose a detail that fits, then make the Spanish words match what you describe.</p>
+      <p><a href="#glossary">Look up a grammar term</a></p>
+      <aside class="practice print-unit" aria-labelledby="warm-title">
+        <h2 id="warm-title">Before you start</h2>
+        <p><span lang="es">El telón y las sillas</span> means “the curtain and the chairs.” Which phrase names more than one thing? For just one chair, which “the” would you use, <span lang="es">el</span> or <span lang="es">la</span>?</p>
+        <details class="comparison">
+          <summary>Compare the warm-up</summary>
+          <p><span lang="es">Las sillas</span> names more than one chair. <span lang="es">El telón</span> names one curtain. The <a href="#term-article">articles</a> (words like “the”) <span lang="es">el</span> and <span lang="es">las</span> help you tell them apart. For one chair, <span lang="es">las sillas</span> changes to <span lang="es">la silla</span>. Both <span lang="es">las</span> and <span lang="es">la</span> are feminine. Look for the article if you’re unsure of a noun’s group.</p>
+        </details>
+      </aside>
+      <p class="print-note">Comparisons start after the lesson. Try each task before turning to them.</p>
     </header>
-    <aside class="practice" aria-labelledby="warm-up">
-      <h2 id="warm-up">Before you start</h2>
-      <p>Which means more than one, <span lang="es">el foco</span> (the spotlight) or <span lang="es">los focos</span> (the spotlights)?</p>
-      <details><summary>Check the clue</summary><p><span lang="es">Los focos</span> means more than one. Here <span lang="es">el</span> points to one, and <span lang="es">los</span> points to more than one. The noun changes too.</p></details>
-      <p><a href="#glossary">Go to the glossary</a></p>
-    </aside>
 
-    <section aria-labelledby="match">
-      <h2 id="match">1. Find the thing you describe</h2>
-      <p>An <strong>adjective</strong> is a word that tells what someone or something is like. At a theater, a volunteer says that the curtain is red. The adjective for “red” has to fit the <strong>subject</strong>, the person or thing the sentence is about.</p>
-      <div class="worked">
-        <p class="example" lang="es">La cortina del teatro <strong>es roja</strong>.</p>
-        <ol>
-          <li>What is red? The curtain, <span lang="es">la cortina</span>. The words <span lang="es">del teatro</span> (of the theater) tell you which curtain.</li>
-          <li><span lang="es">La</span> signals feminine and singular (one). This adjective has four forms. Pick <span lang="es">roja</span>.</li>
-          <li><span lang="es">Es</span> means “is” here. It goes between the subject and the description.</li>
-        </ol>
-      </div>
-      <p><strong>Agreement</strong> means matching the adjective to the described noun’s gender (masculine or feminine) and number (one or more than one). The article, a word like <span lang="es">el</span> or <span lang="es">las</span>, often tells you both.</p>
-      <dl class="patterns">
-        <div><dt>Red · four forms</dt><dd lang="es">el foco rojo · los focos rojos<br>la cortina roja · las cortinas rojas</dd></div>
-        <div><dt>Green · same for either gender</dt><dd lang="es">el foco verde · los focos verdes<br>la cortina verde · las cortinas verdes</dd></div>
-      </dl>
-      <p>Keep the <span lang="es">-e</span> in <span lang="es">verde</span>. Add <span lang="es">-s</span> for plural. Other adjectives have their own patterns. For example, “punctual” is <span lang="es">puntual</span> for either gender and <span lang="es">puntuales</span> in the plural.</p>
-      <div class="practice">
-        <h3 id="red-check">Try one change</h3>
-        <p id="red-prompt">The theater has two red curtains now. Predict what goes in <span lang="es">Las cortinas del teatro son ___.</span></p>
-        <form hidden data-choice aria-labelledby="red-check" aria-describedby="red-prompt">
-          <fieldset disabled>
-            <legend>Choose the ending</legend>
-            <label><input type="radio" name="red" value="number" data-note="That describes one feminine thing. Las cortinas names more than one. Try again."> <span lang="es">roja</span></label>
-            <label><input type="radio" name="red" value="correct" data-note="The curtains are feminine plural. Del teatro tells you which curtains."> <span lang="es">rojas</span></label>
-            <label><input type="radio" name="red" value="gender" data-note="That is masculine plural. Check the article las and try again."> <span lang="es">rojos</span></label>
-          </fieldset>
-          <button type="submit" disabled>Check</button>
-          <button type="reset">Start over</button>
-          <p class="feedback" role="status"></p>
-        </form>
-        <details class="choice-comparison"><summary>Compare your prediction</summary><p><span lang="es">Rojas</span> matches feminine plural. <span lang="es">Roja</span> describes one curtain. <span lang="es">Rojos</span> is masculine plural. Try again starting from the article <span lang="es">las</span>.</p></details>
-        <p><strong>Retry with a new color.</strong> If both curtains are green, what changes?</p>
-        <details><summary>Compare the new color</summary><p><span lang="es">Las cortinas del teatro son verdes.</span> Only the color word changes. <span lang="es">Verde</span> keeps the <span lang="es">-e</span> and takes <span lang="es">-s</span> for two.</p></details>
+    <section class="activity print-unit" aria-labelledby="worked-title">
+      <h2 id="worked-title">Pick a detail. Then match it.</h2>
+      <div class="activity-split">
+        <aside id="lamp-evidence" class="activity-evidence" tabindex="0" aria-labelledby="lamp-title">
+          <h3 id="lamp-title">A lamp on the stage</h3>
+          <figure>
+            <svg viewBox="0 0 360 210" role="img" aria-labelledby="lamp-svg-title" aria-describedby="lamp-svg-desc">
+              <title id="lamp-svg-title">Two props on stage</title>
+              <desc id="lamp-svg-desc">A yellow lamp stands on a wooden table. A dark red curtain hangs behind the table.</desc>
+              <rect width="360" height="210" rx="6" fill="#f4ebd9"/>
+              <path d="M0 0h101q-8 38-30 80t-4 75H0Z" fill="#9d304b"/>
+              <path d="M29 0q9 45-10 88M64 0q-3 35-29 80" fill="none" stroke="#72213b" stroke-width="4"/>
+              <path d="M0 155h360v55H0z" fill="#ddd3bb"/>
+              <path d="M94 165h220M110 181h205" stroke="#bdad91" stroke-width="2"/>
+              <path d="M140 151v49m152-49v49" stroke="#664733" stroke-width="10"/>
+              <rect x="120" y="142" width="191" height="13" rx="5" fill="#83573d"/>
+              <path d="M216 82v54m-24 3h48" fill="none" stroke="#322838" stroke-width="8" stroke-linecap="round"/>
+              <path d="M191 38h50l22 58h-94Z" fill="#f4c943" stroke="#322838" stroke-width="3" stroke-linejoin="round"/>
+              <path d="M201 47l-10 39m40-39 9 39" stroke="#cc9725" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <figcaption><span lang="es">La lámpara del escenario</span> means “the lamp on the stage.” Describe its color.</figcaption>
+          </figure>
+        </aside>
+        <div class="activity-work">
+          <ol class="work-steps">
+            <li><strong>Find the thing you’re describing.</strong> The <a href="#term-noun">noun</a> (a word that names something) is <span lang="es">lámpara</span>. <span lang="es">Del escenario</span> tells you which lamp.</li>
+            <li><strong>Choose what you want to say about it.</strong> The lamp is yellow, so use a form of <span lang="es">amarillo</span> (yellow). This describing word is an <a href="#term-adjective">adjective</a>.</li>
+            <li><strong>Look at the word before the noun.</strong> The <a href="#term-article">article</a> <span lang="es">la</span> (“the”) marks feminine <a href="#term-gender">gender</a>, the noun’s grammar group.</li>
+            <li><strong>Count, then pick the ending.</strong> There’s one lamp, so the <a href="#term-number">number</a> is singular. For this adjective, feminine singular takes <span lang="es">-a</span>.</li>
+          </ol>
+          <p class="stage-result" lang="es">La lámpara del escenario es amarilla.</p>
+          <p>This match is called <a href="#term-agreement">agreement</a>. The description can sit across from the noun, after <span lang="es">es</span>. It still matches <span lang="es">la lámpara</span>.</p>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="evidence">
-      <h2 id="evidence">2. Use the clue before choosing the word</h2>
-      <p>Two rehearsal rooms have a different size. The east room fits four people and the west room fits twenty. The director points to the west room.</p>
-      <div class="worked">
-        <p class="example" lang="es">La sala no es pequeña. Es grande.</p>
-        <p><span lang="es">No es pequeña</span> rules out “small.” The number of seats, compared with the other room, supports <span lang="es">grande</span> (large). The word <span lang="es">sala</span> (room) is still the subject of the second sentence, even though it is left out.</p>
-        <p>When two words fit the same subject, join them with <span lang="es">y</span> (“and”). If the west room also has large windows, you could say <span lang="es">La sala es grande y luminosa.</span> <span lang="es">Grande</span> keeps its <span lang="es">-e</span> and <span lang="es">luminosa</span> (bright) takes <span lang="es">-a</span>. Check each adjective on its own.</p>
+    <section class="reading-block" aria-labelledby="patterns-title">
+      <h2 id="patterns-title">What changes when the noun changes?</h2>
+      <p>For these descriptions, use a form of <a href="#term-ser" lang="es">ser</a> (to be). In these examples, you’re talking about the props. Use <span lang="es">es</span> for one prop and <span lang="es">son</span> for more than one.</p>
+      <ul>
+        <li>Keep the color. Change just the number. <span lang="es">La lámpara es amarilla → Las lámparas son amarillas.</span></li>
+        <li>Go back to one. Use a masculine noun with that same color. <span lang="es">La lámpara es amarilla → El foco es amarillo.</span> <span lang="es">El foco</span> means “the spotlight” here.</li>
+      </ul>
+      <div class="table-scroll" role="region" aria-labelledby="adjective-endings-table" tabindex="0">
+        <table class="form-table">
+          <caption id="adjective-endings-table">Endings for adjectives like <span lang="es">amarillo</span></caption>
+          <thead><tr><th scope="col">Noun group</th><th scope="col">One</th><th scope="col">More than one</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Masculine</th><td lang="es">el → -o</td><td lang="es">los → -os</td></tr>
+            <tr><th scope="row">Feminine</th><td lang="es">la → -a</td><td lang="es">las → -as</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="practice">
-        <h3 id="meaning-check">Check the evidence</h3>
-        <p id="meaning-prompt">A map key says a hall with six windows is bright, and a hall with none is dark. The west hall has six windows. Which fits <span lang="es">El pasillo oeste es ___.</span> (<span lang="es">pasillo</span> means hall)?</p>
-        <form hidden data-choice aria-labelledby="meaning-check" aria-describedby="meaning-prompt">
-          <fieldset disabled>
-            <legend>Choose a word that fits</legend>
-            <label><input type="radio" name="hall" value="meaning" data-note="The ending fits el pasillo, but the map says this hall is bright. Use the window clue and try again."> <span lang="es">oscuro</span> (dark)</label>
-            <label><input type="radio" name="hall" value="gender" data-note="Bright is the right idea. El pasillo is masculine singular. Try the ending that fits."> <span lang="es">luminosa</span> (bright)</label>
-            <label><input type="radio" name="hall" value="correct" data-note="Luminoso fits both the window clue and the masculine singular subject."> <span lang="es">luminoso</span> (bright)</label>
-          </fieldset>
-          <button type="submit" disabled>Check</button>
-          <button type="reset">Start over</button>
-          <p class="feedback" role="status"></p>
-        </form>
-        <details class="choice-comparison"><summary>Compare your prediction</summary><p><span lang="es">Luminoso</span> means bright here and matches <span lang="es">el pasillo</span>. <span lang="es">Oscuro</span> misses the window clue and <span lang="es">luminosa</span> misses the gender clue. Check both clues and try again.</p></details>
-        <p><strong>Try the other hall.</strong> The east hall has no windows. Replace the adjective with one that fits this hall.</p>
-        <details><summary>Compare the other hall</summary><p><span lang="es">El pasillo este es oscuro.</span> You used a different meaning and kept the masculine singular ending.</p></details>
-      </div>
-    </section>
+      <p>Some adjectives use the same form for both gender groups. For example, <span lang="es">verde</span> (green) becomes <span lang="es">verdes</span> in the plural. <span lang="es">Azul</span> (blue) becomes <span lang="es">azules</span>. Learn each pattern with a sample word.</p>
 
-    <section aria-labelledby="voice">
-      <h2 id="voice">3. Choose the form of <span lang="es">ser</span></h2>
-      <p>Use <span lang="es">ser</span> (“to be”) here to describe a trait, such as being calm or kind. The <strong>verb</strong> is the word that connects the subject to the description. Pick its form by asking who is being described.</p>
-      <dl class="patterns">
-        <div><dt>I am</dt><dd lang="es">yo soy</dd></div>
-        <div><dt>He, she, or one named person is</dt><dd lang="es">él es · ella es · Inés es</dd></div>
-        <div><dt>They or several named people are</dt><dd lang="es">ellos son · ellas son · Inés y Joel son</dd></div>
-      </dl>
-      <p>When Inés describes herself, she says <strong lang="es">Soy tranquila.</strong> When Joel describes Inés, he says <strong lang="es">Inés es tranquila.</strong> The verb changes with who is speaking about whom. The adjective still describes Inés. If both are calm, <span lang="es">Inés y Joel son tranquilos</span> uses the usual masculine plural form for a mixed group.</p>
-      <div class="practice">
-        <h3>Switch speakers</h3>
-        <p>Joel says <span lang="es">Soy puntual.</span> Say it as a description of Joel, then of Inés and Joel together.</p>
-        <details><summary>Compare both versions</summary><p><span lang="es">Joel es puntual.</span> Then <span lang="es">Inés y Joel son puntuales.</span> With two people, the verb is <span lang="es">son</span> and the adjective adds <span lang="es">-es</span>.</p></details>
-        <p><strong>Retry.</strong> Try the two versions again with <span lang="es">amable</span> (kind). Its plural is <span lang="es">amables</span>.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="studio">
-      <h2 id="studio">Your turn · Write for the stage crew</h2>
-      <p>Help a crew member find the right props, the objects used on stage. Look at this drawing of a storage rack and write the missing adjectives. You can write here or on paper.</p>
-      <figure class="rack">
-        <svg viewBox="0 0 360 242" role="img" aria-labelledby="rack-name rack-description">
-          <title id="rack-name">Three shelves in a prop room</title>
-          <desc id="rack-description">A shows a wide frame in front of a much narrower frame. Both have undecorated edges. B shows two blue ribbons lying over a green storage box. C shows two short green ribbons beside one long red ribbon.</desc>
-          <rect x="2" y="2" width="356" height="238" rx="4" fill="#f7f0df" stroke="#4a382b" stroke-width="3"/>
-          <path d="M2 77H358 M2 162H358" stroke="#4a382b" stroke-width="4"/>
-          <g fill="#261f1a" font-size="22" font-weight="700">
-            <text x="16" y="40">A</text><text x="16" y="121">B</text><text x="16" y="205">C</text>
-          </g>
-          <rect x="242" y="14" width="42" height="50" fill="none" stroke="#855a40" stroke-width="5"/>
-          <rect x="65" y="21" width="178" height="48" fill="#f7f0df" stroke="#855a40" stroke-width="7"/>
-          <rect x="113" y="112" width="152" height="37" rx="4" fill="#3d745a" stroke="#19452d" stroke-width="3"/>
-          <path d="M127 101h25v36l-12-7-13 7zm66 0h25v36l-12-7-13 7z" fill="#23639d" stroke="#162d5f" stroke-width="3"/>
-          <path d="M65 181h58l-8 9 8 9H65zm0 32h58l-8 9 8 9H65z" fill="#3d745a" stroke="#19452d" stroke-width="3"/>
-          <path d="M139 194h164l-8 9 8 9H139z" fill="#b23d31" stroke="#711d13" stroke-width="3"/>
-        </svg>
-        <figcaption><strong>A</strong> A wide frame in front of a narrower frame. Both have undecorated edges. <strong>B</strong> Two blue ribbons on a green box. <strong>C</strong> Two short green ribbons next to a long red ribbon.</figcaption>
-      </figure>
-      <dl class="word-shelf">
-        <div><dt>Objects</dt><dd><span lang="es">el marco</span> = frame · <span lang="es">la cinta</span> = ribbon · <span lang="es">la caja</span> = box</dd></div>
-        <div><dt>Shape and size</dt><dd><span lang="es">ancho, ancha, anchos, anchas</span> = wide · <span lang="es">estrecho, estrecha, estrechos, estrechas</span> = narrow · <span lang="es">sencillo, sencilla, sencillos, sencillas</span> = plain or simple<br><span lang="es">largo, larga, largos, largas</span> = long · <span lang="es">corto, corta, cortos, cortas</span> = short</dd></div>
-        <div><dt>Color</dt><dd><span lang="es">azul, azules</span> = blue · <span lang="es">verde, verdes</span> = green · <span lang="es">rojo, roja, rojos, rojas</span> = red</dd></div>
-      </dl>
-      <div class="practice writing">
-        <label for="shelf-a"><strong>A.</strong> Describe the frame in front. <span lang="es">El marco de delante no es estrecho. Es ___.</span></label>
-        <textarea id="shelf-a" lang="es" rows="1" autocomplete="off" spellcheck="false"></textarea>
-        <label for="shelf-b"><strong>B.</strong> Describe the ribbons. <span lang="es">Las cintas de la caja son ___.</span></label>
-        <textarea id="shelf-b" lang="es" rows="1" autocomplete="off" spellcheck="false"></textarea>
-        <label for="shelf-c"><strong>C.</strong> Describe the two ribbons on the left. <span lang="es">Las dos cintas son ___ y ___.</span></label>
-        <textarea id="shelf-c" lang="es" rows="1" autocomplete="off" spellcheck="false"></textarea>
-        <label for="shelf-extra"><strong>One more label.</strong> Describe both frames in A. The next crew needs frames with no decorations. Write a full sentence.</label>
-        <textarea id="shelf-extra" lang="es" rows="2" autocomplete="off" spellcheck="false"></textarea>
-        <details><summary>Compare the labels after writing</summary>
-          <ul>
-            <li>A. <span lang="es">Es ancho.</span> The front frame is wide and <span lang="es">marco</span> is masculine singular.</li>
-            <li>B. <span lang="es">Las cintas de la caja son azules.</span> Blue describes the ribbons. Green describes the box. Both genders use the same plural form of <span lang="es">azul</span>.</li>
-            <li>C. <span lang="es">Las dos cintas son cortas y verdes.</span> Short and green both describe the two on the left. Either order works. A different adjective works if the drawing supports it and its form fits <span lang="es">las cintas</span>.</li>
-            <li>Extra label. <span lang="es">Los marcos son sencillos.</span> Both frames have plain edges. <span lang="es">Son</span> and <span lang="es">sencillos</span> fit <span lang="es">los marcos</span>.</li>
-          </ul>
-          <p>For a retry, choose the long ribbon in C and write a new line giving its length and color.</p>
-          <details><summary>Compare the single ribbon</summary><p><span lang="es">La cinta es larga y roja.</span> The verb and both adjectives fit one ribbon.</p></details>
+      <div class="practice print-unit" aria-labelledby="check-title">
+        <h3 id="check-title">Try one ending</h3>
+        <p>The workshop just printed a batch of new signs. Finish the line with the correct form of <span lang="es">nuevo</span> (new).</p>
+        <p lang="es" class="stage-sentence">Las señales del teatro son <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</p>
+        <p><span lang="es">Las señales del teatro</span> means “the theater’s signs.”</p>
+        <fieldset data-agreement-check>
+          <legend>Which form fits the sentence?</legend>
+          <div class="stage-choices">
+            <label lang="es"><input type="radio" name="sign-ending" value="nuevo"> nuevo</label>
+            <label lang="es"><input type="radio" name="sign-ending" value="nuevos"> nuevos</label>
+            <label lang="es"><input type="radio" name="sign-ending" value="nueva"> nueva</label>
+            <label lang="es"><input type="radio" name="sign-ending" value="nuevas"> nuevas</label>
+          </div>
+          <div class="controls">
+            <button type="button" data-check disabled>Check the ending</button>
+            <button type="button" data-reset disabled>Reset the ending</button>
+          </div>
+          <p data-ending-feedback role="status" class="feedback"></p>
+          <template id="feedback-empty">Choose an ending, then check it.</template>
+          <template id="feedback-nuevo">That form is masculine singular. The sentence is about the signs. Use the clue in <span lang="es">las</span> for both gender and number.</template>
+          <template id="feedback-nuevos">That form matches the number of signs. Look at <span lang="es">las señales</span> to check gender, then try again.</template>
+          <template id="feedback-nueva">That form matches the gender of <span lang="es">las señales</span>. Check how many signs the sentence describes.</template>
+          <template id="feedback-nuevas"><span lang="es">Nuevas</span> fits the signs. <span lang="es">Las señales</span> is feminine plural. <span lang="es">Del teatro</span> tells you where the signs belong.</template>
+        </fieldset>
+        <details class="ending-fallback comparison">
+          <summary>Compare the ending</summary>
+          <p><span lang="es">Nuevas</span> fits <span lang="es">las señales</span>, feminine and plural. <span lang="es">Del teatro</span> tells you where the signs belong. If you wrote <span lang="es">nueva</span>, keep the feminine <span lang="es">-a</span> and add <span lang="es">-s</span> for more than one. Point to the noun and revise your line before trying the maps.</p>
         </details>
       </div>
-
-      <h3 id="note">Write a rehearsal note</h3>
-      <p>Imagine you’re Remi, a stage manager. You arrive on time and explain things kindly. Vera, the lighting lead, rarely gets flustered. Nico, the sound lead, invents unusual sound effects. Write three short sentences in Spanish introducing the crew to a visiting director. Describe Remi in your own voice as that character, and describe Vera and Nico by name. Choose one fitting trait for each.</p>
-      <p><strong>Trait bank.</strong> <span lang="es">puntual</span> (punctual), <span lang="es">amable</span> (kind), <span lang="es">tranquilo, tranquila</span> (calm), <span lang="es">creativo, creativa</span> (creative). For the two named roles, use <span lang="es">ella</span> for Vera and <span lang="es">él</span> for Nico if you use a pronoun. For Remi, both adjectives that fit the clues have the same form for either gender.</p>
-      <div class="practice writing">
-        <label for="note-draft">Your three-sentence draft</label>
-        <textarea id="note-draft" lang="es" rows="4" autocomplete="off" spellcheck="false"></textarea>
-        <p><strong>Explain a choice.</strong> Point to one clue for a trait. Then explain why the verb in that sentence fits. Would you check the clue, the verb, or the ending first if your description didn’t match the scene?</p>
-        <details><summary>Compare your note after writing</summary>
-          <p lang="es">Soy puntual. Vera es tranquila. Nico es creativo.</p>
-          <ul>
-            <li><strong>Meaning.</strong> The note matches arriving on time, staying calm, and inventing sounds. <span lang="es">Soy amable</span> also fits Remi.</li>
-            <li><strong>Form.</strong> Use <span lang="es">soy</span> when Remi speaks about themself. Use <span lang="es">es</span> for each named person. Check <span lang="es">tranquila</span> for Vera and <span lang="es">creativo</span> for Nico.</li>
-            <li><strong>Variation.</strong> <span lang="es">Yo soy puntual</span> also works. A name makes the first mention clear. You can use a pronoun later once the reader knows whom you mean.</li>
-          </ul>
+      <div class="practice print-unit" id="map-retry">
+        <h3>Try a different noun</h3>
+        <p>The museum’s new maps have just arrived. Finish <span lang="es">Los mapas del museo son <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span> Use the same word with the ending that fits the noun. <span lang="es">Los mapas</span> means “the maps.”</p>
+        <details class="comparison">
+          <summary>Compare the new case</summary>
+          <p><span lang="es">Los mapas del museo son nuevos.</span> <span lang="es">Los</span> tells you that <span lang="es">mapas</span> is masculine plural, even though <span lang="es">mapa</span> ends in <span lang="es">-a</span>.</p>
         </details>
-        <p><strong>Retry.</strong> Write just Vera’s line as if she were introducing herself. Keep the same trait.</p>
-        <details><summary>Compare Vera’s line</summary><p><span lang="es">Soy tranquila.</span> The speaker is now Vera. The adjective still describes Vera.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="recall">
-      <h2 id="recall">Remember it tomorrow</h2>
-      <p>Before opening this page again, describe a fictional game character in one sentence. Say it first as the character, then as a narrator. Explain which word changes and why.</p>
+    <section class="reading-block print-unit" aria-labelledby="meaning-title">
+      <h2 id="meaning-title">Read the whole description</h2>
+      <p><span lang="es">El foco no es redondo. Es cuadrado.</span> The spotlight is square. <span lang="es">No es</span> (“isn’t”) rules out the first shape. The second <span lang="es">es</span> still refers to the spotlight.</p>
+      <p><span lang="es">La tela es suave y ligera.</span> The fabric is soft and light. When <span lang="es">y</span> (“and”) joins two details about the same thing, check both against that noun. <span lang="es">Suave</span> stays the same for either gender. <span lang="es">Ligera</span> uses the feminine ending for <span lang="es">la tela</span>.</p>
+      <p>Try a new line. A prop suitcase is heavy and has a hard shell that doesn’t bend. Finish <span lang="es">La maleta no es ligera. Es <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span> y <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span> Use forms of <span lang="es">pesado</span> (heavy) and <span lang="es">rígido</span> (rigid).</p>
+      <details class="comparison">
+          <summary>Compare the suitcase line</summary>
+        <p><span lang="es">La maleta no es ligera. Es pesada y rígida.</span> The second sentence describes the same suitcase. Both adjectives take <span lang="es">-a</span> for <span lang="es">la maleta</span>. You can swap their order.</p>
+      </details>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
+    <section class="activity print-unit" aria-labelledby="props-title">
+      <h2 id="props-title">Write the prop labels</h2>
+      <div class="activity-split">
+        <aside id="prop-evidence" class="activity-evidence" tabindex="0" aria-labelledby="prop-table-title">
+          <h3 id="prop-table-title">Inventory for the puppet show</h3>
+          <figure>
+            <svg viewBox="0 0 400 170" role="img" aria-labelledby="props-svg-title" aria-describedby="props-svg-desc">
+              <title id="props-svg-title">Two numbered trays of stage props</title>
+              <desc id="props-svg-desc">Tray 1 has a purple dragon mask on a yellow cape. Tray 2 has two drums of the same size. The drum on the left is red. The one on the right is white.</desc>
+              <rect width="400" height="170" rx="8" fill="#d7c5a5"/>
+              <g fill="#fbf4e6" stroke="#a89276" stroke-width="2">
+                <rect x="8" y="8" width="187" height="154" rx="7"/>
+                <rect x="205" y="8" width="187" height="154" rx="7"/>
+              </g>
+              <g fill="#0d2a1c">
+                <circle cx="31" cy="32" r="17"/><circle cx="229" cy="32" r="17"/>
+              </g>
+              <g fill="#fff" font-size="23" font-weight="bold" text-anchor="middle">
+                <text x="31" y="40">1</text><text x="229" y="40">2</text>
+              </g>
+              <g stroke="#382a3e" stroke-width="2.5" stroke-linejoin="round">
+                <path d="M44 132l25-68 53-23 51 88q-16-7-40 3-34-7-89 0Z" fill="#f5cb4c"/>
+                <path d="M59 72l14-32 19 23 14-9 14 9 19-23 13 31-8 24-17 6-7 19H93l-8-19-18-6Z" fill="#8046a7"/>
+                <path d="M69 76q12-2 25 12-17 6-25-12Zm74 0q-12-2-25 12 17 6 25-12Z" fill="#fbf4e6"/>
+                <path d="M99 106h3m9 0h3" stroke-linecap="round"/>
+                <path d="M223 72h66v56q-33 22-66 0Z" fill="#bc334b"/>
+                <path d="M228 85l14 45 13-40 14 40 15-45" fill="none" stroke="#ffb4b5"/>
+                <ellipse cx="256" cy="72" rx="33" ry="13" fill="#df4a58"/>
+                <path d="M308 72h66v56q-33 22-66 0Z" fill="#fff"/>
+                <path d="M313 85l14 45 13-40 14 40 15-45" fill="none" stroke="#9b8f82"/>
+                <ellipse cx="341" cy="72" rx="33" ry="13" fill="#fff"/>
+              </g>
+            </svg>
+            <figcaption>Match the tray numbers to the label numbers. One drum is for the parade. Its label helps you tell which one.</figcaption>
+          </figure>
+          <p class="print-picture">Tray 1 has a purple dragon mask on a yellow cape. Tray 2 has two drums of the same size, red on the left and white on the right.</p>
+        </aside>
+        <div class="activity-work">
+          <p>Finish both Spanish labels on paper. Use the picture and the words in each label. For each blank, jot down which prop you described and what helped you choose.</p>
+          <p class="word-bank"><strong>Colors to choose from</strong> · <span lang="es">amarillo</span> yellow, <span lang="es">azul</span> blue, <span lang="es">blanco</span> white, <span lang="es">morado</span> purple, <span lang="es">rojo</span> red, <span lang="es">verde</span> green.</p>
+          <ol class="label-list">
+            <li><span lang="es">La máscara del dragón es <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span><span> The dragon mask</span></li>
+            <li><span lang="es">El tambor del desfile no es rojo. Es <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span><span> The parade drum</span></li>
+          </ol>
+          <a class="activity-return" href="#prop-evidence">Back to the prop trays</a>
+          <details class="comparison">
+          <summary>Compare the prop labels</summary>
+            <ol>
+              <li><span lang="es">La máscara del dragón es morada.</span> The mask is purple. Match <span lang="es">máscara</span>, even with <span lang="es">dragón</span> closer to the blank.</li>
+              <li><span lang="es">El tambor del desfile no es rojo. Es blanco.</span> <span lang="es">No es rojo</span> rules out the red drum. The other drum is white. Use <span lang="es">-o</span> to match <span lang="es">el tambor</span>.</li>
+            </ol>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-block print-unit" aria-labelledby="group-title">
+      <h2 id="group-title">Find the noun when you see “my”</h2>
+      <p>At a rehearsal, two aunts wrap every glass before packing it. Their care supports <span lang="es">Mis tías son cuidadosas</span> (“My aunts are careful”). <span lang="es">Mis</span> means “my” with more than one person or thing. To check gender, look at the noun. Try it with “the” first: <span lang="es">las tías → cuidadosas</span>. Keep that adjective ending with <span lang="es">mis tías</span>.</p>
+      <p>In <span lang="es">son muy cuidadosas</span>, <span lang="es">muy</span> means “very.” The adjective still matches the noun.</p>
+    </section>
+
+    <section class="activity print-unit" aria-labelledby="rehearsal-title">
+      <h2 id="rehearsal-title">Caption the rehearsal</h2>
+      <div class="activity-split">
+        <aside id="rehearsal-evidence" class="activity-evidence" tabindex="0" aria-labelledby="rehearsal-scenes-title">
+          <h3 id="rehearsal-scenes-title">Three moments backstage</h3>
+          <figure>
+            <svg viewBox="0 0 400 440" role="img" aria-labelledby="rehearsal-svg-title" aria-describedby="rehearsal-svg-desc">
+              <title id="rehearsal-svg-title">Three numbered scenes at rehearsal</title>
+              <desc id="rehearsal-svg-desc">Scene 1. Two crew mates make different puppets from scraps at a table. One has made a purple bird. The other has made a green crocodile. Scene 2. Two cousins hold a chair between them. Next to them are a stack of matching chairs and two stools set out in a row. Scene 3. Omar is on the left beside another adult. Omar stands about a head taller and has red-orange hair.</desc>
+              <rect width="400" height="440" rx="8" fill="#d7c5a5"/>
+              <g fill="#fbf4e6" stroke="#a89276" stroke-width="2">
+                <rect x="8" y="8" width="384" height="135" rx="7"/>
+                <rect x="8" y="152" width="384" height="135" rx="7"/>
+                <rect x="8" y="296" width="384" height="136" rx="7"/>
+              </g>
+              <g fill="#0d2a1c">
+                <circle cx="31" cy="32" r="17"/><circle cx="31" cy="176" r="17"/><circle cx="31" cy="320" r="17"/>
+              </g>
+              <g fill="#fff" font-size="23" font-weight="bold" text-anchor="middle">
+                <text x="31" y="40">1</text><text x="31" y="184">2</text><text x="31" y="328">3</text>
+              </g>
+              <g stroke="#382a3e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M85 78q-9-9-8-26 4-17 20-17 16 0 20 17 1 13-8 27Z" fill="#392a3e"/>
+                <path d="M238 77q-11-11-7-26 3-15 18-16 16 0 20 13 6 17-6 29Z" fill="#382a3e"/>
+                <circle cx="97" cy="56" r="13" fill="#c78966"/>
+                <circle cx="251" cy="56" r="13" fill="#e0af88"/>
+                <path d="M77 101v-15q0-13 20-13t20 13v15Z" fill="#40819a"/>
+                <path d="M231 101v-15q0-13 20-13t20 13v15Z" fill="#b34b65"/>
+                <path d="M111 88l27 6 13-18m114 12 24 8 16-20" fill="none" stroke="#382a3e" stroke-width="6"/>
+                <path d="M64 107h272m-260 0v25m246-25v25" fill="none" stroke="#735844" stroke-width="7"/>
+                <path d="M145 70q-2-12 11-16l12 3 10 8-12 3-10 15-16-1Z" fill="#935ab4"/>
+                <path d="M301 71q-6-18 13-16l18 8h12l-4 12-29 2Z" fill="#598b4d"/>
+                <path d="M128 100l10-6 8 6Zm47-2 8-8 8 8Zm108 4 9-5 8 5Zm30-2 8-7 8 7Z" fill="#e8bd52" stroke="none"/>
+                <path d="M65 270h300m-300 145h300" stroke="#b29c7b" stroke-width="2"/>
+                <circle cx="105" cy="207" r="13" fill="#9c694f"/>
+                <path d="M92 205q-1-15 13-15 14 0 13 14l-9-5-6 3-7-2Z" fill="#332632"/>
+                <path d="M90 250v-15q0-12 15-12t15 12v15Z" fill="#4b768d"/>
+                <path d="M95 249v20m20-20v20m3-38 18 8 22-9" fill="none" stroke-width="5"/>
+                <circle cx="216" cy="199" r="13" fill="#e3ad84"/>
+                <path d="M204 197q-4-13 9-15 13-1 17 12l-9 1-8-4-7 6Z" fill="#382a3e"/>
+                <path d="M201 247v-21q0-11 15-11t15 11v21Z" fill="#955988"/>
+                <path d="M206 247v22m20-22v22m-23-43-15 10-17-7" fill="none" stroke-width="5"/>
+                <g fill="none" stroke="#8b673e" stroke-width="4">
+                  <path d="M148 209v27h39m-36 0v18m32-18v18m-35-43h15m-15 9h15"/>
+                  <path d="M242 210v34h40m-35 0v19m31-19v19m-29-48v34h39m-33 0v16m29-16v16m-27-44v34h37m-33 0v13m29-13v13"/>
+                  <path d="M297 250h25m-21 0v18m17-18v18m13-18h25m-21 0v18m17-18v18"/>
+                </g>
+                <circle cx="137" cy="333" r="13" fill="#e8b990"/>
+                <path d="M124 331q-2-11 9-15 15-6 21 11l-7 1-8-5-8 7Z" fill="#d46a34"/>
+                <path d="M116 383v-19q0-14 21-14t21 14v19Z" fill="#557b5b"/>
+                <path d="M126 383v31m22-31v31" fill="none" stroke-width="8"/>
+                <circle cx="253" cy="357" r="13" fill="#ad7351"/>
+                <path d="M241 356q-3-15 11-15 14 0 14 16l-8-8-6 4-6-3Z" fill="#30252c"/>
+                <path d="M232 392v-10q0-12 21-12t21 12v10Z" fill="#8a5878"/>
+                <path d="M242 392v22m22-22v22" fill="none" stroke-width="8"/>
+              </g>
+            </svg>
+            <figcaption>Match the scene numbers to the captions. In scene 1, the crew is making puppets. In scene 2, the crew is putting chairs away. In scene 3, Omar is the man on the left. Each drawing shows one moment, so use an action as a clue to a possible trait.</figcaption>
+          </figure>
+          <p class="print-picture">In scene 1, two crew mates make different puppets from scraps. In scene 2, two cousins hold a chair beside a stack of chairs and a row of stools. In scene 3, Omar stands about a head taller than the other adult and has red-orange hair.</p>
+        </aside>
+        <div class="activity-work">
+          <p>Complete the Spanish captions on paper. For the two groups, choose a trait their actions support. Give two visible details for Omar.</p>
+          <p class="word-bank"><strong>Words to choose from</strong> · <span lang="es">alto</span> tall, <span lang="es">bajo</span> short, <span lang="es">creativo</span> creative, <span lang="es">desordenado</span> messy, <span lang="es">moreno</span> dark-haired here, <span lang="es">ordenado</span> organized, <span lang="es">pelirrojo</span> red-haired.</p>
+          <ol class="label-list">
+            <li><span lang="es">Mis compañeras son muy <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span><span> My crew mates</span></li>
+            <li><span lang="es">Mis primos son <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span><span> My cousins</span></li>
+            <li><span lang="es">Omar es <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span> y <span class="blank" role="img" lang="en" aria-label="adjective blank">____</span>.</span><span> Omar</span></li>
+          </ol>
+          <a class="activity-return" href="#rehearsal-evidence">Back to the rehearsal scenes</a>
+          <details class="comparison">
+          <summary>Compare the rehearsal captions</summary>
+            <ol>
+              <li><span lang="es">Mis compañeras son muy creativas.</span> The different puppets made from scraps support this idea. Use <span lang="es">-as</span> for <span lang="es">compañeras</span>. <span lang="es">Muy</span> tells how strongly the trait applies.</li>
+              <li><span lang="es">Mis primos son ordenados.</span> The chairs are stacked and the stools are lined up. <span lang="es">Primos</span> calls for <span lang="es">-os</span>. With <span lang="es">mis</span>, check the noun for gender.</li>
+              <li><span lang="es">Omar es alto y pelirrojo.</span> His height next to the other adult and his hair are the clues. Omar uses masculine forms here, so both adjectives take <span lang="es">-o</span>. Either order works.</li>
+            </ol>
+            <p>Another description can work if you can point to a clue for it and the form agrees.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="reading-block print-unit" aria-labelledby="speaker-title">
+      <h2 id="speaker-title">Describe a person</h2>
+      <p>Find the <a href="#term-subject">subject</a> (who the sentence is about). When Lía speaks about herself, she says <span lang="es">Soy curiosa</span> (“I’m curious”). Someone introducing Lía says <span lang="es">Lía es curiosa</span> (“Lía is curious”). The person being described stays the same, so <span lang="es">curiosa</span> stays the same. The verb changes because the sentence moves from “I am” to “Lía is.” Use the verb form that fits who the sentence is about.</p>
+      <p><span lang="es">Soy</span> already signals “I,” so you can leave out <span lang="es">yo</span> when the context is clear. <span lang="es">Soy curioso</span> uses the masculine form. <span lang="es">Soy paciente</span> (“I’m patient”) uses an adjective with the same form for either gender.</p>
+      <p>Try it with a new speaker. Teo says <span lang="es">Soy tranquilo</span> (“I’m calm”). What would you say to tell a guest that Teo is calm?</p>
+      <details class="comparison">
+          <summary>Compare talking about Teo</summary>
+        <p><span lang="es">Teo es tranquilo.</span> Use <span lang="es">es</span> when you talk about Teo. He is still the person you’re describing, so <span lang="es">tranquilo</span> keeps the same form.</p>
+      </details>
+    </section>
+
+    <section class="reading-block print-unit" aria-labelledby="program-title">
+      <h2 id="program-title">On your own · Write three lines for the program</h2>
+      <p>You can pause here. On your next visit, start with this program.</p>
+      <p>You’re hosting the puppet show. The audience needs a quick introduction to the crew. Write three complete Spanish sentences on paper, one per person. Give at least one trait per sentence and use two traits in one of them.</p>
+      <ul>
+        <li><strong>Inés, your cousin.</strong> She builds flowers out of egg cartons for the set. She also takes time to show new helpers how to make them.</li>
+        <li><strong>Marcos, your friend.</strong> He keeps the sound cables sorted and puts name tags on the cases. He always has a joke ready before the show.</li>
+        <li><strong>The host, speaking in your own voice.</strong> Pick a trait that fits you or a host you make up.</li>
+      </ul>
+      <details class="optional-words">
+        <summary>Look up a trait if you need a word</summary>
+        <p><span lang="es">Creativo</span> creative, <span lang="es">paciente</span> patient, <span lang="es">ordenado</span> organized, <span lang="es">gracioso</span> funny, <span lang="es">curioso</span> curious.</p>
+      </details>
+      <details class="comparison">
+          <summary>Compare with one possible program</summary>
+        <ul>
+          <li><span lang="es">Inés es creativa y paciente.</span> Both traits fit what Inés does. <span lang="es">Creativa</span> matches her. <span lang="es">Paciente</span> works for either gender.</li>
+          <li><span lang="es">Marcos es ordenado.</span> The labels and sorted cables support this choice. The jokes also support <span lang="es">gracioso</span>.</li>
+          <li><span lang="es">Soy curioso.</span> Here a fictional host uses a masculine adjective. Choose a word and a form that fit the person speaking in your own line.</li>
+        </ul>
+        <p>In the first two lines you’re talking about one other person, so use <span lang="es">es</span>. In the last, the host says <span lang="es">soy</span> because the host is speaking about themself.</p>
+        <p>If you wrote <span lang="es">Inés soy creativo</span>, make two repairs. Use <span lang="es">es</span> because you are talking about Inés. Use <span lang="es">creativa</span> because she is the person you’re describing. Reread your three lines and fix any similar mismatch.</p>
+      </details>
+    </section>
+
+    <section class="reading-block print-unit" aria-labelledby="return-title">
+      <h2 id="return-title">Check your own descriptions</h2>
+      <ol>
+        <li>Point to the word that names who or what you’re describing.</li>
+        <li>Check that your detail fits the clue. If you see <span lang="es">no</span>, work out which idea it rules out.</li>
+        <li>If you’re writing the whole sentence, choose the form of <span lang="es">ser</span>. Check the gender and number of each adjective.</li>
+      </ol>
+      <p><strong>Tomorrow, before you look back.</strong> Say “The doors are blue” in Spanish using <span lang="es">las puertas</span> and a form of <span lang="es">azul</span>. Then choose someone you know and give a line about them. Give a second line about yourself using a different adjective.</p>
+      <details class="comparison">
+          <summary>Compare the recall task</summary>
+        <p><span lang="es">Las puertas son azules.</span> <span lang="es">Son</span> goes with the plural subject. The plural of <span lang="es">azul</span> is <span lang="es">azules</span> for both gender groups. Use <span lang="es">es</span> for the person you chose and <span lang="es">soy</span> for your own line. Check each adjective against the person it describes.</p>
+      </details>
+    </section>
+
+    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt>Adjective</dt><dd>A word that describes a person or thing.</dd>
-        <dt>Agreement</dt><dd>Matching the form of a word to another word in the sentence. In this lesson an adjective matches the gender and number of what it describes.</dd>
-        <dt>Article</dt><dd>A word such as <span lang="es">el, la, los</span> or <span lang="es">las</span> (the).</dd>
-        <dt>Gender</dt><dd>A grammar category. Spanish nouns have a grammatical gender, such as feminine <span lang="es">la cortina</span> or masculine <span lang="es">el marco</span>.</dd>
-        <dt>Number</dt><dd>Singular means one. Plural means more than one.</dd>
-        <dt>Subject</dt><dd>Who or what the sentence is about in these descriptions. You can often tell who the subject is even if the sentence leaves it out.</dd>
-        <dt>Verb</dt><dd>A word that expresses an action or a state. Here the verb <span lang="es">ser</span> connects the subject to a description.</dd>
+        <div class="glossary-entry"><dt id="term-noun">Noun</dt><dd>A word that names a person, place, thing or idea.</dd></div>
+        <div class="glossary-entry"><dt id="term-article">Article</dt><dd>A short word before a noun. Here, <span lang="es">el</span>, <span lang="es">la</span>, <span lang="es">los</span>, and <span lang="es">las</span> all mean “the” and help show the noun’s gender and number.</dd></div>
+        <div class="glossary-entry"><dt id="term-adjective">Adjective</dt><dd>A word that describes someone or something.</dd></div>
+        <div class="glossary-entry"><dt id="term-gender">Grammatical gender</dt><dd>A Spanish noun’s grammar group, masculine or feminine.</dd></div>
+        <div class="glossary-entry"><dt id="term-number">Grammatical number</dt><dd>Singular for one, plural for more than one in these examples.</dd></div>
+        <div class="glossary-entry"><dt id="term-agreement">Agreement</dt><dd>Matching features across words. Spanish adjectives match the gender and number of what they describe. Some use the same form for both genders.</dd></div>
+        <div class="glossary-entry"><dt id="term-ser" lang="es">Ser</dt><dd>A Spanish verb that means “to be.” This lesson uses <span lang="es">ser</span> for traits and uses the present forms <span lang="es">soy</span>, <span lang="es">es</span>, and <span lang="es">son</span>.</dd></div>
+        <div class="glossary-entry"><dt id="term-subject">Subject</dt><dd>The person or thing the verb is about. Sometimes the verb lets you tell who the subject is without naming them.</dd></div>
       </dl>
     </section>
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">Read a little more</h2>
-      <p><a href="https://human.libretexts.org/Bookshelves/Languages/Spanish/First-year_Spanish_Bookshelf/Chevere_Introductory_Spanish_I_%28Brown_Escudero_Montoya_and_Small%29/02%3A_Eres_estudiante/2.17%3A_Gramatica-_Concordancia_de_adjetivos">Adjective agreement in Chévere, Introductory Spanish I</a></p>
+
+    <section class="reading-block sources" aria-labelledby="source-title">
+      <h2 id="source-title">Check an ending or a verb</h2>
+      <p>See “Formation” for adjective endings such as <span lang="es">-o</span>, <span lang="es">-a</span> and their plurals. <a href="https://grammar.spanishintexas.org/adjectives/formation-and-placement/#formation">Spanish Grammar in Context from the University of Texas at Austin</a>.</p>
+      <p>Look up <span lang="es">soy</span>, <span lang="es">es</span>, and <span lang="es">son</span> in the “Forms of ser” table. <a href="https://trayectos.coerll.utexas.edu/v1/mod0/gramatica-estructura-1/">Trayectos from the University of Texas at Austin</a>.</p>
+    </section>
+    <section class="print-answers" aria-labelledby="print-answers-title">
+      <h2 id="print-answers-title">Compare after you try</h2>
+      <section>
+        <h3>Compare the warm-up</h3>
+        <p><span lang="es">Las sillas</span> names more than one chair. <span lang="es">El telón</span> names one curtain. The <a href="#term-article">articles</a> (words like “the”) <span lang="es">el</span> and <span lang="es">las</span> help you tell them apart. For one chair, <span lang="es">las sillas</span> changes to <span lang="es">la silla</span>. Both <span lang="es">las</span> and <span lang="es">la</span> are feminine. Look for the article if you’re unsure of a noun’s group.</p>
+      </section>
+      <section>
+        <h3>Compare the ending</h3>
+        <p><span lang="es">Nuevas</span> fits <span lang="es">las señales</span>, feminine and plural. <span lang="es">Del teatro</span> tells you where the signs belong. If you wrote <span lang="es">nueva</span>, keep the feminine <span lang="es">-a</span> and add <span lang="es">-s</span> for more than one. Point to the noun and revise your line before trying the maps.</p>
+      </section>
+      <section>
+        <h3>Compare the new case</h3>
+        <p><span lang="es">Los mapas del museo son nuevos.</span> <span lang="es">Los</span> tells you that <span lang="es">mapas</span> is masculine plural, even though <span lang="es">mapa</span> ends in <span lang="es">-a</span>.</p>
+      </section>
+      <section>
+        <h3>Compare the suitcase line</h3>
+        <p><span lang="es">La maleta no es ligera. Es pesada y rígida.</span> The second sentence describes the same suitcase. Both adjectives take <span lang="es">-a</span> for <span lang="es">la maleta</span>. You can swap their order.</p>
+      </section>
+      <section>
+        <h3>Compare the prop labels</h3>
+        <ol>
+              <li><span lang="es">La máscara del dragón es morada.</span> The mask is purple. Match <span lang="es">máscara</span>, even with <span lang="es">dragón</span> closer to the blank.</li>
+              <li><span lang="es">El tambor del desfile no es rojo. Es blanco.</span> <span lang="es">No es rojo</span> rules out the red drum. The other drum is white. Use <span lang="es">-o</span> to match <span lang="es">el tambor</span>.</li>
+            </ol>
+      </section>
+      <section>
+        <h3>Compare the rehearsal captions</h3>
+        <ol>
+              <li><span lang="es">Mis compañeras son muy creativas.</span> The different puppets made from scraps support this idea. Use <span lang="es">-as</span> for <span lang="es">compañeras</span>. <span lang="es">Muy</span> tells how strongly the trait applies.</li>
+              <li><span lang="es">Mis primos son ordenados.</span> The chairs are stacked and the stools are lined up. <span lang="es">Primos</span> calls for <span lang="es">-os</span>. With <span lang="es">mis</span>, check the noun for gender.</li>
+              <li><span lang="es">Omar es alto y pelirrojo.</span> His height next to the other adult and his hair are the clues. Omar uses masculine forms here, so both adjectives take <span lang="es">-o</span>. Either order works.</li>
+            </ol>
+            <p>Another description can work if you can point to a clue for it and the form agrees.</p>
+      </section>
+      <section>
+        <h3>Compare talking about Teo</h3>
+        <p><span lang="es">Teo es tranquilo.</span> Use <span lang="es">es</span> when you talk about Teo. He is still the person you’re describing, so <span lang="es">tranquilo</span> keeps the same form.</p>
+      </section>
+      <section>
+        <h3>Compare with one possible program</h3>
+        <ul>
+          <li><span lang="es">Inés es creativa y paciente.</span> Both traits fit what Inés does. <span lang="es">Creativa</span> matches her. <span lang="es">Paciente</span> works for either gender.</li>
+          <li><span lang="es">Marcos es ordenado.</span> The labels and sorted cables support this choice. The jokes also support <span lang="es">gracioso</span>.</li>
+          <li><span lang="es">Soy curioso.</span> Here a fictional host uses a masculine adjective. Choose a word and a form that fit the person speaking in your own line.</li>
+        </ul>
+        <p>In the first two lines you’re talking about one other person, so use <span lang="es">es</span>. In the last, the host says <span lang="es">soy</span> because the host is speaking about themself.</p>
+        <p>If you wrote <span lang="es">Inés soy creativo</span>, make two repairs. Use <span lang="es">es</span> because you are talking about Inés. Use <span lang="es">creativa</span> because she is the person you’re describing. Reread your three lines and fix any similar mismatch.</p>
+      </section>
+      <section>
+        <h3>Compare the recall task</h3>
+        <p><span lang="es">Las puertas son azules.</span> <span lang="es">Son</span> goes with the plural subject. The plural of <span lang="es">azul</span> is <span lang="es">azules</span> for both gender groups. Use <span lang="es">es</span> for the person you chose and <span lang="es">soy</span> for your own line. Check each adjective against the person it describes.</p>
+      </section>
     </section>
   </main>
 </body>

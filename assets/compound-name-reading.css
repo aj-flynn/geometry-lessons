@@ -1,0 +1,86 @@
+.lesson {
+  --ink: #172b29;
+  --paper: #fcfaf3;
+  --surface: #edf0e8;
+}
+
+body:has(.lesson) { background: #fcfaf3; color: #172b29; }
+.lesson h1 { max-width: 17ch; margin-block: .2em; overflow-wrap: anywhere; }
+.lesson h2 { border-top: 2px solid #698782; padding-top: .6em; }
+.lesson .unit { font-size: .88em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.lesson .deck { font-size: 1.22em; line-height: 1.4; }
+.lesson .routes { display: flex; flex-wrap: wrap; gap: 0 1.15rem; }
+.lesson .routes a { font-size: 1em; text-decoration: underline; }
+.lesson .activity-evidence { border-inline-start: 4px solid #698782; }
+.lesson .formula-display { font-size: 1.36em; font-weight: 700; line-height: 1.4; }
+.formula { white-space: nowrap; }
+.formula sub, .formula sup { font-size: .76em; line-height: 0; }
+.reasoning, .attempts { padding-inline-start: 1.45em; }
+.reasoning li + li, .attempts li + li { margin-top: .45em; }
+.short-practice { margin-top: 1.4rem; border-inline-start: 4px solid #698782; padding-inline-start: .85rem; }
+.lesson .ledger { margin-top: 1em; }
+.tiles { display: grid; gap: .5em; }
+.tiles > div { display: flex; flex-wrap: wrap; align-items: center; gap: .4em; }
+.tiles strong { flex: 1 0 100%; }
+.tiles span, .tiles b { padding: .18em .4em; border: 1px solid #698782; }
+.tiles span { background: #fcfaf3; }
+.tiles b { background: #d4e7dc; }
+.lesson .ledger figcaption, .lesson .credit { font-size: .91em; }
+.lookup-columns { display: grid; gap: 1.5rem; }
+.lookup-columns > * { min-width: 0; }
+.lesson dt { margin-top: .55em; }
+.lesson dd { margin-top: 0; }
+.return-title { margin-top: 1.1em; }
+
+@media (min-width: 680px) {
+  .lookup-columns { grid-template-columns: 1fr 1fr; }
+}
+
+@media print {
+  @page { size: letter; margin: .42in .6in; }
+  body:has(.lesson) { background: white; color: black; }
+  .lesson { --ink: #000; --paper: #fff; --surface: #eee; font-size: 11pt; line-height: 1.28; }
+  .lesson h1 { max-width: none; font-size: 26pt; margin-block: .12em; }
+  .lesson h2 { font-size: 19pt; margin-bottom: .45em; break-after: avoid; }
+  .lesson h3 { font-size: 14pt; break-after: avoid; }
+  .lesson p { margin-block: .4em; max-width: none; }
+  .lesson section { margin-top: .85em; }
+  .lesson .sheet { break-before: page; margin-top: 0; }
+  .lesson .return-link { min-height: 0; }
+  .lesson .routes { display: none; }
+  .lesson .deck { font-size: 1.05em; }
+  .lesson .reasoning { margin-block: .45em; }
+  .lesson .reasoning li + li { margin-top: .26em; }
+  .short-practice { margin-top: .8em; }
+  .lesson #glossary { break-before: page; }
+  .lesson dl { columns: 2; column-gap: 1.5em; }
+  .lesson .activity-split { display: grid; grid-template-columns: 1fr 1.55fr; gap: 1em; break-inside: avoid; }
+  .lesson #metals .activity-split { grid-template-columns: .8fr 1.75fr; }
+  .lesson #start h2, .lesson #metals h2 { padding-top: .35em; }
+  .lesson #start details { padding-block: .15em; }
+  .lesson #metal-try h3 { margin-bottom: .3em; }
+  .lesson .activity-evidence { padding: .7em; }
+  .lesson .activity-evidence figure { margin-top: .4em; }
+  .lesson .activity-evidence figcaption { font-size: 10pt; }
+  .lesson .lookup-columns { grid-template-columns: 1fr 1fr; }
+  .lesson details { margin: .45em 0; padding: .25em .5em; border: 1px solid #999; break-inside: avoid; }
+  .lesson summary { min-height: 0; padding: .15em 0; }
+  .short-practice, .attempts li, #recall, .lesson dl > div { break-inside: avoid; }
+  .attempts li { min-height: 4.4em; border-bottom: 1px solid #aaa; }
+  #recall { min-height: 7em; border-bottom: 1px solid #aaa; }
+  .lesson th, .lesson td { padding: .27em .55em; }
+}
+
+.lesson .print-guided { display: none; }
+.lesson .activity-evidence, .lesson .activity-work, .lesson .lookup-columns { overflow-wrap: anywhere; }
+
+@media print {
+  .lesson .screen-comparison { display: none; }
+  .lesson .print-guided { display: revert; }
+  .lesson .print-answer { break-inside: avoid; }
+  .lesson .print-answer h3 { margin-block: .65em .15em; font-size: 12pt; }
+}
+
+@media print { .lesson .screen-return { display: none; } }
+
+@media print { .lesson #glossary { break-before: auto; } }

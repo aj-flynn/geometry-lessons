@@ -4,182 +4,291 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Build triangle similarity proofs from side lengths or angles, then use matching sides to justify a product.">
-  <title>Prove it with similar triangles</title>
-  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/similarity-proof.css">
+  <meta name="description" content="Build and write geometry proofs from side ratios, shared angles and parallel lines.">
+  <title>From a diagram to a proof</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/activity-layout.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/proof-route.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson similarity-lesson">
-    <a class="return-link" href="../index.html">← Lesson library</a>
-    <p class="lesson-label">Geometry · Similarity proofs</p>
-    <h1>Prove it with similar triangles</h1>
-    <p>Use the givens to prove that two triangles are <a href="#similar">similar</a> (the same shape). Then turn their matching sides into an equation you can justify.</p>
-    <p><a href="#glossary">Glossary</a> · <a href="#transfer">Independent practice</a></p>
+  <main id="main" class="lesson activity-lesson proof-lesson">
+    <header>
+      <a class="return-link" href="../../../index.html">← Lesson library</a>
+      <p class="course-label">Geometry · Triangle similarity</p>
+      <h1>From a diagram to a proof</h1>
+      <p class="lead">Use given lengths or angles to prove triangles are <a href="#term-similar">similar</a> (the same shape). Then use that match to prove an equation about their sides.</p>
+      <p class="screen-only">Write your attempts on paper. Open each comparison after you have a reason of your own.</p>
+      <p class="print-only">Write on a separate sheet. Finish each attempt before turning to the paper comparisons at the end.</p>
+    </header>
 
-    <aside aria-label="Before you start">
-      <p><strong>Quick start.</strong> S lies between F and G. If FS = 9 and SG = 2, what is FG? If H is off the line FG, do ∠SFH and ∠GFH name the same angle?</p>
-      <details><summary>Check the side and angle</summary><p>FG = FS + SG = 11 by segment addition. Both names use vertex F and the same two <a href="#ray">rays</a>. Ray FS is ray FG, and the other ray is FH in both names.</p></details>
-    </aside>
-
-    <section aria-labelledby="side-proof">
-      <h2 id="side-proof">1. Start with side lengths</h2>
-      <p><a href="#sas">SAS similarity</a> (side–angle–side) needs two matching side ratios and <a href="#congruent">congruent</a> (equal-measure) <a href="#included">included angles</a>, the angles between those sides.</p>
-      <figure>
-        <svg viewBox="0 0 280 130" role="img" aria-labelledby="sides-title sides-desc">
-          <title id="sides-title">Two detached triangles in different orientations</title>
-          <desc id="sides-desc">PQR has marked angle P, with adjacent sides PQ and PR. UVW has the same angle mark at U, with adjacent sides UV and UW. T lies between U and V. The caption lists all the lengths.</desc>
-          <path class="small-triangle" d="M20 100H60L53.6 55.2Z"/>
-          <path class="large-triangle" d="M165 25V105L254.6 92.2Z"/>
-          <path class="diagram-mark" d="M40 100A20 20 0 0 0 32 84M165 45A20 20 0 0 0 181 37"/>
-          <circle cx="165" cy="65" r="3"/>
-          <g>
-            <text x="5" y="117">P</text><text x="61" y="116">Q</text><text x="48" y="45">R</text>
-            <text x="150" y="18">U</text><text x="150" y="70">T</text><text x="156" y="123">V</text><text x="257" y="99">W</text>
-            <text x="36" y="121">5</text><text x="17" y="73">7</text>
-            <text x="132" y="49">5</text><text x="132" y="95">5</text>
-            <text x="218" y="54">14</text>
-          </g>
-        </svg>
-        <figcaption>Angle arcs give ∠QPR ≅ ∠VUW. PQ = 5, PR = 7, and UW = 14. T is between U and V, with UT = TV = 5.</figcaption>
-      </figure>
-      <p><strong>Goal</strong> Prove the triangles similar and write the match in order.</p>
-      <ol class="proof">
-        <li><span class="math">UV = UT + TV = 10</span> by segment addition. The side runs from U to V.</li>
-        <li><span class="math">PQ/UV = 5/10 = 1/2</span> and <span class="math">PR/UW = 7/14 = 1/2</span>. Both ratios compare the first triangle to the second.</li>
-        <li>∠QPR and ∠VUW are the included angles, and they are congruent by the given arcs. So <span class="math">△PQR ∼ △UVW</span> by SAS.</li>
+    <section class="reading-block warmup" aria-labelledby="warmup">
+      <h2 id="warmup">Quick check · Endpoints, angles and ratios</h2>
+      <p>Sketch these two lines if it helps. Answer before you compare.</p>
+      <ol class="reasoning">
+        <li>F, G and H lie on a line in that order. FG = 13 and GH = 9. Find FH. Do rays FG and FH point in the same direction or opposite directions?</li>
+        <li>J, G and K lie in that order on a second line through G. Are ∠FGJ and ∠HGK <a href="#term-congruent">congruent</a> (≅, equal in measure)? Give a reason.</li>
+        <li>Do 6/9 and 14/21 have the same value? Show how you checked.</li>
       </ol>
-      <p>Read the <a href="#correspondence">correspondence</a> (which parts match) from the order. P ↔ U, Q ↔ V, R ↔ W, so the closing pair is <span class="math">QR ↔ VW</span>.</p>
-
-      <div class="practice">
-        <p>Suppose the only congruent angle marks were at R and W. Would SAS still apply to the same ratios?</p>
-        <details><summary>Check the angle change</summary><p>The compared sides meet at P and U. Marks at R and W would leave the included-angle condition unsupported.</p></details>
-      </div>
+      <details>
+        <summary>Compare the quick check</summary>
+        <ol class="reasoning">
+          <li>FH = FG + GH = 22. By <a href="#term-addition">segment addition</a>, the two pieces add to the full span. Both rays start at F and point through G in the same direction.</li>
+          <li>∠FGJ ≅ ∠HGK. They are <a href="#term-vertical">vertical angles</a>, opposite angles formed by intersecting lines. Find G in the middle of both angle names, then follow their rays.</li>
+          <li>6/9 = 2/3 and 14/21 = 2/3. If the fractions are hard to simplify, multiply both by the product of their denominators. Here 6 · 21 and 14 · 9 both equal 126.</li>
+        </ol>
+      </details>
+      <p><strong>Carry this forward.</strong> When a triangle side spans several marked pieces, add the pieces between its endpoints. When you know the full span and one piece, subtract to find the other.</p>
     </section>
 
-    <section aria-labelledby="angle-proof">
-      <h2 id="angle-proof">2. Start with angles</h2>
-      <p><a href="#aa">AA similarity</a> (angle–angle) needs two pairs of congruent angles. Parallel lines can give one pair. A crossing can give another.</p>
-      <figure>
-        <svg viewBox="0 0 250 150" role="img" aria-labelledby="cross-title cross-desc">
-          <title id="cross-title">Crossed diagonals between two parallel bases</title>
-          <desc id="cross-desc">J and K are the top vertices. M and L are the lower left and right vertices. JL and KM cross at X. The parallel bases JK and ML have matching arrow marks.</desc>
-          <path class="small-triangle" d="M35 25H100L97.33 58.33Z"/>
-          <path class="large-triangle" d="M92 125H222L97.33 58.33Z"/>
-          <path class="outer-sides" d="M35 25L92 125M100 25L222 125"/>
-          <path class="diagram-mark" d="M65 20L71 25L65 30M150 120L156 125L150 130"/>
-          <g>
-            <text x="25" y="20">J</text><text x="103" y="22">K</text><text x="108" y="65">X</text>
-            <text x="77" y="143">M</text><text x="224" y="143">L</text>
-          </g>
-        </svg>
-        <figcaption>Diagonals JL and KM meet at X. The arrows mark <span class="segment">JK</span> ∥ <span class="segment">ML</span>. The two shaded triangles lie on opposite sides of X.</figcaption>
-      </figure>
-      <p><strong>Goal</strong> Prove <span class="math">JK · XL = LM · XJ</span> for this figure, with no numerical lengths.</p>
-      <ol class="proof">
-        <li>∠JXK ≅ ∠LXM because they are <a href="#vertical">vertical angles</a> (opposite angles at a crossing).</li>
-        <li>∠KJX ≅ ∠MLX because they are <a href="#alternate">alternate interior angles</a> on opposite sides of JL, between the parallel bases.</li>
-        <li><span class="math">△JXK ∼ △LXM</span> by AA. The order matches J ↔ L, X ↔ X, and K ↔ M.</li>
-        <li><span class="math">JK/LM = XJ/XL</span> because the lengths of corresponding sides of similar triangles are proportional. Each numerator belongs to △JXK.</li>
-        <li><span class="math">JK · XL = LM · XJ</span> after multiplying both sides by <span class="math">LM · XL</span>. Both side lengths are positive.</li>
-      </ol>
-      <p>To plan an <a href="#product">equal-products proof</a>, pick a ratio of matching sides. Choose the second ratio so clearing denominators produces the requested products.</p>
-      <div class="practice rail-practice">
-        <h3>Two brackets along a rail</h3>
-        <figure>
-          <svg viewBox="0 0 260 125" role="img" aria-labelledby="rail-title rail-desc">
-            <title id="rail-title">Separate right triangles along one sloping line</title>
-            <desc id="rail-desc">H, K, N, and L lie in order on the sloping line. Vertical sides HJ and LM carry the same parallel marks. Right-angle boxes appear at J and M.</desc>
-            <path class="outer-sides" d="M34 117L244 27"/>
-            <path class="large-triangle" d="M55 108V78H125Z"/>
-            <path class="small-triangle" d="M223 36V57H174Z"/>
-            <path class="diagram-mark" d="M55 87H64V78M214 57V48H223M51 100L55 95L59 100M219 46L223 41L227 46"/>
-            <g><text x="38" y="109">H</text><text x="40" y="77">J</text><text x="123" y="96">K</text>
-              <text x="223" y="25">L</text><text x="228" y="63">M</text><text x="163" y="53">N</text></g>
-          </svg>
-          <figcaption>H, K, N, and L lie on one straight line in that order. The arrows mark <span class="segment">HJ</span> ∥ <span class="segment">LM</span>. The squares mark right angles at J and M.</figcaption>
-        </figure>
-        <p>Prove the triangles are similar in matching order. Then justify a proportion that uses one vertical and one sloping side from each triangle.</p>
-        <details><summary>Compare the bracket proof</summary>
-          <ol class="proof">
-            <li>∠HJK ≅ ∠LMN because both are right angles.</li>
-            <li>∠JHK ≅ ∠MLN because they are alternate interior angles where line HL crosses the parallel sides.</li>
-            <li><span class="math">△HJK ∼ △LMN</span> by AA, so <span class="math">HJ/LM = HK/LN</span> because corresponding side lengths are proportional.</li>
+    <section class="activity model" aria-labelledby="sas">
+      <h2 id="sas">1. Prove a match from lengths</h2>
+      <div class="activity-split">
+        <aside class="activity-evidence" tabindex="0" aria-labelledby="frame-evidence">
+          <h3 id="frame-evidence">Two triangular frames</h3>
+          <figure>
+            <svg class="proof-diagram" viewBox="0 0 240 190" role="img" aria-labelledby="frame-svg-title frame-svg-desc">
+              <title id="frame-svg-title">Two triangles meeting at O</title>
+              <desc id="frame-svg-desc">N, O, Q lie on one line in that order, and P, O, R lie on another line in that order. Connectors NP and QR close the triangles. NO is 7 and PO is 11. The full spans are NQ equals 21 and PR equals 33.</desc>
+              <path class="line" d="M102 67 186 130 42 154 174 55 102 67"/>
+              <g class="points"><circle cx="130" cy="88" r="3"/></g>
+              <g class="labels">
+                <text x="86" y="66">N</text><text x="177" y="51">P</text><text x="129" y="108">O</text><text x="191" y="141">Q</text><text x="25" y="167">R</text>
+                <text class="measure" x="104" y="91">7</text><text class="measure" x="153" y="91">11</text>
+              </g>
+            </svg>
+            <figcaption>N–O–Q and P–O–R are straight, in the orders shown. The connectors are NP and QR. NO = 7, PO = 11, NQ = 21 and PR = 33. Use the given lengths for any calculation.</figcaption>
+          </figure>
+        </aside>
+        <div class="activity-work">
+          <p><strong>Goal.</strong> Explain why △NOP ∼ △QOR. The written order matches N with Q, O with O, and P with R. Matching parts are <a href="#term-corresponding">corresponding</a>.</p>
+          <p>Two known sides in each triangle meet at O. To use <a href="#term-sas">side-angle-side (SAS) similarity</a>, establish equal ratios for those two side pairs and equal measures for the angles between them.</p>
+          <ol class="reasoning">
+            <li>OQ = 21 − 7 = 14 because O is between N and Q.</li>
+            <li>OR = 33 − 11 = 22 because O is between P and R.</li>
+            <li>NO/OQ = 7/14 = 1/2.</li>
+            <li>PO/OR = 11/22 = 1/2. Use △NOP on top in both ratios.</li>
+            <li>∠NOP ≅ ∠QOR because they are <a href="#term-vertical">vertical angles</a>, opposite angles made by intersecting lines. These are the angles between the sides in the ratios.</li>
+            <li>△NOP ∼ △QOR by SAS similarity. The closing edge NP matches QR from the endpoints N ↔ Q and P ↔ R.</li>
           </ol>
-        </details>
+          <p><strong>Check the side you divided by.</strong> NQ is a full span through O. The side of △QOR ends at O, so the denominator is OQ.</p>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="transfer">
-      <h2 id="transfer">3. Build the proof yourself</h2>
-      <div class="practice">
-        <h3>Match two cutouts</h3>
-        <p>In △UVW, X is between U and V, and UX = 5, XV = 7, UW = 8. In △RST, Y is between R and T, and RY = 3, YT = 9, RS = 18. The marks give ∠VUW ≅ ∠SRT.</p>
-        <p>A classmate writes △UVW ∼ △RTS. Decide whether that order works. Write and justify the correct statement using only the givens.</p>
-        <details><summary>Compare your proof</summary>
-          <p>By segment addition, <span class="math">UV = 5 + 7 = 12</span> and <span class="math">RT = 3 + 9 = 12</span>. The proposed order gives <span class="math">UV/RT = 1</span> and <span class="math">UW/RS = 4/9</span>.</p>
-          <p>Pair UV with RS and UW with RT instead. <span class="math">UV/RS = UW/RT = 2/3</span>. The given angles are between those sides, so <span class="math">△UVW ∼ △RST</span> by SAS. The closing sides are VW and ST.</p>
-        </details>
-      </div>
-      <div class="practice">
-        <h3>Crossed braces at one corner</h3>
-        <figure>
-          <svg viewBox="0 0 260 165" role="img" aria-labelledby="braces-title braces-desc">
-            <title id="braces-title">Two triangular frames with a shared corner</title>
-            <desc id="braces-desc">O, P and R are on the lower ray in that order. O, S and Q are on the upper ray in that order. The braces PQ and SR cross. Equal angle arcs are at P and S.</desc>
-            <path class="large-triangle" d="M25 145L97 91L241 145Z"/>
-            <path class="small-triangle" d="M25 145L85 145L140.2 58.6Z"/>
-            <path class="diagram-mark" d="M97 91L241 145M68.00 145.00A17 17 0 0 1 94.15 130.67M83.40 101.20A17 17 0 0 0 112.92 96.97"/>
-            <g><text x="7" y="148">O</text><text x="80" y="163">P</text><text x="240" y="163">R</text>
-              <text x="79" y="87">S</text><text x="141" y="54">Q</text></g>
-          </svg>
-          <figcaption>O, P, R lie in order on one ray. O, S, Q lie in order on another. The arcs give ∠OPQ ≅ ∠OSR.</figcaption>
-        </figure>
-        <p>Prove <span class="math">PQ · OR = SR · OQ</span>. Justify each angle and side match you use.</p>
-        <details><summary>Compare your proof</summary>
-          <ol class="proof">
-            <li>∠POQ and ∠SOR are the same angle. Ray OP is ray OR, and ray OQ is ray OS.</li>
-            <li>The given ∠OPQ ≅ ∠OSR supplies the second pair, so <span class="math">△OPQ ∼ △OSR</span> by AA. The order matches Q with R.</li>
-            <li>Matching sides give <span class="math">PQ/SR = OQ/OR</span>. Multiply by the positive product <span class="math">SR · OR</span> to get <span class="math">PQ · OR = SR · OQ</span>.</li>
+    <section class="reading-block repair" aria-labelledby="repair">
+      <h2 id="repair">Fix a shortcut</h2>
+      <p><a href="#term-aa">Angle-angle (AA) similarity</a> requires two pairs of matching angles with equal measures. Check which facts the following proof actually uses.</p>
+      <p>In this text-only case, △YJK and △YLM sit on the same two rays from Y. J is between Y and L, and K is between Y and M. YJ = 8, JL = 12, YK = 10 and KM = 17. A student writes, “The triangles share an angle at Y, so they are similar by AA.” Decide whether the claim follows and write a correction.</p>
+      <details>
+        <summary>Compare the correction</summary>
+        <p>The shared angle gives one pair of equal angles. <a href="#term-aa">AA similarity</a> needs two. Comparing sides that meet at Y, YJ/YL = 8/20 and YK/YM = 10/27. These differ since 8 · 27 = 216 and 10 · 20 = 200. So the proposed side pairing fails the SAS test. Swapping the side pairing gives 8/27 and 10/20, which also differ.</p>
+        <p>Revise your explanation to show what the shared angle proves and where the second test fails.</p>
+      </details>
+      <p><strong>Retry.</strong> Keep the same rays, YJ = 8, JL = 12 and YK = 10. Suppose KM = 15. Decide whether △YJK and △YLM are similar and justify your verdict.</p>
+      <details>
+        <summary>Compare the revised lengths</summary>
+        <p>Now YM = 10 + 15 = 25. Both YJ/YL = 8/20 and YK/YM = 10/25 equal 2/5. The angle at Y is between those side pairs, so △YJK ∼ △YLM by SAS.</p>
+      </details>
+    </section>
+
+    <section class="activity model" aria-labelledby="aa">
+      <h2 id="aa">2. Prove an equation from angles</h2>
+      <div class="activity-split">
+        <aside class="activity-evidence" tabindex="0" aria-labelledby="rails-evidence">
+          <h3 id="rails-evidence">Two rails on a fan</h3>
+          <figure>
+            <svg class="proof-diagram" viewBox="0 0 240 180" role="img" aria-labelledby="rail-svg-title rail-svg-desc">
+              <title id="rail-svg-title">Parallel rails across two rays from J</title>
+              <desc id="rail-svg-desc">J, K, N lie on one ray in that order. J, L, P lie on another ray in that order. Matching arrow marks show that KL and NP are parallel.</desc>
+              <path class="line" d="M30 45 195 94 175 155 30 45 M112.5 69.5 102.5 100"/>
+              <path class="parallel-mark" d="m-7 -5 7 5 -7 5" transform="translate(107 86) rotate(108.15)"/>
+              <path class="parallel-mark" d="m-7 -5 7 5 -7 5" transform="translate(183.5 129) rotate(108.15)"/>
+              <g class="labels">
+                <text x="13" y="47">J</text><text x="112" y="62">K</text><text x="91" y="116">L</text><text x="201" y="97">N</text><text x="173" y="171">P</text>
+              </g>
+            </svg>
+            <figcaption>J–K–N and J–L–P lie on two rays from J. The matching arrows show the rails are parallel (<span class="segment">KL</span> ∥ <span class="segment">NP</span>). No lengths are given.</figcaption>
+          </figure>
+        </aside>
+        <div class="activity-work">
+          <p><strong>Goal.</strong> Prove JK · NP = JN · KL. Both products use one ray-side length and one rail length. A proportion comparing ray side to ray side and rail to rail will connect them.</p>
+          <ol class="reasoning">
+            <li>∠KJL ≅ ∠NJP because both use the same two rays from J.</li>
+            <li>∠JKL ≅ ∠JNP because they are <a href="#term-parallel">corresponding angles on parallel lines</a>. They sit in the same position where line JN crosses each rail.</li>
+            <li>△JKL ∼ △JNP by AA. J ↔ J, K ↔ N, and L ↔ P.</li>
+            <li>JK/JN = KL/NP because corresponding side lengths of similar triangles are proportional. The first triangle is on top in both fractions.</li>
+            <li>JK · NP = JN · KL. Multiply both sides by JN · NP, which is positive, and cancel the denominators.</li>
           </ol>
-          <p>Retry. If the arc at S instead marked ∠QSR, could you use the marked pair for the same proof?</p>
-          <details><summary>Check the new arc</summary><p>Ray SQ goes away from O. The angle at S in △OSR is ∠OSR. You would need evidence about that angle to use AA here.</p></details>
-        </details>
+          <p><strong>Check the order.</strong> JK/JN = NP/KL flips just one fraction. Keep the same triangle in the numerator on both sides of the equation.</p>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="return-title">
-      <h2 id="return-title">Take this back to your work</h2>
+    <section class="activity independent" aria-labelledby="try-one">
+      <div class="paper-task">
+        <h2 id="try-one">Your turn · Overlapping braces</h2>
+        <div class="activity-split">
+          <aside class="activity-evidence" id="brace-evidence" tabindex="0" aria-labelledby="brace-heading">
+            <h3 id="brace-heading">Four pieces on two arms</h3>
+            <figure>
+              <svg class="proof-diagram" viewBox="0 0 240 142" role="img" aria-labelledby="brace-svg-title brace-svg-desc">
+                <title id="brace-svg-title">Braces UV and WX across two rays from M</title>
+                <desc id="brace-svg-desc">M, U, W lie on one ray in that order with MU equals 10 and UW equals 20. M, X, V lie on the other ray in that order with MX equals 15 and XV equals 5. Connectors UV and WX cross.</desc>
+                <path class="line" d="M34 108 130 36 194 84 98 60 M34 108 178 72"/>
+                <g class="points"><circle cx="98" cy="60" r="2.5"/><circle cx="178" cy="72" r="2.5"/></g>
+                <g class="labels">
+                  <text x="123" y="25">M</text><text x="80" y="58">U</text><text x="16" y="122">W</text><text x="170" y="60">X</text><text x="199" y="94">V</text>
+                  <text class="measure" x="97" y="40">10</text><text class="measure" x="47" y="79">20</text><text class="measure" x="150" y="43">15</text><text class="measure" x="190" y="70">5</text>
+                </g>
+              </svg>
+              <figcaption>M–U–W and M–X–V lie on two rays from M. The braces UV and WX cross. MU = 10, UW = 20, MX = 15 and XV = 5.</figcaption>
+            </figure>
+          </aside>
+          <div class="activity-work">
+            <p>Write an ordered similarity statement for △UMV and the triangle formed by brace WX and the two arms. Explain why your statement must hold. Name the facts that justify the theorem you choose.</p>
+            <p class="paper-space" aria-hidden="true"></p>
+            <a class="activity-return" href="#brace-evidence">Return to the brace diagram</a>
+          </div>
+        </div>
+      </div>
+      <details class="task-comparison">
+        <summary>Compare the brace explanation</summary>
+        <p>MW = MU + UW = 30 and MV = MX + XV = 20. Then MU/MX = 10/15 = 2/3 and MV/MW = 20/30 = 2/3. ∠UMV ≅ ∠XMW because both use the same two rays from M, in reverse order. Thus △UMV ∼ △XMW by SAS. U ↔ X and V ↔ W, so UV ↔ XW.</p>
+        <p>If you paired U with W because both are on the same ray, your ratios would be 10/30 and 20/15. Test the pairings of sides that meet at M and revise the triangle order to reflect the common ratio.</p>
+      </details>
+    </section>
+
+    <section class="activity independent" aria-labelledby="try-two">
+      <div class="paper-task">
+        <h2 id="try-two">Your turn · Crossed cables</h2>
+        <div class="activity-split">
+          <aside class="activity-evidence" id="cable-evidence" tabindex="0" aria-labelledby="cable-heading">
+            <h3 id="cable-heading">Cables between parallel tracks</h3>
+            <figure>
+              <svg class="proof-diagram" viewBox="0 0 240 190" role="img" aria-labelledby="cable-svg-title cable-svg-desc">
+                <title id="cable-svg-title">Two tracks with crossed cables</title>
+                <desc id="cable-svg-desc">T and S lie on the upper track. V and U lie on the lower track. The matching arrow marks give TS parallel to VU. The cables TU and SV intersect at O.</desc>
+                <path class="line" d="M48 45 133 60 33 131 220 164 48 45"/>
+                <path class="parallel-mark" d="m-7 -5 7 5 -7 5" transform="translate(89.65 52.35) rotate(10.01)"/>
+                <path class="parallel-mark" d="m-7 -5 7 5 -7 5" transform="translate(127.35 147.65) rotate(10.01)"/>
+                <g class="points"><circle cx="101.75" cy="82.1875" r="2.5"/></g>
+                <g class="labels">
+                  <text x="35" y="39">T</text><text x="138" y="61">S</text><text x="15" y="137">V</text><text x="221" y="181">U</text><text x="82" y="89">O</text>
+                </g>
+              </svg>
+              <figcaption><span class="segment">TS</span> ∥ <span class="segment">VU</span>, as the matching arrows show. Cables TU and SV intersect at O, so T–O–U and S–O–V are straight. No lengths are given.</figcaption>
+            </figure>
+          </aside>
+          <div class="activity-work">
+            <p>Prove TO · VU = OU · TS. Write a paragraph or a statement-and-reason proof. Justify any angle or length relation you use and show the step that gives the product equality.</p>
+            <p class="paper-space" aria-hidden="true"></p>
+            <a class="activity-return" href="#cable-evidence">Return to the cable diagram</a>
+          </div>
+        </div>
+      </div>
+      <details class="task-comparison">
+        <summary>Compare the cable proof</summary>
+        <ol class="reasoning">
+          <li>∠TOS ≅ ∠UOV because the cables intersect at O and these are vertical angles.</li>
+          <li>∠OTS ≅ ∠OUV because these are <a href="#term-alternate">alternate interior angles</a>. They lie between the parallel tracks on opposite sides of cable TU.</li>
+          <li>△TOS ∼ △UOV by AA. In order, T ↔ U, O ↔ O, and S ↔ V.</li>
+          <li>TO/OU = TS/VU because corresponding sides of similar triangles have proportional lengths.</li>
+          <li>TO · VU = OU · TS. Multiply both sides by the positive product OU · VU.</li>
+        </ol>
+        <p><strong>Repair a flipped ratio.</strong> TO/OU = VU/TS puts the upper triangle on top in the first fraction and the lower triangle on top in the second. Put TS on top in the second fraction, then multiply both sides by OU · VU. In your own proof, underline the matching sides in the proportion and write out what cancels.</p>
+      </details>
+    </section>
+
+    <section class="reading-block" aria-labelledby="product-retry">
+      <h2 id="product-retry">Retry the product step</h2>
+      <p>In a fresh text-only case, △HBD ∼ △KWF. Prove HB · WF = KW · BD. Write a proportion from the triangle order and show what cancels.</p>
+      <details>
+        <summary>Compare the product retry</summary>
+        <p>H ↔ K, B ↔ W and D ↔ F, so HB/KW = BD/WF. Multiply both sides by KW · WF. KW cancels on the left, and WF cancels on the right, giving HB · WF = KW · BD.</p>
+      </details>
+    </section>
+
+    <section class="reading-block" aria-labelledby="remember">
+      <h2 id="remember">Return checklist</h2>
       <ul>
-        <li>Identify whole side lengths by their endpoints.</li>
-        <li>Choose a theorem the givens support. Locate the included angle for SAS or justify two angle pairs for AA.</li>
-        <li>Write the vertices in matching order. Check both endpoints of each side.</li>
-        <li>For a product goal, justify your proportion and show how you clear its denominators.</li>
+        <li>Trace each side between the endpoints in its triangle name.</li>
+        <li>Give a reason for every equal angle. Check which side pairs meet there.</li>
+        <li>Read the vertex order before writing ratios. If the goal is a product, show how the denominators cancel.</li>
       </ul>
-      <p><strong>Next time.</strong> Before looking back, write what SAS and AA each require.</p>
-      <p>If you get stuck, use the private chat to describe the proof step you are trying to justify.</p>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
+    <section class="reading-block" aria-labelledby="recall">
+      <h2 id="recall">Recall this later</h2>
+      <p>On a return visit, try this text-only case from memory. In two separate triangles, HG = 9, HF = 14, ZY = 18 and ZX = 28. The angles ∠GHF and ∠YZX are congruent. Write an ordered similarity statement and one proportion involving GF and YX. Justify both.</p>
+      <details>
+        <summary>Compare the recall case</summary>
+        <p>HG/ZY = 9/18 = 1/2 and HF/ZX = 14/28 = 1/2. The given equal angles are between those side pairs, so △GHF ∼ △YZX by SAS. G ↔ Y and F ↔ X, so GF/YX = HG/ZY by corresponding sides.</p>
+      </details>
+    </section>
+
+    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <div><dt id="similar">Similar triangles (∼)</dt><dd>Triangles with congruent corresponding angles and proportional corresponding side lengths.</dd></div>
-        <div><dt id="included">Included angle</dt><dd>The angle whose rays contain the two sides being compared. Its vertex is the common endpoint of those sides.</dd></div>
-        <div><dt id="sas">SAS similarity</dt><dd>If two pairs of corresponding side lengths have equal ratios and their included angles are congruent, the triangles are similar.</dd></div>
-        <div><dt id="aa">AA similarity</dt><dd>If two angles of one triangle are congruent to their corresponding angles in another triangle, the triangles are similar.</dd></div>
-        <div><dt id="correspondence">Correspondence</dt><dd>Matching vertices, angles, or sides. In a similarity statement, corresponding vertices are in the same position in the names.</dd></div>
-        <div><dt id="vertical">Vertical angles</dt><dd>Opposite angles formed by two intersecting lines. They are congruent.</dd></div>
-        <div><dt id="alternate">Alternate interior angles</dt><dd>Angles between two lines, on opposite sides of a line that crosses them. If the two crossed lines are parallel, these angles are congruent.</dd></div>
-        <div><dt id="congruent">Congruent angles (≅)</dt><dd>Angles with equal measures.</dd></div>
-        <div><dt id="ray">Ray</dt><dd>A straight path starting at one point and continuing in one direction. Ray OP starts at O and passes through P.</dd></div>
-        <div><dt id="product">Equal products</dt><dd>For a/b = c/d with b and d nonzero, multiplying by bd gives a · d = b · c.</dd></div>
+        <div><dt id="term-similar">Similar triangles (∼)</dt><dd>Triangles with equal matching angles and one common ratio for their matching side lengths.</dd></div>
+        <div><dt id="term-congruent">Congruent angles (≅)</dt><dd>Angles with equal measures, even if they face different directions.</dd></div>
+        <div><dt id="term-addition">Segment addition</dt><dd>If B is between A and C on a line, AB + BC = AC.</dd></div>
+        <div><dt id="term-corresponding">Corresponding parts</dt><dd>Matching vertices, angles or sides. In a similarity statement, match vertices by position in the names. Match sides by both endpoints.</dd></div>
+        <div><dt id="term-sas">SAS similarity</dt><dd>Side-angle-side. If two pairs of corresponding sides have equal length ratios and their included angles are congruent (≅, equal in measure), the triangles are similar. The included angle lies between the two sides used.</dd></div>
+        <div><dt id="term-vertical">Vertical angles</dt><dd>Opposite angles formed by two intersecting lines. Their measures are equal.</dd></div>
+        <div><dt id="term-aa">AA similarity</dt><dd>Angle-angle. If two pairs of corresponding angles are congruent, the triangles are similar.</dd></div>
+        <div><dt id="term-parallel">Corresponding angles on parallel lines</dt><dd>When a third line cuts two parallel lines (∥), angles in the same relative position at the two intersections are congruent.</dd></div>
+        <div><dt id="term-alternate">Alternate interior angles</dt><dd>Angles between the two lines on opposite sides of the line that crosses them. They are congruent when the two lines are parallel.</dd></div>
       </dl>
     </section>
-
-    <section class="sources" aria-labelledby="source-title">
-      <h2 id="source-title">Why SAS works</h2>
-      <p>Explore the included-angle condition in a classic proof. <a href="https://mathcs.clarku.edu/~djoyce/elements/bookVI/propVI6.html">Euclid’s Elements, Book VI, Proposition 6</a></p>
+    <section class="reading-block sources screen-only" aria-labelledby="sources">
+      <h2 id="sources">Look up the similarity theorems</h2>
+      <p>Illustrative Mathematics shows why the shortcuts work. Look for the Summary in <a href="https://im.kendallhunt.com/HS/students/2/3/9/index.html">the AA lesson</a> for two matching angles, or in <a href="https://im.kendallhunt.com/HS/students/2/3/10/index.html">the SAS lesson</a> for equal ratios and the angle between the sides.</p>
+    </section>
+    <section class="reading-block print-only paper-key" aria-labelledby="paper-key">
+      <h2 id="paper-key">Paper comparisons</h2>
+      <p>Use this section after you have written your own work.</p>
+      <section class="key-entry">
+        <h3>Compare the quick check</h3>
+        <ol class="reasoning">
+          <li>FH = FG + GH = 22. By <a href="#term-addition">segment addition</a>, the two pieces add to the full span. Both rays start at F and point through G in the same direction.</li>
+          <li>∠FGJ ≅ ∠HGK. They are <a href="#term-vertical">vertical angles</a>, opposite angles formed by intersecting lines. Find G in the middle of both angle names, then follow their rays.</li>
+          <li>6/9 = 2/3 and 14/21 = 2/3. If the fractions are hard to simplify, multiply both by the product of their denominators. Here 6 · 21 and 14 · 9 both equal 126.</li>
+        </ol>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the correction</h3>
+        <p>The shared angle gives one pair of equal angles. <a href="#term-aa">AA similarity</a> needs two. Comparing sides that meet at Y, YJ/YL = 8/20 and YK/YM = 10/27. These differ since 8 · 27 = 216 and 10 · 20 = 200. So the proposed side pairing fails the SAS test. Swapping the side pairing gives 8/27 and 10/20, which also differ.</p>
+        <p>Revise your explanation to show what the shared angle proves and where the second test fails.</p>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the revised lengths</h3>
+        <p>Now YM = 10 + 15 = 25. Both YJ/YL = 8/20 and YK/YM = 10/25 equal 2/5. The angle at Y is between those side pairs, so △YJK ∼ △YLM by SAS.</p>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the brace explanation</h3>
+        <p>MW = MU + UW = 30 and MV = MX + XV = 20. Then MU/MX = 10/15 = 2/3 and MV/MW = 20/30 = 2/3. ∠UMV ≅ ∠XMW because both use the same two rays from M, in reverse order. Thus △UMV ∼ △XMW by SAS. U ↔ X and V ↔ W, so UV ↔ XW.</p>
+        <p>If you paired U with W because both are on the same ray, your ratios would be 10/30 and 20/15. Test the pairings of sides that meet at M and revise the triangle order to reflect the common ratio.</p>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the cable proof</h3>
+        <ol class="reasoning">
+          <li>∠TOS ≅ ∠UOV because the cables intersect at O and these are vertical angles.</li>
+          <li>∠OTS ≅ ∠OUV because these are <a href="#term-alternate">alternate interior angles</a>. They lie between the parallel tracks on opposite sides of cable TU.</li>
+          <li>△TOS ∼ △UOV by AA. In order, T ↔ U, O ↔ O, and S ↔ V.</li>
+          <li>TO/OU = TS/VU because corresponding sides of similar triangles have proportional lengths.</li>
+          <li>TO · VU = OU · TS. Multiply both sides by the positive product OU · VU.</li>
+        </ol>
+        <p><strong>Repair a flipped ratio.</strong> TO/OU = VU/TS puts the upper triangle on top in the first fraction and the lower triangle on top in the second. Put TS on top in the second fraction, then multiply both sides by OU · VU. In your own proof, underline the matching sides in the proportion and write out what cancels.</p>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the product retry</h3>
+        <p>H ↔ K, B ↔ W and D ↔ F, so HB/KW = BD/WF. Multiply both sides by KW · WF. KW cancels on the left, and WF cancels on the right, giving HB · WF = KW · BD.</p>
+      </section>
+      <section class="key-entry">
+        <h3>Compare the recall case</h3>
+        <p>HG/ZY = 9/18 = 1/2 and HF/ZX = 14/28 = 1/2. The given equal angles are between those side pairs, so △GHF ∼ △YZX by SAS. G ↔ Y and F ↔ X, so GF/YX = HG/ZY by corresponding sides.</p>
+      </section>
     </section>
   </main>
 </body>

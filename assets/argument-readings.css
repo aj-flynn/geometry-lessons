@@ -1,0 +1,196 @@
+.argument-page {
+  --paper: #f7f4ed;
+  --surface: #ece8df;
+  --ink: #172928;
+  --accent: #ffdf9a;
+  --reading-paper: #fffdf8;
+  --link: #235854;
+  --rule: #aa9d84;
+}
+
+.argument-lesson {
+  width: min(49rem, 100% - 3rem);
+  overflow-wrap: anywhere;
+}
+
+.argument-lesson h1 {
+  max-width: 16ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 6vw, 4.7rem);
+}
+
+.argument-lesson h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(1.95rem, 3.4vw, 2.55rem);
+}
+
+.argument-lesson a { color: var(--link); }
+.argument-lesson :focus-visible { outline: 3px solid var(--link); }
+.argument-lesson .lead { max-width: 35ch; margin-block: 1.1rem; }
+.argument-lesson .lesson-header { padding-bottom: 0.75rem; }
+.argument-lesson .return-link { margin-bottom: 0.6rem; }
+
+.argument-lesson .eyebrow {
+  color: var(--link);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-block: 0 0.65rem;
+  text-transform: uppercase;
+}
+
+.argument-lesson .lesson-route {
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+  border-block: 1px solid var(--rule);
+  padding: 0.2rem 0;
+}
+
+.argument-lesson .lesson-route a, .argument-lesson .reread a { text-decoration: underline; }
+.argument-lesson .reread { flex-wrap: wrap; gap: 0 1.25rem; }
+.argument-lesson .prompt, .argument-lesson .writing-space {
+  border-inline-start: 4px solid var(--link);
+  background: #e8efe9;
+  padding: 0.75rem clamp(0.9rem, 3vw, 1.65rem);
+}
+
+.argument-lesson .credit, .argument-lesson .byline {
+  font-size: 0.95rem;
+  color: #344945;
+}
+
+.argument-lesson .reading {
+  background: var(--reading-paper);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--link);
+  margin-block: 1.35rem;
+  padding: clamp(1rem, 3.4vw, 2rem);
+}
+
+.argument-lesson .reading h3 {
+  font: 400 clamp(1.6rem, 3.5vw, 2.3rem)/1.15 Georgia, "Times New Roman", serif;
+  margin-block: 0 0.35rem;
+}
+
+.argument-lesson .byline { margin-block: 0 1.15rem; }
+.argument-lesson .passage {
+  font: 1.1rem/1.64 Georgia, "Times New Roman", serif;
+  margin: 0;
+  max-width: 65ch;
+  padding-inline-start: 1.55em;
+}
+
+.argument-lesson .passage li { padding-inline-start: 0.3em; }
+.argument-lesson .passage li + li { margin-top: 0.9rem; }
+.argument-lesson .passage li::marker { color: var(--link); font: 700 0.84em Arial, sans-serif; }
+.argument-lesson .annotation { background: #e8efe9; margin-block: 1.25rem; }
+.argument-lesson blockquote { margin: 0; }
+.argument-lesson .annotation blockquote { font: 1.27rem/1.45 Georgia, "Times New Roman", serif; }
+.argument-lesson .annotation figcaption { margin-top: 0.8rem; }
+.argument-lesson .annotation mark { background: var(--accent); color: var(--ink); }
+.argument-lesson .after-attempt > h3:first-of-type { margin-top: 0.65rem; }
+.argument-lesson .model-essay {
+  background: var(--reading-paper);
+  border-inline-start: 3px solid var(--link);
+  padding: 0.4rem 0.9rem;
+}
+
+.argument-lesson .repair { margin-top: 1.75rem; }
+.argument-lesson .repair blockquote {
+  border-inline-start: 2px solid var(--rule);
+  margin-block: 0.8rem;
+  max-width: 62ch;
+  padding-inline-start: 0.9rem;
+}
+
+.argument-lesson dt:target { background: var(--accent); width: fit-content; }
+.argument-lesson .paper-lines { display: none; }
+
+@media (max-width: 600px) {
+  .argument-lesson { width: calc(100% - 2rem); }
+  .argument-lesson .lesson-route { gap: 0 0.85rem; }
+  .argument-lesson .passage { font-size: 1.05rem; }
+}
+
+@media print {
+  @page { size: letter; margin: 0.6in; }
+  .argument-page {
+    --paper: #fff;
+    --surface: #fff;
+    --reading-paper: #fff;
+    --ink: #000;
+    --link: #000;
+    --rule: #777;
+    font-size: 10.75pt;
+    line-height: 1.35;
+  }
+  .argument-lesson { width: 100%; margin: 0; overflow-wrap: normal; }
+  .argument-lesson .return-link { display: none; }
+  .argument-lesson h1 { font-size: 28pt; max-width: none; }
+  .argument-lesson h2 { font-size: 21pt; margin-bottom: 0.1in; }
+  .argument-lesson h3 { font-size: 15pt; margin-bottom: 0.08in; }
+  .argument-lesson p, .argument-lesson .passage { max-width: none; }
+  .argument-lesson p { margin-block: 0.08in; }
+  .argument-lesson .lead { font-size: 13pt; max-width: none; }
+  .argument-lesson .eyebrow { font-size: 8.5pt; }
+  .argument-lesson .credit, .argument-lesson .byline { font-size: 10pt; color: black; }
+  .argument-lesson .reading {
+    margin-block: 0.13in;
+    padding: 0.1in 0.16in;
+  }
+  .argument-lesson .reading h3 { font-size: 16pt; }
+  .argument-lesson .passage { font-size: 10.75pt; line-height: 1.3; }
+  .argument-lesson .passage li + li { margin-top: 0.065in; }
+  .argument-lesson .passage li, .argument-lesson .prompt,
+  .argument-lesson .writing-space, .argument-lesson .repair blockquote,
+  .argument-lesson dl > div { break-inside: avoid; }
+  .argument-lesson .prompt, .argument-lesson .writing-space, .argument-lesson .annotation {
+    background: white;
+    padding: 0.08in 0.15in;
+  }
+  .argument-lesson .annotation blockquote { font-size: 13pt; }
+  .argument-lesson .annotation figcaption { font-size: 10pt; }
+  .argument-lesson .reading h3, .argument-lesson .reading .eyebrow,
+  .argument-lesson .byline, .argument-lesson summary,
+  .argument-lesson h2, .argument-lesson h3 { break-after: avoid; }
+  .argument-lesson details { padding: 0.05in 0.1in; margin-block: 0.07in; }
+  .argument-lesson summary { min-height: 0; padding: 0.03in 0; }
+  .argument-lesson #essay, .argument-lesson .review { break-before: page; }
+  .argument-lesson .review ~ section { margin-top: 0.1in; }
+  .argument-lesson .review ~ section h2 { font-size: 17pt; }
+  .argument-lesson .sources { display: none; }
+  .argument-lesson dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 0.15in; }
+  .argument-lesson .annotation mark { background: white; text-decoration: underline; }
+  .argument-lesson .model-essay p { break-inside: avoid; }
+  .argument-lesson dt { margin-top: 0.045in; }
+  .argument-lesson dd { margin-top: 0; }
+  .argument-lesson #walk { break-before: page; }
+  .argument-lesson .paper-lines {
+    display: block;
+    height: 2.15in;
+    background: repeating-linear-gradient(to bottom, white 0 0.26in, #888 0.26in 0.27in);
+    print-color-adjust: exact;
+  }
+}
+
+.lesson .paper-comparisons, .lesson .paper-direction { display: none; }
+@media print {
+  .lesson .screen-comparison { display: none; }
+  .lesson .paper-comparisons, .lesson .paper-direction { display: block; }
+  .lesson .paper-comparisons { break-before: page; }
+  .lesson .paper-comparison, .lesson .paper-attempt { break-inside: avoid; }
+}
+
+@media print {
+  .argument-lesson .after-attempt { break-before: page; break-inside: avoid; }
+}
+
+@media print {
+  .argument-lesson .after-attempt .annotation { margin-block: .1in; }
+  .argument-lesson .after-attempt figcaption { margin-top: .04in; }
+  .argument-lesson .after-attempt > p:last-child { break-inside: avoid; }
+  .argument-lesson .short-lines { height: 1.05in; }
+  .argument-lesson .after-attempt { break-after: page; }
+}

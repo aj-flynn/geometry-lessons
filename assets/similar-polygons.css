@@ -1,0 +1,177 @@
+.polygon-lesson {
+  --ink: #18332e;
+  --paper: #fffdf7;
+  --surface: #f0eee5;
+  --rust: #83402c;
+  --line: #b0b9a5;
+}
+.polygon-lesson .opening {
+  border-top: 5px solid #18332e;
+  padding-top: 15px;
+}
+.polygon-lesson h1,
+.polygon-lesson h2 {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+.polygon-lesson h1 { font-size: clamp(2.65rem, 7vw, 5.1rem); }
+.polygon-lesson h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); }
+.polygon-lesson .lead { max-width: 30ch; }
+.polygon-lesson .eyebrow {
+  color: var(--rust);
+  font-size: .8em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: .5rem;
+}
+.polygon-lesson .route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 1.25em;
+  border-block: 1px solid var(--line);
+  margin-block: 1.25em;
+}
+.polygon-lesson .route a { text-decoration: underline; }
+.polygon-lesson .activity-evidence {
+  background: #e7efe7;
+  border-top: 3px solid var(--line);
+  padding: clamp(14px, 2vw, 24px);
+}
+.polygon-lesson .activity-evidence h3 { letter-spacing: -.025em; }
+.polygon-lesson .activity-evidence p:last-child { margin-bottom: 0; }
+.polygon-lesson .diagram-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 185px), 1fr));
+  gap: 8px;
+}
+.polygon-lesson .diagram-card { background: #fffdf7; padding: 0 4px 4px; }
+.polygon-lesson .diagram-card p {
+  font-size: .89em;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+}
+.diagram-card svg { color: #17342d; }
+.shape { fill: #e8edda; stroke: currentColor; stroke-width: 2.4; stroke-linejoin: round; }
+.shape.copy { fill: #cde4dc; }
+.shape.reject { fill: #f3e2d7; }
+.unit-tile { fill: #e8edda; stroke: #68786e; stroke-width: .75; }
+.unit-tile.copy { fill: #cde4dc; }
+.trace { fill: none; stroke: currentColor; stroke-width: 3; stroke-linejoin: round; }
+.angle-mark { fill: none; stroke: #823e29; stroke-width: 2; }
+.diagram-card text {
+  fill: currentColor;
+  dominant-baseline: central;
+  text-anchor: middle;
+  font-size: 18px;
+}
+.diagram-card .vertex-label { font-weight: 700; }
+.diagram-card .degree-label { fill: #823e29; font-size: 17px; font-weight: 700; }
+.polygon-lesson .math { display: inline-block; }
+.polygon-lesson .equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-block: 12px;
+}
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.frac span { padding-inline: .14em; }
+.frac span:first-child { border-bottom: 1px solid currentColor; }
+.polygon-lesson .steps { padding-left: 1.5em; }
+.steps li::marker { color: var(--rust); font-weight: 700; }
+.polygon-lesson .math-lines {
+  border-inline-start: 2px solid #9bafa5;
+  padding-inline-start: 12px;
+  margin-block: .75em;
+}
+.polygon-lesson .math-lines p {
+  margin-block: .25em;
+  font-variant-numeric: tabular-nums;
+}
+.polygon-lesson details {
+  background: #f3f0e5;
+  padding-block: 5px;
+  border-inline-start: 2px solid #aba385;
+}
+.polygon-lesson .proof-keys > div { border-top: 1px solid var(--line); margin-top: 12px; }
+.polygon-lesson .proof-keys dt { margin-top: 10px; }
+.polygon-lesson .bench-intro { border-top: 3px solid var(--rust); padding-top: 18px; }
+.polygon-lesson .bench-task { margin-top: 35px; }
+.polygon-lesson .orders + .orders { margin-top: 26px; }
+.polygon-lesson .numeric-check {
+  background: #e7efe7;
+  padding: 14px;
+}
+.numeric-check:not([data-practice-ready]) { display: none; }
+.numeric-check label { display: block; font-weight: 700; }
+.check-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 8px; }
+.numeric-check .feedback:empty { display: none; }
+.polygon-lesson .writing-space { display: none; }
+.polygon-lesson .paper-retry { margin-top: 1.25rem; }
+.polygon-lesson .practice-link a, .polygon-lesson a.practice-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.polygon-lesson .answer-room summary { scroll-margin-top: 1rem; }
+.polygon-lesson .return-work { border-top: 1px solid var(--line); padding-top: 16px; }
+.polygon-lesson .glossary-list > div { break-inside: avoid; }
+.polygon-lesson :is(a, summary, input, button):focus-visible { outline-color: #823e29; }
+@media (max-width: 600px) {
+  .polygon-lesson .math { display: inline; }
+  .polygon-lesson .activity-split { gap: 14px; }
+}
+@media print {
+  body { font-size: 11pt; line-height: 1.37; }
+  .polygon-lesson { --ink: #000; --rust: #000; }
+  .polygon-lesson section { margin-top: 16px; }
+  .polygon-lesson h1 { font-size: 30pt; }
+  .polygon-lesson h2 { font-size: 20pt; margin-bottom: 8px; }
+  .polygon-lesson h3 { font-size: 14pt; margin-bottom: 6px; }
+  .polygon-lesson h2, .polygon-lesson h3, .polygon-lesson summary, .polygon-lesson .eyebrow { break-after: avoid; }
+  .polygon-lesson p { margin-block: 6px; max-width: none; }
+  .polygon-lesson details { padding-block: 2px; margin-block: 7px; }
+  .polygon-lesson summary { min-height: 0; padding-block: 5px; }
+  .polygon-lesson .bench-intro { padding-top: 8px; break-inside: avoid; }
+  .polygon-lesson .proof-keys > div { margin-top: 5px; break-inside: avoid; }
+  .polygon-lesson .opening { padding-top: 0; }
+  .polygon-lesson .activity-split { break-inside: auto; }
+  .polygon-lesson .bench-task:not(:has(.orders)),
+  .polygon-lesson .orders,
+  .polygon-lesson .activity-evidence { break-inside: avoid; }
+  .polygon-lesson .activity-evidence { break-after: avoid; }
+  .polygon-lesson .orders + .orders { margin-top: 12px; }
+  .polygon-lesson .activity-evidence { background: none; padding: 6px 0; }
+  .polygon-lesson .diagram-pair { grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); }
+  .polygon-lesson .diagram-card { background: none; padding: 0; }
+  .polygon-lesson .diagram-card svg { max-height: 124px; }
+  .polygon-lesson .glossary-list dt { margin-top: 9px; }
+  .polygon-lesson .sources { margin-top: 11px; font-size: 10pt; }
+  .polygon-lesson .numeric-check { display: none !important; }
+  .polygon-lesson .practice-link, .polygon-lesson a.practice-link { display: none; }
+  .polygon-lesson .answer-room { break-before: page; }
+  .polygon-lesson .answer-room details, .polygon-lesson .paper-retry { break-inside: avoid; }
+  .polygon-lesson :is(.bench-task, .readiness, .activity-work) .writing-space { height: 66px; }
+  .polygon-lesson .readiness { background: none; border: 0; }
+  .polygon-lesson .readiness > p { break-inside: avoid; }
+  .polygon-lesson :is(#brief, #match) + .activity-split { break-inside: avoid; }
+  .polygon-lesson .return-work { break-before: page; break-inside: avoid; }
+  .polygon-lesson .paper-task { break-inside: avoid; }
+  .polygon-lesson .paper-compare { break-before: page; }
+  .polygon-lesson .writing-space {
+    display: block;
+    height: 150px;
+    background: repeating-linear-gradient(transparent 0 28px, #aaa 28px 29px);
+  }
+}
+

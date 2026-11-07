@@ -1,0 +1,125 @@
+.ionic {
+  --rule: #b6c9c0;
+  --deep: #174b3d;
+  overflow-wrap: anywhere;
+}
+.ionic h1 { font-size: clamp(2.15rem, 5.5vw, 4.1rem); }
+.ionic .lead { max-width: 36ch; }
+.ionic .kicker { color: var(--deep); font-size: .85em; letter-spacing: .09em; font-weight: 700; }
+.ionic .route { display: flex; flex-wrap: wrap; gap: 4px 24px; border-block: 1px solid var(--rule); margin-block: 1.6rem; }
+.ionic .route a { align-items: center; display: inline-flex; font-size: .95em; min-height: 44px; text-decoration: underline; }
+.ionic .warmup { border-inline-start: 4px solid var(--deep); padding-inline-start: 1rem; }
+.ionic .activity { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+.ionic .activity-evidence { border-top: 4px solid var(--deep); }
+.ionic .activity-evidence h3 { margin-top: 0; }
+.ionic .named dt { font-size: .88em; }
+.ionic .named dd { margin-inline-start: 0; }
+.ionic .formula, .ionic .term { white-space: nowrap; }
+.ionic sub, .ionic sup { line-height: 0; }
+.ionic .equation { border-inline-start: 3px solid var(--deep); background: #f0f6f2; padding: .45em .65em; line-height: 1.85; }
+.ionic .line-label { font-weight: 700; margin-bottom: 0; }
+.ionic .line-label + .equation { margin-top: .25em; }
+.ionic .prediction { border: 1px solid var(--rule); padding: .65em .85em; }
+.ionic .coef-controls:not([hidden]) { display: flex; flex-wrap: wrap; gap: .5rem; }
+.ionic .coef-controls button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.ionic caption { text-align: left; font-weight: 700; }
+.ionic .particle-figure { max-width: 360px; margin-inline: auto; padding: .65em; }
+.ionic .particle-figure svg { max-width: 310px; margin-inline: auto; }
+.ionic svg text { text-anchor: middle; fill: #15362f; font-size: 14px; }
+.ionic svg .board-label { font-weight: 700; }
+.ionic svg .cation { fill: #e0eee9; stroke: #36584b; }
+.ionic svg .anion { fill: #f7eed7; stroke: #785a27; }
+.ionic svg .solid-tile { fill: #dce7ee; stroke: #315464; }
+.ionic .screen-compare { display: inline-flex; min-height: 44px; align-items: center; }
+.ionic .activity-return + .screen-compare { margin-inline-start: .5em; }
+.ionic .glossary { display: grid; gap: .7rem 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ionic .glossary dt { margin-top: 0; }
+.ionic .write-lines { display: none; }
+@media (max-width: 480px) {
+  .ionic .glossary { grid-template-columns: 1fr; }
+  .ionic .activity-return + .screen-compare { margin-inline-start: 0; }
+  .ionic .equation { padding-inline: .35em; }
+  .ionic details { padding-inline: .7em; }
+}
+@media print {
+  .lesson.ionic { margin: 0; font-size: 10.5pt; }
+  .ionic h1 { font-size: 27pt; }
+  .ionic h2 { font-size: 17pt; }
+  .ionic h3 { font-size: 13pt; }
+  .ionic p { margin-block: .38em; }
+  .ionic section { margin-top: .9em; }
+  .ionic .activity { padding-top: .65em; }
+  .ionic .activity-evidence, .ionic details, .ionic .prediction { padding: .35em .55em; }
+  .ionic summary { min-height: 0; padding: .2em 0; }
+  .ionic details { margin-block: .5em; }
+  .ionic .activity-evidence, .ionic .equation, .ionic .glossary > div, .ionic .paper-task { break-inside: avoid; }
+  .ionic h2, .ionic h3, .ionic summary, .ionic .line-label { break-after: avoid; }
+  .ionic .coef-controls, .ionic .screen-compare, .ionic .return-link { display: none !important; }
+  .ionic #coef-results th, .ionic #coef-results td { padding: .14em .5em; }
+  .ionic .particle-figure svg { max-height: 2.2in; }
+  .ionic .write-lines { display: block; height: 1.65in; background: repeating-linear-gradient(transparent, transparent calc(.33in - 1px), #9a9a9a calc(.33in - 1px), #9a9a9a .33in); }
+  .ionic .practice-intro, .ionic .comparison-sheet { break-before: page; }
+  .ionic .comparison-sheet details { break-inside: avoid; }
+}
+@media print {
+  .ionic :focus-visible { outline: none; }
+  .ionic .sources { display: none; }
+  .ionic .named { display: grid; grid-template-columns: 1fr 1fr; gap: .8em; }
+  .ionic .named dt { margin-top: 0; }
+  .ionic .paper-task h2, .ionic .paper-task h3 { margin-bottom: .35em; }
+  .ionic .paper-task .equation { margin-block: .25em; }
+  .ionic .write-lines { height: 1.4in; background: repeating-linear-gradient(transparent, transparent calc(.28in - 1px), #9a9a9a calc(.28in - 1px), #9a9a9a .28in); }
+  .ionic .particle-figure { margin-block: .65em; padding-block: .35em; }
+  .ionic .particle-figure figcaption { margin-top: .35em; font-size: 10.5pt; }
+  .ionic #worked details { break-inside: avoid; }
+}
+
+.ionic .print-guided, .ionic .print-value { display: none; }
+.ionic .activity-evidence, .ionic .activity-work { overflow-wrap: anywhere; }
+
+@media print {
+  .ionic .screen-comparison, .ionic .screen-value, .ionic #coef-value { display: none; }
+  .ionic .print-guided, .ionic .print-value { display: revert; }
+  .ionic .prediction, .ionic .warmup, .ionic .inventory-attempt,
+  .ionic .contrast-attempt, .ionic .print-answer { break-inside: avoid; }
+  .ionic .ionic-followthrough { break-before: page; break-inside: avoid; }
+  .ionic .print-answer h3 { margin-block: .7em .15em; }
+}
+
+@media print {
+  .ionic h1, .ionic p { max-width: none; }
+  .ionic .lead { max-width: none; font-size: 12pt; }
+  .ionic .practice-intro { break-before: auto; break-inside: avoid; }
+  .ionic .equation { padding-block: .28em; }
+  .ionic .particle-figure {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+    max-width: none;
+    gap: .7em;
+    margin-block: .35em;
+    padding-block: .2em;
+  }
+  .ionic .particle-figure svg { max-height: 2.1in; }
+  .ionic .particle-figure svg text { font-size: 17.5px; }
+  .ionic .particle-figure figcaption { margin: 0; }
+  .ionic .write-lines { height: 1.2in; background: repeating-linear-gradient(transparent, transparent calc(.24in - 1px), #9a9a9a calc(.24in - 1px), #9a9a9a .24in); }
+}
+
+@media print {
+  .ionic #coef-results {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 0 .6em;
+  }
+  .ionic #coef-results table { grid-area: 1 / 2 / 3; }
+  .ionic #coef-results th, .ionic #coef-results td { padding-block: 0; }
+  .ionic #coef-results .print-guided { grid-column: 1; align-self: start; }
+  .ionic #glossary .glossary { gap: .4rem 1.5rem; }
+  .ionic #glossary dd { margin-block-start: .15em; }
+}
+
+@media screen and (max-width: 380px) {
+  .ionic .prediction { padding-inline: min(.85em, 12px); }
+}

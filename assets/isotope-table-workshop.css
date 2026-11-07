@@ -1,0 +1,97 @@
+.isotope-workshop {
+  --panel: #e8f1ec;
+  --light: #f0f4ef;
+  --rule: #789687;
+  --highlight: #96522b;
+  overflow-wrap: break-word;
+}
+.isotope-workshop .sheet > header,
+.isotope-workshop .sheet > .reading-block { max-width: 780px; margin-inline: auto; }
+.isotope-workshop .lesson-intro { border-top: 4px solid var(--ink); padding-top: 8px; }
+.isotope-workshop .eyebrow {
+  color: #4d654f;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.isotope-workshop h1 { max-width: 20ch; line-height: 1.12; margin-top: 10px; }
+.isotope-workshop h2 { line-height: 1.22; }
+.isotope-workshop h3 { line-height: 1.28; margin-top: 0; }
+.isotope-workshop .activity > h2 { border-top: 1px solid var(--rule); padding-top: 18px; }
+.isotope-workshop .small { font-size: .91em; }
+.isotope-workshop caption { text-align: start; font-size: .91em; font-weight: 700; margin-bottom: 6px; }
+.isotope-workshop tbody th,
+.isotope-workshop tbody td { border-bottom: 1px solid #b4c7bb; font-variant-numeric: tabular-nums; }
+.isotope-workshop .equation {
+  display: block;
+  background: var(--light);
+  padding: 4px 8px;
+  margin-block: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.isotope-workshop .steps { padding-inline-start: 1.35em; }
+.isotope-workshop .steps li + li { margin-top: 10px; }
+.isotope-workshop details { padding: 4px 12px; background: var(--light); }
+.isotope-workshop #mass-scale { max-width: 430px; margin-block: 12px; background: var(--panel); }
+.isotope-workshop #mass-scale svg { max-width: 350px; margin-inline: auto; }
+.isotope-workshop .model-controls { max-width: 430px; }
+.isotope-workshop .model-controls label { font-weight: 700; }
+.isotope-workshop .model-controls output { display: block; margin-block: 3px 10px; }
+.isotope-workshop .practice { padding: 12px; margin-top: 8px; }
+.isotope-workshop .practice:not([data-practice-ready="true"]) { display: none; }
+.isotope-workshop .practice .feedback { margin-block: 8px 0; min-height: 0; }
+.isotope-workshop .practice .feedback:empty { margin: 0; }
+.isotope-workshop .check-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+.isotope-workshop button { max-width: 100%; text-align: start; }
+.isotope-workshop button:disabled { opacity: .73; cursor: default; }
+.isotope-workshop .print-only { display: none; }
+@media (max-width: 420px) {
+  .isotope-workshop #mass-scale { padding: 10px; }
+  .isotope-workshop h1 { font-size: 34px; }
+  .isotope-workshop h2 { font-size: 25px; }
+  .isotope-workshop td, .isotope-workshop th { padding: 5px; }
+}
+@page { size: letter; margin: .56in .63in; }
+@media print {
+  .isotope-workshop { line-height: 1.27; font-size: 10.5pt; }
+  .isotope-workshop .sheet + .sheet { break-before: page; }
+  .isotope-workshop .screen-only, .isotope-workshop .return-link { display: none !important; }
+  .isotope-workshop .print-only { display: block; }
+  .isotope-workshop .task, .isotope-workshop .worked, .isotope-workshop .print-answer,
+  .isotope-workshop dl > div { break-inside: avoid; }
+  .isotope-workshop .sheet > header, .isotope-workshop .sheet > .reading-block { max-width: none; }
+  .isotope-workshop section { margin-top: 14px; }
+  .isotope-workshop .lesson-intro { padding-top: 4px; }
+  .isotope-workshop h1 { max-width: none; font-size: 28pt; margin-top: 0; }
+  .isotope-workshop .lead { font-size: 14pt; }
+  .isotope-workshop h2 { font-size: 17pt; margin-bottom: 6px; }
+  .isotope-workshop h3 { font-size: 12pt; margin-bottom: 3px; }
+  .isotope-workshop .activity > h2 { padding-top: 8px; }
+  .isotope-workshop p { margin-block: 5px; }
+  .isotope-workshop ol { margin-block: 5px; }
+  .isotope-workshop .steps li + li { margin-top: 4px; }
+  .isotope-workshop #mass-scale { width: 300px; margin-block: 5px; padding: 4px; }
+  .isotope-workshop #mass-scale figcaption { font-size: 10pt; margin-top: 1px; }
+  .isotope-workshop .activity-evidence { background: none; border-left: 2px solid #777; padding: 4px 10px; margin-bottom: 5px; }
+  .isotope-workshop th, .isotope-workshop td { padding: 3px 7px; }
+  .isotope-workshop .equation { padding: 2px 6px; margin-block: 2px; }
+  .isotope-workshop dt { margin-top: 7px; }
+  .isotope-workshop .sources { font-size: 10.5pt; }
+}
+
+@media screen {
+  .isotope-workshop .table-scroll {
+    max-inline-size: 100%;
+    overflow-x: auto;
+  }
+  .isotope-workshop .table-scroll:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .isotope-workshop .table-scroll tbody th,
+  .isotope-workshop .table-scroll td { white-space: nowrap; }
+}

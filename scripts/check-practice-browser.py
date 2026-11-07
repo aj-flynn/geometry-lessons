@@ -79,10 +79,20 @@ try:
                             assert disabled, (lesson['file'], 'Native submit available without scripts')
                         if disabled:
                             fallback = form.locator('xpath=following-sibling::*[1][self::details]')
+                            if not fallback.count():
+                                # A paper answer section may be reached by an explicit
+                                # adjacent link rather than an adjacent disclosure.
+                                links = form.locator('xpath=following-sibling::*[1]').locator('a[href^="#"]')
+                                assert links.count() == 1 and links.is_visible(), (lesson['file'], mode, 'missing fallback link')
+                                fragment = links.get_attribute('href')[1:]
+                                assert fragment, 'Empty fallback destination'
+                                target = page.locator('[id=' + json.dumps(fragment) + ']')
+                                assert target.count() == 1, (lesson['file'], mode, 'missing fallback destination')
+                                fallback = target.locator('xpath=ancestor-or-self::details[1]')
                             assert fallback.count() and fallback.is_visible(), (lesson['file'], mode, 'missing visible fallback')
                             assert fallback.inner_text().strip(), 'Empty fallback'
                         # Expose failed controls only for a synthetic native-submission diagnostic.
-                        form.evaluate('f => { f.hidden = false; }')
+                        form.evaluate("f => { f.hidden = false; f.style.setProperty('display', 'block', 'important'); }")
                         for reflection in form.locator('textarea').all():
                             reflection.fill('Synthetic reasoning probe; no learner response.')
                         requests.clear()

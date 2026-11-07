@@ -6,12 +6,25 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="AUTHOR: a public concept summary, with no homework details.">
   <title>AUTHOR: concept title</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261105-r9">
+  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
+  <!-- AUTHOR: for activities that benefit from a persistent current problem, also load
+       ../assets/activity-layout.css?v=20261107-r1 and add activity-lesson to main.
+       Use header/reading-block for ordinary reading. A split activity uses:
+       section.activity > h2 + div.activity-split > aside.activity-evidence + div.activity-work.
+       Give the aside a unique id, tabindex="0", and aria-labelledby pointing to its heading.
+       Put the complete original task evidence in that aside; keep its reasoning in activity-work.
+       A fresh task gets its own evidence-and-work pair. Use a.activity-return linking to that
+       evidence only when a return jump helps in the stacked layout; CSS hides it when paired.
+       Keep all required evidence available with comparisons closed. -->
   <script src="../assets/lesson.js?v=20261105-r9" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <main id="main" class="lesson">
+    <!-- AUTHOR: choose only the teaching patterns this task needs. Replace headings and
+         sequence to fit the subject; neither a geometric diagram nor a manipulative is mandatory.
+         A passage, data table or model can be the instructional evidence. Use a control only
+         when changing or testing something teaches a decision. Check the final paginated printout. -->
     <a class="return-link" href="../index.html">← Lesson library</a>
     <h1>AUTHOR: concept title</h1>
     <p>AUTHOR: one achievable concept goal, written at the approximate grade or course level of the assignment. No original problem or personal context.</p>
@@ -23,16 +36,19 @@
     <section id="glossary" aria-labelledby="glossary-title"><h2 id="glossary-title">Glossary</h2>
       <dl><dt id="term-example">AUTHOR: essential term</dt><dd>AUTHOR: precise definition and notation. Define units too; do not copy an assigned vocabulary answer.</dd></dl>
     </section>
-    <section aria-labelledby="diagram"><h2 id="diagram">See the relationship</h2>
-      <p>AUTHOR: introduce an accurate NEW diagram; explain givens versus appearance.</p>
+    <section aria-labelledby="diagram"><h2 id="diagram">Inspect the evidence</h2>
+      <p>AUTHOR: introduce the original evidence needed for this decision: a passage, diagram, table or model. Explain what is given and what must be inferred.</p>
       <figure>
-        <!-- AUTHOR: replace with a mathematically correct inline SVG, viewBox, title and desc. -->
+        <!-- AUTHOR: supply actual evidence. For a diagram use accurate inline SVG with viewBox,
+             title and desc. Before an attempt, use a neutral title and describe givens and positions,
+             rather than the judgment the learner must make. For reading, use the complete original
+             passage or relevant excerpt. -->
         <figcaption>AUTHOR: equivalent text explanation, all important labels, and scale limitations.</figcaption>
       </figure>
       <div class="practice"><h3>Try the idea here</h3><p>AUTHOR: a fresh transfer check directly after this concept. Change the representation or direction from the taught example. Define new terms inline. Add labeled controls, a conceptual hint, misconception-specific feedback, and retry; no assigned-work grader.</p></div>
     </section>
-    <section aria-labelledby="explore"><h2 id="explore">Make it move</h2>
-      <p>AUTHOR: state a prediction question here, before and outside the closed reveal. Use an easy anchor before complex factors. Add a purposeful, accessible manipulative with keyboard, pause/reset, reduced-motion support, and a static fallback. State model assumptions and limits, label units, and verify endpoints. Shared JS includes optional geometry and practice components. Avoid assigned values or homework-equivalent endpoints.</p>
+    <section aria-labelledby="explore"><h2 id="explore">Test an idea</h2>
+      <p>AUTHOR: include this pattern only when comparing or changing something helps the learner reason. Put the prediction before outcome controls in every layout and outside the closed reveal. Supply the actual evidence for the comparison. If using a manipulative, provide keyboard, reset, motion controls where needed, and static fallback; state model limits, label units and verify endpoints. Avoid assigned values or homework-equivalent cases.</p>
       <details><summary>Reveal and compare</summary><p>AUTHOR: accurate visual result and explanation. The prediction must remain visible while this is closed.</p></details>
       <div class="practice"><h3>Use the relationship</h3><p>AUTHOR: a new transfer check with a plausible misconception, targeted feedback and retry, before introducing the next concept.</p></div>
     </section>

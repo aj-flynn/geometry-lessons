@@ -1,6 +1,6 @@
 # Assignment-to-lesson evaluation rubric
 
-Rubric edition: **2026-11-05 — assignment focus, grade-level fit, and in-context notation and definitions**.
+Rubric edition: **2026-11-07 — usable task evidence, activity-level layout, and meaningful responsive directions**.
 
 Evaluate how well a lesson turns an assignment's underlying concepts into accurate, engaging, accessible teaching that helps a learner at the approximate level of the assignment return to the work independently. The lesson teaches the thinking without completing the assigned work.
 
@@ -41,7 +41,7 @@ The six groups retain the existing weights. Score the 23 categories within them;
 | ID | Category | Maximum points | Meaning |
 | --- | --- | ---: | --- |
 | C1 | Originality and practice quality | 3 | New examples preserve the intended reasoning while differing meaningfully from assigned work. Varied practice develops understanding rather than rewarding copying, guessing from answer cues, or repeating a displayed result. |
-| C2 | Purposeful interactive learning and formative checks | 4 | The learner actively thinks and checks understanding throughout the lesson. Where changing, comparing, constructing, or testing something improves understanding, meaningful interaction lets the learner explore it and interpret the result. Prediction, observation, and explanation connect the activity to the concept. |
+| C2 | Purposeful interactive learning and formative checks | 4 | The learner actively thinks and checks understanding throughout the lesson. Where changing, comparing, constructing, or testing something improves understanding, meaningful interaction lets the learner explore it and interpret the result. Prediction, observation, and explanation connect the activity to the concept. Each requested learner action is possible using the supplied evidence and controls. Objects to count, sketches to inspect, and other required inputs are actually present. Predictions and independent attempts precede outcomes or answer cues in visible content and accessible descriptions. |
 | C3 | Feedback, misconceptions, and retry | 3 | Feedback explains reasoning, addresses plausible misconceptions, and helps the learner recover and try again. It responds usefully to mistakes without confusing correctness on one exercise with mastery. |
 | C4 | Retrieval and retention support | 2 | The lesson creates opportunities to recall ideas and revisit them later, supporting retention beyond immediate recognition. It encourages recall without making unsupported claims about lasting mastery. |
 | C5 | Transfer and return to independent work | 3 | Practice includes new contexts or representations and opportunities to choose among methods. The learner leaves with ways to explain and check their reasoning on the assignment independently. |
@@ -52,7 +52,7 @@ Interactivity is valuable when it serves the learning. Examples include changing
 
 | ID | Category | Maximum points | Meaning |
 | --- | --- | ---: | --- |
-| D1 | Beautiful design | 8 | Typography, color, spacing, alignment, and composition create a coherent, polished, appealing experience suited to the learner and subject. Clear hierarchy, balanced density, and thoughtful mobile and desktop layouts help the learner navigate and focus. |
+| D1 | Beautiful design | 8 | Typography, color, spacing, alignment, and composition create a coherent, polished, appealing experience suited to the learner and subject. Clear hierarchy, balanced density, and thoughtful mobile and desktop layouts help the learner navigate and focus. Composition fits each activity's evidence use: repeated reference to a concrete current problem, diagram, or givens supports an evidence-and-reasoning split; narrative, extended reading, and writing retain ordinary reading flow. Compact source analysis may benefit from a split. Persistent evidence shows the current original task, and each distinct task has its own relevant evidence. |
 | D2 | High-quality instructional visuals | 7 | Diagrams, graphs, illustrations, and annotated passages make ideas easier to understand. They are accurate, sharp, thoughtfully composed, clearly labeled, and readable at relevant sizes. Consistent visual conventions, useful comparisons, and integration with the explanation make the visuals part of the teaching. |
 
 Beauty includes both care in execution and fitness for the lesson. A restrained design can be excellent. Visual quality concerns the explanatory graphics themselves, while beautiful design concerns the overall presentation; neither requires a particular aesthetic or production tool.
@@ -62,7 +62,7 @@ Beauty includes both care in execution and fitness for the lesson. A restrained 
 | ID | Category | Maximum points | Meaning |
 | --- | --- | ---: | --- |
 | E1 | Accessibility | 10 | Learners with differing sensory, motor, and cognitive needs can understand and use the lesson. This includes meaningful text alternatives, keyboard and assistive-technology support, readable contrast and structure, visible focus, accessible feedback, adaptable layouts, and control over motion. Applicable WCAG 2.2 A/AA criteria provide a reference. |
-| E2 | Interaction correctness and control | 3 | Controls behave correctly and predictably, preserve valid states, and communicate meaningful results. The learner can control pacing, repeat an exploration, and recover from errors. |
+| E2 | Interaction correctness and control | 3 | Controls behave correctly and predictably, preserve valid states, and communicate meaningful results. The learner can control pacing, repeat an exploration, and recover from errors. Directions and navigation match the content's actual position and visibility in wide and narrow layouts; controls have a useful destination or effect. |
 | E3 | Technical resilience and navigation | 2 | The lesson loads reliably, has working assets and navigation, and remains useful across relevant devices and viewing conditions. Static and print alternatives preserve the teaching, and the Lesson library link provides a clear return path. |
 
 [WCAG 2.2](https://www.w3.org/TR/WCAG22/) is an accessibility reference, not a claim that this rubric constitutes a conformance audit. Accessibility limitations should be explained as part of the review.

@@ -1,0 +1,127 @@
+.map-lesson .subject-mark {
+  margin-top: 20px;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.map-lesson .activity-evidence {
+  background: #e8f1ec;
+}
+.map-lesson .activity-evidence:has(.map-description[open]) {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+.map-lesson .field-map {
+  border: 1px solid #60786d;
+}
+.map-lesson .shifted-map {
+  display: block;
+  width: min(100%, 340px);
+  height: auto;
+}
+.map-symbol {
+  display: inline-block;
+  width: 1.25em;
+  margin-right: .25em;
+  vertical-align: .15em;
+}
+.map-symbol.solid {
+  height: .64em;
+  background: #455f50;
+}
+.map-lesson .map-description {
+  padding: 3px 12px;
+  background: #f5faf7;
+}
+.map-lesson .map-description summary { padding-block: 8px; }
+.map-lesson .map-context { font-size: 17px; }
+.map-lesson textarea {
+  display: block;
+  width: 100%;
+  margin-block: 6px 12px;
+  padding: 12px;
+  border: 2px solid #455f50;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  resize: vertical;
+}
+.map-lesson textarea:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.map-lesson label { font-weight: 700; }
+.paper-lines { display: none; }
+
+@media print {
+  @page { size: letter; margin: .55in; }
+  .map-lesson {
+    print-color-adjust: exact;
+    font-size: 11pt;
+    line-height: 1.35;
+  }
+  .map-lesson h1 { max-width: none; font-size: 24pt; }
+  .map-lesson h2 { margin-bottom: 10px; }
+  .map-lesson section { margin-top: 17px; }
+  .map-lesson p { margin-block: 8px; }
+  .map-lesson details { margin-block: 8px; }
+  .map-lesson li + li { margin-top: 6px; }
+  .map-lesson header .return-link { display: none; }
+  .map-lesson header .subject-mark { margin-top: 0; }
+  .map-lesson .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+    gap: 18px;
+  }
+  .map-lesson .activity-evidence { padding: 12px; }
+  .map-lesson .activity-evidence figcaption,
+  .map-lesson .map-context { font-size: 11pt; }
+  .map-lesson .shifted-map {
+    float: right;
+    max-width: 1.88in;
+    margin: 2px 0 5px 8px;
+  }
+  .map-lesson dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 16px;
+  }
+  .map-lesson dt { margin-top: 0; }
+  .map-lesson .activity-evidence svg { max-height: none; }
+  .map-lesson .print-together,
+  .map-lesson .glossary-sheet,
+  .map-lesson dl > div { break-inside: avoid; }
+  .map-lesson .next-sheet {
+    break-before: page;
+    margin-top: 0;
+  }
+  .map-lesson .map-description,
+  .map-lesson textarea { display: none; }
+  .map-lesson .screen-comparison { padding: 0; }
+  .map-lesson .screen-comparison summary { min-height: 0; }
+  .map-lesson .paper-lines {
+    display: grid;
+    grid-template-rows: repeat(6, .50in);
+  }
+  .map-lesson .paper-lines span { border-bottom: 1px solid #88958d; }
+}
+
+/* Paper answers start after the last attempt. */
+.map-lesson .paper-answer-key,
+.map-lesson .paper-only { display: none; }
+@media print {
+  .map-lesson .screen-answer,
+  .map-lesson .screen-only { display: none; }
+  .map-lesson .paper-only { display: block; }
+  .map-lesson .paper-answer-key { display: block; break-before: page; }
+  .map-lesson .paper-answer { break-inside: avoid; }
+  .map-lesson .paper-answer + .paper-answer { margin-top: 16px; }
+  .map-lesson:has(.paper-answer-key)::before { content: none; }
+}
+
+@media print {
+  .map-lesson header { break-inside: avoid; }
+  .map-lesson .paper-answer { display: flow-root; }
+}

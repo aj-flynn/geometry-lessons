@@ -1,0 +1,138 @@
+.dialogue-lesson {
+  --ink: #29241d;
+  --surface: #f3ece0;
+  --mark: #f9dfab;
+  --line: #bca98b;
+  --rust: #873b21;
+  --serif: Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+body:has(.dialogue-lesson) { background: #fbf8f0; }
+.dialogue-lesson :is(h1,h2,h3) { font-family: var(--serif); line-height: 1.12; letter-spacing: -.02em; }
+.dialogue-lesson :is(h1,h2,h3,p,li,dd,dt,summary,a,button) { overflow-wrap: anywhere; }
+.dialogue-lesson h1 { font-size: clamp(3rem, 8vw, 6.8rem); max-width: none; line-height: .99; margin: .2em 0; }
+.dialogue-lesson h2 { font-size: clamp(1.75rem, 3vw, 2.65rem); }
+.dialogue-lesson h3 { font-size: clamp(1.25rem, 2.2vw, 1.55rem); }
+.dialogue-lesson .return-link { margin-bottom: 1.25rem; color: var(--rust); font-weight: 700; }
+.lesson-masthead { border-block: 1px solid var(--line); padding: clamp(1rem, 4.5vw, 3.3rem) clamp(0.7rem, 4.3vw, 3.6rem); background: #f1e8d8; }
+.dialogue-lesson .folio, .dialogue-lesson .sheet-label, .dialogue-lesson .annotation-label, .dialogue-lesson .claim-label {
+  color: var(--rust); font-size: .82rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+}
+.dialogue-lesson .folio, .dialogue-lesson .sheet-label { margin-top: 0; }
+.folio span, .sheet-label span { margin-inline: .25em; }
+.lede { font: 1.35rem/1.4 var(--serif); max-width: 45ch; }
+.aim { max-width: 58ch; }
+.dialogue-lesson .lesson-nav { display: flex; flex-wrap: wrap; gap: .15rem 1.3rem; margin: .5rem 0 2rem; }
+.dialogue-lesson .lesson-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; }
+.entry-check { padding-inline-start: 1rem; border-inline-start: 3px solid var(--rust); }
+.dialogue-lesson .entry-check h2 { font-size: 1.4rem; margin-bottom: .35rem; }
+.dialogue-lesson .entry-check p { margin-block: .6rem; }
+.dialogue-lesson .activity { border-block-start: 1px solid var(--line); padding-top: 1.25rem; }
+.dialogue-lesson .script-sheet { background: #f3ecde; color: var(--ink); border: 1px solid var(--line); border-top: 4px solid var(--rust); }
+.dialogue-lesson .activity-evidence { padding: clamp(.85rem, 2.7vw, 1.55rem); }
+.dialogue-lesson .script-sheet p:not(.sheet-label,.stage,.margin-note), .dialogue-lines {
+  font-family: var(--serif); font-size: 1.13em; line-height: 1.5;
+}
+.dialogue-lesson .script-sheet b { font-family: var(--font); font-size: .85em; }
+.stage { font-style: italic; color: #615345; }
+.margin-note { color: #615345; font-size: .9em; padding-top: .6rem; border-top: 1px solid var(--line); }
+.dialogue-lesson mark { color: inherit; background: var(--mark); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.dialogue-lesson figure.annotation { margin-inline: 0; background: #f5ead6; border-inline-start: 4px solid var(--rust); padding: 1rem; }
+.dialogue-lesson .annotation blockquote { margin: 0; font: 1.4rem/1.45 var(--serif); }
+.dialogue-lesson .annotation-label { margin: .5rem 0 .2rem; }
+.dialogue-lesson figcaption { margin-top: .35rem; font-size: 1em; }
+.dialogue-lesson :is(.method-steps,.checklist) { padding-inline-start: 1.5em; }
+.dialogue-lesson :is(.method-steps,.checklist) li + li { margin-top: .85rem; }
+.dialogue-lesson li::marker { color: var(--rust); font-weight: 700; }
+.dialogue-lesson .revision { border-inline-start: 3px solid var(--line); padding-inline-start: .85rem; }
+.dialogue-lesson .activity-return { color: var(--rust); }
+.dialogue-lesson .claim-lab { margin-block: 1rem; padding: clamp(.75rem, 3vw, 1.35rem); background: var(--surface); }
+.dialogue-lesson .claim-title { font-weight: 700; margin-block-end: .15rem; }
+.dialogue-lesson .claim-title + p { margin-top: .25rem; }
+.claim-choices { display: flex; flex-wrap: wrap; gap: .65rem; }
+.dialogue-lesson button { border: 2px solid var(--ink); background: #fbf8f0; color: var(--ink); padding: .45em .75em; max-width: 100%; text-align: left; }
+.dialogue-lesson button[aria-pressed="true"], .dialogue-lesson [data-lens-reveal] { background: var(--ink); color: #fff; }
+.dialogue-lesson .lens-copy { border-top: 1px solid var(--line); padding-top: 1rem; }
+.dialogue-lesson .screen-reader { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.dialogue-lesson .inset { padding: 0 1rem; }
+.dialogue-lines { padding-inline-start: 1.5em; margin: 1rem 0 0; }
+.dialogue-lines li + li { margin-top: .6em; }
+.independent-review { max-width: 780px; margin: 1.5rem auto 0; }
+.dialogue-lesson .answer-set > div + div, .dialogue-lesson .glossary dl > div + div { border-top: 1px solid var(--line); margin-top: .85rem; padding-top: .35rem; }
+.dialogue-lesson .answer-set div, .dialogue-lesson .glossary dl div { break-inside: avoid; }
+.dialogue-lesson :is(summary, .activity-evidence, [tabindex="-1"]):focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; }
+.dialogue-lesson .recall { margin-top: 2.2rem; }
+.dialogue-lesson .print-space, .dialogue-lesson .print-only { display: none; }
+@media (max-width: 480px) {
+  .dialogue-lesson .title-break { display: none; }
+  .dialogue-lesson details { padding: .7rem .8rem; }
+}
+@media print {
+  @page { margin: 0.55in; }
+  body:has(.dialogue-lesson) { background: #fff; }
+  .dialogue-lesson { font-size: 11pt; line-height: 1.37; }
+  .dialogue-lesson .return-link, .dialogue-lesson .lesson-nav, .dialogue-lesson .claim-lab { display: none !important; }
+  .dialogue-lesson .screen-comparison { display: none !important; }
+  .dialogue-lesson h1 { font-size: 33pt; }
+  .dialogue-lesson h2 { font-size: 21pt; break-after: avoid; }
+  .dialogue-lesson h3 { font-size: 15pt; break-after: avoid; }
+  .dialogue-lesson :is(.lesson-masthead,.activity-evidence,.entry-check,.recall,figure) { break-inside: avoid; }
+  .dialogue-lesson .lesson-masthead { padding: 12pt; }
+  .dialogue-lesson .activity { margin-top: 22pt; padding-top: 10pt; }
+  .dialogue-lesson .activity-evidence, .dialogue-lesson details { padding: 8pt 12pt; }
+  .dialogue-lesson .activity-split > aside + div { margin-top: 8pt; }
+  .dialogue-lesson .activity-split > aside { break-after: avoid; }
+  .dialogue-lesson .independent, .dialogue-lesson .independent-review { break-before: page; }
+  .dialogue-lesson .independent .activity-split { break-inside: avoid; }
+  .dialogue-lesson .independent-review { margin-top: 0; }
+  .dialogue-lesson .print-space { display: block; }
+  .dialogue-lesson .print-space div { border-bottom: 1px solid #777; min-height: 14pt; }
+  .dialogue-lesson .dialogue-lines { font-size: 11pt; line-height: 1.28; margin-top: 6pt; }
+  .dialogue-lesson .dialogue-lines li + li { margin-top: 4pt; }
+  .dialogue-lesson .print-pair, .dialogue-lesson #lab .activity-split { break-inside: avoid; }
+}
+
+@media print {
+  .dialogue-lesson p { margin-block: 6pt; }
+  .dialogue-lesson :is(.lesson-masthead,.entry-check) { padding-block: 5pt; }
+  .dialogue-lesson .title-break { display: none; }
+  .dialogue-lesson .lesson-masthead h1 { margin-block: 4pt; }
+  .dialogue-lesson section { margin-top: 14pt; }
+  .dialogue-lesson .activity { margin-top: 14pt; padding-top: 7pt; }
+  .dialogue-lesson :is(h2,h3) { margin-bottom: 7pt; }
+  .dialogue-lesson details { margin-block: 5pt; }
+  .dialogue-lesson summary { display: block; min-height: 0; padding-block: 3pt; outline: none !important; }
+  .dialogue-lesson .answer-set > div + div, .dialogue-lesson .glossary dl > div + div { margin-top: 4pt; padding-top: 2pt; }
+  .dialogue-lesson .answer-set dt, .dialogue-lesson .glossary dt { margin-top: 3pt; }
+  .dialogue-lesson .method-steps li + li, .dialogue-lesson .checklist li + li { margin-top: 5pt; }
+  .dialogue-lesson figure.annotation { margin-block: 8pt; padding: 8pt; }
+  .dialogue-lesson :is(#lab, .independent) .activity-split { display: grid; grid-template-columns: 1.12fr 1fr; gap: 16pt; align-items: start; }
+  .dialogue-lesson :is(#lab, .independent) .activity-split > aside + div { margin-top: 0; }
+}
+/* The longer scene and its two short prompts start together. Let the scene
+   extend with the page so no line is trapped inside a second scroll area. */
+@container (min-width: 900px) {
+  .dialogue-lesson .independent .activity-evidence {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+@media print {
+  .dialogue-lesson .print-only { display: block; }
+  .dialogue-lesson .paper-route { font-size: 10.5pt; margin-block: 8pt; }
+  .dialogue-lesson .activity > .folio { break-after: avoid; }
+  .dialogue-lesson .reference-detail p { break-inside: avoid; max-width: none; }
+  .dialogue-lesson .independent-review {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+    gap: 5pt 14pt;
+    align-items: start;
+  }
+  .dialogue-lesson .independent-review > h3 { grid-column: 1 / -1; }
+  .dialogue-lesson .independent-review details { padding: 0; margin: 0; }
+  .dialogue-lesson .glossary dl { columns: 2; column-gap: 16pt; }
+  .dialogue-lesson .paper-comparisons { break-before: page; margin-top: 0; }
+  .dialogue-lesson .paper-comparisons > div { break-inside: avoid; margin-top: 14pt; }
+}

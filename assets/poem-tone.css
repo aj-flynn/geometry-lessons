@@ -1,0 +1,124 @@
+.tone-lesson {
+  font-size: 1.125rem;
+  overflow-wrap: anywhere;
+}
+
+.lesson.tone-lesson h1 {
+  max-width: 17ch;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+}
+
+.lesson.tone-lesson h2 { font-size: clamp(1.625rem, 3vw, 2rem); }
+.lesson.tone-lesson h3 { font-size: 1.375rem; }
+.tone-lesson .lesson-label { font-size: .9em; font-weight: bold; }
+.tone-lesson .poem {
+  font-family: Georgia, serif;
+  line-height: 1.45;
+  margin-block: .6em;
+  padding-inline-start: 2.15em;
+}
+.tone-lesson .poem li { padding-inline-start: .25em; }
+.tone-lesson .poem li::marker { font: .78em Arial, sans-serif; }
+.tone-lesson .word-pair { padding-inline-start: 1.5em; }
+.tone-lesson blockquote { margin: 0; }
+.tone-lesson .first-try {
+  border-inline-start: 3px solid currentColor;
+  padding-inline-start: 1em;
+}
+.lesson.tone-lesson .close-reading { padding: 1em; background: #e8f1ec; }
+.tone-lesson .close-reading q { font-family: Georgia, serif; font-weight: bold; }
+.lesson.tone-lesson .close-reading figcaption { font-size: .95em; margin-top: .6em; }
+.tone-lesson .writing-lines { display: none; }
+
+@media print {
+  .lesson.tone-lesson {
+    display: flex;
+    flex-direction: column;
+    font-size: 11pt;
+    line-height: 1.3;
+  }
+  .tone-lesson .print-instruction { display: block; }
+  .lesson.tone-lesson h1 { font-size: 28pt; }
+  .lesson.tone-lesson h2 { font-size: 17pt; margin-bottom: 9pt; break-after: avoid; }
+  .lesson.tone-lesson h3 { font-size: 13pt; break-after: avoid; }
+  .lesson.tone-lesson section { margin-top: 15pt; }
+  .lesson.tone-lesson p { max-width: none; margin-block: 6pt; }
+  .lesson.tone-lesson details { padding: 0; margin-block: 7pt; break-inside: avoid; }
+  .lesson.tone-lesson summary { min-height: 0; padding: 0; outline: none; }
+  .lesson.tone-lesson .return-link { min-height: 0; }
+  .lesson.tone-lesson .activity-evidence { background: transparent; padding: 0; }
+  .lesson.tone-lesson .close-reading { margin-block: 9pt; padding: .7em; }
+  .lesson.tone-lesson dl { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 16pt; }
+  .lesson.tone-lesson dt { margin-top: 0; }
+  /* Group the short attempts before their comparison pages. */
+  .tone-lesson #start,
+  .tone-lesson #worked,
+  .tone-lesson #worked .activity-split,
+  .tone-lesson #worked .activity-work,
+  .tone-lesson .parcel-model,
+  .tone-lesson .parcel-model::details-content,
+  .tone-lesson #repair,
+  .tone-lesson #retry,
+  .tone-lesson #return { display: contents; }
+
+  .tone-lesson .door-prompt,
+  .tone-lesson #worked-title,
+  .tone-lesson #parcel,
+  .tone-lesson .worked-prompt { order: 1; }
+  .tone-lesson #start > details,
+  .tone-lesson .parcel-model > summary,
+  .tone-lesson .parcel-explanation,
+  .tone-lesson .repair-prompt,
+  .tone-lesson .tower-prompt { order: 2; }
+  .tone-lesson #repair details,
+  .tone-lesson #retry > details,
+  .tone-lesson #independent { order: 3; }
+  .tone-lesson .recall-prompt { order: 4; }
+  .tone-lesson #return > details,
+  .tone-lesson .return-checklist,
+  .tone-lesson #glossary,
+  .tone-lesson .sources { order: 5; }
+
+  .tone-lesson #start > details,
+  .tone-lesson #repair details,
+  .tone-lesson .independent-comparison,
+  .tone-lesson #return > details { break-before: page; }
+
+  .tone-lesson .door-prompt,
+  .tone-lesson .worked-prompt,
+  .tone-lesson .parcel-explanation,
+  .tone-lesson .repair-prompt,
+  .tone-lesson .tower-prompt,
+  .tone-lesson .activity-evidence,
+  .tone-lesson .independent-prompt,
+  .tone-lesson .recall-prompt,
+  .tone-lesson dl div { break-inside: avoid; }
+
+  .tone-lesson #parcel,
+  .tone-lesson #sound-check { break-after: avoid; }
+  .tone-lesson .worked-prompt,
+  .tone-lesson .independent-prompt { break-before: avoid; }
+  .tone-lesson #sound-check .poem { columns: 2; column-gap: 24pt; }
+  .tone-lesson #sound-check li { break-inside: avoid; }
+  .tone-lesson .door-prompt,
+  .tone-lesson #worked-title,
+  .tone-lesson .tower-prompt,
+  .tone-lesson .recall-prompt,
+  .tone-lesson .return-checklist { margin-top: 15pt; }
+  .tone-lesson .door-prompt::after,
+  .tone-lesson .worked-prompt::after,
+  .tone-lesson .repair-prompt::after,
+  .tone-lesson .tower-prompt::after,
+  .tone-lesson .recall-prompt::after {
+    content: "";
+    display: block;
+    min-height: 1.35em;
+    border-bottom: 1px solid #888;
+  }
+  .tone-lesson .writing-lines {
+    display: block;
+    height: 10em;
+    background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(2em - 1px), #888 calc(2em - 1px), #888 2em);
+    print-color-adjust: exact;
+  }
+}

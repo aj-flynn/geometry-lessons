@@ -1,0 +1,66 @@
+.cooling-lesson header { border-block-end: 2px solid #9fbdb0; padding-block-end: 24px; }
+.cooling-lesson .lead { max-width: 42ch; }
+.cooling-lesson .measure { white-space: nowrap; }
+.cooling-lesson .equations { padding-inline-start: 1.4em; }
+.cooling-lesson .equations li + li { margin-top: .45em; }
+.cooling-lesson .stack-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cooling-lesson .stack-pair > div { display: flex; flex-direction: column; justify-content: end; gap: 4px; align-items: start; }
+.cooling-lesson .tile-shape { width: min(100%, 72px); height: 12px; background: #9ac8bd; border: 1px solid #20473a; }
+.cooling-lesson button[hidden] { display: none; }
+.cooling-lesson .cause-path { display: flex; flex-wrap: wrap; gap: 8px 28px; padding-inline-start: 1.5em; margin-block: 18px; }
+.cooling-lesson .cause-path li { max-width: 16ch; font-weight: 700; }
+.cooling-lesson .worked-case + .practice { margin-top: 24px; }
+.cooling-lesson .procedure { margin-block: 0; padding-inline-start: 1.4em; }
+.cooling-lesson .procedure li + li { margin-block-start: .7em; }
+.cooling-lesson .procedure svg { margin-block: 8px 4px; max-width: 290px; }
+.cooling-lesson .procedure svg text { font-size: 19px; font-weight: 700; fill: #173b30; }
+.cooling-lesson .diagram-key { display: block; font-size: .96em; }
+.cooling-lesson .write-lines, .cooling-lesson .print-instruction { display: none; }
+.cooling-lesson .independent-comparison { max-width: 780px; margin-inline: auto; }
+.cooling-lesson dt { scroll-margin-top: 16px; }
+@media (max-width: 600px) {
+  .cooling-lesson .cause-path { flex-direction: column; }
+  .cooling-lesson .cause-path li { max-width: none; }
+}
+@media print {
+  .cooling-lesson { font-size: 12pt; line-height: 1.38; }
+  .cooling-lesson p { max-width: none; margin-block: 9px; }
+  .cooling-lesson header { padding-block-end: 12px; }
+  .cooling-lesson .lead { font-size: 15pt; }
+  .cooling-lesson section { margin-block-start: 20px; }
+  .cooling-lesson h2, .cooling-lesson h3 { margin-block-end: 9px; }
+  .cooling-lesson details { padding: 6px 12px; }
+  .cooling-lesson summary { min-height: 0; }
+  .cooling-lesson .screen-instruction { display: none; }
+  .cooling-lesson .print-instruction { display: block; }
+  .cooling-lesson .independent { break-before: page; }
+  .cooling-lesson .independent-comparison { break-before: page; margin: 0; }
+  .cooling-lesson .activity-split, .cooling-lesson details, .cooling-lesson dl > div, .cooling-lesson .practice { break-inside: avoid; }
+  .cooling-lesson .independent .activity-split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; }
+  .cooling-lesson #tile-evidence { margin-bottom: 12px; }
+  .cooling-lesson section[aria-labelledby="reverse"] { break-inside: avoid; }
+  .cooling-lesson h2, .cooling-lesson h3 { break-after: avoid; }
+  .cooling-lesson .write-lines { display: block; }
+  .cooling-lesson .write-lines span { display: block; height: 1.6em; border-bottom: 1px solid #a0a0a0; }
+  .cooling-lesson .activity-evidence { padding: 12px; }
+  .cooling-lesson .procedure svg { width: min(100%, 240px); }
+}
+
+/* Paper answers start after the last attempt. */
+.cooling-lesson .paper-answer-key,
+.cooling-lesson .paper-only { display: none; }
+@media print {
+  .cooling-lesson .screen-answer,
+  .cooling-lesson .screen-only { display: none; }
+  .cooling-lesson .paper-only { display: block; }
+  .cooling-lesson .paper-answer-key { display: block; break-before: page; }
+  .cooling-lesson .paper-answer { break-inside: avoid; }
+  .cooling-lesson .paper-answer + .paper-answer { margin-top: 16px; }
+  .cooling-lesson:has(.paper-answer-key)::before { content: none; }
+}
+
+@media print {
+  .cooling-lesson .paper-task, .cooling-lesson .worked-case,
+  .cooling-lesson .activity[aria-labelledby="model"],
+  .cooling-lesson .independent { break-inside: avoid; }
+}

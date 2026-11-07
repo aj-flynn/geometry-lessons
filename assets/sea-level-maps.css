@@ -1,0 +1,118 @@
+.sea-header { border-top: 6px solid #08766c; padding-top: 8px; }
+.sea-header .sea-kicker { margin: 22px 0 10px; color: #285b54; font-weight: 700; }
+.sea-lesson .activity-evidence { background: #e6f2ef; }
+.sea-lesson .map-note { font-size: .96em; }
+.survey-maps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.sea-lesson .survey-map figcaption { margin: 0 0 4px; font-weight: 700; }
+.sea-lesson .survey-map svg { border: 1px solid #486c65; }
+.sea-lesson .coast { fill: #e5e5e3; stroke: #454a49; stroke-width: 1; }
+.sea-lesson .coast-name, .north-arrow text { fill: #17282c; font: bold 12px Arial, sans-serif; }
+.sea-lesson .coast-name { paint-order: stroke; stroke: #e5e5e3; stroke-width: 2; }
+.sea-lesson .north-arrow text { text-anchor: middle; paint-order: stroke; stroke: #fff; stroke-width: 2.5; }
+.sea-lesson .north-arrow path { fill: none; stroke: #17282c; stroke-width: 1.5; }
+.sea-lesson .north-arrow .arrow-halo { stroke: #fff; stroke-width: 3.4; }
+.sea-lesson .map-grid path { fill: none; stroke: #17282c; stroke-width: .55; stroke-dasharray: 3 2; }
+.sea-lesson .map-grid .grid-halo { stroke: #fff; stroke-width: 1.6; }
+.sea-lesson .map-grid text { fill: #17282c; paint-order: stroke; stroke: #fff; stroke-width: 2; font: bold 9.5px Arial, sans-serif; }
+.map-key { margin-top: 12px; font-size: .95em; }
+.key-strip { height: 14px; border: 1px solid #486c65; background: linear-gradient(to right, #452664, #9b78ba, #fff5da, #5dbda8, #095851); }
+.key-ticks { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); text-align: center; font-variant-numeric: tabular-nums; }
+.key-ticks span { grid-row: 1; }
+.key-ticks span:first-child { grid-column: 1 / 3; text-align: left; }
+.key-ticks span:nth-child(2) { grid-column: 2 / 4; }
+.key-ticks span:nth-child(3) { grid-column: 4 / 6; }
+.key-ticks span:nth-child(4) { grid-column: 6 / 8; }
+.key-ticks span:last-child { grid-column: 7 / 9; text-align: right; }
+.sea-lesson .map-text { margin: 12px 0 0; padding: 4px 12px; background: #f6faf8; }
+.sea-lesson .map-text p { font-size: .95em; }
+.text-survey { margin-block: 10px; }
+.sea-lesson .text-survey dl > div { margin-top: 9px; padding-inline-start: 10px; border-inline-start: 2px solid #78a299; }
+.sea-lesson .text-survey dt { margin-top: 0; }
+.sea-lesson .text-survey dd { margin-top: 3px; }
+.sea-lesson .text-survey .shade-sample { display: block; }
+.sea-lesson .activity-evidence:has(.map-text[open]) { position: static; max-height: none; overflow: visible; }
+.sea-lesson ol { padding-inline-start: 1.5em; }
+.sea-lesson li + li { margin-top: 10px; }
+.sea-lesson .math-line { font-variant-numeric: tabular-nums; }
+.sea-lesson .compartment-figure { max-width: 520px; margin-bottom: 0; padding: 12px; background: #e6f2ef; }
+.sea-lesson .compartment-figure svg text { font: bold 14px Arial, sans-serif; fill: #17282c; }
+.sea-lesson .compartment-figure figcaption { margin: 4px 0 0; }
+.sea-lesson .survey-prompts p { margin-top: 0; }
+.sea-lesson button:disabled { opacity: .65; cursor: default; }
+@media (max-width: 600px) {
+  .survey-maps { grid-template-columns: 1fr; gap: 12px; }
+}
+@media print {
+  .sea-lesson { font-size: 11pt; line-height: 1.35; print-color-adjust: exact; }
+  .sea-lesson .sea-header { padding-top: 0; }
+  .sea-lesson .sea-header h1 { max-width: none; font-size: 25pt; }
+  .sea-lesson .sea-header .sea-kicker { margin: 4px 0; }
+  .sea-lesson .sea-header .lead { font-size: 14pt; }
+  .sea-lesson .sea-header .return-link { display: none; }
+  .sea-lesson p { max-width: none; margin-block: 7px; }
+  .sea-lesson details { padding: 4px 8px; margin-block: 5px; }
+  .sea-lesson summary { min-height: 0; padding-block: 4px; break-after: avoid; }
+  .sea-lesson h2 { margin-bottom: 10px; }
+  .sea-lesson h3 { font-size: 14pt; }
+  .sea-lesson section { margin-top: 20px; }
+  .sea-lesson .survey-map svg { max-height: 138px; }
+  .sea-lesson .survey-maps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sea-lesson .activity-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; }
+  .sea-lesson .activity-evidence { padding: 10px; }
+  .sea-lesson .map-text { padding: 3px; margin-top: 5px; }
+  .sea-lesson .map-text p, .sea-lesson .map-text summary, .text-survey { font-size: 9.5pt; line-height: 1.25; }
+  .sea-lesson .map-text summary { min-height: 0; padding-block: 2px; }
+  .sea-lesson .survey, .sea-lesson .survey-compare { break-before: page; }
+  .sea-lesson section:has(> #test-causes) { break-before: page; }
+  .sea-lesson .survey .activity-split { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  .sea-lesson .survey .activity-work { margin-top: 0; }
+  .sea-lesson .survey, .sea-lesson .activity-split, .sea-lesson .mechanism-task,
+  .sea-lesson .compartment-figure, .sea-lesson dl > div { break-inside: avoid; }
+  .sea-lesson .survey .practice { display: none; }
+  .sea-lesson .compartment-figure { margin-top: 10px; }
+  .sea-lesson .compartment-figure svg { max-height: 104px; }
+  .sea-lesson .survey-prompts li, .sea-lesson .survey-compare p { break-inside: avoid; }
+  .sea-lesson h2, .sea-lesson h3 { break-after: avoid; }
+}
+
+/* Paper answers start after the last attempt. */
+.sea-lesson .paper-answer-key,
+.sea-lesson .paper-only { display: none; }
+@media print {
+  .sea-lesson .screen-answer,
+  .sea-lesson .screen-only { display: none; }
+  .sea-lesson .paper-only { display: block; }
+  .sea-lesson .paper-answer-key { display: block; break-before: page; }
+  .sea-lesson .paper-answer { break-inside: avoid; }
+  .sea-lesson .paper-answer + .paper-answer { margin-top: 16px; }
+  .sea-lesson:has(.paper-answer-key)::before { content: none; }
+}
+
+.sea-lesson .survey-map .map-grid text { font-size: 10.5px; }
+.sea-lesson .survey-pause { border-inline-start: 3px solid #08766c; padding-inline-start: 12px; }
+.sea-lesson .survey-prompts + .paper-task { margin-top: 12px; }
+@media print {
+  .sea-lesson .sea-header, .sea-lesson .paper-task, .sea-lesson .recall-survey { break-inside: avoid; }
+  .sea-lesson .survey-compare { break-before: auto; }
+  .sea-lesson .survey .map-text { display: none; }
+  .sea-lesson .recall-survey .activity-split { display: block; }
+  .sea-lesson .recall-survey .map-text { display: none; }
+  .sea-lesson .recall-survey .activity-work { margin-top: 10px; }
+  .sea-lesson .paper-map-text { margin-top: 10px; font-size: 9.5pt; line-height: 1.25; }
+  .sea-lesson .paper-map-text h4 { margin: 0; }
+  .sea-lesson .paper-map-text p { margin-block: 4px; }
+  .sea-lesson .survey .paper-map-tables table + table { margin-top: 8px; }
+  .sea-lesson .paper-map-text caption { text-align: left; font-weight: 700; }
+  .sea-lesson .paper-map-text :is(th, td) { padding: 3px 4px; border: 1px solid #6d7774; background: #fff; }
+  .sea-lesson .paper-map-text th { background: #eef2f0; }
+  .sea-lesson .survey-pause { display: none; }
+}
+
+@media screen and (max-width: 600px) {
+  .key-ticks { line-height: 1.1; }
+  .key-ticks span:nth-child(2), .key-ticks span:nth-child(4) { grid-row: 2; }
+}
+@media print {
+  .sea-lesson #glossary dl { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  .sea-lesson .map-text p { margin-block: 3px; }
+}

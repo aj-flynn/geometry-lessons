@@ -1,0 +1,103 @@
+.ref-lesson {
+  --dark: #132c28;
+  --sage: #edf3e9;
+  --edge: #c7d7c8;
+  --blue: #104b58;
+  color: var(--dark);
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+.ref-lesson h1 {font-size: clamp(2.65rem, 6vw, 4.8rem); line-height: 1.04; margin-block: 18px 22px;}
+.ref-lesson h2 {font-size: clamp(1.8rem, 4vw, 2.65rem);}
+.ref-lesson h3 {font-size: 1.35rem; line-height: 1.14; letter-spacing: -.025em;}
+.ref-lesson .eyebrow {font-size: .85rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--blue); margin-bottom: 9px;}
+.ref-lesson .intro {font-size: 1.27rem; line-height: 1.4; max-width: 54ch;}
+.ref-lesson .steps {display: flex; flex-wrap: wrap; column-gap: 20px; align-items: center;}
+.ref-lesson .steps a, .ref-lesson .task-actions a {display: inline-flex; align-items: center; min-height: 44px;}
+.ref-lesson .entry {border-block: 1px solid var(--edge); padding: 18px 0 4px;}
+.ref-lesson .entry h2 {font-size: 1.4rem; margin: 0;}
+.ref-lesson .activity {border-top: 1px solid var(--edge); padding-top: 18px;}
+.ref-lesson .activity-evidence {background: var(--sage); border-left: 4px solid #66866e;}
+.ref-lesson .activity-evidence p:first-of-type {margin-top: 9px;}
+.ref-lesson .rank {margin-top: 18px;}
+.ref-lesson .rank .rank-direction {font-weight: 700; color: var(--blue); margin-bottom: 4px;}
+.ref-lesson .rank ol {list-style: none; padding: 0; margin: 0; border-block: 1px solid var(--edge);}
+.ref-lesson .rank li {display: flex; align-items: baseline; gap: 12px; padding: 4px 8px; background: #fbfdf9;}
+.ref-lesson .rank li:nth-child(even) {background: #e4ede1;}
+.ref-lesson .rank li strong {min-width: 2.3ch;}
+.ref-lesson .credit, .ref-lesson .small {font-size: .9rem; color: #395450; line-height: 1.45;}
+.ref-lesson .credit:last-child {margin-bottom: 0;}
+.ref-lesson .reasoning {padding-left: 1.5em;}
+.ref-lesson .reasoning li {padding-left: .25em; margin-bottom: .55em;}
+.ref-lesson .formula {white-space: nowrap;}
+.ref-lesson sub, .ref-lesson sup {font-size: .73em; line-height: 0;}
+.ref-lesson .equation {display: flex; flex-wrap: wrap; gap: 4px 9px; background: #dcebee; padding: 10px 14px; font-weight: 700;}
+.ref-lesson .question {border-top: 1px solid var(--edge); padding-top: 14px;}
+.ref-lesson .task-actions {display: flex; flex-wrap: wrap; gap: 4px 20px;}
+.ref-lesson .task-actions .activity-return {display: var(--return-display, inline-flex);}
+.ref-lesson .options {display: flex; flex-wrap: wrap; gap: 8px;}
+.ref-lesson .options span {background: #fbfdf9; padding: 4px 12px; font-weight: 700;}
+.ref-lesson .choices {padding: 0; list-style: none; margin-block: 10px 16px;}
+.ref-lesson .choices li {padding: 2px 0;}
+.ref-lesson .lookup {font-size: 1rem; line-height: 1.36;}
+.ref-lesson .lookup caption {font-weight: 800; text-align: left; padding-bottom: 5px;}
+.ref-lesson .lookup td, .ref-lesson .lookup th {padding: 7px; border: 1px solid #bacac0;}
+.ref-lesson .lookup thead th {background: #dce9e1;}
+.ref-lesson .lookup tbody th {background: #e7efe9; white-space: nowrap;}
+.ref-lesson .lookup td {background: #fbfdf9;}
+.ref-lesson .ion-figure {padding: 12px; margin-block: 14px; background: #edf3f3;}
+.ref-lesson .ion-figure figcaption {margin-top: 8px; font-size: .94rem;}
+.ref-lesson .ion-strip > div {display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline;}
+.ref-lesson .ion-strip > div + div {margin-top: 6px;}
+.ref-lesson .ion-strip strong {min-width: 4.2ch;}
+.ref-lesson .ion-strip span {padding: 2px 8px; border: 1px solid #7c9da2; background: #fbfdfd; min-width: 2.65rem; text-align: center;}
+.ref-lesson .support, .ref-lesson .comparisons details {background: #edf3f3;}
+.ref-lesson summary:target {outline: 2px solid var(--blue); outline-offset: 3px;}
+.ref-lesson .return-check {padding-left: 1.25em;}
+.ref-lesson .term-list div {border-top: 1px solid var(--edge); padding: 8px 0; break-inside: avoid;}
+.ref-lesson .term-list dt {margin-top: 0;}
+.ref-lesson .sources {font-size: 1rem;}
+.ref-lesson .write-space {display: none;}
+@container (min-width: 900px) {.ref-lesson .activity-work {--return-display: none;}}
+@media (max-width: 600px) {
+  .ref-lesson {font-size: 1.0625rem;}
+  .ref-lesson .activity-evidence {border-left-width: 3px; padding: 13px;}
+  .ref-lesson .lookup th, .ref-lesson .lookup td {padding: 6px;}
+}
+@media (max-width: 350px) {
+  .ref-lesson .activity-evidence {padding-inline: 9px;}
+  .ref-lesson .lookup th, .ref-lesson .lookup td {padding: 4px;}
+}
+@media print {
+  @page {size: letter; margin: .55in .6in;}
+  .ref-lesson {font-size: 11pt; line-height: 1.35; color: #000;}
+  .ref-lesson h1 {font-size: 31pt; margin-block: 5px 9px;}
+  .ref-lesson h2 {font-size: 20pt; margin-bottom: 10px;}
+  .ref-lesson h3 {font-size: 13pt; margin-bottom: 6px;}
+  .ref-lesson p {margin-block: 8px;}
+  .ref-lesson section {margin-top: 14px;}
+  .ref-lesson .eyebrow {font-size: 9pt;}
+  .ref-lesson .intro {font-size: 13pt;}
+  .ref-lesson .entry {padding-block: 10px 0;}
+  .ref-lesson .task-sheet {break-inside: avoid;}
+  .ref-lesson .activity {padding-top: 8px;}
+  .ref-lesson .activity-split {display: grid; grid-template-columns: 40% minmax(0, 1fr); gap: 20px;}
+  .ref-lesson .activity-evidence {position: static; padding: 10px; border: 1px solid #aaa; break-inside: avoid;}
+  .ref-lesson .credit, .ref-lesson .small {font-size: 9pt; color: #222;}
+  .ref-lesson .lookup {font-size: 10pt;}
+  .ref-lesson .lookup th, .ref-lesson .lookup td {padding: 4px;}
+  .ref-lesson .rank {margin-top: 8px;}
+  .ref-lesson .rank li {padding: 3px 5px;}
+  .ref-lesson .reasoning {margin-block: 7px;}
+  .ref-lesson .equation {padding: 5px;}
+  .ref-lesson .ion-figure {padding: 6px;}
+  .ref-lesson .ion-figure figcaption {font-size: 9pt;}
+  .ref-lesson .steps, .ref-lesson .return-link, .ref-lesson .task-actions, .ref-lesson .support {display: none;}
+  .ref-lesson .write-space {display: block; height: 3.3em; border-bottom: 1px solid #777;}
+  .ref-lesson .comparisons {break-before: page;}
+  .ref-lesson #glossary, .ref-lesson #return-work {break-inside: avoid;}
+  .ref-lesson .entry {padding-bottom: 6px;}
+  .ref-lesson .comparisons details {break-inside: avoid; margin: 0; padding: 4px 0; background: transparent;}
+  .ref-lesson .comparisons summary {min-height: 0; padding: 0; list-style: none;}
+  .ref-lesson .comparisons a {color: inherit; text-decoration: none;}
+}

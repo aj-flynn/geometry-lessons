@@ -1,0 +1,85 @@
+.aa-lesson { --figure-ink: #123426; --figure-mark: #8e3423; }
+.aa-lesson > header, .aa-lesson > .reading-block { margin-inline: auto; }
+.aa-lesson .eyebrow { margin-top: 28px; font-weight: 700; font-size: .94em; }
+.aa-lesson .lead { max-width: 37ch; margin-top: 18px; }
+.aa-lesson .route { display: flex; flex-wrap: wrap; column-gap: 24px; }
+.aa-lesson .route a { display: inline-flex; align-items: center; min-height: 44px; }
+.aa-lesson .warmup { border-top: 2px solid #b8ccc0; margin-top: 26px; padding-top: 18px; }
+.aa-lesson .warmup h2 { font-size: 1.25em; margin: 0; }
+.aa-lesson .mark-check { display: grid; gap: 16px; align-items: center; }
+.aa-lesson .mark-check figure { margin: 0; padding: 12px; background: #e8f1ec; }
+.aa-lesson .mark-check svg { max-width: 182px; }
+.aa-lesson .mark-check figcaption { margin-top: 4px; }
+@media (min-width: 620px) {
+  .aa-lesson .mark-check { grid-template-columns: minmax(0, 225px) minmax(0, 1fr); }
+}
+.aa-lesson h4 { margin: 0 0 10px; font-size: 1.1em; }
+.aa-lesson .steps { padding-inline-start: 1.55em; }
+.aa-lesson .steps li + li { margin-top: .7em; }
+.aa-lesson .equations li { padding-inline-start: .2em; }
+.aa-lesson .reason { display: block; }
+.aa-lesson .given-equation { font-weight: 700; margin-block: 8px 4px; }
+.aa-lesson .frac { display: inline-grid; grid-template-columns: auto; text-align: center; vertical-align: middle; line-height: 1.2; margin-block: .1em; }
+.aa-lesson .frac > span { padding: .05em .14em; }
+.aa-lesson .frac > span + span { border-top: 1.5px solid currentColor; }
+.aa-lesson .diagrams { display: grid; justify-items: center; grid-template-columns: minmax(0, 1fr); }
+.aa-lesson .diagrams svg { max-width: 340px; }
+.aa-lesson .diagrams.pair svg, .aa-lesson .diagrams.trio svg { max-width: 250px; }
+.aa-lesson .diagrams .edge, .aa-lesson .diagrams .mark { fill: none; stroke: var(--figure-ink); stroke-width: 2.35; stroke-linejoin: round; stroke-linecap: round; }
+.aa-lesson .diagrams .mark { stroke: var(--figure-mark); }
+.aa-lesson .diagrams .other { stroke-dasharray: 6 3; }
+.aa-lesson .diagrams text { font-size: 15px; font-weight: 700; fill: var(--figure-ink); }
+.aa-lesson .diagrams .measure { font-size: 15px; }
+.aa-lesson .diagrams .end { text-anchor: end; }
+.aa-lesson .diagrams circle { fill: var(--figure-ink); }
+.aa-lesson .blank-task { margin-top: 28px; }
+.aa-lesson .quick-check { padding: 10px 14px; border: 1px solid currentColor; background: transparent; }
+.aa-lesson .quick-check button:disabled { opacity: .58; cursor: default; }
+.aa-lesson .check-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.aa-lesson .quick-check [data-feedback] { margin-bottom: 0; }
+.aa-lesson .glossary-list > div { break-inside: avoid; }
+.aa-lesson .sources a { overflow-wrap: anywhere; }
+@container (min-width: 850px) {
+  .aa-lesson .diagrams.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .aa-lesson .diagrams.trio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 700px) and (max-width: 940px) {
+  .aa-lesson .diagrams.pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .aa-lesson .diagrams.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.aa-lesson .practice-link a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.aa-lesson .writing-space { display: none; }
+.aa-lesson .opening-comparisons { margin-block: 1.25rem; }
+.aa-lesson .opening-comparisons h2 { font-size: 1.25em; }
+@media print {
+  .aa-lesson .route, .aa-lesson .return-link, .aa-lesson .quick-check, .aa-lesson .practice-link { display: none; }
+  .aa-lesson .activity, .aa-lesson details, .aa-lesson .glossary-list > div { break-inside: avoid; }
+  .aa-lesson .diagrams svg { max-width: 304px; max-height: 224px; }
+  .aa-lesson .diagrams:is(.pair, .trio) svg { max-width: 280px; }
+  .aa-lesson .diagrams.pair, .aa-lesson .diagrams.trio { grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; }
+  .aa-lesson .activity { margin-top: 18px; }
+  .aa-lesson .activity-evidence { padding: 10px 14px; }
+  .aa-lesson .activity h2, .aa-lesson .activity h3 { margin-bottom: 8px; }
+  .aa-lesson .activity-work { margin-top: 8px; }
+  .aa-lesson details { padding: 3px 8px; margin-block: 8px; }
+  .aa-lesson summary { min-height: 0; padding-block: 0; }
+  .aa-lesson .steps li + li { margin-top: .35em; }
+  .aa-lesson h2, .aa-lesson h3 { break-after: avoid; }
+  .aa-lesson .activity-evidence figcaption { font-size: 11pt; }
+  .aa-lesson .practice-intro, .aa-lesson .answer-room { break-before: page; }
+  .aa-lesson .practice-intro { break-after: avoid; }
+  .aa-lesson .paper-task, .aa-lesson .warmup, .aa-lesson .mark-check { break-inside: avoid; }
+  .aa-lesson .opening-comparisons { break-before: page; }
+  .aa-lesson section.paper-task, .aa-lesson .method-retry, .aa-lesson .paper-compare { break-before: page; }
+  .aa-lesson .writing-space {
+    display: block;
+    height: 62px;
+    background: repeating-linear-gradient(transparent 0 28px, #aaa 28px 29px);
+  }
+  .aa-lesson .paper-task .writing-space { height: 150px; }
+}
+.aa-lesson .quick-check:not([data-practice-ready]) { display: none; }

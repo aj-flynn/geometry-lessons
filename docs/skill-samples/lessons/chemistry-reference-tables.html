@@ -4,199 +4,249 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Read a metal activity series and use solubility rules to predict which water solutions carry more current.">
-  <title>Reading chemistry tables</title>
-  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/chemistry.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/reading-chemistry-tables.css">
-  <script src="../../../assets/chemistry.js?v=20261105-r9" defer></script>
+  <meta name="description" content="Use activity and solubility references to make and explain two kinds of chemistry predictions.">
+  <title>From table to prediction</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/activity-layout.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/reference-predictions.css?v=1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson chemistry table-lesson">
-    <a class="return-link" href="../index.html">← Lesson library</a>
+  <main id="main" class="lesson activity-lesson ref-lesson">
     <header>
-      <p class="eyebrow">Chemistry · Reading the evidence</p>
-      <h1>Reading chemistry tables</h1>
-      <p class="lead">Predict when a solid metal can replace a dissolved metal. Then use the amount of dissolved charge to compare how well two solutions carry current.</p>
-      <p class="jump-links"><a href="#metals">Metal activity</a> <a href="#solutions">Solutions</a> <a href="#transfer">Your turn</a> <a href="#glossary">Glossary</a></p>
+      <a class="return-link" href="../../../index.html">← Lesson library</a>
+      <p class="eyebrow">Chemistry · Reference skills</p>
+      <h1>From table to prediction</h1>
+      <p class="intro">Use two kinds of reference table to predict what happens when metals meet dissolved <a href="#term-ion">ions</a> (charged particles) and which salt solution will carry current better. For each prediction, point to the evidence that supports it.</p>
+      <p class="steps"><a href="#metal">Metals</a> <a href="#salt">Salt solutions</a> <a href="#trial-a">Independent work</a> <a href="#glossary">Glossary</a></p>
+      <div class="entry" id="warmup">
+        <h2>First, read the labels</h2>
+        <p>Which represents a piece of cobalt metal, and which represents charged cobalt particles in water: <span class="formula">Co(s)</span> or <span class="formula">Co<sup>2+</sup>(aq)</span>? Name the mark that shows charge.</p>
+        <details class="support"><summary>Help with state and charge labels</summary><p><a href="#term-solid">(s)</a> means solid, and <a href="#term-aq">(aq)</a> means <em>aqueous</em>, or dissolved in water. A raised charge such as <strong>3+</strong> means three positive units of charge.</p></details>
+        <p class="task-actions"><a href="#key-warmup">Compare the label check</a></p>
+      </div>
     </header>
 
-    <aside class="warm-up" aria-labelledby="start">
-      <h2 id="start">Quick start</h2>
-      <p>Which is the solid metal in a reaction, <span class="formula">Ni(s)</span> or <span class="formula">Ni<sup>2+</sup>(aq)</span>? Which is an <a href="#term-ion">ion</a>, a particle with an electric charge?</p>
-      <details><summary>Check the notation</summary><p><span class="formula">Ni(s)</span> is solid nickel. The <span class="formula">2+</span> in <span class="formula">Ni<sup>2+</sup>(aq)</span> marks a positive ion. <a href="#term-aqueous">Aqueous</a>, written (aq), means dissolved in water. Look for the charge and state label when you compare two reaction setups.</p></details>
-    </aside>
-
-    <section aria-labelledby="metals">
-      <p class="eyebrow">01 · Relative position</p>
-      <h2 id="metals">Can the metal swap places?</h2>
-      <p>An <a href="#term-activity">activity series</a> orders metals by how readily they give up electrons. For a metal replacing a dissolved metal ion, Table J predicts a <a href="#term-displacement">displacement</a> when the <strong>solid</strong> metal is higher than the metal named by the ion. The course calls that direction <a href="#term-spontaneous">spontaneous</a>, meaning the reaction is favored on its own under the model’s conditions.</p>
-
-      <div class="work-grid">
-        <figure class="activity-strip">
-          <figcaption><strong>Table J</strong> · Selected metal entries</figcaption>
-          <p class="direction">↑ More active</p>
-          <ol aria-label="Selected metals from more active to less active">
-            <li><span>Mn</span> Manganese</li>
-            <li class="marked"><span>Zn</span> Zinc</li>
-            <li><span>Co</span> Cobalt</li>
-            <li class="marked"><span>Ni</span> Nickel</li>
-            <li><span>Sn</span> Tin</li>
-            <li><span>Pb</span> Lead</li>
+    <section id="metal" class="activity task-sheet" aria-labelledby="metal-title">
+      <p class="eyebrow">01 · Worked example</p>
+      <h2 id="metal-title">Can the solid supply electrons?</h2>
+      <div class="activity-split">
+        <aside id="metal-evidence" class="activity-evidence" tabindex="0" aria-labelledby="metal-evidence-title">
+          <h3 id="metal-evidence-title">Two trials, same pair of metals</h3>
+          <p><strong>Start:</strong> manganese strip, <span class="formula">Mn(s)</span>, in water containing nickel ions, <span class="formula">Ni<sup>2+</sup>(aq)</span>.</p>
+          <p><strong>Swap:</strong> nickel strip, <span class="formula">Ni(s)</span>, in water containing manganese ions, <span class="formula">Mn<sup>2+</sup>(aq)</span>.</p>
+          <div class="rank">
+            <p class="rank-direction">More active at the top <span aria-hidden="true">↑</span></p>
+            <ol aria-label="Selected metals from more to less active">
+              <li><strong>Mn</strong> <span>Manganese</span></li>
+              <li><strong>Ni</strong> <span>Nickel</span></li>
+            </ol>
+          </div>
+          <p class="credit">Relative order: NYSED, 2011, Table J (selected metals).</p>
+        </aside>
+        <div class="activity-work">
+          <p>The <a href="#term-activity">activity series</a> ranks metals by how readily they give up electrons in this comparison. In <a href="#term-displacement">displacement</a>, atoms from the solid give electrons to dissolved ions of a different metal. The ions that gain electrons become solid metal.</p>
+          <ol class="reasoning">
+            <li><strong>Start with the solid.</strong> The solid is Mn, so find Mn first. Then find Ni, the element in the dissolved ion.</li>
+            <li><strong>Compare their positions.</strong> Mn is above Ni. The table predicts Mn can supply electrons to Ni<sup>2+</sup>.</li>
+            <li><strong>Track what changes.</strong> Mn becomes dissolved Mn<sup>2+</sup>; Ni<sup>2+</sup> becomes solid Ni.</li>
           </ol>
-          <p class="direction">↓ Less active</p>
-          <p class="fine">Some entries are omitted. Spacing shows order only.</p>
-        </figure>
-
-        <div class="worked">
-          <h3>Switch the solid and the ion</h3>
-          <p>Find Zn and Ni in the metal column. Zinc is higher.</p>
-          <p><strong>Zinc is solid.</strong> Zn atoms give up electrons and enter the water as ions. Nickel ions gain those electrons and become solid nickel.</p>
-          <p class="reaction">
-            <span class="formula">Zn(s)</span> + <span class="formula">Ni<sup>2+</sup>(aq)</span> <span>→</span> <span class="formula">Zn<sup>2+</sup>(aq)</span> + <span class="formula">Ni(s)</span>
+          <p class="equation" aria-label="Solid manganese plus aqueous nickel two plus yields aqueous manganese two plus and solid nickel.">
+            <span><span class="formula">Mn(s)</span> + <span class="formula">Ni<sup>2+</sup>(aq)</span></span>
+            <span>→ <span class="formula">Mn<sup>2+</sup>(aq)</span> + <span class="formula">Ni(s)</span></span>
           </p>
-          <p><strong>Nickel is solid instead.</strong> Ni is below Zn, so Table J predicts no displacement of <span class="formula">Zn<sup>2+</sup>(aq)</span> by <span class="formula">Ni(s)</span>.</p>
-          <p class="fine">This is a prediction about the favored direction under the course model. Table J gives no reaction speed or guarantee of a visible change.</p>
+          <p class="small">The table predicts direction without an outside power source, not speed. A coating on the strip can slow a real trial.</p>
+          <div class="question" id="swap">
+            <h3>Predict the swap</h3>
+            <p>Will <span class="formula">Ni(s)</span> displace <span class="formula">Mn<sup>2+</sup>(aq)</span>? Say which element now has to give electrons, and use the order to justify your prediction.</p>
+            <p class="task-actions"><a class="activity-return" href="#metal-evidence">Back to the metal order</a> <a href="#key-swap">Compare the swap</a></p>
+          </div>
         </div>
-      </div>
-
-      <div class="exercise">
-        <h3>Predict what changes</h3>
-        <p>Start with solid cobalt in a solution containing <span class="formula">Ni<sup>2+</sup>(aq)</span>. In a second setup, keep the cobalt solid and switch the solution to <span class="formula">Mn<sup>2+</sup>(aq)</span>. Find Co and the two ion metals on the strip. Predict which setup should produce a new solid metal.</p>
-        <form data-chem-choice>
-          <fieldset>
-            <legend>Which setup should produce a new solid metal?</legend>
-            <label class="option"><input type="radio" name="metal" data-explanation="Compare Co separately with each ion metal. Co is above Ni but below Mn. Which of the two ions can become solid? Change your choice and check again."><span>Both setups</span></label>
-            <label class="option"><input type="radio" name="metal" data-explanation="Co is above Ni, so Co atoms can give up electrons to Ni²⁺(aq). Co is below Mn, so the switch to Mn²⁺(aq) removes the predicted displacement."><span>Only the <span class="formula">Ni<sup>2+</sup>(aq)</span> setup</span></label>
-            <label class="option"><input type="radio" name="metal" data-explanation="This reverses the test. Start at Co, the solid metal in both setups. Look for an ion metal below Co, then check again."><span>Only the <span class="formula">Mn<sup>2+</sup>(aq)</span> setup</span></label>
-          </fieldset>
-          <button type="submit" disabled>Check the metal prediction</button>
-          <p class="feedback" role="status" aria-live="polite"></p>
-        </form>
-        <details class="static-feedback"><summary>Compare the metal prediction</summary><p>Only the <span class="formula">Ni<sup>2+</sup>(aq)</span> setup is predicted to produce a new solid metal. Co is higher than Ni, so solid Co can supply electrons to nickel ions. Co is below Mn. Switching the solution to <span class="formula">Mn<sup>2+</sup>(aq)</span> changes the direction of the comparison.</p></details>
-        <p><strong>Retry on paper.</strong> For <span class="formula">Sn(s)</span> and <span class="formula">Pb<sup>2+</sup>(aq)</span>, predict whether a new solid metal forms. Name it if one does.</p>
-        <details><summary>Compare the metal retry</summary><p>Sn is above Pb. The model predicts that lead ions gain electrons and become <span class="formula">Pb(s)</span>.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="solutions">
-      <p class="eyebrow">02 · Rule and exception</p>
-      <h2 id="solutions">Which solution carries more current?</h2>
-      <aside class="task formula-bridge" aria-label="Optional formula check">
-        <p><strong>Quick formula check.</strong> A <a href="#term-polyatomic">polyatomic ion</a> is a group of bonded atoms with an overall charge. In <span class="formula">Zn(ClO<sub>3</sub>)<sub>2</sub></span>, which group stays together as one ion, and how many copies of that ion are in the formula?</p>
-        <details><summary>Compare the grouped formula</summary><p>Table E lists the group inside the parentheses as chlorate, <span class="formula">ClO<sub>3</sub><sup>−</sup></span>. The 3 counts oxygen atoms in one chlorate ion. The 2 outside the parentheses counts two whole chlorate ions for each zinc ion. When using Table F, look up chlorate as one ion.</p></details>
-      </aside>
-      <p>A <a href="#term-saturated">saturated solution</a> holds as much dissolved substance as it can at that temperature. Different substances can reach saturation at very different concentrations.</p>
-      <p><a href="#term-solubility">Solubility</a> describes how much of a substance can dissolve. Table F groups ionic compounds by how readily they dissolve in water. Find the ions in the formula, then read the matching rule <em>and</em> check the partner ion for exceptions. Even compounds listed as insoluble may dissolve a little.</p>
-
-      <table class="lookup" role="table">
-        <caption>Table F · Selected rules for this lesson</caption>
-        <thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Ion or family</th><th scope="col" role="columnheader">Rule in water</th></tr></thead>
-        <tbody role="rowgroup">
-          <tr role="row"><th scope="row" role="rowheader"><a href="#term-halide">Halides</a>, negative ions such as <span class="formula">Cl<sup>−</sup></span>, <span class="formula">Br<sup>−</sup></span> and <span class="formula">I<sup>−</sup></span></th><td role="cell">Usually soluble. One exception is when paired with <span class="formula">Pb<sup>2+</sup></span>.</td></tr>
-          <tr role="row"><th scope="row" role="rowheader">Phosphate <span class="formula">PO<sub>4</sub><sup>3−</sup></span> or sulfide <span class="formula">S<sup>2−</sup></span></th><td role="cell">Usually insoluble. Soluble with a Group 1 ion or ammonium, <span class="formula">NH<sub>4</sub><sup>+</sup></span>.</td></tr>
-          <tr role="row"><th scope="row" role="rowheader">Acetate <span class="formula">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></span></th><td role="cell">Soluble in Table F.</td></tr>
-        </tbody>
-      </table>
-      <p class="fine">This excerpt omits other rules and some halide exceptions. Use the full Table F for other ion pairs.</p>
-
-      <h3>Same chloride, different partners</h3>
-      <ol class="reasoning">
-        <li><strong>Find the shared ion.</strong> Both <span class="formula">RbCl</span> and <span class="formula">PbCl<sub>2</sub></span> contain chloride, <span class="formula">Cl<sup>−</sup></span>.</li>
-        <li><strong>Check the partners.</strong> With <span class="formula">Rb<sup>+</sup></span>, the chloride follows the soluble rule. With <span class="formula">Pb<sup>2+</sup></span>, the chloride falls under an insoluble exception.</li>
-        <li><strong>Follow the charge.</strong> In separate saturated water solutions at the same temperature, RbCl supplies many more mobile ions and is expected to conduct better. Dissolved ions can move and carry electric charge.</li>
-      </ol>
-
-      <figure class="charge-map">
-        <div class="cups">
-          <div class="cup">
-            <strong>RbCl in water</strong>
-            <svg viewBox="0 0 270 62" role="img" aria-labelledby="rb-title rb-desc">
-              <title id="rb-title">Ions in the rubidium chloride solution</title>
-              <desc id="rb-desc">Three rubidium ions with a single positive charge and three chloride ions with a single negative charge are spread through the sample.</desc>
-              <circle class="positive" cx="26" cy="22" r="15"/><text x="26" y="22">+</text>
-              <circle class="negative" cx="66" cy="40" r="15"/><text x="66" y="40">−</text>
-              <circle class="positive" cx="107" cy="23" r="15"/><text x="107" y="23">+</text>
-              <circle class="negative" cx="154" cy="42" r="15"/><text x="154" y="42">−</text>
-              <circle class="negative" cx="198" cy="21" r="15"/><text x="198" y="21">−</text>
-              <circle class="positive" cx="240" cy="37" r="15"/><text x="240" y="37">+</text>
-            </svg>
-          </div>
-          <div class="cup">
-            <strong>PbCl<sub>2</sub> in water</strong>
-            <svg viewBox="0 0 270 62" role="img" aria-labelledby="pb-title pb-desc">
-              <title id="pb-title">Ions in the lead chloride solution</title>
-              <desc id="pb-desc">One lead ion with a double positive charge and two chloride ions with a single negative charge are spread through the sample.</desc>
-              <circle class="negative" cx="44" cy="34" r="15"/><text x="44" y="34">−</text>
-              <circle class="positive" cx="137" cy="22" r="15"/><text x="137" y="22">2+</text>
-              <circle class="negative" cx="230" cy="39" r="15"/><text x="230" y="39">−</text>
-            </svg>
-          </div>
+    <section id="salt" class="activity task-sheet" aria-labelledby="salt-title">
+      <p class="eyebrow">02 · Worked example</p>
+      <h2 id="salt-title">How many ions can get into the water?</h2>
+      <div class="activity-split">
+        <aside id="salt-evidence" class="activity-evidence" tabindex="0" aria-labelledby="salt-evidence-title">
+          <h3 id="salt-evidence-title">Two chloride solutions</h3>
+          <p>Each sample is <a href="#term-saturated">saturated</a>: it holds as much dissolved salt as it can at that temperature. Compare the liquids at the same temperature.</p>
+          <p class="options"><span class="formula">LiCl</span><span class="formula">PbCl<sub>2</sub></span></p>
+          <table class="lookup">
+            <caption>Solubility guide</caption>
+            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+            <tbody><tr><th scope="row">Cl<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low solubility</td></tr></tbody>
+          </table>
+          <p class="credit">NYSED, 2011, Table F (rule narrowed to these choices).</p>
+        </aside>
+        <div class="activity-work">
+          <p><a href="#term-solubility">Solubility</a> is how much of a substance can dissolve under given conditions. <a href="#term-conductivity">Conductivity</a> is how readily current flows. In a salt solution, moving <em>ions</em> carry the charge; ions locked in undissolved crystals cannot travel through the water.</p>
+          <ol class="reasoning">
+            <li><strong>Find a rule.</strong> LiCl contains Li<sup>+</sup> and Cl<sup>−</sup>. Look up Cl<sup>−</sup>: its salts are usually soluble.</li>
+            <li><strong>Check the partner ion.</strong> Li<sup>+</sup> does not trigger the listed exception; Pb<sup>2+</sup> does. PbCl<sub>2</sub> has low solubility, even though it is also a chloride.</li>
+            <li><strong>Compare what can move.</strong> Saturated LiCl is the better conductor predicted by this guide. Much more LiCl can dissolve and supply mobile ions.</li>
+          </ol>
+          <figure class="ion-figure">
+            <div class="ion-strip" aria-hidden="true">
+              <div><strong>LiCl</strong><span>Li<sup>+</sup></span><span>Cl<sup>−</sup></span></div>
+              <div><strong>PbCl<sub>2</sub></strong><span>Pb<sup>2+</sup></span><span>Cl<sup>−</sup></span><span>Cl<sup>−</sup></span></div>
+            </div>
+            <figcaption>Count per dissolved unit, not per cup. LiCl gives one Li<sup>+</sup> and one Cl<sup>−</sup>. PbCl<sub>2</sub> gives one Pb<sup>2+</sup> and two Cl<sup>−</sup>. The strip shows the ratio only. It doesn’t tell how many units actually dissolved.</figcaption>
+          </figure>
+          <p class="small">The guide separates soluble salts from salts with very low solubility. It cannot reliably rank two soluble salts. Actual conductivity also depends on ion concentration, charge, mobility and temperature.</p>
         </div>
-        <figcaption>Equal volumes, schematic only. The saturated RbCl solution has many free <span class="formula">Rb<sup>+</sup></span> and <span class="formula">Cl<sup>−</sup></span> ions. The saturated <span class="formula">PbCl<sub>2</sub></span> solution has far fewer <span class="formula">Pb<sup>2+</sup></span> and <span class="formula">Cl<sup>−</sup></span> ions. The drawn counts are illustrative.</figcaption>
-      </figure>
-      <p class="fine">Use this comparison when one salt is soluble and the others are very slightly soluble. Table F does not report <a href="#term-conductivity">conductivity</a>, how readily a solution carries current. An exact ranking needs ion concentrations and how fast the ions move in an electric field.</p>
-
-      <div class="exercise">
-        <h3>Predict after a partner switch</h3>
-        <p>Two separate water samples at the same temperature are saturated with <span class="formula">K<sub>3</sub>PO<sub>4</sub></span> and <span class="formula">Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span>. Potassium is in Group 1. Strontium is in Group 2. Read the selected rules and predict which solution contains many more dissolved ions.</p>
-        <form data-chem-choice>
-          <fieldset>
-            <legend>Which solution should conduct better?</legend>
-            <label class="option"><input type="radio" name="salt" data-explanation="The phosphate rule has exceptions. Find the positive partner ion in each formula, then see whether either meets the soluble exception."><span>They should conduct about equally.</span></label>
-            <label class="option"><input type="radio" name="salt" data-explanation="Counting ions per formula tells you what one dissolved unit supplies. First decide how much of each solid can dissolve. Check the phosphate exceptions and try again."><span>Saturated <span class="formula">Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span> solution</span></label>
-            <label class="option"><input type="radio" name="salt" data-explanation="K⁺ meets the Group 1 exception, so K₃PO₄ is soluble. Sr²⁺ does not meet the exception. The saturated potassium phosphate solution has many more mobile ions."><span>Saturated <span class="formula">K<sub>3</sub>PO<sub>4</sub></span> solution</span></label>
-          </fieldset>
-          <button type="submit" disabled>Check the solution prediction</button>
-          <p class="feedback" role="status" aria-live="polite"></p>
-        </form>
-        <details class="static-feedback"><summary>Compare the solution prediction</summary><p><span class="formula">K<sub>3</sub>PO<sub>4</sub></span> is soluble because <span class="formula">K<sup>+</sup></span> is a Group 1 ion. <span class="formula">Sr<sup>2+</sup></span> does not meet either phosphate exception, so far less <span class="formula">Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span> dissolves. The saturated potassium phosphate solution should conduct better because it has many more mobile ions.</p></details>
-        <p><strong>Retry on paper.</strong> Which would you choose for a better conductor, a saturated <span class="formula">PbBr<sub>2</sub></span> or <span class="formula">ZnBr<sub>2</sub></span> solution at the same temperature?</p>
-        <details><summary>Compare the solution retry</summary><p><span class="formula">ZnBr<sub>2</sub></span> should give the better conductor. Bromide is a halide. <span class="formula">Pb<sup>2+</sup></span> is an exception and <span class="formula">Zn<sup>2+</sup></span> follows the usual soluble rule.</p></details>
       </div>
     </section>
 
-    <section aria-labelledby="transfer">
-      <p class="eyebrow">03 · Choose the evidence</p>
-      <h2 id="transfer">Two decisions at a lab station</h2>
-      <p>For each decision, choose a table, make a choice, and write one sentence using evidence from the table.</p>
-      <article class="task">
-        <h3>Pick a strip</h3>
-        <p>A bath contains <span class="formula">Co<sup>2+</sup>(aq)</span>. A lab group wants cobalt metal to form. The available strips are tin, lead and zinc. Which strip should the group pick?</p>
-        <details><summary>Compare your strip choice</summary><p>Pick zinc. Table J puts Zn above Co. Solid zinc can supply electrons to cobalt ions so they become solid cobalt. Sn and Pb are both below Co.</p></details>
-      </article>
-      <article class="task">
-        <h3>Pick a sample</h3>
-        <p>A conductivity meter tested three saturated water solutions at the same temperature. One sample gave a much higher reading than the other two. The labels fell off. The possible labels are <span class="formula">ZnS</span>, <span class="formula">PbI<sub>2</sub></span> and <span class="formula">Zn(C<sub>2</sub>H<sub>3</sub>O<sub>2</sub>)<sub>2</sub></span>. Which label belongs on the highest-reading sample?</p>
-        <details><summary>Compare your sample choice</summary><p>Choose zinc acetate, <span class="formula">Zn(C<sub>2</sub>H<sub>3</sub>O<sub>2</sub>)<sub>2</sub></span>. Table F puts acetates in the soluble group. ZnS follows the insoluble sulfide rule, and <span class="formula">PbI<sub>2</sub></span> is an exception to the soluble halide rule. Zinc acetate supplies far more dissolved ions at saturation.</p></details>
-      </article>
-      <h3>Back to your work</h3>
-      <ul>
-        <li>For a metal in an ion solution, mark the solid first. Then compare its position with the ion’s metal.</li>
-        <li>For saturated salt solutions, separate each formula into ions. Read the rule and test the partner for exceptions. Then link the amount dissolved to the charge that can move.</li>
+    <section id="trial-a" class="activity task-sheet independent" aria-labelledby="trial-a-title">
+      <p class="eyebrow">03 · Independent work</p>
+      <h2 id="trial-a-title">Screen A: Pick one strip</h2>
+      <div class="activity-split">
+        <aside id="a-evidence" class="activity-evidence" tabindex="0" aria-labelledby="a-evidence-title">
+          <h3 id="a-evidence-title">A cobalt solution and four strips</h3>
+          <p>The beaker contains <span class="formula">Co<sup>2+</sup>(aq)</span>. The available strips are:</p>
+          <ul class="choices" aria-label="Four solid strip choices">
+            <li>A. Tin, Sn(s)</li><li>B. Nickel, Ni(s)</li><li>C. Zinc, Zn(s)</li><li>D. Lead, Pb(s)</li>
+          </ul>
+          <div class="rank">
+            <p class="rank-direction">More active at the top <span aria-hidden="true">↑</span></p>
+            <ol aria-label="Selected metals from more to less active">
+              <li><strong>Zn</strong> <span>Zinc</span></li><li><strong>Co</strong> <span>Cobalt</span></li><li><strong>Ni</strong> <span>Nickel</span></li><li><strong>Sn</strong> <span>Tin</span></li><li><strong>Pb</strong> <span>Lead</span></li>
+            </ol>
+          </div>
+          <p class="credit">Relative order: NYSED, 2011, Table J (selected metals).</p>
+        </aside>
+        <div class="activity-work">
+          <h3>Make the selection</h3>
+          <p>Which strip is predicted to react <a href="#term-spontaneous">spontaneously</a>, without an outside power source, with the dissolved cobalt ions?</p>
+          <p>Choose one. Give a sentence using evidence from the reference. Then cross off one tempting strip and explain why it fails.</p>
+          <p class="task-actions"><a class="activity-return" href="#a-evidence">Back to Screen A evidence</a> <a href="#key-a">Compare Screen A</a></p>
+          <div class="write-space" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trial-b" class="activity task-sheet independent" aria-labelledby="trial-b-title">
+      <p class="eyebrow">04 · Independent work</p>
+      <h2 id="trial-b-title">Screen B: Pick one liquid</h2>
+      <div class="activity-split">
+        <aside id="b-evidence" class="activity-evidence" tabindex="0" aria-labelledby="b-evidence-title">
+          <h3 id="b-evidence-title">Four saturated samples</h3>
+          <p>Each liquid is saturated with only its labeled salt, at the same temperature.</p>
+          <ul class="choices" aria-label="Four salt choices">
+            <li>A. <span class="formula">PbI<sub>2</sub></span></li><li>B. <span class="formula">Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span></li>
+            <li>C. <span class="formula">MnS</span></li><li>D. <span class="formula">NH<sub>4</sub>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub></span></li>
+          </ul>
+          <table class="lookup">
+            <caption>Solubility guide</caption>
+            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">S<sup>2−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
+              <tr><th scope="row">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></th><td>Soluble</td><td>None listed</td></tr>
+              <tr><th scope="row">I<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low</td></tr>
+              <tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
+            </tbody>
+          </table>
+          <p class="credit"><sup>*</sup>None of the four samples contains a Group 1 metal. Rules: NYSED, 2011, Table F (selected ions and exceptions). “Low” means very low solubility in this guide.</p>
+        </aside>
+        <div class="activity-work">
+          <h3>Make the selection</h3>
+          <p>The four samples are candidates for a current probe demonstration. Which liquid is predicted to conduct electricity best?</p>
+          <p>Choose one. State the ions in your pick and use the guide to explain your prediction. Cross off one tempting sample and explain why it fails.</p>
+          <details class="support">
+            <summary>Formula-reading help</summary>
+            <p>A <a href="#term-polyatomic">polyatomic ion</a> is a bonded group with a charge. Match its full formula to a row; don’t split the group. A subscript outside parentheses counts whole copies of the group. For example, <span class="formula">K<sub>2</sub>C<sub>2</sub>O<sub>4</sub></span> contains two K<sup>+</sup> for each <span class="formula">C<sub>2</sub>O<sub>4</sub><sup>2−</sup></span>; the subscripts in oxalate stay part of the ion.</p>
+          </details>
+          <p class="task-actions"><a class="activity-return" href="#b-evidence">Back to Screen B evidence</a> <a href="#key-b">Compare Screen B</a></p>
+          <div class="write-space" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="retry" class="activity task-sheet" aria-labelledby="retry-title">
+      <p class="eyebrow">05 · Retry</p>
+      <h2 id="retry-title">Same phosphate, new partner</h2>
+      <div class="activity-split">
+        <aside id="retry-evidence" class="activity-evidence" tabindex="0" aria-labelledby="retry-evidence-title">
+          <h3 id="retry-evidence-title">Two saturated liquids</h3>
+          <p>At the same temperature: <span class="formula">K<sub>3</sub>PO<sub>4</sub></span> or <span class="formula">Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span>. Potassium (K) is in Group 1.</p>
+          <table class="lookup">
+            <caption>Solubility guide</caption>
+            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+            <tbody><tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1 or NH<sub>4</sub><sup>+</sup>: soluble</td></tr></tbody>
+          </table>
+          <p class="credit">NYSED, 2011, Table F (selected rule).</p>
+        </aside>
+        <div class="activity-work">
+          <p>A lab note says, “Both are phosphates, so both must have low solubility.” Repair the note. Then choose the liquid you’d expect to conduct better and justify the choice.</p>
+          <p class="task-actions"><a class="activity-return" href="#retry-evidence">Back to the phosphate rule</a> <a href="#key-retry">Compare the retry</a></p>
+          <div class="write-space" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="return-work" class="reading-block" aria-labelledby="return-title">
+      <h2 id="return-title">Return to your own work</h2>
+      <ul class="return-check">
+        <li>Read the question for the thing you must predict. Select the reference that can support that prediction.</li>
+        <li>Mark the starting roles or identify the ions. Read the direction or check the exception before you choose.</li>
+        <li>Write your choice and one reason linking the table to the chemistry.</li>
       </ul>
-      <p><strong>Tomorrow, before reopening this lesson.</strong> Sketch a two-metal activity strip. Put the solid and ion in both possible orders. Predict which order gives a new solid. Then explain why two saturated solutions can have different numbers of ions in the same volume.</p>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
+    <section id="recall" class="activity task-sheet" aria-labelledby="recall-title">
+      <p class="eyebrow">06 · Later recall</p>
+      <h2 id="recall-title">A fresh pair of roles</h2>
+      <div class="activity-split">
+        <aside id="recall-evidence" class="activity-evidence" tabindex="0" aria-labelledby="recall-evidence-title">
+          <h3 id="recall-evidence-title">Two setups</h3>
+          <ul class="choices"><li>1. <span class="formula">Sn(s)</span> with <span class="formula">Zn<sup>2+</sup>(aq)</span></li><li>2. <span class="formula">Zn(s)</span> with <span class="formula">Sn<sup>2+</sup>(aq)</span></li></ul>
+          <div class="rank">
+            <p class="rank-direction">More active at the top <span aria-hidden="true">↑</span></p>
+            <ol aria-label="Selected metals from more to less active"><li><strong>Zn</strong> <span>Zinc</span></li><li><strong>Sn</strong> <span>Tin</span></li></ol>
+          </div>
+          <p class="credit">Relative order: NYSED, 2011, Table J (selected metals).</p>
+        </aside>
+        <div class="activity-work">
+          <p>Next time, start here before rereading the lesson. Which setup allows displacement, and which metal in that setup starts out as ions and ends up as a solid?</p>
+          <p class="task-actions"><a class="activity-return" href="#recall-evidence">Back to the two setups</a> <a href="#key-recall">Compare later recall</a></p>
+          <div class="write-space" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparisons" class="reading-block comparisons" aria-labelledby="comparisons-title">
+      <h2 id="comparisons-title">Compare after you try</h2>
+      <p>Read one comparison at a time. If your reasoning differs, revise your sentence and check again.</p>
+      <details><summary id="key-warmup">Label check</summary><p>Co(s) is the solid metal; Co<sup>2+</sup>(aq) is the dissolved cobalt ion. The raised <strong>2+</strong> shows charge. The parentheses tell you the state. <a href="#warmup">Back to the label check</a>.</p></details>
+      <details><summary id="key-swap">Predict the swap</summary><p>No displacement is predicted. The nickel strip would now have to give electrons to Mn<sup>2+</sup>. Ni is below Mn. If you predicted “yes” both times, underline which is solid in each case and redo the comparison from that element. <a href="#swap">Back to the swap</a>.</p></details>
+      <details><summary id="key-a">Screen A</summary><p><strong>C. Zinc.</strong> Zn is the only solid in the list above Co, so it can supply electrons to Co<sup>2+</sup>. Ni is close to Co, but it’s below Co, as are Sn and Pb. If you wrote “Ni is close,” replace distance with direction: is the <em>solid</em> above or below the element in the ion? <a href="#trial-a">Revise Screen A</a>, then test your reasoning with <a href="#recall">the fresh pair</a>.</p></details>
+      <details><summary id="key-b">Screen B</summary><p><strong>D. Ammonium acetate.</strong> Its ions are NH<sub>4</sub><sup>+</sup> and <span class="formula">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></span>. The acetate row classifies the salt as soluble, so the saturated liquid can contain many mobile ions. For PbI<sub>2</sub>, the lead ion triggers the iodide exception. The zinc phosphate and manganese sulfide do not meet their rows’ exceptions. If you chose the formula with the most ions per unit, first ask how many units can actually dissolve. <a href="#trial-b">Revise Screen B</a>, then try <a href="#retry">a new partner ion</a>.</p></details>
+      <details><summary id="key-retry">Same phosphate, new partner</summary><p>Zinc phosphate fits the usual low solubility rule; potassium phosphate is soluble because K<sup>+</sup> is a Group 1 ion. Expect saturated potassium phosphate to conduct better. In your revised sentence, name the ion that triggers the exception. <a href="#retry">Back to the retry</a>.</p></details>
+      <details><summary id="key-recall">Later recall</summary><p>Setup 2. Solid Zn is above Sn and can give electrons to Sn<sup>2+</sup>. Tin starts in the liquid as ions and becomes Sn(s). Setup 1 reverses the roles and is not predicted to displace zinc. <a href="#recall">Back to the two setups</a>.</p></details>
+    </section>
+
+    <section id="glossary" class="reading-block" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
-      <dl>
-        <dt id="term-ion">Ion</dt><dd>An atom or group of atoms with a charge. Positive ions are cations. Negative ions are anions.</dd>
-        <dt id="term-polyatomic">Polyatomic ion</dt><dd>Two or more bonded atoms that together carry a charge. In an ionic formula, a subscript after parentheses counts copies of the entire ion.</dd>
-        <dt id="term-aqueous">Aqueous (aq)</dt><dd>Dissolved in water. In contrast, (s) labels a solid.</dd>
-        <dt id="term-activity">Activity series</dt><dd>A ranking used to predict which metals more readily lose electrons in displacement reactions. In Table J, more active metals are higher.</dd>
-        <dt id="term-displacement">Metal displacement</dt><dd>A reaction in which a solid metal becomes ions and another metal’s dissolved ions become solid metal.</dd>
-        <dt id="term-spontaneous">Spontaneous</dt><dd>A process favored under the stated conditions. A spontaneous process may still be slow.</dd>
-        <dt id="term-halide">Halide</dt><dd>A negative ion formed from a halogen atom. The halide row of Table F covers chloride, bromide and iodide.</dd>
-        <dt id="term-saturated">Saturated solution</dt><dd>A solution with the equilibrium amount of dissolved solute at its temperature. Any extra solid can remain undissolved.</dd>
-        <dt id="term-solubility">Solubility</dt><dd>How much of a substance can dissolve under specified conditions. Table F uses broad categories for water solutions.</dd>
-        <dt id="term-conductivity">Conductivity</dt><dd>How readily a material carries electric current. In water solutions, moving ions carry the charge.</dd>
+      <dl class="term-list">
+        <div><dt id="term-solid">(s)</dt><dd>Solid state.</dd></div>
+        <div><dt id="term-aq">Aqueous, (aq)</dt><dd>Dissolved in water.</dd></div>
+        <div><dt id="term-ion">Ion</dt><dd>An atom or bonded group of atoms with a net electric charge.</dd></div>
+        <div><dt id="term-activity">Activity series</dt><dd>A ranked list used here to compare how readily solid metals give up electrons.</dd></div>
+        <div><dt id="term-displacement">Metal displacement</dt><dd>A reaction in which a solid metal becomes ions and the dissolved ions of another metal become solid metal.</dd></div>
+        <div><dt id="term-saturated">Saturated solution</dt><dd>A solution holding the equilibrium amount of dissolved substance at the given conditions. Different substances can have very different amounts dissolved.</dd></div>
+        <div><dt id="term-solubility">Solubility</dt><dd>How much of a substance dissolves at equilibrium in a specified solvent under given conditions.</dd></div>
+        <div><dt id="term-conductivity">Electrical conductivity</dt><dd>How readily a material conducts electric current. In these liquids, moving ions carry the charge.</dd></div>
+        <div><dt id="term-spontaneous">Spontaneous reaction</dt><dd>A reaction favored under the stated conditions without a continuing input such as an outside power source. It may be slow.</dd></div>
+        <div><dt id="term-polyatomic">Polyatomic ion</dt><dd>A bonded group of two or more atoms with an overall charge, such as PO<sub>4</sub><sup>3−</sup>.</dd></div>
       </dl>
     </section>
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">Reference tables</h2>
-      <p>Use Table E to identify ions and Table F to check solubility, both on page 2. Find the metal column of Table J on page 5. <a href="https://www.nysed.gov/sites/default/files/programs/state-assessment/chemistry-reference-tables-2011.pdf#page=2">NYSED Chemistry Reference Tables, 2011 edition (PDF)</a></p>
+    <section class="reading-block sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Where the evidence comes from</h2>
+      <p>The rank and solubility excerpts adapt selected entries from the New York State Education Department’s <cite>Reference Tables for Physical Setting/Chemistry</cite> (2011), Tables J and F. Each excerpt is limited to the choices on that card.</p>
+      <p><a href="https://openstax.org/books/chemistry-2e/pages/11-2-electrolytes">OpenStax: Electrolytes</a> explains how dissolved ions move and carry current, including the difference between how much dissolves and what happens to the portion that dissolves.</p>
+      <p>If you get stuck on your own work, use your private chat to describe the decision you’re trying to make.</p>
     </section>
   </main>
 </body>

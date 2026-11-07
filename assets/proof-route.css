@@ -1,0 +1,152 @@
+.proof-lesson > header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 22px;
+}
+
+.proof-lesson .course-label {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.proof-lesson .warmup {
+  margin-top: 28px;
+}
+
+.proof-diagram {
+  color: #102b1f;
+}
+
+.proof-diagram .line,
+.proof-diagram .parallel-mark {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.proof-diagram .parallel-mark {
+  stroke-width: 2.4;
+}
+
+.proof-diagram .labels,
+.proof-diagram .points {
+  fill: currentColor;
+}
+
+.proof-diagram .labels {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.proof-diagram .measure {
+  font-size: 14px;
+  fill: #5c321a;
+}
+
+.reasoning {
+  max-width: 68ch;
+  padding-left: 1.4em;
+}
+
+.reasoning li + li {
+  margin-top: 0.48em;
+}
+
+.segment {
+  text-decoration: overline;
+}
+
+.proof-lesson .paper-space,
+.proof-lesson .print-only {
+  display: none;
+}
+
+@media (max-width: 340px) {
+  .proof-diagram {
+    max-width: 248px;
+    margin-inline: auto;
+  }
+}
+
+@media screen and (max-height: 460px) {
+  .proof-lesson figure svg.proof-diagram {
+    max-height: calc(100dvh - 12px);
+  }
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.55in;
+  }
+
+  .proof-lesson {
+    font-size: 11pt;
+    line-height: 1.31;
+  }
+
+  .proof-lesson .return-link,
+  .proof-lesson .screen-only,
+  .proof-lesson details {
+    display: none;
+  }
+
+  .proof-lesson .print-only {
+    display: block;
+  }
+
+  .proof-lesson::before {
+    content: none;
+  }
+
+  .proof-lesson section { margin-top: 16px; }
+  .proof-lesson p { margin-block: 8px; }
+  .proof-lesson h2 { margin-bottom: 10px; break-after: avoid; }
+  .proof-lesson h3 { font-size: 14pt; break-after: avoid; }
+  .proof-lesson .reasoning li + li { margin-top: 0.25em; }
+  .proof-lesson dl { columns: 2; column-gap: 0.32in; }
+
+  .proof-lesson .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 0.24in;
+  }
+
+  .proof-lesson .activity-evidence {
+    padding: 0.12in;
+    border: 1px solid #777;
+    background: transparent;
+  }
+
+  .proof-lesson .activity-evidence figcaption {
+    font-size: 10.5pt;
+  }
+
+  .proof-lesson .paper-task,
+  .proof-lesson .model,
+  .proof-lesson .repair,
+  .proof-lesson .warmup,
+  .proof-lesson #product-retry,
+  .proof-lesson #recall,
+  .proof-lesson .key-entry,
+  .proof-lesson dl > div {
+    break-inside: avoid;
+  }
+
+  .proof-lesson #glossary {
+    break-inside: avoid;
+  }
+
+  .proof-lesson .paper-key {
+    break-before: page;
+  }
+
+  .proof-lesson .paper-space {
+    display: block;
+    height: 2.65in;
+    background: repeating-linear-gradient(to bottom, transparent 0 0.29in, #a6a6a6 0.29in 0.3in);
+  }
+}

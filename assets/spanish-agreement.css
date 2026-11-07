@@ -1,0 +1,150 @@
+.spanish-agreement .stage-kicker {
+  color: #714150;
+  font-weight: 700;
+}
+
+.spanish-agreement .stage-lead {
+  font-size: 1.2em;
+  max-width: 52ch;
+}
+
+.spanish-agreement .work-steps,
+.spanish-agreement .label-list {
+  padding-inline-start: 1.5em;
+}
+
+.spanish-agreement li + li {
+  margin-block-start: 0.65em;
+}
+
+.spanish-agreement .stage-sentence,
+.spanish-agreement .stage-result {
+  font-weight: 700;
+}
+
+.spanish-agreement .stage-result {
+  padding: 0.85em 1em;
+  background: #f9ebc5;
+  border-inline-start: 4px solid #a27330;
+}
+
+.spanish-agreement .form-table caption {
+  text-align: left;
+  font-weight: 700;
+  margin-block-end: 0.5em;
+}
+
+.spanish-agreement .word-bank {
+  padding: 0.75em 0.85em;
+  background: #f9ebc5;
+}
+
+.spanish-agreement .label-list li > span:last-child {
+  display: block;
+  font-size: 0.9em;
+}
+
+.spanish-agreement fieldset {
+  min-width: 0;
+  margin: 1em 0;
+  padding: 0.65em 0.85em;
+  border: 1px solid #597463;
+}
+
+.spanish-agreement fieldset .controls {
+  display: none;
+}
+
+.spanish-agreement fieldset[data-ready] .controls {
+  display: flex;
+}
+
+.spanish-agreement fieldset[data-ready] + .ending-fallback {
+  display: none;
+}
+
+.spanish-agreement legend {
+  font-weight: 700;
+  padding-inline: 0.35em;
+}
+
+.stage-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em 1.1em;
+}
+
+.stage-choices label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 44px;
+}
+
+.stage-choices input {
+  accent-color: #0d2a1c;
+}
+
+.spanish-agreement .practice + .practice { margin-top: 12px; }
+.spanish-agreement .blank { white-space: nowrap; }
+
+.spanish-agreement .print-answers,
+.spanish-agreement .print-note,
+.spanish-agreement .print-picture { display: none; }
+
+@media print {
+  .lesson.spanish-agreement { font-size: 11pt; line-height: 1.3; }
+  .spanish-agreement > section { margin-top: 14pt; }
+  .spanish-agreement h2, .spanish-agreement h3 { break-after: avoid; }
+  .spanish-agreement h2 { font-size: 17pt; margin-bottom: 6pt; }
+  .spanish-agreement h3 { font-size: 13pt; margin-bottom: 5pt; }
+  .lesson.spanish-agreement h1 { max-width: none; }
+  .lesson.spanish-agreement p { margin-block: 6pt; max-width: none; }
+  .spanish-agreement #glossary dl { columns: 2; column-gap: 18pt; }
+  .spanish-agreement #glossary dt { margin-top: 7pt; }
+  .spanish-agreement #glossary dd { margin-top: 2pt; }
+  .spanish-agreement ol, .spanish-agreement ul { margin-block: 6pt; }
+  .lesson.spanish-agreement li + li { margin-block-start: 3pt; }
+  .lesson.spanish-agreement .practice, .lesson.spanish-agreement .activity-evidence { padding: 7pt 9pt; }
+  .lesson.spanish-agreement .comparison,
+  .lesson.spanish-agreement fieldset[data-ready] + .ending-fallback { display: none; }
+  .lesson.spanish-agreement details { padding: 0; margin: 5pt 0; }
+  .lesson.spanish-agreement summary { min-height: 0; padding: 0; }
+  .spanish-agreement .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 10pt;
+  }
+  .lesson.spanish-agreement figure svg { max-height: 235pt; }
+  .lesson.spanish-agreement .activity-evidence figcaption { font-size: 10pt; margin-top: 5pt; }
+  .spanish-agreement .print-unit,
+  .spanish-agreement .glossary-entry,
+  .spanish-agreement .form-table,
+  .spanish-agreement .print-answers > section { break-inside: avoid; }
+  .spanish-agreement .print-note,
+  .spanish-agreement .print-picture,
+  .spanish-agreement .print-answers { display: block; }
+  .spanish-agreement .print-picture { font-size: 10pt; }
+  .spanish-agreement .print-answers { break-before: page; columns: 2; column-gap: 18pt; }
+  .spanish-agreement .print-answers h2 { column-span: all; }
+  .spanish-agreement .print-answers > section { margin-top: 9pt; }
+}
+
+@media print {
+  .spanish-agreement .stage-result, .spanish-agreement .word-bank { background: #fff; }
+  .spanish-agreement .word-bank { padding: 0; }
+  .spanish-agreement .stage-choices label { min-height: 0; }
+  .lesson.spanish-agreement figure svg { print-color-adjust: exact; }
+}
+
+@media screen {
+  .spanish-agreement .table-scroll {
+    max-inline-size: 100%;
+    overflow-x: auto;
+  }
+  .spanish-agreement .table-scroll:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .spanish-agreement .table-scroll td[lang="es"] { white-space: nowrap; }
+}

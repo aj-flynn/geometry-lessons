@@ -4,219 +4,211 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Use isotope masses and abundances to set up an average, then compare a measured abundance with a reference.">
-  <title>Isotope mass and percent error</title>
-  <link rel="stylesheet" href="../../../assets/site.css?v=20261105-r9">
-  <link rel="stylesheet" href="../../../assets/isotope-mass.css">
+  <meta name="description" content="Use isotope tables to set up an average atomic mass and check an abundance reading with percent error.">
+  <title>Two calculations from an isotope table</title>
+  <link rel="stylesheet" href="../../../assets/site.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/activity-layout.css?v=20261107-r1">
+  <link rel="stylesheet" href="../../../assets/isotope-table-workshop.css">
   <script src="../../../assets/lesson.js?v=20261105-r9" defer></script>
   <script src="../../../assets/isotope-model.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson isotope-lesson">
-    <a class="return-link" href="../index.html">← Lesson library</a>
-    <header>
-      <p class="kicker">High school chemistry · Atomic structure</p>
-      <h1>Isotope mass and percent error</h1>
-      <p class="lead">Use the same kind of data to answer two questions. How much mass does an atom in a mixture have on average? How far is a measured share from its reference?</p>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main" class="lesson activity-lesson isotope-workshop">
+  <div class="sheet">
+    <header class="lesson-intro">
+      <a class="return-link" href="../../../index.html">← Lesson library</a>
+      <p class="eyebrow">Chemistry · Isotope data</p>
+      <h1>Two calculations from an isotope table</h1>
+      <p class="lead">Build an average mass from a mixture of atoms. Then check how far a lab reading is from a reference.</p>
     </header>
 
-    <aside aria-labelledby="warm-up">
-      <h2 id="warm-up">Before you start</h2>
-      <p>In a group of 100 atoms, 35 are of one kind. Write the share as a fraction and a decimal.</p>
-      <details><summary>Compare the conversions</summary><p>35% = 35/100 = 0.35. A percent gives a count per hundred. Use its decimal form when multiplying by an atom’s mass.</p></details>
-    </aside>
-    <p><a href="#glossary">Open the glossary</a> for words and units.</p>
+    <section id="warm" class="reading-block task" aria-labelledby="warm-title">
+      <h2 id="warm-title">Start with “out of 100”</h2>
+      <p>In one sample, 40% of the atoms are of one type. Write 40% as a decimal fraction. Now go the other way: what percent is a decimal fraction of 0.08?</p>
+      <details id="warm-comparison" class="screen-only"><summary>Check the two conversions</summary><p>40% means 40 out of 100, so its decimal fraction is 40 ÷ 100 = 0.40. A share of 0.08 means 8 out of 100, so it is 8%. Move between these forms by asking “how many out of 100?”</p></details>
+    </section>
 
-    <section aria-labelledby="average">
-      <h2 id="average">1. Give each mass its share</h2>
-      <p><a href="#isotope">Isotopes</a> are atoms of the same element with different numbers of neutrons. They have different masses. The number after the element symbol, as in Mg-24, counts protons and neutrons. The measured mass is listed separately in <a href="#unit">unified atomic mass units</a> (u).</p>
-      <p>The <a href="#abundance">abundance</a> is the share of atoms of one isotope. For <a href="#average-term">average atomic mass</a>, each isotope’s share tells you how much weight to give its mass.</p>
-
-      <figure aria-labelledby="model-caption">
-        <svg viewBox="0 0 280 70" role="img" aria-labelledby="model-title model-desc">
-          <title id="model-title">Average on a mass scale</title>
-          <desc id="model-desc" data-model-desc>With 25 percent heavier atoms, the mean is 20.50 u, one quarter of the way from 20.00 u to 22.00 u.</desc>
-          <path class="axis" d="M 20 40 H 260 M 20 30 V 50 M 260 30 V 50"/>
-          <circle class="mean-marker" data-mean-marker cx="80" cy="40" r="8"/>
-        </svg>
-        <div class="scale-ends" aria-hidden="true"><span>20.00 u</span><span>22.00 u</span></div>
-        <figcaption id="model-caption">Two-isotope neon model. The ends are the lighter and heavier masses, rounded to whole u for the model. The dot starts one quarter of the way along the scale at <span class="num">20.50 u</span> when one quarter of the atoms are heavier. These are model mixtures.</figcaption>
-      </figure>
-      <p>Predict where the dot will go if the share of heavier atoms rises from 25% to 75%. Try your prediction.</p>
-      <div class="model-controls" data-isotope-controls hidden>
-        <label for="heavier-share">Share of heavier atoms (%)</label>
-        <input id="heavier-share" type="range" min="0" max="100" step="25" value="25">
-        <output for="heavier-share" id="model-result">25% heavier · 20.50 u average</output>
-        <button type="button" data-isotope-reset>Reset model</button>
-      </div>
-      <details>
-        <summary>Compare positions on the scale</summary>
-        <p>At 75% heavier, the mean is <span class="num">21.50 u</span>, three quarters of the way toward the heavier mass. At 50%, the dot is halfway at <span class="num">21.00 u</span>. With a single isotope at either end, the average equals that isotope’s mass.</p>
-      </details>
-
-      <h3>Worked example · A magnesium blend</h3>
-      <p><strong>Givens.</strong> This blend was prepared with the atom shares below. Its abundances are chosen for practice.</p>
-      <table>
-        <caption>Magnesium blend</caption>
-        <thead><tr><th scope="col">Isotope</th><th scope="col">Mass (u)</th><th scope="col">Share (%)</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Mg-24</th><td>23.985</td><td>20</td></tr>
-          <tr><th scope="row">Mg-25</th><td>24.986</td><td>30</td></tr>
-          <tr><th scope="row">Mg-26</th><td>25.983</td><td>50</td></tr>
-        </tbody>
-      </table>
-      <p><strong>Goal.</strong> Write a numerical setup for the blend’s average atomic mass, then check it by calculating.</p>
-      <ol class="method">
-        <li>Convert the shares to <a href="#fraction">fractional abundances</a>. The decimals 0.20, 0.30 and 0.50 sum to 1.00, so they account for the whole blend.</li>
-        <li>Keep each mass paired with the share in its row. Multiply, then add the products. The decimals have no unit, so each product is in u.
-          <div class="equation">
-            <div><var>m</var><sub>avg</sub> =</div>
-            <div>(<span class="num">23.985 u</span>) × 0.20</div>
-            <div>+ (<span class="num">24.986 u</span>) × 0.30</div>
-            <div>+ (<span class="num">25.983 u</span>) × 0.50</div>
+    <section id="mass" class="activity worked" aria-labelledby="mass-title">
+      <h2 id="mass-title"><span class="eyebrow">01 / Average mass</span>Count each atom’s contribution</h2>
+      <div class="activity-split">
+        <aside id="mass-data" class="activity-evidence" tabindex="0" aria-labelledby="mass-data-title">
+          <h3 id="mass-data-title">A five-atom model</h3>
+          <p>These are two <a href="#term-isotope">isotopes</a>: atoms of the same element with different numbers of neutrons. J is a made-up element.</p>
+          <div class="table-scroll" role="region" aria-labelledby="model-mass-table" tabindex="0">
+            <table>
+              <caption id="model-mass-table">Masses and counts in the model</caption>
+              <thead><tr><th scope="col">Isotope</th><th scope="col">Mass (<a href="#term-u">u</a>)</th><th scope="col">Count</th></tr></thead>
+              <tbody><tr><th scope="row">J-20</th><td>20.00</td><td>4</td></tr><tr><th scope="row">J-22</th><td>22.00</td><td>1</td></tr></tbody>
+            </table>
           </div>
-          <p>That expression is the setup. It shows every mass and the weight that goes with it.</p>
-        </li>
-        <li>Evaluate from the given numbers, then round for reporting.
-          <div class="equation">
-            <div><var>m</var><sub>avg</sub> = <span class="num">25.2843 u</span></div>
-            <div><var>m</var><sub>avg</sub> ≈ <span class="num">25.28 u</span></div>
-          </div>
-          <p>The mean sits between the lightest and heaviest masses. Equal weighting gives about <span class="num">24.98 u</span>. Compared with equal shares, this blend gives more weight to the heaviest isotope and less to both lighter isotopes. The mean rises.</p>
-        </li>
-      </ol>
-
-      <div class="checkpoint">
-        <div class="print-task">
-          <h3>Check the pairing</h3>
-          <p>Using the same magnesium masses, a second blend has 50% Mg-24, 10% Mg-25 and 40% Mg-26. Write the setup on paper, then enter the average in u, rounded to two decimal places.</p>
-          <form data-practice data-expected="24.88" data-tolerance="0"
-            data-hint="Read the shares in the new blend. Pair each mass with its own decimal share, then round the sum to two decimal places."
-            data-mistakes='{"24.98":"That is close to an equal-share mean. Multiply each mass by the decimal share of its own isotope.","25.28":"Those are the weights from the first blend. Read the new shares and match them by isotope."}'
-            data-success="24.88 u fits the new blend. Check that the setup gives Mg-24 the largest weight.">
-            <label for="new-mass">Average atomic mass (u)</label>
-            <input id="new-mass" type="number" min="0" step="any" required>
-            <button type="submit" disabled>Check the average</button>
-            <p class="feedback" data-feedback role="status"></p>
-          </form>
-          <details class="static-feedback"><summary>Compare the setup</summary>
-            <div class="equation">
-              <div><var>m</var><sub>avg</sub> =</div>
-              <div>(<span class="num">23.985 u</span>) × 0.50</div>
-              <div>+ (<span class="num">24.986 u</span>) × 0.10</div>
-              <div>+ (<span class="num">25.983 u</span>) × 0.40</div>
-              <div>≈ <span class="num">24.88 u</span></div>
-            </div>
-            <p>Equal weighting ignores the new shares. Copying the first setup gives the largest weight to the wrong isotope for this blend.</p>
-          </details>
+          <p class="small"><strong>u</strong> is the unified atomic mass unit. The 20 in J-20 is a <a href="#term-number">mass number</a>, a count of protons and neutrons. Use the mass column for calculations; real isotope masses need not equal their mass numbers.</p>
+        </aside>
+        <div class="activity-work">
+          <p><strong>Goal:</strong> Find the <a href="#term-average">average atomic mass</a>, the mass per atom averaged across this sample.</p>
+          <ol class="steps">
+            <li><strong>Add all five atoms’ masses.</strong><span class="equation">Total mass = 4 × 20.00 u + 1 × 22.00 u</span></li>
+            <li><strong>Share that total across five atoms.</strong><span class="equation">Average mass = (4 × 20.00 u + 1 × 22.00 u) ÷ 5</span></li>
+            <li><strong>Divide each count by five instead.</strong> Each mass is now paired with its <a href="#term-abundance">fractional abundance</a>, the share of atoms in its row. Here 4 out of 5 is 80%, or 0.80, and 1 out of 5 is 20%, or 0.20.
+              <span class="equation">Average mass = (0.80 × 20.00 u) + (0.20 × 22.00 u)<br>= 20.40 u</span>
+            </li>
+          </ol>
+          <p><strong>Why not 21.00 u?</strong> Averaging the two row masses alone would give each row half the atoms. This sample has more lighter atoms, so the average sits nearer 20.00 u. The average describes a mixture; it need not equal any one atom’s mass. A table for natural samples and a prepared sample can use different isotope shares.</p>
+          <a class="activity-return" href="#mass-data">Return to the five-atom data</a>
         </div>
-        <details><summary>Retry with a new blend</summary>
-          <p>Use 60% Mg-24, 30% Mg-25 and 10% Mg-26. Write the setup and predict whether the new mean lies above or below the first worked mean.</p>
-          <details><summary>Compare the retry</summary><p>Pair the masses with 0.60, 0.30 and 0.10, respectively. The result is about <span class="num">24.49 u</span>, below the first mean because some of the weight shifted from the heaviest isotope to the lightest.</p></details>
-        </details>
       </div>
     </section>
+  </div>
 
-    <section aria-labelledby="error">
-      <h2 id="error">2. Measure the gap against a reference</h2>
-      <p><a href="#percent-error">Percent error</a> expresses the size of a measurement gap relative to an <a href="#accepted">accepted value</a>, the reference for that quantity. Match the isotope and the quantity before choosing the reference. An abundance needs an abundance for comparison.</p>
-
-      <h3>Worked example · A sulfur calibration</h3>
-      <p><strong>Givens.</strong> A calibration mixture has a certified S-34 abundance of 18.0%. An instrument reports 16.2% S-34 for that mixture.</p>
-      <p><strong>Goal.</strong> Find the percent error of the instrument’s abundance reading.</p>
-      <ol class="method">
-        <li>Find the <a href="#absolute">absolute value</a> of the difference, so a low reading and a high reading can be compared by size.
-          <div class="equation">|16.2% − 18.0%| = <span class="num">1.8 pp</span></div>
-          <p>The gap is 1.8 <a href="#points">percentage points</a> (pp). That number describes the subtraction of two percentages.</p>
-        </li>
-        <li>Divide the gap by the accepted value, measured on the same scale. As fractions of all atoms, the gap is 0.018 and the reference is 0.180.
-          <div class="equation">0.018 ÷ 0.180 = 0.10</div>
-        </li>
-        <li>Express the resulting ratio as a percent.
-          <div class="equation">0.10 × 100% = 10%</div>
-          <p>The gap is one tenth of the accepted abundance. This size comparison needs a positive accepted abundance. It cannot tell you what caused the gap.</p>
-        </li>
-      </ol>
-
-      <div class="checkpoint">
-        <h3>Check the denominator</h3>
-        <p>An argon standard has a certified Ar-38 share of 40.0%. An instrument reports 42.0%. Find the percent error. On paper, mark the value you divide by before you check.</p>
-        <form data-practice data-expected="5" data-tolerance="0"
-          data-hint="Find the gap and compare it with the certified share. Convert the ratio to percent."
-          data-mistakes='{"2":"2.0 percentage points is the gap. Divide by the reference to find the relative error.","4.76":"That compares the gap with the instrument reading. Compare it with the certified share instead."}'
-          data-success="5.0% fits this case. The 2.0 percentage-point gap is one twentieth of the 40.0% reference.">
-          <label for="argon-error">Percent error (%)</label>
-          <input id="argon-error" type="number" min="0" step="any" required>
-          <button type="submit" disabled>Check the percent error</button>
-          <p class="feedback" data-feedback role="status"></p>
-        </form>
-        <details class="static-feedback"><summary>Compare the calculation</summary><p>The gap is 2.0 percentage points. Divide 0.020 by the reference fraction 0.400 to get 0.050, or 5.0% error. A division by 0.420 would put the reading in the denominator.</p></details>
-        <details><summary>Retry with a different reference</summary>
-          <p>A second argon standard has a certified Ar-38 share of 25.0%. The instrument reports 23.0%. Find the percent error and explain why the size of the error changed.</p>
-          <details><summary>Compare the retry</summary><p>The gap is again 2.0 percentage points. This time 0.020 ÷ 0.250 = 0.080, or 8.0% error. The same gap is a larger fraction of the smaller reference.</p></details>
-        </details>
+  <div class="sheet">
+    <section id="model" class="reading-block task" aria-labelledby="model-title">
+      <h2 id="model-title">Predict where the average moves</h2>
+      <p id="prediction">The heavier isotope starts at 20% of the atoms. If its share rises to 70%, which way will the average move? Will it end up below or above the halfway mark? Write or say a prediction before checking it.</p>
+      <figure id="mass-scale">
+        <svg viewBox="0 0 280 90" role="img" aria-labelledby="scale-title scale-desc">
+          <title id="scale-title">Average mass on a number line</title>
+          <desc id="scale-desc" data-model-desc>With 20 percent heavier atoms, the mean is 20.40 u. The ends of the scale are 20.00 u and 22.00 u.</desc>
+          <path d="M20 37H260 M20 31V43 M140 31V43 M260 31V43" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle data-mean-marker cx="68" cy="37" r="7" fill="#96522b" stroke="#fff" stroke-width="2"/>
+          <g fill="currentColor" font-size="15" font-family="Arial, sans-serif">
+            <text x="20" y="62" text-anchor="start">20.00 u</text>
+            <text x="140" y="62" text-anchor="middle">21.00 u</text>
+            <text x="260" y="62" text-anchor="end">22.00 u</text>
+          </g>
+        </svg>
+        <figcaption>The line runs from J-20 (20.00 u) through the halfway mark (21.00 u) to J-22 (22.00 u). The dot tracks the average and starts at 20.40 u. This is a mass scale, not a picture of the atoms.</figcaption>
+      </figure>
+      <div class="model-controls screen-only" data-isotope-controls hidden>
+        <label for="heavy-share">Heavier isotope share (%)</label>
+        <input id="heavy-share" type="range" min="0" max="100" step="10" value="20">
+        <output for="heavy-share" aria-live="polite">20% heavier · 20.40 u average</output>
+        <button type="button" data-isotope-reset>Reset to 20%</button>
       </div>
+      <details id="model-comparison" class="screen-only"><summary>Compare your prediction (also works without the slider)</summary><p>At 70% heavier, the average moves right, past the halfway mark at 21.00 u. The masses stay fixed; only the number of atoms contributing each mass changes.</p><p class="equation">Average mass = (0.30 × 20.00 u) + (0.70 × 22.00 u)<br>= 21.40 u</p></details>
     </section>
 
-    <section aria-labelledby="independent">
-      <div class="print-task">
-        <h2 id="independent">Your turn · Read a blend record</h2>
-        <p>A silicon blend was prepared for an instrument test. Its certificate lists the values below. The instrument reports that 23.2% of the atoms are Si-30.</p>
-        <table>
-          <caption>Silicon blend certificate</caption>
-          <thead><tr><th scope="col">Isotope</th><th scope="col">Mass (u)</th><th scope="col">Share (%)</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Si-28</th><td>27.977</td><td>10.0</td></tr>
-            <tr><th scope="row">Si-29</th><td>28.976</td><td>70.0</td></tr>
-            <tr><th scope="row">Si-30</th><td>29.974</td><td>20.0</td></tr>
-          </tbody>
-        </table>
-        <ol>
-          <li>Write a numerical setup for the certificate blend’s average atomic mass. Keep the setup visible even if you calculate the result.</li>
-          <li>Find the percent error of the instrument’s Si-30 abundance. Explain which certificate entry you used and why.</li>
-        </ol>
-        <details><summary>Compare after attempting both</summary>
-          <p>The average uses all three certificate rows.</p>
-          <div class="equation">
-            <div><var>m</var><sub>avg</sub> =</div>
-            <div>(<span class="num">27.977 u</span>) × 0.100</div>
-            <div>+ (<span class="num">28.976 u</span>) × 0.700</div>
-            <div>+ (<span class="num">29.974 u</span>) × 0.200</div>
+    <section id="error" class="activity worked" aria-labelledby="error-title">
+      <h2 id="error-title"><span class="eyebrow">02 / Percent error</span>Size the gap against its reference</h2>
+      <div class="activity-split">
+        <aside id="error-data" class="activity-evidence" tabindex="0" aria-labelledby="error-data-title">
+          <h3 id="error-data-title">Two instrument checks</h3>
+          <p>For the same isotope, two test mixes have different <a href="#term-accepted">accepted values</a>, the reference values for those mixes.</p>
+          <div class="table-scroll" role="region" aria-labelledby="abundance-readings-table" tabindex="0">
+            <table>
+              <caption id="abundance-readings-table">Abundance readings for the two mixes</caption>
+              <thead><tr><th scope="col">Mix</th><th scope="col">Accepted (%)</th><th scope="col">Measured (%)</th></tr></thead>
+              <tbody><tr><th scope="row">A</th><td>10.0</td><td>8.0</td></tr><tr><th scope="row">B</th><td>40.0</td><td>38.0</td></tr></tbody>
+            </table>
           </div>
-          <p>The Si-30 share on the certificate is 20.0%. The gap between 23.2% and 20.0% is 3.2 percentage points. Using fractions, 0.032 ÷ 0.200 = 0.16, so the error is 16%. Both values refer to the abundance of Si-30.</p>
-        </details>
+        </aside>
+        <div class="activity-work">
+          <p><strong>Goal:</strong> Compare the <a href="#term-error">signed percent errors</a>. The sign shows whether a reading was high or low. Compare the reading and the reference for the same quantity in the same mix.</p>
+          <ol class="steps">
+            <li><strong>Subtract the reference from the reading.</strong> The subtraction of two percentages gives a gap in <a href="#term-points">percentage points</a>.
+              <span class="equation">A: 8.0% − 10.0% = −2.0 percentage points<br>B: 38.0% − 40.0% = −2.0 percentage points</span>
+            </li>
+            <li><strong>Divide by the accepted value.</strong> A gap has to be sized against what should have been measured. Both numbers are on the same percentage scale, so the ratios have no units.
+              <span class="equation">A: −2.0 ÷ 10.0 = −0.20<br>B: −2.0 ÷ 40.0 = −0.05</span>
+            </li>
+            <li><strong>Express each ratio as a percent.</strong><span class="equation">A: −0.20 = −20%<br>B: −0.05 = −5%</span></li>
+          </ol>
+          <p>Both readings were low by the same number of points. But the gap is one fifth of A’s reference and only one twentieth of B’s. This lesson uses the signed convention; when a lab asks for the size alone, report the magnitude without a minus sign.</p>
+          <a class="activity-return" href="#error-data">Return to the instrument readings</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="sheet">
+    <section id="lab" class="activity task" aria-labelledby="lab-title">
+      <h2 id="lab-title"><span class="eyebrow">03 / Independent practice</span>Write two entries for the lab report</h2>
+      <div class="activity-split">
+        <aside id="lab-data" class="activity-evidence" tabindex="0" aria-labelledby="lab-data-title">
+          <h3 id="lab-data-title">A calibration sample</h3>
+          <p>Nq is fictional. The reference column describes the accepted composition of the sample. A test run reads <strong>22.2% Nq-41</strong> and <strong>21.8% Nq-44</strong>.</p>
+          <div class="table-scroll" role="region" aria-labelledby="calibration-reference-table" tabindex="0">
+            <table>
+              <caption id="calibration-reference-table">Calibration sample reference</caption>
+              <thead><tr><th scope="col">Isotope</th><th scope="col">Mass (u)</th><th scope="col">Reference share (%)</th></tr></thead>
+              <tbody><tr><th scope="row">Nq-41</th><td>40.96</td><td>24.0</td></tr><tr><th scope="row">Nq-42</th><td>41.95</td><td>56.0</td></tr><tr><th scope="row">Nq-44</th><td>43.94</td><td>20.0</td></tr></tbody>
+            </table>
+          </div>
+        </aside>
+        <div class="activity-work">
+          <p>Write both entries on paper before checking.</p>
+          <ol class="steps">
+            <li>Write a <strong>numerical setup</strong> for the average atomic mass of Nq in the reference sample. Leave it as an expression with numbers and units.</li>
+            <li>Calculate the <strong>signed percent error</strong> of the test run’s abundance reading for Nq-41. Show your calculation and report the result as a percent.</li>
+          </ol>
+          <a class="activity-return" href="#lab-data">Return to the calibration data</a>
+          <form class="practice screen-only" data-practice data-expected="-7.5" data-tolerance="0.05"
+            data-hint="Match the measured and reference shares to the same isotope. Use the reference as the baseline, and check the sign before retrying."
+            data-mistakes='{"-1.8":"That is the gap in percentage points. Divide the gap by the reference share and express the ratio as a percent. Then retry.","7.5":"The size is right, but this reading was below the reference. Keep the sign of measured minus accepted. Then retry.","-8.11":"You divided by the measured share. Divide by the reference share instead to size the gap against the baseline. Then retry."}'
+            data-success="That signed percent fits the Nq-41 reading. Open the comparison to check the full calculation and your mass setup.">
+            <label for="lab-percent">Signed percent error (number only)</label>
+            <div class="check-row">
+              <input id="lab-percent" type="number" step="any" required>
+              <button type="submit" disabled>Check the percent</button>
+            </div>
+            <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+          </form>
+          <details id="lab-comparison" class="screen-only"><summary>Compare both lab report entries</summary><p><strong>1. Numerical setup:</strong> (0.24 × 40.96 u) + (0.56 × 41.95 u) + (0.20 × 43.94 u). You can stop there. If you evaluate it, the model gives 42.1104 u before rounding.</p><p>If you divided the three masses by three, you gave each isotope the same share. Replace each equal share with the fraction from that isotope’s own row. If you used 41, 42 and 44 as masses, replace the labels’ mass numbers with the masses in u.</p><p><strong>2. Percent error:</strong> Nq-41 is the target: the measured abundance is 22.2%, and its reference abundance is 24.0%.</p><p class="equation">22.2% − 24.0% = −1.8 percentage points<br>−1.8 ÷ 24.0 = −0.075 (same percentage scale)<br>−0.075 = −7.5%</p><p>If you got −1.8%, your subtraction is right. Label that gap in percentage points, then divide it by the accepted abundance and express the ratio as a percent. Check that the negative sign matches the direction of the gap. Revise your work before trying the next case.</p></details>
+        </div>
       </div>
     </section>
 
-    <section aria-labelledby="recall">
-      <h2 id="recall">Back to independent work</h2>
-      <ul>
-        <li>For an average, check that you paired the entries row by row and that the fractions cover the whole sample. Keep units in the setup.</li>
-        <li>For an error, check that the reading and reference describe the same thing. Label the final result with %.</li>
-      </ul>
-      <p>Next time, before reopening the lesson, sketch where the average would sit if nearly all atoms were the lighter isotope. Then explain how the same gap in percentage points can yield two different percent errors.</p>
+    <section id="retry" class="activity task" aria-labelledby="retry-title">
+      <h2 id="retry-title">Retry with a new sample</h2>
+      <div class="activity-split">
+        <aside id="retry-data" class="activity-evidence" tabindex="0" aria-labelledby="retry-data-title">
+          <h3 id="retry-data-title">Reference vial V</h3>
+          <p>Vial V contains fictional isotope Zq-33 (32.97 u; 73.0% accepted share) and Zq-31 (30.98 u; 27.0% accepted share). A test run reports 29.7% Zq-31.</p>
+        </aside>
+        <div class="activity-work">
+          <p>Write the numerical setup for the vial’s reference average atomic mass, then calculate the signed percent error for the Zq-31 reading.</p>
+          <a class="activity-return" href="#retry-data">Return to the vial data</a>
+          <details id="retry-comparison" class="screen-only"><summary>Compare your retry</summary><p><strong>Mass setup:</strong> (0.27 × 30.98 u) + (0.73 × 32.97 u). The 73% share belongs with the larger mass, despite being listed first.</p><p><strong>Error:</strong> (29.7 − 27.0) ÷ 27.0 = 0.10 = +10.0%. Both inputs are abundances on the same percentage scale. The reading is above the reference, so the result is positive.</p></details>
+        </div>
+      </div>
     </section>
 
-    <section id="glossary" aria-labelledby="glossary-title">
+    <section id="recall" class="reading-block task" aria-labelledby="recall-title">
+      <h2 id="recall-title">Come back tomorrow</h2>
+      <p>Before looking at the examples, compare two abundance tests for an isotope. One reads 6% with a 5% reference; the other reads 21% with a 20% reference. A classmate says both percent errors are the same. Are they? Use the two reference shares to explain.</p>
+      <details id="recall-comparison" class="screen-only"><summary>Compare your explanation</summary><p>The gap is 1 percentage point in both tests, but the reference shares differ. The first signed percent error is (6 − 5) ÷ 5 = +20%; the second is (21 − 20) ÷ 20 = +5%. The first is larger because the same gap is a larger fraction of a smaller reference.</p></details>
+      <p class="screen-only small">Returning to your own work? For an average, match each mass to its share and check that all shares total 100%. For percent error, match the quantity, identify the reference, and check that the sign agrees with high or low.</p>
+    </section>
+  </div>
+
+  <div class="sheet">
+    <section id="glossary" class="reading-block" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
-        <dt id="isotope">Isotope</dt><dd>One form of an element’s atoms. Its proton count identifies the element, and its neutron count distinguishes it from other isotopes of that element.</dd>
-        <dt id="unit">Unified atomic mass unit (u)</dt><dd>A unit equal to one twelfth of the mass of a free, neutral carbon-12 atom at rest in its ground state. It is also called the dalton (Da).</dd>
-        <dt id="abundance">Abundance</dt><dd>The proportion of atoms of a particular isotope. Natural abundance describes the share in naturally occurring material.</dd>
-        <dt id="fraction">Fractional abundance</dt><dd>The isotope’s share as a number from 0 to 1. Divide the numerical percentage by 100 to obtain it.</dd>
-        <dt id="average-term">Average atomic mass</dt><dd>The sum of each isotope mass multiplied by that isotope’s fractional abundance. The value depends on the composition of the material.</dd>
-        <dt id="accepted">Accepted value</dt><dd>The value used as the reference for the same quantity as the measurement.</dd>
-        <dt id="absolute">Absolute value | |</dt><dd>The size of a number without its sign. Both +3 and −3 have an absolute value of 3.</dd>
-        <dt id="points">Percentage point (pp)</dt><dd>A unit for the difference between two percentages. A move from 11% to 12% is a gain of 1 percentage point.</dd>
-        <dt id="percent-error">Percent error</dt><dd>For a positive accepted value, take the absolute gap between the measured and accepted values, divide by the accepted value, and express the ratio as a percent.</dd>
+        <div><dt id="term-isotope">Isotope</dt><dd>A form of an element with a particular number of neutrons. Isotopes of one element have the same number of protons.</dd></div>
+        <div><dt id="term-u">Unified atomic mass unit (u)</dt><dd>A unit for very small masses. One u is one twelfth of the mass of a neutral carbon-12 atom at rest in its ground state.</dd></div>
+        <div><dt id="term-number">Mass number</dt><dd>The number of protons plus neutrons in one atom’s nucleus. It is a count with no mass unit.</dd></div>
+        <div><dt id="term-average">Average atomic mass</dt><dd>The average mass per atom in a specified mixture. Each isotope’s mass contributes in proportion to its share of the atoms.</dd></div>
+        <div><dt id="term-abundance">Fractional abundance</dt><dd>The share of all atoms of an element in the sample that belong to an isotope, written as a decimal. Percent abundance expresses the same share out of 100.</dd></div>
+        <div><dt id="term-accepted">Accepted value</dt><dd>The reference value agreed on for the quantity being measured.</dd></div>
+        <div><dt id="term-error">Signed percent error</dt><dd>Measured value minus accepted value, divided by the accepted value and expressed as a percent. It needs a nonzero accepted value. For positive references like these, a negative result means the reading is low.</dd></div>
+        <div><dt id="term-points">Percentage point</dt><dd>The unit for a difference between percentages on the same scale, before dividing by a reference.</dd></div>
       </dl>
     </section>
-    <section class="sources" aria-labelledby="sources">
-      <h2 id="sources">References</h2>
-      <p>The NIST entries list isotope masses and typical compositions. The blend shares in this lesson are practice data. <a href="https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Mg">Magnesium isotope masses (NIST)</a> · <a href="https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Si">Silicon isotope masses (NIST)</a></p>
-      <p><a href="https://science.clemson.edu/physics/labs/tutorials/error/index.html">Percent error and percent difference (Clemson University)</a> shows how an accepted value changes the comparison.</p>
+    <section class="reading-block sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Read a little more</h2>
+      <p><a href="https://teachchemistry.org/classroom-resources/candy-isotopes-and-atomic-mass">AACT: Candy Isotopes &amp; Atomic Mass</a> shows why you count how many of each kind there are before averaging. It uses whole-number masses for its model.</p>
+      <p><a href="https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-d1-terminology">NIST: Measurement terminology</a> explains why measurement error compares a reading with a reference (see D.1.1.4).</p>
     </section>
-  </main>
+  </div>
+
+  <section class="print-only sheet" aria-labelledby="print-title">
+    <h2 id="print-title">Compare after you try</h2>
+    <div class="print-answer"><h3>Start with “out of 100”</h3><p>40% means 40 out of 100, so its decimal fraction is 40 ÷ 100 = 0.40. A share of 0.08 means 8 out of 100, so it is 8%. Move between these forms by asking “how many out of 100?”</p></div>
+    <div class="print-answer"><h3>Predict where the average moves</h3><p>At 70% heavier, the average moves right, past the halfway mark at 21.00 u. The masses stay fixed; only the number of atoms contributing each mass changes.</p><p class="equation">Average mass = (0.30 × 20.00 u) + (0.70 × 22.00 u)<br>= 21.40 u</p></div>
+    <div class="print-answer"><h3>Lab report entries</h3><p><strong>1. Numerical setup:</strong> (0.24 × 40.96 u) + (0.56 × 41.95 u) + (0.20 × 43.94 u). You can stop there. If you evaluate it, the model gives 42.1104 u before rounding.</p><p>If you divided the three masses by three, you gave each isotope the same share. Replace each equal share with the fraction from that isotope’s own row. If you used 41, 42 and 44 as masses, replace the labels’ mass numbers with the masses in u.</p><p><strong>2. Percent error:</strong> Nq-41 is the target: the measured abundance is 22.2%, and its reference abundance is 24.0%.</p><p class="equation">22.2% − 24.0% = −1.8 percentage points<br>−1.8 ÷ 24.0 = −0.075 (same percentage scale)<br>−0.075 = −7.5%</p><p>If you got −1.8%, your subtraction is right. Label that gap in percentage points, then divide it by the accepted abundance and express the ratio as a percent. Check that the negative sign matches the direction of the gap. Revise your work before trying the next case.</p></div>
+    <div class="print-answer"><h3>Retry</h3><p><strong>Mass setup:</strong> (0.27 × 30.98 u) + (0.73 × 32.97 u). The 73% share belongs with the larger mass, despite being listed first.</p><p><strong>Error:</strong> (29.7 − 27.0) ÷ 27.0 = 0.10 = +10.0%. Both inputs are abundances on the same percentage scale. The reading is above the reference, so the result is positive.</p></div>
+    <div class="print-answer"><h3>Come back tomorrow</h3><p>The gap is 1 percentage point in both tests, but the reference shares differ. The first signed percent error is (6 − 5) ÷ 5 = +20%; the second is (21 − 20) ÷ 20 = +5%. The first is larger because the same gap is a larger fraction of a smaller reference.</p></div>
+  </section>
+</main>
 </body>
 </html>

@@ -1,0 +1,60 @@
+.construction .eyebrow { font-size: 1rem; font-weight: 700; }
+.construction .worked { display: grid; }
+.construction .worked .activity { margin-top: 28px; }
+.construction .activity-evidence { border: 1px solid #abbeb2; }
+.construction .activity-evidence figure { background: #fff; padding: 5px 8px 0; }
+.construction .activity-evidence figcaption { padding: 0 8px 9px; margin-top: 4px; }
+.construction .activity-work details { border-left: 3px solid #245943; }
+.construction summary:focus-visible { outline-offset: 1px; }
+.construction .paper-comparison { margin-top: 24px; }
+@media screen {
+  .construction .paper-comparison[open] > h3 { margin-top: 16px; }
+}
+.construction .paper-comparison figure { background: #fff; max-width: 630px; }
+.construction svg text { font: 700 23px Arial, sans-serif; fill: #182c22; }
+.construction svg path, .construction svg line { fill: none; stroke-linecap: round; }
+.construction svg .point { fill: #182c22; }
+.construction svg .axis { stroke: #223b2c; stroke-width: 2.6; }
+.construction svg .guide { stroke: #59645f; stroke-width: 1.8; stroke-dasharray: 5 5; }
+.construction svg .check { stroke: #223b2c; stroke-width: 2; }
+.construction svg .trace { stroke: #223b2c; stroke-width: 3.3; }
+.construction svg .arc-first { stroke: #076352; stroke-width: 2.8; }
+.construction svg .arc-second { stroke: #803b0c; stroke-width: 2.8; stroke-dasharray: 6 3; }
+.construction #glossary dl > div { break-inside: avoid; }
+@container (min-width: 900px) {
+  .construction .activity-evidence figure { padding-inline: 14px; }
+}
+@page { size: letter; margin: .55in .65in; }
+@media print {
+  .lesson.construction { width: 100%; margin: 0; font-size: 11pt; line-height: 1.35; }
+  .construction .return-link { display: none !important; }
+  .construction h2 { break-after: avoid; margin-bottom: 8px; }
+  .construction h3 { margin-bottom: 5px; font-size: 13pt; }
+  .construction p { margin-block: 7px; }
+  .construction .activity { margin-top: 18px; break-inside: avoid; }
+  .construction .worked .activity { margin-top: 12px; }
+  .construction .activity-split { display: grid; grid-template-columns: 36% 1fr; gap: 16px; }
+  .construction .activity-evidence { padding: 6px; background: #fff; }
+  .construction figure { margin-block: 8px; }
+  .construction .activity-evidence figcaption, .construction .paper-comparison figcaption { font-size: 9pt; }
+  .construction .activity-work details { padding: 3px 0 3px 8px; }
+  .construction details summary { min-height: 0; padding-block: 3px; }
+  .construction .contrast { break-before: page; }
+  .construction .paper-task { break-before: page; break-inside: auto; }
+  .construction .paper-task .activity-split { display: block; break-inside: avoid; }
+  .construction .paper-task figure { width: 100%; max-width: 6.1in; margin-inline: auto; }
+  .construction .paper-task .activity-evidence { border-color: #59645f; }
+  .construction .paper-comparison { break-before: page; margin-top: 0; padding-inline: 0; }
+  .construction .paper-comparison summary { display: none; }
+  .construction .paper-comparison figure { max-width: 5.5in; margin-inline: 0; padding: 0; }
+  .construction svg .arc-first, .construction svg .arc-second { stroke: #222; }
+  .construction .recall { break-before: page; }
+  .construction #glossary dl { columns: 2; column-gap: 20px; }
+}
+
+
+@media print {
+  .construction .short-comparison { display: none !important; }
+  .construction .print-comparison-key { display: block !important; break-before: page; }
+  .construction .print-comparison-key section { break-inside: avoid; }
+}

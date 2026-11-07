@@ -1,0 +1,112 @@
+.lesson.perimeter {
+  --trail: #175b4c;
+  --mark: #82381f;
+  --cream: #fff8e8;
+  --mint: #e8f1ec;
+  overflow-wrap: anywhere;
+}
+.perimeter header .kicker {
+  color: var(--trail);
+  font-size: .85em;
+  font-weight: 750;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.perimeter header .lead { font-size: 1.22em; max-width: 42ch; }
+.perimeter .warmup { border-inline-start: 4px solid var(--trail); padding: 4px 16px; background: var(--mint); }
+.perimeter .jobs { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; list-style: none; }
+.perimeter .jobs a { display: inline-block; padding-block: .45em; }
+.perimeter .task {
+  margin-block: 24px;
+  padding: 20px;
+  background: var(--cream);
+  border-block-start: 2px solid var(--mark);
+}
+.perimeter .activity > h3 { margin-bottom: 14px; }
+.perimeter .activity-evidence { border-block-start: 2px solid var(--trail); }
+.perimeter .activity-evidence > h3,
+.perimeter .activity-evidence > h4 { margin-block: 0 12px; }
+.perimeter .activity-evidence figure svg { max-width: 25rem; }
+.perimeter .picture { background: var(--mint); }
+.perimeter .picture svg { max-width: 26rem; margin-inline: auto; }
+.perimeter svg .edge { fill: #f9e5ba; stroke: #174e44; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.perimeter svg .grid { fill: none; stroke: #5a7169; stroke-width: 1.4; }
+.perimeter svg .route { fill: none; stroke: #82381f; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.perimeter svg .dot { fill: #82381f; stroke: white; stroke-width: 2; }
+.perimeter svg text { font: 700 17px system-ui,sans-serif; text-anchor: middle; fill: #172c26; }
+.perimeter svg .small { font-size: 14px; }
+.perimeter .calculation { font-weight: 750; }
+.perimeter .steps { padding-inline-start: 1.45em; }
+.perimeter .steps li { margin-block: .55em; }
+.perimeter .steps .calculation { display: block; }
+.perimeter .strip { display: flex; flex-wrap: wrap; gap: 4px; margin-block: 12px; padding: 0; list-style: none; }
+.perimeter .strip li { flex: 1 1 5ch; min-width: 0; border: 1px solid var(--trail); padding: 5px; text-align: center; }
+.perimeter .strip .known { background: var(--mint); }
+.perimeter .strip .unknown { background: var(--cream); }
+.perimeter .practice label { display: block; font-weight: 700; margin-block-end: 6px; }
+.perimeter .practice button { display: block; max-width: 100%; margin-block-start: 10px; text-align: start; }
+.perimeter .practice:not([data-practice-ready]) { display: none; }
+.perimeter .feedback { min-height: 0; margin-block-end: 0; }
+.perimeter .finish { font-weight: 650; }
+.perimeter .print-only { display: none; }
+@media print {
+  @page { size: letter; margin: 0.52in; }
+  .lesson.perimeter { width: 100%; margin: 0; font-size: 11pt; line-height: 1.25; }
+  .perimeter .print-only { display: block; }
+  .perimeter .screen-only, .perimeter details, .perimeter form[data-practice] { display: none !important; }
+  .perimeter p { margin-block: 5pt; }
+  .perimeter .task { padding: 7pt 11pt; margin-block: 9pt; break-inside: avoid; }
+  .perimeter h1 { font-size: 26pt; }
+  .perimeter h2 { font-size: 17pt; margin-block-end: 7pt; }
+  .perimeter h3 { font-size: 13pt; margin-block-end: 4pt; }
+  .perimeter h4 { margin-block: 3pt; }
+  .perimeter h2, .perimeter h3, .perimeter h4 { break-after: avoid; }
+  .perimeter section { margin-block-start: 15pt; }
+  .perimeter .print-page { break-before: page; margin-block-start: 0; }
+  .perimeter .activity-evidence { padding: 5pt 8pt; }
+  .perimeter .activity-split { break-inside: avoid; }
+  .perimeter .activity-evidence figure, .perimeter .picture {
+    display: grid; grid-template-columns: 135pt minmax(0,1fr); gap: 8pt; align-items: center;
+    padding: 4pt; margin-block: 4pt;
+  }
+  .perimeter .activity-evidence figure svg, .perimeter .picture svg { max-height: 105pt; }
+  .perimeter .activity-evidence figcaption, .perimeter .picture figcaption { font-size: 10pt; margin: 0; }
+  .perimeter .activity-work { padding-top: 4pt; }
+  .perimeter .steps { margin-block: 5pt; }
+  .perimeter .steps li { margin-block: 3pt; }
+  .perimeter .write-line { border-block-end: 1px solid #777; min-height: 21pt; margin-block-end: 4pt; }
+  .perimeter .print-key li { margin-block: 6pt; break-inside: avoid; }
+  .perimeter .strip li, .perimeter .picture, .perimeter .activity-evidence { print-color-adjust: exact; }
+}
+@media print {
+  .perimeter p { max-width: none; }
+  .perimeter .task { padding: 6pt 9pt; margin-block: 8pt; }
+  .perimeter .print-route { break-inside: avoid; }
+  .perimeter .print-route .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 14pt;
+  }
+  .perimeter .print-route figure {
+    display: block;
+  }
+  .perimeter .print-route figure svg {
+    max-height: none;
+    max-width: 230pt;
+  }
+  .perimeter .print-route svg .small { font-size: 16px; }
+  .perimeter .print-route figcaption { margin-block-start: 4pt; }
+  .perimeter .mixed-continued { margin-block-start: 8pt; }
+  .perimeter .write-line { min-height: 17pt; margin-block-end: 3pt; }
+  .perimeter .print-key dt { margin-block-start: 8pt; }
+  .perimeter .print-key dd { margin-block-start: 0; }
+  .perimeter .print-key dd p { margin-block: 3pt; }
+  .perimeter .print-key dl > div { break-inside: avoid; }
+  .perimeter .glossary dt { margin-block-start: 7pt; }
+}
+.perimeter .route-text { margin-block-end: 0; }
+@media print {
+  .perimeter details.route-text { display: block !important; border: 0; margin: 4pt 0 0; padding: 0; }
+  .perimeter .route-text summary { display: none; }
+  .perimeter .route-text p { margin-block: 0; font-size: 10pt; }
+}

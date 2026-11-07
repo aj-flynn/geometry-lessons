@@ -1,0 +1,122 @@
+/* Original chemistry reasoning activities; base layout lives in activity-layout.css. */
+.particle-lesson { overflow-wrap: break-word; }
+.particle-lesson .intro { max-width: 60ch; }
+.particle-lesson .glossary-link { display: inline-flex; min-height: 44px; align-items: center; margin-inline-start: .75rem; }
+.particle-lesson .route { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1rem; border-block: 1px solid #9daea3; padding-block: .6rem; }
+.particle-lesson .route a { display: inline-flex; text-decoration: underline; }
+.particle-lesson .route [aria-current] { font-size: 16px; font-weight: 700; }
+.particle-lesson .activity-work > h3 { margin-top: .75rem; }
+.particle-lesson .activity-evidence h3 { margin-top: 0; }
+.particle-lesson .activity-evidence h3:focus { outline: none; }
+.particle-lesson .step-list { padding-inline-start: 1.4rem; }
+.particle-lesson .step-list li + li { margin-top: .6rem; }
+.particle-lesson .species { white-space: nowrap; display: inline-block; }
+.particle-lesson .inline-data { padding-left: 1.1rem; border-left: 3px solid #527b67; }
+.particle-lesson .inline-data p { margin-block: .5rem; }
+.particle-lesson caption { text-align: left; font-weight: 700; padding-block-end: .4rem; }
+.particle-lesson .activity-evidence figcaption { font-size: 1em; }
+.particle-lesson .science-svg { max-width: 300px; margin-inline: auto; }
+.particle-lesson .activity-evidence figure + figure { margin-top: .9rem; }
+.particle-lesson .key-diagram { margin: .75rem 0; padding: .8rem; max-width: 400px; }
+.particle-lesson .glossary-entry { break-inside: avoid; }
+.particle-lesson .number-check label { display: block; font-weight: 700; }
+.particle-lesson .number-check input { display: block; font: inherit; }
+.particle-lesson .number-check button { margin-top: .6rem; }
+.particle-lesson .number-check:not([data-practice-ready]) { display: none; }
+.particle-lesson .number-check [data-feedback]:empty { display: none; }
+.particle-lesson .print-only { display: none; }
+.particle-lesson [id] { scroll-margin-top: 1rem; }
+@media (max-width: 600px) {
+  .particle-lesson .activity-evidence figure { margin-inline: 0; }
+  .particle-lesson .task-givens { table-layout: fixed; }
+  .particle-lesson .task-givens th, .particle-lesson .task-givens td { padding: .32rem; overflow-wrap: anywhere; }
+  .particle-lesson details { padding-inline: .75rem; }
+}
+@media print {
+  @page { size: letter; margin: .6in; }
+  .lesson.particle-lesson { width: 100%; margin: 0; font-size: 11pt; line-height: 1.38; }
+  .lesson.particle-lesson section { margin-top: .19in; }
+  .lesson.particle-lesson h2 { font-size: 17pt; margin-bottom: .12in; }
+  .lesson.particle-lesson h3 { font-size: 13pt; margin-bottom: .08in; }
+  .lesson.particle-lesson th, .lesson.particle-lesson td { padding: 4px 7px; }
+  .particle-lesson .screen-only, .particle-lesson .return-link, .particle-lesson .route,
+  .particle-lesson .paper-task details, .particle-lesson .number-check { display: none !important; }
+  .particle-lesson .print-only { display: block; }
+  .particle-lesson .paper-task, .particle-lesson .short-block { break-inside: avoid; }
+  .particle-lesson .activity-evidence { padding: 8px 12px; }
+  .particle-lesson .activity-evidence h3 { margin-bottom: 5px; }
+  .particle-lesson .activity-evidence figure { width: auto; max-width: 300px; }
+  .particle-lesson .activity-evidence figure svg { width: 170px; }
+  .particle-lesson .activity-work { margin-top: 12px; }
+  .particle-lesson .science-svg { width: 170px; }
+  .particle-lesson h2, .particle-lesson h3 { break-after: avoid; }
+  .particle-lesson p { margin-block: .5em; }
+  .particle-lesson .print-key { break-before: page; }
+  .particle-lesson .print-key > div { break-inside: avoid; }
+  .particle-lesson .write-space { min-height: .45in; border-bottom: 1px solid #aaa; margin-block: .2in .1in; }
+}
+
+/* Two consecutive figures and text should scroll as a unit at any viewport height. */
+.particle-lesson .long-evidence .activity-evidence {
+  position: static;
+  max-height: none;
+  overflow: visible;
+}
+@media print {
+  .particle-lesson #lewis-attempt .write-space,
+  .particle-lesson #mixed-end .write-space { min-height: .9in; }
+  .particle-lesson #lewis-linked .write-space { min-height: .65in; }
+}
+@media print {
+  .particle-lesson :focus { outline: none; }
+  .particle-lesson .activity:not(.paper-task) { break-inside: avoid; }
+  .particle-lesson .activity:not(#lewis-attempt, #lewis-linked, #mixed-end) .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 16px;
+  }
+  .particle-lesson .activity:not(#lewis-attempt, #lewis-linked, #mixed-end) .activity-work { margin-top: 0; }
+  .particle-lesson #glossary { break-inside: auto; }
+}
+
+.particle-lesson .reasoning-diagram { max-width: 365px; margin-block: .75rem; padding: .65rem; }
+.particle-lesson .reasoning-diagram figcaption { margin-top: .45rem; }
+.particle-lesson .retry-stop { border-top: 1px solid #9daea3; padding-top: .7rem; }
+@media print {
+  .particle-lesson .reasoning-diagram { padding: .3rem; }
+  .particle-lesson .reasoning-diagram .science-svg { width: min(100%, 245px); }
+  .particle-lesson .reasoning-diagram figcaption { font-size: 10pt; }
+  .particle-lesson #lewis-move .step-list li + li { margin-top: .2rem; }
+  .particle-lesson #lewis-move .activity-work > p { margin-block: .25em; break-inside: avoid; }
+  .particle-lesson #lewis-move figure { margin-block: .35rem; padding: .35rem; }
+  .particle-lesson #lewis-move figure figcaption { margin-top: .3rem; }
+  .particle-lesson #lewis-move .reasoning-diagram .science-svg { width: min(100%, 206px); }
+}
+
+.particle-lesson .chem-reference { background: #e8f1ec; padding: .65rem 1rem; }
+.particle-lesson .chem-reference:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.particle-lesson .chem-reference table { margin-block: .35rem; }
+.particle-lesson .chem-reference th, .particle-lesson .chem-reference td { padding: .3rem; }
+.particle-lesson .chem-reference-return { display: inline-flex; min-height: 44px; align-items: center; }
+.particle-lesson .chem-worked { margin-block: 1rem; }
+.particle-lesson .chem-worked > * { min-width: 0; }
+.particle-lesson .chem-worked h3 { margin-top: .4rem; }
+.particle-lesson .secondary-evidence { margin-top: 1rem; }
+.particle-lesson .paired-diagrams figure { min-width: 0; }
+@container (min-width: 900px) {
+  .particle-lesson #forces-contact-attempt .activity-split { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+}
+@media (min-width: 900px) {
+  .particle-lesson .chem-worked { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
+  .particle-lesson .chem-worked figure { margin-top: 0; }
+  .particle-lesson .paired-diagrams { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+  .particle-lesson .paired-diagrams figure + figure { margin-top: 0; }
+}
+@media print {
+  .particle-lesson .chem-reference { padding: .25rem .6rem; }
+  .particle-lesson .chem-worked { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1rem; align-items: start; margin-block: .5rem; break-inside: avoid; }
+  .particle-lesson .chem-worked figure { margin-top: 0; }
+  .particle-lesson .chemistry-teaching { break-inside: avoid; }
+  .particle-lesson .chemistry-teaching .reasoning-diagram { margin-block: .35rem; }
+  .particle-lesson #forces-conditions > figure { margin-block: .35rem; }
+}

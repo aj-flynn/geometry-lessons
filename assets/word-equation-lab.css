@@ -1,0 +1,76 @@
+.eyebrow { font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .82rem; }
+.lesson .starter { border-left: 4px solid #34705b; padding-left: 20px; margin-top: 30px; }
+.lesson .starter h2 { margin-bottom: 12px; font-size: 1.35rem; }
+.steps { padding-inline-start: 1.6em; }
+.steps > li + li { margin-top: .6em; }
+.lesson .equation { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15em .45em; max-width: none; font-size: 1.08em; font-weight: 700; }
+.equation > span { white-space: nowrap; }
+.lesson .atom-model { max-width: 360px; }
+.lookup { display: flex; flex-wrap: wrap; gap: 8px; }
+.lookup > div { padding: 5px 9px; border: 1px solid #537a68; min-width: 0; }
+.lesson .lookup dt, .lesson .lookup dd { margin: 0; }
+.lesson .credit { font-size: .88em; }
+.counter { display: flex; align-items: center; gap: .65em; }
+.counter > input { min-width: 0; }
+.counter > output { font-weight: 700; min-width: 1em; text-align: center; }
+.write-task { border-top: 2px solid #537a68; padding-top: 16px; margin-top: 22px; }
+.compare-link { display: inline-flex; min-height: 44px; align-items: center; }
+.write-line { display: none; }
+.lesson .worksheet-keys details { scroll-margin-top: 12px; }
+.glossary-list > div { break-inside: avoid; }
+
+@media print {
+  @page { margin: .58in; }
+  body { line-height: 1.3; }
+  .lesson section { margin-top: 18px; }
+  .lesson h2, .lesson h3, .lesson summary { break-after: avoid; }
+  .lesson h2 { margin-bottom: 12px; }
+  .lesson .activity-evidence { padding: 10px 14px; break-inside: avoid; }
+  .lesson .activity-evidence figure { max-width: 245px; }
+  .lesson .activity-work p, .steps li { break-inside: avoid; }
+  .lesson details { padding: 0 10px; break-inside: avoid; }
+  .lesson summary { min-height: 0; padding-block: 3px; }
+  .lesson [data-inventory], .compare-link, .worksheet-keys > p:last-child { display: none !important; }
+  .lesson .worksheet, .lesson .worksheet-keys { break-before: page; margin-top: 0; }
+  .write-task { break-inside: avoid; }
+  .write-line { display: block; height: .38in; border-bottom: 1px solid; }
+}
+
+.lesson .oxygen-model { padding: 14px; }
+.oxygen-row { display: flex; flex-wrap: wrap; gap: .25em .9em; align-items: baseline; }
+.oxygen-row > strong { min-width: 3.2em; }
+.oxygen-row > span:last-child { font-weight: 700; }
+
+@media print {
+  .lesson p { max-width: none; margin-block: 7px; }
+  .lesson .lead { font-size: 15pt; }
+  .lesson .starter { margin-top: 18px; }
+  .lesson .activity { break-inside: avoid; }
+  .lesson .activity-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 15px; }
+  .lesson .activity-evidence figure { margin-block: 8px; }
+  .lesson .activity-evidence figcaption { font-size: 10.5pt; }
+  .lesson .oxygen-model { margin-block: 9px; }
+  .write-task { margin-top: 12px; padding-top: 8px; }
+  .write-task h3 { margin-bottom: 4px; }
+  .write-line { height: .31in; }
+  .lesson .glossary-list dt { margin-top: 8px; }
+}
+
+.lesson .paper-comparisons, .lesson .paper-direction { display: none; }
+@media print {
+  .lesson .screen-comparison { display: none; }
+  .lesson .paper-comparisons, .lesson .paper-direction { display: block; }
+  .lesson .paper-comparisons { break-before: page; }
+  .lesson .paper-comparison, .lesson .paper-attempt { break-inside: avoid; }
+}
+
+.lesson .charge-step { border-inline-start: 3px solid #537a68; padding-inline-start: .8em; }
+
+@media print {
+  .lesson .return-link, .lesson .starter > p:last-child { display: none; }
+  .lesson .paper-comparisons { break-before: auto; }
+  .lesson #metal, .lesson #salts { margin-bottom: 4px; }
+  .lesson section.activity:has(#metal), .lesson section.activity:has(#salts) { margin-top: 9px; }
+  .lesson section.activity:has(#metal) p, .lesson section.activity:has(#salts) p { margin-block: 5px; }
+  .lesson .glossary-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .25in; }
+}

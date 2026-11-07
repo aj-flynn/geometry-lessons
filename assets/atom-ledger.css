@@ -1,0 +1,79 @@
+.section-tag { color: #3a6253; font-weight: 700; }
+.lesson .equation { font-variant-numeric: tabular-nums; }
+.equation sub { font-size: .76em; line-height: 0; }
+.lesson .paper-task { margin-block: 22px; padding-inline-start: 16px; border-inline-start: 3px solid #638b78; }
+.paper-task h3 { margin-top: 0; }
+.steps li + li { margin-top: .7em; }
+.lesson .count-model { max-width: 320px; }
+.linked-route { margin: 22px auto 0; max-width: 780px; }
+.ledger { border: 1px solid #638b78; padding: clamp(12px, 2vw, 22px); }
+.ledger-controls { display: flex; flex-wrap: wrap; gap: 12px; }
+.ledger-controls .button { min-height: 44px; padding: 6px 12px; font-size: 1rem; text-align: left; white-space: normal; }
+.ledger-controls .button[aria-disabled="true"] { background: #dae6dc; color: #273b34; cursor: default; }
+.ledger caption { text-align: left; padding-block: 8px; font-weight: 700; }
+.ledger table { table-layout: fixed; }
+.ledger .static-note { margin-bottom: 0; }
+.comparisons summary:target { outline: 3px solid var(--ink); outline-offset: 3px; }
+@page { margin: .56in; }
+@media print {
+  .lesson { font-size: 10.5pt; line-height: 1.35; }
+  .lesson h1 { margin-bottom: 8pt; }
+  .lesson h2 { margin: 0 0 8pt; }
+  .lesson h3 { margin: 0 0 5pt; font-size: 14pt; }
+  .lesson p { margin-block: 5pt; }
+  .lesson section { margin-top: 15pt; }
+  .lesson .return-link, .lesson .paper-task a, .lesson .static-note, .lesson .ledger { display: none; }
+  .lesson .paper-task { margin-block: 12pt; padding-left: 10pt; break-inside: avoid; }
+  .lesson .activity-evidence { padding: 8pt 12pt; break-inside: avoid; }
+  .lesson .count-model { max-width: 220px; }
+  .lesson .count-model figcaption { margin-top: 4pt; font-size: 10.5pt; }
+  .lesson .activity-work { margin-top: 9pt; }
+  .lesson .linked-route { margin-top: 10pt; }
+  .lesson .steps { margin-block: 6pt; }
+  .lesson .steps li { break-inside: avoid; }
+  .lesson .steps li + li { margin-top: 4pt; }
+  .lesson .print-start { break-before: page; }
+  .lesson dl > div, .lesson details { break-inside: avoid; }
+  .lesson dt { margin-top: 6pt; }
+  .lesson dd { margin-top: 2pt; }
+  .lesson details { margin-block: 7pt; padding: 0; }
+  .lesson summary { min-height: 0; padding: 0; }
+  .lesson .sources { font-size: 10.5pt; }
+}
+
+.lesson .print-note { display: none; }
+@media print {
+  .lesson .print-note { display: block; }
+  .lesson .print-small .activity-split, .lesson .activity.print-start .activity-split {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    align-items: start;
+    gap: .8rem;
+    break-inside: avoid;
+  }
+  .lesson .activity .activity-work { margin-top: 0; }
+  .lesson .activity .paper-task:first-child { margin-top: 0; }
+}
+
+@media print { .lesson .screen-return { display: none; } }
+
+@media (max-width: 480px) { .lesson .ledger th, .lesson .ledger td { padding-inline: .3em; } }
+@media print {
+  .lesson h1, .lesson p { max-width: none; }
+  .lesson h1 { font-size: 26pt; }
+  .lesson .print-small { break-inside: avoid; }
+  .lesson .print-small .activity-split { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); }
+  .lesson .paper-task { margin-block: 9pt; }
+  .lesson h2, .lesson h3 { break-after: avoid; }
+  .lesson .comparisons > details { margin-block: 6pt; }
+}
+
+@media print {
+  .lesson .comparisons p { margin-block: 3pt; }
+  .lesson .comparisons > details { margin-block: 5pt; }
+  .lesson #glossary dl { columns: 2; column-gap: 1.4rem; }
+}
+@media print {
+  .lesson .comparisons { columns: 2; column-gap: 1.5rem; }
+  .lesson .comparisons > h2 { column-span: all; }
+}

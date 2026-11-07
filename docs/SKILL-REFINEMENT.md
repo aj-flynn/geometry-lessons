@@ -140,3 +140,13 @@ The following lesson hashes supersede the corresponding earlier entries. Other l
 | [0003-reading-particle-formulas](../lessons/0003-reading-particle-formulas.html) | `aa5845c8cc376622b2eeb6b929f0162a8ad4a5c93179edfb09bbee53d531bad8` |
 | [0005-shape-and-polarity](../lessons/0005-shape-and-polarity.html) | `31bda595409571fe6798504cd795b37d2e7d1088c04070a09c56c83abf50568e` |
 | [0008-chemistry-evidence-split](../lessons/0008-chemistry-evidence-split.html) | `8b42a614c892bdc8a4869cdf7f111df1829fe275f1c368ec90351f7340c10120` |
+
+### Verified corrected release
+
+The corrections were published in [commit d9b3957](https://github.com/aj-flynn/geometry-lessons/commit/d9b39570d6a1484190030900aa6818ee2441abee). Live verification on 2026-11-07 at 22:18:56 UTC matched all **147 selected files**, with eight library and eighteen sample keyboard returns, five subject links and twelve reference links. The library and sample-gallery URLs were delivered in the originating chat; the private delivery note is explicitly a parent-authored record of that commentary.
+
+The six original Astra reviewers completed F3 and process delivery against this release. **All twenty-six final lessons score 100/100, with all twenty-three categories assessed. The six exercised correction-process assessments also score 100/100.** Twelve changed lesson files received bounded correction checks; fourteen unchanged lesson files retain supported earlier judgments. The final records contain eighteen completed category tables across the affected review groups, with the other eight lesson assessments carried forward from unchanged groups. These are actual category sums, with inherited judgments identified, not normalized subtotals or a claim of twenty-six fresh blind reviews.
+
+The clean validation covered the final learner, dependency, manifest and teaching-contract bytes. The only subsequent validation-to-release difference was the append-only review-history update in this document; the repository checker ran again after that append, and live verification covered the complete published file set. The final ordinary-name wrapping and corresponding-angle bridge checks supplement the earlier integration run. Earlier failures, original scores, disputed findings and evidence limits remain preserved.
+
+Claude's separate, lower scores above apply to the earlier candidate it inspected. They were not averaged with Astra's scores, overwritten, or retrospectively raised after these corrections. Claude did not rescore this corrected release. The reviewed outcomes support these particular artifacts and exercised workflows, not guaranteed first-draft quality, exhaustive accessibility conformance or measured learning gains.

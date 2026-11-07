@@ -8,7 +8,7 @@
   <title>From table to prediction</title>
   <link rel="stylesheet" href="../../../assets/site.css?v=20261107-r1">
   <link rel="stylesheet" href="../../../assets/activity-layout.css?v=20261107-r1">
-  <link rel="stylesheet" href="../../../assets/reference-predictions.css?v=1">
+  <link rel="stylesheet" href="../../../assets/reference-predictions.css?v=2">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -73,11 +73,13 @@
           <h3 id="salt-evidence-title">Two chloride solutions</h3>
           <p>Each sample is <a href="#term-saturated">saturated</a>: it holds as much dissolved salt as it can at that temperature. Compare the liquids at the same temperature.</p>
           <p class="options"><span class="formula">LiCl</span><span class="formula">PbCl<sub>2</sub></span></p>
-          <table class="lookup">
-            <caption>Solubility guide</caption>
-            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
-            <tbody><tr><th scope="row">Cl<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low solubility</td></tr></tbody>
-          </table>
+          <div class="lookup-scroll" role="region" aria-label="Chloride solubility guide" tabindex="0">
+            <table class="lookup">
+              <caption>Solubility guide</caption>
+              <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+              <tbody><tr><th scope="row">Cl<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low solubility</td></tr></tbody>
+            </table>
+          </div>
           <p class="credit">NYSED, 2011, Table F (rule narrowed to these choices).</p>
         </aside>
         <div class="activity-work">
@@ -101,13 +103,15 @@
 
     <section id="trial-a" class="activity task-sheet independent" aria-labelledby="trial-a-title">
       <p class="eyebrow">03 · Independent work</p>
-      <h2 id="trial-a-title">Screen A: Pick one strip</h2>
+      <h2 id="trial-a-title">Screen A: Pick one setup</h2>
       <div class="activity-split">
         <aside id="a-evidence" class="activity-evidence" tabindex="0" aria-labelledby="a-evidence-title">
-          <h3 id="a-evidence-title">A cobalt solution and four strips</h3>
-          <p>The beaker contains <span class="formula">Co<sup>2+</sup>(aq)</span>. The available strips are:</p>
-          <ul class="choices" aria-label="Four solid strip choices">
-            <li>A. Tin, Sn(s)</li><li>B. Nickel, Ni(s)</li><li>C. Zinc, Zn(s)</li><li>D. Lead, Pb(s)</li>
+          <h3 id="a-evidence-title">Four strip-and-solution setups</h3>
+          <ul class="choices">
+            <li>A. <span class="formula">Ni(s)</span> with <span class="formula">Zn<sup>2+</sup>(aq)</span></li>
+            <li>B. <span class="formula">Co(s)</span> with <span class="formula">Sn<sup>2+</sup>(aq)</span></li>
+            <li>C. <span class="formula">Pb(s)</span> with <span class="formula">Ni<sup>2+</sup>(aq)</span></li>
+            <li>D. <span class="formula">Sn(s)</span> with <span class="formula">Co<sup>2+</sup>(aq)</span></li>
           </ul>
           <div class="rank">
             <p class="rank-direction">More active at the top <span aria-hidden="true">↑</span></p>
@@ -119,8 +123,8 @@
         </aside>
         <div class="activity-work">
           <h3>Make the selection</h3>
-          <p>Which strip is predicted to react <a href="#term-spontaneous">spontaneously</a>, without an outside power source, with the dissolved cobalt ions?</p>
-          <p>Choose one. Give a sentence using evidence from the reference. Then cross off one tempting strip and explain why it fails.</p>
+          <p>In which setup does the table predict <a href="#term-displacement">displacement</a> will happen <a href="#term-spontaneous">spontaneously</a>, without an outside power source?</p>
+          <p>Choose one setup and justify it from the order. Then find or write the setup with those same metals trading roles. Use the order to explain what you predict for that setup, too.</p>
           <p class="task-actions"><a class="activity-return" href="#a-evidence">Back to Screen A evidence</a> <a href="#key-a">Compare Screen A</a></p>
           <div class="write-space" aria-hidden="true"></div>
         </div>
@@ -135,19 +139,21 @@
           <h3 id="b-evidence-title">Four saturated samples</h3>
           <p>Each liquid is saturated with only its labeled salt, at the same temperature.</p>
           <ul class="choices" aria-label="Four salt choices">
-            <li>A. <span class="formula">PbI<sub>2</sub></span></li><li>B. <span class="formula">Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span></li>
-            <li>C. <span class="formula">MnS</span></li><li>D. <span class="formula">NH<sub>4</sub>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub></span></li>
+            <li>A. <span class="formula">NH<sub>4</sub>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub></span></li><li>B. <span class="formula">PbI<sub>2</sub></span></li>
+            <li>C. <span class="formula">Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span></li><li>D. <span class="formula">MnS</span></li>
           </ul>
-          <table class="lookup">
-            <caption>Solubility guide</caption>
-            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">S<sup>2−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
-              <tr><th scope="row">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></th><td>Soluble</td><td>None listed</td></tr>
-              <tr><th scope="row">I<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low</td></tr>
-              <tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
-            </tbody>
-          </table>
+          <div class="lookup-scroll" role="region" aria-label="Screen B solubility guide" tabindex="0">
+            <table class="lookup">
+              <caption>Solubility guide</caption>
+              <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">S<sup>2−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
+                <tr><th scope="row">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></th><td>Soluble</td><td>None listed</td></tr>
+                <tr><th scope="row">I<sup>−</sup></th><td>Soluble</td><td>With Pb<sup>2+</sup>: low</td></tr>
+                <tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1<sup>*</sup> or NH<sub>4</sub><sup>+</sup>: soluble</td></tr>
+              </tbody>
+            </table>
+          </div>
           <p class="credit"><sup>*</sup>None of the four samples contains a Group 1 metal. Rules: NYSED, 2011, Table F (selected ions and exceptions). “Low” means very low solubility in this guide.</p>
         </aside>
         <div class="activity-work">
@@ -171,11 +177,13 @@
         <aside id="retry-evidence" class="activity-evidence" tabindex="0" aria-labelledby="retry-evidence-title">
           <h3 id="retry-evidence-title">Two saturated liquids</h3>
           <p>At the same temperature: <span class="formula">K<sub>3</sub>PO<sub>4</sub></span> or <span class="formula">Zn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></span>. Potassium (K) is in Group 1.</p>
-          <table class="lookup">
-            <caption>Solubility guide</caption>
-            <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
-            <tbody><tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1 or NH<sub>4</sub><sup>+</sup>: soluble</td></tr></tbody>
-          </table>
+          <div class="lookup-scroll" role="region" aria-label="Phosphate solubility guide" tabindex="0">
+            <table class="lookup">
+              <caption>Solubility guide</caption>
+              <thead><tr><th scope="col">Ion</th><th scope="col">Rule</th><th scope="col">Exception</th></tr></thead>
+              <tbody><tr><th scope="row">PO<sub>4</sub><sup>3−</sup></th><td>Low</td><td>Group 1 or NH<sub>4</sub><sup>+</sup>: soluble</td></tr></tbody>
+            </table>
+          </div>
           <p class="credit">NYSED, 2011, Table F (selected rule).</p>
         </aside>
         <div class="activity-work">
@@ -221,8 +229,8 @@
       <p>Read one comparison at a time. If your reasoning differs, revise your sentence and check again.</p>
       <details><summary id="key-warmup">Label check</summary><p>Co(s) is the solid metal; Co<sup>2+</sup>(aq) is the dissolved cobalt ion. The raised <strong>2+</strong> shows charge. The parentheses tell you the state. <a href="#warmup">Back to the label check</a>.</p></details>
       <details><summary id="key-swap">Predict the swap</summary><p>No displacement is predicted. The nickel strip would now have to give electrons to Mn<sup>2+</sup>. Ni is below Mn. If you predicted “yes” both times, underline which is solid in each case and redo the comparison from that element. <a href="#swap">Back to the swap</a>.</p></details>
-      <details><summary id="key-a">Screen A</summary><p><strong>C. Zinc.</strong> Zn is the only solid in the list above Co, so it can supply electrons to Co<sup>2+</sup>. Ni is close to Co, but it’s below Co, as are Sn and Pb. If you wrote “Ni is close,” replace distance with direction: is the <em>solid</em> above or below the element in the ion? <a href="#trial-a">Revise Screen A</a>, then test your reasoning with <a href="#recall">the fresh pair</a>.</p></details>
-      <details><summary id="key-b">Screen B</summary><p><strong>D. Ammonium acetate.</strong> Its ions are NH<sub>4</sub><sup>+</sup> and <span class="formula">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></span>. The acetate row classifies the salt as soluble, so the saturated liquid can contain many mobile ions. For PbI<sub>2</sub>, the lead ion triggers the iodide exception. The zinc phosphate and manganese sulfide do not meet their rows’ exceptions. If you chose the formula with the most ions per unit, first ask how many units can actually dissolve. <a href="#trial-b">Revise Screen B</a>, then try <a href="#retry">a new partner ion</a>.</p></details>
+      <details><summary id="key-a">Screen A</summary><p><strong>B.</strong> Co is above Sn, so <span class="formula">Co(s)</span> can supply electrons to <span class="formula">Sn<sup>2+</sup>(aq)</span>. In D, <span class="formula">Sn(s)</span> would have to give electrons, but Sn is below Co. In A and C the solid is also lower than the element in the dissolved ion.</p><p>If you picked A because Zn is at the top, start with <span class="formula">Ni(s)</span>. Ni would have to give electrons, and it is below Zn. <a href="#trial-a">Revise Screen A</a>, then test your reasoning with <a href="#recall">the fresh pair</a>.</p></details>
+      <details><summary id="key-b">Screen B</summary><p><strong>A. Ammonium acetate.</strong> Its ions are NH<sub>4</sub><sup>+</sup> and <span class="formula">C<sub>2</sub>H<sub>3</sub>O<sub>2</sub><sup>−</sup></span>. The acetate row classifies the salt as soluble, so the saturated liquid can contain many mobile ions. For PbI<sub>2</sub>, the lead ion triggers the iodide exception. The zinc phosphate and manganese sulfide do not meet their rows’ exceptions. If you chose the formula with the most ions per unit, first ask how many units can actually dissolve. <a href="#trial-b">Revise Screen B</a>, then try <a href="#retry">a new partner ion</a>.</p></details>
       <details><summary id="key-retry">Same phosphate, new partner</summary><p>Zinc phosphate fits the usual low solubility rule; potassium phosphate is soluble because K<sup>+</sup> is a Group 1 ion. Expect saturated potassium phosphate to conduct better. In your revised sentence, name the ion that triggers the exception. <a href="#retry">Back to the retry</a>.</p></details>
       <details><summary id="key-recall">Later recall</summary><p>Setup 2. Solid Zn is above Sn and can give electrons to Sn<sup>2+</sup>. Tin starts in the liquid as ions and becomes Sn(s). Setup 1 reverses the roles and is not predicted to displace zinc. <a href="#recall">Back to the two setups</a>.</p></details>
     </section>

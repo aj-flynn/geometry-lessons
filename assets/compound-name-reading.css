@@ -32,6 +32,10 @@ body:has(.lesson) { background: #fcfaf3; color: #172b29; }
 .lesson dd { margin-top: 0; }
 .return-title { margin-top: 1.1em; }
 
+@media screen {
+  .lesson strong:not(.formula) { overflow-wrap: anywhere; }
+}
+
 @media (min-width: 680px) {
   .lookup-columns { grid-template-columns: 1fr 1fr; }
 }

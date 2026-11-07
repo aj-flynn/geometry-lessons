@@ -39,6 +39,8 @@
 .ref-lesson .options span {background: #fbfdf9; padding: 4px 12px; font-weight: 700;}
 .ref-lesson .choices {padding: 0; list-style: none; margin-block: 10px 16px;}
 .ref-lesson .choices li {padding: 2px 0;}
+.ref-lesson .lookup-scroll {overflow-x: auto;}
+.ref-lesson .lookup-scroll:focus-visible {outline: 3px solid var(--ink); outline-offset: 2px;}
 .ref-lesson .lookup {font-size: 1rem; line-height: 1.36;}
 .ref-lesson .lookup caption {font-weight: 800; text-align: left; padding-bottom: 5px;}
 .ref-lesson .lookup td, .ref-lesson .lookup th {padding: 7px; border: 1px solid #bacac0;}
@@ -61,6 +63,7 @@
 @container (min-width: 900px) {.ref-lesson .activity-work {--return-display: none;}}
 @media (max-width: 600px) {
   .ref-lesson {font-size: 1.0625rem;}
+  .ref-lesson h1 {font-size: min(2.65rem, 18vw);}
   .ref-lesson .activity-evidence {border-left-width: 3px; padding: 13px;}
   .ref-lesson .lookup th, .ref-lesson .lookup td {padding: 6px;}
 }
@@ -84,6 +87,7 @@
   .ref-lesson .activity-split {display: grid; grid-template-columns: 40% minmax(0, 1fr); gap: 20px;}
   .ref-lesson .activity-evidence {position: static; padding: 10px; border: 1px solid #aaa; break-inside: avoid;}
   .ref-lesson .credit, .ref-lesson .small {font-size: 9pt; color: #222;}
+  .ref-lesson .lookup-scroll {overflow: visible;}
   .ref-lesson .lookup {font-size: 10pt;}
   .ref-lesson .lookup th, .ref-lesson .lookup td {padding: 4px;}
   .ref-lesson .rank {margin-top: 8px;}

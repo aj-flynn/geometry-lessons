@@ -78,3 +78,65 @@ The original Astra reviewers then completed F3 and process validation/delivery. 
 Validation included a clean locked dependency installation with scripts disabled, rebuilding the index, the repository checker, and **26 passing automated tests**. The clean validation copy preserved all 147 selected files byte for byte. The practice browser check passed 24 page/mode cases and 12 form cases; the chemistry browser check passed 40 cases. Integration checked all twenty-six lessons in wide and narrow layouts with verified doubled body text and scripts disabled. The two final formula/calculation overflow findings were corrected and rechecked; their earlier failures remain in the private evidence. Independent reviewers also verified affected live bytes, navigation, and layout behavior. The clean-install evidence is a transcript of the execution tool result, distinguished from the separately captured build/check/test log.
 
 The separate Claude Code review is in progress against the same lesson files and public source slices. Private original assignments and earlier reviewers' scores are withheld from that reviewer. Its opinion will be recorded separately, without averaging it with Astra's scores.
+
+### Independent Claude opinion and bounded corrections
+
+Claude Code completed an independent review on 2026-11-07 using `claude-opus-5-5`, Medium effort, and no session persistence. The returned model usage confirmed `claude-opus-5-5`. Its opinion applies to the lesson bytes in commit af0a8e7, before the corrections described below. Prior scores and conclusions were withheld.
+
+The secondary review scored the exercised process **85.5/100**. Its lesson scores are preserved below without averaging them with Astra or normalizing partial scores. A1 and F2 were unassessed for the eight library lessons because their private original assignments were not authorized for this external reviewer. Public sample scopes were supplied.
+
+| Lesson | Claude assessed points | Assessed maximum |
+| --- | ---: | ---: |
+| [0001-similar-polygons](../lessons/0001-similar-polygons.html) | 81.75 | 89 |
+| [0002-close-reading-dialogue](../lessons/0002-close-reading-dialogue.html) | 81 | 89 |
+| [0003-reading-particle-formulas](../lessons/0003-reading-particle-formulas.html) | 78.25 | 89 |
+| [0004-electrons-and-bonds](../lessons/0004-electrons-and-bonds.html) | 82.75 | 89 |
+| [0005-shape-and-polarity](../lessons/0005-shape-and-polarity.html) | 80.5 | 89 |
+| [0006-between-molecules](../lessons/0006-between-molecules.html) | 81 | 89 |
+| [0007-aa-triangle-similarity](../lessons/0007-aa-triangle-similarity.html) | 82.5 | 89 |
+| [0008-chemistry-evidence-split](../lessons/0008-chemistry-evidence-split.html) | 80.5 | 89 |
+| [geometry-perimeter](skill-samples/lessons/geometry-perimeter.html) | 88 | 100 |
+| [geometry-similarity-proofs](skill-samples/lessons/geometry-similarity-proofs.html) | 89.25 | 100 |
+| [geometry-construction](skill-samples/lessons/geometry-construction.html) | 88 | 100 |
+| [chemistry-balancing](skill-samples/lessons/chemistry-balancing.html) | 90.75 | 100 |
+| [chemistry-balancing-with-states](skill-samples/lessons/chemistry-balancing-with-states.html) | 89.5 | 100 |
+| [chemistry-from-words](skill-samples/lessons/chemistry-from-words.html) | 90.25 | 100 |
+| [chemistry-names-formulas](skill-samples/lessons/chemistry-names-formulas.html) | 90.5 | 100 |
+| [chemistry-ionic-and-molecular-names](skill-samples/lessons/chemistry-ionic-and-molecular-names.html) | 89 | 100 |
+| [chemistry-ionic-equations](skill-samples/lessons/chemistry-ionic-equations.html) | 89.25 | 100 |
+| [chemistry-reference-tables](skill-samples/lessons/chemistry-reference-tables.html) | 88.5 | 100 |
+| [chemistry-isotope-mass-and-error](skill-samples/lessons/chemistry-isotope-mass-and-error.html) | 93.25 | 100 |
+| [english-tone](skill-samples/lessons/english-tone.html) | 90 | 100 |
+| [english-two-sources](skill-samples/lessons/english-two-sources.html) | 91 | 100 |
+| [science-fair-tests](skill-samples/lessons/science-fair-tests.html) | 88 | 100 |
+| [science-map-evidence](skill-samples/lessons/science-map-evidence.html) | 91 | 100 |
+| [science-sea-level](skill-samples/lessons/science-sea-level.html) | 90.75 | 100 |
+| [spanish-agreement](skill-samples/lessons/spanish-agreement.html) | 91.25 | 100 |
+| [spanish-estar](skill-samples/lessons/spanish-estar.html) | 89.25 | 100 |
+
+Claude reported no consequential subject errors in its recomputations. It raised concerns about source separation, coverage, task discovery, model qualifications, labels and review evidence. Its visual scores were based on code and supplied evidence: plan-mode constraints prevented its own browser rendering. It did not measure contrast or perform a screen-reader audit. The secondary packet also omitted existing sample-control receipts and did not fully explain inherited browser evidence or unavailable source media; a separate private evidence supplement repairs that handoff without implying Claude used it.
+
+The source-aware Astra reviewers revisited the concrete findings against the unchanged rubric. They accepted several bounded corrections, including structurally distinct geometry and reference-table practice, intact positive ion groups and oxide naming, an equal-energy stopping-rule decision, clearer discovery of staged repair, precise control/color labels, and an explicit bond-arrow model limitation. They also identified screen/print false positives and distinguished optional additions from requirements. Their earlier approvals were too generous on the accepted issues; those reports remain historical rather than being silently rewritten.
+
+The combined chemistry lesson remains a full combined alternative, as requested. Shared skills now explicitly test whether substituting labels or numbers would reproduce assigned solution steps, advertise required actions inside disclosures, and require complete review-evidence handoffs with explained dependency changes. Rubric weights and acceptance standards were not lowered.
+
+Six original Astra reviewers completed bounded rechecks of the affected lessons, carrying forward explicitly unchanged judgments. Each affected lesson has **97/97 assessed points**, with F3's three delivery points unassessed for these new bytes. The exercised correction process has **85/85 assessed points**, with its fifteen validation/delivery points unassessed. These are incomplete totals, not normalized 100s. Publication and live verification follow this recorded local acceptance.
+
+The corrected candidate passed the repository checker and all 26 automated tests in a private validation copy with locked dependencies installed using scripts disabled. Integration covered 29 pages in 87 wide/narrow/enlarged-text/script-disabled modes and checked 563 local links. The final proof prerequisite and compound-name wrapping changes received six additional affected layout checks. Independent reviewers inspected the changed task attempts, keyboard behavior and actual paginated print; the ordinary-name wrapping fix preserved all six print pages pixel for pixel. Earlier failed probes and their corrections remain in private evidence.
+
+The following lesson hashes supersede the corresponding earlier entries. Other lesson HTML is unchanged; the selected release receipt binds all dependencies and the revised shared contract.
+
+| Corrected lesson | SHA-256 |
+| --- | --- |
+| [chemistry-ionic-and-molecular-names](skill-samples/lessons/chemistry-ionic-and-molecular-names.html) | `df951c64c6b36053b4dca05d4c8e5c13261e70f3b0c0dc30a0f6a7a36d6bbf0b` |
+| [chemistry-ionic-equations](skill-samples/lessons/chemistry-ionic-equations.html) | `93ebf97d07e6f8cc9b5a8d42a010a178754d486ac16f4ee2820e1a558ac2b5d5` |
+| [chemistry-names-formulas](skill-samples/lessons/chemistry-names-formulas.html) | `029dcf698cc7fcffbdb5d38444b7014b28cdeaef8253b05cc5b996d9b8f6618e` |
+| [chemistry-reference-tables](skill-samples/lessons/chemistry-reference-tables.html) | `8f00fbc83b8d232019ce76ea9a11256401a55d952a5fa1af32e0632ab3a17ea3` |
+| [english-tone](skill-samples/lessons/english-tone.html) | `b2a0ebb62243399061fbafaa361908c193ce666f2ffec6ecfb287e0e9f75a53b` |
+| [geometry-perimeter](skill-samples/lessons/geometry-perimeter.html) | `1b4080dbf5e326e5bd10db55ddc982e959c1e25608ab94aa4623b96eb2a61c90` |
+| [geometry-similarity-proofs](skill-samples/lessons/geometry-similarity-proofs.html) | `f902d3fae1f7b0496c3cbab3d634ad925c764f580ddbebf106100263a7927960` |
+| [science-fair-tests](skill-samples/lessons/science-fair-tests.html) | `350a4295c4211c5914cc531f60f844b147f6a5ff0449dacf8b0d91af65cf997b` |
+| [science-sea-level](skill-samples/lessons/science-sea-level.html) | `6d8fdafa41e6e9b9ff73851a22f01b0d50ac590f9d5a6a1ae486a3e013d80343` |
+| [0003-reading-particle-formulas](../lessons/0003-reading-particle-formulas.html) | `aa5845c8cc376622b2eeb6b929f0162a8ad4a5c93179edfb09bbee53d531bad8` |
+| [0005-shape-and-polarity](../lessons/0005-shape-and-polarity.html) | `31bda595409571fe6798504cd795b37d2e7d1088c04070a09c56c83abf50568e` |
+| [0008-chemistry-evidence-split](../lessons/0008-chemistry-evidence-split.html) | `8b42a614c892bdc8a4869cdf7f111df1829fe275f1c368ec90351f7340c10120` |

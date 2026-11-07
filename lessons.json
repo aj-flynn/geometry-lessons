@@ -398,9 +398,9 @@
         "homeworkSeparation": true,
         "accuracy": true,
         "accessibility": true,
-        "sha256": "efec326eb37d014af4c6806bd24be41f8c255313720e19a062ecc965f5a130be",
+        "sha256": "872ef71f5f35d919d0a379fa9a9b154e5bfb7bcd943d4104361e206cfcbc62e4",
         "dependencies": {
-          "assets/chemistry-evidence-split.css": "6940b26528830a05c5a1af4eb661b032fb6d5b91e939766c15e51b021d13d2a5",
+          "assets/chemistry-evidence-split.css": "ed08097f8be63df1b10402e133c885110ac724848d79e49bbf4a23a1b5fce60f",
           "assets/chemistry.css": "67a0691de4a18d68b9f9db977ee1c91d2e571b6c2fd3d5fe8263e3ab913e16e5",
           "assets/chemistry.js": "09946cce6df8348c5b6a371978721e43d7905e65236326bab9c01311db78caae",
           "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",

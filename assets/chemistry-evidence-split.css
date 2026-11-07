@@ -96,7 +96,7 @@
 .chemistry-split details details {background: #f2f6f2}
 .chemistry-split details p {margin-block: 10px 14px}
 .chemistry-split summary {line-height: 1.4; padding-block: 11px}
-.chemistry-split .back-evidence {display: inline-flex; align-items: center; min-height: 44px; font-size: .88em; font-weight: 700}
+.chemistry-split .back-evidence {display: none; align-items: center; min-height: 44px; font-size: .88em; font-weight: 700}
 .chemistry-split .split-retry {margin-top: 20px}
 .chemistry-split .split-route figure {padding: 14px}
 .chemistry-split [data-polarity] input {margin-inline: 0}
@@ -114,6 +114,7 @@
   .split-menu {gap: 0 18px}
   .split-pair {grid-template-columns: minmax(0, 1fr); gap: 24px}
   .split-evidence {position: static; max-height: none; overflow: visible}
+  .chemistry-split .back-evidence {display: inline-flex}
   .chemistry-split .split-glossary dl {grid-template-columns: repeat(2, minmax(0, 1fr))}
 }
 @media (max-width: 520px) {

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Use two justified angle matches to establish triangle similarity, order corresponding vertices, and find a length with consistent units.">
+<title>Two angles unlock a length</title>
+<link rel="stylesheet" href="../assets/site.css?v=20261105-r9">
+<link rel="stylesheet" href="../assets/triangle-similarity.css?v=20261106-2">
+<script src="../assets/lesson.js?v=20261105-r9" defer></script>
+<script src="../assets/triangle-similarity.js?v=20261106-2" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main" class="lesson aa-lesson">
+<a class="return-link" href="../index.html">← Lesson library</a>
+<p class="eyebrow">Geometry · AA similarity</p>
+<h1>Two angles unlock a length</h1>
+<p class="lead">Prove the shape match. Pair the corners. Then scale the sides.</p>
+<p class="route">Your goal: justify triangle similarity and use its corner (vertex) order to find a missing length. Take the short route through the examples; open the hints when you need them.</p>
+<aside aria-label="Before you start">
+<p><strong>Quick recall.</strong> A triangle has angles of 48° and 72°. What is its third angle? If a length grows from 4 cm to 10 cm, what multiplier takes the first length to the second?</p>
+<details><summary>Check the starting tools</summary><p>Triangle angles add to 180°, so the third is 180° − 48° − 72° = 60°. The multiplier is target ÷ original: 10 cm ÷ 4 cm = 2.5. Use the angle sum to find missing angles; use multiplication, rather than adding a fixed amount, to scale lengths.</p></details>
+</aside>
+<p>Unfamiliar word? Use the <a href="#glossary">glossary</a>.</p>
+
+<section aria-labelledby="aa-title">
+<h2 id="aa-title">1. Find two angle matches</h2>
+<p><a href="#term-similar">Similar triangles</a> have the same shape: one can fit the other after turning, flipping, sliding, and uniformly resizing it. <a href="#term-aa">AA similarity</a> is a shortcut: two pairs of <a href="#term-congruent">congruent angles</a> (equal angle measures) prove two triangles similar.</p>
+<p>Why two? The third angles are forced to match because each triangle’s angles total 180°. To see why the sides scale too, resize one triangle until the side between the matched angles fits the other. Those two angles and the included side fix the triangle’s shape. <a href="https://tasks.illustrativemathematics.org/blueprints/G/3/6">Illustrative Mathematics states the AA criterion.</a></p>
+<p><strong>Small worked example.</strong> The given segment DE is <a href="#term-parallel">parallel</a> to BC: their lines never meet (the arrow marks). D lies on AB and E lies on AC.</p>
+<figure>
+<svg viewBox="0 0 430 330" role="img" aria-labelledby="parallel-title parallel-desc">
+<title id="parallel-title">A triangle cut by a parallel segment</title><desc id="parallel-desc">A is above B, with B at the lower left and C at the lower right. D lies on AB and E on AC. DE and BC have matching parallel arrows. No side lengths are specified.</desc>
+<polygon class="large" points="60,40 60,280 380,280"/><polygon class="small" points="60,40 60,160 220,160"/>
+<path class="edge" d="M60 40V280H380Z M60 160H220"/>
+<path class="mark" d="M134 153l8 7-8 7 M214 273l8 7-8 7 M60 264h16v16"/>
+<text x="43" y="25">A</text><text x="33" y="306">B</text><text x="386" y="300">C</text><text x="29" y="168">D</text><text x="230" y="164">E</text>
+
+</svg>
+<figcaption>Given: D lies on AB, E lies on AC, and DE ∥ BC. No side lengths are given; the shape illustrates the angle relationships. The square at B marks a right angle; the proof below does not need its measure.</figcaption>
+</figure>
+<ol>
+<li><span class="math-line">∠DAE ≅ ∠BAC</span>These are the same angle at A: their rays overlap.</li>
+<li><span class="math-line">∠ADE ≅ ∠ABC</span>These angles occupy the same relative position where AB crosses the parallel lines DE and BC.</li>
+<li><span class="math-line">△ADE ∼ △ABC by AA.</span>The symbol ∼ means “is similar to.” We have two angle pairs with reasons, so no side calculation is needed to establish similarity.</li>
+</ol>
+<details><summary>Need another parallel-line angle rule?</summary><p>When a line crosses two parallel lines, alternate interior angles also match. These angles lie inside the parallels and on opposite sides of the crossing line. Use the placement of the angles to choose this rule or the corresponding-angle rule.</p></details>
+<details><summary>What if only one pair matches?</summary><p>One equal angle leaves the other two free to change. For example, triangles with angles 40°, 60°, 80° and 40°, 50°, 90° share one measure but are not similar. A sketch that looks like a resized copy is not evidence. Use stated measures, marks, or a theorem.</p></details>
+<div class="practice">
+<h3>Check the angle evidence</h3>
+<p>Triangle KLM has ∠K = 31° and ∠L = 84°. Triangle RST has ∠R = 65° and ∠S = 31°. Decide whether they are similar. Give the two matching angle pairs before checking.</p>
+<details><summary>Hint 1 · Find the missing information</summary><p>Use the angle sum in each triangle. The given angles need not be the matching pair.</p></details>
+<form data-aa-choice>
+<fieldset><legend>What follows from the angle measures?</legend>
+<label class="choice"><input type="radio" name="angles" value="different" data-explanation="Compare all three measures. One triangle’s third angle may match a given angle in the other. Find each third angle, then retry."><span>The triangles have different shapes.</span></label>
+<label class="choice"><input type="radio" name="angles" value="similar" data-explanation="AA applies: ∠K ≅ ∠S (31°) and ∠M ≅ ∠R (65°); the remaining angles are both 84°. Now write △KLM ∼ △STR from that mapping."><span>The triangles have similar shapes.</span></label>
+<label class="choice"><input type="radio" name="angles" value="unknown" data-explanation="Side lengths are not required for AA. The 180° angle sum supplies enough information. Compute the missing measures, then retry."><span>The given information is insufficient.</span></label>
+</fieldset><button type="submit" disabled>Check the angle decision</button><p data-feedback role="status" aria-live="polite"></p>
+</form>
+<details class="static-feedback"><summary>Compare your reasoning</summary><p>∠M = 65° and ∠T = 84°. Match K ↔ S, L ↔ T, M ↔ R. Thus △KLM ∼ △STR by AA. Retry: change ∠R to 64°, keeping ∠S = 31°. Are the triangles still similar?</p><details><summary>Compare the retry</summary><p>No. The second triangle now has measures 64°, 31°, 85°. Only the 31° angles match; its angle set differs from 31°, 84°, 65°.</p></details></details>
+</div>
+</section>
+
+<section aria-labelledby="order-title">
+<h2 id="order-title">2. Let the order choose the sides</h2>
+<p>A <a href="#term-correspondence">correspondence</a> pairs matching corners. In △ADE ∼ △ABC, the positions say A ↔ A, D ↔ B, E ↔ C. Match both endpoints of a side, including the closing pair:</p>
+<p class="math-line">AD ↔ AB, DE ↔ BC, EA ↔ CA.</p>
+<p><strong>New worked example.</strong> Two detached triangular panels have the marked equal angle pairs. Point H divides the straight side LM. All <a href="#term-expression">side expressions</a> (formulas for lengths) below are in centimeters; t is a number to find. <strong>Goal:</strong> find the full length VW.</p>
+<figure>
+<svg viewBox="0 0 430 460" role="img" aria-labelledby="panels-title panels-desc">
+<title id="panels-title">Detached panels with a subdivided side</title><desc id="panels-desc">Triangle LMN is above triangle UVW, which is turned over. Angles L and U have one arc; angles M and V have two arcs. H lies between L and M on one straight side. LH is 3 centimeters, HM is 5 centimeters, MN is 3t plus 1 centimeters. UV is 16 centimeters, VW is 2t plus 10 centimeters.</desc>
+<polygon class="small edge" points="60.00,175.00 180.00,175.00 107.81,98.75"/>
+<polygon class="large edge" points="365.00,265.00 125.00,265.00 269.38,417.50"/>
+<path class="mark" d="M82.00,175.00 A22 22 0 0 0 71.69,156.36"/><path class="mark" d="M158.00,175.00 A22 22 0 0 1 164.88,159.02"/><path class="mark" d="M152.00,175.00 A28 28 0 0 1 160.75,154.67"/><path class="mark" d="M343.00,265.00 A22 22 0 0 0 353.31,283.64"/><path class="mark" d="M147.00,265.00 A22 22 0 0 1 140.12,280.98"/><path class="mark" d="M153.00,265.00 A28 28 0 0 1 144.25,285.33"/>
+<path class="mark" d="M105 169V181"/>
+<text x="35" y="187">L</text><text x="185" y="190">M</text><text x="103" y="85">N</text><text x="95" y="213">H</text>
+<text x="372" y="268">U</text><text x="100" y="267">V</text><text x="266" y="446">W</text>
+<text x="68" y="199">3</text><text x="142" y="199">5</text><text x="165" y="119">3t + 1</text><text x="225" y="250">16</text><text x="125" y="381">2t + 10</text>
+</svg>
+<figcaption>Given: the marked angle pairs, L–H–M on one straight line with H between the endpoints, LH = 3 cm, HM = 5 cm, MN = (3t + 1) cm, UV = 16 cm, and VW = (2t + 10) cm. The drawing preserves the shape and length ratios at the valid solution; use the givens, not measurements.</figcaption>
+</figure>
+<p>The arcs give L ↔ U and M ↔ V, so the third corners pair N ↔ W. Thus △LMN ∼ △UVW by AA. Match LM ↔ UV and MN ↔ VW. The side LM is the <em>whole</em> side: LM = LH + HM = 3 cm + 5 cm = 8 cm.</p>
+<p>Corresponding lengths have one <a href="#term-scale">scale factor</a> (common multiplier). Keep large/small in both ratios and keep each expression in parentheses:</p>
+<p><span class="math-line">VW/MN = UV/LM</span><span class="math-line">(2t + 10)/(3t + 1) = 16/(3 + 5) = 2</span></p>
+<details><summary>Finish the algebra and check the actual length</summary><p>The numerical equation uses centimeter values on both sides; the units cancel in each ratio.</p><p><span class="math-line">2t + 10 = 2(3t + 1)</span><span class="math-line">2t + 10 = 6t + 2</span><span class="math-line">8 = 4t, so t = 2</span><span class="math-line">VW = (2 × 2 + 10) cm = 14 cm</span></p><p>Check every expression: MN = (3 × 2 + 1) cm = 7 cm, so VW/MN = 14/7 = 2, matching UV/LM = 16/8. Both lengths are positive. The variable value t = 2 is not the requested side length. Using only HM = 5 cm would compare a piece with a whole side and give the wrong ratio.</p></details>
+<div class="practice">
+<h3>Try a new vertex order</h3>
+<p>Given: ∠F ≅ ∠Z and ∠G ≅ ∠X. The triangles are FGH and XYZ. Write the statement starting with △FGH, and list the side paired with FH.</p>
+<form data-aa-choice>
+<fieldset><legend>Complete △FGH ∼ △…</legend>
+<label class="choice"><input type="radio" name="order" value="zxy" data-explanation="The order is ZXY: F ↔ Z, G ↔ X, H ↔ Y. Thus FH ↔ ZY, including the closing edge. Rotating or reflecting a drawing does not change this endpoint rule."><span>ZXY</span></label>
+<label class="choice"><input type="radio" name="order" value="zyx" data-explanation="This places G opposite Y, but the given match is G ↔ X. Put each known pair in the same position, then retry."><span>ZYX</span></label>
+<label class="choice"><input type="radio" name="order" value="xyz" data-explanation="Alphabetical order does not determine correspondence. Start with the given F ↔ Z, then place the other pairs and retry."><span>XYZ</span></label>
+</fieldset><button type="submit" disabled>Check the vertex order</button><p data-feedback role="status" aria-live="polite"></p>
+</form>
+<details class="static-feedback"><summary>Compare your reasoning</summary><p>△FGH ∼ △ZXY, and FH ↔ ZY. Retry in reverse: starting with △YZX, write the matching first triangle.</p><details><summary>Compare the retry</summary><p>△YZX ∼ △HFG: Y ↔ H, Z ↔ F, X ↔ G. The same pairs work in either direction.</p></details></details>
+</div>
+</section>
+
+<section aria-labelledby="move-title">
+<h2 id="move-title">Test what stays the same</h2>
+<p><strong>Predict first.</strong> Slide DE from halfway to three-quarters of the way along the sides. Will the two angle matches survive? Will DE/BC become 0.75 too? Explain before using the controls.</p>
+<div data-aa-model>
+<figure>
+<svg viewBox="0 0 430 330" role="img" aria-labelledby="moving-title moving-desc">
+<title id="moving-title">Move a parallel cross-section</title><desc id="moving-desc">Triangle ABC has A above B and C to the right of B. Triangle ADE sits inside it, sharing A. D stays on AB and E on AC. DE stays parallel to BC. The text below reports the current side ratios and angle matches.</desc>
+<polygon class="large" points="60,40 60,280 380,280"/><polygon data-moving-triangle class="small edge" points="60,40 60,160 220,160"/>
+<path class="edge" d="M60 40V280H380Z"/><path class="mark" data-parallel-mark d="M134 153l8 7-8 7"/><path class="mark" d="M214 273l8 7-8 7"/>
+<text x="43" y="25">A</text><text x="33" y="310">B</text><text x="386" y="310">C</text><text data-d-label x="30" y="167">D</text><text data-e-label x="232" y="168">E</text>
+</svg>
+<figcaption>Model: D and E always lie at the same fraction along AB and AC. This construction keeps DE parallel to BC; freehand dragging would not guarantee it.</figcaption>
+</figure>
+<fieldset disabled><legend>Move the parallel segment</legend>
+<label for="position">Fraction along each full side</label><input id="position" type="range" min="30" max="75" step="1" value="50" aria-describedby="model-state" aria-valuetext="0.50 of each full side">
+<output for="position" aria-live="off">0.50 of each full side</output>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play sweep</button><button type="button" data-pause>Pause</button><button type="button" data-reset>Reset to half</button></div>
+</fieldset>
+<p id="model-state" class="model-status" data-model-status>AD/AB = AE/AC = DE/BC = 0.50. ∠DAE ≅ ∠BAC and ∠ADE ≅ ∠ABC throughout.</p>
+<p class="unit-note">Use the slider’s arrow keys for single steps. Play sweeps once from 0.30 to 0.75; with reduced motion it shows the endpoint immediately. Pause holds the current state.</p>
+</div>
+<details><summary>Compare your prediction · also works without scripts</summary><p>At halfway, all three small/large side ratios equal 0.50. At three-quarters, all three equal 0.75. The shared angle at A and the corresponding angles at D and B still match, so △ADE ∼ △ABC at both positions. Resizing changes lengths, while the angles stay fixed. The model demonstrates a family of examples; the parallel-angle reasoning supplies the proof.</p></details>
+</section>
+
+<section aria-labelledby="camera-title">
+<h2 id="camera-title">3. Use similarity to measure indirectly</h2>
+<p>An ideal <a href="#term-pinhole">pinhole camera</a> uses a tiny opening to project an inverted image. A flat panel and the image screen are parallel. The ray from the panel’s top passes through the hole to the image’s bottom.</p>
+<figure>
+<svg viewBox="0 0 450 285" role="img" aria-labelledby="camera-svg-title camera-svg-desc">
+<title id="camera-svg-title">A panel and its inverted camera image</title><desc id="camera-svg-desc">Panel top P and base B are left of hole O. Screen point S is on the horizontal optical axis to the right of O, and image bottom I is below S. P,O,I lie on a straight ray, and B,O,S on a horizontal line. PB and SI are perpendicular to that line. OB is 3 meters 60 centimeters, OS is 45 millimeters, and SI is 18 millimeters. Panel height PB is unknown.</desc>
+<polygon class="large" points="40,70 40,190 340,190"/><polygon class="small" points="340,190 377.5,190 377.5,205"/>
+<path class="edge" d="M40 70V190H377.5V205Z M340 190L377.5 205"/>
+<path class="mark" d="M40 176h14v14 M366.5 190v11h11"/>
+<text x="15" y="65">P</text><text x="15" y="218">B</text><text x="326" y="172">O</text><text x="382" y="183">S</text><text x="382" y="215">I</text>
+<text x="51" y="134">H</text><text x="140" y="224">3 m 60 cm</text><text x="309" y="273">45 mm</text><text x="300" y="243">SI = 18 mm</text>
+</svg>
+<figcaption>Given: OB = 3 m 60 cm, OS = 45 mm, SI = 18 mm. Goal: panel height PB = H, to the nearest tenth of a meter. Schematic: the screen-side triangle is enlarged 10× relative to the panel-side drawing scale for readable labels. Do not measure the drawing; the stated lengths make the image 1/80 the panel’s height. O is the hole. The screen and panel make right angles with the horizontal axis.</figcaption>
+</figure>
+<p>∠PBO and ∠ISO are right angles. ∠POB ≅ ∠IOS because they are <a href="#term-vertical">vertical angles</a>, the opposite angles where two straight lines cross. So △PBO ∼ △ISO by AA. PB ↔ IS and BO ↔ SO.</p>
+<details><summary>Work the units and proportion one step at a time</summary>
+<p>Use millimeters (mm) throughout the calculation. Convert each part before adding: 1 m = 1000 mm and 1 cm = 10 mm.</p>
+<p><span class="math-line">3 m × 1000 mm/m = 3000 mm</span><span class="math-line">60 cm × 10 mm/cm = 600 mm</span><span class="math-line">OB = 3000 mm + 600 mm = 3600 mm</span><span class="math-line">PB/IS = BO/SO</span><span class="math-line">PB / 18 mm = 3600 mm / 45 mm = 80</span><span class="math-line">PB = 80 × 18 mm = 1440 mm</span><span class="math-line">PB = 1440 mm × 1 m / 1000 mm = 1.44 m</span><span class="math-line">PB ≈ 1.4 m, to the nearest tenth.</span></p>
+<p>The panel is 80 times farther from O, so its height is 80 times the image height. Keep extra digits until the final rounding. This ideal model assumes straight rays, a flat screen parallel to the panel, and negligible hole size. A real camera with a lens needs a different optical model.</p>
+</details>
+<div class="practice">
+<h3>Try a fresh camera setup</h3>
+<p>The same ideal geometry has OB = 2 m 70 cm, OS = 36 mm, and image height IS = 15 mm. Find panel height PB in meters, to the nearest hundredth. Write an ordered similarity statement and your unit conversion before checking.</p>
+<details><summary>Hint 1 · Pair the roles</summary><p>Panel height pairs with image height; panel distance pairs with screen distance. Use the right angles and vertical angles to justify the pairing.</p></details>
+<details><summary>Hint 2 · Choose consistent units</summary><p>Convert each part of 2 m 70 cm to millimeters, then add them: 2000 mm + 700 mm. Keep the same panel/image order for both ratios.</p></details>
+<details><summary>Hint 3 · Set up the equation</summary><p>If h is the panel height measured in millimeters, h/15 = 2700/36. Convert your result back to meters before rounding.</p></details>
+<form class="practice" data-practice data-expected="1.13" data-tolerance="0.00001" data-hint="Check the distance ratio, use it on the image height, and convert millimeters back to meters. Round only at the end, then retry." data-mistakes='{"1125":"If this is a height in millimeters, convert it to meters before rounding to hundredths. Compare your units and retry.","1.125":"If you reached 1.125 m before rounding, use the thousandths digit to round to hundredths. Compare your calculation and retry.","0.001125":"Check whether the distances used different units. Convert both to millimeters before dividing, then retry."}' data-success="PB = 1.125 m ≈ 1.13 m. △PBO ∼ △ISO; the distance ratio is 2700/36 = 75, so 75 × 15 mm = 1125 mm. Explain why the panel is taller than its image.">
+<label for="camera-height">Panel height in meters, rounded to hundredths</label><input id="camera-height" type="number" step="any" required><button type="submit" disabled>Check this new height</button><p data-feedback role="status" aria-live="polite"></p>
+</form>
+<details class="static-feedback"><summary>Compare your calculation</summary><p>△PBO ∼ △ISO. The compound distance is 2000 mm + 700 mm = 2700 mm. In millimeters, h/15 = 2700/36 = 75, so h = 1125 mm = 1.125 m ≈ 1.13 m. Multiplying meters by the millimeter value without converting first loses a factor of 1000. Retry: if only the panel distance doubles, what happens to its calculated height for the same image height?</p><details><summary>Compare the retry</summary><p>The distance ratio doubles, so the calculated panel height doubles. The corresponding angles remain equal under the stated model.</p></details></details>
+</div>
+</section>
+
+<section aria-labelledby="practice-title">
+<h2 id="practice-title">Your turn · choose the route</h2>
+<p>Try these before opening support. For each, state your evidence, write an ordered similarity statement if one is justified, and explain your conclusion.</p>
+<div class="practice">
+<h3>A. Plan a panel repair</h3>
+<p>Two detached triangular covers have the given angle marks. In the lower cover, T is a repair seam on the straight side QR. All labels are in centimeters. Find x and the full side HJ. Start your similarity statement with △GHJ, and explain which marked angles justify it.</p>
+<figure>
+<svg viewBox="0 0 430 505" role="img" aria-labelledby="repair-title repair-desc">
+<title id="repair-title">Two marked triangular covers and a repair seam</title><desc id="repair-desc">Triangle GHJ is above triangle QRP. G and Q have one angle arc; H and R have two arcs. GH is 9 centimeters, HJ is x plus 2 centimeters. In the lower triangle QRP, T is between Q and R, with QT 7 centimeters and TR 11 centimeters. RP is 3x minus 4 centimeters.</desc>
+<polygon class="small edge" points="50.00,55.00 185.00,55.00 75.00,156.98"/>
+<polygon class="large edge" points="380.00,265.00 110.00,265.00 330.00,468.96"/>
+<path class="mark" d="M72.00,55.00 A22 22 0 0 1 55.24,76.37"/><path class="mark" d="M163.00,55.00 A22 22 0 0 0 168.87,69.96"/><path class="mark" d="M157.00,55.00 A28 28 0 0 0 164.47,74.04"/><path class="mark" d="M358.00,265.00 A22 22 0 0 0 374.76,286.37"/><path class="mark" d="M132.00,265.00 A22 22 0 0 1 126.13,279.96"/><path class="mark" d="M138.00,265.00 A28 28 0 0 1 130.53,284.04"/>
+<path class="mark" d="M275 259V271"/>
+<text x="28" y="57">G</text><text x="190" y="59">H</text><text x="52" y="185">J</text>
+<text x="387" y="267">Q</text><text x="84" y="267">R</text><text x="326" y="497">P</text><text x="268" y="300">T</text>
+<text x="106" y="43">9</text><text x="143" y="119">x + 2</text><text x="319" y="250">7</text><text x="181" y="250">11</text><text x="138" y="392">3x − 4</text>
+</svg>
+<figcaption>Given: the marked congruent angle pairs; GH = 9 cm; HJ = (x + 2) cm; Q–T–R on one straight line with T between the endpoints; QT = 7 cm; TR = 11 cm; RP = (3x − 4) cm. The shapes and ratios are drawn consistently at the valid solution. No scale factor is supplied.</figcaption>
+</figure>
+<p>Write your full-side calculation and proportion before checking. State why the solved side lengths must be positive.</p>
+<details><summary>Hint 1 · Separate a side from a piece</summary><p>Pair the marked corners. Decide whether the matching side uses one labeled piece or an entire straight boundary.</p></details>
+<details><summary>Hint 2 · Keep the expression together</summary><p>Match both endpoints. Choose one direction for both ratios and put parentheses around each side expression. A variable value is not automatically a length.</p></details>
+<form class="practice" data-practice data-expected="10" data-tolerance="0.00001" data-hint="Recheck your corner pairs, whole-side addition, and ratio direction. Solve the equation, then substitute into the requested side expression and retry." data-mistakes='{"8":"If this is your variable value, substitute it into the requested side expression before reporting a length. Compare your work and retry.","20":"Check which triangle contains HJ. The corresponding side in the other cover has a different length. Follow the endpoints and retry."}' data-success="HJ = 10 cm. △GHJ ∼ △QRP by the marked angle pairs. QR = 7 cm + 11 cm = 18 cm, so (3x − 4)/(x + 2) = 18/9 = 2. Thus 3x − 4 = 2x + 4, x = 8, and HJ = (8 + 2) cm = 10 cm. RP = 20 cm; both sides are positive and 20/10 = 18/9.">
+<label for="repair-length">Full side HJ in centimeters</label><input id="repair-length" type="number" step="any" required><button type="submit" disabled>Check the new length</button><p data-feedback role="status" aria-live="polite"></p>
+</form>
+<details class="static-feedback"><summary>Compare your plan and length</summary><p>The arcs give G ↔ Q, H ↔ R, and hence J ↔ P, so △GHJ ∼ △QRP by AA. The full matching side is QR = QT + TR = 7 cm + 11 cm = 18 cm. Use large/small for both ratios:</p><p><span class="math-line">RP/HJ = QR/GH</span><span class="math-line">(3x − 4)/(x + 2) = (7 + 11)/9 = 2</span><span class="math-line">3x − 4 = 2(x + 2)</span><span class="math-line">3x − 4 = 2x + 4, so x = 8</span><span class="math-line">HJ = (8 + 2) cm = 10 cm</span></p><p>Check RP = (3 × 8 − 4) cm = 20 cm; all sides are positive and 20/10 = 18/9. An answer for x alone does not finish the requested length. Retry: without solving again, write the reciprocal proportion using small/large, and give the matching statement starting with △PRQ.</p><details><summary>Compare the retry</summary><p>(x + 2)/(3x − 4) = 9/(7 + 11), and △PRQ ∼ △JHG. Both numerator/denominator orders reverse together.</p></details></details>
+</div>
+<div class="practice">
+<h3>B. Decide what can be concluded</h3>
+<p>One triangle has angles 42° and 69°. Another has angles 42° and 68°. Can an AA argument establish similarity? Explain without using a side-length calculation.</p>
+<details><summary>Compare after your attempt</summary><p>No. The first angle set is 42°, 69°, 69°; the second is 42°, 68°, 70°. The complete sets differ, so these triangles are not similar. One shared measure is not enough.</p><p>Retry: replace the second triangle’s 68° with 69°. Now explain what changes and why no side information is needed.</p><details><summary>Compare the retry</summary><p>Now both triangles have the same angle set, so two angle pairs match and AA establishes similarity.</p></details></details>
+</div>
+<p class="reflection"><strong>Exit explanation.</strong> In your own words, explain why a correct proportion can still fail if the triangle order is wrong. Give one way to check the order and one way to check the size of a result.</p>
+</section>
+
+<section aria-labelledby="return-title">
+<h2 id="return-title">Take it back to your work</h2>
+<p>Find two angle pairs and justify each. Write the matching corner order. Pair both endpoints of every side. Add pieces on one straight side when its whole length is needed. Keep each algebraic expression together, then check that the resulting lengths are positive. Keep ratio direction and units consistent. Check whether the result should be larger or smaller, then round as requested.</p>
+<p>Next time, before reopening this lesson, recall what AA needs and sketch a different pair of similar triangles. Turn one triangle around and write its matching order from memory.</p>
+<p>Ask a follow-up question in the private chat if something is unclear. Describe the step where your thinking got stuck.</p>
+</section>
+<section id="glossary" aria-labelledby="glossary-title">
+<h2 id="glossary-title">Glossary</h2>
+<dl class="glossary-grid">
+<div><dt id="term-similar">Similar · ∼</dt><dd>Figures that fit after rigid moves (turns, flips, slides) and a uniform resize. Corresponding angles match and corresponding lengths have one common ratio. △ABC ∼ △DEF pairs A ↔ D, B ↔ E, C ↔ F.</dd></div>
+<div><dt id="term-aa">AA similarity</dt><dd>For two triangles, two pairs of corresponding congruent angles are enough to establish similarity. AA means Angle–Angle.</dd></div>
+<div><dt id="term-congruent">Congruent angles · ≅</dt><dd>Angles with the same measure. ∠ABC names the angle with vertex B; ° means degrees, the unit of angle measure.</dd></div>
+<div><dt id="term-correspondence">Correspondence · ↔</dt><dd>A pairing of matching vertices and their sides. Match both endpoints to identify a side pair.</dd></div>
+<div><dt id="term-parallel">Parallel · ∥</dt><dd>Lines in the same plane that never meet. A crossing line produces equal corresponding angles (same relative position), or equal alternate interior angles (inside the parallel lines, on opposite sides of the crossing line).</dd></div>
+<div><dt id="term-vertical">Vertical angles</dt><dd>Opposite angles formed by two intersecting straight lines. They have equal measures; “vertical” here does not mean upright.</dd></div>
+<div><dt id="term-expression">Side expression</dt><dd>A formula for a side’s length, such as (3t + 1) cm. The variable stands for a number. Solve for that number, substitute it into the formula, and check that each resulting length is positive.</dd></div>
+<div><dt id="term-scale">Scale factor</dt><dd>Target length divided by its matching original length, in consistent units. Multiply every original side length by that same factor.</dd></div>
+<div><dt id="term-pinhole">Pinhole camera</dt><dd>An ideal model where rays pass through one tiny opening onto a screen. The model here assumes a screen parallel to the object.</dd></div>
+<div><dt>Units and symbols</dt><dd>m = meters, cm = centimeters, mm = millimeters. 1 m = 100 cm = 1000 mm. = means exactly equal; ≈ means approximately equal, such as after rounding.</dd></div>
+</dl>
+</section>
+<section class="sources" aria-labelledby="sources-title">
+<h2 id="sources-title">Read a little more</h2>
+<p><a href="https://tasks.illustrativemathematics.org/blueprints/G/3/6">Illustrative Mathematics: Establish AA criterion for triangles</a> gives the theorem and connects it to uniform resizing. For the common side multiplier, revisit <a href="0001-similar-polygons.html">Same shape at a new scale</a>.</p>
+</section>
+</main>
+</body>
+</html>

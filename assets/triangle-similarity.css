@@ -1,0 +1,26 @@
+.aa-lesson{--aa-teal:#d5e9df;--aa-gold:#f0df9d}
+.aa-lesson .eyebrow{font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.aa-lesson .route{border-left:5px solid var(--ink);padding-left:18px}
+.aa-lesson .math-line{display:block;margin:.45em 0;overflow-wrap:anywhere}
+.aa-lesson figure svg{font:700 20px Arial,sans-serif;fill:var(--ink);max-width:600px;margin:auto}
+.aa-lesson svg .edge{stroke:var(--ink);stroke-width:3;fill:none;stroke-linejoin:round}
+.aa-lesson svg .large{fill:var(--aa-gold)}
+.aa-lesson svg .small{fill:var(--aa-teal)}
+.aa-lesson svg .mark{stroke:var(--ink);stroke-width:2;fill:none}
+.aa-lesson svg .ray{stroke-dasharray:6 5}
+.aa-lesson .practice{margin-block:24px}
+.aa-lesson fieldset{border:0;padding:0;margin:0;min-width:0}
+.aa-lesson legend{font-weight:700;margin-bottom:12px}
+.aa-lesson .choice{display:flex;align-items:flex-start;gap:10px;padding:10px 0;cursor:pointer}
+.aa-lesson input[type=radio]{width:23px;height:23px;flex-shrink:0;margin:3px 0;accent-color:var(--ink)}
+.aa-lesson .choice span{min-width:0}
+.aa-lesson .controls button:disabled{opacity:.6;cursor:default;transform:none}
+.aa-lesson .practice>details{background:var(--paper)}
+.aa-lesson .model-status{font-weight:700;min-height:3.3em}
+.aa-lesson .unit-note{font-size:1rem}
+.aa-lesson .reflection{border-left:3px solid var(--ink);padding-left:16px}
+.aa-lesson .glossary-grid>div{break-inside:avoid}
+.aa-lesson aside{margin-block:24px}
+@media(max-width:450px){.aa-lesson figure svg{font-size:22px}.aa-lesson figure{padding:8px}.aa-lesson .controls{gap:8px}.aa-lesson button{padding:.65rem .8rem}.aa-lesson .practice{padding:16px}.aa-lesson h1{font-size:36px}}
+@media print{.aa-lesson{line-height:1.35}.aa-lesson section{margin-top:20px}.aa-lesson p{margin-block:8px}.aa-lesson figure{padding:10px;margin-block:12px}.aa-lesson figure svg{max-width:350px;max-height:300px}.aa-lesson .practice{padding:12px;break-inside:auto}.aa-lesson form,.aa-lesson .choice{break-inside:avoid}.aa-lesson form{margin:8px 0}.aa-lesson .choice{padding:3px 0}.aa-lesson .glossary-grid{columns:2;column-gap:24px}.aa-lesson .model-status{min-height:0}.aa-lesson h2,.aa-lesson h3,.aa-lesson summary{break-after:avoid}}
+@media print{.aa-lesson{font-size:11pt;line-height:1.28}.aa-lesson section{margin-top:16px}.aa-lesson details{padding:8px 12px;margin-block:6px}.aa-lesson summary{min-height:0;padding-block:3px}.aa-lesson h2{margin-bottom:10px}.aa-lesson h3{margin-bottom:8px}.aa-lesson dt{margin-top:10px}}

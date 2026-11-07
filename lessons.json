@@ -40,7 +40,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -50,7 +50,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       },
       "subject": "Geometry"
@@ -96,7 +96,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -106,7 +106,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     },
@@ -150,7 +150,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -160,7 +160,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     },
@@ -204,7 +204,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -214,7 +214,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     },
@@ -259,7 +259,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -269,7 +269,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     },
@@ -313,7 +313,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -323,7 +323,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     },
@@ -368,7 +368,7 @@
           "scripts/check-chemistry-browser.py": "628e06456fc7422fb4bd7e8acc6d8ee99638d3f74ea70f4eaccfd6eca5848f96",
           "scripts/check-live.py": "50c978af07f29ae100628bf5722d81726f1705237f7adee429c3754c8dd09822",
           "scripts/check-practice-browser.py": "87afcea7b2bf9022c7c62e39e3ec6b881f0804d1665a1c7806c3bd6adb9cfb8f",
-          "scripts/check.mjs": "2a530d7e8c6f38c6081aa1b89cbe3f92ed3f8a6a6bc9d7ed0cdbb0cc7b9c5c46",
+          "scripts/check.mjs": "51156796bcd78b26a4b042005e614f4930cce6cd9201a0c12758a85d961b147b",
           "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
           "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
           "templates/index.html": "040a20fcb76db95d6ace35857a33c11f101f528920d58b95d37137b24a9a2243",
@@ -378,7 +378,7 @@
           "tests/subjects.test.mjs": "deab09c8d965256ef1209a136aefb223e0b0d859f29c5eeba4623d09207482b8",
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
-          "tests/workflow.test.mjs": "9df0b6b93c68dcc19e9a3f02fede619e3bbf2009fafdfde533672266545dca93"
+          "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
         }
       }
     }

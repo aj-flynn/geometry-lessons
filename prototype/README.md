@@ -1,6 +1,6 @@
 # Lesson template gallery — prototypes for review
 
-Open **index.html** directly in a browser. No installation or build is needed. Or, from the repository root, run `python -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766/templates/lesson-prototypes/`.
+[Open the published gallery](https://aj-flynn.github.io/geometry-lessons/prototype/). You can also open **index.html** directly in a browser. No installation or build is needed. Or, from the repository root, run `python -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766/prototype/`.
 
 Choose a layout along the top, then use the sample-lesson menu to view any of the six public lessons. Previous/Next wrap through all nine. Keyboard shortcuts are `[` / `]` and `1`–`9` outside editing controls. **Choose this template** records your choice in the URL and displays its name. Tell the reviewer the name or share the URL. There is no backend or response storage. Switching the layout or lesson resets practice responses.
 

@@ -491,6 +491,8 @@ export function check(base = root) {
     errors.push('Shared style needs reduced-motion support.');
   }
   const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  // The owner-selected comparison gallery is separate from indexed learner lessons.
+  const prototypeFiles = new Set(['index.html', 'README.md', 'gallery.css', 'templates.css', 'kit.js', 'templates.js', 'gallery.js'].map(file => `prototype/${file}`));
   const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
   const decoder = new TextDecoder('utf-8', { fatal: true });
   let checkedFiles = 0;
@@ -500,7 +502,7 @@ export function check(base = root) {
       errors.push(...pathFindings);
       continue;
     }
-    const allowedPath = allowedRoots.has(name) || (!unexpectedAuxiliaryPath(name) &&
+    const allowedPath = allowedRoots.has(name) || prototypeFiles.has(name) || (!unexpectedAuxiliaryPath(name) &&
       (/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name) || allowedSkillFolders.some(folder => name.startsWith(folder))));
     const allowedType = textExtension.test(name) || allowedRoots.has(name);
     if (!allowedPath) errors.push(`Unexpected public repository path: ${name}`);
@@ -521,6 +523,13 @@ export function check(base = root) {
     }
     if (source.includes('\0')) {
       errors.push(`${name}: Expected text without binary data.`);
+      continue;
+    }
+    if (prototypeFiles.has(name)) {
+      // Gallery layout switching uses runtime DOM composition; keep the public
+      // privacy/network/storage checks without applying the learner-page loader profile.
+      errors.push(...inspectPublicCode(source, name));
+      checkedFiles++;
       continue;
     }
     const publicPageOrAsset = name === 'index.html' || /^(?:assets|lessons|reference)\//.test(name) ||

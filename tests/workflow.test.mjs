@@ -71,6 +71,22 @@ test('common private payload and network/storage patterns are blocked',()=>{
   assert.equal(inspectPublicCode('<a href="https://example.edu/geometry">Read more</a><svg><desc>A triangle</desc></svg>','lesson.html').length,0);
 });
 
+test('only selected prototype files publish and retain public-content checks', t => {
+  const { base, put } = publicationFixture(t);
+  put('lessons.json', JSON.stringify({ version: 2, lessons: [] }));
+  put('index.html', generateIndex(base));
+  put('prototype/index.html', '<html lang="en"><h1>Prototype gallery</h1></html>');
+  assert.equal(check(base).lessons, 0);
+  put('prototype/unselected.html', '<h1>Unselected</h1>');
+  assert.throws(() => check(base), /Unexpected public repository path: prototype\/unselected.html/);
+  rmSync(join(base, 'prototype/unselected.html'));
+  put('prototype/gallery.js', 'fetch("/upload");');
+  assert.throws(() => check(base), /prototype\/gallery.js: Network request/);
+  put('prototype/gallery.js', 'const selected = "column";');
+  put('prototype/README.md', syntheticAddress);
+  assert.throws(() => check(base), /prototype\/README.md: Email-like personal identifier/);
+});
+
 test('publication checks all candidate text for private identifiers', t => {
   const { base, put } = publicationFixture(t);
   put('lessons.json', JSON.stringify({ version: 2, lessons: [] }));

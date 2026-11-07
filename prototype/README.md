@@ -6,6 +6,8 @@ Choose a layout along the top, then use the sample-lesson menu to view any of th
 
 The URL accepts `template`, `lesson`, and `favourite`, for example `index.html?template=split&lesson=0002&favourite=split`. A localhost URL is available only on the computer running the server. Selection is **pending user review**; no prototype has been promoted into the live lesson library.
 
+**Open prototype in new tab** opens the current template and sample lesson on their own. The link adds `view=standalone`, which hides the gallery header, switcher, selection controls, and explanatory footer. Lesson navigation and practice remain available; gallery keyboard shortcuts are disabled. The original gallery tab remains open, and standalone links can be bookmarked or shared.
+
 ## Nine directions
 
 | Key | Name | Structure |

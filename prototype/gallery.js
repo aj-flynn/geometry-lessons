@@ -36,7 +36,8 @@
     return {
       template: templates.some(t => t.key === params.get('template')) ? params.get('template') : 'column',
       lesson: sourceById.has(params.get('lesson')) ? params.get('lesson') : '0001',
-      favourite: templates.some(t => t.key === params.get('favourite')) ? params.get('favourite') : ''
+      favourite: templates.some(t => t.key === params.get('favourite')) ? params.get('favourite') : '',
+      standalone: params.get('view') === 'standalone'
     };
   }
   function updatePick() {
@@ -56,7 +57,17 @@
     document.getElementById('gal-name').textContent = template.name;
     document.getElementById('gal-text').textContent = template.description;
     document.getElementById('gal-source').href = source.dataset.href;
-    document.title = `${template.name} · Lesson template gallery`;
+    const previewUrl = new URL(location.href);
+    previewUrl.hash = '';
+    previewUrl.searchParams.set('template', state.template);
+    previewUrl.searchParams.set('lesson', state.lesson);
+    previewUrl.searchParams.set('view', 'standalone');
+    previewUrl.searchParams.delete('favourite');
+    document.getElementById('gal-open').href = previewUrl.href;
+    document.documentElement.classList.toggle('standalone-preview', state.standalone);
+    document.title = state.standalone
+      ? `${source.querySelector('[data-field="title"]').textContent} · ${template.name} prototype`
+      : `${template.name} · Lesson template gallery`;
     chipButtons.forEach((control, i) => {
       control.setAttribute('aria-pressed', String(templates[i].key === state.template));
     });
@@ -103,6 +114,7 @@
     document.getElementById('gal-status').textContent = `Chosen: ${templates.find(t => t.key === state.template).name}. The address now includes your pick. Share this link or tell me the template name.`;
   });
   document.addEventListener('keydown', event => {
+    if (state.standalone) return;
     if (event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
     if (event.key === '[') { event.preventDefault(); cycle(-1); }
     else if (event.key === ']') { event.preventDefault(); cycle(1); }

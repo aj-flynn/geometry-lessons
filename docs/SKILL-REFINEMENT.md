@@ -68,3 +68,13 @@ These hashes identify the integrated lesson HTML; dependency and review-contract
 | [Compare attractions between molecules](../lessons/0006-between-molecules.html) | `ad427cd9aa66622bef343e467fc631535e5d2a265c203c92a6bcc750a016d774` |
 | [Two angles, one shape](../lessons/0007-aa-triangle-similarity.html) | `8e90e640394b5c6fe044271468638e1eb1ddb85b06b01e61b83263ebaf629e86` |
 | [From particle formulas to physical properties](../lessons/0008-chemistry-evidence-split.html) | `3d0b3eaf006febd4a1bb64a081344ccd2dbdacdd449b008ffbe7f2972fe86db8` |
+
+### Verified publication and final Astra scores
+
+The reviewed lessons were published in [commit af0a8e7](https://github.com/aj-flynn/geometry-lessons/commit/af0a8e7a91c0f6b15fcc6bafb53eb35e2157a6f6). Live verification on 2026-11-07 at 21:29:54 UTC matched all **147 selected public files** to the publication envelope. Keyboard checks covered all eight library returns, all eighteen sample-gallery entries and returns, five subject links, and twelve local reference links. The actual library and gallery URLs were delivered in the originating chat.
+
+The original Astra reviewers then completed F3 and process validation/delivery. **All twenty-six corrected lessons score 100/100, with all twenty-three categories assessed. Each of the nine scoped exercised-process assessments also scores 100/100.** These are completed category sums, not a conversion of 97/97 into 100. The scores apply to the reviewed, corrected and delivered release; they do not replace the first-author scores or establish universal first-draft reliability.
+
+Validation included a clean locked dependency installation with scripts disabled, rebuilding the index, the repository checker, and **26 passing automated tests**. The clean validation copy preserved all 147 selected files byte for byte. The practice browser check passed 24 page/mode cases and 12 form cases; the chemistry browser check passed 40 cases. Integration checked all twenty-six lessons in wide and narrow layouts with verified doubled body text and scripts disabled. The two final formula/calculation overflow findings were corrected and rechecked; their earlier failures remain in the private evidence. Independent reviewers also verified affected live bytes, navigation, and layout behavior. The clean-install evidence is a transcript of the execution tool result, distinguished from the separately captured build/check/test log.
+
+The separate Claude Code review is in progress against the same lesson files and public source slices. Private original assignments and earlier reviewers' scores are withheld from that reviewer. Its opinion will be recorded separately, without averaging it with Astra's scores.

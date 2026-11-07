@@ -1,0 +1,137 @@
+.chemistry-split {
+  --split-ink: #174e40;
+  --split-accent: #1a6755;
+  --split-wash: #edf5ef;
+  --split-line: #bdcec3;
+  width: min(1180px, calc(100% - 64px));
+}
+.chemistry-split .split-label {
+  color: var(--split-ink);
+  font-size: .74em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  line-height: 1.35;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+.chemistry-split .split-intro {
+  background: transparent;
+  border: 0;
+  border-top: 4px solid var(--split-accent);
+  margin: 20px 0 0;
+  padding: clamp(24px, 4vw, 44px) 0 12px;
+}
+.chemistry-split .split-intro h1 {font-size: clamp(38px, 6vw, 70px); max-width: 24ch}
+.chemistry-split .split-intro .lead {max-width: 46ch; margin-top: 16px}
+.split-menu {
+  border-block: 1px solid var(--split-line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 22px;
+  margin: 10px 0 26px;
+  padding: 5px 0;
+}
+.split-menu a {gap: 7px; font-weight: 700; text-decoration: underline}
+.split-menu span {color: var(--split-accent); font-size: .78em}
+.chemistry-split .split-warmup {
+  background: var(--split-wash);
+  padding: clamp(16px, 3vw, 26px);
+}
+.chemistry-split .split-warmup h2 {font-size: clamp(22px, 3vw, 29px); margin-bottom: 10px}
+.chemistry-split .split-category {
+  border-top: 1px solid var(--split-line);
+  margin-top: clamp(42px, 6vw, 78px);
+  padding-top: clamp(20px, 3.5vw, 34px);
+}
+.chemistry-split .split-heading h2,
+.chemistry-split .split-mixed h2 {font-size: clamp(28px, 4vw, 45px); margin-bottom: 12px}
+.chemistry-split .split-heading {margin-bottom: 26px}
+.split-pair {
+  align-items: start;
+  display: grid;
+  grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
+  gap: clamp(28px, 4vw, 58px);
+}
+.split-evidence {
+  background: var(--split-wash);
+  border-top: 4px solid var(--split-accent);
+  padding: clamp(15px, 2.4vw, 26px);
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+.split-evidence:focus-visible {outline: 3px solid var(--split-ink); outline-offset: 3px}
+.chemistry-split .split-evidence h3 {font-size: clamp(20px, 2vw, 26px); margin: 0 0 12px}
+.chemistry-split .split-evidence figure {margin: 0 0 14px; padding: 8px; background: #e2eee6}
+.chemistry-split .split-evidence figcaption {font-size: .84em; line-height: 1.45; margin-top: 8px}
+.chemistry-split .split-evidence svg {font-size: 30px}
+.chemistry-split .split-clues {font-size: .88em; line-height: 1.4}
+.chemistry-split .split-clues dt {margin-top: 10px}
+.chemistry-split .split-clues dd {margin-top: 3px}
+.chemistry-split .split-lookup {margin-block: 15px; font-size: .9em; background: #f6f9f6}
+.chemistry-split .split-evidence .split-lookup {font-size: .84em}
+.chemistry-split .split-lookup caption {padding-bottom: 6px}
+.chemistry-split .split-lookup th,
+.chemistry-split .split-lookup td {padding: 7px 10px; border-color: var(--split-wash)}
+.chemistry-split .split-lookup th {background: #e0ece4}
+.chemistry-split .split-route h3 {line-height: 1.14}
+.chemistry-split .split-route h3:not(:first-child) {margin-top: 10px}
+.split-block + .split-block {border-top: 1px solid var(--split-line); margin-top: 28px; padding-top: 24px}
+.chemistry-split .split-block > p:last-child {margin-bottom: 0}
+.chemistry-split .split-block .split-steps {padding-left: 1.45em}
+.chemistry-split .split-steps li + li {margin-top: .5em}
+.chemistry-split .split-practice {
+  border-top: 3px solid var(--split-accent);
+  background: #f1f5f0;
+  padding: clamp(15px, 2.8vw, 26px);
+}
+.chemistry-split details {background: #e4eee7; padding: 3px 14px; margin-block: 10px}
+.chemistry-split details details {background: #f2f6f2}
+.chemistry-split details p {margin-block: 10px 14px}
+.chemistry-split summary {line-height: 1.4; padding-block: 11px}
+.chemistry-split .back-evidence {display: inline-flex; align-items: center; min-height: 44px; font-size: .88em; font-weight: 700}
+.chemistry-split .split-retry {margin-top: 20px}
+.chemistry-split .split-route figure {padding: 14px}
+.chemistry-split [data-polarity] input {margin-inline: 0}
+.chemistry-split .split-mixed,
+.chemistry-split .split-glossary,
+.chemistry-split .split-resources {border-top: 1px solid var(--split-line)}
+.mixed-grid {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 22px}
+.mixed-card {background: var(--split-wash); padding: clamp(16px, 3vw, 26px)}
+.chemistry-split .split-glossary dl {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 28px}
+.chemistry-split .split-glossary dl div {break-inside: avoid}
+.chemistry-split .split-glossary dt {margin: 0}
+.chemistry-split .split-glossary dd {font-size: .92em}
+@media (max-width: 900px) {
+  .chemistry-split {width: calc(100% - 32px)}
+  .split-menu {gap: 0 18px}
+  .split-pair {grid-template-columns: minmax(0, 1fr); gap: 24px}
+  .split-evidence {position: static; max-height: none; overflow: visible}
+  .chemistry-split .split-glossary dl {grid-template-columns: repeat(2, minmax(0, 1fr))}
+}
+@media (max-width: 520px) {
+  .mixed-grid, .chemistry-split .split-glossary dl {grid-template-columns: minmax(0, 1fr)}
+  .chemistry-split .split-route figure {padding: 8px}
+}
+@media print {
+  .chemistry-split {width: 100%; margin: 0}
+  .chemistry-split .split-intro {border: 0; padding: 0}
+  .chemistry-split .split-intro h1 {font-size: 28pt}
+  .split-pair, .mixed-grid {display: block}
+  .split-evidence {position: static; max-height: none; overflow: visible; break-inside: avoid}
+  .chemistry-split .split-category {margin-top: 24px; padding-top: 12px}
+  .chemistry-split .split-route {padding-top: 14px}
+  .chemistry-split .split-intro,
+  .chemistry-split .split-evidence,
+  .chemistry-split .split-warmup,
+  .chemistry-split .split-practice,
+  .chemistry-split .mixed-card {background: none}
+  .chemistry-split .back-evidence {display: none}
+  .chemistry-split details > summary {display: list-item; min-height: auto; padding-block: 0}
+  .chemistry-split details {padding: 5px 0; background: none}
+  .chemistry-split details details {background: none}
+  .chemistry-split details::details-content {display: block; content-visibility: visible; height: auto}
+  .chemistry-split .split-heading, .chemistry-split h3, .chemistry-split summary {break-after: avoid}
+  .chemistry-split fieldset {background: transparent}
+}

@@ -24,6 +24,8 @@ The URL accepts `template`, `lesson`, and `favourite`, for example `index.html?t
 
 ## Content contract
 
+The [combined chemistry lesson](../lessons/0008-chemistry-evidence-split.html) demonstrates multiple categories in Evidence Split. Each of its four topics has its own evidence panel and reasoning/practice column. A topic menu links directly to each section; evidence stays within its topic on wide screens and stacks with that topic on phones. It is a standalone lesson using the public chemistry sequence, separate from the gallery's six abbreviated samples.
+
 The six `<article data-lesson>` elements in index.html are the shared source. Templates move cloned sections rather than maintaining separate lesson copies. `data-lesson` is a stable identifier, `data-subject` is the subject, and `data-href` points to the original public lesson. Each article supplies direct children with `data-part`: `intro`, `prerequisite`, `explanation`, `evidence`, `worked`, `practice`, `glossary`, `recap`. The intro has `data-field="title"`, `eyebrow`, and `objective`; sections have `data-field="heading"`.
 
 Evidence accepts HTML diagrams, passages, tables and other accessible content. Its optional `data-prompt` supports Inquiry First. Worked reasoning uses an `<ol data-steps>`. Glossary entries have stable IDs and term links. Practice comparisons are closed `<details>` elements. `form[data-check="choice"]` reads feedback from a checked radio's `data-response`; numeric forms use `data-expected`, optional `data-tolerance` (default 0.000001), `data-hint`, `data-success`, and optional JSON `data-mistakes`. No responses are transmitted or persisted.

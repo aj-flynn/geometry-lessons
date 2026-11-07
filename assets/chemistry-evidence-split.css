@@ -38,6 +38,12 @@
   padding: clamp(16px, 3vw, 26px);
 }
 .chemistry-split .split-warmup h2 {font-size: clamp(22px, 3vw, 29px); margin-bottom: 10px}
+.chemistry-split .warmup-model {max-width: 600px; padding: 0; margin: 20px 0; border: 0; background: transparent}
+.chemistry-split .warmup-model svg {font-size: 25px}
+.chemistry-split .warmup-model figcaption {font-size: .88em; line-height: 1.45}
+.warmup-model .warmup-box {fill: #e2eee6; stroke: #174e40; stroke-width: 3}
+.warmup-model .warmup-black {fill: #191919; stroke: #191919; stroke-width: 3}
+.warmup-model .warmup-white {fill: #fff; stroke: #191919; stroke-width: 3}
 .chemistry-split .split-category {
   border-top: 1px solid var(--split-line);
   margin-top: clamp(42px, 6vw, 78px);

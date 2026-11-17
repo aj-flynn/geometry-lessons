@@ -14,6 +14,7 @@ parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parent
 parser.add_argument('--output', type=Path)
 parser.add_argument('--browser', default=os.environ.get('LESSON_BROWSER'))
 parser.add_argument('--base-url', help='Optional deployed library root, after check-live.py verifies its bytes')
+parser.add_argument('--include-reduced-motion', action='store_true', help='Opt in to reduced-motion emulation, temporarily excluded from required review')
 args = parser.parse_args()
 repo = args.repo.resolve()
 output = args.output.resolve() if args.output else Path(tempfile.mkdtemp(prefix='lesson-practice-')).resolve()
@@ -53,7 +54,7 @@ try:
             for lesson in lessons:
                 scripts = sorted(path for path in lesson['review']['dependencies'] if path.endswith('.js'))
                 for mode in ['active', 'no-js', *scripts]:
-                    context = browser.new_context(java_script_enabled=mode != 'no-js', reduced_motion='reduce')
+                    context = browser.new_context(java_script_enabled=mode != 'no-js', **({'reduced_motion': 'reduce'} if args.include_reduced_motion else {}))
                     page = context.new_page()
                     page.set_default_timeout(4000)
                     requests, errors = [], []
@@ -128,5 +129,5 @@ finally:
         server.shutdown(); server.server_close(); thread.join()
 after = inventory()
 assert before == after, 'Candidate changed during checks'
-(output/'results.json').write_text(json.dumps({'results': results, 'reviewed_input_hashes': before, 'reduced_motion': True, 'scope': 'Manifest-listed form feedback, adjacent details fallback and response privacy. Models, non-form controls and animation need subject-specific checks. This is not a whole-archive receipt.', 'passed': True}, indent=2), encoding='utf-8')
+(output/'results.json').write_text(json.dumps({'results': results, 'reviewed_input_hashes': before, 'reduced_motion': args.include_reduced_motion, 'reduced_motion_scope': 'included' if args.include_reduced_motion else 'excluded', 'scope': 'Manifest-listed form feedback, adjacent details fallback and response privacy. Models, non-form controls and animation need subject-specific checks. This is not a whole-archive receipt.', 'passed': True}, indent=2), encoding='utf-8')
 print(json.dumps({'page_mode_cases': len(results), 'form_cases': sum(len(r['forms']) for r in results), 'reviewed_inputs': len(before), 'evidence': str(output), 'passed': True}))

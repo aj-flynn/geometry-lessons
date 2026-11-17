@@ -440,9 +440,9 @@
         "Proportional lengths"
       ],
       "review": {
-        "privacy": false,
-        "homeworkSeparation": false,
-        "accuracy": false,
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
         "accessibility": false,
         "sha256": "0b00fff63465edc13fa8472f202b4923072c2f91948656261bddda37667feb95",
         "dependencies": {
@@ -481,7 +481,11 @@
           "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
           "tests/test_live.py": "f569fb6fcdc953c4780add294385defae061c487dbc2546920c3afe79e100f6c",
           "tests/workflow.test.mjs": "a8717371dde5f0979cc489b87f56a5e8870934259d65785289d4ffda9a2457df"
-        }
+        },
+        "coreUsability": true,
+        "limitations": [
+          "Reduced-motion preference behavior and paginated print were not verified; released at owner direction."
+        ]
       }
     }
   ]

@@ -179,3 +179,10 @@ Scope, identified by unchanged lesson SHA-256:
 | `0006-between-molecules.html` | `ad427cd9aa66622bef343e467fc631535e5d2a265c203c92a6bcc750a016d774` |
 | `0007-aa-triangle-similarity.html` | `8e90e640394b5c6fe044271468638e1eb1ddb85b06b01e61b83263ebaf629e86` |
 | `0008-chemistry-evidence-split.html` | `8b42a614c892bdc8a4869cdf7f111df1829fe275f1c368ec90351f7340c10120` |
+
+
+## 2026-11-17 streamlined delivery
+
+At the owner’s direction, routine delivery now uses one focused independent review and a normal-browser smoke test. Resolve material privacy, assigned-answer, subject-correctness and core-usability findings; numerical scoring loops and unavailable optional modes do not hold delivery. Reduced-motion preference and paginated-print checks are temporarily excluded; their feature support remains. Browser scripts offer reduced-motion testing as an explicit opt-in.
+
+Historical contract digests now remain historical provenance instead of forcing every lesson’s records to be rewritten after maintenance. Exact lesson and transitive asset hashes remain enforced locally and live. Existing review evidence and scores retain their original scopes; this maintenance does not rescore historical lessons. Private routing, publication concurrency, live verification and no-duplicate-send safeguards remain.

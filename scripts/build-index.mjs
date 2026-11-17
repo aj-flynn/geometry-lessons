@@ -77,8 +77,14 @@ export function validateManifest(manifest, registry = defaultRegistry) {
     if (typeof lesson.summary !== 'string' || !lesson.summary.trim() || lesson.summary.length > 260) throw new Error('Supply a short public lesson summary.');
     if (!Array.isArray(lesson.topics) || !lesson.topics.length || lesson.topics.some(t => typeof t !== 'string' || !t.trim() || t.length > 60)) throw new Error('Supply public concept topics.');
     const accuracyCheck = manifest.version === 1 ? 'math' : 'accuracy';
-    for (const check of ['privacy','homeworkSeparation',accuracyCheck,'accessibility']) {
+    for (const check of ['privacy','homeworkSeparation',accuracyCheck]) {
       if (lesson.review?.[check] !== true) throw new Error(`${lesson.file}: missing ${check} review.`);
+    }
+    // A scoped usability pass is not a claim of complete accessibility conformance.
+    if (lesson.review.accessibility !== true && !(lesson.review.coreUsability === true &&
+        Array.isArray(lesson.review.limitations) && lesson.review.limitations.length > 0 &&
+        lesson.review.limitations.every(item => typeof item === 'string' && item.trim()))) {
+      throw new Error(`${lesson.file}: missing scoped accessibility/usability review.`);
     }
     if (typeof lesson.review.sha256 !== 'string' || !sha256.test(lesson.review.sha256)) {
       throw new Error(`${lesson.file}: missing final HTML SHA-256.`);

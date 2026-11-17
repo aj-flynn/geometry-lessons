@@ -77,6 +77,7 @@ def main():
  parser.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[1],help='Repository to check (default: the script repository)')
  parser.add_argument('--browser',default=os.environ.get('CHEMISTRY_BROWSER'),help='Browser executable (default: CHEMISTRY_BROWSER or Playwright Chromium)')
  parser.add_argument('--output',type=Path,default=os.environ.get('CHEMISTRY_QA_OUTPUT'),help='Evidence directory (default: CHEMISTRY_QA_OUTPUT or a temporary directory)')
+ parser.add_argument('--include-reduced-motion',action='store_true',help='Opt in to reduced-motion preference checks, temporarily excluded from required review')
  args=parser.parse_args()
  repo=args.repo.resolve()
  out=args.output.resolve() if args.output else Path(tempfile.mkdtemp(prefix='chemistry-qa-')).resolve()
@@ -127,9 +128,10 @@ def main():
     model.locator('[data-pause]').click();before=model.locator('[data-step-status]').inner_text();page.wait_for_timeout(2500)
     ok(f'{path.stem} pause freezes state',before==model.locator('[data-step-status]').inner_text())
     model.locator('[data-reset]').click()
-    page.emulate_media(reduced_motion='reduce');model.locator('[data-play]').click()
-    ok(f'{path.stem} reduced motion stays paused',model.locator('[data-play]').get_attribute('aria-pressed')=='false')
-    page.emulate_media(reduced_motion='no-preference')
+    if args.include_reduced_motion:
+     page.emulate_media(reduced_motion='reduce');model.locator('[data-play]').click()
+     ok(f'{path.stem} reduced motion stays paused',model.locator('[data-play]').get_attribute('aria-pressed')=='false')
+     page.emulate_media(reduced_motion='no-preference')
    if page.locator('[data-polarity]').count():
     slider=page.locator('#angle')
     for angle in [60,90,180]:
@@ -143,8 +145,9 @@ def main():
     page.locator('[data-angle-play]').click();page.wait_for_timeout(250);page.locator('[data-angle-pause]').click();v=slider.input_value();page.wait_for_timeout(200)
     ok('angle animation pause',v==slider.input_value())
     page.locator('[data-angle-reset]').click();ok('angle reset',slider.input_value()=='180')
-    page.emulate_media(reduced_motion='reduce');page.locator('[data-angle-play]').click();ok('angle reduced motion endpoint',slider.input_value()=='90' and page.locator('[data-angle-play]').get_attribute('aria-pressed')=='false')
-    page.emulate_media(reduced_motion='no-preference')
+    if args.include_reduced_motion:
+     page.emulate_media(reduced_motion='reduce');page.locator('[data-angle-play]').click();ok('angle reduced motion endpoint',slider.input_value()=='90' and page.locator('[data-angle-play]').get_attribute('aria-pressed')=='false')
+     page.emulate_media(reduced_motion='no-preference')
    page.emulate_media(media='print');page.screenshot(path=str(out/f'{path.stem}-print.png'),full_page=True);page.emulate_media(media='screen')
    figure=page.locator('figure').first
    if figure.count():
@@ -164,7 +167,7 @@ def main():
     details.locator('summary').click();ok(f'{path.stem} no-JS stages readable',details.locator('li, p').last.is_visible())
   nojs.close();browser.close()
  hashes={str(p.relative_to(repo)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in resources}
- (out/'results.json').write_text(json.dumps({'pages':[str(path.relative_to(repo)).replace('\\','/') for path in paths],'checks':results,'count':len(results),'browser':'Chromium '+browser_version,'origin':origin,'hashes':hashes},indent=2),encoding='utf-8')
+ (out/'results.json').write_text(json.dumps({'pages':[str(path.relative_to(repo)).replace('\\','/') for path in paths],'reduced_motion_scope':'included' if args.include_reduced_motion else 'excluded','checks':results,'count':len(results),'browser':'Chromium '+browser_version,'origin':origin,'hashes':hashes},indent=2),encoding='utf-8')
  print(json.dumps({'passed':len(results),'evidence':str(out/'results.json')}))
 
 if __name__=='__main__':

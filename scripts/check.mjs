@@ -481,7 +481,10 @@ export function check(base = root) {
         for (const contractFile of Object.keys(hashes)) {
           if (!candidates.has(contractFile)) errors.push(`${name}: contract file ${contractFile} is not a publication candidate.`);
         }
-        errors.push(...inspectReviewedHashes(name, 'contract file', hashes, lesson.review.contract));
+        if (!Object.keys(lesson.review.contract).length) errors.push(`${name}: missing historical review contract snapshot.`);
+        // Contract digests describe the historical review, not today's toolchain.
+        // Lesson and dependency digests still bind the exact delivered teaching bytes.
+        // New/changed lessons must record current governing guidance at review time.
       } catch (error) {
         errors.push(`${name}: ${error.message}`);
       }

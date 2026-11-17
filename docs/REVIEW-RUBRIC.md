@@ -1,8 +1,10 @@
 # Assignment-to-lesson evaluation rubric
 
-Rubric edition: **2026-11-07 — usable task evidence, activity-level layout, and meaningful responsive directions**.
+Rubric edition: **2026-11-17 — temporary reduced-motion and paginated-print check exclusion**, retaining the 2026-11-07 teaching categories and weights.
 
 Evaluate how well a lesson turns an assignment's underlying concepts into accurate, engaging, accessible teaching that helps a learner at the approximate level of the assignment return to the work independently. The lesson teaches the thinking without completing the assigned work.
+
+This rubric is optional diagnostic/benchmark guidance. Ordinary delivery requires one focused independent review with no unresolved material findings, not a numeric score or perfect-score loop. Missing optional capability checks are limitations to disclose, not failures.
 
 ## Reviewer discretion and scoring
 
@@ -11,6 +13,10 @@ The categories define what matters and their relative importance. The reviewer c
 Explain the reasoning behind the scores, including important strengths, weaknesses, and limits of the assessment. Distinguish what was observed from what was inferred. When evidence is insufficient to score a category responsibly, mark it unassessed and report the assessment as incomplete rather than silently assuming success or reweighting the remaining categories.
 
 These are judgments about the lesson, not measurements of the learner's ability or proof of long-term learning. Differences between reviewers are useful findings to discuss, not errors that must be eliminated.
+
+### Temporary review scope — 2026-11-17
+
+At the owner’s direction, actual reduced-motion preference testing and paginated-print inspection are excluded from required review until reinstated. Score E1 and E3 on their remaining in-scope requirements; retain their category weights. This is an explicit scope change, not an inferred pass or a reweighting of incomplete evidence. Record the exclusions beside the total, never claim those behaviors were verified, and continue assessing motion controls and all other accessibility and resilience requirements. Report any observed defects even in excluded behaviors. Historical scores and reviews retain their original scope and must not be relabeled or compared as equivalent to this edition.
 
 ## Lesson categories — 100 points
 

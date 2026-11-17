@@ -115,7 +115,7 @@ class LivePublicationTests(unittest.TestCase):
             self.verify()
         self.assertEqual(self.page.url, 'about:blank')
 
-    def test_deployed_skill_must_match_reviewed_contract(self):
+    def test_historical_skill_digest_does_not_revalidate_current_deployment(self):
         self.setup_reference()
         skill = '.agents/skills/example/SKILL.md'
         digest = self.publish(skill, '# Synthetic teaching contract\n')
@@ -123,8 +123,7 @@ class LivePublicationTests(unittest.TestCase):
         self.publish_metadata()
         self.assertTrue(self.verify()['passed'])
         (self.deployed / skill).write_text('# Older teaching contract\n', encoding='utf-8')
-        with self.assertRaisesRegex(AssertionError, 'Published bytes do not match reviewed bytes: .agents/'):
-            self.verify()
+        self.assertTrue(self.verify()['passed'])
 
     def test_deployed_manifest_and_registry_must_match(self):
         for name in ('lessons.json', 'subjects.json'):
@@ -200,6 +199,25 @@ class LivePublicationTests(unittest.TestCase):
         self.page.locator('#working input').fill('6')
         self.page.locator('#working input').press('Enter')
         self.assertEqual(self.page.locator('#working [data-feedback]').inner_text(), 'Reasoning checked.')
+
+
+class HistoricalContractTests(unittest.TestCase):
+    def test_historical_contracts_do_not_replace_exact_learner_hashes(self):
+        with tempfile.TemporaryDirectory(prefix='historical-contract-') as folder:
+            root=Path(folder)
+            for name,text in {'index.html':'index','lessons.json':'{}','subjects.json':'[]',
+                              'lessons/0001-example.html':'lesson','assets/example.js':'asset'}.items():
+                path=root/name; path.parent.mkdir(parents=True,exist_ok=True);path.write_text(text)
+            manifest={'lessons':[{'file':'0001-example.html','review':{
+                'sha256':check_live.sha256(b'lesson'),
+                'dependencies':{'assets/example.js':check_live.sha256(b'asset')},
+                'contract':{'docs/old-rubric.md':'a'*64}}}]}
+            expected=check_live.reviewed_files(root,manifest)
+            self.assertNotIn('docs/old-rubric.md',expected)
+            self.assertEqual(expected['assets/example.js'],check_live.sha256(b'asset'))
+            (root/'assets/example.js').write_text('changed')
+            with self.assertRaisesRegex(ValueError,'Local reviewed bytes changed'):
+                check_live.reviewed_files(root,manifest)
 
 
 class ChemistrySelectionTests(unittest.TestCase):

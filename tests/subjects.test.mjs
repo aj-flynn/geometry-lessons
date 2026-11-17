@@ -194,3 +194,17 @@ test('teaching instructions and documentation links resolve',()=>{
     }
   }
 });
+
+
+test('scoped usability requires disclosed limitations and preserves strict safety attestations', () => {
+  const lesson=entry('0001-example.html','Geometry');
+  lesson.review={...review,accessibility:false,coreUsability:true,limitations:['Optional print check not performed']};
+  assert.doesNotThrow(()=>validateManifest({version:2,lessons:[lesson]}));
+  for (const key of ['privacy','homeworkSeparation','accuracy']) {
+    lesson.review[key]=false;
+    assert.throws(()=>validateManifest({version:2,lessons:[lesson]}),new RegExp('missing '+key+' review'));
+    lesson.review[key]=true;
+  }
+  lesson.review.limitations=[];
+  assert.throws(()=>validateManifest({version:2,lessons:[lesson]}),/scoped accessibility/);
+});

@@ -28,7 +28,7 @@ class CoordinatorTest(unittest.TestCase):
         values={'receipt':self.receipt,'source_sha256':'a'*64,'attachment_count':2,'package_verified':True,
         'environment_id':'test','sources_opened':True,'browser_preflight_passed':True,'preview_recipe':'supported',
         'thread_id':'test-thread','repository_revision':'a'*40,'candidate_sha256':'b'*64,'contract_sha256':'c'*64,
-        'independent_score':100,'unassessed':0,'browser_verified':True,'operation':'synthetic-op','base_commit':'a'*40,
+        'independent_review_passed':True,'material_findings':0,'browser_verified':True,'operation':'synthetic-op','base_commit':'a'*40,
         'commit':'d'*40,'remote_verified':True,'url':'https://example.org/lesson','library_url':'https://example.org/',
         'live_bytes_verified':True,'index_verified':True,'original_thread_verified':True,'sent_items_checked':True}
         return values
@@ -59,15 +59,34 @@ class CoordinatorTest(unittest.TestCase):
         job=self.claim(self.enqueue())
         self.call('checkpoint',{'job':job['id'],'token':job['token'],'generation':job['generation'],'stage':'published','evidence':self.evidence('published')},ok=False)
         self.advance(job,'review_pending')
-        evidence=self.evidence('review_passed'); evidence['independent_score']=99
+        evidence=self.evidence('review_passed'); evidence['independent_review_passed']=False
         base={'job':job['id'],'token':job['token'],'generation':job['generation'],'stage':'review_passed'}
         self.call('checkpoint',{**base,'evidence':evidence},ok=False)
-        evidence['independent_score']=100; evidence['unassessed']=1
+        evidence['independent_review_passed']=True; evidence['material_findings']=1
         self.call('checkpoint',{**base,'evidence':evidence},ok=False)
-        evidence['unassessed']=0; evidence['candidate_sha256']='e'*64
+        evidence['material_findings']=0; evidence['candidate_sha256']='e'*64
         self.call('checkpoint',{**base,'evidence':evidence},ok=False)
         self.event(job,'invalidate',reason='changed candidate')
         self.assertEqual(self.call('get',{'job':job['id']})['stage'],'drafting')
+    def test_optional_qa_limits_do_not_block_release(self):
+        job=self.claim(self.enqueue()); self.advance(job,'review_pending')
+        evidence=self.evidence('review_passed')
+        evidence.update(independent_score=88,unassessed=2,limitations=['Reduced-motion preference and paginated print not tested'])
+        self.event(job,'checkpoint',stage='review_passed',evidence=evidence)
+        self.assertEqual(self.call('get',{'job':job['id']})['stage'],'review_passed')
+    def test_confirmed_external_completion_cannot_resend(self):
+        job=self.claim(self.enqueue())
+        data={'job':job['id'],'receipt':self.receipt,'provider_confirmation':'verified-sent-id',
+              'remote_commit':'a'*40,'url':'https://example.org/lesson',
+              'original_thread_verified':True,'sent_items_checked':True}
+        self.call('reconcile-completed',data,ok=False)
+        self.event(job,'block',reason='Confirmed external completion',retryable=False)
+        self.call('reconcile-completed',{**data,'sent_items_checked':False},ok=False)
+        self.call('reconcile-completed',{**data,'url':'https://other.invalid/lesson'},ok=False)
+        self.assertEqual(self.call('reconcile-completed',data)['status'],'done')
+        self.assertEqual(self.call('reconcile-completed',data)['status'],'done')
+        self.call('claim',{'job':job['id'],'owner':'again'},ok=False)
+        self.call('reconcile-completed',{**data,'provider_confirmation':'different'},ok=False)
     def test_library_publication_reserved_across_jobs(self):
         a=self.claim(self.enqueue('a')); b=self.claim(self.enqueue('b'))
         self.advance(a,'publish_intent'); self.advance(b,'review_passed')

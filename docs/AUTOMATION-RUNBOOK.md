@@ -15,7 +15,7 @@ within its existing authorization.
    branches, CI artifacts or public logs. Confirm actual sender and private library mapping.
 3. Keep input preparation, authoring and browser QA on the same capable cloud computer when
    possible. Before costly work, verify the consumer opens the original images and hashes
-   the package, and that a real browser renders a harmless representative page. A path from
+   the package, and that a real browser renders the sanitized candidate. A separate harmless probe is needed only to diagnose a setup problem. A path from
    another computer is not a transfer receipt. If transfer is required, use the current
    supported private transfer API and verify bytes on the consumer before delegation.
 4. In a managed Linux Sites environment, use the current official `sites-preview` workflow
@@ -31,14 +31,16 @@ within its existing authorization.
    the normal invalidation or repreflight rules when either changes.
    This is a local preview, not publication. Do not use a denied file URL or change security
    settings. Elsewhere, select a supported private preview and prove it works first.
-5. Require actual source intake and browser preflight receipts. A queued thread, installed
+5. Record actual source intake and the normal browser smoke test in one concise private audit note; reuse that receipt across contiguous checkpoints. Do not create per-test reports or a separate rehearsal if the actual sources and candidate can be opened. A queued thread, installed
    browser, running server, or successful upload alone is not a capability pass. Reuse the
    existing assignment thread; replace it only after confirming the former owner stopped.
-   Preflight every capability required by the current review contract, including print
-   pagination or no-JavaScript testing when required. Use supported browser controls, not
-   blocked developer tools. Restore temporary per-site test settings. A disabled print
-   feature or other missing required capability remains an explicit blocker; a passing
-   interaction test does not certify the untested criteria or earn a full review score.
+   Preflight source access and an ordinary rendered preview only. Do not preflight every
+   optional QA mode or move computers solely to obtain optional checks. The owner-directed temporary scope excludes actual reduced-motion
+   preference testing and paginated-print inspection; their absence alone is not a blocker.
+   Preserve those features and record the excluded checks as out of scope, never passed. Use supported browser controls, not
+   blocked developer tools. Restore temporary per-site test settings. A missing optional capability does not block delivery. Record limitations honestly;
+   never certify untested behavior. Use one focused independent review and fix material
+   privacy, assigned-answer, correctness or core-usability findings, not scoring loops.
 
 ## Private authoritative state
 
@@ -62,7 +64,7 @@ do not expose output in public logs or artifacts. Keep lease tokens local to the
 
 - `init`: `prior_state_reconciled: true`, `receipt`. One-time ledger creation after inspecting
   existing history; refuses an already initialized ledger; a failed initialization can be repaired only after renewed reconciliation. `receipt` is `{path, sha256}` for an existing
-  private evidence file. Every substantive stage uses a verified private evidence receipt.
+  private evidence file. The same concise audit receipt may cover several contiguous stages; avoid duplicate reports.
 - `enqueue`: `mailbox`, original `message_id`, verified `sender`, opaque `library`, canonical HTTPS `site_root`, optional
   input context. The mailbox/message pair is idempotent. A different sender/library on the
   same ID fails rather than silently rerouting. A duplicate message is not inferred only
@@ -70,6 +72,11 @@ do not expose output in public logs or artifacts. Keep lease tokens local to the
 - `import-handled`: same identity plus verified `disposition` (`sent_confirmed`, `duplicate`,
   or `excluded`) and `receipt`. Imports reconciled historical outcomes only, never an attempted
   or uncertain send. Existing processing state cannot be replaced.
+- `reconcile-completed`: close an inactive manual-blocked job only after verifying an externally
+  completed publication and its original-thread Sent Items message. Supply private receipt,
+  provider_confirmation, remote_commit, authorized url, original_thread_verified=true and
+  sent_items_checked=true. It records completion, never sends or republishes. It cannot
+  replace an existing completed outcome or resolve an uncertain in-flight send.
 - `list` / `get` (`job`): reconcile unfinished jobs before discovering new work. A blocked
   job is unfinished, not handled. Inspect the saved thread and immutable source references.
 - `claim`: `job`, coordinator `owner`, optional `ttl` (30–7200 seconds; default 1800).
@@ -87,7 +94,8 @@ do not expose output in public logs or artifacts. Keep lease tokens local to the
   old environment and downstream review evidence. Then verify actual source/browser access
   on the replacement environment before the next checkpoint.
 - `invalidate`: current ownership and `reason`. Returns pre-publication work to `drafting`
-  when candidate or contract changes. Regenerate affected evidence and obtain fresh review.
+  when delivered candidate bytes change materially. Recheck affected evidence only;
+  guidance-only updates do not invalidate unchanged historical lessons.
 - `block`: current ownership, exact `reason`, `retryable`. Releases the lease while preserving
   the completed stage. Transient failures get at most three scheduled retries with backoff.
   Denials, missing permission, incomplete source requirements and unsupported capabilities
@@ -115,7 +123,7 @@ only independent observations can establish that the statements are true. Drafti
 |environment_ready|environment_id, sources_opened=true, browser_preflight_passed=true, preview_recipe|
 |drafting|thread_id, environment_id, repository_revision|
 |review_pending|candidate_sha256, contract_sha256|
-|review_passed|same candidate/contract hashes, independent_score=100, unassessed=0, browser_verified=true|
+|review_passed|same candidate/contract hashes, independent_review_passed=true, material_findings=0, browser_verified=true; optional limitations recorded|
 |publish_intent|operation, base_commit, same candidate/contract hashes|
 |published|same operation and candidate/contract hashes, commit, remote_verified=true|
 |live_verified|same candidate/contract hashes and commit, canonical url/library_url within site_root, live_bytes_verified=true, index_verified=true|
@@ -124,7 +132,8 @@ only independent observations can establish that the statements are true. Drafti
 
 The package hash can identify an immutable manifest with per-source hashes. The candidate
 hash must identify the complete frozen file manifest, not just the HTML. The contract hash
-identifies the actual governing skill/rubric revision. New bytes invalidate affected review.
+identifies the actual governing skill/rubric revision. Changed lesson/dependency bytes require affected review. Historical contract digests are
+provenance, not a requirement to relabel every existing lesson after guidance maintenance.
 
 A `publish_intent` atomically reserves the library until the remote outcome is verified.
 Before pushing, compare the actual current branch head with `base_commit`; safely merge

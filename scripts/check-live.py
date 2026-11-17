@@ -40,8 +40,8 @@ def reviewed_files(repo, manifest, publication=None):
         add('lessons/' + lesson['file'], lesson['review']['sha256'])
         for path, digest in lesson['review'].get('dependencies', {}).items():
             add(path, digest)
-        for path, digest in lesson['review'].get('contract', {}).items():
-            add(path, digest)
+        # Historical skill/tool digests are provenance, not deployed learner assets.
+        # The publication envelope verifies current release tools when supplied.
     if publication is not None:
         files = publication.get('files')
         if publication.get('version') != 1 or publication.get('kind') != 'publication-envelope' or not isinstance(files, dict):

@@ -1,6 +1,8 @@
 # Test and refine skills
 
-Use this workflow when maintaining the teaching skills. Everyday generation uses the lesson workflow.
+Ordinary skill maintenance uses a focused diff review and affected regression tests, then publication. Do not regenerate unrelated lessons, change historical scores, run reviewer ladders or require a perfect score for maintenance. Everyday generation uses the lesson workflow.
+
+The benchmark below is optional research only when the owner explicitly requests a comparative skill evaluation. It is never a delivery or maintenance gate.
 
 1. Select real assignments spanning different reasoning, formats, grade levels and subject routes. Use authorized private work and public practice. Set aside unseen assignments before editing. Keep inputs, source maps, drafts and raw reviews outside the checkout. In docs/skill-samples, link each public assignment and its checked original lesson from one index.
 2. Give fresh GPT-6.2 Sol High authors the candidate skills, template, assets and one assignment each. Withhold prior pages, findings and scores. Capture the first HTML after author checks and before independent review or corrections. Preserve that first-draft score separately from subsequent corrected scores.

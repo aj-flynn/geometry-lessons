@@ -26,6 +26,6 @@ Use GPT-6.2 Sol High. Draft privately from templates/lesson.html with shared ass
 
 For follow-up, ask what is unclear and use a fresh prerequisite check. Offer a hint or checking method for assigned work. Begin a return visit with recall and transfer.
 
-Follow [semantic review and publication](references/lesson-workflow.md).
+Follow [semantic review and publication](references/lesson-workflow.md), including its temporary exclusion of actual reduced-motion preference testing and paginated-print inspection. This changes the required checks, not the authoring support for these features.
 
 Adapted from [Matt Pocock's teach process](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md). See [MIT notice](LICENSE-MATT-POCOCK.txt).

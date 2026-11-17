@@ -374,7 +374,7 @@ test('practice forms block native and implicit submission before JavaScript bind
   }
 });
 
-test('review binds linked reference cycles and their assets plus the current teaching contract', t => {
+test('review binds exact lesson assets while retaining historical teaching contracts', t => {
   const { base, put } = publicationFixture(t);
   const file = '0001-synthetic-reference.html';
   const otherFile = '0002-synthetic-reference.html';
@@ -426,7 +426,8 @@ test('review binds linked reference cycles and their assets plus the current tea
     [sharedGuide, '# Synthetic shared guidance', 'contract file']
   ]) {
     put(path, text + '\n');
-    assert.throws(() => check(base), error => error.message.includes(kind + ' ' + path + ' changed since review'));
+    if (kind === 'dependency') assert.throws(() => check(base), error => error.message.includes(kind + ' ' + path + ' changed since review'));
+    else assert.equal(check(base).lessons, 2, 'guidance-only maintenance preserves prior reviews');
     put(path, text);
   }
 
@@ -434,10 +435,10 @@ test('review binds linked reference cycles and their assets plus the current tea
   const extra = '.agents/skills/homework-teach/references/extra.md';
   reviewed.review.contract = { ...withoutRubric, [extra]: rubricHash };
   writeManifest();
-  assert.throws(() => check(base), error =>
-    error.message.includes('missing reviewed contract file ' + rubric) &&
-    error.message.includes('reviewed contract file ' + extra + ' is outside the current review scope')
-  );
+  assert.equal(check(base).lessons, 2, 'historical contract membership need not match current guidance');
+  reviewed.review.contract = {};
+  writeManifest();
+  assert.throws(() => check(base), /missing historical review contract snapshot/);
   delete reviewed.review.contract;
   writeManifest();
   assert.throws(() => check(base), /missing reviewed contract SHA-256 map/);

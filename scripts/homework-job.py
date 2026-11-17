@@ -126,7 +126,7 @@ def validate_evidence(stage, evidence):
       'environment_ready': ('environment_id', 'sources_opened', 'browser_preflight_passed', 'preview_recipe'),
       'drafting': ('thread_id', 'environment_id', 'repository_revision'),
       'review_pending': ('candidate_sha256', 'contract_sha256'),
-      'review_passed': ('candidate_sha256', 'contract_sha256', 'independent_score', 'unassessed', 'browser_verified'),
+      'review_passed': ('candidate_sha256', 'contract_sha256', 'independent_review_passed', 'material_findings', 'browser_verified'),
       'publish_intent': ('operation', 'base_commit', 'candidate_sha256', 'contract_sha256'),
       'published': ('operation', 'commit', 'candidate_sha256', 'contract_sha256', 'remote_verified'),
       'live_verified': ('url', 'library_url', 'commit', 'candidate_sha256', 'contract_sha256', 'live_bytes_verified', 'index_verified'),
@@ -134,11 +134,11 @@ def validate_evidence(stage, evidence):
     }
     need(evidence, *required.get(stage, ()))
     for key in ('package_verified','sources_opened','browser_preflight_passed','browser_verified',
-                'remote_verified','live_bytes_verified','index_verified','original_thread_verified','sent_items_checked'):
+                'independent_review_passed','remote_verified','live_bytes_verified','index_verified','original_thread_verified','sent_items_checked'):
         if key in evidence and evidence[key] is not True:
             raise ValueError('Required verification is not true: ' + key)
-    if stage == 'review_passed' and (evidence['independent_score'] != 100 or evidence['unassessed'] != 0):
-        raise ValueError('A complete independent 100/100 review is required')
+    if stage == 'review_passed' and (type(evidence['material_findings']) is not int or evidence['material_findings'] != 0):
+        raise ValueError('Resolve material privacy, correctness or core-usability findings before release')
 
 def execute(db, action, data):
     now = time.time()
@@ -186,6 +186,25 @@ def execute(db, action, data):
     need(data, 'job')
     job = row(db, data['job'])
     if action == 'get':
+        return public_row(job)
+    if action == 'reconcile-completed':
+        need(data,'receipt','provider_confirmation','remote_commit','url','original_thread_verified','sent_items_checked')
+        receipt(data['receipt'])
+        if data['original_thread_verified'] is not True or data['sent_items_checked'] is not True:
+            raise ValueError('Original thread and confirmed sent message must be reconciled')
+        if not data['provider_confirmation'] or not data['remote_commit']:
+            raise ValueError('Verified publication and provider confirmation are required')
+        if not canonical_url(data['url']).geturl().startswith(job['data']['input']['site_root']):
+            raise ValueError('Completed URL is outside the authorized library')
+        if job['status']=='done':
+            if job['data'].get('completed_external') == data:
+                return public_row(job)
+            raise ValueError('Do not replace a completed outcome')
+        if job['status']!='manual_block' or job['token'] or job['stage'] in IN_FLIGHT:
+            raise ValueError('External completion reconciliation requires an inactive manual blocker')
+        job['data']['completed_external']=data
+        job.update(stage='sent_confirmed',status='done',next_attempt=None)
+        save(db,job); event(db,job['id'],action,data)
         return public_row(job)
     if action == 'claim':
         need(data, 'owner')
@@ -323,7 +342,7 @@ def reconcile_block(db,data):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=('init','list','get','enqueue','import-handled','claim','renew','checkpoint','invalidate','repreflight','block','reconcile-block','resolve-publish','send-result'))
+    parser.add_argument('action', choices=('init','list','get','enqueue','import-handled','reconcile-completed','claim','renew','checkpoint','invalidate','repreflight','block','reconcile-block','resolve-publish','send-result'))
     parser.add_argument('--db',type=Path,default=default_db())
     args=parser.parse_args()
     try:

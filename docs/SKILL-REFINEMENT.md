@@ -1,6 +1,6 @@
 # Skill refinement record
 
-GPT-6.1 Sol High generates lessons and performs author checks. A fresh Astra reviewer checks the source, teaching and browser experience before publication. Skill refinement also preserves first-author scores and obtains a separate Claude Code Opus 5.5 Medium opinion. See the [refinement workflow](../.agents/skills/homework-teach/references/independent-refinement.md) and [scoring rubric](REVIEW-RUBRIC.md).
+GPT-6.2 Sol High generates lessons and performs author checks. A fresh Astra reviewer checks the source, teaching and browser experience before publication. Skill refinement also preserves first-author scores and obtains a separate Claude Code Opus 5.5 Medium opinion. See the [refinement workflow](../.agents/skills/homework-teach/references/independent-refinement.md) and [scoring rubric](REVIEW-RUBRIC.md).
 
 ## Assignment focus and grade-level benchmark
 
@@ -150,3 +150,32 @@ The six original Astra reviewers completed F3 and process delivery against this 
 The clean validation covered the final learner, dependency, manifest and teaching-contract bytes. The only subsequent validation-to-release difference was the append-only review-history update in this document; the repository checker ran again after that append, and live verification covered the complete published file set. The final ordinary-name wrapping and corresponding-angle bridge checks supplement the earlier integration run. Earlier failures, original scores, disputed findings and evidence limits remain preserved.
 
 Claude's separate, lower scores above apply to the earlier candidate it inspected. They were not averaged with Astra's scores, overwritten, or retrospectively raised after these corrections. Claude did not rescore this corrected release. The reviewed outcomes support these particular artifacts and exercised workflows, not guaranteed first-draft quality, exhaustive accessibility conformance or measured learning gains.
+
+
+## 2026-11-17 prospective GPT-6.2 model selection
+
+Future authors use GPT-6.2 Sol High; fresh independent reviewers use GPT-6.2 Astra High. All other teaching, privacy, review, browser, and publication requirements remain unchanged. These selectors do not relabel prior authors or reviewers. Existing lesson results and scores remain historical.
+
+A fresh GPT-6.2 Astra High reviewer independently performed a bounded compatibility review of the model-selector diff and approved the provenance-preserving hash migration. This was a comparison of selector text and exact bytes, not a new lesson, browser, or process evaluation. No new scores are awarded, model performance is not established, and the independent-refinement benchmark has not been rerun.
+
+The immutable baseline is [the prior manifest](https://github.com/aj-flynn/geometry-lessons/blob/e628f70e8b8713891d09828df610c0953607e7f6/lessons.json). Only the following four current contract digests in each of the eight existing rows were migrated after this bounded review; all other manifest fields, lesson bytes, dependency hashes, and rendered index remain unchanged.
+
+| Contract file | Prior SHA-256 | Current SHA-256 |
+|---|---|---|
+| `.agents/skills/homework-teach/SKILL.md` | `cd47ba14e8515d9ae5ae7682e16cf70b90ecfb8c0c571b5550ce61c1864d5135` | `7960f33812c27206ad019e428124de959dd4dfa16e6b51509706d8061b14fa08` |
+| `.agents/skills/homework-teach/references/independent-refinement.md` | `5cc022c34ecb9e9392be934b6101a95bea0758ca45c8ce4cd6be0d93732b04a4` | `adde71bb8abb1e5473c2343f05378ffdc30e7ac758c9f6a8f6096bd7908eeab3` |
+| `.agents/skills/homework-teach/references/lesson-workflow.md` | `1bf27619b0b81d64f996b7b8b93385603acfa90d4ff95d134f7b961e2a2974d2` | `a6936be62e3d20cfd4313296e7c70276842fd09c8597489d8c7304364608a619` |
+| `README.md` | `65dcc7d055aa2f6b502297fd9a2629f9a84b5600b648112c574f367057a2c8a6` | `3d7d3646fc9eec93e6dc635f46b04a16f255af1091bbcccd9bd1acb6016be2cc` |
+
+Scope, identified by unchanged lesson SHA-256:
+
+| Lesson | SHA-256 |
+|---|---|
+| `0001-similar-polygons.html` | `fddc62a26950046be121bbc7e379fc3833cf9272f7036656c9e2e06a8e0c0dc9` |
+| `0002-close-reading-dialogue.html` | `6a77d5f1f875133e94490bffc65e53e73f538801adf60027ead32dff37f77ce2` |
+| `0003-reading-particle-formulas.html` | `aa5845c8cc376622b2eeb6b929f0162a8ad4a5c93179edfb09bbee53d531bad8` |
+| `0004-electrons-and-bonds.html` | `909b0efe465b745e8aa5a29ab71ccc9ec5a19f6c4be39c85314d2cd8e65f9d2c` |
+| `0005-shape-and-polarity.html` | `31bda595409571fe6798504cd795b37d2e7d1088c04070a09c56c83abf50568e` |
+| `0006-between-molecules.html` | `ad427cd9aa66622bef343e467fc631535e5d2a265c203c92a6bcc750a016d774` |
+| `0007-aa-triangle-similarity.html` | `8e90e640394b5c6fe044271468638e1eb1ddb85b06b01e61b83263ebaf629e86` |
+| `0008-chemistry-evidence-split.html` | `8b42a614c892bdc8a4869cdf7f111df1829fe275f1c368ec90351f7340c10120` |

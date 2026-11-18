@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Read geometry marks, match triangles in order, and justify what follows.">
+  <title>From marks to triangle proofs</title>
+  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
+  <link rel="stylesheet" href="../assets/activity-layout.css?v=20261107-r1">
+  <link rel="stylesheet" href="../assets/triangle-proof-marks.css">
+  <script src="../assets/triangle-proof-marks.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson activity-lesson proof-marks">
+    <header class="proof-hero">
+      <a class="return-link" href="../index.html">← Lesson library</a>
+      <p class="eyebrow">Geometry · Proof workshop</p>
+      <h1>From marks to triangle proofs</h1>
+      <p class="lead">Read the clue. Match the corners. Give a reason for what follows.</p>
+      <nav class="proof-nav" aria-label="Lesson sections">
+        <a href="#read">Read the marks</a><a href="#decide">Test the match</a><a href="#practice">Prove it on your own</a><a href="#glossary">Glossary</a>
+      </nav>
+    </header>
+
+    <section class="reading-block warmup" aria-labelledby="warmup-title">
+      <h2 id="warmup-title">Before you start</h2>
+      <p>Look at the name ∠KHD. Which letter names the <a href="#vertex">vertex</a> (corner)? Which two rays make it?</p>
+      <div class="blank" aria-hidden="true"></div>
+      <details class="comparison"><summary>Compare the warm-up</summary><p>H is the corner, or <a href="#vertex">vertex</a>. The rays start at H and pass through K and D. The middle letter always names the corner.</p></details>
+    </section>
+
+    <section class="activity" id="read" aria-labelledby="read-title">
+      <h2 id="read-title"><span>01</span> Read the marks before you reason</h2>
+      <div class="activity-split">
+        <aside class="activity-evidence" tabindex="0" aria-labelledby="cross-caption-heading">
+          <h3 id="cross-caption-heading">Two crossing strips</h3>
+          <figure><svg class="proof-diagram" viewBox="0 0 340 155" role="img" aria-labelledby="cross-svg-title" aria-describedby="cross-svg-desc"><title id="cross-svg-title">Two joined metal strips</title><desc id="cross-svg-desc">G, S, K lie on one straight segment in that order. H, S, W lie on another in that order. GS and SK have matching single ticks.</desc><path class="frame-line" d="M 46.00 126.00 L 292.00 30.00"/><path class="frame-line" d="M 69.00 28.00 L 235.00 111.00"/><path class="diagram-mark" d="M 110.04 108.52 L 104.96 95.48"/><path class="diagram-mark" d="M 233.04 60.52 L 227.96 47.48"/><text x="25" y="138">G</text><text x="299" y="33">K</text><text x="50" y="33">H</text><text x="242" y="126">W</text><text x="169" y="66">S</text></svg><figcaption id="cross-svg-caption">G, S, K lie on one straight segment in that order. H, S, W lie on another in that order. GS and SK have matching single ticks.</figcaption></figure>
+        </aside>
+        <div class="activity-work">
+          <p>Matching ticks mark equal lengths. Matching arcs mark equal angle measures. A little square marks a 90° angle. Matching arrowheads on straight lines mark <a href="#parallel">parallel</a> lines: they never meet.</p>
+          <p>Use <a href="#congruent">≅</a> for congruent figures: they match in size and shape. Here GS ≅ SK is <strong>given by the ticks</strong>. Nothing marks HS and SW as equal.</p>
+          <ul class="proof-lines">
+            <li><strong>∠GSH ≅ ∠KSW.</strong> They are opposite angles formed by two intersecting lines, called <a href="#vertical">vertical angles</a>. Each makes a straight angle when added to ∠HSK, so they have the same measure.</li>
+            <li><strong>S is the midpoint of GK.</strong> S lies on GK and GS ≅ SK. A <a href="#midpoint">midpoint</a> needs both facts.</li>
+            <li><strong>HW bisects GK.</strong> It passes through GK’s midpoint. To say they <a href="#bisect">bisect each other</a>, you would also need S to be the midpoint of HW.</li>
+          </ul>
+          <p class="rule">A mark is evidence. How the drawing looks is not.</p>
+        </div>
+      </div>
+
+      <article class="task" aria-labelledby="cut-title">
+        <h3 id="cut-title">Try it · Which direction works?</h3>
+        <div class="activity-split">
+          <aside class="activity-evidence" tabindex="0" aria-labelledby="cut-title">
+            <figure><svg class="proof-diagram" viewBox="0 0 340 155" role="img" aria-labelledby="cut-svg-title" aria-describedby="cut-svg-desc"><title id="cut-svg-title">Two crossing braces</title><desc id="cut-svg-desc">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</desc><path class="frame-line" d="M 48.00 65.00 L 288.00 65.00"/><path class="frame-line" d="M 132.00 17.00 L 222.00 137.00"/><text x="30" y="69">L</text><text x="295" y="69">F</text><text x="134" y="18">E</text><text x="228" y="146">R</text><text x="177" y="58">V</text></svg><figcaption id="cut-svg-caption">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</figcaption></figure>
+          </aside>
+          <div class="activity-work">
+            <p>Decide whether either brace bisects the other. Write the claim and a reason. If the reverse claim does not follow, say what stops it.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="hint"><summary>Hint 1 · Find the whole segment</summary><p>For a claim that one brace is bisected, look at the two pieces of <em>that</em> brace.</p></details>
+            <details class="hint"><summary>Hint 2 · Compare the pieces</summary><p>Compare the two lengths along LF, then the two lengths along ER. Do not mix pieces from different braces.</p></details>
+            <details class="comparison"><summary>Compare your reason</summary><p>V is on LF and LV = VF = 9 cm, so V is the midpoint of LF. ER passes through V, so ER bisects LF. The reverse fails: EV and VR are 4 cm and 6 cm, so V is not the midpoint of ER. Revise any claim that says both braces are bisected.</p></details>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="activity" id="decide" aria-labelledby="decide-title">
+      <h2 id="decide-title"><span>02</span> Decide what fixes a triangle</h2>
+      <div class="activity-split">
+        <aside class="activity-evidence" tabindex="0" aria-labelledby="hinge-title">
+          <h3 id="hinge-title">Two triangular brackets</h3>
+          <figure><svg class="proof-diagram" viewBox="0 0 360 155" role="img" aria-labelledby="hinge-svg-title" aria-describedby="hinge-svg-desc"><title id="hinge-svg-title">Two triangular brackets, one turned upside down</title><desc id="hinge-svg-desc">KR and UT have one tick. KV and UJ have two ticks. ∠RKV and ∠TUJ have one arc.</desc><path class="frame-line" d="M 43.00 120.00 L 140.00 120.00 L 69.00 49.00 Z"/><path class="frame-line" d="M 327.00 42.00 L 230.00 42.00 L 301.00 113.00 Z"/><path class="diagram-mark" d="M 91.50 127.00 L 91.50 113.00"/><path class="diagram-mark" d="M 278.50 35.00 L 278.50 49.00"/><path class="diagram-mark" d="M 61.58 89.63 L 48.43 84.82"/><path class="diagram-mark" d="M 63.57 84.18 L 50.42 79.37"/><path class="diagram-mark" d="M 308.42 72.37 L 321.57 77.18"/><path class="diagram-mark" d="M 306.43 77.82 L 319.58 82.63"/><path class="diagram-mark" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="diagram-mark" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text x="24" y="139">K</text><text x="142" y="138">R</text><text x="62" y="43">V</text><text x="324" y="28">U</text><text x="211" y="32">T</text><text x="299" y="137">J</text></svg><figcaption id="hinge-svg-caption">KR and UT have one tick. KV and UJ have two ticks. ∠RKV and ∠TUJ have one arc.</figcaption></figure>
+        </aside>
+        <div class="activity-work">
+          <p>Start where two marked sides touch. KR and KV meet at K. Their partners UT and UJ meet at U. So K matches U. The one-tick sides then pair R with T; the two-tick sides pair V with J. These are <a href="#correspond">corresponding</a> vertices: they play the same roles.</p>
+          <ol class="proof-lines">
+            <li>KR ≅ UT and KV ≅ UJ, by the ticks.</li>
+            <li>∠RKV ≅ ∠TUJ, by the arcs. They are <a href="#included">included angles</a>: the angles between the two known sides. Line up one known side, open the same angle, and go the same distance along the second side. Both outer endpoints are fixed.</li>
+            <li><strong>△KRV ≅ △UTJ</strong> by <a href="#criteria">SAS</a> (side-angle-side). Notice the order: K ↔ U, R ↔ T, V ↔ J.</li>
+            <li>Now <strong>RV ≅ TJ</strong>. Match both endpoints, not where the sides sit on the page. This is <a href="#cpctc">CPCTC</a>: corresponding parts of congruent triangles are congruent. Use it <strong>after</strong> proving the triangles match.</li>
+          </ol>
+        </div>
+      </div>
+
+      <article class="swing reading-block" aria-labelledby="swing-title">
+        <h3 id="swing-title">What if the angle is at the other end?</h3>
+        <p>Suppose the base AB and side BG are fixed, and the angle at A is fixed. Predict: can the last corner land in two spots on the same ray from A?</p>
+        <div class="blank" aria-hidden="true"></div>
+        <details class="comparison ssa-compare">
+          <summary>Compare with a two-position sketch</summary>
+          <figure><svg class="proof-diagram" viewBox="0 0 290 200" role="img" aria-labelledby="swing-svg-title" aria-describedby="swing-svg-desc"><title id="swing-svg-title">One base, two possible third vertices</title><desc id="swing-svg-desc">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</desc><path class="frame-line" d="M 48.00 177.00 L 224.00 177.00"/><path class="frame-line" d="M 48.00 177.00 L 180.00 45.00"/><path class="model-alt" d="M 224.00 177.00 L 92.00 133.00"/><path class="frame-line" d="M 224.00 177.00 L 180.00 45.00"/><circle class="model-dot" cx="92" cy="133" r="3.5"/><circle class="model-dot" cx="180" cy="45" r="3.5"/><path class="diagram-mark" d="M 160.21 148.36 L 155.79 161.64"/><path class="diagram-mark" d="M 208.64 108.79 L 195.36 113.21"/><path class="diagram-mark" d="M 71.00 177.00 A 23 23 0 0 0 64.26 160.74"/><text x="32" y="195">A</text><text x="230" y="191">B</text><text x="72" y="127">G</text><text x="183" y="37">H</text></svg><figcaption id="swing-svg-caption">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</figcaption></figure>
+          <p>Yes. Take △ABG and △ABH. They share AB and the angle at A, and BG ≅ BH. But AG and AH have different lengths. Here the known angle is <em>not</em> between the two known sides. Two side pairs and a non-included angle (SSA) do not guarantee congruence.</p>
+        </details>
+        <p>Angle marks alone cannot fix size either. You can enlarge a triangle and keep all its angles.</p>
+      </article>
+
+      <aside class="criteria-box reading-block" aria-labelledby="criteria">
+        <h3 id="criteria">Quick method card</h3>
+        <dl class="criteria-grid">
+          <div><dt>SSS</dt><dd>Three corresponding side pairs.</dd></div>
+          <div><dt>SAS</dt><dd>Two side pairs and the angle pair between those sides.</dd></div>
+          <div><dt>ASA</dt><dd>Two angle pairs and the side pair joining those angles.</dd></div>
+          <div><dt>AAS</dt><dd>Two angle pairs and a side pair not joining those angles. Two equal angle pairs force the third pair equal, which lets you use ASA.</dd></div>
+          <div><dt>HL</dt><dd>For two right triangles only: a <a href="#hypotenuse">hypotenuse</a> pair (sides opposite the right angles) and a leg pair (sides touching the right angles).</dd></div>
+        </dl>
+        <p>Sometimes a needed fact has no mark. A shared side is congruent to itself (the <a href="#reflexive">reflexive property</a>). If you know both angles are right, they are congruent. If you only think they look right, you cannot use that fact.</p>
+      </aside>
+      
+      <article class="task" aria-labelledby="pair-title">
+        <h3 id="pair-title">Try it · Name the test and keep the order</h3>
+        <div class="activity-split">
+          <aside class="activity-evidence" tabindex="0" aria-labelledby="pair-title">
+            <figure><svg class="proof-diagram" viewBox="0 0 340 161" role="img" aria-labelledby="pair-svg-title" aria-describedby="pair-svg-desc"><title id="pair-svg-title">Separate triangles with arc and tick marks</title><desc id="pair-svg-desc">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</desc><path class="frame-line" d="M 34.00 29.00 L 111.00 29.00 L 84.00 114.00 Z"/><path class="frame-line" d="M 321.00 56.00 L 321.00 133.00 L 236.00 106.00 Z"/><path class="diagram-mark" d="M 90.83 69.38 L 104.17 73.62"/><path class="diagram-mark" d="M 280.62 112.83 L 276.38 126.17"/><path class="diagram-mark" d="M 55.00 29.00 A 21 21 0 0 1 44.65 47.10"/><path class="diagram-mark" d="M 321.00 77.00 A 21 21 0 0 1 302.90 66.65"/><path class="diagram-mark" d="M 90.00 29.00 A 21 21 0 0 0 104.64 49.01"/><path class="diagram-mark" d="M 84.00 29.00 A 27 27 0 0 0 102.83 54.73"/><path class="diagram-mark" d="M 321.00 112.00 A 21 21 0 0 0 300.99 126.64"/><path class="diagram-mark" d="M 321.00 106.00 A 27 27 0 0 0 295.27 124.83"/><text x="17" y="26">C</text><text x="115" y="25">F</text><text x="83" y="136">I</text><text x="319" y="41">M</text><text x="323" y="151">O</text><text x="215" y="111">S</text></svg><figcaption id="pair-svg-caption">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</figcaption></figure>
+          </aside>
+          <div class="activity-work">
+            <p>Start with △CFI. Write the matching triangle in order and name the congruence test, if one fits. Explain whether the marked side joins the two marked angles.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="hint"><summary>Hint 1 · Match like marks</summary><p>Find the two one-arc corners first, then the two two-arc corners. That leaves one vertex in each triangle.</p></details>
+            <details class="hint"><summary>Hint 2 · Follow the side</summary><p>Check the two endpoints of FI. Are both endpoints marked with arcs?</p></details>
+            <div class="check-box" data-proof-check>
+              <fieldset disabled>
+                <legend>Check the congruence test</legend>
+                <label><input type="radio" name="pair-test" value="asa"> ASA</label>
+                <label><input type="radio" name="pair-test" value="aas"> AAS</label>
+                <label><input type="radio" name="pair-test" value="none"> No test fits</label>
+                <div class="check-actions"><button type="button" data-check>Check the test</button><button type="button" class="secondary" data-reset>Reset</button></div>
+              </fieldset>
+              <p class="check-feedback" role="status"></p>
+              <noscript><p>Use the written comparison to check your reasoning.</p></noscript>
+            </div>
+            <details class="comparison"><summary>Compare your full reasoning</summary><p><strong>△CFI ≅ △MOS by AAS.</strong> The single arcs pair C with M; the double arcs pair F with O. I matches S. The side that would join the marked angles is CF (and MO), but the tick is on FI (and OS). If you wrote ASA, revise by naming the endpoints of the marked side.</p></details>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="activity" aria-labelledby="angle-bridge-title">
+      <h2 id="angle-bridge-title">Use an angle fact in either direction</h2>
+      <div class="activity-split">
+        <aside class="activity-evidence" tabindex="0" aria-labelledby="angle-bridge-title">
+          <figure><svg class="proof-diagram" viewBox="0 0 340 168" role="img" aria-labelledby="alt-svg-title" aria-describedby="alt-svg-desc"><title id="alt-svg-title">Angles where a slanted line crosses two upright lines</title><desc id="alt-svg-desc">K and W are the crossings. M is above K on the left line. Q is below W on the right line. The two highlighted angles are ∠MKW and ∠KWQ.</desc><path class="frame-line" d="M 73.00 39.00 L 73.00 153.00"/><path class="frame-line" d="M 257.00 13.00 L 257.00 139.00"/><path class="frame-line" d="M 31.00 151.00 L 309.00 12.00"/><path class="diagram-mark" d="M 73.00 105.00 A 25 25 0 0 1 95.36 118.82"/><path class="diagram-mark" d="M 234.64 49.18 A 25 25 0 0 0 257.00 63.00"/><text x="53" y="42">M</text><text x="51" y="128">K</text><text x="265" y="60">W</text><text x="262" y="139">Q</text></svg><figcaption id="alt-svg-caption">K and W are the crossings. M is above K on the left line. Q is below W on the right line. The two highlighted angles are ∠MKW and ∠KWQ.</figcaption></figure>
+        </aside>
+        <div class="activity-work">
+          <p>Look at ∠MKW and ∠KWQ. Both are between the upright lines, but one is on each side of the slanted line. They are <a href="#alternate">alternate interior angles</a>.</p>
+          <ul class="proof-lines">
+            <li><strong>Start with parallel lines:</strong> If MK ∥ WQ is known, then ∠MKW ≅ ∠KWQ.</li>
+            <li><strong>Start with matching angles:</strong> If ∠MKW ≅ ∠KWQ is known, then MK ∥ WQ. Reversing the direction is called taking the <a href="#converse">converse</a>.</li>
+          </ul>
+          <p>Use one of these rules only after you have proved its starting fact or read it in the givens. This sketch labels the angle positions to illustrate both directions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity" id="practice" aria-labelledby="practice-title">
+      <h2 id="practice-title"><span>03</span> Prove it on your own</h2>
+      <p class="section-intro">Write your statements and reasons before opening any comparison. Use the diagram and the givens, not a ruler.</p>
+      <article class="task" aria-labelledby="braces-title">
+        <h3 id="braces-title">A frame with an unmarked pair of rails</h3>
+        <div class="activity-split">
+          <aside class="activity-evidence" tabindex="0" aria-labelledby="braces-title">
+            <figure><svg class="proof-diagram" viewBox="0 0 345 166" role="img" aria-labelledby="braces-svg-title" aria-describedby="braces-svg-desc"><title id="braces-svg-title">Four joined rails and one diagonal</title><desc id="braces-svg-desc">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</desc><path class="frame-line" d="M 33.00 134.00 L 158.00 134.00 L 307.00 32.00 L 182.00 32.00 Z"/><path class="frame-line" d="M 33.00 134.00 L 307.00 32.00"/><path class="diagram-mark" d="M 80.50 141.00 L 80.50 127.00"/><path class="diagram-mark" d="M 229.50 39.00 L 229.50 25.00"/><path class="diagram-mark" d="M 114.50 139.00 L 127.50 134.00 L 114.50 129.00"/><path class="diagram-mark" d="M 263.50 37.00 L 276.50 32.00 L 263.50 27.00"/><text x="14" y="153">A</text><text x="159" y="152">E</text><text x="311" y="26">H</text><text x="163" y="25">N</text></svg><figcaption id="braces-svg-caption">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</figcaption></figure>
+          </aside>
+          <div class="activity-work">
+            <p>Can you prove that AN and EH are parallel? Start by writing any triangle congruence you can prove, in matching order, and give a reason for each fact you use. Then justify your answer about the rails.</p>
+            <div class="blank multi" aria-hidden="true"></div>
+            <details class="comparison"><summary>Compare after trying both parts</summary>
+              <ol class="proof-lines">
+                <li>AE ≅ HN (ticks) and AH ≅ HA (shared side).</li>
+                <li>∠EAH ≅ ∠NHA. AE and NH are parallel (arrows), and AH crosses both. Those angles lie between the parallels on opposite sides of AH: they are <a href="#alternate">alternate interior angles</a>.</li>
+                <li><strong>△AEH ≅ △HNA by SAS.</strong> The angles in step 2 lie between the two sides named in step 1.</li>
+                <li>∠EHA ≅ ∠NAH by CPCTC. These angles sit between EH and AN, on opposite sides of AH. By the <a href="#converse">converse</a> of the alternate interior angles theorem, <strong>EH ∥ AN</strong>.</li>
+              </ol>
+              <p>If you assumed both pairs of outside rails were parallel, remove that line. Only the arrowed pair is given. Replace the assumption with the angle pair from the proven congruence.</p>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <article class="task" aria-labelledby="right-title">
+        <h3 id="right-title">Fresh retry · The panel with two square corners</h3>
+        <div class="activity-split">
+          <aside class="activity-evidence" tabindex="0" aria-labelledby="right-title">
+            <figure><svg class="proof-diagram" viewBox="0 0 191 181" role="img" aria-labelledby="right-svg-title" aria-describedby="right-svg-desc"><title id="right-svg-title">Two right-angle boxes on a four-sided panel</title><desc id="right-svg-desc">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</desc><path class="frame-line" d="M 40.00 100.00 L 112.00 154.00 L 163.00 86.00 L 91.00 32.00 Z"/><path class="frame-line" d="M 40.00 100.00 L 163.00 86.00"/><path class="diagram-mark" d="M 100.80 145.60 L 109.20 134.40 L 120.40 142.80"/><path class="diagram-mark" d="M 102.20 40.40 L 93.80 51.60 L 82.60 43.20"/><path class="diagram-mark" d="M 71.80 132.60 L 80.20 121.40"/><path class="diagram-mark" d="M 131.20 53.40 L 122.80 64.60"/><text x="21" y="102">R</text><text x="113" y="175">Y</text><text x="166" y="83">T</text><text x="84" y="27">Z</text></svg><figcaption id="right-svg-caption">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</figcaption></figure>
+          </aside>
+          <div class="activity-work">
+            <p>What can you prove about the two triangles? Write a conclusion in matching order and justify it. If it follows, also prove YT ≅ ZR without measuring.</p>
+            <div class="blank multi" aria-hidden="true"></div>
+            <details class="comparison"><summary>Compare after writing your reasons</summary><p>△RYT and △TZR are right triangles because of the square marks. RT is opposite both right angles, so it is a shared hypotenuse. RY ≅ TZ by the ticks. Therefore <strong>△RYT ≅ △TZR by HL</strong>. Y matches Z and T matches R, so <strong>YT ≅ ZR by CPCTC</strong>. If you wrote SAS, check whether the right angle is between the marked leg and shared hypotenuse. It is not.</p></details>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="reading-block" aria-labelledby="keep-title">
+      <h2 id="keep-title">When you go back to a diagram</h2>
+      <ol class="proof-lines">
+        <li>Label each fact: marked, stated, or proved. Do not add facts from appearance.</li>
+        <li>Match vertices and check the exact conditions of the test. If none fits, say what is missing.</li>
+        <li>Only then use the matched parts to prove something new. Give a reason for each step.</li>
+      </ol>
+      <article class="later" aria-labelledby="later-title">
+        <h3 id="later-title">Next time · Try this without the method card</h3>
+        <p>Two triangular tiles have matching side lengths in pairs: BD ≅ QJ, DP ≅ JW, and PB ≅ WQ. The tiles face different directions. Write a triangle congruence beginning △PBD, then name the angle that matches ∠BDP. Give reasons.</p>
+        <div class="blank" aria-hidden="true"></div>
+        <details class="comparison"><summary>Compare after recalling the steps</summary><p>BD and DP meet at D. QJ and JW meet at J. The remaining matches are B ↔ Q and P ↔ W, so <strong>△PBD ≅ △WQJ by SSS</strong>. Then <strong>∠BDP ≅ ∠QJW by CPCTC</strong>.</p></details>
+      </article>
+    </section>
+
+    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title">Glossary</h2>
+      <dl>
+        <dt id="vertex">Vertex</dt><dd>A corner. In a three-letter angle name, the vertex is the middle letter.</dd>
+        <dt id="parallel">Parallel</dt><dd>Distinct straight lines in the same plane that never meet. Write ∥. Parallel segments lie on parallel lines.</dd>
+        <dt id="congruent">Congruent</dt><dd>Exactly the same size and shape, even after a slide, turn, or flip. Write ≅. For two angles, this means equal measures. For two segments, it means equal lengths.</dd>
+        <dt id="vertical">Vertical angles</dt><dd>Opposite angles formed where two straight lines intersect. They have equal measures. Adjacent angles at the intersection are not vertical.</dd>
+        <dt id="midpoint">Midpoint</dt><dd>The point on a segment that divides it into two equally long parts.</dd>
+        <dt id="bisect">Bisect</dt><dd>Divide into two equal parts. For one segment to bisect another, it must pass through the other segment’s midpoint. For mutual bisection, that point must be the midpoint of both.</dd>
+        <dt id="correspond">Corresponding parts</dt><dd>Parts that match by position in an ordered congruence statement, not by where they sit on the page. Match the endpoints to pair sides.</dd>
+        <dt id="included">Included angle or side</dt><dd>The included angle is between the two named sides. The included side joins the vertices of the two named angles.</dd>
+        <dt id="cpctc">CPCTC</dt><dd>Corresponding parts of congruent triangles are congruent. Once the triangles are proved congruent, the order tells you which angles and sides match.</dd>
+        <dt id="hypotenuse">Hypotenuse</dt><dd>The side opposite the right angle in a right triangle. The other two sides are the legs.</dd>
+        <dt id="reflexive">Reflexive property of congruence</dt><dd>A figure is congruent to itself. When two triangles use the same segment as a side, that side is the same length in both triangles.</dd>
+        <dt id="alternate">Alternate interior angles</dt><dd>Angles between two lines and on opposite sides of a third line that crosses them both (a transversal). If the crossed lines are parallel, the angle pair is congruent.</dd>
+        <dt id="converse">Converse</dt><dd>A statement that reverses the if and then of another statement. For alternate interior angles, the converse says that if the angle pair is congruent, the crossed lines are parallel. A converse needs its own justification; not every converse is true.</dd>
+      </dl>
+    </section>
+    <section class="reading-block sources" aria-labelledby="sources-title">
+      <h2 id="sources-title">Read a little more</h2>
+      <p><a href="https://mathcs.clarku.edu/~djoyce/java/elements/bookI/propI4.html">Euclid’s Elements, Book I, Proposition 4</a> shows the idea behind SAS: line up one side, use the included angle to line up the other side, and use the two lengths to match the endpoints. The language is older, but the “place one triangle on top of the other” idea is the same.</p>
+    </section>
+    <section class="print-bank" aria-labelledby="print-bank-title">
+      <h2 id="print-bank-title">Compare your written work</h2>
+      <p><strong>Warm-up:</strong> H is the vertex. The rays pass through K and D.</p>
+      <p><strong>Crossing braces:</strong> LV = VF and V lies on LF, so V is the midpoint of LF. ER bisects LF. ER is not bisected because EV ≠ VR.</p>
+      <p><strong>Two-position prediction:</strong> Yes. A fixed base AB and fixed angle at A make a ray. A circle centered at B with radius BG can meet that ray in two points. Then the third sides from A have different lengths.</p>
+      <p><strong>Congruence test:</strong> △CFI ≅ △MOS by AAS. FI and OS are not between the two marked angles; CF and MO would be the included sides.</p>
+      <p><strong>Frame:</strong> AE ≅ HN by ticks, AH ≅ HA because it is shared, and ∠EAH ≅ ∠NHA by the alternate interior angles theorem. △AEH ≅ △HNA by SAS. Then ∠EHA ≅ ∠NAH by CPCTC, and EH ∥ AN by the converse.</p>
+      <p><strong>Panel:</strong> △RYT ≅ △TZR by HL. The squares give right angles, RT is the shared hypotenuse, and RY ≅ TZ by the ticks. Then YT ≅ ZR by CPCTC.</p>
+      <p><strong>Next time:</strong> △PBD ≅ △WQJ by SSS, and ∠BDP ≅ ∠QJW by CPCTC.</p>
+    </section>
+  </main>
+</body>
+</html>

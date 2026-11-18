@@ -1,0 +1,104 @@
+.proof-marks {
+  --panel: #e5f0ed;
+  --soft: #edece5;
+  --accent-ink: #075d53;
+  --diagram-mark: #8a3a14;
+}
+.proof-marks .proof-hero {
+  max-width: none;
+  background: #dbebe7;
+  border-top: 5px solid var(--accent-ink);
+  padding: clamp(18px, 4vw, 48px);
+}
+.proof-marks h1 { max-width: 17ch; text-wrap: balance; }
+.proof-marks .eyebrow {
+  color: var(--accent-ink);
+  font-size: 15px;
+  font-weight: 800;
+  margin-block: 12px 6px;
+}
+.proof-marks .proof-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+  margin-top: 10px;
+}
+.proof-marks .proof-nav a { text-decoration: underline; }
+.proof-marks h2 > span {
+  display: inline-block;
+  margin-right: .25em;
+  color: var(--accent-ink);
+  font-size: .72em;
+  font-variant-numeric: tabular-nums;
+}
+.proof-marks .task {
+  border-top: 1px solid #acbdb6;
+  margin-top: 34px;
+  padding-top: 22px;
+}
+.proof-marks .activity-evidence { background: var(--panel); }
+.proof-marks .activity-evidence figure { max-width: 420px; margin-inline: auto; }
+.proof-marks .activity-evidence figure:has(#right-svg-title) { max-width: 230px; }
+.proof-marks .proof-diagram { min-width: 0; }
+.proof-diagram text { fill: #123c34; font-size: 19px; font-weight: 700; }
+.proof-diagram .frame-line,
+.proof-diagram .diagram-mark,
+.proof-diagram .model-alt {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.proof-diagram .frame-line { stroke: #123c34; stroke-width: 2.8; }
+.proof-diagram .diagram-mark { stroke: var(--diagram-mark); stroke-width: 2.8; }
+.proof-diagram .model-alt { stroke: #234d64; stroke-width: 2.6; stroke-dasharray: 4 5; }
+.proof-diagram .model-dot { fill: #123c34; }
+.proof-marks .proof-lines { padding-inline-start: 1.45em; }
+.proof-marks .proof-lines li + li { margin-top: .65em; }
+.proof-marks .rule, .proof-marks .section-intro {
+  border-left: .25rem solid var(--accent-ink);
+  padding-inline-start: .85rem;
+}
+.proof-marks .criteria-box, .proof-marks .swing, .proof-marks .later {
+  background: var(--soft);
+  margin-top: 26px;
+  padding: clamp(16px, 2.4vw, 28px);
+}
+.proof-marks .criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1px;
+  background: #c8d7d1;
+  border: 1px solid #c8d7d1;
+}
+.proof-marks .criteria-grid div { background: var(--paper); padding: 12px 15px; }
+.proof-marks .criteria-grid dt { color: var(--accent-ink); margin-top: 0; }
+.proof-marks .ssa-compare figure { max-width: 310px; padding: 0; margin: 12px auto; }
+.proof-marks details { padding: 5px 12px; }
+.proof-marks .hint { background: var(--soft); }
+.proof-marks .comparison { background: var(--panel); }
+.proof-marks .check-box { padding: 14px; background: var(--soft); margin-block: 14px; }
+.proof-marks fieldset { margin: 0; min-inline-size: 0; border: 0; padding: 0; }
+.proof-marks fieldset label { display: block; cursor: pointer; min-height: 36px; }
+.proof-marks legend { font-weight: 700; margin-bottom: 7px; }
+.proof-marks input[type="radio"] { accent-color: var(--accent-ink); }
+.proof-marks .check-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.proof-marks .secondary { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.proof-marks .check-feedback { margin: 12px 0 0; font-weight: 600; }
+.proof-marks .check-feedback:empty { margin: 0; }
+.proof-marks .check-box:not([data-ready="true"]) { display: none; }
+.proof-marks .blank, .proof-marks .print-bank { display: none; }
+@media (max-width: 420px) {
+  .proof-marks .proof-hero { padding-inline: 15px; }
+  .proof-marks .task { margin-top: 27px; }
+}
+@media print {
+  .proof-marks .proof-hero { padding: 0; background: none; border: 0; }
+  .proof-marks .proof-nav, .proof-marks .check-box, .proof-marks .comparison, .proof-marks .hint { display: none; }
+  .proof-marks .activity-evidence, .proof-marks .criteria-box, .proof-marks .swing, .proof-marks .later { background: transparent; padding: 0; }
+  .proof-marks .activity-evidence figure { max-width: 290px; margin-left: 0; }
+  .proof-marks .activity-evidence figure:has(#right-svg-title) { max-width: 140px; }
+  .proof-marks .task, .proof-marks .warmup, .proof-marks .swing, .proof-marks .later, .proof-marks .activity-split { break-inside: avoid; }
+  .proof-marks .blank { display: block; height: 2.5em; border-bottom: 1px solid #333; }
+  .proof-marks .blank.multi { height: 4em; }
+  .proof-marks .print-bank { display: block; break-before: page; }
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework lessons: Geometry</title>
+    <link>https://aj-flynn.github.io/geometry-lessons/#subject-geometry</link>
+    <atom:link href="https://aj-flynn.github.io/geometry-lessons/feeds/geometry.xml" rel="self" type="application/rss+xml"/>
+    <description>New Geometry concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Nov 2026 19:43:58 +0000</lastBuildDate>
+    <ttl>60</ttl>
+    <item>
+      <title>Equal sides, equal angles</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0011-equal-sides-equal-angles.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0011-equal-sides-equal-angles.html</guid>
+      <pubDate>Thu, 19 Nov 2026 19:43:58 +0000</pubDate>
+      <description>Use the Isosceles Triangle Theorem and its converse to match equal sides with equal angles, even when triangles share corners.</description>
+      <category>Geometry</category>
+      <category>Isosceles triangles</category>
+      <category>Base angles</category>
+      <category>Converse</category>
+    </item>
+    <item>
+      <title>From marks to triangle proofs</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0010-from-marks-to-triangle-proofs.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0010-from-marks-to-triangle-proofs.html</guid>
+      <pubDate>Wed, 18 Nov 2026 06:21:56 +0000</pubDate>
+      <description>Read geometric marks, match triangles in order, and justify what follows from congruence.</description>
+      <category>Geometry</category>
+      <category>Geometric marks</category>
+      <category>Triangle congruence</category>
+      <category>Proof and reasoning</category>
+    </item>
+    <item>
+      <title>Ratios from geometric marks</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0009-ratios-from-geometric-marks.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0009-ratios-from-geometric-marks.html</guid>
+      <pubDate>Tue, 17 Nov 2026 20:22:47 +0000</pubDate>
+      <description>Work through four slide-based examples at your own pace, with concise steps and expandable explanations.</description>
+      <category>Geometry</category>
+      <category>Angle bisectors</category>
+      <category>Parallel cuts</category>
+      <category>Proportional lengths</category>
+    </item>
+    <item>
+      <title>Two angles, one shape</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0007-aa-triangle-similarity.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0007-aa-triangle-similarity.html</guid>
+      <pubDate>Fri, 06 Nov 2026 11:16:37 +0000</pubDate>
+      <description>Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements.</description>
+      <category>Geometry</category>
+      <category>AA similarity</category>
+      <category>Vertex correspondence</category>
+      <category>Whole sides</category>
+      <category>Algebraic proportions</category>
+      <category>Mixed units</category>
+    </item>
+    <item>
+      <title>Similar polygons</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0001-similar-polygons.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0001-similar-polygons.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:36:29 +0000</pubDate>
+      <description>Match turned polygons, reason with scale, and justify claims about similar figures.</description>
+      <category>Geometry</category>
+      <category>Similarity</category>
+      <category>Scale factors</category>
+      <category>Perimeter and area</category>
+    </item>
+  </channel>
+</rss>

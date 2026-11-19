@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, renderFeed, feedFile, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, renderFeed, feedFile, subjectFeedFile, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -237,7 +237,7 @@ function inspectHtml(source) {
         addDeclaredResource(attrs.get('href'), /\.css$/, 'Stylesheet links must point to .css resources.');
       } else if (rel === 'modulepreload' || (rel === 'preload' && as === 'script')) {
         addDeclaredResource(attrs.get('href'), /\.m?js$/, 'Script preloads must point to .js or .mjs resources.');
-      } else if (rel === 'alternate' && attrs.get('type')?.trim().toLowerCase() === 'application/rss+xml' && attrs.get('href') === 'feed.xml') {
+      } else if (rel === 'alternate' && attrs.get('type')?.trim().toLowerCase() === 'application/rss+xml' && /^(?:feed|feeds\/[a-z]+(?:-[a-z0-9]+)*)\.xml$/.test(attrs.get('href') ?? '')) {
         // The library index advertises its own static feed; nothing is loaded or executed.
       } else if (attrs.has('href')) {
         throw new Error('Lesson link elements must declare stylesheets or script/style preloads.');
@@ -462,6 +462,12 @@ export function check(base = root) {
     if (!existsSync(resolve(base, feedFile)) || readFileSync(resolve(base, feedFile), 'utf8') !== renderFeed(manifest, registry)) {
       errors.push(`Lesson feed is stale; run node scripts/build-index.mjs.`);
     }
+    for (const { id } of registry) {
+      const file = subjectFeedFile(id);
+      if (!existsSync(resolve(base, file)) || readFileSync(resolve(base, file), 'utf8') !== renderFeed(manifest, registry, id)) {
+        errors.push(`Subject feed ${file} is stale; run node scripts/build-index.mjs.`);
+      }
+    }
   }
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
@@ -503,7 +509,7 @@ export function check(base = root) {
   if (manifest.lessons.length && (!regularFile('assets/site.css') || !/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8')))) {
     errors.push('Shared style needs reduced-motion support.');
   }
-  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','feed.xml','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','feed.xml','AGENTS.md','CLAUDE.md','README.md','MISSION.md','RESOURCES.md']);
   // The owner-selected comparison gallery is separate from indexed learner lessons.
   const prototypeFiles = new Set(['index.html', 'README.md', 'gallery.css', 'templates.css', 'kit.js', 'templates.js', 'gallery.js'].map(file => `prototype/${file}`));
   const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));
@@ -515,9 +521,10 @@ export function check(base = root) {
       errors.push(...pathFindings);
       continue;
     }
-    const allowedPath = allowedRoots.has(name) || prototypeFiles.has(name) || (!unexpectedAuxiliaryPath(name) &&
+    const subjectFeed = registry.some(({ id }) => name === subjectFeedFile(id));
+    const allowedPath = allowedRoots.has(name) || subjectFeed || prototypeFiles.has(name) || (!unexpectedAuxiliaryPath(name) &&
       (/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name) || allowedSkillFolders.some(folder => name.startsWith(folder))));
-    const allowedType = textExtension.test(name) || allowedRoots.has(name);
+    const allowedType = textExtension.test(name) || allowedRoots.has(name) || subjectFeed;
     if (!allowedPath) errors.push(`Unexpected public repository path: ${name}`);
     if (!allowedType) errors.push(`Unsafe repository file type: ${name}`);
     const path = resolve(base, name);

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework lessons: Chemistry</title>
+    <link>https://aj-flynn.github.io/geometry-lessons/#subject-chemistry</link>
+    <atom:link href="https://aj-flynn.github.io/geometry-lessons/feeds/chemistry.xml" rel="self" type="application/rss+xml"/>
+    <description>New Chemistry concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Nov 2026 14:44:09 +0000</lastBuildDate>
+    <ttl>60</ttl>
+    <item>
+      <title>From particle formulas to physical properties</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0008-chemistry-evidence-split.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0008-chemistry-evidence-split.html</guid>
+      <pubDate>Sat, 07 Nov 2026 14:44:09 +0000</pubDate>
+      <description>Read a formula, build a dot structure, trace uneven pull, and explain an attraction between particles.</description>
+      <category>Chemistry</category>
+      <category>Particle formulas</category>
+      <category>Electron structures</category>
+      <category>Polarity</category>
+      <category>Intermolecular attractions</category>
+    </item>
+    <item>
+      <title>Compare attractions between molecules</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0006-between-molecules.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0006-between-molecules.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Locate a contact, then reason about how a sample melts or boils.</description>
+      <category>Chemistry</category>
+      <category>Particle models</category>
+      <category>Attractions</category>
+      <category>Physical properties</category>
+    </item>
+    <item>
+      <title>Trace pull through a molecule</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0005-shape-and-polarity.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0005-shape-and-polarity.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Use a lookup and a shape model to make two different polarity decisions.</description>
+      <category>Chemistry</category>
+      <category>Electronegativity</category>
+      <category>Geometry</category>
+      <category>Combined effects</category>
+    </item>
+    <item>
+      <title>Account for electrons in a drawing</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0004-electrons-and-bonds.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0004-electrons-and-bonds.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Build electron dot structures and count each kind of bond.</description>
+      <category>Chemistry</category>
+      <category>Electron accounting</category>
+      <category>Charge</category>
+      <category>Models</category>
+    </item>
+    <item>
+      <title>Read particle formulas</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0003-reading-particle-formulas.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0003-reading-particle-formulas.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Count atoms and identify the particle a formula describes.</description>
+      <category>Chemistry</category>
+      <category>Particle counting</category>
+      <category>Notation</category>
+      <category>Ratios</category>
+    </item>
+  </channel>
+</rss>

@@ -8,7 +8,9 @@
   <title>Homework lessons | Newest first</title>
   <link rel="alternate" type="application/rss+xml" title="Homework lessons" href="feed.xml">
   <link rel="stylesheet" href="assets/site.css?v=20261119-d1">
-  <link rel="stylesheet" href="assets/library-feed.css?v=20261119-d1">
+  <link rel="stylesheet" href="assets/library-feed.css?v=20261119-d2">
+  <script src="assets/library-filter.js?v=20261119-d2" defer></script>
+  {{SUBJECT_STYLE}}
 </head>
 <body class="library-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -46,7 +48,7 @@
         <h2 id="library-title">Lessons</h2>
         <p class="count-line">{{COUNT}}</p>
       </div>
-      <ul class="subject-counts" aria-label="Lessons by subject">{{SUBJECT_NAV}}</ul>
+      {{SUBJECT_NAV}}
       {{LESSONS}}
     </section>
 
@@ -64,11 +66,12 @@
     <section id="subscribe" class="subscribe frame" aria-labelledby="subscribe-title">
       <div>
         <h2 id="subscribe-title">Get new lessons as they land</h2>
-        <p>This page also publishes a feed. A feed reader or a feed-to-email service can watch it and send each new lesson as it appears.</p>
+        <p>This page also publishes a feed. A feed reader or a feed-to-email service can watch it and send each new lesson as it appears. Each subject has its own feed too, for a reader or email that should get only that subject.</p>
       </div>
       <div class="subscribe-actions">
         <a class="button secondary" href="feed.xml">Open the lesson feed <span aria-hidden="true">↗</span></a>
         <p class="feed-address">Feed address: <code>{{FEED_URL}}</code></p>
+        <p class="subject-feeds">One subject only: {{SUBJECT_FEEDS}}</p>
       </div>
     </section>
   </main>

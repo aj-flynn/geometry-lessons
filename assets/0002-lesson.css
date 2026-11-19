@@ -1,0 +1,51 @@
+/* Lesson 0002: text walkthroughs on the worked-example kit. Load after worked-example.css
+   and dialogue-study.css. Tokens only. */
+
+/* Slideshows, steps and the terms block sit at a readable width inside the wide activity layout. */
+.dialogue-lesson > :is(.worked, .define-block) { max-width: 1040px; margin-inline: auto; }
+
+/* Results here are sentences, not math: set them in the reading face. */
+.dialogue-lesson .deck .slide-math { font-family: var(--display); font-size: 1.14rem; line-height: 1.45; }
+.dialogue-lesson .steps .step-math { font-family: var(--display); font-size: 1.04rem; line-height: 1.45; }
+
+/* Passages: one line per speaker turn, and one line per sample sentence. */
+.dialogue-lesson .passage .line { display: block; }
+.dialogue-lesson .passage .line + .line { margin-top: .45rem; }
+.dialogue-lesson .deck .passage { font-size: 1.12rem; }
+.dialogue-lesson .passage-label { margin: 1rem 0 .25rem; font: 700 .74rem/1.3 var(--font); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.dialogue-lesson .passage-label:first-child { margin-top: 0; }
+.dialogue-lesson .define-block .stage { margin: .2rem 0 .6rem; font-size: .95rem; }
+
+/* A term's name written right after its marked example. */
+.dialogue-lesson .mark-tag {
+  display: inline-block;
+  margin-inline: .3em .1em;
+  padding: .12em .5em;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  font: 700 .64rem/1.2 var(--font);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  vertical-align: .18em;
+  white-space: nowrap;
+}
+/* The marked words, their label and any closing punctuation stay on one line. */
+.dialogue-lesson .tagged { white-space: nowrap; }
+
+/* Literal wording: underlined, not highlighted, because it is the plain case. */
+.lesson mark.hl-dash { background: none; box-shadow: none; border-bottom: 2px dashed var(--ink-2); border-radius: 0; }
+
+/* The note on inverted conditions sits under the translation steps. */
+.dialogue-lesson .worked .callout { margin-top: 1.6rem; }
+.dialogue-lesson .worked .callout h3 { margin-bottom: .2rem; }
+
+@media (max-width: 760px) {
+  .dialogue-lesson .deck .passage { font-size: 1.02rem; line-height: 1.65; }
+  .dialogue-lesson .deck .slide-math { font-size: 1.05rem; }
+}
+@media print {
+  .lesson mark.hl-dash { text-decoration: none; border-bottom: 1.5px dashed #333; }
+  .dialogue-lesson .mark-tag { border-color: #777; }
+}

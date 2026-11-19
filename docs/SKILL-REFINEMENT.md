@@ -186,3 +186,8 @@ Scope, identified by unchanged lesson SHA-256:
 At the owner’s direction, routine delivery now uses one focused independent review and a normal-browser smoke test. Resolve material privacy, assigned-answer, subject-correctness and core-usability findings; numerical scoring loops and unavailable optional modes do not hold delivery. Reduced-motion preference and paginated-print checks are temporarily excluded; their feature support remains. Browser scripts offer reduced-motion testing as an explicit opt-in.
 
 Historical contract digests now remain historical provenance instead of forcing every lesson’s records to be rewritten after maintenance. Exact lesson and transitive asset hashes remain enforced locally and live. Existing review evidence and scores retain their original scopes; this maintenance does not rescore historical lessons. Private routing, publication concurrency, live verification and no-duplicate-send safeguards remain.
+
+
+## 2026-11-19 model selection retired
+
+At the owner's direction, the model selectors in the 2026-11-17 entry no longer apply. Lessons are now authored by the session that receives the assignment and reviewed by a separate, freshly started reviewer subagent, as the lesson workflow describes. Earlier authors, reviewers, scores and limitations above remain historical and are not relabeled.

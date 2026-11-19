@@ -121,3 +121,84 @@
   .particle-lesson .chemistry-teaching .reasoning-diagram { margin-block: .35rem; }
   .particle-lesson #forces-conditions > figure { margin-block: .35rem; }
 }
+
+/* ---------- Worked-example structure (slideshows, steps, labeled diagrams) ---------- */
+/* One left edge for header, reading, worked and activity sections; paragraphs keep their measure. */
+.lesson.activity-lesson.particle-lesson { width: min(1100px, 100% - 48px); }
+.particle-lesson > header, .particle-lesson > .reading-block { max-width: none; }
+.particle-lesson > header .intro { max-width: 60ch; }
+.particle-lesson .route { margin-top: .9rem; }
+.particle-lesson .route::before { content: "Lesson sequence"; flex-basis: 100%; font: 700 .74rem/1.3 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.particle-lesson .worked-head .worked-goal { max-width: 68ch; }
+.particle-lesson .chem-lookup { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 4px 22px; align-items: start; margin-block: 1rem; }
+.particle-lesson .chem-lookup > * { min-width: 0; }
+.particle-lesson .chem-lookup table { margin-block: 0; }
+.particle-lesson .chem-lookup p { margin-block: .3rem; font-size: .95rem; }
+.particle-lesson .chem-lookup ul { margin-block: .3rem; font-size: .95rem; }
+.particle-lesson .worked > .chem-worked, .particle-lesson .worked > .follow-on { margin-top: 1.6rem; }
+.particle-lesson .follow-on > h3 { margin-top: 0; }
+.particle-lesson .define-block .define-list dt a { color: var(--ink); }
+.particle-lesson .define-block .rule { max-width: none; }
+.particle-lesson .activity > .eyebrow, .particle-lesson .reading-block > .eyebrow { margin-bottom: .35rem; }
+@media (max-width: 760px) {
+  .particle-lesson .chem-lookup { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .lesson.activity-lesson.particle-lesson { width: calc(100% - 32px); }
+}
+@media print {
+  .lesson.activity-lesson.particle-lesson { width: 100%; }
+  .particle-lesson .route::before { content: none; }
+}
+
+/* Structure kit for chemistry SVGs: atoms, bonds, lone pairs, ledgers and dipole arrows.
+   Red marks what a step uses; blue marks what it finds; faint marks what it leaves behind. */
+.ch-atom, .ch-atom-red, .ch-atom-blue, .ch-atom-faint { font: 700 24px var(--font); }
+.ch-atom { fill: var(--ink); }
+.ch-atom-red { fill: var(--red); }
+.ch-atom-blue { fill: var(--blue); }
+.ch-atom-faint { fill: #a39c8c; }
+.ch-bond, .ch-bond-red, .ch-bond-blue, .ch-bond-faint { fill: none; stroke-linecap: round; }
+.ch-bond { stroke: var(--ink); stroke-width: 2.6; }
+.ch-bond-red { stroke: var(--red-bright); stroke-width: 3.4; }
+.ch-bond-blue { stroke: var(--blue-bright); stroke-width: 3.4; }
+.ch-bond-faint { stroke: #b9b2a2; stroke-width: 2.2; stroke-dasharray: 4 5; }
+.ch-dot { fill: var(--ink); }
+.ch-dot-red { fill: var(--red-bright); }
+.ch-dot-blue { fill: var(--blue-bright); }
+.ch-dot-faint { fill: none; stroke: #a39c8c; stroke-width: 1.3; }
+.ch-ring, .ch-ring-red { fill: none; stroke-width: 2; stroke-dasharray: 5 4; }
+.ch-ring { stroke: var(--blue-bright); }
+.ch-ring-red { stroke: var(--red-bright); }
+.ch-halo-blue { fill: var(--blue-soft); }
+.ch-halo-red { fill: var(--red-soft); }
+.ch-halo-sun { fill: var(--sun-soft); }
+.ch-box { fill: none; stroke: var(--line-strong); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.ch-panel { fill: var(--paper-2); stroke: var(--line); stroke-width: 1; }
+.ch-contact { fill: none; stroke: var(--blue-bright); stroke-width: 3; stroke-dasharray: 1 6; stroke-linecap: round; }
+.ch-arrow, .ch-arrow-red, .ch-arrow-blue, .ch-arrow-faint { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.ch-arrow { stroke: var(--ink); }
+.ch-arrow-red { stroke: var(--red-bright); }
+.ch-arrow-blue { stroke: var(--blue-bright); }
+.ch-arrow-faint { stroke: #b9b2a2; stroke-dasharray: 4 4; }
+.ch-axis { fill: none; stroke: var(--ink); stroke-width: 2; }
+.ch-band-red { fill: var(--red-soft); }
+.ch-band-blue { fill: var(--blue-soft); }
+.ch-note { fill: var(--ink-2); font: 600 15px var(--font); }
+.ch-note-red { fill: var(--red); font: 700 15px var(--font); }
+.ch-note-blue { fill: var(--blue); font: 700 15px var(--font); }
+.ch-formula, .ch-formula-red, .ch-formula-blue { font: 700 38px var(--font); }
+.ch-formula { fill: var(--ink); }
+.ch-formula-red { fill: var(--red); }
+.ch-formula-blue { fill: var(--blue); }
+.ch-ledger { fill: var(--ink); font: 700 16px var(--font); }
+.ch-delta { fill: var(--blue); font: 700 17px var(--font); }
+.ch-cloud { fill: var(--blue-soft); stroke: var(--ink-2); stroke-width: 1.4; }
+.particle-lesson .chem-lookup .task-givens { table-layout: auto; }
+.particle-lesson .chem-lookup .task-givens th, .particle-lesson .chem-lookup .task-givens td { overflow-wrap: normal; }
+.particle-lesson .worked .practice > h3 { margin-top: 0; }
+.ch-ion-pos { fill: var(--blue-soft); stroke: var(--ink); stroke-width: 1.4; }
+.ch-ion-neg { fill: var(--sun-soft); stroke: var(--ink); stroke-width: 1.4; }
+.ch-ion-label { fill: var(--ink); font: 700 16px var(--font); }
+.ch-group { fill: var(--ink); font: 700 21px var(--font); }
+.ch-group-blue { fill: var(--blue); font: 700 21px var(--font); }

@@ -22,7 +22,9 @@ test('the index is one feed, newest first, with every lesson linked once and lab
   assert.ok(order.every(position=>position>0)&&order[0]<order[1]&&order[1]<order[2]);
   assert.match(html,/class="feed-latest"[\s\S]*0002-science-concept[\s\S]*class="feed"/);
   assert.match(html,/<time datetime="2026-11-03">Nov 3, 2026<\/time><span class="feed-subject">Science<\/span>/);
-  assert.match(html,/<li>Science <span>1<\/span><\/li>/);
+  assert.match(html,/<a class="filter-chip" href="#subject-science" data-filter="science" data-subject="science">Science<span class="filter-count" aria-hidden="true">1<\/span><\/a>/);
+  assert.match(html,/<span id="subject-science" class="filter-target"><\/span>/);
+  assert.match(html,/<p class="filter-empty" data-subject="chemistry">No Chemistry lessons yet/);
   assert.throws(()=>validateManifest({version:1,lessons:[lessons[2]]}),/version 2/);
   assert.throws(()=>validateManifest({version:2,lessons:[{...lessons[2],review:{...review,accuracy:false}}]}),/accuracy/);
   assert.throws(()=>validateManifest({version:2,lessons:[{...lessons[2],published:'Nov 2'}]}),/published/);
@@ -74,9 +76,30 @@ test('a new registry entry controls subject validation, grouping, and heading ID
   const registry=[...existing,{...spanish,label}];
   lesson.subject=label;
   const html=renderIndex(manifest,'<ul>{{SUBJECT_NAV}}</ul>{{LESSONS}}',registry);
-  assert.match(html,/<li>Spanish &amp; Culture <span>1<\/span><\/li>/);
+  assert.match(html,/href="#subject-spanish" data-filter="spanish" data-subject="spanish">Spanish &amp; Culture<span class="filter-count" aria-hidden="true">1<\/span>/);
+  assert.match(html,/class="feed-latest" data-subject="spanish"/);
   assert.match(html,/<span class="feed-subject">Spanish &amp; Culture<\/span>/);
   assert.match(html,/href="lessons\/0004-spanish-concept\.html"/);
+});
+
+test('the library filters by subject with CSS targets and each subject has its own feed',()=>{
+  const lessons=[
+    {...entry('0001-geometry-concept.html','Geometry'),published:'2026-11-01T10:00:00-05:00'},
+    {...entry('0002-english-concept.html','English'),published:'2026-11-03T10:00:00-05:00'}];
+  const manifest={version:2,lessons};
+  const html=renderIndex(manifest,'<head>{{SUBJECT_STYLE}}</head>{{SUBJECT_NAV}}{{LESSONS}}<p>{{SUBJECT_FEEDS}}</p>');
+  assert.match(html,/<nav class="subject-filter" aria-label="Lesson subjects">/);
+  assert.match(html,/href="#all-subjects" data-filter="all">All<span class="filter-count" aria-hidden="true">2<\/span>/);
+  assert.match(html,/#subject-geometry:target~\.feed-latest:not\(\[data-subject="geometry"\]\)/);
+  assert.match(html,/<a href="feeds\/english\.xml">English feed<\/a>/);
+  for(const id of html.match(/href="#subject-([a-z-]+)"/g).map(link=>link.slice(15,-1))) assert.match(html,new RegExp(`id="subject-${id}"`));
+  const english=renderFeed(manifest,undefined,'english');
+  assert.match(english,/<title>Homework lessons: English<\/title>/);
+  assert.match(english,/feeds\/english\.xml" rel="self"/);
+  assert.match(english,/0002-english-concept/);
+  assert.doesNotMatch(english,/0001-geometry-concept/);
+  assert.equal(renderFeed(manifest),renderFeed(manifest,undefined,undefined));
+  assert.throws(()=>renderFeed(manifest,undefined,'latin'),/Unknown subject feed/);
 });
 
 test('registry rejects duplicate subjects and unsafe labels, IDs, and skill paths',()=>{

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -125,41 +125,62 @@ const isoDay = new Intl.DateTimeFormat('en-CA', { timeZone: displayZone, year: '
 const shortDay = value => dayFormat.format(new Date(value));
 
 const subjectKey = lesson => subjectOf(lesson).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-function renderItem(lesson, featured = false) {
+export const subjectFeedFile = id => `feeds/${id}.xml`;
+function renderItem(lesson, featured = false, key = subjectKey(lesson)) {
   const href = `lessons/${escape(lesson.file)}`;
   const when = lesson.published ? `<time datetime="${escape(isoDay.format(new Date(lesson.published)))}">${escape(shortDay(lesson.published))}</time>` : '';
   const meta = `<p class="feed-meta">${when}<span class="feed-subject">${escape(subjectOf(lesson))}</span></p>`;
   const topics = `<p class="topic-line">${lesson.topics.map(escape).join(' · ')}</p>`;
-  const subject = `data-subject="${escape(subjectKey(lesson))}"`;
+  const subject = `data-subject="${escape(key)}"`;
   if (featured) {
-    return `<article class="feed-latest" ${subject} aria-labelledby="latest-title"><p class="feed-flag">Newest lesson</p>${meta}<h3 id="latest-title"><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}<a class="button" href="${href}">Start this lesson <span aria-hidden="true">→</span></a></article>`;
+    return `<article class="feed-latest" ${subject} aria-labelledby="latest-title"><p class="feed-flag">Newest lesson</p>${meta}<h3 id="latest-title"><a href="${href}" class="lesson-link">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}<a class="button" href="${href}">Start this lesson <span aria-hidden="true">→</span></a></article>`;
   }
-  return `<li class="feed-item" ${subject}>${meta}<h3><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
+  return `<li class="feed-item" ${subject}>${meta}<h3><a href="${href}" class="lesson-link">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
 }
 export function renderIndex(manifest, template, registry = defaultRegistry) {
   validateManifest(manifest, registry);
   const count = manifest.lessons.length;
   const ordered = feedOrder(manifest);
   const [latest, ...earlier] = ordered;
+  const ids = new Map(registry.map(({ id, label }) => [label, id]));
+  const keyOf = lesson => ids.get(subjectOf(lesson)) ?? subjectKey(lesson);
+  const tally = registry.map(({ id, label }) => ({ id, label, n: manifest.lessons.filter(lesson => subjectOf(lesson) === label).length }));
+  // Subject filter: each chip links to an empty target span; CSS :target filters the list with or without JavaScript.
+  const empties = latest ? tally.filter(({ n }) => !n).map(({ id, label }) =>
+    `\n      <p class="filter-empty" data-subject="${id}">No ${escape(label)} lessons yet. New ones will appear here.</p>`).join('') : '';
   const content = !latest
     ? '<p class="feed-empty">No lessons yet. The first lesson will appear here when it is published.</p>'
-    : `${renderItem(latest, true)}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson)}`).join('\n')}\n      </ol>` : ''}`;
-  const subjectNav = registry.map(({ label }) => {
-    const n = manifest.lessons.filter(lesson => subjectOf(lesson) === label).length;
-    return n ? `<li>${escape(label)} <span>${n}</span></li>` : '';
-  }).join('');
+    : `${renderItem(latest, true, keyOf(latest))}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson, false, keyOf(lesson))}`).join('\n')}\n      </ol>` : ''}${empties}`;
+  const chip = (href, filter, label, n, subject = '') =>
+    `<li><a class="filter-chip" href="${href}" data-filter="${filter}"${subject}>${label}<span class="filter-count" aria-hidden="true">${n}</span></a></li>`;
+  const subjectNav = `<span id="all-subjects" class="filter-reset"></span>${tally.map(({ id }) => `<span id="subject-${id}" class="filter-target"></span>`).join('')}
+      <nav class="subject-filter" aria-label="Lesson subjects"><ul>${chip('#all-subjects', 'all', 'All', count)}${tally.map(({ id, label, n }) => chip(`#subject-${id}`, id, escape(label), n, ` data-subject="${id}"`)).join('')}</ul></nav>
+      <p class="filter-status" role="status" aria-live="polite"></p>`;
+  const subjectStyle = `${tally.map(({ id, label }) => `<link rel="alternate" type="application/rss+xml" title="Homework lessons: ${escape(label)}" href="${subjectFeedFile(id)}">`).join('\n  ')}
+  <style>${[
+    [tally.map(({ id }) => `#subject-${id}:target~.feed-latest:not([data-subject="${id}"]),#subject-${id}:target~.feed>.feed-item:not([data-subject="${id}"])`), 'display:none'],
+    [tally.map(({ id }) => `#subject-${id}:target~.filter-empty[data-subject="${id}"]`), 'display:block'],
+    [tally.map(({ id }) => `#subject-${id}:target~.subject-filter [data-filter="${id}"]`), 'background:var(--ink);border-color:var(--ink);color:#fff']
+  ].map(([selectors, rule]) => `${selectors.join(',')}{${rule}}`).join('')}</style>`;
+  const subjectFeeds = tally.map(({ id, label }) => `<a href="${subjectFeedFile(id)}">${escape(label)} feed</a>`).join(' · ');
   return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`)
+    .replace('{{SUBJECT_STYLE}}', () => subjectStyle)
     .replace('{{SUBJECT_NAV}}', () => subjectNav)
     .replace('{{FEED_URL}}', () => escape(siteUrl + feedFile))
+    .replace('{{SUBJECT_FEEDS}}', () => subjectFeeds)
     .replace('{{LESSONS}}', () => content);
 }
 
 const rfc822 = value => new Date(value).toUTCString().replace(/GMT$/, '+0000');
 const xml = value => escape(value).replace(/&#39;/g, '&apos;');
 
-export function renderFeed(manifest, registry = defaultRegistry) {
+// With a subject ID, the feed lists only that subject's lessons at feeds/<id>.xml.
+export function renderFeed(manifest, registry = defaultRegistry, subjectId) {
   validateManifest(manifest, registry);
-  const ordered = feedOrder(manifest).filter(lesson => lesson.published);
+  const subject = subjectId === undefined ? undefined : registry.find(({ id }) => id === subjectId);
+  if (subjectId !== undefined && !subject) throw new Error(`Unknown subject feed: ${subjectId}`);
+  const self = siteUrl + (subject ? subjectFeedFile(subject.id) : feedFile);
+  const ordered = feedOrder(manifest).filter(lesson => lesson.published && (!subject || subjectOf(lesson) === subject.label));
   const items = ordered.map(lesson => {
     const link = siteUrl + 'lessons/' + lesson.file;
     const categories = [subjectOf(lesson), ...lesson.topics].map(c => `      <category>${xml(c)}</category>`).join('\n');
@@ -176,10 +197,10 @@ ${categories}
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Homework lessons</title>
-    <link>${xml(siteUrl)}</link>
-    <atom:link href="${xml(siteUrl + feedFile)}" rel="self" type="application/rss+xml"/>
-    <description>New concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <title>Homework lessons${subject ? `: ${xml(subject.label)}` : ''}</title>
+    <link>${xml(subject ? `${siteUrl}#subject-${subject.id}` : siteUrl)}</link>
+    <atom:link href="${xml(self)}" rel="self" type="application/rss+xml"/>
+    <description>New ${subject ? `${xml(subject.label)} ` : ''}concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
     <language>en-us</language>${built}
     <ttl>60</ttl>
 ${items}
@@ -188,9 +209,9 @@ ${items}
 `;
 }
 
-export function generateFeed(base = root) {
+export function generateFeed(base = root, subjectId) {
   const registry = loadSubjectRegistry(base);
-  return renderFeed(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
+  return renderFeed(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry, subjectId);
 }
 
 export function generateIndex(base = root) {
@@ -201,5 +222,7 @@ export function generateIndex(base = root) {
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   writeFileSync(resolve(root,'index.html'), generateIndex());
   writeFileSync(resolve(root,feedFile), generateFeed());
-  console.log(`Updated root index.html and ${feedFile} from lessons.json and subjects.json.`);
+  mkdirSync(resolve(root,'feeds'), { recursive: true });
+  for (const { id } of loadSubjectRegistry()) writeFileSync(resolve(root,subjectFeedFile(id)), generateFeed(root, id));
+  console.log(`Updated root index.html, ${feedFile} and the subject feeds from lessons.json and subjects.json.`);
 }

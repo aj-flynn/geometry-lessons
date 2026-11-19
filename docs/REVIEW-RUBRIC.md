@@ -97,7 +97,7 @@ The repository's [homework-teach skill](../.agents/skills/homework-teach/SKILL.m
 
 ## Separate opinions
 
-Claude Code, Codex, or another reviewer can use this rubric independently. Give each reviewer the same lesson version, rubric, scope, and authorized source material, without the other reviewer's scores or conclusions. Each chooses how to evaluate the work and explains its own findings. Preserve both opinions and compare their reasoning, especially where they disagree; a combined average is not a substitute for either assessment.
+A freshly started reviewer subagent, or another reviewer, can use this rubric independently. Give each reviewer the same lesson version, rubric, scope, and authorized source material, without the other reviewer's scores or conclusions. Each chooses how to evaluate the work and explains its own findings. Preserve both opinions and compare their reasoning, especially where they disagree; a combined average is not a substitute for either assessment.
 
 Identify the reviewer and assessed revision, give category scores and the total, and explain major strengths, concerns, and evidence limitations. The reviewer chooses the report format. A review by the lesson's author should be identified as such rather than described as an independent review.
 

@@ -29,6 +29,8 @@
   --geometry: #2348ad;
   --chemistry: #0b7566;
   --english: #8b3a86;
+  --science: #8a5a00;
+  --spanish: #a8243f;
   --accent: var(--red);
   /* Type */
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
@@ -201,6 +203,8 @@ caption { text-align: left; font-weight: 700; padding: 0 0 .4rem; }
 .subject-tag::before { content: ""; width: .7rem; height: .7rem; border-radius: 3px; background: var(--geometry); }
 .subject-tag[data-subject=chemistry]::before { background: var(--chemistry); }
 .subject-tag[data-subject=english]::before { background: var(--english); }
+.subject-tag[data-subject=science]::before { background: var(--science); }
+.subject-tag[data-subject=spanish]::before { background: var(--spanish); }
 
 /* Figures and diagrams */
 .lesson figure {

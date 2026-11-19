@@ -32,7 +32,7 @@
          when changing or testing something teaches a decision. Check the final paginated printout. -->
     <header>
       <a class="return-link" href="../index.html">← Lesson library</a>
-      <!-- AUTHOR: data-subject is geometry, chemistry or english (sets the swatch color). -->
+      <!-- AUTHOR: data-subject is the subjects.json id: geometry, chemistry, english, science or spanish (sets the swatch color). -->
       <p class="subject-tag" data-subject="geometry">AUTHOR: Subject · topic</p>
       <h1>AUTHOR: concept title</h1>
       <p class="lead">AUTHOR: one achievable concept goal, written at the approximate grade or course level of the assignment. No original problem or personal context.</p>
@@ -78,7 +78,11 @@
          same method as 3 to 6 numbered steps, each with an imperative action, its math line and a closed
          "Why?" giving the reason in one to three sentences. Then a fresh attempt for that type.
          Copy the deck controls verbatim; worked-example.js enables them. Without scripts every slide stays
-         visible as a numbered list, and print shows every slide. -->
+         visible as a numbered list, and print shows every slide.
+         For word-based tasks (English, Spanish), the slide figure holds the original passage instead of an
+         SVG: blockquote.passage with mark.hl-red / mark.hl-blue on the words this step uses or finds, and
+         ul.gloss naming each mark. The math line becomes the step's short result (a paraphrase, a form,
+         a claim). See lessons/0002-close-reading-dialogue.html. -->
     <section id="type-1" class="worked" aria-labelledby="type-1-title">
       <header class="worked-head">
         <p class="eyebrow">Problem type 1</p>

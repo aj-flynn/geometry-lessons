@@ -16,7 +16,7 @@
         "homeworkSeparation": true,
         "math": true,
         "accessibility": false,
-        "sha256": "e2178e50b4cb1fda7e6941b0af22c3a5f34092e5179146282f3f331ea9239863",
+        "sha256": "995727752adf1521c9d15c720c774bb54de08a34f53dd4385661992f7f37be4c",
         "accuracy": true,
         "dependencies": {
           "assets/0001-lesson.css": "587cd69aa15088d2def49bafa023be23c1ac814c7abc74cb036d32e3528c2912",
@@ -534,6 +534,7 @@
         "coreUsability": true,
         "limitations": [
           "Slide navigation tested with functional state tests; full browser and accessibility verification not performed.",
+          "The four worked samples are not each followed by a separate practice attempt; the previously reviewed version had none either, and none were invented in the redesign.",
           "Redesign review 2026-11-19: an independent reviewer compared this version with the previously reviewed one for preserved teaching content, accuracy, privacy and homework separation, and checked rendered pages at 1280px and 390px wide with keyboard use of every slideshow and check.",
           "Actual reduced-motion preference testing and paginated print inspection were outside the review scope.",
           "The four worked samples are not each followed by a separate practice attempt; the previously reviewed version had none either, and none were invented in the redesign."

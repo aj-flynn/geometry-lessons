@@ -1,0 +1,46 @@
+/* Library feed layout. Loaded by the root index only; lessons keep site.css unchanged. */
+.feed-hero{padding-block:48px 40px}
+.feed-hero h1{font-size:clamp(48px,6.5vw,92px)}
+.feed-hero .lead{margin-top:22px;max-width:34ch}
+.feed-library{padding-top:8px;padding-bottom:72px}
+.subject-counts{list-style:none;margin:0 0 28px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.subject-counts li{background:var(--surface);padding:6px 12px;font-size:16px;font-weight:700}
+.subject-counts span{font-weight:400}
+.feed-meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:16px;margin:0}
+.feed-meta time{font-weight:700}
+.feed-subject{background:var(--paper);border:2px solid var(--ink);padding:1px 10px;font-size:15px;font-weight:700}
+.feed-summary{margin-top:10px}
+.feed-latest{background:var(--accent);padding:32px;display:grid;gap:4px}
+.feed-latest h3{font-size:clamp(30px,3.4vw,44px);margin-top:14px}
+.feed-latest h3 a{text-decoration:none}
+.feed-latest h3 a:hover{text-decoration:underline}
+.feed-latest .button{justify-self:start;margin-top:22px}
+.feed-earlier-heading{font-size:24px;margin:48px 0 16px}
+.feed{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.feed-item{padding:24px 0;border-bottom:1px solid #c9cfc9;display:grid;grid-template-columns:minmax(150px,220px) 1fr;column-gap:32px}
+.feed-item .feed-meta{grid-row:1 / span 3;align-items:flex-start;flex-direction:column;gap:8px}
+.feed-item h3{font-size:24px}
+.feed-item .topic-line{margin-top:8px}
+.feed-empty{background:var(--surface);padding:32px}
+.subscribe{background:var(--surface);padding:40px;margin-bottom:72px}
+.subscribe h2{margin-bottom:16px}
+.subscribe .button{margin-top:8px}
+.feed-address{font-size:16px;overflow-wrap:anywhere}
+.feed-address code{font-size:15px}
+@media (max-width:720px){
+  .frame{width:calc(100% - 32px)}
+  .site-header{flex-direction:column;align-items:flex-start;gap:8px;padding-block:18px}
+  .site-header nav{flex-wrap:wrap;gap:4px 20px}
+  .feed-hero{padding-block:24px 28px}
+  .feed-latest{padding:22px}
+  .feed-item{grid-template-columns:1fr}
+  .feed-item .feed-meta{grid-row:auto;flex-direction:row;align-items:center}
+  .feed-item h3{margin-top:8px}
+  .subscribe{padding:24px}
+  .how-inner{grid-template-columns:1fr}
+  .site-footer{flex-direction:column;align-items:flex-start}
+}
+@media print{
+  .feed-latest,.subscribe{background:none;border:2px solid var(--ink)}
+  .site-header nav,.skip-link{display:none}
+}

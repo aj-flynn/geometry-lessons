@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, renderFeed, feedFile, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -237,6 +237,8 @@ function inspectHtml(source) {
         addDeclaredResource(attrs.get('href'), /\.css$/, 'Stylesheet links must point to .css resources.');
       } else if (rel === 'modulepreload' || (rel === 'preload' && as === 'script')) {
         addDeclaredResource(attrs.get('href'), /\.m?js$/, 'Script preloads must point to .js or .mjs resources.');
+      } else if (rel === 'alternate' && attrs.get('type')?.trim().toLowerCase() === 'application/rss+xml' && attrs.get('href') === 'feed.xml') {
+        // The library index advertises its own static feed; nothing is loaded or executed.
       } else if (attrs.has('href')) {
         throw new Error('Lesson link elements must declare stylesheets or script/style preloads.');
       }
@@ -453,6 +455,14 @@ export function check(base = root) {
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
   const template = readFileSync(resolve(base,'templates/index.html'),'utf8');
   if (readFileSync(resolve(base,'index.html'),'utf8') !== renderIndex(manifest, template, registry)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
+  // Once any lesson carries a publication time, the library publishes a feed and every lesson needs one.
+  if (existsSync(resolve(base, feedFile)) || manifest.lessons.some(lesson => lesson.published !== undefined)) {
+    const undated = manifest.lessons.filter(lesson => lesson.published === undefined).map(lesson => lesson.file);
+    if (undated.length) errors.push(`Lessons need a published time for the feed: ${undated.join(', ')}.`);
+    if (!existsSync(resolve(base, feedFile)) || readFileSync(resolve(base, feedFile), 'utf8') !== renderFeed(manifest, registry)) {
+      errors.push(`Lesson feed is stale; run node scripts/build-index.mjs.`);
+    }
+  }
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
@@ -493,7 +503,7 @@ export function check(base = root) {
   if (manifest.lessons.length && (!regularFile('assets/site.css') || !/prefers-reduced-motion/.test(readFileSync(resolve(base,'assets/site.css'),'utf8')))) {
     errors.push('Shared style needs reduced-motion support.');
   }
-  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
+  const allowedRoots = new Set(['.gitignore','.gitattributes','.nojekyll','package.json','package-lock.json','lessons.json','subjects.json','index.html','feed.xml','AGENTS.md','README.md','MISSION.md','RESOURCES.md']);
   // The owner-selected comparison gallery is separate from indexed learner lessons.
   const prototypeFiles = new Set(['index.html', 'README.md', 'gallery.css', 'templates.css', 'kit.js', 'templates.js', 'gallery.js'].map(file => `prototype/${file}`));
   const allowedSkillFolders = [sharedSkill, ...registry.map(({ skill }) => skill)].map(skill => skill.slice(0, -'SKILL.md'.length));

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework lessons</title>
+    <link>https://aj-flynn.github.io/geometry-lessons/</link>
+    <atom:link href="https://aj-flynn.github.io/geometry-lessons/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>New concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Nov 2026 19:43:58 +0000</lastBuildDate>
+    <ttl>60</ttl>
+    <item>
+      <title>Equal sides, equal angles</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0011-equal-sides-equal-angles.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0011-equal-sides-equal-angles.html</guid>
+      <pubDate>Thu, 19 Nov 2026 19:43:58 +0000</pubDate>
+      <description>Use the Isosceles Triangle Theorem and its converse to match equal sides with equal angles, even when triangles share corners.</description>
+      <category>Geometry</category>
+      <category>Isosceles triangles</category>
+      <category>Base angles</category>
+      <category>Converse</category>
+    </item>
+    <item>
+      <title>From marks to triangle proofs</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0010-from-marks-to-triangle-proofs.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0010-from-marks-to-triangle-proofs.html</guid>
+      <pubDate>Wed, 18 Nov 2026 06:21:56 +0000</pubDate>
+      <description>Read geometric marks, match triangles in order, and justify what follows from congruence.</description>
+      <category>Geometry</category>
+      <category>Geometric marks</category>
+      <category>Triangle congruence</category>
+      <category>Proof and reasoning</category>
+    </item>
+    <item>
+      <title>Ratios from geometric marks</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0009-ratios-from-geometric-marks.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0009-ratios-from-geometric-marks.html</guid>
+      <pubDate>Tue, 17 Nov 2026 20:22:47 +0000</pubDate>
+      <description>Work through four slide-based examples at your own pace, with concise steps and expandable explanations.</description>
+      <category>Geometry</category>
+      <category>Angle bisectors</category>
+      <category>Parallel cuts</category>
+      <category>Proportional lengths</category>
+    </item>
+    <item>
+      <title>From particle formulas to physical properties</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0008-chemistry-evidence-split.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0008-chemistry-evidence-split.html</guid>
+      <pubDate>Sat, 07 Nov 2026 14:44:09 +0000</pubDate>
+      <description>Read a formula, build a dot structure, trace uneven pull, and explain an attraction between particles.</description>
+      <category>Chemistry</category>
+      <category>Particle formulas</category>
+      <category>Electron structures</category>
+      <category>Polarity</category>
+      <category>Intermolecular attractions</category>
+    </item>
+    <item>
+      <title>Two angles, one shape</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0007-aa-triangle-similarity.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0007-aa-triangle-similarity.html</guid>
+      <pubDate>Fri, 06 Nov 2026 11:16:37 +0000</pubDate>
+      <description>Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements.</description>
+      <category>Geometry</category>
+      <category>AA similarity</category>
+      <category>Vertex correspondence</category>
+      <category>Whole sides</category>
+      <category>Algebraic proportions</category>
+      <category>Mixed units</category>
+    </item>
+    <item>
+      <title>Compare attractions between molecules</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0006-between-molecules.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0006-between-molecules.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Locate a contact, then reason about how a sample melts or boils.</description>
+      <category>Chemistry</category>
+      <category>Particle models</category>
+      <category>Attractions</category>
+      <category>Physical properties</category>
+    </item>
+    <item>
+      <title>Trace pull through a molecule</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0005-shape-and-polarity.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0005-shape-and-polarity.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Use a lookup and a shape model to make two different polarity decisions.</description>
+      <category>Chemistry</category>
+      <category>Electronegativity</category>
+      <category>Geometry</category>
+      <category>Combined effects</category>
+    </item>
+    <item>
+      <title>Account for electrons in a drawing</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0004-electrons-and-bonds.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0004-electrons-and-bonds.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Build electron dot structures and count each kind of bond.</description>
+      <category>Chemistry</category>
+      <category>Electron accounting</category>
+      <category>Charge</category>
+      <category>Models</category>
+    </item>
+    <item>
+      <title>Read particle formulas</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0003-reading-particle-formulas.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0003-reading-particle-formulas.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:23:23 +0000</pubDate>
+      <description>Count atoms and identify the particle a formula describes.</description>
+      <category>Chemistry</category>
+      <category>Particle counting</category>
+      <category>Notation</category>
+      <category>Ratios</category>
+    </item>
+    <item>
+      <title>Read between the lines</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0002-close-reading-dialogue.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0002-close-reading-dialogue.html</guid>
+      <pubDate>Thu, 05 Nov 2026 01:11:46 +0000</pubDate>
+      <description>Practice translating older dialogue, explaining figures of speech, and supporting character traits with exact quotations.</description>
+      <category>English</category>
+      <category>Close reading</category>
+      <category>Figurative language</category>
+      <category>Evidence and reasoning</category>
+    </item>
+    <item>
+      <title>Similar polygons</title>
+      <link>https://aj-flynn.github.io/geometry-lessons/lessons/0001-similar-polygons.html</link>
+      <guid isPermaLink="true">https://aj-flynn.github.io/geometry-lessons/lessons/0001-similar-polygons.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:36:29 +0000</pubDate>
+      <description>Match turned polygons, reason with scale, and justify claims about similar figures.</description>
+      <category>Geometry</category>
+      <category>Similarity</category>
+      <category>Scale factors</category>
+      <category>Perimeter and area</category>
+    </item>
+  </channel>
+</rss>

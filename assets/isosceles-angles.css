@@ -1,0 +1,23 @@
+/* Additions for the isosceles lesson; shared proof styles come from triangle-proof-marks.css. */
+.proof-marks .check-box[data-choice-check]:not([data-ready="true"]) { display: none; }
+.proof-marks .recipe { counter-reset: step; list-style: none; padding: 0; }
+.proof-marks .recipe li { counter-increment: step; position: relative; padding-inline-start: 2.2em; }
+.proof-marks .recipe li + li { margin-top: .7em; }
+.proof-marks .recipe li::before {
+  content: counter(step);
+  position: absolute; inset-inline-start: 0; top: .05em;
+  width: 1.6em; height: 1.6em; border-radius: 50%;
+  background: var(--accent-ink); color: #fff;
+  font-size: .85em; font-weight: 800; text-align: center; line-height: 1.6em;
+}
+.proof-marks .statement { font-weight: 700; }
+.proof-marks .practice-list > li + li { margin-top: 1.4em; }
+.proof-marks .checklist li + li { margin-top: .4em; }
+.proof-marks form.practice { background: var(--soft); padding: 14px; margin-block: 14px; }
+.proof-marks form.practice label { display: block; font-weight: 700; margin-bottom: 6px; }
+.proof-marks form.practice button { margin-top: 10px; }
+@media print {
+  .proof-marks form.practice { display: none; }
+  .proof-marks .practice-list > li { break-inside: avoid; }
+}
+.proof-diagram text.measure { font-size: 16px; font-weight: 600; }

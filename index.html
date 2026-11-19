@@ -3,59 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Concept lessons by subject with plain-language glossaries, interactive explanations, and new examples to explore.">
+  <meta name="description" content="A feed of concept lessons, newest first, with plain-language glossaries, interactive explanations, and new examples to explore.">
   <meta name="referrer" content="no-referrer">
-  <title>Homework lessons | Explore by subject</title>
+  <title>Homework lessons | Newest first</title>
+  <link rel="alternate" type="application/rss+xml" title="Homework lessons" href="feed.xml">
   <link rel="stylesheet" href="assets/site.css?v=20261107-r8">
+  <link rel="stylesheet" href="assets/library-feed.css?v=20261119-r1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header frame">
     <a class="wordmark" href="index.html">Homework lessons<span aria-hidden="true">↗</span></a>
-    <nav aria-label="Main navigation"><a href="#lessons">Lesson library</a><a href="#how">How to learn</a></nav>
+    <nav aria-label="Main navigation"><a href="#lessons">Newest lessons</a><a href="#subscribe">Get new lessons</a><a href="#how">How to learn</a></nav>
   </header>
   <main id="main">
-    <section class="hero frame" aria-labelledby="title">
-      <div class="hero-copy">
-        <h1 id="title">See the<br>idea.</h1>
-        <p class="lead">Understand the idea.<br>Then work it out yourself.</p>
-        <p>Explore your subjects one idea at a time. Use the glossary, test a relationship, and practice with different examples.</p>
-        <a class="button" href="#lessons">Explore the library <span aria-hidden="true">↘</span></a>
-      </div>
-      <figure class="hero-figure">
-        <svg viewBox="0 0 600 480" role="img" aria-labelledby="shape-title shape-desc">
-          <title id="shape-title">A triangle, drawn one side at a time</title>
-          <desc id="shape-desc">Three labeled vertices A, B, and C joined by three straight sides. A simple illustration of the kind of diagram used in the lessons.</desc>
-          <path class="triangle-field" d="M80 370 370 65 525 370Z"/>
-          <path class="triangle-trace" d="M80 370 370 65 525 370Z" fill="none"/>
-          <g class="vertex"><circle cx="80" cy="370" r="7"/><text x="48" y="414">A</text></g>
-          <g class="vertex"><circle cx="370" cy="65" r="7"/><text x="363" y="40">B</text></g>
-          <g class="vertex"><circle cx="525" cy="370" r="7"/><text x="532" y="414">C</text></g>
-        </svg>
-        <figcaption>Start with what you notice.</figcaption>
-      </figure>
+    <section class="feed-hero frame" aria-labelledby="title">
+      <h1 id="title">New lessons,<br>newest first.</h1>
+      <p class="lead">Each lesson teaches the idea with fresh examples. Your own work stays yours.</p>
     </section>
-    <section id="lessons" class="library frame" aria-labelledby="library-title">
-      <div class="section-heading"><h2 id="library-title">Your lesson shelf</h2><p>10 lessons to revisit</p></div>
-      <nav class="subject-nav" aria-label="Lesson subjects"><a href="#subject-geometry">Geometry</a><a href="#subject-science">Science</a><a href="#subject-chemistry">Chemistry</a><a href="#subject-english">English</a><a href="#subject-spanish">Spanish</a></nav>
-      <section class="subject-group" aria-labelledby="subject-geometry"><div class="subject-heading"><h3 id="subject-geometry">Geometry</h3><p>4 lessons</p></div><ul class="lesson-list">
-        <li><a class="lesson-link" href="lessons/0001-similar-polygons.html"><div><h4>Similar polygons</h4><span class="topic-line">Similarity · Scale factors · Perimeter and area</span></div><p>Match turned polygons, reason with scale, and justify claims about similar figures. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0007-aa-triangle-similarity.html"><div><h4>Two angles, one shape</h4><span class="topic-line">AA similarity · Vertex correspondence · Whole sides · Algebraic proportions · Mixed units</span></div><p>Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0009-ratios-from-geometric-marks.html"><div><h4>Ratios from geometric marks</h4><span class="topic-line">Angle bisectors · Parallel cuts · Proportional lengths</span></div><p>Work through four slide-based examples at your own pace, with concise steps and expandable explanations. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0010-from-marks-to-triangle-proofs.html"><div><h4>From marks to triangle proofs</h4><span class="topic-line">Geometric marks · Triangle congruence · Proof and reasoning</span></div><p>Read geometric marks, match triangles in order, and justify what follows from congruence. <span aria-hidden="true">↗</span></p></a></li>
-      </ul></section>
-      <section class="subject-group" aria-labelledby="subject-science"><div class="subject-heading"><h3 id="subject-science">Science</h3><p>0 lessons</p></div><p class="subject-empty">No science lessons yet. A concept lesson will appear here when one is added.</p></section>
-      <section class="subject-group" aria-labelledby="subject-chemistry"><div class="subject-heading"><h3 id="subject-chemistry">Chemistry</h3><p>5 lessons</p></div><ul class="lesson-list">
-        <li><a class="lesson-link" href="lessons/0003-reading-particle-formulas.html"><div><h4>Read particle formulas</h4><span class="topic-line">Particle counting · Notation · Ratios</span></div><p>Count atoms and identify the particle a formula describes. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0004-electrons-and-bonds.html"><div><h4>Account for electrons in a drawing</h4><span class="topic-line">Electron accounting · Charge · Models</span></div><p>Build electron dot structures and count each kind of bond. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0005-shape-and-polarity.html"><div><h4>Trace pull through a molecule</h4><span class="topic-line">Electronegativity · Geometry · Combined effects</span></div><p>Use a lookup and a shape model to make two different polarity decisions. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0006-between-molecules.html"><div><h4>Compare attractions between molecules</h4><span class="topic-line">Particle models · Attractions · Physical properties</span></div><p>Locate a contact, then reason about how a sample melts or boils. <span aria-hidden="true">↗</span></p></a></li>
-        <li><a class="lesson-link" href="lessons/0008-chemistry-evidence-split.html"><div><h4>From particle formulas to physical properties</h4><span class="topic-line">Particle formulas · Electron structures · Polarity · Intermolecular attractions</span></div><p>Read a formula, build a dot structure, trace uneven pull, and explain an attraction between particles. <span aria-hidden="true">↗</span></p></a></li>
-      </ul></section>
-      <section class="subject-group" aria-labelledby="subject-english"><div class="subject-heading"><h3 id="subject-english">English</h3><p>1 lesson</p></div><ul class="lesson-list">
-        <li><a class="lesson-link" href="lessons/0002-close-reading-dialogue.html"><div><h4>Read between the lines</h4><span class="topic-line">Close reading · Figurative language · Evidence and reasoning</span></div><p>Practice translating older dialogue, explaining figures of speech, and supporting character traits with exact quotations. <span aria-hidden="true">↗</span></p></a></li>
-      </ul></section>
-      <section class="subject-group" aria-labelledby="subject-spanish"><div class="subject-heading"><h3 id="subject-spanish">Spanish</h3><p>0 lessons</p></div><p class="subject-empty">No spanish lessons yet. A concept lesson will appear here when one is added.</p></section>
+    <section id="lessons" class="library feed-library frame" aria-labelledby="library-title">
+      <div class="section-heading"><h2 id="library-title">The lesson feed</h2><p>11 lessons to revisit</p></div>
+      <ul class="subject-counts" aria-label="Lessons by subject"><li>Geometry <span>5</span></li><li>Chemistry <span>5</span></li><li>English <span>1</span></li></ul>
+      <article class="feed-latest" aria-labelledby="latest-title"><p class="feed-meta"><time datetime="2026-11-19">Nov 19, 2026</time><span class="feed-subject">Geometry</span></p><h3 id="latest-title"><a href="lessons/0011-equal-sides-equal-angles.html">Equal sides, equal angles</a></h3><p class="feed-summary">Use the Isosceles Triangle Theorem and its converse to match equal sides with equal angles, even when triangles share corners.</p><p class="topic-line">Isosceles triangles · Base angles · Converse</p><a class="button" href="lessons/0011-equal-sides-equal-angles.html">Open the newest lesson <span aria-hidden="true">→</span></a></article>
+      <h3 class="feed-earlier-heading">Earlier lessons</h3>
+      <ol class="feed" reversed>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-18">Nov 18, 2026</time><span class="feed-subject">Geometry</span></p><h3><a href="lessons/0010-from-marks-to-triangle-proofs.html">From marks to triangle proofs</a></h3><p class="feed-summary">Read geometric marks, match triangles in order, and justify what follows from congruence.</p><p class="topic-line">Geometric marks · Triangle congruence · Proof and reasoning</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-17">Nov 17, 2026</time><span class="feed-subject">Geometry</span></p><h3><a href="lessons/0009-ratios-from-geometric-marks.html">Ratios from geometric marks</a></h3><p class="feed-summary">Work through four slide-based examples at your own pace, with concise steps and expandable explanations.</p><p class="topic-line">Angle bisectors · Parallel cuts · Proportional lengths</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-07">Nov 7, 2026</time><span class="feed-subject">Chemistry</span></p><h3><a href="lessons/0008-chemistry-evidence-split.html">From particle formulas to physical properties</a></h3><p class="feed-summary">Read a formula, build a dot structure, trace uneven pull, and explain an attraction between particles.</p><p class="topic-line">Particle formulas · Electron structures · Polarity · Intermolecular attractions</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-06">Nov 6, 2026</time><span class="feed-subject">Geometry</span></p><h3><a href="lessons/0007-aa-triangle-similarity.html">Two angles, one shape</a></h3><p class="feed-summary">Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements.</p><p class="topic-line">AA similarity · Vertex correspondence · Whole sides · Algebraic proportions · Mixed units</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">Chemistry</span></p><h3><a href="lessons/0006-between-molecules.html">Compare attractions between molecules</a></h3><p class="feed-summary">Locate a contact, then reason about how a sample melts or boils.</p><p class="topic-line">Particle models · Attractions · Physical properties</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">Chemistry</span></p><h3><a href="lessons/0005-shape-and-polarity.html">Trace pull through a molecule</a></h3><p class="feed-summary">Use a lookup and a shape model to make two different polarity decisions.</p><p class="topic-line">Electronegativity · Geometry · Combined effects</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">Chemistry</span></p><h3><a href="lessons/0004-electrons-and-bonds.html">Account for electrons in a drawing</a></h3><p class="feed-summary">Build electron dot structures and count each kind of bond.</p><p class="topic-line">Electron accounting · Charge · Models</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">Chemistry</span></p><h3><a href="lessons/0003-reading-particle-formulas.html">Read particle formulas</a></h3><p class="feed-summary">Count atoms and identify the particle a formula describes.</p><p class="topic-line">Particle counting · Notation · Ratios</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">English</span></p><h3><a href="lessons/0002-close-reading-dialogue.html">Read between the lines</a></h3><p class="feed-summary">Practice translating older dialogue, explaining figures of speech, and supporting character traits with exact quotations.</p><p class="topic-line">Close reading · Figurative language · Evidence and reasoning</p></li>
+        <li class="feed-item"><p class="feed-meta"><time datetime="2026-11-04">Nov 4, 2026</time><span class="feed-subject">Geometry</span></p><h3><a href="lessons/0001-similar-polygons.html">Similar polygons</a></h3><p class="feed-summary">Match turned polygons, reason with scale, and justify claims about similar figures.</p><p class="topic-line">Similarity · Scale factors · Perimeter and area</p></li>
+      </ol>
+    </section>
+    <section id="subscribe" class="subscribe frame" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Get new lessons as they land</h2>
+      <p>This page also publishes a feed. A feed reader or a feed-to-email service can watch it and send each new lesson as it appears.</p>
+      <p><a class="button" href="feed.xml">Open the lesson feed <span aria-hidden="true">↗</span></a></p>
+      <p class="feed-address">Feed address: <code>https://aj-flynn.github.io/geometry-lessons/feed.xml</code></p>
     </section>
     <section id="how" class="how" aria-labelledby="how-title">
       <div class="frame how-inner">
@@ -71,4 +59,3 @@
   <footer class="site-footer frame"><p>Ideas to keep.<br>Skills to build.</p><span>Concept lessons only. No homework sheets or personal details.</span></footer>
 </body>
 </html>
-

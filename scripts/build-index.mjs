@@ -86,6 +86,7 @@ export function validateManifest(manifest, registry = defaultRegistry) {
         lesson.review.limitations.every(item => typeof item === 'string' && item.trim()))) {
       throw new Error(`${lesson.file}: missing scoped accessibility/usability review.`);
     }
+    validatePublished(lesson);
     if (typeof lesson.review.sha256 !== 'string' || !sha256.test(lesson.review.sha256)) {
       throw new Error(`${lesson.file}: missing final HTML SHA-256.`);
     }
@@ -97,19 +98,98 @@ export function validateManifest(manifest, registry = defaultRegistry) {
   return manifest;
 }
 
+export const siteUrl = 'https://aj-flynn.github.io/geometry-lessons/';
+export const feedFile = 'feed.xml';
+const displayZone = 'America/Indiana/Indianapolis';
+const publishedPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+
+export function validatePublished(lesson) {
+  if (lesson.published === undefined) return;
+  if (typeof lesson.published !== 'string' || !publishedPattern.test(lesson.published) || Number.isNaN(Date.parse(lesson.published))) {
+    throw new Error(`${lesson.file}: published must be an ISO 8601 date and time with a time zone.`);
+  }
+}
+
+// Newest first. Lessons without a publication time fall back to their library number.
+export function feedOrder(manifest) {
+  return [...manifest.lessons].sort((a, b) => {
+    const at = a.published ? Date.parse(a.published) : -Infinity;
+    const bt = b.published ? Date.parse(b.published) : -Infinity;
+    if (at !== bt) return bt - at;
+    return b.file.localeCompare(a.file);
+  });
+}
+
+const dayFormat = new Intl.DateTimeFormat('en-US', { timeZone: displayZone, month: 'short', day: 'numeric', year: 'numeric' });
+const isoDay = new Intl.DateTimeFormat('en-CA', { timeZone: displayZone, year: 'numeric', month: '2-digit', day: '2-digit' });
+const shortDay = value => dayFormat.format(new Date(value));
+
+function renderItem(lesson, featured = false) {
+  const href = `lessons/${escape(lesson.file)}`;
+  const when = lesson.published ? `<time datetime="${escape(isoDay.format(new Date(lesson.published)))}">${escape(shortDay(lesson.published))}</time>` : '';
+  const meta = `<p class="feed-meta">${when}<span class="feed-subject">${escape(subjectOf(lesson))}</span></p>`;
+  const topics = `<p class="topic-line">${lesson.topics.map(escape).join(' · ')}</p>`;
+  if (featured) {
+    return `<article class="feed-latest" aria-labelledby="latest-title">${meta}<h3 id="latest-title"><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}<a class="button" href="${href}">Open the newest lesson <span aria-hidden="true">→</span></a></article>`;
+  }
+  return `<li class="feed-item">${meta}<h3><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
+}
+
 export function renderIndex(manifest, template, registry = defaultRegistry) {
   validateManifest(manifest, registry);
   const count = manifest.lessons.length;
-  const content = registry.map(({ id, label }) => {
-    const lessons = manifest.lessons.filter(lesson=>subjectOf(lesson)===label).sort((a,b)=>a.file.localeCompare(b.file));
-    const headingId = 'subject-'+id;
-    const entries = lessons.length ? `<ul class="lesson-list">\n${lessons.map(lesson => `        <li><a class="lesson-link" href="lessons/${escape(lesson.file)}"><div><h4>${escape(lesson.title)}</h4><span class="topic-line">${lesson.topics.map(escape).join(' · ')}</span></div><p>${escape(lesson.summary)} <span aria-hidden="true">↗</span></p></a></li>`).join('\n')}\n      </ul>` : `<p class="subject-empty">No ${escape(label.toLowerCase())} lessons yet. A concept lesson will appear here when one is added.</p>`;
-    return `<section class="subject-group" aria-labelledby="${headingId}"><div class="subject-heading"><h3 id="${headingId}">${escape(label)}</h3><p>${lessons.length} ${lessons.length===1?'lesson':'lessons'}</p></div>${entries}</section>`;
-  }).join('\n      ');
-  const subjectNav = registry.map(({ id, label }) => `<a href="#subject-${id}">${escape(label)}</a>`).join('');
+  const ordered = feedOrder(manifest);
+  const [latest, ...earlier] = ordered;
+  const content = !latest
+    ? '<p class="feed-empty">No lessons yet. The first lesson will appear here when it is published.</p>'
+    : `${renderItem(latest, true)}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson)}`).join('\n')}\n      </ol>` : ''}`;
+  const subjectNav = registry.map(({ label }) => {
+    const n = manifest.lessons.filter(lesson => subjectOf(lesson) === label).length;
+    return n ? `<li>${escape(label)} <span>${n}</span></li>` : '';
+  }).join('');
   return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`)
     .replace('{{SUBJECT_NAV}}', () => subjectNav)
+    .replace('{{FEED_URL}}', () => escape(siteUrl + feedFile))
     .replace('{{LESSONS}}', () => content);
+}
+
+const rfc822 = value => new Date(value).toUTCString().replace(/GMT$/, '+0000');
+const xml = value => escape(value).replace(/&#39;/g, '&apos;');
+
+export function renderFeed(manifest, registry = defaultRegistry) {
+  validateManifest(manifest, registry);
+  const ordered = feedOrder(manifest).filter(lesson => lesson.published);
+  const items = ordered.map(lesson => {
+    const link = siteUrl + 'lessons/' + lesson.file;
+    const categories = [subjectOf(lesson), ...lesson.topics].map(c => `      <category>${xml(c)}</category>`).join('\n');
+    return `    <item>
+      <title>${xml(lesson.title)}</title>
+      <link>${xml(link)}</link>
+      <guid isPermaLink="true">${xml(link)}</guid>
+      <pubDate>${rfc822(lesson.published)}</pubDate>
+      <description>${xml(lesson.summary)}</description>
+${categories}
+    </item>`;
+  }).join('\n');
+  const built = ordered.length ? `\n    <lastBuildDate>${rfc822(ordered[0].published)}</lastBuildDate>` : '';
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework lessons</title>
+    <link>${xml(siteUrl)}</link>
+    <atom:link href="${xml(siteUrl + feedFile)}" rel="self" type="application/rss+xml"/>
+    <description>New concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <language>en-us</language>${built}
+    <ttl>60</ttl>
+${items}
+  </channel>
+</rss>
+`;
+}
+
+export function generateFeed(base = root) {
+  const registry = loadSubjectRegistry(base);
+  return renderFeed(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
 }
 
 export function generateIndex(base = root) {
@@ -119,5 +199,6 @@ export function generateIndex(base = root) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   writeFileSync(resolve(root,'index.html'), generateIndex());
-  console.log('Updated root index.html from lessons.json and subjects.json.');
+  writeFileSync(resolve(root,feedFile), generateFeed());
+  console.log(`Updated root index.html and ${feedFile} from lessons.json and subjects.json.`);
 }

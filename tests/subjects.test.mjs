@@ -4,40 +4,52 @@ import {mkdtempSync,mkdirSync,writeFileSync,cpSync,rmSync,readFileSync} from 'no
 import {tmpdir} from 'node:os';
 import {join,resolve,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
-import {root,renderIndex,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry,reviewContractCoreFiles} from '../scripts/build-index.mjs';
+import {root,renderIndex,renderFeed,validateManifest,generateIndex,subjectOf,loadSubjectRegistry,validateSubjectRegistry,reviewContractCoreFiles} from '../scripts/build-index.mjs';
 import {check,collectReviewContractHashes} from '../scripts/check.mjs';
 
 const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{},contract:{}};
 const entry=(file,subject)=>({file,subject,title:subject+' concept',summary:'Synthetic metadata only.',topics:['Concept'],review:{...review}});
 const spanish={id:'spanish',label:'Spanish',skill:'.agents/skills/spanish-teach/SKILL.md'};
 
-test('English is indexed independently while geometry and science retain their links',()=>{
-  const lessons=[entry('0001-geometry-concept.html','Geometry'),entry('0002-science-concept.html','Science'),entry('0003-english-concept.html','English')];
-  const html=renderIndex({version:2,lessons},'{{COUNT}} {{LESSONS}}');
+test('the index is one feed, newest first, with every lesson linked once and labeled by subject',()=>{
+  const lessons=[
+    {...entry('0001-geometry-concept.html','Geometry'),published:'2026-11-01T10:00:00-05:00'},
+    {...entry('0002-science-concept.html','Science'),published:'2026-11-03T10:00:00-05:00'},
+    {...entry('0003-english-concept.html','English'),published:'2026-11-02T10:00:00-05:00'}];
+  const html=renderIndex({version:2,lessons},'{{COUNT}} {{SUBJECT_NAV}} {{LESSONS}}');
   assert.match(html,/3 lessons to revisit/);
-  for (const lesson of lessons) {
-    const start=html.indexOf('id="subject-'+lesson.subject.toLowerCase()+'"');
-    const end=html.indexOf('</section>',start);
-    assert.ok(html.slice(start,end).includes('href="lessons/'+lesson.file+'"'));
-  }
+  const order=['0002-science-concept','0003-english-concept','0001-geometry-concept'].map(name=>html.indexOf('href="lessons/'+name+'.html"'));
+  assert.ok(order.every(position=>position>0)&&order[0]<order[1]&&order[1]<order[2]);
+  assert.match(html,/class="feed-latest"[\s\S]*0002-science-concept[\s\S]*class="feed"/);
+  assert.match(html,/<time datetime="2026-11-03">Nov 3, 2026<\/time><span class="feed-subject">Science<\/span>/);
+  assert.match(html,/<li>Science <span>1<\/span><\/li>/);
   assert.throws(()=>validateManifest({version:1,lessons:[lessons[2]]}),/version 2/);
   assert.throws(()=>validateManifest({version:2,lessons:[{...lessons[2],review:{...review,accuracy:false}}]}),/accuracy/);
+  assert.throws(()=>validateManifest({version:2,lessons:[{...lessons[2],published:'Nov 2'}]}),/published/);
 });
 
-test('version 2 indexes geometry and science separately without changing lesson URLs',()=>{
+test('undated lessons fall back to library order and an empty library says so',()=>{
   const geometry=entry('0001-geometry-concept.html','Geometry');
   const science=entry('0002-science-concept.html','Science');
-  const html=renderIndex({version:2,lessons:[science,geometry]},'{{COUNT}} {{LESSONS}}');
+  const html=renderIndex({version:2,lessons:[geometry,science]},'{{COUNT}} {{LESSONS}}');
   assert.match(html,/2 lessons to revisit/);
-  const geometryStart=html.indexOf('id="subject-geometry"');
-  const scienceStart=html.indexOf('id="subject-science"');
-  const geometryLink=html.indexOf('href="lessons/0001-geometry-concept.html"');
-  const scienceLink=html.indexOf('href="lessons/0002-science-concept.html"');
-  assert.ok(geometryStart<geometryLink&&geometryLink<scienceStart&&scienceStart<scienceLink);
-  assert.equal((html.match(/href="lessons\//g)||[]).length,2);
-  const empty=renderIndex({version:2,lessons:[geometry]},'{{LESSONS}}');
-  assert.match(empty,/No science lessons yet/);
-  assert.doesNotMatch(empty,/0002-science-concept/);
+  assert.ok(html.indexOf('href="lessons/0002-science-concept.html"')<html.indexOf('href="lessons/0001-geometry-concept.html"'));
+  assert.equal((html.match(/<h3[^>]*><a href="lessons\//g)||[]).length,2);
+  assert.match(renderIndex({version:2,lessons:[]},'{{LESSONS}}'),/No lessons yet/);
+});
+
+test('the feed is valid RSS with absolute links, escaped text and newest items first',()=>{
+  const older={...entry('0001-geometry-concept.html','Geometry'),title:'Angles & <marks>',published:'2026-11-01T10:00:00-05:00'};
+  const newer={...entry('0002-science-concept.html','Science'),published:'2026-11-05T09:30:00Z'};
+  const feed=renderFeed({version:2,lessons:[older,newer]});
+  assert.match(feed,/^<\?xml version="1.0" encoding="UTF-8"\?>\n<rss version="2.0"/);
+  assert.match(feed,/<atom:link href="https:\/\/aj-flynn\.github\.io\/geometry-lessons\/feed\.xml" rel="self" type="application\/rss\+xml"\/>/);
+  assert.ok(feed.indexOf('0002-science-concept')<feed.indexOf('0001-geometry-concept'));
+  assert.match(feed,/<guid isPermaLink="true">https:\/\/aj-flynn\.github\.io\/geometry-lessons\/lessons\/0001-geometry-concept\.html<\/guid>/);
+  assert.match(feed,/<pubDate>Sun, 01 Nov 2026 15:00:00 \+0000<\/pubDate>/);
+  assert.match(feed,/<lastBuildDate>Thu, 05 Nov 2026 09:30:00 \+0000<\/lastBuildDate>/);
+  assert.match(feed,/Angles &amp; &lt;marks&gt;/);
+  assert.doesNotMatch(feed,/<marks>/);
 });
 
 test('science requires subject accuracy review; legacy geometry remains readable',()=>{
@@ -61,9 +73,9 @@ test('a new registry entry controls subject validation, grouping, and heading ID
   const label='Spanish & Culture';
   const registry=[...existing,{...spanish,label}];
   lesson.subject=label;
-  const html=renderIndex(manifest,'<nav>{{SUBJECT_NAV}}</nav>{{LESSONS}}',registry);
-  assert.match(html,/<a href="#subject-spanish">Spanish &amp; Culture<\//);
-  assert.match(html,/id="subject-spanish">Spanish &amp; Culture<\//);
+  const html=renderIndex(manifest,'<ul>{{SUBJECT_NAV}}</ul>{{LESSONS}}',registry);
+  assert.match(html,/<li>Spanish &amp; Culture <span>1<\/span><\/li>/);
+  assert.match(html,/<span class="feed-subject">Spanish &amp; Culture<\/span>/);
   assert.match(html,/href="lessons\/0004-spanish-concept\.html"/);
 });
 

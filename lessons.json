@@ -10,6 +10,7 @@
         "Scale factors",
         "Perimeter and area"
       ],
+      "published": "2026-11-04T19:36:29-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -65,6 +66,7 @@
         "Figurative language",
         "Evidence and reasoning"
       ],
+      "published": "2026-11-04T20:11:46-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -118,6 +120,7 @@
         "Ratios"
       ],
       "subject": "Chemistry",
+      "published": "2026-11-04T20:23:23-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -171,6 +174,7 @@
         "Models"
       ],
       "subject": "Chemistry",
+      "published": "2026-11-04T20:23:23-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -224,6 +228,7 @@
         "Combined effects"
       ],
       "subject": "Chemistry",
+      "published": "2026-11-04T20:23:23-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -277,6 +282,7 @@
         "Physical properties"
       ],
       "subject": "Chemistry",
+      "published": "2026-11-04T20:23:23-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -332,6 +338,7 @@
         "Algebraic proportions",
         "Mixed units"
       ],
+      "published": "2026-11-06T11:16:37+00:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -386,6 +393,7 @@
         "Polarity",
         "Intermolecular attractions"
       ],
+      "published": "2026-11-07T09:44:09-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -439,6 +447,7 @@
         "Parallel cuts",
         "Proportional lengths"
       ],
+      "published": "2026-11-17T15:22:47-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -491,6 +500,7 @@
         "Triangle congruence",
         "Proof and reasoning"
       ],
+      "published": "2026-11-18T01:21:56-05:00",
       "review": {
         "privacy": true,
         "homeworkSeparation": true,
@@ -537,6 +547,67 @@
           "Desktop browser smoke test covered the proof task, keyboard feedback and library return. Narrow-width browser behavior, browser-wide script-off, and assistive-technology announcements were not verified.",
           "Actual reduced-motion preference testing and paginated print inspection were outside the review scope."
         ]
+      }
+    },
+    {
+      "file": "0011-equal-sides-equal-angles.html",
+      "subject": "Geometry",
+      "title": "Equal sides, equal angles",
+      "summary": "Use the Isosceles Triangle Theorem and its converse to match equal sides with equal angles, even when triangles share corners.",
+      "topics": [
+        "Isosceles triangles",
+        "Base angles",
+        "Converse"
+      ],
+      "published": "2026-11-19T14:43:58-05:00",
+      "review": {
+        "privacy": true,
+        "homeworkSeparation": true,
+        "accuracy": true,
+        "accessibility": false,
+        "coreUsability": true,
+        "limitations": [
+          "Independent review was from source only, with geometry checked from the SVG coordinates; no rendered browser was available before publication.",
+          "Actual reduced-motion preference testing and paginated print inspection were outside the review scope."
+        ],
+        "sha256": "e7549c13c0766e8e0468fd42d0891fae3b7c121ac3131e0a0753f027d560c080",
+        "dependencies": {
+          "assets/activity-layout.css": "4049df30f8d4da76e7b181ea64a82fc73e9ab4dd075f43033649775ecb4245a6",
+          "assets/isosceles-angles.css": "f9c8b196dfbb6ae675c948d2a671f39f3928326bca424f38ff346845b2ecc96d",
+          "assets/isosceles-check.js": "ada9989bc698938b253aaa047f95730d10ceeb57edd48a9949c35bbdcd93c98c",
+          "assets/lesson.js": "5523b0bb799abf758917d2383f409ae4b94c6ccb29acc755ea7a66a880e03b89",
+          "assets/site.css": "75715417bcfaceef8318302726c8ecc0060757ca4f2ed8e8bb1e2b2e7aff8856",
+          "assets/triangle-proof-marks.css": "04e72a76fd2699dd0d1401016b8057a5cb0ae08bbdb9fe7ad2eb4bc518b5d69f"
+        },
+        "contract": {
+          ".agents/skills/geometry-teach/SKILL.md": "054435e2016065f1f363256f86beeba7aadb3a7aca39ccfb328aa4adee324bbc",
+          ".agents/skills/homework-teach/SKILL.md": "340471ca361fdfb56f8898df8547a1265c37a8820404142711d381cd92f255ba",
+          ".agents/skills/homework-teach/references/independent-refinement.md": "25bb2adc0b32ac35365bf4f52adba26479b1c603d864cbfc8b8397e158929b50",
+          ".agents/skills/homework-teach/references/lesson-workflow.md": "ad3a5df83d6229a4aa6899940cf480d880bf293a76a5bea0be5979d0d3dd4fea",
+          ".agents/skills/homework-teach/references/new-subject.md": "39dab1dc427d3045581daf6c5631d9670ce2f1644fa76e21713a248210579578",
+          ".agents/skills/homework-teach/references/routing.md": "05783b1e92a7cf657c70ed022399d64495389d79f65b812d7a0fa58448caece7",
+          ".agents/skills/homework-teach/scripts/read-docx.py": "3536a0d30c23a4e572fe41a944dbbb3b70955249a2711c9c3f2d204d6469eaf7",
+          "AGENTS.md": "2cd50e4398ae51b08ef2dfad1db471fde851d07450e568c7ac3b026e139d354a",
+          "README.md": "b1cb8b0d82dc0060230073b85e0e0246929c4a011d144c8e9b015f4343357371",
+          "docs/REVIEW-RUBRIC.md": "d29eb9147285c732ebd28b04e51adbcaee1e833f680572d9cb33a81cc4404168",
+          "package-lock.json": "495f440084573e4b2664f87f41500ae791ec9e29fac9d0fe171b0677f601f039",
+          "package.json": "91fa5082cc35c2d4e8aaef9be393478c38a82e88d232241aa5dd892aff31af00",
+          "scripts/build-index.mjs": "c1dcf60841c05d7369634d8c97da973e518d2220ee9d90f5a2952f3d67e90923",
+          "scripts/check-chemistry-browser.py": "c65a86fc2282a500068d00e45ff61fa232b83fb567ff36cbdfc556349affd90b",
+          "scripts/check-live.py": "50883a803f7ed00a72d73d01302d03976b0bc7c0c238aecaf26a5f34e47a9c36",
+          "scripts/check-practice-browser.py": "eb9692cb6aa605a0b8252fec36716067b080354adc23cc1f12a73b69bd077b45",
+          "scripts/check.mjs": "8aa54276f0ceb120ab8a8f3d8f25bdd2ac6d592c70a78a4f92a98cd11189eb79",
+          "scripts/review-candidate.mjs": "7e40f818ca6cf760e084ecbfa2727b8acb03204d0ff042d86d3541aa5b16aa5c",
+          "subjects.json": "b16e1daa6f6ec37613b98aaf2b586def6e371770f05ea24b76519bd991e971f5",
+          "templates/index.html": "a1bd98ff0f9305abe12756f41b1cf6b322a239bd8de8b13db3538f5301e9b42f",
+          "templates/lesson.html": "e1e12f4fe6d797d94aa263e2cce6a95bd4103dc65d055564d53a3392a9c4c487",
+          "tests/chemistry.test.mjs": "4ceaac3c3ba78ae04cac01eac937f2df28051d0c1339d64b997912453a2671c1",
+          "tests/interactions.test.mjs": "55299b1c1228226b1d1a50bb5f9e25054d3dad0c0bea79d8931e3fa4679643d3",
+          "tests/subjects.test.mjs": "56223b9559cfd1ef882815d839cfe08698490d162c8d1090420e9bd5da51ad50",
+          "tests/test_docx.py": "d187972b2facb9ae106a86ee2a9c70cacace21f145c0dba6e1b55b6a9ad632de",
+          "tests/test_live.py": "8b053af2ee23072d3721cf478b11b43002ebbb3cad80ac467338eeea6dcb534c",
+          "tests/workflow.test.mjs": "2ded50ff296de6856789f7a8fad6035941b87ab2c79276cc78f6aa0ba9439ed3"
+        }
       }
     }
   ]

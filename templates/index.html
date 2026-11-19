@@ -3,42 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Concept lessons by subject with plain-language glossaries, interactive explanations, and new examples to explore.">
+  <meta name="description" content="A feed of concept lessons, newest first, with plain-language glossaries, interactive explanations, and new examples to explore.">
   <meta name="referrer" content="no-referrer">
-  <title>Homework lessons | Explore by subject</title>
+  <title>Homework lessons | Newest first</title>
+  <link rel="alternate" type="application/rss+xml" title="Homework lessons" href="feed.xml">
   <link rel="stylesheet" href="assets/site.css?v=20261107-r8">
+  <link rel="stylesheet" href="assets/library-feed.css?v=20261119-r1">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header frame">
     <a class="wordmark" href="index.html">Homework lessons<span aria-hidden="true">↗</span></a>
-    <nav aria-label="Main navigation"><a href="#lessons">Lesson library</a><a href="#how">How to learn</a></nav>
+    <nav aria-label="Main navigation"><a href="#lessons">Newest lessons</a><a href="#subscribe">Get new lessons</a><a href="#how">How to learn</a></nav>
   </header>
   <main id="main">
-    <section class="hero frame" aria-labelledby="title">
-      <div class="hero-copy">
-        <h1 id="title">See the<br>idea.</h1>
-        <p class="lead">Understand the idea.<br>Then work it out yourself.</p>
-        <p>Explore your subjects one idea at a time. Use the glossary, test a relationship, and practice with different examples.</p>
-        <a class="button" href="#lessons">Explore the library <span aria-hidden="true">↘</span></a>
-      </div>
-      <figure class="hero-figure">
-        <svg viewBox="0 0 600 480" role="img" aria-labelledby="shape-title shape-desc">
-          <title id="shape-title">A triangle, drawn one side at a time</title>
-          <desc id="shape-desc">Three labeled vertices A, B, and C joined by three straight sides. A simple illustration of the kind of diagram used in the lessons.</desc>
-          <path class="triangle-field" d="M80 370 370 65 525 370Z"/>
-          <path class="triangle-trace" d="M80 370 370 65 525 370Z" fill="none"/>
-          <g class="vertex"><circle cx="80" cy="370" r="7"/><text x="48" y="414">A</text></g>
-          <g class="vertex"><circle cx="370" cy="65" r="7"/><text x="363" y="40">B</text></g>
-          <g class="vertex"><circle cx="525" cy="370" r="7"/><text x="532" y="414">C</text></g>
-        </svg>
-        <figcaption>Start with what you notice.</figcaption>
-      </figure>
+    <section class="feed-hero frame" aria-labelledby="title">
+      <h1 id="title">New lessons,<br>newest first.</h1>
+      <p class="lead">Each lesson teaches the idea with fresh examples. Your own work stays yours.</p>
     </section>
-    <section id="lessons" class="library frame" aria-labelledby="library-title">
-      <div class="section-heading"><h2 id="library-title">Your lesson shelf</h2><p>{{COUNT}}</p></div>
-      <nav class="subject-nav" aria-label="Lesson subjects">{{SUBJECT_NAV}}</nav>
+    <section id="lessons" class="library feed-library frame" aria-labelledby="library-title">
+      <div class="section-heading"><h2 id="library-title">The lesson feed</h2><p>{{COUNT}}</p></div>
+      <ul class="subject-counts" aria-label="Lessons by subject">{{SUBJECT_NAV}}</ul>
       {{LESSONS}}
+    </section>
+    <section id="subscribe" class="subscribe frame" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Get new lessons as they land</h2>
+      <p>This page also publishes a feed. A feed reader or a feed-to-email service can watch it and send each new lesson as it appears.</p>
+      <p><a class="button" href="feed.xml">Open the lesson feed <span aria-hidden="true">↗</span></a></p>
+      <p class="feed-address">Feed address: <code>{{FEED_URL}}</code></p>
     </section>
     <section id="how" class="how" aria-labelledby="how-title">
       <div class="frame how-inner">
@@ -54,4 +46,3 @@
   <footer class="site-footer frame"><p>Ideas to keep.<br>Skills to build.</p><span>Concept lessons only. No homework sheets or personal details.</span></footer>
 </body>
 </html>
-

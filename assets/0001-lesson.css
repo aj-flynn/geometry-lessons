@@ -1,0 +1,55 @@
+/* Similar polygons (lesson 0001): the few pieces the shared kit does not cover.
+   Load after site.css and worked-example.css. Tokens only. */
+
+/* Inline and multi-line math */
+.lesson .math { font-family: var(--math); }
+.lesson .math-lines {
+  margin-block: .9rem;
+  padding-inline-start: 14px;
+  border-inline-start: 3px solid var(--line-strong);
+  font-family: var(--math);
+  font-size: 1.08rem;
+  font-variant-numeric: tabular-nums;
+}
+.lesson .math-lines p { margin-block: .2rem; }
+.lesson .equation { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.frac { display: inline-flex; flex-direction: column; text-align: center; line-height: 1.25; }
+.frac span { padding-inline: .14em; }
+.frac span:first-child { border-bottom: 1.5px solid currentColor; }
+
+/* Two or three views of a figure, side by side when there is room */
+.lesson .pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 12px 20px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.lesson .pair .panel { margin: 0; text-align: center; }
+.lesson .pair .panel svg { max-height: 240px; }
+.lesson .pair .panel-name { margin: .1rem auto 0; font-weight: 700; font-size: .92rem; }
+.lesson .task-split.is-stacked { grid-template-columns: 1fr; }
+.lesson .verdicts { margin-top: 2rem; }
+.lesson .task h4 { margin: 1.4rem 0 .4rem; font-size: 1.05rem; }
+
+/* Diagram additions to the dg-* kit */
+.dg-shape { fill: var(--sun-soft); stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; }
+.dg-shape.copy { fill: var(--blue-soft); }
+.dg-shape.reject { fill: var(--red-soft); }
+.dg-tile { fill: var(--sun-soft); stroke: var(--line-strong); stroke-width: 1; }
+.dg-tile.copy { fill: var(--blue-soft); }
+.dg-tile.unit { fill: var(--sun); }
+.dg-tile.hot { fill: var(--red-soft); stroke: var(--red-bright); stroke-width: 1.4; }
+.dg-arc { fill: none; stroke: var(--red-bright); stroke-width: 2.4; }
+.dg-green { fill: none; stroke: var(--green); stroke-width: 4; stroke-linecap: round; }
+.dg-label-green { fill: var(--green); font: 700 17px var(--font); }
+.dg-dot-blue { fill: var(--blue-bright); }
+.dg-len { fill: var(--ink); font: 600 17px var(--font); }
+
+@media (max-width: 760px) {
+  .lesson .pair .panel svg { max-height: 190px; }
+}
+@media print {
+  .lesson .pair { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .lesson .pair .panel svg { max-height: 150px; }
+}

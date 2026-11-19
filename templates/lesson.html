@@ -6,9 +6,13 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="AUTHOR: a public concept summary, with no homework details.">
   <title>AUTHOR: concept title</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
+  <link rel="stylesheet" href="../assets/site.css?v=20261119-d1">
+  <!-- AUTHOR: lessons with a problem to be worked or a labeled definition diagram also load
+       ../assets/worked-example.css?v=20261119-d1 and ../assets/worked-example.js?v=20261119-d1 (defer).
+       See lessons/0011-equal-sides-equal-angles.html for the reference build. -->
+  <link rel="stylesheet" href="../assets/worked-example.css?v=20261119-d1">
   <!-- AUTHOR: for activities that benefit from a persistent current problem, also load
-       ../assets/activity-layout.css?v=20261107-r1 and add activity-lesson to main.
+       ../assets/activity-layout.css?v=20261119-d1 and add activity-lesson to main.
        Use header/reading-block for ordinary reading. A split activity uses:
        section.activity > h2 + div.activity-split > aside.activity-evidence + div.activity-work.
        Give the aside a unique id, tabindex="0", and aria-labelledby pointing to its heading.
@@ -17,6 +21,7 @@
        evidence only when a return jump helps in the stacked layout; CSS hides it when paired.
        Keep all required evidence available with comparisons closed. -->
   <script src="../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../assets/worked-example.js?v=20261119-d1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,14 +30,84 @@
          sequence to fit the subject; neither a geometric diagram nor a manipulative is mandatory.
          A passage, data table or model can be the instructional evidence. Use a control only
          when changing or testing something teaches a decision. Check the final paginated printout. -->
-    <a class="return-link" href="../index.html">← Lesson library</a>
-    <h1>AUTHOR: concept title</h1>
-    <p>AUTHOR: one achievable concept goal, written at the approximate grade or course level of the assignment. No original problem or personal context.</p>
+    <header>
+      <a class="return-link" href="../index.html">← Lesson library</a>
+      <!-- AUTHOR: data-subject is geometry, chemistry or english (sets the swatch color). -->
+      <p class="subject-tag" data-subject="geometry">AUTHOR: Subject · topic</p>
+      <h1>AUTHOR: concept title</h1>
+      <p class="lead">AUTHOR: one achievable concept goal, written at the approximate grade or course level of the assignment. No original problem or personal context.</p>
+      <ul class="jump-nav" aria-label="Lesson sections">
+        <li><a href="#parts">AUTHOR: the parts</a></li>
+        <li><a href="#type-1">AUTHOR: problem type 1</a></li>
+        <li><a href="#practice">Your turn</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </header>
     <aside aria-label="Before you start"><p>AUTHOR: one optional fresh prerequisite prompt. Point an uncertain learner to the first explanation; do not grade assigned work or save responses.</p></aside>
     <p><a href="#glossary">Open the glossary</a> for unfamiliar words and symbols.</p>
     <section aria-labelledby="definitions"><h2 id="definitions">Know the idea</h2>
       <p><a href="#term-example">AUTHOR: essential term</a> (AUTHOR: brief inline meaning).</p>
     </section>
+    <!-- AUTHOR: DEFINITIONAL KNOWLEDGE. When a task tests names of parts, vocabulary or recognizing a
+         relationship, draw ONE accurate diagram where every defined term is drawn and labeled, with leader
+         lines and the color keys below, and give each definition an "In the diagram" pointer.
+         SVG kit (worked-example.css): dg-line dg-thin dg-faint dg-red dg-blue dg-sun dg-fill dg-fill-red
+         dg-fill-sun dg-dot dg-label dg-small dg-label-red dg-label-blue dg-leader dg-tick-red dg-tick-blue.
+         Keys: key key-red | key-blue | key-sun | key-green | key-dash. -->
+    <section id="parts" class="define-block" aria-labelledby="parts-title">
+      <h2 id="parts-title">AUTHOR: Name the parts</h2>
+      <div class="define-grid">
+        <figure class="labeled-diagram">
+          <svg viewBox="0 0 580 320" role="img" aria-labelledby="parts-svg-title parts-svg-desc">
+            <title id="parts-svg-title">AUTHOR: neutral title</title>
+            <desc id="parts-svg-desc">AUTHOR: every labeled part and where it is.</desc>
+            <!-- AUTHOR: computed, accurate geometry only. -->
+          </svg>
+          <figcaption>AUTHOR: text equivalent of every label.</figcaption>
+        </figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#term-example">AUTHOR: term</a></dt>
+            <dd>AUTHOR: plain definition. <span class="in-diagram">In the diagram: AUTHOR: where it is, by its labels.</span></dd></div>
+        </dl>
+      </div>
+      <p class="rule"><strong>AUTHOR: theorem or rule name.</strong> AUTHOR: statement with its conditions.</p>
+    </section>
+
+    <!-- AUTHOR: PROBLEMS TO BE WORKED. One section.worked per problem type: a slideshow of one ORIGINAL
+         example (3 to 7 slides; red = what this step uses, blue = what it finds, dg-faint = ignore), then the
+         same method as 3 to 6 numbered steps, each with an imperative action, its math line and a closed
+         "Why?" giving the reason in one to three sentences. Then a fresh attempt for that type.
+         Copy the deck controls verbatim; worked-example.js enables them. Without scripts every slide stays
+         visible as a numbered list, and print shows every slide. -->
+    <section id="type-1" class="worked" aria-labelledby="type-1-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 1</p>
+        <h2 id="type-1-title">AUTHOR: what this kind of problem asks</h2>
+        <p class="worked-goal">AUTHOR: the clue that tells you to use this method.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="type-1-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><!-- AUTHOR: inline SVG with role="img", title and desc --></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>AUTHOR: step title</h3><p class="slide-math">AUTHOR: math line</p><p>AUTHOR: one or two short sentences.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><!-- AUTHOR: next state of the same diagram --></figure>
+            <div class="slide-body"><p class="slide-step">Use the rule</p><h3>AUTHOR: step title</h3><p class="slide-math">AUTHOR: math line</p><p>AUTHOR: one or two short sentences.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden><button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button><p class="deck-count" data-deck-count aria-live="polite"></p><button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button></div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">AUTHOR: Imperative action.</p><p class="step-math">AUTHOR: math line</p><details class="why"><summary>Why?</summary><p>AUTHOR: the theorem, definition or reason.</p></details></li>
+        </ol>
+      </div>
+    </section>
+
     <section id="glossary" aria-labelledby="glossary-title"><h2 id="glossary-title">Glossary</h2>
       <dl><dt id="term-example">AUTHOR: essential term</dt><dd>AUTHOR: precise definition and notation. Define units too; do not copy an assigned vocabulary answer.</dd></dl>
     </section>

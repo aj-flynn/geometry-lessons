@@ -6,62 +6,101 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Use equal sides to find equal angles in a triangle, run the idea backwards, and name the right angles when triangles share corners.">
   <title>Equal sides, equal angles</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/activity-layout.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/triangle-proof-marks.css">
-  <link rel="stylesheet" href="../assets/isosceles-angles.css">
+  <link rel="stylesheet" href="../assets/site.css?v=20261119-d1">
+  <link rel="stylesheet" href="../assets/worked-example.css?v=20261119-d1">
   <script src="../assets/lesson.js?v=20261105-r9" defer></script>
   <script src="../assets/isosceles-check.js" defer></script>
+  <script src="../assets/worked-example.js?v=20261119-d1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson activity-lesson proof-marks">
-    <header class="proof-hero">
+  <main id="main" class="lesson">
+    <header>
       <a class="return-link" href="../index.html">← Lesson library</a>
-      <p class="eyebrow">Geometry · Isosceles triangles</p>
+      <p class="subject-tag" data-subject="geometry">Geometry · Isosceles triangles</p>
       <h1>Equal sides, equal angles</h1>
       <p class="lead">Two equal sides force two equal angles. Two equal angles force two equal sides. The skill is finding <em>which</em> ones.</p>
-      <nav class="proof-nav" aria-label="Lesson sections">
-        <a href="#parts">Know the parts</a><a href="#backwards">Run it backwards</a><a href="#shared">Shared corners</a><a href="#practice">Your turn</a><a href="#glossary">Glossary</a>
-      </nav>
+      <ul class="jump-nav" aria-label="Lesson sections">
+        <li><a href="#parts">The parts</a></li><li><a href="#sides-to-angles">Sides to angles</a></li><li><a href="#angles-to-sides">Angles to sides</a></li><li><a href="#shared">Shared corners</a></li><li><a href="#practice">Your turn</a></li><li><a href="#glossary">Glossary</a></li>
+      </ul>
     </header>
 
-    <section class="reading-block warmup" aria-labelledby="warmup-title">
+    <section aria-labelledby="warmup-title">
       <h2 id="warmup-title">Before you start</h2>
       <p>In triangle ABC, which side is <a href="#opposite">opposite</a> the angle at B? Which two sides <em>touch</em> the angle at B?</p>
       <div class="blank" aria-hidden="true"></div>
       <details class="comparison"><summary>Compare the warm-up</summary><p>The side opposite B is AC: it is the one side that does not have B as an endpoint. The two sides that touch B are BA and BC. Every angle in a triangle has exactly one opposite side. This whole lesson runs on that pairing.</p></details>
     </section>
 
-    <section class="activity" id="parts" aria-labelledby="parts-title">
-      <h2 id="parts-title"><span>01</span> Know the parts of an isosceles triangle</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="legs-heading">
-          <h3 id="legs-heading">A triangle turned on its side</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 340 220" role="img" aria-labelledby="legs-svg-title" aria-describedby="legs-svg-desc"><title id="legs-svg-title">A triangle turned on its side</title><desc id="legs-svg-desc">Triangle JKL. JK and JL each have one tick mark. KL has no mark.</desc><path class="frame-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="diagram-mark" d="M 173.57 65.18 L 170.34 51.56"/><path class="diagram-mark" d="M 162.21 146.81 L 167.70 133.93"/><text x="19.91" y="96.74">J</text><text x="308.00" y="28.00">K</text><text x="294.00" y="208.00">L</text></svg><figcaption>Triangle JKL. JK and JL each have one tick mark. KL has no mark.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Matching tick marks mean <a href="#congruent">congruent</a> sides (same length), so JK ≅ JL. A triangle with at least two congruent sides is <a href="#isosceles">isosceles</a>.</p>
-          <ul class="proof-lines">
-            <li>The two congruent sides, JK and JL, are the <a href="#legs">legs</a>.</li>
-            <li>The legs meet at J. The angle between them, ∠KJL, is the <a href="#vertex-angle">vertex angle</a>.</li>
-            <li>The third side, KL, is the <a href="#base">base</a>. The angles at its ends, ∠JKL and ∠JLK, are the <a href="#base-angles">base angles</a>.</li>
-          </ul>
-          <p>The base does not have to be at the bottom. Here it is on the right. Find the base from the marks, not from the page.</p>
-          <p class="rule"><strong>Isosceles Triangle Theorem (Base Angles Theorem).</strong> If two sides of a triangle are congruent, then the angles opposite those sides are congruent.</p>
-          <p>Use it one side at a time. The angle opposite JL is at K, so it is ∠JKL. The angle opposite JK is at L, so it is ∠JLK. Therefore <strong>∠JKL ≅ ∠JLK</strong>.</p>
-          <p>The vertex angle at J is <em>between</em> the two marked sides, so it is never part of this pair. That is the most common slip.</p>
-          <details class="hint"><summary>Why is the theorem true?</summary><p>Draw the segment from J to the midpoint of KL; call that point W. Then JK ≅ JL (given), KW ≅ WL (midpoint) and JW ≅ JW (shared side). So △JKW ≅ △JLW by SSS, and the corresponding angles ∠JKW and ∠JLW are congruent. Those are the two base angles.</p></details>
-        </div>
+    <section class="define-block" id="parts" aria-labelledby="parts-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="parts-title">The parts of an isosceles triangle</h2>
+      <p>Matching tick marks mean <a href="#congruent">congruent</a> sides: the same length. A triangle with at least two congruent sides is <a href="#isosceles">isosceles</a>. Each part has a name, and the names follow the marks, not which way the triangle is turned.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="0 0 580 320" role="img" aria-labelledby="parts-t" aria-describedby="parts-d"><title id="parts-t">Parts of an isosceles triangle</title><desc id="parts-d">Triangle JKL turned on its side. JK and JL each have one tick mark and are labeled legs. KL is labeled base. The angle at J, between the legs, is labeled vertex angle. The angles at K and L, at the ends of the base, are labeled base angles.</desc><path class="dg-red" d="M 87.08 137.36 L 420.00 58.40"/><path class="dg-red" d="M 87.08 137.36 L 401.80 271.60"/><path class="dg-blue" d="M 420.00 58.40 L 401.80 271.60"/><path class="dg-tick-red" d="M 251.23 88.15 L 255.85 107.61"/><path class="dg-tick-red" d="M 248.36 195.28 L 240.52 213.68"/><path class="dg-sun" d="M 126.00 128.13 A 40 40 0 0 1 123.88 153.06"/><path class="dg-blue" d="M 390.81 65.32 A 30 30 0 0 0 417.45 88.29"/><path class="dg-blue" d="M 374.21 259.83 A 30 30 0 0 1 404.35 241.71"/><text class="dg-label-red" x="248.00" y="74.53" text-anchor="middle">leg</text><text class="dg-label-red" x="231.10" y="235.75" text-anchor="middle">leg</text><text class="dg-label-blue" x="432.82" y="166.87">base</text><path class="dg-leader" d="M 128.94 144.76 L 96.00 262.00"/><text class="dg-small" x="96.00" y="282.00" text-anchor="middle">vertex angle</text><path class="dg-leader" d="M 400.41 81.12 L 500.00 120.00"/><text class="dg-small" x="500.00" y="140.00" text-anchor="middle">base angle</text><path class="dg-leader" d="M 386.34 245.89 L 520.00 230.00"/><text class="dg-small" x="520.00" y="220.00" text-anchor="middle">base angle</text><text class="dg-label" x="61.08" y="145.36">J</text><text class="dg-label" x="430.00" y="54.40">K</text><text class="dg-label" x="409.80" y="293.60">L</text></svg><figcaption>The base does not have to be at the bottom. Here it is on the right. Find it from the marks, not from the page.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#legs">Legs</a></dt><dd>The two congruent sides.<span class="in-diagram">In the diagram: JK and JL, each with one tick.</span></dd></div>
+          <div><dt><span class="key key-sun" aria-hidden="true"></span><a href="#vertex-angle">Vertex angle</a></dt><dd>The angle between the two legs, at the corner where they meet.<span class="in-diagram">In the diagram: ∠KJL, at J.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span><a href="#base">Base</a></dt><dd>The third side. It joins the far ends of the legs.<span class="in-diagram">In the diagram: KL.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span><a href="#base-angles">Base angles</a></dt><dd>The two angles at the ends of the base. Each one is across from a leg.<span class="in-diagram">In the diagram: ∠JKL at K and ∠JLK at L.</span></dd></div>
+        </dl>
       </div>
+      <p class="rule"><strong>Isosceles Triangle Theorem (Base Angles Theorem)</strong> If two sides of a triangle are congruent, then the angles <a href="#opposite">opposite</a> those sides are congruent.</p>
+      <details class="hint"><summary>Why is the theorem true?</summary><p>Draw the segment from J to the midpoint of KL; call that point W. Then JK ≅ JL (given), KW ≅ WL (midpoint) and JW ≅ JW (shared side). So △JKW ≅ △JLW by SSS, and the corresponding angles ∠JKW and ∠JLW are congruent. Those are the two base angles.</p></details>
+    </section>
 
+    <section class="worked" id="sides-to-angles" aria-labelledby="t1-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 1</p>
+        <h2 id="t1-title">Equal sides → which angles match?</h2>
+        <p class="worked-goal">Use this when the marks are on two sides and the question asks about angles.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t1-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 340 220" role="img" aria-labelledby="t1s1-t" aria-describedby="t1s1-d"><title id="t1s1-t">Triangle JKL with two marked sides</title><desc id="t1s1-d">JK and JL each have one tick mark and are highlighted. KL has no mark.</desc><path class="dg-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="dg-red" d="M 43.91 88.74 L 300.00 28.00"/><path class="dg-red" d="M 43.91 88.74 L 286.00 192.00"/><path class="dg-tick-red" d="M 170.11 50.59 L 173.80 66.15"/><path class="dg-tick-red" d="M 168.09 133.01 L 161.82 147.73"/><text class="dg-label" x="19.91" y="96.74">J</text><text class="dg-label" x="308.00" y="28.00">K</text><text class="dg-label" x="294.00" y="208.00">L</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>Find the congruent sides</h3><p class="slide-math">JK ≅ JL</p><p>JK and JL each have one tick mark, so they are congruent. They are the legs.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 340 220" role="img" aria-labelledby="t1s2-t" aria-describedby="t1s2-d"><title id="t1s2-t">Across from JL</title><desc id="t1s2-d">Side JL is highlighted. The angle at K, the corner JL does not touch, is marked with an arc.</desc><path class="dg-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="dg-tick-red" d="M 170.11 50.59 L 173.80 66.15"/><path class="dg-tick-red" d="M 168.09 133.01 L 161.82 147.73"/><path class="dg-red" d="M 43.91 88.74 L 286.00 192.00"/><path class="dg-blue" d="M 272.76 34.46 A 28 28 0 0 0 297.62 55.90"/><text class="dg-label" x="19.91" y="96.74">J</text><text class="dg-label" x="308.00" y="28.00">K</text><text class="dg-label" x="294.00" y="208.00">L</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Across from JL</p><h3>Go across from the first marked side</h3><p class="slide-math">opposite JL → ∠JKL</p><p>JL touches J and L. The one corner it does not touch is K, so the angle opposite JL is ∠JKL.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 340 220" role="img" aria-labelledby="t1s3-t" aria-describedby="t1s3-d"><title id="t1s3-t">Across from JK</title><desc id="t1s3-d">Side JK is highlighted. The angle at L, the corner JK does not touch, is marked with an arc.</desc><path class="dg-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="dg-tick-red" d="M 170.11 50.59 L 173.80 66.15"/><path class="dg-tick-red" d="M 168.09 133.01 L 161.82 147.73"/><path class="dg-red" d="M 43.91 88.74 L 300.00 28.00"/><path class="dg-blue" d="M 260.24 181.01 A 28 28 0 0 1 288.38 164.10"/><text class="dg-label" x="19.91" y="96.74">J</text><text class="dg-label" x="308.00" y="28.00">K</text><text class="dg-label" x="294.00" y="208.00">L</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Across from JK</p><h3>Go across from the second marked side</h3><p class="slide-math">opposite JK → ∠JLK</p><p>JK touches J and K. The corner it does not touch is L, so the angle opposite JK is ∠JLK.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 340 220" role="img" aria-labelledby="t1s4-t" aria-describedby="t1s4-d"><title id="t1s4-t">The vertex angle at J</title><desc id="t1s4-d">The angle at J, between the two marked sides, is drawn with a dashed arc and labeled not this one.</desc><path class="dg-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="dg-tick-red" d="M 170.11 50.59 L 173.80 66.15"/><path class="dg-tick-red" d="M 168.09 133.01 L 161.82 147.73"/><path class="dg-faint" d="M 76.99 80.89 A 34 34 0 0 1 75.18 102.08"/><text class="dg-small" x="83.91" y="94.74">not this one</text><text class="dg-label" x="19.91" y="96.74">J</text><text class="dg-label" x="308.00" y="28.00">K</text><text class="dg-label" x="294.00" y="208.00">L</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Leave one out</p><h3>Skip the angle between the marks</h3><p class="slide-math">∠KJL is not in the pair</p><p>Both marked sides touch J, so the angle at J is opposite neither of them. It is the vertex angle. Including it is the most common slip.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 340 220" role="img" aria-labelledby="t1s5-t" aria-describedby="t1s5-d"><title id="t1s5-t">Two congruent base angles</title><desc id="t1s5-d">Both marked sides keep their tick marks. The angles at K and at L each have one arc, showing they are congruent.</desc><path class="dg-line" d="M 43.91 88.74 L 300.00 28.00 L 286.00 192.00 Z"/><path class="dg-tick-red" d="M 170.11 50.59 L 173.80 66.15"/><path class="dg-tick-red" d="M 168.09 133.01 L 161.82 147.73"/><path class="dg-blue" d="M 272.76 34.46 A 28 28 0 0 0 297.62 55.90"/><path class="dg-blue" d="M 260.24 181.01 A 28 28 0 0 1 288.38 164.10"/><text class="dg-label" x="19.91" y="96.74">J</text><text class="dg-label" x="308.00" y="28.00">K</text><text class="dg-label" x="294.00" y="208.00">L</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Conclude</p><h3>State the congruent angles</h3><p class="slide-math">∠JKL ≅ ∠JLK</p><p>The two base angles are congruent. Three-letter names say exactly which angle you mean, with the corner in the middle.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Find the two congruent sides from the marks.</p><p class="step-math">JK ≅ JL</p><details class="why"><summary>Why?</summary><p>Matching tick marks mean congruent segments. The theorem needs two congruent sides of the same triangle, so start by finding them.</p></details></li>
+          <li><p class="step-do">For each marked side, go across to the corner it does not touch.</p><p class="step-math">JL → K, JK → L</p><details class="why"><summary>Why?</summary><p>The theorem pairs each side with its opposite angle. In a triangle, the angle opposite a side is at the one vertex that is not an endpoint of that side.</p></details></li>
+          <li><p class="step-do">Leave out the angle where the two marked sides meet.</p><p class="step-math">skip ∠KJL</p><details class="why"><summary>Why?</summary><p>That vertex angle touches both marked sides, so it is opposite neither. The theorem says nothing about it.</p></details></li>
+          <li><p class="step-do">Write the congruence with three-letter angle names.</p><p class="step-math">∠JKL ≅ ∠JLK</p><details class="why"><summary>Why?</summary><p>The middle letter names the corner. Three letters make the statement exact, which matters as soon as a corner belongs to more than one angle.</p></details></li>
+        </ol>
+      </div>
       <article class="task" aria-labelledby="point-title">
-        <h3 id="point-title">Try it · Which angles match?</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="point-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 340 230" role="img" aria-labelledby="point-svg-title" aria-describedby="point-svg-desc"><title id="point-svg-title">A triangle pointing down</title><desc id="point-svg-desc">Triangle FGH with G at the bottom. GF and GH each have one tick mark. FH has no mark.</desc><path class="frame-line" d="M 40.00 48.00 L 177.40 198.59 L 292.00 30.00 Z"/><path class="diagram-mark" d="M 113.87 118.58 L 103.53 128.01"/><path class="diagram-mark" d="M 240.49 118.23 L 228.91 110.36"/><text x="18.00" y="48.00">F</text><text x="300.00" y="30.00">H</text><text x="171.40" y="224.59">G</text></svg><figcaption>Triangle FGH with G at the bottom. GF and GH each have one tick mark. FH has no mark.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Try it</p>
+        <h3 id="point-title">Which angles match?</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 340 230" role="img" aria-labelledby="point-svg-title" aria-describedby="point-svg-desc"><title id="point-svg-title">A triangle pointing down</title><desc id="point-svg-desc">Triangle FGH with G at the bottom. GF and GH each have one tick mark. FH has no mark.</desc><path class="dg-line" d="M 40.00 48.00 L 177.40 198.59 L 292.00 30.00 Z"/><path class="dg-red" d="M 113.87 118.58 L 103.53 128.01"/><path class="dg-red" d="M 240.49 118.23 L 228.91 110.36"/><text class="dg-label" x="18.00" y="48.00">F</text><text class="dg-label" x="300.00" y="30.00">H</text><text class="dg-label" x="171.40" y="224.59">G</text></svg><figcaption>Triangle FGH with G at the bottom. GF and GH each have one tick mark. FH has no mark.</figcaption></figure>
+          <div>
             <p>Name the two angles that must be congruent. For each marked side, say which angle is opposite it.</p>
             <div class="blank" aria-hidden="true"></div>
             <details class="hint"><summary>Hint · Find the angle between the marks</summary><p>The two marked sides meet at one vertex. That angle is between them, so it is not in the pair. Look at the other two corners.</p></details>
@@ -82,33 +121,60 @@
       </article>
     </section>
 
-    <section class="activity" id="backwards" aria-labelledby="backwards-title">
-      <h2 id="backwards-title"><span>02</span> Run it backwards: from angles to sides</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="arcs-heading">
-          <h3 id="arcs-heading">A triangle with two marked angles</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 320 225" role="img" aria-labelledby="arcs-svg-title" aria-describedby="arcs-svg-desc"><title id="arcs-svg-title">A triangle with two marked angles</title><desc id="arcs-svg-desc">Triangle PQR. The angles at Q and at R each have one arc. No side has a mark.</desc><path class="frame-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="diagram-mark" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="diagram-mark" d="M 244.16 193.08 A 26 26 0 0 1 256.53 173.76"/><text x="165.85" y="23.95">P</text><text x="16.00" y="178.00">Q</text><text x="278.00" y="210.00">R</text></svg><figcaption>Triangle PQR. The angles at Q and at R each have one arc. No side has a mark.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Matching arcs mean congruent angles: ∠PQR ≅ ∠PRQ. The <a href="#converse">converse</a> of the theorem swaps its if and then. This converse is also true.</p>
-          <p class="rule"><strong>Converse.</strong> If two angles of a triangle are congruent, then the sides opposite those angles are congruent.</p>
-          <ol class="proof-lines">
-            <li>The angle at Q is opposite PR.</li>
-            <li>The angle at R is opposite PQ.</li>
-            <li>So <strong>PR ≅ PQ</strong>, and △PQR is isosceles with legs PQ and PR.</li>
-          </ol>
-          <p>QR joins the two marked angles. It is the base. Nothing says it matches anything.</p>
-          <details class="hint"><summary>Why does the converse need its own reason?</summary><p>Reversing a true statement does not automatically give a true statement. Here a separate proof works: draw the bisector of ∠QPR to meet QR at W. Then ∠PQW ≅ ∠PRW (given), ∠QPW ≅ ∠RPW (bisector) and PW ≅ PW (shared). So △PQW ≅ △PRW by AAS, and PQ ≅ PR.</p></details>
+    <section class="worked" id="angles-to-sides" aria-labelledby="t2-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 2</p>
+        <h2 id="t2-title">Equal angles → which sides match?</h2>
+        <p class="worked-goal">Use this when the marks are on two angles and the question asks about sides. This is the <a href="#converse">converse</a>: the if and then are swapped.</p>
+      </header>
+      <p class="rule"><strong>Converse of the Isosceles Triangle Theorem</strong> If two angles of a triangle are congruent, then the sides opposite those angles are congruent.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t2-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 225" role="img" aria-labelledby="t2s1-t" aria-describedby="t2s1-d"><title id="t2s1-t">Triangle PQR with two marked angles</title><desc id="t2s1-d">The angles at Q and at R each have one arc. No side has a mark.</desc><path class="dg-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="dg-red" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="dg-red" d="M 256.53 173.76 A 26 26 0 0 0 244.16 193.08"/><text class="dg-label" x="165.85" y="23.95">P</text><text class="dg-label" x="16.00" y="178.00">Q</text><text class="dg-label" x="278.00" y="210.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>Find the congruent angles</h3><p class="slide-math">∠PQR ≅ ∠PRQ</p><p>The angles at Q and at R each have one arc, so they are congruent. No side is marked yet.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 225" role="img" aria-labelledby="t2s2-t" aria-describedby="t2s2-d"><title id="t2s2-t">Across from the angle at Q</title><desc id="t2s2-d">The angles at Q and R have arcs. Side PR, which does not touch Q, is highlighted.</desc><path class="dg-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="dg-red" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="dg-red" d="M 256.53 173.76 A 26 26 0 0 0 244.16 193.08"/><path class="dg-blue" d="M 171.85 33.95 L 270.00 196.00"/><text class="dg-label" x="165.85" y="23.95">P</text><text class="dg-label" x="16.00" y="178.00">Q</text><text class="dg-label" x="278.00" y="210.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Across from Q</p><h3>Go across from the first marked angle</h3><p class="slide-math">opposite ∠Q → PR</p><p>The angle at Q is opposite the side that does not touch Q. That side is PR.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 225" role="img" aria-labelledby="t2s3-t" aria-describedby="t2s3-d"><title id="t2s3-t">Across from the angle at R</title><desc id="t2s3-d">The angles at Q and R have arcs. Side PQ, which does not touch R, is highlighted.</desc><path class="dg-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="dg-red" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="dg-red" d="M 256.53 173.76 A 26 26 0 0 0 244.16 193.08"/><path class="dg-blue" d="M 171.85 33.95 L 40.00 170.00"/><text class="dg-label" x="165.85" y="23.95">P</text><text class="dg-label" x="16.00" y="178.00">Q</text><text class="dg-label" x="278.00" y="210.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Across from R</p><h3>Go across from the second marked angle</h3><p class="slide-math">opposite ∠R → PQ</p><p>The angle at R is opposite the side that does not touch R. That side is PQ.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 225" role="img" aria-labelledby="t2s4-t" aria-describedby="t2s4-d"><title id="t2s4-t">Two congruent sides</title><desc id="t2s4-d">The angles at Q and R have arcs, and sides PQ and PR now each have one tick mark.</desc><path class="dg-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="dg-red" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="dg-red" d="M 256.53 173.76 A 26 26 0 0 0 244.16 193.08"/><path class="dg-red" d="M 171.85 33.95 L 40.00 170.00"/><path class="dg-red" d="M 171.85 33.95 L 270.00 196.00"/><path class="dg-tick-red" d="M 111.67 107.54 L 100.18 96.41"/><path class="dg-tick-red" d="M 227.77 110.83 L 214.08 119.12"/><text class="dg-label" x="165.85" y="23.95">P</text><text class="dg-label" x="16.00" y="178.00">Q</text><text class="dg-label" x="278.00" y="210.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Conclude</p><h3>State the congruent sides</h3><p class="slide-math">PR ≅ PQ</p><p>By the converse, PR and PQ are congruent. △PQR is isosceles with legs PQ and PR.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 225" role="img" aria-labelledby="t2s5-t" aria-describedby="t2s5-d"><title id="t2s5-t">The base QR</title><desc id="t2s5-d">Side QR, which joins the two marked angles, is drawn dashed and labeled base. PQ and PR keep their tick marks.</desc><path class="dg-line" d="M 171.85 33.95 L 40.00 170.00 L 270.00 196.00 Z"/><path class="dg-red" d="M 58.09 151.33 A 26 26 0 0 1 65.84 172.92"/><path class="dg-red" d="M 256.53 173.76 A 26 26 0 0 0 244.16 193.08"/><path class="dg-tick-red" d="M 111.67 107.54 L 100.18 96.41"/><path class="dg-tick-red" d="M 227.77 110.83 L 214.08 119.12"/><path class="dg-faint" d="M 40.00 170.00 L 270.00 196.00"/><text class="dg-small" x="150.00" y="205.00">base</text><text class="dg-label" x="165.85" y="23.95">P</text><text class="dg-label" x="16.00" y="178.00">Q</text><text class="dg-label" x="278.00" y="210.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Name the base</p><h3>The side between the marked angles</h3><p class="slide-math">QR is the base</p><p>QR joins the two marked angles, so it touches both and is opposite neither. Nothing says it matches anything.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Find the two congruent angles from the arcs.</p><p class="step-math">∠PQR ≅ ∠PRQ</p><details class="why"><summary>Why?</summary><p>Matching arcs mean congruent angles. The converse needs two congruent angles in one triangle.</p></details></li>
+          <li><p class="step-do">For each marked angle, go across to the side it does not touch.</p><p class="step-math">∠Q → PR, ∠R → PQ</p><details class="why"><summary>Why?</summary><p>The converse pairs each angle with the side opposite it, the same pairing as the theorem, just read the other way.</p></details></li>
+          <li><p class="step-do">State that those two sides are congruent.</p><p class="step-math">PR ≅ PQ</p><details class="why"><summary>Why?</summary><p>That is exactly what the converse says. It is true, but it needs its own proof, because swapping if and then does not automatically keep a statement true.</p></details></li>
+          <li><p class="step-do">Name the base: the side joining the marked angles.</p><p class="step-math">QR</p><details class="why"><summary>Why?</summary><p>The base touches both marked angles, so neither angle is opposite it. You can say nothing about its length from these marks.</p></details></li>
+        </ol>
+      </div>
+      <details class="hint"><summary>Why does the converse need its own reason?</summary><p>Reversing a true statement does not automatically give a true statement. Here a separate proof works: draw the bisector of ∠QPR to meet QR at W. Then ∠PQW ≅ ∠PRW (given), ∠QPW ≅ ∠RPW (bisector) and PW ≅ PW (shared). So △PQW ≅ △PRW by AAS, and PQ ≅ PR.</p></details>
       <article class="task" aria-labelledby="numbers-title">
-        <h3 id="numbers-title">Try it · Use the converse with lengths</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="numbers-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 330 250" role="img" aria-labelledby="numbers-svg-title" aria-describedby="numbers-svg-desc"><title id="numbers-svg-title">A triangle with two angle measures</title><desc id="numbers-svg-desc">Triangle SVT. The angle at S measures 50 degrees and the angle at V measures 50 degrees, each marked with one arc. ST is 7 cm and SV is 9 cm. TV is unknown.</desc><path class="frame-line" d="M 40.00 205.00 L 290.00 178.00 L 148.91 42.53 Z"/><path class="diagram-mark" d="M 54.48 183.40 A 26 26 0 0 1 65.85 202.21"/><path class="diagram-mark" d="M 264.15 180.79 A 26 26 0 0 1 271.25 159.99"/><text x="18.00" y="213.00">S</text><text x="298.00" y="192.00">V</text><text x="142.91" y="32.53">T</text><text class="measure" x="70.00" y="191.00">50°</text><text class="measure" x="228.00" y="170.00">50°</text><text class="measure" x="32.46" y="123.77">7 cm</text><text class="measure" x="145.00" y="219.50">9 cm</text></svg><figcaption>Triangle SVT. The angle at S measures 50° and the angle at V measures 50°, each marked with one arc. ST is 7 cm and SV is 9 cm. TV is unknown.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Try it</p>
+        <h3 id="numbers-title">Use the converse with lengths</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 330 250" role="img" aria-labelledby="numbers-svg-title" aria-describedby="numbers-svg-desc"><title id="numbers-svg-title">A triangle with two angle measures</title><desc id="numbers-svg-desc">Triangle SVT. The angle at S measures 50 degrees and the angle at V measures 50 degrees, each marked with one arc. ST is 7 cm and SV is 9 cm. TV is unknown.</desc><path class="dg-line" d="M 40.00 205.00 L 290.00 178.00 L 148.91 42.53 Z"/><path class="dg-red" d="M 54.48 183.40 A 26 26 0 0 1 65.85 202.21"/><path class="dg-red" d="M 264.15 180.79 A 26 26 0 0 1 271.25 159.99"/><text class="dg-label" x="18.00" y="213.00">S</text><text class="dg-label" x="298.00" y="192.00">V</text><text class="dg-label" x="142.91" y="32.53">T</text><text class="dg-small" x="70.00" y="191.00">50°</text><text class="dg-small" x="228.00" y="170.00">50°</text><text class="dg-small" x="32.46" y="123.77">7 cm</text><text class="dg-small" x="145.00" y="219.50">9 cm</text></svg><figcaption>Triangle SVT. The angle at S measures 50° and the angle at V measures 50°, each marked with one arc. ST is 7 cm and SV is 9 cm. TV is unknown.</figcaption></figure>
+          <div>
             <p>In △SVT, m∠S = 50° and m∠V = 50°. ST = 7 cm and SV = 9 cm. Predict TV first, and name the side opposite each marked angle.</p>
             <div class="blank" aria-hidden="true"></div>
             <details class="hint"><summary>Hint · Which side touches both arcs?</summary><p>One side joins S and V. It touches both marked angles, so it is opposite neither. Look for the sides across from S and across from V.</p></details>
@@ -129,34 +195,58 @@
       </article>
     </section>
 
-    <section class="activity" id="shared" aria-labelledby="shared-title">
-      <h2 id="shared-title"><span>03</span> When triangles share corners</h2>
-      <p class="section-intro">In a bigger figure, one letter can sit at the corner of several angles. Then a one-letter name like ∠L is unclear. Find the triangle first, and give each angle all three letters.</p>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="shared-heading">
-          <h3 id="shared-heading">Two triangles that share a side</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 320 282" role="img" aria-labelledby="shared-svg-title" aria-describedby="shared-svg-desc"><title id="shared-svg-title">Two triangles that share a side</title><desc id="shared-svg-desc">Points K, L, M and N. Segments KL, KN, LN, LM and MN make triangle KLN on top and triangle LMN below, sharing side LN. KL and KN each have one tick mark.</desc><path class="frame-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="frame-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="frame-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="frame-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="frame-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="diagram-mark" d="M 105.32 65.80 L 114.68 76.20"/><path class="diagram-mark" d="M 205.32 76.20 L 214.68 65.80"/><text x="154.00" y="18.00">K</text><text x="36.00" y="124.00">L</text><text x="270.00" y="122.00">N</text><text x="209.21" y="270.56">M</text></svg><figcaption>Points K, L, M and N. Segments KL, KN, LN, LM and MN make triangle KLN on top and triangle LMN below, sharing side LN. KL and KN each have one tick mark.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Suppose KL ≅ KN. Which angles are congruent?</p>
-          <ol class="recipe">
-            <li><strong>Find the triangle.</strong> KL and KN share the endpoint K. Their other endpoints are L and N. So the triangle is △KLN, the top one.</li>
-            <li><strong>Go across from each side.</strong> Inside △KLN, the angle opposite KN is at L, and the angle opposite KL is at N.</li>
-            <li><strong>Name with three letters.</strong> At L there are three angles: ∠KLN, ∠NLM, and the large ∠KLM. Only ∠KLN is inside △KLN. Likewise at N, use ∠KNL.</li>
-            <li><strong>State it.</strong> ∠KLN ≅ ∠KNL.</li>
-          </ol>
-          <p>For a three-letter name of a base angle, a handy pattern is <em>apex, corner, other base corner</em>: K–L–N and K–N–L. The middle letter is always the corner.</p>
-          <p class="rule">Use only the given fact. The bottom triangle looks a certain way, but nothing here is marked about it.</p>
+    <section class="worked" id="shared" aria-labelledby="t3-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 3</p>
+        <h2 id="t3-title">When triangles share corners</h2>
+        <p class="worked-goal">In a bigger figure, one letter can be the corner of several angles. Then a one-letter name like ∠L is unclear. Find the triangle first, and give each angle all three letters.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t3-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 282" role="img" aria-labelledby="t3s1-t" aria-describedby="t3s1-d"><title id="t3s1-t">Two triangles that share a side</title><desc id="t3s1-d">Points K, L, M and N. Segments KL, KN, LN, LM and MN make triangle KLN on top and triangle LMN below, sharing side LN. KL and KN each have one tick mark.</desc><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-tick-red" d="M 115.35 76.95 L 104.65 65.05"/><path class="dg-tick-red" d="M 215.35 65.05 L 204.65 76.95"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>Start from the given fact</h3><p class="slide-math">KL ≅ KN</p><p>Suppose KL ≅ KN. The figure has two triangles that share side LN, so be careful which one you use.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 282" role="img" aria-labelledby="t3s2-t" aria-describedby="t3s2-d"><title id="t3s2-t">Triangle KLN shaded</title><desc id="t3s2-d">The same figure with triangle KLN, the top triangle, shaded. KL and KN each have one tick mark.</desc><path class="dg-fill" d="M 160.00 26.00 L 60.00 116.00 L 260.00 116.00 Z"/><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-tick-red" d="M 115.35 76.95 L 104.65 65.05"/><path class="dg-tick-red" d="M 215.35 65.05 L 204.65 76.95"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Find the triangle</p><h3>Which triangle has both sides?</h3><p class="slide-math">△KLN</p><p>KL and KN share the endpoint K. Their other endpoints are L and N. So the triangle is △KLN, the top one.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 282" role="img" aria-labelledby="t3s3-t" aria-describedby="t3s3-d"><title id="t3s3-t">Across from each marked side</title><desc id="t3s3-d">Triangle KLN is shaded. The angle at L inside triangle KLN and the angle at N inside triangle KLN each have one arc.</desc><path class="dg-fill" d="M 160.00 26.00 L 60.00 116.00 L 260.00 116.00 Z"/><path class="dg-red" d="M 82.30 95.93 A 30 30 0 0 1 90.00 116.00"/><path class="dg-red" d="M 237.70 95.93 A 30 30 0 0 0 230.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-tick-red" d="M 115.35 76.95 L 104.65 65.05"/><path class="dg-tick-red" d="M 215.35 65.05 L 204.65 76.95"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Go across</p><h3>Find the angle across from each side</h3><p class="slide-math">opposite KN → at L, opposite KL → at N</p><p>Inside △KLN, the angle opposite KN is at L, and the angle opposite KL is at N.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 282" role="img" aria-labelledby="t3s4-t" aria-describedby="t3s4-d"><title id="t3s4-t">Three angles at L</title><desc id="t3s4-d">Triangle KLN is shaded. At L, angle KLN inside the top triangle has a solid arc. Angle NLM, inside the bottom triangle, has a yellow arc and is labeled.</desc><path class="dg-fill" d="M 160.00 26.00 L 60.00 116.00 L 260.00 116.00 Z"/><path class="dg-red" d="M 82.30 95.93 A 30 30 0 0 1 90.00 116.00"/><path class="dg-sun" d="M 104.00 116.00 A 44 44 0 0 1 93.71 144.28"/><text class="dg-small" x="132.00" y="147.00" text-anchor="middle">∠NLM</text><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-tick-red" d="M 115.35 76.95 L 104.65 65.05"/><path class="dg-tick-red" d="M 215.35 65.05 L 204.65 76.95"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Name it</p><h3>Use three letters</h3><p class="slide-math">∠KLN, not ∠NLM</p><p>At L there are three angles: ∠KLN, ∠NLM and the large ∠KLM. Only ∠KLN is inside △KLN. At N, likewise, use ∠KNL.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 282" role="img" aria-labelledby="t3s5-t" aria-describedby="t3s5-d"><title id="t3s5-t">The two base angles of triangle KLN</title><desc id="t3s5-d">Triangle KLN is shaded. The angles KLN and KNL each have one arc, showing they are congruent.</desc><path class="dg-fill" d="M 160.00 26.00 L 60.00 116.00 L 260.00 116.00 Z"/><path class="dg-red" d="M 82.30 95.93 A 30 30 0 0 1 90.00 116.00"/><path class="dg-red" d="M 237.70 95.93 A 30 30 0 0 0 230.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-tick-red" d="M 115.35 76.95 L 104.65 65.05"/><path class="dg-tick-red" d="M 215.35 65.05 L 204.65 76.95"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Conclude</p><h3>State the congruent angles</h3><p class="slide-math">∠KLN ≅ ∠KNL</p><p>Use only the given fact. The bottom triangle may look a certain way, but nothing here is marked about it.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Find the one triangle that contains both given sides.</p><p class="step-math">KL and KN → △KLN</p><details class="why"><summary>Why?</summary><p>The theorem only works inside a single triangle. Two given sides share a corner, the apex, and their other endpoints are the base corners.</p></details></li>
+          <li><p class="step-do">Inside that triangle, go across from each side.</p><p class="step-math">KN → L, KL → N</p><details class="why"><summary>Why?</summary><p>Opposite means the corner a side does not touch, measured inside the triangle you chose, not in the whole figure.</p></details></li>
+          <li><p class="step-do">Name each angle with three letters.</p><p class="step-math">∠KLN and ∠KNL</p><details class="why"><summary>Why?</summary><p>A pattern that helps: apex, corner, other base corner. K–L–N and K–N–L. The middle letter is always the corner.</p></details></li>
+          <li><p class="step-do">State the result, using only what is given.</p><p class="step-math">∠KLN ≅ ∠KNL</p><details class="why"><summary>Why?</summary><p>A drawing can look symmetric without being marked. Conclusions come from the given facts and theorems, not from how the picture looks.</p></details></li>
+        </ol>
+      </div>
       <article class="task" aria-labelledby="lower-title">
-        <h3 id="lower-title">Try it · Angles given, sides wanted</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="lower-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 320 282" role="img" aria-labelledby="lower-svg-title" aria-describedby="lower-svg-desc"><title id="lower-svg-title">The same two triangles with angle marks</title><desc id="lower-svg-desc">Points K, L, M and N as before, with triangle KLN on top and triangle LMN below, sharing side LN. Angle LMN, at M, and angle LNM, at N inside triangle LMN, each have one arc. No side has a mark.</desc><path class="frame-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="frame-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="frame-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="frame-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="frame-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="diagram-mark" d="M 194.82 229.13 A 24 24 0 0 1 221.42 222.00"/><path class="diagram-mark" d="M 251.79 138.55 A 24 24 0 0 1 236.00 116.00"/><text x="154.00" y="18.00">K</text><text x="36.00" y="124.00">L</text><text x="270.00" y="122.00">N</text><text x="209.21" y="270.56">M</text></svg><figcaption>Points K, L, M and N as in the previous figure, with triangle KLN on top and triangle LMN below, sharing side LN. Angle LMN, at M, and angle LNM, at N inside triangle LMN, each have one arc. No side has a mark.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Try it</p>
+        <h3 id="lower-title">Angles given, sides wanted</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 320 282" role="img" aria-labelledby="lower-svg-title" aria-describedby="lower-svg-desc"><title id="lower-svg-title">The same two triangles with angle marks</title><desc id="lower-svg-desc">Points K, L, M and N as before, with triangle KLN on top and triangle LMN below, sharing side LN. Angle LMN, at M, and angle LNM, at N inside triangle LMN, each have one arc. No side has a mark.</desc><path class="dg-line" d="M 160.00 26.00 L 60.00 116.00"/><path class="dg-line" d="M 160.00 26.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 260.00 116.00"/><path class="dg-line" d="M 60.00 116.00 L 213.21 244.56"/><path class="dg-line" d="M 213.21 244.56 L 260.00 116.00"/><path class="dg-red" d="M 194.82 229.13 A 24 24 0 0 1 221.42 222.00"/><path class="dg-red" d="M 251.79 138.55 A 24 24 0 0 1 236.00 116.00"/><text class="dg-label" x="154.00" y="18.00">K</text><text class="dg-label" x="36.00" y="124.00">L</text><text class="dg-label" x="270.00" y="122.00">N</text><text class="dg-label" x="209.21" y="270.56">M</text></svg><figcaption>Points K, L, M and N as in the previous figure, with triangle KLN on top and triangle LMN below, sharing side LN. Angle LMN, at M, and angle LNM, at N inside triangle LMN, each have one arc. No side has a mark.</figcaption></figure>
+          <div>
             <p>Here the given fact is ∠LMN ≅ ∠LNM. Complete the statement: then ___ ≅ ___. Write which triangle you used first.</p>
             <div class="blank" aria-hidden="true"></div>
             <details class="hint"><summary>Hint 1 · Read the three letters</summary><p>The outside letters of ∠LMN and ∠LNM are L, M and N. Which triangle uses exactly those three points?</p></details>
@@ -178,15 +268,13 @@
       </article>
     </section>
 
-    <section class="activity" id="practice" aria-labelledby="practice-title">
-      <h2 id="practice-title"><span>04</span> Your turn</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="bowtie-heading">
-          <h3 id="bowtie-heading">Two triangles meeting at one point</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 320 260" role="img" aria-labelledby="bowtie-svg-title" aria-describedby="bowtie-svg-desc"><title id="bowtie-svg-title">Two triangles meeting at one point</title><desc id="bowtie-svg-desc">Segments PS and QR cross at X. P, X and S lie on one straight segment, and Q, X and R lie on another. PQ joins the top ends and RS joins the bottom ends, making triangle PXQ on top and triangle RXS below. No marks are drawn, and the drawing is not to scale.</desc><path class="frame-line" d="M 110.00 30.00 L 213.42 216.16"/><path class="frame-line" d="M 210.00 30.00 L 103.56 221.60"/><path class="frame-line" d="M 110.00 30.00 L 210.00 30.00"/><path class="frame-line" d="M 103.56 221.60 L 213.42 216.16"/><text x="88.00" y="30.00">P</text><text x="218.00" y="30.00">Q</text><text x="130.00" y="127.00">X</text><text x="81.56" y="235.60">R</text><text x="221.42" y="230.16">S</text></svg><figcaption>Segments PS and QR cross at X. P, X and S lie on one straight segment, and Q, X and R lie on another. PQ joins the top ends and RS joins the bottom ends, making triangle PXQ on top and triangle RXS below. No marks are drawn.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Each statement gives one fact. Use that fact only, not how the drawing looks. Complete it, and name the triangle you used. Try all three before opening any comparison.</p>
+    <section id="practice" aria-labelledby="practice-title">
+      <p class="eyebrow">Mixed practice</p>
+      <h2 id="practice-title">Your turn</h2>
+      <div class="task">
+        <div class="task-split">
+          <figure><svg viewBox="0 0 320 260" role="img" aria-labelledby="bowtie-svg-title" aria-describedby="bowtie-svg-desc"><title id="bowtie-svg-title">Two triangles meeting at one point</title><desc id="bowtie-svg-desc">Segments PS and QR cross at X. P, X and S lie on one straight segment, and Q, X and R lie on another. PQ joins the top ends and RS joins the bottom ends, making triangle PXQ on top and triangle RXS below. No marks are drawn, and the drawing is not to scale.</desc><path class="dg-line" d="M 110.00 30.00 L 213.42 216.16"/><path class="dg-line" d="M 210.00 30.00 L 103.56 221.60"/><path class="dg-line" d="M 110.00 30.00 L 210.00 30.00"/><path class="dg-line" d="M 103.56 221.60 L 213.42 216.16"/><text class="dg-label" x="88.00" y="30.00">P</text><text class="dg-label" x="218.00" y="30.00">Q</text><text class="dg-label" x="130.00" y="127.00">X</text><text class="dg-label" x="81.56" y="235.60">R</text><text class="dg-label" x="221.42" y="230.16">S</text></svg><figcaption>Segments PS and QR cross at X. P, X and S lie on one straight segment, and Q, X and R lie on another. PQ joins the top ends and RS joins the bottom ends, making triangle PXQ on top and triangle RXS below. No marks are drawn.</figcaption></figure>
+          <div><p>Each statement gives one fact. Use that fact only, not how the drawing looks. Complete it, and name the triangle you used. Try all three before opening any comparison.</p>
           <ol class="practice-list">
             <li><p class="statement">A. If XP ≅ XQ, then ∠___ ≅ ∠___.</p><div class="blank" aria-hidden="true"></div></li>
             <li><p class="statement">B. If XS ≅ RS, which angle of △PXQ must be congruent to ∠XRS? Name it with three letters.</p><div class="blank" aria-hidden="true"></div></li>
@@ -197,10 +285,10 @@
           <details class="comparison"><summary>Compare A</summary><p>XP and XQ share X, and their other endpoints give △PXQ. The angle opposite XQ is at P: ∠XPQ. The angle opposite XP is at Q: ∠XQP. So <strong>∠XPQ ≅ ∠XQP</strong>. Since X lies on PS, ∠SPQ names the same angle as ∠XPQ, so that answer is also fine.</p></details>
           <details class="comparison"><summary>Compare B</summary><p>XS and RS share S, and their other endpoints give △RXS. The angle opposite XS is at R: ∠XRS. The angle opposite RS is at X, inside △RXS: ∠RXS. So ∠XRS ≅ ∠RXS. Four angles meet at X. ∠RXS and ∠PXQ are <a href="#vertical">vertical angles</a>, so they are congruent too. So <strong>∠PXQ ≅ ∠XRS</strong>. Here the apex of △RXS is S, so X is a base corner this time.</p></details>
           <details class="comparison"><summary>Compare C</summary><p>Nothing. P, X and S lie on one straight segment, so XP and XS are pieces of the same segment, not two sides of one triangle. The theorem does not apply. It only says X is the midpoint of PS. Checking that both pieces belong to one triangle is the first step every time.</p></details>
+          </div>
         </div>
       </div>
-
-      <aside class="later reading-block" aria-labelledby="checklist-title">
+      <aside class="callout" aria-labelledby="checklist-title">
         <h3 id="checklist-title">Before you go back to your own work</h3>
         <ul class="checklist">
           <li>Did you find the one triangle that contains both given parts?</li>
@@ -211,15 +299,28 @@
       </aside>
     </section>
 
-    <section class="later reading-block" aria-labelledby="remember-title">
+    <section aria-labelledby="remember-title">
       <h2 id="remember-title">Keep the idea</h2>
       <p>Tomorrow, before opening this page, try this from memory: in △TUW, ∠T ≅ ∠W. Which two sides are congruent, and which side is the base?</p>
       <div class="blank" aria-hidden="true"></div>
-      <details class="comparison"><summary>Compare the recall question</summary><p>The angle at T is opposite UW and the angle at W is opposite TU, so UW ≅ TU. The base is TW, which joins the two congruent angles. If you were unsure, reread section 02.</p></details>
+      <details class="comparison"><summary>Compare the recall question</summary><p>The angle at T is opposite UW and the angle at W is opposite TU, so UW ≅ TU. The base is TW, which joins the two congruent angles. If you were unsure, reread Problem type 2.</p></details>
       <p>If something is still unclear, ask a follow-up question in the private chat and describe where your thinking got stuck.</p>
     </section>
 
-    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
+    <section class="print-only print-bank" data-print-bank="auto" aria-label="Comparisons for paper">
+      <h2>Comparisons for paper</h2>
+      <p>Try each task first. These comparisons are printed here, after the tasks, so the answers stay out of sight while you work.</p>
+      <div class="print-bank-item"><h3>Before you start: Compare the warm-up</h3><p>The side opposite B is AC: it is the one side that does not have B as an endpoint. The two sides that touch B are BA and BC. Every angle in a triangle has exactly one opposite side. This whole lesson runs on that pairing.</p></div>
+      <div class="print-bank-item"><h3>Which angles match?: Compare your reasoning</h3><p>GF and GH are the legs. They meet at G, so ∠FGH is the vertex angle and FH is the base. GH is opposite F, and GF is opposite H. So <strong>∠GFH ≅ ∠GHF</strong>. If you included the angle at G, go back to the warm-up: an angle's opposite side never touches it.</p></div>
+      <div class="print-bank-item"><h3>Use the converse with lengths: Compare your reasoning, including without scripts</h3><p>The angle at S is opposite TV. The angle at V is opposite ST. The angles are congruent, so <strong>TV ≅ ST</strong> and TV = 7 cm. SV = 9 cm is the base: it joins the two marked angles. Retry with a different triangle: in a new △SVT with no lengths given, suppose m∠T = m∠V. Which side matches ST? Predict before opening the next comparison.</p>
+              <div class="print-bank-sub"><p><strong>Compare the retry</strong></p><p>Now the marked angles are at T and V. The angle at T is opposite SV and the angle at V is opposite ST, so SV ≅ ST. The base would be TV.</p></div></div>
+      <div class="print-bank-item"><h3>Angles given, sides wanted: Compare your reasoning</h3><p>The letters L, M and N give △LMN. The angle at M is opposite LN. The angle at N (inside △LMN) is opposite LM. So <strong>LN ≅ LM</strong>. MN joins the two marked angles, so it is the base. Notice that the angle at N in this triangle is ∠LNM, not ∠KNL: same corner, different triangle.</p></div>
+      <div class="print-bank-item"><h3>Your turn: Compare A</h3><p>XP and XQ share X, and their other endpoints give △PXQ. The angle opposite XQ is at P: ∠XPQ. The angle opposite XP is at Q: ∠XQP. So <strong>∠XPQ ≅ ∠XQP</strong>. Since X lies on PS, ∠SPQ names the same angle as ∠XPQ, so that answer is also fine.</p></div>
+      <div class="print-bank-item"><h3>Your turn: Compare B</h3><p>XS and RS share S, and their other endpoints give △RXS. The angle opposite XS is at R: ∠XRS. The angle opposite RS is at X, inside △RXS: ∠RXS. So ∠XRS ≅ ∠RXS. Four angles meet at X. ∠RXS and ∠PXQ are <a href="#vertical">vertical angles</a>, so they are congruent too. So <strong>∠PXQ ≅ ∠XRS</strong>. Here the apex of △RXS is S, so X is a base corner this time.</p></div>
+      <div class="print-bank-item"><h3>Your turn: Compare C</h3><p>Nothing. P, X and S lie on one straight segment, so XP and XS are pieces of the same segment, not two sides of one triangle. The theorem does not apply. It only says X is the midpoint of PS. Checking that both pieces belong to one triangle is the first step every time.</p></div>
+      <div class="print-bank-item"><h3>Keep the idea: Compare the recall question</h3><p>The angle at T is opposite UW and the angle at W is opposite TU, so UW ≅ TU. The base is TW, which joins the two congruent angles. If you were unsure, reread Problem type 2.</p></div>
+    </section>
+    <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
         <dt id="opposite">Opposite side (of an angle)</dt><dd>In a triangle, the side that does not touch a given angle. The side opposite the angle at B in △ABC is AC.</dd>
@@ -234,7 +335,7 @@
       </dl>
     </section>
 
-    <section class="sources reading-block" aria-labelledby="sources-title">
+    <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Read a little more</h2>
       <p><a href="https://k12.libretexts.org/Bookshelves/Mathematics/Geometry/04%3A_Triangles/4.04%3A_Isosceles_Triangles">CK-12 on LibreTexts: Isosceles Triangles</a> states the Base Angles Theorem and its converse and names the legs, base, vertex angle and base angles. For matching triangles in order, see the earlier lesson <a href="0010-from-marks-to-triangle-proofs.html">From marks to triangle proofs</a>.</p>
     </section>

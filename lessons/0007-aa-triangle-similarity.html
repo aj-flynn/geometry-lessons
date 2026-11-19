@@ -6,369 +6,440 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements.">
   <title>Two angles, one shape | Geometry</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/activity-layout.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/aa-angle-evidence.css?v=3">
+  <link rel="stylesheet" href="../assets/site.css?v=20261119-d1">
+  <link rel="stylesheet" href="../assets/worked-example.css?v=20261119-d1">
+  <link rel="stylesheet" href="../assets/0007-lesson.css?v=20261119-d1">
   <script src="../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../assets/worked-example.js?v=20261119-d1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson activity-lesson aa-lesson">
+  <main id="main" class="lesson">
     <header>
       <a class="return-link" href="../index.html">← Lesson library</a>
-      <p class="eyebrow">Geometry · Triangle similarity</p>
+      <p class="subject-tag" data-subject="geometry">Geometry · Triangle similarity</p>
       <h1>Two angles, one shape</h1>
       <p class="lead">Use two angle matches to line up triangles. Then use that order to find lengths you can’t measure directly.</p>
-      <aside class="warmup" aria-labelledby="warmup-title">
-        <h2 id="warmup-title">Before you start</h2>
-        <p>A triangle has angles of 48° and 77°. Write an equation for the third angle. In ∠ZXY, which letter names the corner?</p>
-        <p class="practice-link"><a href="#compare-warmup">Check the two prerequisites</a></p>
-        <div class="writing-space" aria-hidden="true"></div>
-      </aside>
-      <div class="mark-check">
-        <figure><div class="diagrams"><svg viewBox="0 0 182 172" role="img" aria-labelledby="arc-key-title" aria-describedby="arc-key-desc"><title id="arc-key-title">Four angles</title><desc id="arc-key-desc">Four angles. K and R each have one arc. M and N each have two arcs.</desc><polyline class="edge" points="59.44,13.30 30.00,46.00 73.33,38.36"/><path class="mark" d="M39.37,35.60 A14,14 0 0 1 43.79,43.57"/><text x="16.00" y="42.00" class="">K</text><polyline class="edge" points="121.52,88.80 138.00,48.00 94.11,51.07"/><path class="mark" d="M132.76,60.98 A14,14 0 0 1 124.03,48.98"/><text x="131.00" y="42.00" class="">M</text><path class="mark" d="M130.51,66.54 A20,20 0 0 1 118.05,49.40"/><polyline class="edge" points="20.80,129.10 61.00,147.00 59.46,103.03"/><path class="mark" d="M48.21,141.31 A14,14 0 0 1 60.51,133.01"/><text x="66.00" y="157.00" class="">N</text><path class="mark" d="M42.73,138.87 A20,20 0 0 1 60.30,127.01"/><polyline class="edge" points="141.36,98.67 149.00,142.00 169.66,103.15"/><path class="mark" d="M146.57,128.21 A14,14 0 0 1 155.57,129.64"/><text x="150.00" y="155.00" class="">R</text></svg></div><figcaption>K and R each have one arc. M and N each have two arcs.</figcaption></figure>
-        <div>
-          <p>Which angles do the arc marks pair? What do the marks tell you about their measures?</p>
-          <p class="practice-link"><a href="#compare-marks">Read the arc marks</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
-        </div>
-      </div>
-      <section class="opening-comparisons" aria-labelledby="opening-checks">
-        <h2 id="opening-checks">Opening checks</h2>
-        <details><summary id="compare-warmup">Check the two prerequisites</summary>
-          <p>The angle measures in a triangle add to 180°, so 48° + 77° + <var>a</var> = 180° and <var>a</var> = 55°. The middle letter X names the <a href="#term-vertex">vertex</a>, the corner where the two rays meet. Say ∠ZXY and point to X before tracing the rays XZ and XY.</p>
-        </details>
-        <details><summary id="compare-marks">Read the arc marks</summary><p>∠K and ∠R have the same measure because they have matching single arcs. ∠M and ∠N have matching double arcs. You can pair angles by the arc counts without knowing their measures in degrees.</p></details>
-      </section>
-      <p class="route"><a href="#angle-match">Match angles</a> <a href="#lengths">Find lengths</a> <a href="#practice">Try on paper</a> <a href="#glossary">Glossary</a></p>
+      <ul class="jump-nav" aria-label="Lesson sections">
+        <li><a href="#words">Read the order</a></li><li><a href="#evidence">Angle evidence</a></li><li><a href="#angle-match">Angle sums</a></li><li><a href="#overlap-title">Overlaps</a></li><li><a href="#cross-title">Crossings</a></li><li><a href="#lengths">Whole sides</a></li><li><a href="#algebra-title">Algebra</a></li><li><a href="#indirect-title">Mixed units</a></li><li><a href="#practice">Your turn</a></li><li><a href="#glossary">Glossary</a></li>
+      </ul>
     </header>
 
-    <section class="activity" aria-labelledby="angle-match">
-      <h2 id="angle-match">1. Match the angles</h2>
-      <div class="activity-split">
-        <aside id="evidence-right" class="activity-evidence" tabindex="0" aria-labelledby="given-right">
-          <h3 id="given-right">One corner divided in two</h3>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 218 143" role="img" aria-labelledby="work-right-figure-title" aria-describedby="work-right-figure-desc">
-              <title id="work-right-figure-title">Two pieces of a right-triangle panel</title>
-              <desc id="work-right-figure-desc">H is between P and R. A cut from Q to H meets PR at a right angle. The outer angle PQR is 90 degrees and angle QPH is 33 degrees.</desc>
-              <polygon class="edge" points="22.00,112.00 143.00,33.42 194.03,112.00"/>
-              <line class="edge" x1="143" y1="33.42" x2="143" y2="112"/>
-              <polyline class="mark" points="130.42,41.59 138.59,54.17 151.17,46.00"/>
-              <polyline class="mark" points="133.00,112.00 133.00,102.00 143.00,102.00"/>
-              <path class="mark" d="M 45.00,112.00 A 23 23 0 0 0 41.29,99.47"/>
-              <text x="69" y="104">33°</text><text x="10" y="129">P</text><text x="138" y="23">Q</text><text x="137" y="130">H</text><text x="198" y="129">R</text>
-            </svg></div>
-            <figcaption>H lies between P and R. QH is a cut perpendicular to PR. The outer angle ∠PQR measures 90°, and ∠QPH measures 33°.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><a href="#term-similar">Similar</a> triangles have equal matching angles and one common multiplier between matching side lengths. <a href="#term-corresponding">Corresponding</a> means matching in that pairing.</p>
-          <p><strong>Goal</strong> Decide if the pieces △PHQ and △QHR are similar. Identify which edge of the right piece matches the cut QH of the left piece.</p>
-          <ol class="steps">
-            <li>The perpendicular cut makes both angles at H right angles, so ∠PHQ ≅ ∠QHR. The symbol ≅ means <a href="#term-congruent">congruent</a>, or equal in measure.</li>
-            <li>In the left piece, <span class="equation">m∠PQH = 180° − 90° − 33° = 57°</span>. The cut splits the 90° corner at Q, so <span class="equation">m∠HQR = 90° − 57° = 33°</span>. This matches ∠QPH on the left.</li>
-            <li>Two distinct corresponding angle pairs prove similarity by <a href="#term-aa">Angle–Angle (AA)</a>. Once two angles match, subtracting them from 180° gives the same third angle in both triangles. The triangle’s shape is fixed even though its size can vary.</li>
-            <li>Pair P ↔ Q, H ↔ H and Q ↔ R. Write <strong>△PHQ ∼ △QHR</strong>. The side pairs are PH ↔ QH, HQ ↔ HR and QP ↔ RQ. The cut HQ of the left piece matches HR on the right. A side can belong to both triangles and still have a different corresponding partner.</li>
-          </ol>
-          <a class="activity-return" href="#evidence-right">Back to the cut panel</a>
+    <section aria-labelledby="warmup-title">
+      <h2 id="warmup-title">Before you start</h2>
+      <p>A triangle has angles of 48° and 77°. Write an equation for the third angle. In ∠ZXY, which letter names the corner?</p>
+      <div class="blank" aria-hidden="true"></div>
+      <details class="comparison"><summary id="compare-warmup">Check the two prerequisites</summary>
+          <p>The angle measures in a triangle add to 180°, so 48° + 77° + <var>a</var> = 180° and <var>a</var> = 55°. The middle letter X names the <a href="#term-vertex">vertex</a>, the corner where the two rays meet. Say ∠ZXY and point to X before tracing the rays XZ and XY.</p>
+        </details>
+      <div class="task-split warm-split">
+        <figure><svg viewBox="0 0 292 276" role="img" aria-labelledby="arc-key-t" aria-describedby="arc-key-d"><title id="arc-key-t">Four angles</title><desc id="arc-key-d">Four angles. K and R each have one arc. M and N each have two arcs.</desc><path class="dg-line" d="M 95.10 21.28 L 48.00 73.60 L 117.33 61.38"/><path class="dg-red" d="M 62.72 57.25 A 22 22 0 0 1 69.67 69.78"/><text class="dg-label" x="25.60" y="71.20">K</text><path class="dg-line" d="M 194.43 142.08 L 220.80 76.80 L 150.58 81.71"/><path class="dg-red" d="M 212.56 97.20 A 22 22 0 0 1 198.85 78.34"/><path class="dg-red" d="M 209.56 104.62 A 30 30 0 0 1 190.87 78.89"/><text class="dg-label" x="209.60" y="71.20">M</text><path class="dg-line" d="M 33.28 206.56 L 97.60 235.20 L 95.14 164.85"/><path class="dg-red" d="M 77.50 226.25 A 22 22 0 0 1 96.83 213.21"/><path class="dg-red" d="M 70.19 223.00 A 30 30 0 0 1 96.55 205.22"/><text class="dg-label" x="105.60" y="255.20">N</text><path class="dg-line" d="M 226.18 157.87 L 238.40 227.20 L 271.46 165.04"/><path class="dg-red" d="M 234.58 205.53 A 22 22 0 0 1 248.73 207.78"/><text class="dg-label" x="240.00" y="252.00">R</text></svg><figcaption>K and R each have one arc. M and N each have two arcs.</figcaption></figure>
+        <div>
+          <p>Which angles do the arc marks pair? What do the marks tell you about their measures?</p>
+          <div class="blank" aria-hidden="true"></div>
+          <details class="comparison"><summary id="compare-marks">Read the arc marks</summary><p>∠K and ∠R have the same measure because they have matching single arcs. ∠M and ∠N have matching double arcs. You can pair angles by the arc counts without knowing their measures in degrees.</p></details>
         </div>
+      </div>
+      <aside class="callout" aria-labelledby="how-title">
+        <h3 id="how-title">How the Try-it tasks work</h3>
+        <p>Each problem type ends with a task. Try one task at a time on paper. Use the facts and marks on its diagram, then open the comparison to check your reasoning. Stop after any task. For a short first session, try A and B.</p>
+        <p>When you compare, find the first step where your reasoning differs. Repair that line on paper, then attempt the retry.</p>
+      </aside>
+    </section>
+
+    <section class="define-block" id="words" aria-labelledby="words-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="words-title">Reading a similarity statement</h2>
+      <p><a href="#term-similar">Similar</a> triangles have equal matching angles and one common multiplier between matching side lengths. <a href="#term-corresponding">Corresponding</a> means matching in that pairing. The statement’s letter order is the pairing, not where the triangles sit on the page.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="0 0 456 336" role="img" aria-labelledby="read-order-t" aria-describedby="read-order-d"><title id="read-order-t">Reading the similarity statement UVW similar to GHJ</title><desc id="read-order-d">The statement triangle UVW is similar to triangle GHJ is written at the top, with curves joining the first letters U and G, the second letters V and H, and the third letters W and J. Below, a small triangle UVW and a larger, turned triangle GHJ. U and G each have one arc, V and H two arcs, W and J three arcs. Side WU and side JG are highlighted in blue as corresponding sides. A leader points to vertex U.</desc><path class="dg-line" d="M 34.00 296.00 L 160.00 296.00 L 113.22 208.02 Z"/><path class="dg-line" d="M 419.26 296.60 L 292.13 155.40 L 240.74 296.60 Z"/><path class="dg-blue" d="M 113.22 208.02 L 34.00 296.00"/><path class="dg-blue" d="M 240.74 296.60 L 419.26 296.60"/><path class="dg-red" d="M 58.00 296.00 A 24 24 0 0 0 50.06 278.16"/><path class="dg-red" d="M 403.20 278.76 A 24 24 0 0 0 395.26 296.60"/><path class="dg-red" d="M 140.00 296.00 A 20 20 0 0 1 150.61 278.34"/><path class="dg-red" d="M 134.00 296.00 A 26 26 0 0 1 147.79 273.04"/><path class="dg-red" d="M 305.51 170.26 A 20 20 0 0 1 285.29 174.20"/><path class="dg-red" d="M 309.53 174.72 A 26 26 0 0 1 283.24 179.83"/><path class="dg-red" d="M 102.51 219.91 A 16 16 0 0 0 120.73 222.15"/><path class="dg-red" d="M 98.50 224.37 A 22 22 0 0 0 123.55 227.44"/><path class="dg-red" d="M 94.48 228.83 A 28 28 0 0 0 126.36 232.74"/><path class="dg-red" d="M 256.74 296.60 A 16 16 0 0 0 246.21 281.56"/><path class="dg-red" d="M 262.74 296.60 A 22 22 0 0 0 248.26 275.93"/><path class="dg-red" d="M 268.74 296.60 A 28 28 0 0 0 250.31 270.29"/><text class="dg-big" x="13.78" y="310.67" text-anchor="middle">U</text><text class="dg-big" x="179.60" y="311.98" text-anchor="middle">V</text><text class="dg-big" x="117.21" y="192.38" text-anchor="middle">W</text><text class="dg-big" x="439.24" y="311.82" text-anchor="middle">G</text><text class="dg-big" x="286.43" y="140.15" text-anchor="middle">H</text><text class="dg-big" x="221.99" y="314.11" text-anchor="middle">J</text><text class="dg-big" x="112.00" y="52.00" text-anchor="middle">△</text><text class="dg-big" x="138.00" y="52.00" text-anchor="middle">U</text><text class="dg-big" x="164.00" y="52.00" text-anchor="middle">V</text><text class="dg-big" x="190.00" y="52.00" text-anchor="middle">W</text><text class="dg-big" x="224.00" y="52.00" text-anchor="middle">∼</text><text class="dg-big" x="258.00" y="52.00" text-anchor="middle">△</text><text class="dg-big" x="284.00" y="52.00" text-anchor="middle">G</text><text class="dg-big" x="310.00" y="52.00" text-anchor="middle">H</text><text class="dg-big" x="336.00" y="52.00" text-anchor="middle">J</text><path class="dg-curve" d="M 138 62 C 138 98, 284 98, 284 62"/><path class="dg-curve" d="M 164 62 C 164 98, 310 98, 310 62"/><path class="dg-curve" d="M 190 62 C 190 98, 336 98, 336 62"/><text class="dg-note" x="224.00" y="116.00" text-anchor="middle">same position = corresponding</text><path class="dg-leader" d="M 224.00 34.00 L 224.00 24.00"/><text class="dg-note" x="224.00" y="17.00" text-anchor="middle">is similar to</text><path class="dg-leader" d="M 37.00 301.00 L 66.00 316.00"/><text class="dg-note" x="70.00" y="326.00">vertex U</text><path class="dg-leader" d="M 68.61 249.01 L 34.00 200.00"/><text class="dg-label-blue" x="8.00" y="192.00">side WU</text><path class="dg-leader" d="M 330.00 301.60 L 330.00 314.60"/><text class="dg-label-blue" x="330.00" y="330.60" text-anchor="middle">side JG</text></svg><figcaption>GHJ is larger and turned, yet the statement still pairs first with first, second with second, third with third. The arcs confirm it: U and G have one, V and H two, W and J three.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key" aria-hidden="true"></span><a href="#term-vertex">Vertex</a></dt><dd>A corner of a figure. In ∠PQR the vertex is Q, the middle letter.<span class="in-diagram">In the diagram: U, V and W are the vertices of the small triangle; the leader points to U.</span></dd></div>
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#term-corresponding">Corresponding vertices</a></dt><dd>Letters in the same position of the statement. Their angles are congruent.<span class="in-diagram">In the diagram: the red curves join U ↔ G, V ↔ H, W ↔ J, and the arc counts match.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span><a href="#term-corresponding">Corresponding sides</a></dt><dd>Sides whose endpoints are corresponding vertices. Map each endpoint on its own.<span class="in-diagram">In the diagram: W ↔ J and U ↔ G, so WU corresponds to JG (blue).</span></dd></div>
+          <div><dt><span class="key key-dash" aria-hidden="true"></span><a href="#term-similar">Similar (∼)</a></dt><dd>Same shape, possibly a different size.<span class="in-diagram">In the diagram: the ∼ in △UVW ∼ △GHJ, read “is similar to”.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span><a href="#term-scale">Scale factor</a></dt><dd>The multiplier from one figure’s length to its partner. It depends on the direction of comparison.<span class="in-diagram">In the diagram: JG ÷ WU goes from UVW to GHJ.</span></dd></div>
+        </dl>
+      </div>
+      <p class="rule"><strong>Angle–Angle similarity (AA)</strong> Two triangles are similar if two distinct angles of one triangle are <a href="#term-congruent">congruent</a> to two distinct corresponding angles of the other.</p>
+      <details class="hint"><summary>Why are two angle pairs enough?</summary><p>Once two angles match, subtracting them from 180° gives the same third angle in both triangles. The triangle’s shape is fixed even though its size can vary.</p></details>
+    </section>
+
+    <section class="define-block" id="evidence" aria-labelledby="evidence-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="evidence-title">Where angle matches come from</h2>
+      <p>AA needs two angle pairs, and each pair needs a reason. The symbol ≅ means <a href="#term-congruent">congruent</a>, or equal in measure. Besides measures written on the figure, these are the reasons this lesson uses.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="0 0 300 220" role="img" aria-labelledby="ev-cross-t" aria-describedby="ev-cross-d"><title id="ev-cross-t">Vertical angles and alternate interior angles</title><desc id="ev-cross-d">Two straight braces cross at S, joining P to D and K to E. The arms PK and ED are parallel, marked with arrows and highlighted in blue. The angles PSK and DSE, opposite each other at S, each have one red arc and are labeled vertical angles. The angles KPS at P and EDS at D lie between the parallel arms on opposite sides of brace PD. Each has two yellow arcs and is labeled alternate interior.</desc><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-blue" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-blue" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-tick-blue" d="M 118.22 55.55 L 125.22 49.60 L 118.22 43.65"/><path class="dg-tick-blue" d="M 158.49 163.55 L 165.49 157.60 L 158.49 151.65"/><path class="dg-red" d="M 114.04 95.95 A 20 20 0 0 1 143.57 91.07"/><path class="dg-red" d="M 147.89 117.25 A 20 20 0 0 1 118.37 122.13"/><path class="dg-sun" d="M 66.40 49.60 A 26 26 0 0 1 62.40 63.45"/><path class="dg-sun" d="M 72.40 49.60 A 32 32 0 0 1 67.48 66.65"/><path class="dg-sun" d="M 186.00 157.60 A 26 26 0 0 1 190.00 143.75"/><path class="dg-sun" d="M 180.00 157.60 A 32 32 0 0 1 184.92 140.55"/><text class="dg-label" x="32.40" y="41.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="224.00" y="165.60">D</text><text class="dg-label" x="79.60" y="165.60" text-anchor="end">E</text><path class="dg-leader" d="M 126.97 88.60 L 150.00 22.00"/><text class="dg-small" x="150.00" y="16.00" text-anchor="middle">vertical angles</text><path class="dg-leader" d="M 69.22 57.92 L 24.00 112.00"/><text class="dg-small" x="20.00" y="128.00" text-anchor="start">alternate</text><text class="dg-small" x="20.00" y="144.00" text-anchor="start">interior</text><path class="dg-leader" d="M 183.18 149.28 L 176.00 196.00"/><text class="dg-small" x="176.00" y="212.00" text-anchor="middle">alternate interior</text><path class="dg-leader" d="M 248.00 98.00 L 152.58 53.60"/><path class="dg-leader" d="M 248.00 114.00 L 189.52 153.60"/><text class="dg-label-blue" x="296.00" y="104.00" text-anchor="end">parallel</text><text class="dg-label-blue" x="296.00" y="122.00" text-anchor="end">arms</text></svg><svg viewBox="0 0 290 232" role="img" aria-labelledby="ev-shared-t" aria-describedby="ev-shared-d"><title id="ev-shared-t">A shared angle</title><desc id="ev-shared-d">Triangle AEI, shaded blue with solid edges, and triangle ABT, shaded yellow with dashed edges, overlap. A, E, B lie on one ray and A, T, I lie on the other. The angle at A, formed by those same two rays, belongs to both triangles. It has one red arc and is labeled shared angle at A.</desc><path class="dg-fill" d="M 31.00 105.00 L 149.58 68.75 L 214.18 161.00 Z"/><path class="dg-fill-sun" d="M 31.00 105.00 L 239.83 41.16 L 166.18 146.33 Z"/><path class="dg-line" d="M 31.00 105.00 L 149.58 68.75 L 214.18 161.00 Z"/><path class="dg-dashed" d="M 31.00 105.00 L 239.83 41.16 L 166.18 146.33 Z"/><path class="dg-red" d="M 63.51 95.06 A 34 34 0 0 1 63.51 114.94"/><text class="dg-label" x="25.00" y="111.00" text-anchor="end">A</text><text class="dg-label" x="147.58" y="58.75" text-anchor="middle">E</text><text class="dg-label" x="245.83" y="37.16">B</text><text class="dg-label" x="162.18" y="168.33" text-anchor="middle">T</text><text class="dg-label" x="222.18" y="175.00">I</text><path class="dg-leader" d="M 67.00 109.00 L 70.00 200.00"/><text class="dg-label-red" x="8.00" y="216.00">shared angle at A</text></svg><figcaption>Top: two braces crossing between parallel arms. Bottom: two overlapping triangles that start at the same corner A.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key" aria-hidden="true"></span><a href="#term-congruent">Congruent angles (≅)</a></dt><dd>Angles with the same measure. Matching arc counts show it.<span class="in-diagram">In the diagram: the two red single arcs, and the two yellow double arcs.</span></dd></div>
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#term-vertical">Vertical angles</a></dt><dd>Opposite angles formed when two straight lines cross. Each uses the opposite rays of the other. They are always congruent.<span class="in-diagram">In the diagram: ∠PSK and ∠DSE at S, red.</span></dd></div>
+          <div><dt><span class="key key-sun" aria-hidden="true"></span><a href="#term-alternate">Alternate interior angles</a></dt><dd>Inside two lines and on opposite sides of a line crossing them. Congruent when the two lines are parallel.<span class="in-diagram">In the diagram: ∠KPS and ∠EDS, yellow, between the blue arms on opposite sides of PD.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span>Parallel (∥)</dt><dd>Lines that never meet. Matching arrow marks show it. Two lines perpendicular to the same line are also parallel.<span class="in-diagram">In the diagram: arms PK and ED, blue with arrows.</span></dd></div>
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#term-shared">Shared angle</a></dt><dd>One angle used by both triangles. Its vertex and both rays agree.<span class="in-diagram">In the diagram: the red arc at A, used by △AEI and △ABT.</span></dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="activity" aria-labelledby="overlap-title">
-      <h2 id="overlap-title">Trace the rays when triangles overlap</h2>
-      <div class="activity-split">
-        <aside id="evidence-overlap" class="activity-evidence" tabindex="0" aria-labelledby="given-overlap">
-          <h3 id="given-overlap">Two outlines from A</h3>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 283 209" role="img" aria-labelledby="work-overlap-title" aria-describedby="work-overlap-desc"><title id="work-overlap-title">Triangles AEI and ABT</title><desc id="work-overlap-desc">Triangles AEI and ABT. A, E, B lie on one ray in that order. A, T, I lie on the other ray in that order. 108 degrees at angle AEI and angle ATB.</desc><polygon class="edge other" points="25.00,99.00 233.83,35.16 160.18,140.33"/><polygon class="edge" points="25.00,99.00 143.58,62.75 208.18,155.00"/><path class="mark" d="M129.24,67.13 A15,15 0 0 0 152.19,75.03"/><path class="mark" d="M145.84,135.94 A15,15 0 0 1 168.79,128.04"/><text x="105.58" y="90.75" class="">108°</text><text x="122.18" y="127.33" class="">108°</text><text x="17.00" y="89.00" class="">A</text><text x="148.58" y="57.75" class="">E</text><text x="213.18" y="171.00" class="">I</text><text x="238.83" y="29.16" class="">B</text><text x="165.18" y="157.33" class="">T</text></svg></div>
-            <figcaption>A, E, B lie on the upper ray in that order. A, T, I lie on the lower ray in that order. m∠AEI = m∠ATB = 108°. Solid and dashed edges distinguish the outlines.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><strong>Goal</strong> Decide if △AEI and △ABT are similar. Picture yourself tracing A → E → I → A, then A → B → T → A.</p>
-          <p>At A, both angles use the same two rays. So ∠EAI ≅ ∠TAB. This is a <a href="#term-shared">shared angle</a>.</p>
-          <p>The 108° labels give the second match, ∠AEI ≅ ∠ATB. Pair A with A and E with T, leaving I with B. By AA, <strong>△AEI ∼ △ATB</strong>.</p>
-          <p>Writing △AEI ∼ △ABT would pair E with B just because both are on the upper ray. Check the 108° labels. They pair E with T, on the other ray. So even AE and AT are corresponding sides across the rays.</p>
-          <a class="activity-return" href="#evidence-overlap">Back to the overlapping outlines</a>
+    <section class="worked" id="type-measures" aria-labelledby="angle-match">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 1</p>
+        <h2 id="angle-match">Match the angles from their measures</h2>
+        <p class="worked-goal">Decide if the pieces △PHQ and △QHR are similar. Identify which edge of the right piece matches the cut QH of the left piece.</p>
+      </header>
+      <p class="given"><strong>Given</strong> H lies between P and R. QH is a cut perpendicular to PR. The outer angle ∠PQR measures 90°, and ∠QPH measures 33°.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="angle-match">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s1-t" aria-describedby="t1s1-d"><title id="t1s1-t">The cut panel with its marks</title><desc id="t1s1-d">Triangle PQR with a cut from Q straight down to H on PR. Right-angle boxes at Q and at both sides of H, and a 33 degree arc at P, are highlighted.</desc><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-red" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-red" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><path class="dg-red" d="M 209.50 34.13 L 209.50 152.00"/><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the givens</p><h3>Mark what you know</h3><p class="slide-math">m∠PQR = 90°, m∠QPH = 33°</p><p>H lies between P and R. QH is a cut perpendicular to PR, so it makes right angles at H.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s2-t" aria-describedby="t1s2-d"><title id="t1s2-t">Right angles at H</title><desc id="t1s2-d">The left piece PHQ is shaded blue and the right piece QHR yellow. Both right-angle boxes at H are highlighted in red.</desc><path class="dg-fill" d="M 28.00 152.00 L 209.50 152.00 L 209.50 34.13 Z"/><path class="dg-fill-sun" d="M 209.50 34.13 L 209.50 152.00 L 286.05 152.00 Z"/><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-thin" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-red" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-thin" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">First pair</p><h3>Right angles at H</h3><p class="slide-math">∠PHQ ≅ ∠QHR</p><p>The perpendicular cut makes both angles at H right angles, so they are congruent.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s3-t" aria-describedby="t1s3-d"><title id="t1s3-t">The third angle of the left piece</title><desc id="t1s3-d">The left piece PHQ is shaded. The 33 degree angle at P is red. The angle PQH at Q, inside the left piece, is blue and labeled 57 degrees.</desc><path class="dg-fill" d="M 28.00 152.00 L 209.50 152.00 L 209.50 34.13 Z"/><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-thin" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-thin" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-thin" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><path class="dg-blue" d="M 184.34 50.47 A 30 30 0 0 0 209.50 64.13"/><text class="dg-label-blue" x="185.64" y="83.07" text-anchor="middle">57°</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Left piece</p><h3>Find the third angle</h3><p class="slide-math">m∠PQH = 180° − 90° − 33° = 57°</p><p>The angles of the left piece add to 180°.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s4-t" aria-describedby="t1s4-d"><title id="t1s4-t">The other part of the corner at Q</title><desc id="t1s4-d">The right piece QHR is shaded. The 90 degree box at Q is red. The angle HQR, the part of the corner inside the right piece, is blue and labeled 33 degrees.</desc><path class="dg-fill-sun" d="M 209.50 34.13 L 209.50 152.00 L 286.05 152.00 Z"/><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-red" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-thin" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-thin" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-thin" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><path class="dg-blue" d="M 209.50 64.13 A 30 30 0 0 0 225.84 59.29"/><text class="dg-label-blue" x="229.38" y="106.25" text-anchor="middle">33°</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Right piece</p><h3>Split the corner at Q</h3><p class="slide-math">m∠HQR = 90° − 57° = 33°</p><p>The cut splits the 90° corner at Q. The part in the right piece is 33°, which matches ∠QPH.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s5-t" aria-describedby="t1s5-d"><title id="t1s5-t">Two angle pairs</title><desc id="t1s5-d">Both 33 degree angles, at P in the left piece and HQR in the right piece, are red, and both right angles at H are red.</desc><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-thin" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-red" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><path class="dg-red" d="M 209.50 64.13 A 30 30 0 0 0 225.84 59.29"/><text class="dg-label-red" x="229.38" y="106.25" text-anchor="middle">33°</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Second pair</p><h3>Two pairs is AA</h3><p class="slide-math">∠QPH ≅ ∠HQR</p><p>Two distinct angle pairs prove similarity by <a href="#term-aa">AA</a>. The third angles must match too.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s6-t" aria-describedby="t1s6-d"><title id="t1s6-t">Matched vertices</title><desc id="t1s6-d">Both pieces are shaded. P in the left piece and Q in the right piece hold the 33 degree angles. H holds the right angle in both.</desc><path class="dg-fill" d="M 28.00 152.00 L 209.50 152.00 L 209.50 34.13 Z"/><path class="dg-fill-sun" d="M 209.50 34.13 L 209.50 152.00 L 286.05 152.00 Z"/><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-thin" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-red" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 61.55 130.21 A 40 40 0 0 1 68.00 152.00"/><text class="dg-small" x="83.61" y="140.53" text-anchor="middle">33°</text><path class="dg-red" d="M 209.50 64.13 A 30 30 0 0 0 225.84 59.29"/><text class="dg-label-red" x="229.38" y="106.25" text-anchor="middle">33°</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Write it in order</p><h3>Pair the vertices</h3><p class="slide-math">△PHQ ∼ △QHR</p><p>P ↔ Q (the 33° angles), H ↔ H (the right angles), and Q ↔ R is left over.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 320 190" role="img" aria-labelledby="t1s7-t" aria-describedby="t1s7-d"><title id="t1s7-t">The partner of the cut</title><desc id="t1s7-d">The cut HQ is red, labeled as a side of the left piece. Segment HR, the base of the right piece, is blue.</desc><path class="dg-line" d="M 28.00 152.00 L 209.50 34.13 L 286.05 152.00 Z"/><path class="dg-line" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-thin" d="M 198.60 41.21 L 205.68 52.11 L 216.58 45.03"/><path class="dg-thin" d="M 196.50 152.00 L 196.50 139.00 L 209.50 139.00"/><path class="dg-thin" d="M 222.50 152.00 L 222.50 139.00 L 209.50 139.00"/><path class="dg-red" d="M 209.50 34.13 L 209.50 152.00"/><path class="dg-blue" d="M 209.50 152.00 L 286.05 152.00"/><text class="dg-label-red" x="195.50" y="98.06" text-anchor="middle">HQ</text><text class="dg-label-blue" x="247.77" y="145.00" text-anchor="middle">HR</text><text class="dg-label" x="20.00" y="160.00" text-anchor="end">P</text><text class="dg-label" x="209.50" y="22.13" text-anchor="middle">Q</text><text class="dg-label" x="209.50" y="178.00" text-anchor="middle">H</text><text class="dg-label" x="294.05" y="160.00">R</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the sides</p><h3>Find the cut’s partner</h3><p class="slide-math">HQ ↔ HR</p><p>The side pairs are PH ↔ QH, HQ ↔ HR and QP ↔ RQ. A side can belong to both triangles and still have a different partner.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-    </section>
-
-    <section class="activity" aria-labelledby="cross-title">
-      <h2 id="cross-title">Find the angle evidence at a crossing</h2>
-      <div class="activity-split">
-        <aside id="evidence-cross" class="activity-evidence" tabindex="0" aria-labelledby="given-cross">
-          <h3 id="given-cross">Two arms on one upright</h3>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 278 171" role="img" aria-labelledby="work-cross-figure-title" aria-describedby="work-cross-figure-desc">
-              <title id="work-cross-figure-title">Crossed braces on a bracket</title>
-              <desc id="work-cross-figure-desc">P, S and D are on one straight brace. K, S and E are on another. Arm PK extends past K and arm ED extends past D to the same upright. Both joins to the upright have right-angle boxes.</desc>
-              <polyline class="edge" points="42,38 185,128"/>
-              <polyline class="edge" points="156,38 83,128"/>
-              <polyline class="edge" points="42,38 156,38"/>
-              <polyline class="edge" points="83,128 185,128"/>
-              <polyline class="edge other" points="156,38 235,38"/>
-              <polyline class="edge other" points="185,128 235,128"/>
-              <line class="edge" x1="235" y1="26" x2="235" y2="142"/>
-              <polyline class="mark" points="223,38 223,50 235,50"/>
-              <polyline class="mark" points="223,128 223,116 235,116"/>
-              <text x="26" y="31">P</text><text x="161" y="28">K</text><text x="129" y="90">S</text><text x="190" y="148">D</text><text x="69" y="148">E</text>
-            </svg></div>
-            <figcaption>P–S–D and K–S–E are straight. The dashed continuations of PK and ED meet the same upright at right angles.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><strong>Goal</strong> Decide whether the right-angle boxes and crossed braces prove △PKS is similar to the triangle across S.</p>
-          <p>∠PSK ≅ ∠DSE. Each uses the opposite ray of the other at the crossing. Such a pair is called <a href="#term-vertical">vertical angles</a>.</p>
-          <p>The right angles on the upright are outside the triangles. They establish that both arms are perpendicular to the same line, so PK ∥ ED. The symbol ∥ means the lines are parallel. One box by itself would give no such guarantee.</p>
-          <p>Trace P–S–D across those parallel arms. ∠KPS and ∠EDS lie between the arms and on opposite sides of the brace. They are <a href="#term-alternate">alternate interior angles</a> and are congruent because the arms are parallel. Arrow marks on the arms would also establish parallelism directly.</p>
-          <p>Now P ↔ D and S ↔ S, leaving K ↔ E. Therefore <strong>△PKS ∼ △DES</strong> by AA.</p>
-          <a class="activity-return" href="#evidence-cross">Back to the crossed braces</a>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Match the right angles made by the cut.</p><p class="step-math">∠PHQ ≅ ∠QHR</p><details class="why"><summary>Why?</summary><p>The cut is perpendicular to PR, so both angles at H are right angles. Any two right angles are <a href="#term-congruent">congruent</a>.</p></details></li>
+          <li><p class="step-do">Find the missing angle in the left piece.</p><p class="step-math">m∠PQH = 180° − 90° − 33° = 57°</p><details class="why"><summary>Why?</summary><p>The angle measures in a triangle add to 180°.</p></details></li>
+          <li><p class="step-do">Subtract to find the angle on the other side of the cut.</p><p class="step-math">m∠HQR = 90° − 57° = 33°</p><details class="why"><summary>Why?</summary><p>The cut splits the 90° corner at Q into two parts that add to 90°. The 33° part matches ∠QPH in the left piece.</p></details></li>
+          <li><p class="step-do">Conclude similarity by AA.</p><p class="step-math">△PHQ ∼ △QHR</p><details class="why"><summary>Why?</summary><p>Two distinct corresponding angle pairs are enough. Once two angles match, subtracting them from 180° gives the same third angle in both triangles.</p></details></li>
+          <li><p class="step-do">Pair the vertices by their angles, then read off the side pairs.</p><p class="step-math">P ↔ Q, H ↔ H, Q ↔ R; HQ ↔ HR</p><details class="why"><summary>Why?</summary><p>The order of the statement is the pairing. The cut HQ is a side of both pieces, but in the right piece its partner is HR.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="try-right-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-right-title" tabindex="-1">A. Choose the match</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 360 270" role="img" aria-labelledby="try-right-t" aria-describedby="try-right-d"><title id="try-right-t">Triangles VGF, QYD and UZE</title><desc id="try-right-d">Triangle VGF with a right angle at G and 53 degrees at F. Triangle QYD with a right angle at Y and 37 degrees at Q. Triangle UZE with a right angle at Z and 40 degrees at U.</desc><path class="dg-line" d="M 29.51 112.00 L 137.00 112.00 L 137.00 31.00 Z"/><path class="dg-thin" d="M 126.00 112.00 L 126.00 101.00 L 137.00 101.00"/><path class="dg-red" d="M 137.00 51.00 A 20 20 0 0 1 121.03 43.04"/><text class="dg-len" x="114.69" y="80.75" text-anchor="middle">53°</text><text class="dg-label" x="12.67" y="124.35" text-anchor="middle">V</text><text class="dg-label" x="151.38" y="128.83" text-anchor="middle">G</text><text class="dg-label" x="146.95" y="22.00" text-anchor="middle">F</text><path class="dg-line" d="M 328.49 38.00 L 221.00 38.00 L 221.00 119.00 Z"/><path class="dg-thin" d="M 232.00 38.00 L 232.00 49.00 L 221.00 49.00"/><path class="dg-red" d="M 308.49 38.00 A 20 20 0 0 0 312.52 50.04"/><text class="dg-len" x="281.07" y="58.87" text-anchor="middle">37°</text><text class="dg-label" x="345.33" y="37.65" text-anchor="middle">Q</text><text class="dg-label" x="206.62" y="33.17" text-anchor="middle">Y</text><text class="dg-label" x="211.05" y="140.00" text-anchor="middle">D</text><path class="dg-line" d="M 227.53 168.00 L 131.00 168.00 L 131.00 249.00 Z"/><path class="dg-thin" d="M 142.00 168.00 L 142.00 179.00 L 131.00 179.00"/><path class="dg-red" d="M 207.53 168.00 A 20 20 0 0 0 212.21 180.86"/><text class="dg-len" x="180.55" y="190.10" text-anchor="middle">40°</text><text class="dg-label" x="244.13" y="167.04" text-anchor="middle">U</text><text class="dg-label" x="117.21" y="162.43" text-anchor="middle">Z</text><text class="dg-label" x="121.79" y="270.46" text-anchor="middle">E</text></svg><figcaption>Right angles at G, Y, and Z. m∠VFG = 53°, m∠YQD = 37°, and m∠ZUE = 40°.</figcaption></figure>
+          <div>
+            <p>Compare △VGF with each of △QYD and △UZE. For each comparison, decide whether the triangles are similar. Support the decision with the angle measures. For any similar pair, write an ordered similarity statement beginning with △VGF.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison">
+        <summary id="compare-right">A · Right triangles</summary>
+        <p>In △VGF, m∠V = 180° − 90° − 53° = 37°. So V ↔ Q and G ↔ Y. That leaves F ↔ D, giving △VGF ∼ △QYD by AA. △UZE has angles 40°, 90°, and 50°. Neither acute angle matches either acute angle of △VGF, so these triangles are not similar.</p>
+        <p>If you paired F with Q because they both had numbers, compare the numbers. The marked 53° and 37° are different. Subtract from 180° before deciding what matches.</p>
+      </details>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="activity" aria-labelledby="lengths">
-      <h2 id="lengths">2. Use whole corresponding sides</h2>
-      <div class="activity-split">
-        <aside id="evidence-whole" class="activity-evidence" tabindex="0" aria-labelledby="given-whole">
-          <h3 id="given-whole">A split edge on a frame</h3>
-          <figure>
-            <div class="diagrams pair"><svg viewBox="0 0 267 140" role="img" aria-labelledby="whole-a-title" aria-describedby="whole-a-desc"><title id="whole-a-title">Triangle XBU</title><desc id="whole-a-desc">Triangle XBU. Right angle at B. W splits XB into lengths 9 and 19, in that order. BU is labeled 21.</desc><polygon class="edge" points="76.33,105.00 179.00,105.00 179.00,28.00"/><polyline class="mark" points="168.00,105.00 168.00,94.00 179.00,94.00"/><text x="63.33" y="118.00" class="">X</text><text x="184.00" y="118.00" class="">B</text><text x="184.00" y="25.00" class="">U</text><circle cx="109.33" cy="105" r="3.5"/><text x="104.33" y="98.00" class="">W</text><text x="83.83" y="129.00" class="">9</text><text x="136.17" y="129.00" class="">19</text><text x="187.00" y="71.50" class="measure">21</text></svg><svg viewBox="0 0 267 140" role="img" aria-labelledby="whole-b-title" aria-describedby="whole-b-desc"><title id="whole-b-title">Triangle FDZ</title><desc id="whole-b-desc">Triangle FDZ. Right angle at D. FD is labeled x. DZ is labeled 12.</desc><polygon class="edge" points="182.67,29.00 80.00,29.00 80.00,106.00"/><polyline class="mark" points="91.00,29.00 91.00,40.00 80.00,40.00"/><text x="187.67" y="33.00" class="">F</text><text x="63.00" y="33.00" class="">D</text><text x="62.00" y="117.00" class="">Z</text><text x="111.33" y="20.00" class="measure">x</text><text x="71.00" y="72.50" class="measure end">12</text></svg></div>
-            <figcaption>The frames have ∠X ≅ ∠F and right angles at B and D. W is between X and B. XW = 9, WB = 19, BU = 21, and DZ = 12. All lengths are in centimeters.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><strong>Goal</strong> Find <var>x</var>, the length FD in centimeters.</p>
-          <p>The two angle pairs give △XBU ∼ △FDZ by AA. XB ↔ FD and BU ↔ DZ. W marks a point along XB, so the full corresponding side is XB.</p>
-          <ol class="steps equations">
-            <li>XB = 9 cm + 19 cm = 28 cm.</li>
-            <li><span class="frac" role="math" aria-label="x over 28"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">28</span></span> = <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span> <span class="reason">Match frame FDZ over frame XBU, using lengths in centimeters.</span></li>
-            <li><var>x</var> = 28 × <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span> <span class="reason">Multiply both sides by 28.</span></li>
-            <li><var>x</var> = 16, so FD = 16 cm. <span class="reason">Both corresponding side lengths shrink by the <a href="#term-scale">scale factor</a> 12/21.</span></li>
-          </ol>
-          <a class="activity-return" href="#evidence-whole">Back to the frame diagrams</a>
+    <section class="worked" id="type-overlap" aria-labelledby="overlap-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 2</p>
+        <h2 id="overlap-title">Trace the rays when triangles overlap</h2>
+        <p class="worked-goal">Decide if △AEI and △ABT are similar. Picture yourself tracing A → E → I → A, then A → B → T → A.</p>
+      </header>
+      <p class="given"><strong>Given</strong> A, E, B lie on the upper ray in that order. A, T, I lie on the lower ray in that order. m∠AEI = m∠ATB = 108°. Solid and dashed edges distinguish the outlines.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="overlap-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s1-t" aria-describedby="t2s1-d"><title id="t2s1-t">Triangle AEI traced</title><desc id="t2s1-d">Triangle AEI, with solid edges, is shaded blue. Triangle ABT has dashed edges. A, E, B lie on one ray and A, T, I on the other. 108 degrees is marked at E and at T.</desc><path class="dg-fill" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-thin" d="M 140.72 70.29 A 18 18 0 0 0 168.26 79.77"/><path class="dg-thin" d="M 158.98 145.10 A 18 18 0 0 1 186.52 135.62"/><text class="dg-small" x="116.14" y="95.83">108°</text><text class="dg-small" x="120.40" y="134.06">108°</text><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Trace</p><h3>Trace the first triangle</h3><p class="slide-math">A → E → I → A</p><p>Follow the solid outline. A, E, B lie on the upper ray in that order.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s2-t" aria-describedby="t2s2-d"><title id="t2s2-t">Triangle ABT traced</title><desc id="t2s2-d">Triangle ABT, with dashed edges, is shaded yellow. Triangle AEI is outlined.</desc><path class="dg-fill-sun" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-thin" d="M 140.72 70.29 A 18 18 0 0 0 168.26 79.77"/><path class="dg-thin" d="M 158.98 145.10 A 18 18 0 0 1 186.52 135.62"/><text class="dg-small" x="116.14" y="95.83">108°</text><text class="dg-small" x="120.40" y="134.06">108°</text><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Trace</p><h3>Trace the second triangle</h3><p class="slide-math">A → B → T → A</p><p>Follow the dashed outline. A, T, I lie on the lower ray in that order.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s3-t" aria-describedby="t2s3-d"><title id="t2s3-t">The shared angle at A</title><desc id="t2s3-d">Both rays from A are red, and the angle at A between them has a red arc. It belongs to both triangles.</desc><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-thin" d="M 140.72 70.29 A 18 18 0 0 0 168.26 79.77"/><path class="dg-thin" d="M 158.98 145.10 A 18 18 0 0 1 186.52 135.62"/><text class="dg-small" x="116.14" y="95.83">108°</text><text class="dg-small" x="120.40" y="134.06">108°</text><path class="dg-red" d="M 65.75 93.21 A 40 40 0 0 1 65.75 116.59"/><path class="dg-red" d="M 27.50 104.90 L 257.21 34.68"/><path class="dg-red" d="M 27.50 104.90 L 229.00 166.50"/><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">First pair</p><h3>The shared angle at A</h3><p class="slide-math">∠EAI ≅ ∠TAB</p><p>At A, both angles use the same two rays. This is a <a href="#term-shared">shared angle</a>.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s4-t" aria-describedby="t2s4-d"><title id="t2s4-t">The 108 degree angles</title><desc id="t2s4-d">The angle AEI at E and the angle ATB at T each have a red arc labeled 108 degrees.</desc><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-thin" d="M 65.75 93.21 A 40 40 0 0 1 65.75 116.59"/><path class="dg-red" d="M 140.72 70.29 A 18 18 0 0 0 168.26 79.77"/><path class="dg-red" d="M 158.98 145.10 A 18 18 0 0 1 186.52 135.62"/><text class="dg-label-red" x="116.14" y="95.83">108°</text><text class="dg-label-red" x="120.40" y="134.06">108°</text><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Second pair</p><h3>The labeled angles</h3><p class="slide-math">∠AEI ≅ ∠ATB</p><p>Both are marked 108°.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s5-t" aria-describedby="t2s5-d"><title id="t2s5-t">Pairing the vertices</title><desc id="t2s5-d">Two angle pairs. The shared angle at A has one red arc. The 108 degree angles at E and at T each have two blue arcs. Points E and T are emphasised as partners.</desc><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-red" d="M 65.75 93.21 A 40 40 0 0 1 65.75 116.59"/><path class="dg-blue" d="M 142.64 69.70 A 16 16 0 0 0 167.12 78.13"/><path class="dg-blue" d="M 136.90 71.46 A 22 22 0 0 0 170.56 83.05"/><path class="dg-blue" d="M 160.90 145.68 A 16 16 0 0 1 185.38 137.26"/><path class="dg-blue" d="M 155.16 143.93 A 22 22 0 0 1 188.82 132.34"/><text class="dg-label-blue" x="104.14" y="99.83">108°</text><text class="dg-label-blue" x="108.40" y="134.06">108°</text><circle class="dg-dot" cx="157.94" cy="65.03" r="6"/><circle class="dg-dot" cx="176.20" cy="150.36" r="6"/><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Pair and write</p><h3>Follow the marked angles</h3><p class="slide-math">△AEI ∼ △ATB</p><p>Pair A with A and E with T, leaving I with B. By AA, the triangles are similar.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t2s6-t" aria-describedby="t2s6-d"><title id="t2s6-t">Corresponding sides across the rays</title><desc id="t2s6-d">AE, on the upper ray, and AT, on the lower ray, are blue as corresponding sides. The rest of the upper ray, EB, is dashed.</desc><path class="dg-line" d="M 27.50 104.90 L 157.94 65.03 L 229.00 166.50 Z"/><path class="dg-dashed" d="M 27.50 104.90 L 257.21 34.68 L 176.20 150.36 Z"/><path class="dg-thin" d="M 140.72 70.29 A 18 18 0 0 0 168.26 79.77"/><path class="dg-thin" d="M 158.98 145.10 A 18 18 0 0 1 186.52 135.62"/><text class="dg-small" x="116.14" y="95.83">108°</text><text class="dg-small" x="120.40" y="134.06">108°</text><path class="dg-blue" d="M 27.50 104.90 L 157.94 65.03"/><path class="dg-blue" d="M 27.50 104.90 L 176.20 150.36"/><path class="dg-faint" d="M 157.94 65.03 L 257.21 34.68"/><text class="dg-label-blue" x="89.50" y="73.90" text-anchor="middle">AE</text><text class="dg-label-blue" x="101.50" y="149.90" text-anchor="middle">AT</text><text class="dg-label" x="21.50" y="110.90" text-anchor="end">A</text><text class="dg-label" x="155.94" y="53.03" text-anchor="middle">E</text><text class="dg-label" x="263.21" y="32.68">B</text><text class="dg-label" x="170.20" y="174.36" text-anchor="middle">T</text><text class="dg-label" x="237.00" y="182.50">I</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Avoid the trap</p><h3>Not by which ray</h3><p class="slide-math">not △AEI ∼ △ABT</p><p>E and B are both on the upper ray, but the 108° labels pair E with T. So AE and AT are corresponding sides across the rays.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-    </section>
-
-    <section class="activity" aria-labelledby="algebra-title">
-      <h2 id="algebra-title">Keep the order when both sides have <var>x</var></h2>
-      <div class="activity-split">
-        <aside id="evidence-algebra" class="activity-evidence" tabindex="0" aria-labelledby="given-algebra">
-          <h3 id="given-algebra">Two similar pieces</h3>
-          <p class="given-equation">△CGJ ∼ △LQS</p>
-          <figure>
-            <div class="diagrams pair"><svg viewBox="0 0 267 140" role="img" aria-labelledby="algebra-a-title" aria-describedby="algebra-a-desc"><title id="algebra-a-title">Triangle CGJ</title><desc id="algebra-a-desc">Triangle CGJ. Right angle at G. CG is labeled 24. M is between G and J. GM is labeled 2x minus 3, and MJ is labeled 5.</desc><polygon class="edge" points="141.60,29.00 80.00,29.00 80.00,106.00"/><polyline class="mark" points="91.00,29.00 91.00,40.00 80.00,40.00"/><text x="146.60" y="33.00" class="">C</text><text x="63.00" y="33.00" class="">G</text><text x="62.00" y="117.00" class="">J</text><text x="90.80" y="20.00" class="measure">24</text><circle cx="80" cy="93.17" r="2.75"/><text x="64" y="93">M</text><text x="71" y="62" class="measure end">2x − 3</text><text x="57" y="108" class="measure end">5</text></svg><svg viewBox="0 0 267 140" role="img" aria-labelledby="algebra-b-title" aria-describedby="algebra-b-desc"><title id="algebra-b-title">Triangle LQS</title><desc id="algebra-b-desc">Triangle LQS. Right angle at Q. LQ is labeled 16. QS is labeled x + 6.</desc><polygon class="edge" points="117.40,105.00 179.00,105.00 179.00,28.00"/><polyline class="mark" points="168.00,105.00 168.00,94.00 179.00,94.00"/><text x="104.40" y="118.00" class="">L</text><text x="184.00" y="118.00" class="">Q</text><text x="184.00" y="25.00" class="">S</text><text x="128.20" y="129.00" class="measure">16</text><text x="187.00" y="71.50" class="measure">x + 6</text></svg></div>
-            <figcaption>CG = 24, LQ = 16, and QS = <var>x</var> + 6. M lies between G and J, with GM = 2<var>x</var> − 3 and MJ = 5. The boxes mark right angles at G and Q. Lengths are in the same unit.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><strong>Goal</strong> Find <var>x</var>. The statement pairs GJ with QS and CG with LQ. GJ includes both pieces of the split edge. Write a <a href="#term-proportion">proportion</a>, an equation that sets two ratios equal.</p>
-          <p>GJ = GM + MJ = (2<var>x</var> − 3) + 5 = 2<var>x</var> + 2.</p>
-          <ol class="steps equations">
-            <li><span class="frac" role="math" aria-label="2x plus 2 over x plus 6"><span aria-hidden="true">2<var>x</var> + 2</span><span aria-hidden="true"><var>x</var> + 6</span></span> = <span class="frac" role="math" aria-label="24 over 16"><span aria-hidden="true">24</span><span aria-hidden="true">16</span></span> = <span class="frac" role="math" aria-label="3 over 2"><span aria-hidden="true">3</span><span aria-hidden="true">2</span></span> <span class="reason">Use △CGJ lengths over △LQS lengths in both ratios.</span></li>
-            <li>2(2<var>x</var> + 2) = 3(<var>x</var> + 6). <span class="reason">Clear the denominators. Since QS is a positive length, <var>x</var> + 6 &gt; 0.</span></li>
-            <li>4<var>x</var> + 4 = 3<var>x</var> + 18. <span class="reason">Distribute.</span></li>
-            <li><var>x</var> = 14. <span class="reason">Subtract 3<var>x</var> and 4 from both sides.</span></li>
-          </ol>
-          <p>Check the lengths. GM = 25 and MJ = 5, so GJ = 30. QS = 20. The lengths are positive and 30/20 = 24/16.</p>
-          <a class="activity-return" href="#evidence-algebra">Back to the piece diagrams</a>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Trace each triangle separately.</p><p class="step-math">A → E → I → A, A → B → T → A</p><details class="why"><summary>Why?</summary><p>Overlapping outlines share parts. Tracing shows which segments and corners belong to which triangle.</p></details></li>
+          <li><p class="step-do">Use the shared angle at A.</p><p class="step-math">∠EAI ≅ ∠TAB</p><details class="why"><summary>Why?</summary><p>The two angles have the same vertex and the same two rays, so they are the same angle. An angle is congruent to itself.</p></details></li>
+          <li><p class="step-do">Use the labeled angles.</p><p class="step-math">∠AEI ≅ ∠ATB</p><details class="why"><summary>Why?</summary><p>Both measure 108°. Angles with the same measure are congruent.</p></details></li>
+          <li><p class="step-do">Pair vertices by the marked angles, not by which ray they sit on.</p><p class="step-math">A ↔ A, E ↔ T, I ↔ B</p><details class="why"><summary>Why?</summary><p>Corresponding vertices are the ones with congruent angles. Writing △AEI ∼ △ABT would pair E with B just because both are on the upper ray.</p></details></li>
+          <li><p class="step-do">Write the statement in that order.</p><p class="step-math">△AEI ∼ △ATB</p><details class="why"><summary>Why?</summary><p>Two angle pairs prove similarity by AA. The order then gives the side pairs, such as AE ↔ AT.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="try-overlap-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-overlap-title" tabindex="-1">B. Compare two outlines</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 270 195" role="img" aria-labelledby="try-overlap-t" aria-describedby="try-overlap-d"><title id="try-overlap-t">Triangles CKJ and CLF</title><desc id="try-overlap-d">Triangles CKJ, solid, and CLF, dashed. C, K, L lie on one ray in that order. C, F, J lie on the other ray in that order. 100 degrees at angle CKJ and angle CFL.</desc><path class="dg-line" d="M 240.90 103.95 L 118.55 59.42 L 53.45 172.18 Z"/><path class="dg-dashed" d="M 240.90 103.95 L 27.21 26.18 L 101.43 154.72 Z"/><path class="dg-red" d="M 133.59 64.89 A 16 16 0 0 1 110.55 73.28"/><path class="dg-red" d="M 116.46 149.24 A 16 16 0 0 0 93.43 140.86"/><text class="dg-small" x="130.87" y="98.25" text-anchor="middle">100°</text><text class="dg-small" x="113.74" y="125.89" text-anchor="middle">100°</text><text class="dg-label" x="248.90" y="109.95">C</text><text class="dg-label" x="120.55" y="47.42" text-anchor="middle">K</text><text class="dg-label" x="19.21" y="24.18" text-anchor="end">L</text><text class="dg-label" x="103.43" y="178.72" text-anchor="middle">F</text><text class="dg-label" x="45.45" y="186.18" text-anchor="end">J</text></svg><figcaption>C, K, L lie on the upper ray in that order. C, F, J lie on the lower ray in that order. m∠CKJ = m∠CFL = 100°.</figcaption></figure>
+          <div>
+            <p>Decide whether △CKJ and △CLF are similar. Give angle names and a reason for your decision. If they are similar, write an ordered similarity statement beginning with △CKJ.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison">
+        <summary id="compare-overlap">B · Overlapping outlines</summary>
+        <p>∠KCJ ≅ ∠FCL because their sides are the same rays. ∠CKJ ≅ ∠CFL because both measure 100°. That gives C ↔ C and K ↔ F, leaving J ↔ L. Thus △CKJ ∼ △CFL by AA. If you matched K with L, follow the marked angles instead of matching the two letters on the same ray.</p>
+      </details>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="activity" aria-labelledby="indirect-title">
-      <h2 id="indirect-title">Use one unit before measuring indirectly</h2>
-      <div class="activity-split">
-        <aside id="evidence-indirect" class="activity-evidence" tabindex="0" aria-labelledby="given-indirect">
-          <h3 id="given-indirect">A brace design</h3>
-          <p>Two straight braces meet their vertical walls at the same angle. Each wall meets its level overhead beam at a right angle.</p>
-          <figure>
-            <div class="diagrams pair"><svg viewBox="0 0 267 140" role="img" aria-labelledby="indirect-a-title" aria-describedby="indirect-a-desc"><title id="indirect-a-title">Triangle HTB</title><desc id="indirect-a-desc">Triangle HTB. Right angle at T. HT is labeled 70 cm. TB is labeled 1 m 5 cm.</desc><polygon class="edge" points="131.33,29.00 80.00,29.00 80.00,106.00"/><polyline class="mark" points="91.00,29.00 91.00,40.00 80.00,40.00"/><text x="136.33" y="33.00" class="">H</text><text x="63.00" y="33.00" class="">T</text><text x="62.00" y="117.00" class="">B</text><text x="85.67" y="20.00" class="measure">70 cm</text><text x="71.00" y="72.50" class="measure end">1 m 5 cm</text></svg><svg viewBox="0 0 267 140" role="img" aria-labelledby="indirect-b-title" aria-describedby="indirect-b-desc"><title id="indirect-b-title">Triangle JLG</title><desc id="indirect-b-desc">Triangle JLG. Right angle at L. JL is labeled x cm. LG is labeled 190 cm.</desc><polygon class="edge" points="131.33,29.00 80.00,29.00 80.00,106.00"/><polyline class="mark" points="91.00,29.00 91.00,40.00 80.00,40.00"/><text x="136.33" y="33.00" class="">J</text><text x="63.00" y="33.00" class="">L</text><text x="62.00" y="117.00" class="">G</text><text x="85.67" y="20.00" class="measure">x cm</text><text x="71.00" y="72.50" class="measure end">190 cm</text></svg></div>
-            <figcaption>The short brace reaches 70 cm along its beam and 1 m 5 cm down its wall. The long brace reaches 190 cm down its wall. Its reach along its beam is <var>x</var> cm. End-on sketches show the angles and dimensions.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p><strong>Goal</strong> Find the long brace’s reach along its beam to the nearest centimeter.</p>
-          <p>The right angles pair T ↔ L. The brace-to-wall angles pair B ↔ G. By AA, △HTB ∼ △JLG. So the beam reaches correspond, and the wall reaches correspond.</p>
-          <ol class="steps equations">
-            <li>1 m 5 cm = 100 cm + 5 cm = 105 cm. <span class="reason">Convert before comparing.</span></li>
-            <li><span class="frac" role="math" aria-label="x over 70"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">70</span></span> = <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span> <span class="reason">Compare long to short in both ratios. All lengths are in centimeters.</span></li>
-            <li><var>x</var> = 70 × <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span> = <span class="frac" role="math" aria-label="380 over 3"><span aria-hidden="true">380</span><span aria-hidden="true">3</span></span> <span class="reason">Multiply both sides by 70.</span></li>
-            <li>The reach is about 127 cm. <span class="reason">Round the result, keeping the exact ratio until this step.</span></li>
-          </ol>
-          <p>The model assumes straight braces, vertical walls, level beams, and the same brace-to-wall angle.</p>
-          <a class="activity-return" href="#evidence-indirect">Back to the brace diagrams</a>
+    <section class="worked" id="type-crossing" aria-labelledby="cross-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 3</p>
+        <h2 id="cross-title">Find the angle evidence at a crossing</h2>
+        <p class="worked-goal">Decide whether the right-angle boxes and crossed braces prove △PKS is similar to the triangle across S.</p>
+      </header>
+      <p class="given"><strong>Given</strong> P–S–D and K–S–E are straight. The dashed continuations of PK and ED meet the same upright at right angles.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="cross-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s1-t" aria-describedby="t3s1-d"><title id="t3s1-t">Two triangles at the crossing</title><desc id="t3s1-d">Braces PD and KE cross at S. Triangle PKS, at the top, is shaded blue. Triangle DES, at the bottom, is shaded yellow. Dashed continuations of PK and ED meet a vertical upright at right angles.</desc><path class="dg-fill" d="M 40.40 49.60 L 177.20 49.60 L 130.97 106.60 Z"/><path class="dg-fill-sun" d="M 212.00 157.60 L 89.60 157.60 L 130.97 106.60 Z"/><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-thin" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-thin" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Look</p><h3>Two triangles at the crossing</h3><p class="slide-math">△PKS and △DES</p><p>P–S–D and K–S–E are straight. The triangle across S from △PKS has corners D, E and S.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s2-t" aria-describedby="t3s2-d"><title id="t3s2-t">Vertical angles at S</title><desc id="t3s2-d">The angles PSK and DSE, opposite each other at the crossing S, each have a red arc.</desc><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-thin" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-thin" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><path class="dg-red" d="M 114.04 95.95 A 20 20 0 0 1 143.57 91.07"/><path class="dg-red" d="M 147.89 117.25 A 20 20 0 0 1 118.37 122.13"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">First pair</p><h3>Vertical angles at S</h3><p class="slide-math">∠PSK ≅ ∠DSE</p><p>Each uses the opposite ray of the other at the crossing. They are <a href="#term-vertical">vertical angles</a>.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s3-t" aria-describedby="t3s3-d"><title id="t3s3-t">The right-angle boxes</title><desc id="t3s3-d">Both dashed continuations to the upright and both right-angle boxes are red. The boxes are outside the triangles.</desc><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-red" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-red" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-red" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-red" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the boxes</p><h3>Right angles outside the triangles</h3><p class="slide-math">PK ⊥ upright, ED ⊥ upright</p><p>The dashed continuations of PK and ED meet the same upright at right angles.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s4-t" aria-describedby="t3s4-d"><title id="t3s4-t">Parallel arms</title><desc id="t3s4-d">The arms PK and ED are blue with matching arrow marks, showing they are parallel.</desc><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-thin" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-thin" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><path class="dg-blue" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-blue" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-tick-blue" d="M 115.48 55.55 L 122.48 49.60 L 115.48 43.65"/><path class="dg-tick-blue" d="M 156.04 163.55 L 163.04 157.60 L 156.04 151.65"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Parallel arms</p><h3>Both perpendicular to one line</h3><p class="slide-math">PK ∥ ED</p><p>Both arms are perpendicular to the same line, so they are parallel. One box by itself would give no such guarantee.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s5-t" aria-describedby="t3s5-d"><title id="t3s5-t">Alternate interior angles</title><desc id="t3s5-d">The brace PD is red. The angles KPS at P and EDS at D, between the parallel arms and on opposite sides of PD, each have a blue arc.</desc><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-thin" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-thin" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><path class="dg-red" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-tick-blue" d="M 115.48 55.55 L 122.48 49.60 L 115.48 43.65"/><path class="dg-tick-blue" d="M 156.04 163.55 L 163.04 157.60 L 156.04 151.65"/><path class="dg-blue" d="M 70.40 49.60 A 30 30 0 0 1 65.79 65.58"/><path class="dg-blue" d="M 182.00 157.60 A 30 30 0 0 1 186.61 141.62"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Second pair</p><h3>Alternate interior angles</h3><p class="slide-math">∠KPS ≅ ∠EDS</p><p>Trace P–S–D across the parallel arms. These angles lie between the arms on opposite sides of the brace. They are <a href="#term-alternate">alternate interior angles</a>.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 300 200" role="img" aria-labelledby="t3s6-t" aria-describedby="t3s6-d"><title id="t3s6-t">Two angle pairs</title><desc id="t3s6-d">Both triangles are shaded. The vertical angles at S each have one red arc. The alternate interior angles at P and D each have two blue arcs.</desc><path class="dg-fill" d="M 40.40 49.60 L 177.20 49.60 L 130.97 106.60 Z"/><path class="dg-fill-sun" d="M 212.00 157.60 L 89.60 157.60 L 130.97 106.60 Z"/><path class="dg-line" d="M 40.40 49.60 L 212.00 157.60"/><path class="dg-line" d="M 177.20 49.60 L 89.60 157.60"/><path class="dg-line" d="M 40.40 49.60 L 177.20 49.60"/><path class="dg-line" d="M 89.60 157.60 L 212.00 157.60"/><path class="dg-dashed" d="M 177.20 49.60 L 272.00 49.60"/><path class="dg-dashed" d="M 212.00 157.60 L 272.00 157.60"/><path class="dg-line" d="M 272.00 22.00 L 272.00 176.00"/><path class="dg-thin" d="M 260.00 49.60 L 260.00 61.60 L 272.00 61.60"/><path class="dg-thin" d="M 260.00 157.60 L 260.00 145.60 L 272.00 145.60"/><path class="dg-red" d="M 114.04 95.95 A 20 20 0 0 1 143.57 91.07"/><path class="dg-red" d="M 147.89 117.25 A 20 20 0 0 1 118.37 122.13"/><path class="dg-blue" d="M 70.40 49.60 A 30 30 0 0 1 65.79 65.58"/><path class="dg-blue" d="M 76.40 49.60 A 36 36 0 0 1 70.87 68.78"/><path class="dg-blue" d="M 182.00 157.60 A 30 30 0 0 1 186.61 141.62"/><path class="dg-blue" d="M 176.00 157.60 A 36 36 0 0 1 181.53 138.42"/><text class="dg-label" x="32.40" y="43.60" text-anchor="end">P</text><text class="dg-label" x="179.20" y="39.60">K</text><text class="dg-label" x="146.97" y="112.60">S</text><text class="dg-label" x="214.00" y="181.60">D</text><text class="dg-label" x="79.60" y="175.60" text-anchor="end">E</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Write it in order</p><h3>Pair the vertices</h3><p class="slide-math">△PKS ∼ △DES</p><p>P ↔ D and S ↔ S, leaving K ↔ E. By AA, the triangles are similar.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-    </section>
-
-    <section class="reading-block practice-intro" aria-labelledby="practice">
-      <h2 id="practice">3. Make the decisions yourself</h2>
-      <p>Try one task at a time on paper. Use the facts and marks on its diagram, then follow the link to check your reasoning. Stop after any task. For a short first session, try A and B. Printed comparisons are in a separate section.</p>
-    </section>
-
-    <section class="activity blank-task" aria-labelledby="try-right-title">
-      <h3 id="try-right-title" tabindex="-1">A. Choose the match</h3>
-      <div class="activity-split">
-        <aside id="evidence-a" class="activity-evidence" tabindex="0" aria-labelledby="given-a">
-          <h4 id="given-a">Three triangles</h4>
-          <figure>
-            <div class="diagrams trio"><svg viewBox="0 0 208 140" role="img" aria-labelledby="try-right-a-title" aria-describedby="try-right-a-desc"><title id="try-right-a-title">Triangle VGF</title><desc id="try-right-a-desc">Triangle VGF. Right angle at G. 53 degrees at F.</desc><polygon class="edge" points="79.51,112.00 187.00,112.00 187.00,31.00"/><polyline class="mark" points="176.00,112.00 176.00,101.00 187.00,101.00"/><path class="mark" d="M187.00,51.00 A20,20 0 0 1 171.03,43.04"/><text x="157.00" y="69.00" class="">53°</text><text x="66.51" y="126.00" class="">V</text><text x="192.00" y="126.00" class="">G</text><text x="192.00" y="28.00" class="">F</text></svg><svg viewBox="0 0 208 140" role="img" aria-labelledby="try-right-b-title" aria-describedby="try-right-b-desc"><title id="try-right-b-title">Triangle QYD</title><desc id="try-right-b-desc">Triangle QYD. Right angle at Y. 37 degrees at Q.</desc><polygon class="edge" points="128.49,28.00 21.00,28.00 21.00,109.00"/><polyline class="mark" points="32.00,28.00 32.00,39.00 21.00,39.00"/><path class="mark" d="M108.49,28.00 A20,20 0 0 0 112.52,40.04"/><text x="68.49" y="44.00" class="">37°</text><text x="133.49" y="31.00" class="">Q</text><text x="4.00" y="25.00" class="">Y</text><text x="6.00" y="123.00" class="">D</text></svg><svg viewBox="0 0 208 140" role="img" aria-labelledby="try-right-c-title" aria-describedby="try-right-c-desc"><title id="try-right-c-title">Triangle UZE</title><desc id="try-right-c-desc">Triangle UZE. Right angle at Z. 40 degrees at U.</desc><polygon class="edge" points="117.53,28.00 21.00,28.00 21.00,109.00"/><polyline class="mark" points="32.00,28.00 32.00,39.00 21.00,39.00"/><path class="mark" d="M97.53,28.00 A20,20 0 0 0 102.21,40.86"/><text x="57.53" y="44.00" class="">40°</text><text x="122.53" y="31.00" class="">U</text><text x="4.00" y="25.00" class="">Z</text><text x="6.00" y="123.00" class="">E</text></svg></div>
-            <figcaption>Right angles at G, Y, and Z. m∠VFG = 53°, m∠YQD = 37°, and m∠ZUE = 40°.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Compare △VGF with each of △QYD and △UZE. For each comparison, decide whether the triangles are similar. Support the decision with the angle measures. For any similar pair, write an ordered similarity statement beginning with △VGF.</p>
-          <p class="practice-link"><a href="#compare-right">Check Task A</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Find the angle pair at the crossing.</p><p class="step-math">∠PSK ≅ ∠DSE</p><details class="why"><summary>Why?</summary><p>They are vertical angles: opposite angles where two straight lines cross. Vertical angles are always congruent.</p></details></li>
+          <li><p class="step-do">Use the right-angle boxes to show the arms are parallel.</p><p class="step-math">PK ∥ ED</p><details class="why"><summary>Why?</summary><p>The boxes are outside the triangles. They show both arms are perpendicular to the same upright, and two lines perpendicular to the same line are parallel. Arrow marks on the arms would also establish parallelism directly.</p></details></li>
+          <li><p class="step-do">Find the alternate interior angles along the brace P–S–D.</p><p class="step-math">∠KPS ≅ ∠EDS</p><details class="why"><summary>Why?</summary><p>The angles lie between the parallel arms and on opposite sides of the brace. Alternate interior angles are congruent when the lines are parallel.</p></details></li>
+          <li><p class="step-do">Pair the vertices and write the statement.</p><p class="step-math">P ↔ D, S ↔ S, K ↔ E: △PKS ∼ △DES</p><details class="why"><summary>Why?</summary><p>Two angle pairs prove similarity by AA. The leftover vertices K and E must pair with each other.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="try-cross-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-cross-title" tabindex="-1">C. Choose a triangle at the junction</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 260 160" role="img" aria-labelledby="try-cross-t" aria-describedby="try-cross-d"><title id="try-cross-t">A–K–N and T–K–R are straight</title><desc id="try-cross-d">A–K–N and T–K–R are straight. AT and RN carry matching parallel arrows. An additional unmarked bar, drawn dashed, joins U on KR to O on KN.</desc><path class="dg-line" d="M 224.10 30.70 L 50.77 138.50"/><path class="dg-line" d="M 91.00 30.70 L 173.43 138.50"/><path class="dg-line" d="M 224.10 30.70 L 91.00 30.70"/><path class="dg-line" d="M 173.43 138.50 L 50.77 138.50"/><path class="dg-dashed" d="M 155.28 114.76 L 80.66 119.91"/><path class="dg-thin" d="M 157.90 24.75 L 150.90 30.70 L 157.90 36.65"/><path class="dg-thin" d="M 112.97 132.55 L 105.97 138.50 L 112.97 144.45"/><text class="dg-label" x="230.10" y="24.70">A</text><text class="dg-label" x="85.00" y="24.70" text-anchor="end">T</text><text class="dg-label" x="149.90" y="87.80">K</text><text class="dg-label" x="42.77" y="152.50" text-anchor="end">N</text><text class="dg-label" x="181.43" y="152.50">R</text><text class="dg-label" x="163.28" y="112.76">U</text><text class="dg-label" x="72.66" y="115.91" text-anchor="end">O</text></svg><figcaption>A–K–O–N and T–K–U–R are straight. Arrows mark AT ∥ RN.</figcaption></figure>
+          <div>
+            <p>Which of △KRN or △KUO can you prove similar to △ATK from the marked facts? Identify the two angle pairs and their reasons, then write the similarity statement in matching order starting with △ATK. Explain what the other triangle is missing from the givens.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison">
+        <summary id="compare-cross">C · Bars at a junction</summary>
+        <p>∠AKT ≅ ∠NKR as vertical angles. ∠TAK ≅ ∠RNK as alternate interior angles along A–K–N across the two marked parallel bars. A ↔ N, T ↔ R, K ↔ K, so △ATK ∼ △NRK by AA.</p>
+        <p>The angle at K in △KUO is also vertical to ∠AKT, but there is no marked parallel relationship or second matching angle pair for that triangle. If you chose it because it shares K, write out which rays form its angle at K and then look for separate evidence for a second match.</p>
+      </details>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="activity blank-task" aria-labelledby="try-overlap-title">
-      <h3 id="try-overlap-title" tabindex="-1">B. Compare two outlines</h3>
-      <div class="activity-split">
-        <aside id="evidence-b" class="activity-evidence" tabindex="0" aria-labelledby="given-b">
-          <h4 id="given-b">Two triangles at C</h4>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 283 209" role="img" aria-labelledby="try-overlap-figure-title" aria-describedby="try-overlap-desc"><title id="try-overlap-figure-title">Triangles CKJ and CLF</title><desc id="try-overlap-desc">Triangles CKJ and CLF. C, K, L lie on one ray in that order. C, F, J lie on the other ray in that order. 100 degrees at angle CKJ and angle CFL.</desc><polygon class="edge other" points="258.00,99.00 54.49,24.93 125.17,147.35"/><polygon class="edge" points="258.00,99.00 141.48,56.59 79.48,163.98"/><path class="mark" d="M155.57,61.72 A15,15 0 0 1 133.98,69.58"/><path class="mark" d="M139.26,142.22 A15,15 0 0 0 117.67,134.36"/><text x="145.48" y="84.59" class="">100°</text><text x="129.17" y="134.35" class="">100°</text><text x="250.00" y="89.00" class="">C</text><text x="124.48" y="51.59" class="">K</text><text x="62.48" y="179.98" class="">J</text><text x="37.49" y="18.93" class="">L</text><text x="108.17" y="164.35" class="">F</text></svg></div>
-            <figcaption>C, K, L lie on the upper ray in that order. C, F, J lie on the lower ray in that order. m∠CKJ = m∠CFL = 100°.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Decide whether △CKJ and △CLF are similar. Give angle names and a reason for your decision. If they are similar, write an ordered similarity statement beginning with △CKJ.</p>
-          <p class="practice-link"><a href="#compare-overlap">Check Task B</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
+    <section class="worked" id="type-whole" aria-labelledby="lengths">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 4</p>
+        <h2 id="lengths">Use whole corresponding sides</h2>
+        <p class="worked-goal">Find <var>x</var>, the length FD in centimeters.</p>
+      </header>
+      <p class="given"><strong>Given</strong> The frames have ∠X ≅ ∠F and right angles at B and D. W is between X and B. XW = 9, WB = 19, BU = 21, and DZ = 12. All lengths are in centimeters.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="lengths">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t4s1-t" aria-describedby="t4s1-d"><title id="t4s1-t">Two frames with matching angles</title><desc id="t4s1-d">Triangle XBU on the left and triangle FDZ on the right. The angles at X and at F each have a red arc, and the right angles at B and at D have red boxes. XW is 9, WB is 19, BU is 21, FD is x and DZ is 12.</desc><path class="dg-line" d="M 40.41 131.25 L 168.75 131.25 L 168.75 35.00 Z"/><path class="dg-line" d="M 373.34 46.25 L 245.00 46.25 L 245.00 142.50 Z"/><path class="dg-red" d="M 157.75 131.25 L 157.75 120.25 L 168.75 120.25"/><path class="dg-red" d="M 256.00 46.25 L 256.00 57.25 L 245.00 57.25"/><path class="dg-red" d="M 66.41 131.25 A 26 26 0 0 0 61.21 115.65"/><path class="dg-red" d="M 347.34 46.25 A 26 26 0 0 0 352.54 61.85"/><circle class="dg-dot" cx="81.66" cy="131.25" r="4"/><text class="dg-label" x="32.41" y="139.25" text-anchor="end">X</text><text class="dg-label" x="176.75" y="139.25">B</text><text class="dg-label" x="176.75" y="37.00">U</text><text class="dg-label" x="81.66" y="121.25" text-anchor="middle">W</text><text class="dg-label" x="381.34" y="52.25">F</text><text class="dg-label" x="237.00" y="48.25" text-anchor="end">D</text><text class="dg-label" x="237.00" y="152.50" text-anchor="end">Z</text><text class="dg-len" x="61.04" y="156.25" text-anchor="middle">9</text><text class="dg-len" x="125.21" y="156.25" text-anchor="middle">19</text><text class="dg-len" x="178.75" y="88.12">21</text><text class="dg-len" x="309.17" y="39.25" text-anchor="middle">x</text><text class="dg-len" x="235.00" y="99.38" text-anchor="end">12</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">AA first</p><h3>Prove the frames similar</h3><p class="slide-math">△XBU ∼ △FDZ</p><p>∠X ≅ ∠F, and the right angles at B and D match. Two angle pairs give AA.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t4s2-t" aria-describedby="t4s2-d"><title id="t4s2-t">Corresponding sides</title><desc id="t4s2-d">XB and its partner FD are blue. BU and its partner DZ are red.</desc><path class="dg-line" d="M 40.41 131.25 L 168.75 131.25 L 168.75 35.00 Z"/><path class="dg-line" d="M 373.34 46.25 L 245.00 46.25 L 245.00 142.50 Z"/><path class="dg-thin" d="M 157.75 131.25 L 157.75 120.25 L 168.75 120.25"/><path class="dg-thin" d="M 256.00 46.25 L 256.00 57.25 L 245.00 57.25"/><path class="dg-thin" d="M 66.41 131.25 A 26 26 0 0 0 61.21 115.65"/><path class="dg-thin" d="M 347.34 46.25 A 26 26 0 0 0 352.54 61.85"/><path class="dg-blue" d="M 40.41 131.25 L 168.75 131.25"/><path class="dg-blue" d="M 373.34 46.25 L 245.00 46.25"/><path class="dg-red" d="M 168.75 131.25 L 168.75 35.00"/><path class="dg-red" d="M 245.00 46.25 L 245.00 142.50"/><circle class="dg-dot" cx="81.66" cy="131.25" r="4"/><text class="dg-label" x="32.41" y="139.25" text-anchor="end">X</text><text class="dg-label" x="176.75" y="139.25">B</text><text class="dg-label" x="176.75" y="37.00">U</text><text class="dg-label" x="81.66" y="121.25" text-anchor="middle">W</text><text class="dg-label" x="381.34" y="52.25">F</text><text class="dg-label" x="237.00" y="48.25" text-anchor="end">D</text><text class="dg-label" x="237.00" y="152.50" text-anchor="end">Z</text><text class="dg-len" x="61.04" y="156.25" text-anchor="middle">9</text><text class="dg-len" x="125.21" y="156.25" text-anchor="middle">19</text><text class="dg-len" x="178.75" y="88.12">21</text><text class="dg-len" x="309.17" y="39.25" text-anchor="middle">x</text><text class="dg-len" x="235.00" y="99.38" text-anchor="end">12</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Pair the sides</p><h3>Read the side pairs from the order</h3><p class="slide-math">XB ↔ FD, BU ↔ DZ</p><p>X ↔ F and B ↔ D, so XB pairs with FD. B ↔ D and U ↔ Z, so BU pairs with DZ.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t4s3-t" aria-describedby="t4s3-d"><title id="t4s3-t">The whole side XB</title><desc id="t4s3-d">The whole segment XB, through W, is blue. Its pieces 9 and 19 make 28.</desc><path class="dg-line" d="M 40.41 131.25 L 168.75 131.25 L 168.75 35.00 Z"/><path class="dg-line" d="M 373.34 46.25 L 245.00 46.25 L 245.00 142.50 Z"/><path class="dg-thin" d="M 157.75 131.25 L 157.75 120.25 L 168.75 120.25"/><path class="dg-thin" d="M 256.00 46.25 L 256.00 57.25 L 245.00 57.25"/><path class="dg-blue" d="M 40.41 131.25 L 168.75 131.25"/><text class="dg-label-blue" x="158.75" y="101.25" text-anchor="end">XB = 28</text><circle class="dg-dot" cx="81.66" cy="131.25" r="4"/><text class="dg-label" x="32.41" y="139.25" text-anchor="end">X</text><text class="dg-label" x="176.75" y="139.25">B</text><text class="dg-label" x="176.75" y="37.00">U</text><text class="dg-label" x="81.66" y="121.25" text-anchor="middle">W</text><text class="dg-label" x="381.34" y="52.25">F</text><text class="dg-label" x="237.00" y="48.25" text-anchor="end">D</text><text class="dg-label" x="237.00" y="152.50" text-anchor="end">Z</text><text class="dg-len" x="61.04" y="156.25" text-anchor="middle">9</text><text class="dg-len" x="125.21" y="156.25" text-anchor="middle">19</text><text class="dg-len" x="178.75" y="88.12">21</text><text class="dg-len" x="309.17" y="39.25" text-anchor="middle">x</text><text class="dg-len" x="235.00" y="99.38" text-anchor="end">12</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Whole side</p><h3>Add the pieces</h3><p class="slide-math">XB = 9 cm + 19 cm = 28 cm</p><p>W marks a point along XB, so the full corresponding side is XB.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t4s4-t" aria-describedby="t4s4-d"><title id="t4s4-t">Lengths for the proportion</title><desc id="t4s4-d">FD, x, is matched with XB, 28, in blue. DZ, 12, is matched with BU, 21, in red.</desc><path class="dg-line" d="M 40.41 131.25 L 168.75 131.25 L 168.75 35.00 Z"/><path class="dg-line" d="M 373.34 46.25 L 245.00 46.25 L 245.00 142.50 Z"/><path class="dg-thin" d="M 157.75 131.25 L 157.75 120.25 L 168.75 120.25"/><path class="dg-thin" d="M 256.00 46.25 L 256.00 57.25 L 245.00 57.25"/><path class="dg-blue" d="M 40.41 131.25 L 168.75 131.25"/><path class="dg-blue" d="M 373.34 46.25 L 245.00 46.25"/><path class="dg-red" d="M 168.75 131.25 L 168.75 35.00"/><path class="dg-red" d="M 245.00 46.25 L 245.00 142.50"/><circle class="dg-dot" cx="81.66" cy="131.25" r="4"/><text class="dg-label" x="32.41" y="139.25" text-anchor="end">X</text><text class="dg-label" x="176.75" y="139.25">B</text><text class="dg-label" x="176.75" y="37.00">U</text><text class="dg-label" x="81.66" y="121.25" text-anchor="middle">W</text><text class="dg-label" x="381.34" y="52.25">F</text><text class="dg-label" x="237.00" y="48.25" text-anchor="end">D</text><text class="dg-label" x="237.00" y="152.50" text-anchor="end">Z</text><text class="dg-len" x="61.04" y="156.25" text-anchor="middle">9</text><text class="dg-len" x="125.21" y="156.25" text-anchor="middle">19</text><text class="dg-len" x="178.75" y="88.12">21</text><text class="dg-len" x="309.17" y="39.25" text-anchor="middle">x</text><text class="dg-len" x="235.00" y="99.38" text-anchor="end">12</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Proportion</p><h3>Same triangle on top</h3><p class="slide-math"><span class="frac" role="math" aria-label="x over 28"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">28</span></span> = <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span></p><p>Match frame FDZ over frame XBU in both ratios, using lengths in centimeters.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t4s5-t" aria-describedby="t4s5-d"><title id="t4s5-t">The unknown side FD</title><desc id="t4s5-d">FD, the unknown x, is blue.</desc><path class="dg-line" d="M 40.41 131.25 L 168.75 131.25 L 168.75 35.00 Z"/><path class="dg-line" d="M 373.34 46.25 L 245.00 46.25 L 245.00 142.50 Z"/><path class="dg-thin" d="M 157.75 131.25 L 157.75 120.25 L 168.75 120.25"/><path class="dg-thin" d="M 256.00 46.25 L 256.00 57.25 L 245.00 57.25"/><path class="dg-blue" d="M 373.34 46.25 L 245.00 46.25"/><circle class="dg-dot" cx="81.66" cy="131.25" r="4"/><text class="dg-label" x="32.41" y="139.25" text-anchor="end">X</text><text class="dg-label" x="176.75" y="139.25">B</text><text class="dg-label" x="176.75" y="37.00">U</text><text class="dg-label" x="81.66" y="121.25" text-anchor="middle">W</text><text class="dg-label" x="381.34" y="52.25">F</text><text class="dg-label" x="237.00" y="48.25" text-anchor="end">D</text><text class="dg-label" x="237.00" y="152.50" text-anchor="end">Z</text><text class="dg-len" x="61.04" y="156.25" text-anchor="middle">9</text><text class="dg-len" x="125.21" y="156.25" text-anchor="middle">19</text><text class="dg-len" x="178.75" y="88.12">21</text><text class="dg-len" x="309.17" y="39.25" text-anchor="middle">x</text><text class="dg-len" x="235.00" y="99.38" text-anchor="end">12</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Solve</p><h3>Multiply both sides by 28</h3><p class="slide-math"><var>x</var> = 28 × <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span> = 16</p><p>FD = 16 cm. Both corresponding side lengths shrink by the <a href="#term-scale">scale factor</a> 12/21.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
       </div>
-    </section>
-
-    <section class="activity blank-task" aria-labelledby="try-cross-title">
-      <h3 id="try-cross-title" tabindex="-1">C. Choose a triangle at the junction</h3>
-      <div class="activity-split">
-        <aside id="evidence-c" class="activity-evidence" tabindex="0" aria-labelledby="given-c">
-          <h4 id="given-c">Three bars</h4>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 276 155" role="img" aria-labelledby="try-cross-figure-title" aria-describedby="try-cross-desc"><title id="try-cross-figure-title">A–K–N and T–K–R are straight</title><desc id="try-cross-desc">A–K–N and T–K–R are straight. AT and RN carry matching parallel arrows. An additional unmarked bar joins U on KR to O on KN.</desc><polyline class="edge" points="231.00,37.00 73.43,135.00"/><polyline class="edge" points="110.00,37.00 184.94,135.00"/><polyline class="edge" points="231.00,37.00 110.00,37.00"/><polyline class="edge" points="184.94,135.00 73.43,135.00"/><polyline class="mark" points="177.26,31.05 170.50,37.00 177.26,42.95"/><polyline class="mark" points="135.94,129.05 129.19,135.00 135.94,140.95"/><polyline class="edge other" points="168.44,113.42 100.60,118.10"/><text x="237.00" y="30.00" class="">A</text><text x="95.00" y="30.00" class="">T</text><text x="163.00" y="92.00" class="">K</text><text x="58.43" y="149.00" class="">N</text><text x="190.94" y="149.00" class="">R</text><text x="174.44" y="110.42" class="">U</text><text x="84.60" y="113.10" class="">O</text></svg></div>
-            <figcaption>A–K–O–N and T–K–U–R are straight. Arrows mark AT ∥ RN.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Which of △KRN or △KUO can you prove similar to △ATK from the marked facts? Identify the two angle pairs and their reasons, then write the similarity statement in matching order starting with △ATK. Explain what the other triangle is missing from the givens.</p>
-          <p class="practice-link"><a href="#compare-cross">Check Task C</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
-        </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Prove the triangles similar and pair the sides.</p><p class="step-math">△XBU ∼ △FDZ: XB ↔ FD, BU ↔ DZ</p><details class="why"><summary>Why?</summary><p>∠X ≅ ∠F and the right angles at B and D give two angle pairs, so AA applies. The statement’s order tells you which sides correspond.</p></details></li>
+          <li><p class="step-do">Add the pieces to get the whole side.</p><p class="step-math">XB = 9 cm + 19 cm = 28 cm</p><details class="why"><summary>Why?</summary><p>W only marks a point along XB. The pieces XW and WB are not sides of the triangle; the whole segment XB is.</p></details></li>
+          <li><p class="step-do">Write a proportion with the same triangle on top in both ratios.</p><p class="step-math"><span class="frac" role="math" aria-label="x over 28"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">28</span></span> = <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span></p><details class="why"><summary>Why?</summary><p>A <a href="#term-proportion">proportion</a> sets two ratios equal. Keeping frame FDZ on top both times keeps each ratio a comparison of partners.</p></details></li>
+          <li><p class="step-do">Multiply both sides by 28.</p><p class="step-math"><var>x</var> = 28 × <span class="frac" role="math" aria-label="12 over 21"><span aria-hidden="true">12</span><span aria-hidden="true">21</span></span></p><details class="why"><summary>Why?</summary><p>Multiplying by 28 undoes the division by 28 on the left side.</p></details></li>
+          <li><p class="step-do">Finish and give the unit.</p><p class="step-math"><var>x</var> = 16, so FD = 16 cm</p><details class="why"><summary>Why?</summary><p>Both corresponding side lengths shrink by the same scale factor, 12/21, so the answer stays in centimeters.</p></details></li>
+        </ol>
       </div>
-    </section>
-
-    <section class="activity blank-task" aria-labelledby="try-whole-title">
-      <h3 id="try-whole-title" tabindex="-1">D. Find <var>x</var> along the frame</h3>
-      <div class="activity-split">
-        <aside id="evidence-d" class="activity-evidence" tabindex="0" aria-labelledby="given-d">
-          <h4 id="given-d">Three parallel braces</h4>
-          <figure>
-            <div class="diagrams"><svg viewBox="0 0 260 128" role="img" aria-labelledby="try-whole-figure-title" aria-describedby="try-whole-desc"><title id="try-whole-figure-title">Three parallel braces between the same two rays from H</title><desc id="try-whole-desc">Three parallel braces between the same two rays from H. G, J, and P lie on one ray, with Q between H and G. W, K, and R lie on the other. HQ is 9, QP is 15, GW is 17.5, PR is 30, and HG is x.</desc><polyline class="edge" points="66.00,103.00 136.00,19.00 202.68,103.00"/><polyline class="edge" points="95.17,68.00 174.90,68.00"/><polyline class="edge" points="80.70,85.36 188.68,85.36"/><polyline class="edge" points="66.00,103.00 202.68,103.00"/><polyline class="mark" points="150.60,73.95 157.36,68.00 150.60,62.05"/><polyline class="mark" points="158.17,91.31 164.92,85.36 158.17,79.41"/><polyline class="mark" points="165.85,108.95 172.61,103.00 165.85,97.05"/><circle cx="109.75" cy="50.50" r="3"/><text x="137.00" y="15.00" class="">H</text><text x="78.17" y="71.00" class="">G</text><text x="179.90" y="71.00" class="">W</text><text x="64.70" y="89.36" class="">J</text><text x="193.68" y="89.36" class="">K</text><text x="51.00" y="112.00" class="">P</text><text x="207.68" y="112.00" class="">R</text><text x="93.75" y="50.50" class="">Q</text><text x="119.00" y="59.00" class="measure">17.5</text><text x="116.00" y="122.00" class="measure">30</text></svg></div>
-            <figcaption>H, Q, G, J, P lie in order on one ray. H, W, K, R lie in order on the other. GW ∥ JK ∥ PR. HQ = 9, QP = 15, GW = 17.5, PR = 30, and HG = <var>x</var>. Lengths are in centimeters.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Find <var>x</var>. Identify the triangles you use and justify their similarity. Write a proportion using corresponding sides, then solve it.</p>
-          <p class="practice-link"><a href="#compare-whole">Check Task D</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="activity blank-task" aria-labelledby="try-alg-title">
-      <h3 id="try-alg-title" tabindex="-1">E. Find <var>x</var> on the cutouts</h3>
-      <div class="activity-split">
-        <aside id="evidence-e" class="activity-evidence" tabindex="0" aria-labelledby="given-e">
-          <h4 id="given-e">Two cutouts</h4>
-          <p class="given-equation">△JNF ∼ △KWR</p>
-          <figure>
-            <div class="diagrams pair"><svg viewBox="0 0 267 140" role="img" aria-labelledby="try-alg-a-title" aria-describedby="try-alg-a-desc"><title id="try-alg-a-title">Triangle JNF</title><desc id="try-alg-a-desc">Triangle JNF. Right angle at N. JN is labeled 20. NF is labeled x + 8.</desc><polygon class="edge" points="82.75,105.00 179.00,105.00 179.00,28.00"/><polyline class="mark" points="168.00,105.00 168.00,94.00 179.00,94.00"/><text x="69.75" y="118.00" class="">J</text><text x="184.00" y="118.00" class="">N</text><text x="184.00" y="25.00" class="">F</text><text x="110.88" y="129.00" class="measure">20</text><text x="187.00" y="71.50" class="measure">x + 8</text></svg><svg viewBox="0 0 267 140" role="img" aria-labelledby="try-alg-b-title" aria-describedby="try-alg-b-desc"><title id="try-alg-b-title">Triangle KWR</title><desc id="try-alg-b-desc">Triangle KWR. Right angle at W. KW is labeled 35. WR is labeled 3x + 4.</desc><polygon class="edge" points="176.25,29.00 80.00,29.00 80.00,106.00"/><polyline class="mark" points="91.00,29.00 91.00,40.00 80.00,40.00"/><text x="181.25" y="33.00" class="">K</text><text x="63.00" y="33.00" class="">W</text><text x="62.00" y="117.00" class="">R</text><text x="108.12" y="20.00" class="measure">35</text><text x="71.00" y="72.50" class="measure end">3x + 4</text></svg></div>
-            <figcaption>JN = 20, KW = 35, NF = <var>x</var> + 8, and WR = 3<var>x</var> + 4. The boxes mark right angles at N and W. Lengths are in the same unit.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Find <var>x</var>. Use the given order to name the side pairs, write and solve an equation, then check whether both expressions give positive lengths in the correct ratio.</p>
-          <p class="practice-link"><a href="#compare-algebra">Check Task E</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="activity blank-task" aria-labelledby="try-model-title">
-      <h3 id="try-model-title" tabindex="-1">F. Estimate the rise of a conveyor</h3>
-      <div class="activity-split">
-        <aside id="evidence-f" class="activity-evidence" tabindex="0" aria-labelledby="given-f">
-          <h4 id="given-f">Two conveyor belts</h4>
-          <p>The belts are straight and sit above the same level slab. An installer slid one rigid template along the slab without turning it and used its sloped edge to align both belts. Each rise is measured vertically from the slab.</p>
-          <figure>
-            <div class="diagrams pair"><svg viewBox="0 0 267 140" role="img" aria-labelledby="try-model-a-title" aria-describedby="try-model-a-desc"><title id="try-model-a-title">Triangle NCP</title><desc id="try-model-a-desc">Triangle NCP. NC is labeled 24 in. CP is labeled 1 ft 5 in.</desc><polygon class="edge" points="70.29,105.00 179.00,105.00 179.00,28.00"/><text x="57.29" y="118.00" class="">N</text><text x="184.00" y="118.00" class="">C</text><text x="184.00" y="25.00" class="">P</text><text x="104.65" y="129.00" class="measure">24 in</text><text x="187.00" y="71.50" class="measure">1 ft 5 in</text></svg><svg viewBox="0 0 267 140" role="img" aria-labelledby="try-model-b-title" aria-describedby="try-model-b-desc"><title id="try-model-b-title">Triangle UDF</title><desc id="try-model-b-desc">Triangle UDF. UD is labeled 3 ft. DF is labeled x in.</desc><polygon class="edge" points="70.29,105.00 179.00,105.00 179.00,28.00"/><text x="57.29" y="118.00" class="">U</text><text x="184.00" y="118.00" class="">D</text><text x="184.00" y="25.00" class="">F</text><text x="104.65" y="129.00" class="measure">3 ft</text><text x="187.00" y="71.50" class="measure">x in</text></svg></div>
-            <figcaption>The test belt rises 1 ft 5 in over a horizontal run of 24 in. The production belt has a horizontal run of 3 ft. Its rise is <var>x</var> in. Side views show the two locations on the same slab.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>Find the rise of the production belt to the nearest inch. Use the setup to explain why the triangles are similar. Show the unit conversions, corresponding side ratios, and rounded rise.</p>
-          <p class="practice-link"><a href="#compare-model">Check Task F</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="reading-block answer-room" aria-labelledby="comparisons">
-      <h2 id="comparisons">Compare after you try</h2>
-      <p>Find the first step where your reasoning differs. Repair that line on paper, then attempt the retry.</p>
-        <form class="practice quick-check" data-practice data-expected="14" data-tolerance="0"
+      <article class="task" aria-labelledby="try-whole-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-whole-title" tabindex="-1">D. Find <var>x</var> along the frame</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 260 175" role="img" aria-labelledby="try-whole-t" aria-describedby="try-whole-d"><title id="try-whole-t">Three parallel braces between the same two rays from H</title><desc id="try-whole-d">Three parallel braces between the same two rays from H. G, J, and P lie on one ray, with Q between H and G. W, K, and R lie on the other. HQ is 9, QP is 15, GW is 17.5, PR is 30, and HG is x.</desc><path class="dg-line" d="M 133.60 25.65 L 39.10 139.05"/><path class="dg-line" d="M 133.60 25.65 L 223.62 139.05"/><path class="dg-line" d="M 78.48 91.80 L 186.12 91.80"/><path class="dg-line" d="M 58.95 115.24 L 204.72 115.24"/><path class="dg-line" d="M 39.10 139.05 L 223.62 139.05"/><path class="dg-thin" d="M 138.21 97.75 L 145.21 91.80 L 138.21 85.85"/><path class="dg-thin" d="M 142.32 121.19 L 149.32 115.24 L 142.32 109.29"/><path class="dg-thin" d="M 146.50 145.00 L 153.50 139.05 L 146.50 133.10"/><circle class="dg-dot" cx="98.16" cy="68.18" r="4"/><text class="dg-label" x="133.60" y="15.65" text-anchor="middle">H</text><text class="dg-label" x="88.16" y="72.18" text-anchor="end">Q</text><text class="dg-label" x="68.48" y="95.80" text-anchor="end">G</text><text class="dg-label" x="196.12" y="95.80">W</text><text class="dg-label" x="48.95" y="119.24" text-anchor="end">J</text><text class="dg-label" x="214.72" y="119.24">K</text><text class="dg-label" x="29.10" y="147.05" text-anchor="end">P</text><text class="dg-label" x="233.62" y="147.05">R</text><text class="dg-small" x="116.30" y="86.80" text-anchor="middle">17.5</text><text class="dg-small" x="131.36" y="168.05" text-anchor="middle">30</text></svg><figcaption>H, Q, G, J, P lie in order on one ray. H, W, K, R lie in order on the other. GW ∥ JK ∥ PR. HQ = 9, QP = 15, GW = 17.5, PR = 30, and HG = <var>x</var>. Lengths are in centimeters.</figcaption></figure>
+          <div>
+            <p>Find <var>x</var>. Identify the triangles you use and justify their similarity. Write a proportion using corresponding sides, then solve it.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <form class="practice" data-practice data-expected="14" data-tolerance="0"
           data-mistakes='{"8.75":"That uses 15 as the whole length. Trace H to P through Q and try again."}'
           data-hint="Check the endpoints of the sides in your equation and keep inner over outer on both sides."
           data-success="14 cm fits. Explain why the denominator is HP, then name the angle pair that the arrows establish.">
           <label for="frame-length">Optional check for Task D: HG in centimeters</label>
-          <div class="check-row"><input id="frame-length" type="number" step="any" required><button type="submit" disabled>Check length</button></div>
+          <input id="frame-length" type="number" step="any" required>
+          <button type="submit" disabled>Check length</button>
           <p data-feedback role="status" aria-live="polite"></p>
         </form>
-      <details>
-        <summary id="compare-right">A · Right triangles</summary>
-        <p>In △VGF, m∠V = 180° − 90° − 53° = 37°. So V ↔ Q and G ↔ Y. That leaves F ↔ D, giving △VGF ∼ △QYD by AA. △UZE has angles 40°, 90°, and 50°. Neither acute angle matches either acute angle of △VGF, so these triangles are not similar.</p>
-        <p>If you paired F with Q because they both had numbers, compare the numbers. The marked 53° and 37° are different. Subtract from 180° before deciding what matches.</p>
-
-        <p class="practice-link"><a href="#try-right-title">Back to Task A</a></p>
-      </details>
-      <details>
-        <summary id="compare-overlap">B · Overlapping outlines</summary>
-        <p>∠KCJ ≅ ∠FCL because their sides are the same rays. ∠CKJ ≅ ∠CFL because both measure 100°. That gives C ↔ C and K ↔ F, leaving J ↔ L. Thus △CKJ ∼ △CFL by AA. If you matched K with L, follow the marked angles instead of matching the two letters on the same ray.</p>
-
-        <p class="practice-link"><a href="#try-overlap-title">Back to Task B</a></p>
-      </details>
-      <details>
-        <summary id="compare-cross">C · Bars at a junction</summary>
-        <p>∠AKT ≅ ∠NKR as vertical angles. ∠TAK ≅ ∠RNK as alternate interior angles along A–K–N across the two marked parallel bars. A ↔ N, T ↔ R, K ↔ K, so △ATK ∼ △NRK by AA.</p>
-        <p>The angle at K in △KUO is also vertical to ∠AKT, but there is no marked parallel relationship or second matching angle pair for that triangle. If you chose it because it shares K, write out which rays form its angle at K and then look for separate evidence for a second match.</p>
-
-        <p class="practice-link"><a href="#try-cross-title">Back to Task C</a></p>
-      </details>
-      <details>
+            <details class="comparison">
         <summary id="compare-whole">D · Whole sides of a frame</summary>
         <p>∠GHW and ∠PHR share the same rays. ∠HGW ≅ ∠HPR because the arrows mark GW ∥ PR and the angles are in matching positions along HP. So △HGW ∼ △HPR by AA.</p>
-        <ol class="steps equations">
+        <ol class="work-lines">
           <li>HP = 9 cm + 15 cm = 24 cm.</li>
           <li><span class="frac" role="math" aria-label="x over 24"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">24</span></span> = <span class="frac" role="math" aria-label="17.5 over 30"><span aria-hidden="true">17.5</span><span aria-hidden="true">30</span></span> <span class="reason">HG ↔ HP and GW ↔ PR. Each ratio is inner over outer, using centimeters.</span></li>
           <li><var>x</var> = 24 × <span class="frac" role="math" aria-label="17.5 over 30"><span aria-hidden="true">17.5</span><span aria-hidden="true">30</span></span> = 14. <span class="reason">HG = 14 cm. It lies between HQ = 9 cm and HP = 24 cm.</span></li>
         </ol>
         <p>If you used QP alone, trace H → P. The outer triangle starts at H, and that full side includes HQ and QP.</p>
-
-
-        <p class="practice-link"><a href="#try-whole-title">Back to Task D</a> · <a href="#method-retry">Retry with the vent panel</a></p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p>
       </details>
-      <details>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="worked" id="type-algebra" aria-labelledby="algebra-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 5</p>
+        <h2 id="algebra-title">Keep the order when both sides have <var>x</var></h2>
+        <p class="worked-goal">Find <var>x</var>. The statement pairs GJ with QS and CG with LQ. GJ includes both pieces of the split edge.</p>
+      </header>
+      <p class="statement">△CGJ ∼ △LQS</p>
+      <p class="given"><strong>Given</strong> CG = 24, LQ = 16, and QS = <var>x</var> + 6. M lies between G and J, with GM = 2<var>x</var> − 3 and MJ = 5. The boxes mark right angles at G and Q. Lengths are in the same unit.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="algebra-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s1-t" aria-describedby="t5s1-d"><title id="t5s1-t">Two similar pieces</title><desc id="t5s1-d">Triangle CGJ on the left, with a right angle at G, and triangle LQS on the right, with a right angle at Q. Both right-angle boxes are red. CG is 24, GM is 2x minus 3, MJ is 5, LQ is 16 and QS is x plus 6.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-red" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-red" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the statement</p><h3>The order is the pairing</h3><p class="slide-math">△CGJ ∼ △LQS</p><p>C ↔ L, G ↔ Q, J ↔ S. The boxes mark right angles at G and Q.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s2-t" aria-describedby="t5s2-d"><title id="t5s2-t">Corresponding sides</title><desc id="t5s2-d">CG and its partner LQ are red. GJ and its partner QS are blue.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-thin" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-thin" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><path class="dg-red" d="M 157.00 42.25 L 80.00 42.25"/><path class="dg-red" d="M 256.75 133.25 L 333.75 133.25"/><path class="dg-blue" d="M 80.00 42.25 L 80.00 138.50"/><path class="dg-blue" d="M 333.75 133.25 L 333.75 37.00"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Pair the sides</p><h3>Partners from the order</h3><p class="slide-math">CG ↔ LQ, GJ ↔ QS</p><p>Map each endpoint on its own.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s3-t" aria-describedby="t5s3-d"><title id="t5s3-t">The whole side GJ</title><desc id="t5s3-d">The whole segment GJ, through M, is blue. It is made of GM and MJ.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-thin" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-thin" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><path class="dg-blue" d="M 80.00 42.25 L 80.00 138.50"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Whole side</p><h3>Combine the split edge</h3><p class="slide-math">GJ = (2<var>x</var> − 3) + 5 = 2<var>x</var> + 2</p><p>M lies between G and J, so GJ includes both pieces.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s4-t" aria-describedby="t5s4-d"><title id="t5s4-t">The proportion</title><desc id="t5s4-d">Red pair CG and LQ, and blue pair GJ and QS, form the two ratios.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-thin" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-thin" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><path class="dg-red" d="M 157.00 42.25 L 80.00 42.25"/><path class="dg-red" d="M 256.75 133.25 L 333.75 133.25"/><path class="dg-blue" d="M 80.00 42.25 L 80.00 138.50"/><path class="dg-blue" d="M 333.75 133.25 L 333.75 37.00"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Proportion</p><h3>△CGJ over △LQS both times</h3><p class="slide-math"><span class="frac" role="math" aria-label="2x plus 2 over x plus 6"><span aria-hidden="true">2<var>x</var> + 2</span><span aria-hidden="true"><var>x</var> + 6</span></span> = <span class="frac" role="math" aria-label="24 over 16"><span aria-hidden="true">24</span><span aria-hidden="true">16</span></span> = <span class="frac" role="math" aria-label="3 over 2"><span aria-hidden="true">3</span><span aria-hidden="true">2</span></span></p><p>Write a <a href="#term-proportion">proportion</a>, an equation that sets two ratios equal.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s5-t" aria-describedby="t5s5-d"><title id="t5s5-t">Solving for x</title><desc id="t5s5-d">GJ and QS, the two sides that contain x, are blue.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-thin" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-thin" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><path class="dg-blue" d="M 80.00 42.25 L 80.00 138.50"/><path class="dg-blue" d="M 333.75 133.25 L 333.75 37.00"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Solve</p><h3>Clear the denominators</h3><p class="slide-math">2(2<var>x</var> + 2) = 3(<var>x</var> + 6) → 4<var>x</var> + 4 = 3<var>x</var> + 18 → <var>x</var> = 14</p><p>Since QS is a positive length, <var>x</var> + 6 &gt; 0.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t5s6-t" aria-describedby="t5s6-d"><title id="t5s6-t">Checking the lengths</title><desc id="t5s6-d">Both pairs of corresponding sides are highlighted for the check.</desc><path class="dg-line" d="M 157.00 42.25 L 80.00 42.25 L 80.00 138.50 Z"/><path class="dg-line" d="M 256.75 133.25 L 333.75 133.25 L 333.75 37.00 Z"/><path class="dg-thin" d="M 91.00 42.25 L 91.00 53.25 L 80.00 53.25"/><path class="dg-thin" d="M 322.75 133.25 L 322.75 122.25 L 333.75 122.25"/><path class="dg-blue" d="M 80.00 42.25 L 80.00 138.50"/><path class="dg-blue" d="M 333.75 133.25 L 333.75 37.00"/><path class="dg-red" d="M 157.00 42.25 L 80.00 42.25"/><path class="dg-red" d="M 256.75 133.25 L 333.75 133.25"/><circle class="dg-dot" cx="80.00" cy="122.46" r="4"/><text class="dg-label" x="165.00" y="48.25">C</text><text class="dg-label" x="72.00" y="44.25" text-anchor="end">G</text><text class="dg-label" x="80.00" y="162.50" text-anchor="middle">J</text><text class="dg-label" x="90.00" y="126.46">M</text><text class="dg-len" x="118.50" y="35.25" text-anchor="middle">24</text><text class="dg-len" x="70.00" y="87.36" text-anchor="end">2x − 3</text><text class="dg-len" x="68.00" y="135.48" text-anchor="end">5</text><text class="dg-label" x="248.75" y="141.25" text-anchor="end">L</text><text class="dg-label" x="341.75" y="141.25">Q</text><text class="dg-label" x="341.75" y="39.00">S</text><text class="dg-len" x="295.25" y="158.25" text-anchor="middle">16</text><text class="dg-len" x="343.75" y="90.12">x + 6</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Check</p><h3>Lengths must be positive</h3><p class="slide-math">GJ = 30, QS = 20, 30/20 = 24/16</p><p>GM = 25 and MJ = 5, so GJ = 30. QS = 20. The ratio matches.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Use the statement’s order to pair the sides.</p><p class="step-math">CG ↔ LQ, GJ ↔ QS</p><details class="why"><summary>Why?</summary><p><a href="#term-corresponding">Corresponding</a> sides have endpoints in the same positions of the statement: C, G ↔ L, Q and G, J ↔ Q, S.</p></details></li>
+          <li><p class="step-do">Write the whole side as one expression.</p><p class="step-math">GJ = (2<var>x</var> − 3) + 5 = 2<var>x</var> + 2</p><details class="why"><summary>Why?</summary><p>GJ includes both pieces of the split edge. GM alone is not a side of the triangle.</p></details></li>
+          <li><p class="step-do">Write a proportion with △CGJ lengths over △LQS lengths in both ratios.</p><p class="step-math"><span class="frac" role="math" aria-label="2x plus 2 over x plus 6"><span aria-hidden="true">2<var>x</var> + 2</span><span aria-hidden="true"><var>x</var> + 6</span></span> = <span class="frac" role="math" aria-label="24 over 16"><span aria-hidden="true">24</span><span aria-hidden="true">16</span></span> = <span class="frac" role="math" aria-label="3 over 2"><span aria-hidden="true">3</span><span aria-hidden="true">2</span></span></p><details class="why"><summary>Why?</summary><p>Both ratios must point the same direction, or the equation compares the wrong things.</p></details></li>
+          <li><p class="step-do">Clear the denominators, distribute, and solve.</p><p class="step-math">2(2<var>x</var> + 2) = 3(<var>x</var> + 6); 4<var>x</var> + 4 = 3<var>x</var> + 18; <var>x</var> = 14</p><details class="why"><summary>Why?</summary><p>Since QS is a positive length, <var>x</var> + 6 &gt; 0, so multiplying by it is safe. Then distribute, and subtract 3<var>x</var> and 4 from both sides.</p></details></li>
+          <li><p class="step-do">Check the lengths.</p><p class="step-math">GM = 25, MJ = 5, GJ = 30, QS = 20</p><details class="why"><summary>Why?</summary><p>The lengths are positive and 30/20 = 24/16, so the value of <var>x</var> fits the figure.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="try-alg-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-alg-title" tabindex="-1">E. Find <var>x</var> on the cutouts</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 260 270" role="img" aria-labelledby="try-alg-t" aria-describedby="try-alg-d"><title id="try-alg-t">Triangles JNF and KWR</title><desc id="try-alg-d">Triangle JNF, right angle at N, with JN labeled 20 and NF labeled x + 8. Triangle KWR, right angle at W, with KW labeled 35 and WR labeled 3x + 4.</desc><path class="dg-line" d="M 72.75 111.00 L 169.00 111.00 L 169.00 34.00 Z"/><path class="dg-line" d="M 186.25 179.00 L 90.00 179.00 L 90.00 256.00 Z"/><path class="dg-thin" d="M 158.00 111.00 L 158.00 100.00 L 169.00 100.00"/><path class="dg-thin" d="M 101.00 179.00 L 101.00 190.00 L 90.00 190.00"/><text class="dg-label" x="64.75" y="119.00" text-anchor="end">J</text><text class="dg-label" x="177.00" y="119.00">N</text><text class="dg-label" x="177.00" y="36.00">F</text><text class="dg-small" x="120.88" y="136.00" text-anchor="middle">20</text><text class="dg-small" x="179.00" y="77.50">x + 8</text><text class="dg-label" x="194.25" y="185.00">K</text><text class="dg-label" x="82.00" y="181.00" text-anchor="end">W</text><text class="dg-label" x="82.00" y="268.00" text-anchor="end">R</text><text class="dg-small" x="138.12" y="172.00" text-anchor="middle">35</text><text class="dg-small" x="80.00" y="222.50" text-anchor="end">3x + 4</text></svg><figcaption>JN = 20, KW = 35, NF = <var>x</var> + 8, and WR = 3<var>x</var> + 4. The boxes mark right angles at N and W. Lengths are in the same unit.</figcaption></figure>
+          <div>
+            <p class="statement">△JNF ∼ △KWR</p>
+            <p>Find <var>x</var>. Use the given order to name the side pairs, write and solve an equation, then check whether both expressions give positive lengths in the correct ratio.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison">
         <summary id="compare-algebra">E · Two expressions</summary>
         <p>The given order pairs NF ↔ WR and JN ↔ KW. Use the second triangle over the first throughout.</p>
-        <ol class="steps equations">
+        <ol class="work-lines">
           <li><span class="frac" role="math" aria-label="3x plus 4 over x plus 8"><span aria-hidden="true">3<var>x</var> + 4</span><span aria-hidden="true"><var>x</var> + 8</span></span> = <span class="frac" role="math" aria-label="35 over 20"><span aria-hidden="true">35</span><span aria-hidden="true">20</span></span> = <span class="frac" role="math" aria-label="7 over 4"><span aria-hidden="true">7</span><span aria-hidden="true">4</span></span>.</li>
           <li>4(3<var>x</var> + 4) = 7(<var>x</var> + 8). <span class="reason">Multiply to clear the denominators.</span></li>
           <li>12<var>x</var> + 16 = 7<var>x</var> + 56. <span class="reason">Distribute.</span></li>
@@ -376,107 +447,196 @@
           <li><var>x</var> = 8. <span class="reason">Divide by 5.</span></li>
         </ol>
         <p>Then NF = 16 and WR = 28. Both are positive, and 28/16 = 35/20. If your ratios point in different directions, label each numerator with its triangle and use the same triangle on top both times.</p>
-
-        <p class="practice-link"><a href="#try-alg-title">Back to Task E</a> · <a href="#method-retry">Retry with the vent panel</a></p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p>
       </details>
-      <details>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="worked" id="type-indirect" aria-labelledby="indirect-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 6</p>
+        <h2 id="indirect-title">Use one unit before measuring indirectly</h2>
+        <p class="worked-goal">Find the long brace’s reach along its beam to the nearest centimeter.</p>
+      </header>
+      <p>Two straight braces meet their vertical walls at the same angle. Each wall meets its level overhead beam at a right angle.</p>
+      <p class="given"><strong>Given</strong> The short brace reaches 70 cm along its beam and 1 m 5 cm down its wall. The long brace reaches 190 cm down its wall. Its reach along its beam is <var>x</var> cm. End-on sketches show the angles and dimensions.</p>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="indirect-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s1-t" aria-describedby="t6s1-d"><title id="t6s1-t">Two brace sketches</title><desc id="t6s1-d">Triangle HTB on the left and triangle JLG on the right, each with a beam across the top and a wall down the left side. Right-angle boxes at T and at L, and the brace-to-wall angles at B and at G, are red. HT is 70 cm, TB is 1 m 5 cm, JL is x cm and LG is 190 cm.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-red" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-red" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-red" d="M 100.00 114.50 A 24 24 0 0 1 113.31 118.53"/><path class="dg-red" d="M 290.00 114.50 A 24 24 0 0 1 303.31 118.53"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-len" x="88.00" y="95.38" text-anchor="end">1 m 5 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">AA first</p><h3>Why the sketches are similar</h3><p class="slide-math">△HTB ∼ △JLG</p><p>The right angles pair T ↔ L. The brace-to-wall angles pair B ↔ G.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s2-t" aria-describedby="t6s2-d"><title id="t6s2-t">Corresponding reaches</title><desc id="t6s2-d">The beam reaches HT and JL are blue. The wall reaches TB and LG are red.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-thin" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-thin" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-thin" d="M 100.00 114.50 A 24 24 0 0 1 113.31 118.53"/><path class="dg-thin" d="M 290.00 114.50 A 24 24 0 0 1 303.31 118.53"/><path class="dg-blue" d="M 164.16 42.25 L 100.00 42.25"/><path class="dg-blue" d="M 354.16 42.25 L 290.00 42.25"/><path class="dg-red" d="M 100.00 42.25 L 100.00 138.50"/><path class="dg-red" d="M 290.00 42.25 L 290.00 138.50"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-len" x="88.00" y="95.38" text-anchor="end">1 m 5 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Pair the sides</p><h3>Beam with beam, wall with wall</h3><p class="slide-math">HT ↔ JL, TB ↔ LG</p><p>So the beam reaches correspond, and the wall reaches correspond.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s3-t" aria-describedby="t6s3-d"><title id="t6s3-t">Converting the wall reach</title><desc id="t6s3-d">The wall reach TB is red and relabeled 105 cm.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-thin" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-thin" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-red" d="M 100.00 42.25 L 100.00 138.50"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-label-red" x="88.00" y="95.38" text-anchor="end">= 105 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">One unit</p><h3>Convert before comparing</h3><p class="slide-math">1 m 5 cm = 100 cm + 5 cm = 105 cm</p><p>Every length must be in centimeters before you write a ratio.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s4-t" aria-describedby="t6s4-d"><title id="t6s4-t">The proportion</title><desc id="t6s4-d">Blue beam reaches and red wall reaches, all in centimeters, form the two ratios.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-thin" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-thin" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-blue" d="M 164.16 42.25 L 100.00 42.25"/><path class="dg-blue" d="M 354.16 42.25 L 290.00 42.25"/><path class="dg-red" d="M 100.00 42.25 L 100.00 138.50"/><path class="dg-red" d="M 290.00 42.25 L 290.00 138.50"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-len" x="88.00" y="95.38" text-anchor="end">105 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Proportion</p><h3>Long over short, both times</h3><p class="slide-math"><span class="frac" role="math" aria-label="x over 70"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">70</span></span> = <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span></p><p>All lengths are in centimeters.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s5-t" aria-describedby="t6s5-d"><title id="t6s5-t">The long brace's beam reach</title><desc id="t6s5-d">The unknown beam reach JL is blue.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-thin" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-thin" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-blue" d="M 354.16 42.25 L 290.00 42.25"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-len" x="88.00" y="95.38" text-anchor="end">105 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Solve</p><h3>Round only at the end</h3><p class="slide-math"><var>x</var> = 70 × <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span> = <span class="frac" role="math" aria-label="380 over 3"><span aria-hidden="true">380</span><span aria-hidden="true">3</span></span> ≈ 127</p><p>The reach is about 127 cm.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 400 172" role="img" aria-labelledby="t6s6-t" aria-describedby="t6s6-d"><title id="t6s6-t">The model's assumptions</title><desc id="t6s6-d">The right-angle boxes at T and L and the brace angle arcs at B and G are drawn dashed, to stand for what the model assumes.</desc><path class="dg-line" d="M 164.16 42.25 L 100.00 42.25 L 100.00 138.50 Z"/><path class="dg-line" d="M 354.16 42.25 L 290.00 42.25 L 290.00 138.50 Z"/><path class="dg-faint" d="M 111.00 42.25 L 111.00 53.25 L 100.00 53.25"/><path class="dg-faint" d="M 301.00 42.25 L 301.00 53.25 L 290.00 53.25"/><path class="dg-faint" d="M 100.00 114.50 A 24 24 0 0 1 113.31 118.53"/><path class="dg-faint" d="M 290.00 114.50 A 24 24 0 0 1 303.31 118.53"/><text class="dg-label" x="172.16" y="48.25">H</text><text class="dg-label" x="92.00" y="44.25" text-anchor="end">T</text><text class="dg-label" x="100.00" y="162.50" text-anchor="middle">B</text><text class="dg-label" x="362.16" y="48.25">J</text><text class="dg-label" x="282.00" y="44.25" text-anchor="end">L</text><text class="dg-label" x="290.00" y="162.50" text-anchor="middle">G</text><text class="dg-len" x="132.08" y="35.25" text-anchor="middle">70 cm</text><text class="dg-len" x="88.00" y="95.38" text-anchor="end">105 cm</text><text class="dg-len" x="322.08" y="35.25" text-anchor="middle">x cm</text><text class="dg-len" x="278.00" y="95.38" text-anchor="end">190 cm</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Check the model</p><h3>What the answer assumes</h3><p>The model assumes straight braces, vertical walls, level beams, and the same brace-to-wall angle.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Show the triangles are similar.</p><p class="step-math">△HTB ∼ △JLG</p><details class="why"><summary>Why?</summary><p>The right angles pair T ↔ L and the equal brace-to-wall angles pair B ↔ G. Two angle pairs give AA.</p></details></li>
+          <li><p class="step-do">Convert every length to one unit.</p><p class="step-math">1 m 5 cm = 100 cm + 5 cm = 105 cm</p><details class="why"><summary>Why?</summary><p>A ratio of 70 to “1 m 5 cm” mixes units, so the numbers would not compare like with like.</p></details></li>
+          <li><p class="step-do">Write the proportion, long over short in both ratios.</p><p class="step-math"><span class="frac" role="math" aria-label="x over 70"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">70</span></span> = <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span></p><details class="why"><summary>Why?</summary><p>The beam reaches correspond and the wall reaches correspond. Comparing long to short both times keeps the ratios in the same direction.</p></details></li>
+          <li><p class="step-do">Multiply both sides by 70, then round the final result.</p><p class="step-math"><var>x</var> = 70 × <span class="frac" role="math" aria-label="190 over 105"><span aria-hidden="true">190</span><span aria-hidden="true">105</span></span> = <span class="frac" role="math" aria-label="380 over 3"><span aria-hidden="true">380</span><span aria-hidden="true">3</span></span>; about 127 cm</p><details class="why"><summary>Why?</summary><p>Keep the exact ratio until this step. Rounding early would carry an error into the answer.</p></details></li>
+          <li><p class="step-do">State what the model assumes.</p><details class="why"><summary>Why?</summary><p>Straight braces, vertical walls, level beams, and the same brace-to-wall angle. If any of these fails, the triangles might not be similar.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="try-model-title">
+        <p class="eyebrow">Try it</p>
+        <h3 id="try-model-title" tabindex="-1">F. Estimate the rise of a conveyor</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 260 284" role="img" aria-labelledby="try-model-t" aria-describedby="try-model-d"><title id="try-model-t">Triangles NCP and UDF</title><desc id="try-model-d">Triangle NCP with NC labeled 24 in and CP labeled 1 ft 5 in. Triangle UDF with UD labeled 3 ft and DF labeled x in.</desc><path class="dg-line" d="M 40.29 111.00 L 149.00 111.00 L 149.00 34.00 Z"/><text class="dg-label" x="32.29" y="119.00" text-anchor="end">N</text><text class="dg-label" x="157.00" y="119.00">C</text><text class="dg-label" x="157.00" y="36.00">P</text><text class="dg-small" x="94.65" y="136.00" text-anchor="middle">24 in</text><text class="dg-small" x="159.00" y="77.50">1 ft 5 in</text><path class="dg-line" d="M 40.29 251.00 L 149.00 251.00 L 149.00 174.00 Z"/><text class="dg-label" x="32.29" y="259.00" text-anchor="end">U</text><text class="dg-label" x="157.00" y="259.00">D</text><text class="dg-label" x="157.00" y="176.00">F</text><text class="dg-small" x="94.65" y="276.00" text-anchor="middle">3 ft</text><text class="dg-small" x="159.00" y="217.50">x in</text></svg><figcaption>The test belt rises 1 ft 5 in over a horizontal run of 24 in. The production belt has a horizontal run of 3 ft. Its rise is <var>x</var> in. Side views show the two locations on the same slab.</figcaption></figure>
+          <div>
+            <p>The belts are straight and sit above the same level slab. An installer slid one rigid template along the slab without turning it and used its sloped edge to align both belts. Each rise is measured vertically from the slab.</p>
+            <p>Find the rise of the production belt to the nearest inch. Use the setup to explain why the triangles are similar. Show the unit conversions, corresponding side ratios, and rounded rise.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison">
         <summary id="compare-model">F · Conveyor model</summary>
         <p>Sliding the template keeps its sloped edge at the same inclination to the slab, so ∠CNP ≅ ∠DUF. Each rise is vertical and each run is level, so ∠NCP and ∠UDF are both 90°. Therefore △NCP ∼ △UDF by AA.</p>
-        <ol class="steps equations">
+        <ol class="work-lines">
           <li>1 ft 5 in = 12 in + 5 in = 17 in. The production run is 3 ft = 36 in.</li>
           <li><span class="frac" role="math" aria-label="x over 17"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">17</span></span> = <span class="frac" role="math" aria-label="36 over 24"><span aria-hidden="true">36</span><span aria-hidden="true">24</span></span> <span class="reason">Compare production over test for both rises and runs, in inches.</span></li>
           <li><var>x</var> = 17 × <span class="frac" role="math" aria-label="36 over 24"><span aria-hidden="true">36</span><span aria-hidden="true">24</span></span> = 25.5.</li>
           <li>The rise is about 26 in to the nearest inch. At 25.5 in the result is halfway between 25 and 26, so use 26 under the usual school rounding rule.</li>
         </ol>
         <p>If you used 3 directly above 24, the runs are in different units. Multiply the run in feet by 12 to express it in inches before comparing.</p>
-
-        <p class="practice-link"><a href="#try-model-title">Back to Task F</a> · <a href="#method-retry">Retry with the vent panel</a></p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p>
       </details>
-    </section>
-
-    <section class="activity blank-task method-retry" aria-labelledby="method-retry">
-      <h2 id="method-retry" tabindex="-1">Retry · Fit a vent panel</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" aria-labelledby="vent-givens">
-          <h3 id="vent-givens">Two mounting guides</h3>
-          <p>In each guide the upright meets the level rail at a right angle. A rigid angle gauge held against each rail sets the same acute angle between the rail and the sloping edge.</p>
-          <figure>
-            <div class="diagrams pair">
-              <svg viewBox="0 0 236 148" role="img" aria-labelledby="vent-small-title" aria-describedby="vent-small-desc">
-                <title id="vent-small-title">Small guide ABC</title>
-                <desc id="vent-small-desc">Right angle at B and single arc at A. N is between A and B. AN is 4 decimeters, NB is 15 centimeters, and BC is 33 centimeters.</desc>
-                <polygon class="edge" points="35,107 167,107 167,27.8"/>
-                <polyline class="mark" points="156,107 156,96 167,96"/>
-                <path class="mark" d="M 55,107 A 20,20 0 0 0 52.15,96.71"/>
-                <circle cx="131" cy="107" r="3"/>
-                <text x="20" y="119">A</text><text x="174" y="120">B</text><text x="171" y="24">C</text><text x="125" y="98">N</text>
-                <text x="68" y="133">4 dm</text><text x="132" y="133">15 cm</text><text x="175" y="69">33 cm</text>
-              </svg>
-              <svg viewBox="0 0 236 148" role="img" aria-labelledby="vent-large-title" aria-describedby="vent-large-desc">
-                <title id="vent-large-title">Large guide UVW</title>
-                <desc id="vent-large-desc">Right angle at V and single arc at U. The run UV is x plus 20 centimeters and the rise VW is x minus 11 centimeters. The guides are fitted separately.</desc>
-                <polygon class="edge" points="199,107 69,107 69,29"/>
-                <polyline class="mark" points="80,107 80,96 69,96"/>
-                <path class="mark" d="M 179,107 A 20,20 0 0 1 181.85,96.71"/>
-                <text x="204" y="120">U</text><text x="54" y="120">V</text><text x="55" y="24">W</text>
-                <text x="94" y="133">(<tspan font-style="italic">x</tspan> + 20) cm</text><text x="61" y="69" class="end"><tspan font-style="italic">x</tspan> − 11</text>
-              </svg>
-            </div>
-            <figcaption>Small guide ABC has AN = 4 dm and NB = 15 cm along the same rail, with N between A and B, and rise BC = 33 cm. Large guide UVW has run UV = (<var>x</var> + 20) cm and rise VW = (<var>x</var> − 11) cm. The gauge marks are at A and U. Use the stated lengths. The sketches are fitted separately.</figcaption>
-          </figure>
-        </aside>
-        <div class="activity-work">
-          <p>What is the full run of the large vent panel to the nearest centimeter? Explain why you can compare the triangles. Write a proportion using whole sides, then check that both calculated dimensions are positive.</p>
-          <p class="practice-link"><a href="#compare-vent">Check the vent panel calculation</a></p>
-          <div class="writing-space" aria-hidden="true"></div>
+          </div>
         </div>
-      </div>
+      </article>
     </section>
 
-    <section class="reading-block paper-task" aria-labelledby="retry-title">
-      <h2 id="retry-title">Retry with new information</h2>
-      <p>A technician records just the angle measures of two triangles. Frame 1 has m∠B = 41° and m∠L = 88°. Frame 2 has m∠Y = 88° and m∠J = 51°. The unrecorded corners are M and D, respectively. Decide if the frames are similar and write an ordered similarity statement. Then identify the side of Frame 2 that corresponds to MB.</p>
-      <div class="writing-space" aria-hidden="true"></div>
-      <p class="practice-link"><a href="#compare-retry">Check the angle log</a></p>
-    </section>
-
-    <section class="reading-block" aria-labelledby="recall-title">
-      <h2 id="recall-title">Return to your work</h2>
-      <ul>
-        <li>Mark two angle pairs and write the reason for each.</li>
-        <li>Use the ordered names to pair endpoints. Include the edge that closes each triangle.</li>
-        <li>Use whole corresponding sides and consistent units. Keep one ratio direction and round only the final result.</li>
-      </ul>
-      <div class="paper-task">
-        <h3>Recall later</h3>
-        <p>Two triangular panels are described by △DEM ∼ △VJP. DE = 2 dm, VJ = 35 cm, and ME = 16 cm. Before looking at the lesson again, name ME’s partner, find its length in centimeters, and explain your unit choice.</p>
-        <div class="writing-space" aria-hidden="true"></div>
-      </div>
-      <p class="practice-link"><a href="#compare-recall">Compare your later recall</a></p>
-    </section>
-
-    <section class="reading-block paper-compare" aria-labelledby="later-checks">
-      <h2 id="later-checks">Later comparisons</h2>
-      <details><summary id="compare-vent">Check the vent panel calculation</summary>
+    <section id="practice" aria-labelledby="practice-title">
+      <p class="eyebrow">Mixed practice</p>
+      <h2 id="practice-title">Your turn</h2>
+      <p>These two mix the problem types. Decide what kind of problem each one is before you start.</p>
+      <article class="task" aria-labelledby="method-retry">
+        <p class="eyebrow">Mixed practice</p>
+        <h3 id="method-retry" tabindex="-1">Retry · Fit a vent panel</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 236 140" role="img" aria-labelledby="vent-small-t" aria-describedby="vent-small-d"><title id="vent-small-t">Small guide ABC</title><desc id="vent-small-d">Right angle at B and single arc at A. N is between A and B. AN is 4 decimeters, NB is 15 centimeters, and BC is 33 centimeters.</desc><path class="dg-line" d="M 35.00 107.00 L 167.00 107.00 L 167.00 27.80 Z"/><path class="dg-thin" d="M 156.00 107.00 L 156.00 96.00 L 167.00 96.00"/><path class="dg-red" d="M 55.00 107.00 A 20 20 0 0 0 52.15 96.71"/><circle class="dg-dot" cx="131.00" cy="107.00" r="4"/><text class="dg-label" x="27.00" y="115.00" text-anchor="end">A</text><text class="dg-label" x="175.00" y="115.00">B</text><text class="dg-label" x="173.00" y="25.80">C</text><text class="dg-label" x="131.00" y="97.00" text-anchor="middle">N</text><text class="dg-small" x="83.00" y="134.00" text-anchor="middle">4 dm</text><text class="dg-small" x="149.00" y="134.00" text-anchor="middle">15 cm</text><text class="dg-small" x="177.00" y="72.00">33 cm</text></svg><svg viewBox="0 0 236 140" role="img" aria-labelledby="vent-large-t" aria-describedby="vent-large-d"><title id="vent-large-t">Large guide UVW</title><desc id="vent-large-d">Right angle at V and single arc at U. The run UV is x plus 20 centimeters and the rise VW is x minus 11 centimeters. The guides are fitted separately.</desc><path class="dg-line" d="M 199.00 107.00 L 69.00 107.00 L 69.00 29.00 Z"/><path class="dg-thin" d="M 80.00 107.00 L 80.00 96.00 L 69.00 96.00"/><path class="dg-red" d="M 179.00 107.00 A 20 20 0 0 1 181.85 96.71"/><text class="dg-label" x="207.00" y="115.00">U</text><text class="dg-label" x="61.00" y="115.00" text-anchor="end">V</text><text class="dg-label" x="61.00" y="27.00" text-anchor="end">W</text><text class="dg-small" x="134.00" y="134.00" text-anchor="middle">(x + 20) cm</text><text class="dg-small" x="59.00" y="72.00" text-anchor="end">x − 11</text></svg><figcaption>Small guide ABC has AN = 4 dm and NB = 15 cm along the same rail, with N between A and B, and rise BC = 33 cm. Large guide UVW has run UV = (<var>x</var> + 20) cm and rise VW = (<var>x</var> − 11) cm. The gauge marks are at A and U. Use the stated lengths. The sketches are fitted separately.</figcaption></figure>
+          <div>
+            <p>In each guide the upright meets the level rail at a right angle. A rigid angle gauge held against each rail sets the same acute angle between the rail and the sloping edge.</p>
+            <p>What is the full run of the large vent panel to the nearest centimeter? Explain why you can compare the triangles. Write a proportion using whole sides, then check that both calculated dimensions are positive.</p>
+            <div class="blank" aria-hidden="true"></div>
+            <details class="comparison"><summary id="compare-vent">Check the vent panel calculation</summary>
         <p>The gauge gives ∠BAC ≅ ∠VUW. The rails meet the uprights at right angles, so ∠ABC ≅ ∠UVW. By AA, △ABC ∼ △UVW. The runs AB and UV match, as do rises BC and VW.</p>
-        <ol class="steps equations">
+        <ol class="work-lines">
           <li>4 dm = 40 cm, so AB = 40 cm + 15 cm = 55 cm. N is on the rail, and neither piece alone is a triangle side.</li>
           <li><span class="frac" role="math" aria-label="x minus 11 over x plus 20"><span aria-hidden="true"><var>x</var> − 11</span><span aria-hidden="true"><var>x</var> + 20</span></span> = <span class="frac" role="math" aria-label="33 over 55"><span aria-hidden="true">33</span><span aria-hidden="true">55</span></span> = <span class="frac" role="math" aria-label="3 over 5"><span aria-hidden="true">3</span><span aria-hidden="true">5</span></span>. <span class="reason">Use rise over full run for both guides, with lengths in centimeters.</span></li>
           <li>5(<var>x</var> − 11) = 3(<var>x</var> + 20). <span class="reason">Clear the denominators.</span></li>
           <li>5<var>x</var> − 55 = 3<var>x</var> + 60, so 2<var>x</var> = 115 and <var>x</var> = 57.5.</li>
           <li>UV = 77.5 cm and VW = 46.5 cm. Both are positive, and 46.5/77.5 = 3/5. The full run is about 78 cm to the nearest centimeter.</li>
         </ol>
-        <p><a class="practice-link" href="#method-retry">Back to the vent panel</a></p>
       </details>
-      <details><summary id="compare-retry">Check the angle log</summary>
+          </div>
+        </div>
+      </article>
+      <article class="task" aria-labelledby="retry-title">
+        <p class="eyebrow">Mixed practice</p>
+        <h3 id="retry-title">Retry with new information</h3>
+        <p>A technician records just the angle measures of two triangles. Frame 1 has m∠B = 41° and m∠L = 88°. Frame 2 has m∠Y = 88° and m∠J = 51°. The unrecorded corners are M and D, respectively. Decide if the frames are similar and write an ordered similarity statement. Then identify the side of Frame 2 that corresponds to MB.</p>
+        <div class="blank" aria-hidden="true"></div>
+        <details class="comparison"><summary id="compare-retry">Check the angle log</summary>
         <p>Frame 1 has m∠M = 51°, and Frame 2 has m∠D = 41°. The measures pair B ↔ D, L ↔ Y, and M ↔ J. By AA, △BLM ∼ △DYJ. The closing edge MB matches JD. If you wrote a different edge, map each endpoint independently before naming the edge.</p>
       </details>
-      <details><summary id="compare-recall">Compare your later recall</summary>
+      </article>
+      <aside class="callout" aria-labelledby="recall-title">
+        <h3 id="recall-title">Return to your work</h3>
+        <ul class="checklist">
+        <li>Mark two angle pairs and write the reason for each.</li>
+        <li>Use the ordered names to pair endpoints. Include the edge that closes each triangle.</li>
+        <li>Use whole corresponding sides and consistent units. Keep one ratio direction and round only the final result.</li>
+      </ul>
+      </aside>
+    </section>
+
+    <section aria-labelledby="remember-title">
+      <h2 id="remember-title">Keep the idea</h2>
+      <h3>Recall later</h3>
+      <p>Two triangular panels are described by △DEM ∼ △VJP. DE = 2 dm, VJ = 35 cm, and ME = 16 cm. Before looking at the lesson again, name ME’s partner, find its length in centimeters, and explain your unit choice.</p>
+      <div class="blank" aria-hidden="true"></div>
+      <details class="comparison"><summary id="compare-recall">Compare your later recall</summary>
         <p>M ↔ P and E ↔ J, so ME ↔ PJ. DE = 20 cm. The second-to-first factor is 35/20 = 1.75. Therefore PJ = 1.75 × 16 cm = 28 cm. The factor compares lengths in the same unit.</p>
       </details>
     </section>
 
-    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
+    <section class="print-only print-bank" data-print-bank="auto" aria-label="Comparisons for paper">
+      <h2>Comparisons for paper</h2>
+      <p>Try each task first. These comparisons are printed here, after the tasks, so the answers stay out of sight while you work.</p>
+      <div class="print-bank-item"><h3>Before you start: Check the two prerequisites</h3><p>The angle measures in a triangle add to 180°, so 48° + 77° + <var>a</var> = 180° and <var>a</var> = 55°. The middle letter X names the <a href="#term-vertex">vertex</a>, the corner where the two rays meet. Say ∠ZXY and point to X before tracing the rays XZ and XY.</p></div>
+      <div class="print-bank-item"><h3>Before you start: Read the arc marks</h3><p>∠K and ∠R have the same measure because they have matching single arcs. ∠M and ∠N have matching double arcs. You can pair angles by the arc counts without knowing their measures in degrees.</p></div>
+      <div class="print-bank-item"><h3>A. Choose the match: A · Right triangles</h3><p>In △VGF, m∠V = 180° − 90° − 53° = 37°. So V ↔ Q and G ↔ Y. That leaves F ↔ D, giving △VGF ∼ △QYD by AA. △UZE has angles 40°, 90°, and 50°. Neither acute angle matches either acute angle of △VGF, so these triangles are not similar.</p>
+        <p>If you paired F with Q because they both had numbers, compare the numbers. The marked 53° and 37° are different. Subtract from 180° before deciding what matches.</p></div>
+      <div class="print-bank-item"><h3>B. Compare two outlines: B · Overlapping outlines</h3><p>∠KCJ ≅ ∠FCL because their sides are the same rays. ∠CKJ ≅ ∠CFL because both measure 100°. That gives C ↔ C and K ↔ F, leaving J ↔ L. Thus △CKJ ∼ △CFL by AA. If you matched K with L, follow the marked angles instead of matching the two letters on the same ray.</p></div>
+      <div class="print-bank-item"><h3>C. Choose a triangle at the junction: C · Bars at a junction</h3><p>∠AKT ≅ ∠NKR as vertical angles. ∠TAK ≅ ∠RNK as alternate interior angles along A–K–N across the two marked parallel bars. A ↔ N, T ↔ R, K ↔ K, so △ATK ∼ △NRK by AA.</p>
+        <p>The angle at K in △KUO is also vertical to ∠AKT, but there is no marked parallel relationship or second matching angle pair for that triangle. If you chose it because it shares K, write out which rays form its angle at K and then look for separate evidence for a second match.</p></div>
+      <div class="print-bank-item"><h3>D. Find x along the frame: D · Whole sides of a frame</h3><p>∠GHW and ∠PHR share the same rays. ∠HGW ≅ ∠HPR because the arrows mark GW ∥ PR and the angles are in matching positions along HP. So △HGW ∼ △HPR by AA.</p>
+        <ol class="work-lines">
+          <li>HP = 9 cm + 15 cm = 24 cm.</li>
+          <li><span class="frac" role="math" aria-label="x over 24"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">24</span></span> = <span class="frac" role="math" aria-label="17.5 over 30"><span aria-hidden="true">17.5</span><span aria-hidden="true">30</span></span> <span class="reason">HG ↔ HP and GW ↔ PR. Each ratio is inner over outer, using centimeters.</span></li>
+          <li><var>x</var> = 24 × <span class="frac" role="math" aria-label="17.5 over 30"><span aria-hidden="true">17.5</span><span aria-hidden="true">30</span></span> = 14. <span class="reason">HG = 14 cm. It lies between HQ = 9 cm and HP = 24 cm.</span></li>
+        </ol>
+        <p>If you used QP alone, trace H → P. The outer triangle starts at H, and that full side includes HQ and QP.</p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p></div>
+      <div class="print-bank-item"><h3>E. Find x on the cutouts: E · Two expressions</h3><p>The given order pairs NF ↔ WR and JN ↔ KW. Use the second triangle over the first throughout.</p>
+        <ol class="work-lines">
+          <li><span class="frac" role="math" aria-label="3x plus 4 over x plus 8"><span aria-hidden="true">3<var>x</var> + 4</span><span aria-hidden="true"><var>x</var> + 8</span></span> = <span class="frac" role="math" aria-label="35 over 20"><span aria-hidden="true">35</span><span aria-hidden="true">20</span></span> = <span class="frac" role="math" aria-label="7 over 4"><span aria-hidden="true">7</span><span aria-hidden="true">4</span></span>.</li>
+          <li>4(3<var>x</var> + 4) = 7(<var>x</var> + 8). <span class="reason">Multiply to clear the denominators.</span></li>
+          <li>12<var>x</var> + 16 = 7<var>x</var> + 56. <span class="reason">Distribute.</span></li>
+          <li>5<var>x</var> = 40. <span class="reason">Subtract 7<var>x</var> and 16 from both sides.</span></li>
+          <li><var>x</var> = 8. <span class="reason">Divide by 5.</span></li>
+        </ol>
+        <p>Then NF = 16 and WR = 28. Both are positive, and 28/16 = 35/20. If your ratios point in different directions, label each numerator with its triangle and use the same triangle on top both times.</p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p></div>
+      <div class="print-bank-item"><h3>F. Estimate the rise of a conveyor: F · Conveyor model</h3><p>Sliding the template keeps its sloped edge at the same inclination to the slab, so ∠CNP ≅ ∠DUF. Each rise is vertical and each run is level, so ∠NCP and ∠UDF are both 90°. Therefore △NCP ∼ △UDF by AA.</p>
+        <ol class="work-lines">
+          <li>1 ft 5 in = 12 in + 5 in = 17 in. The production run is 3 ft = 36 in.</li>
+          <li><span class="frac" role="math" aria-label="x over 17"><span aria-hidden="true"><var>x</var></span><span aria-hidden="true">17</span></span> = <span class="frac" role="math" aria-label="36 over 24"><span aria-hidden="true">36</span><span aria-hidden="true">24</span></span> <span class="reason">Compare production over test for both rises and runs, in inches.</span></li>
+          <li><var>x</var> = 17 × <span class="frac" role="math" aria-label="36 over 24"><span aria-hidden="true">36</span><span aria-hidden="true">24</span></span> = 25.5.</li>
+          <li>The rise is about 26 in to the nearest inch. At 25.5 in the result is halfway between 25 and 26, so use 26 under the usual school rounding rule.</li>
+        </ol>
+        <p>If you used 3 directly above 24, the runs are in different units. Multiply the run in feet by 12 to express it in inches before comparing.</p>
+        <p><a href="#method-retry">Retry with the vent panel</a></p></div>
+      <div class="print-bank-item"><h3>Retry · Fit a vent panel: Check the vent panel calculation</h3><p>The gauge gives ∠BAC ≅ ∠VUW. The rails meet the uprights at right angles, so ∠ABC ≅ ∠UVW. By AA, △ABC ∼ △UVW. The runs AB and UV match, as do rises BC and VW.</p>
+        <ol class="work-lines">
+          <li>4 dm = 40 cm, so AB = 40 cm + 15 cm = 55 cm. N is on the rail, and neither piece alone is a triangle side.</li>
+          <li><span class="frac" role="math" aria-label="x minus 11 over x plus 20"><span aria-hidden="true"><var>x</var> − 11</span><span aria-hidden="true"><var>x</var> + 20</span></span> = <span class="frac" role="math" aria-label="33 over 55"><span aria-hidden="true">33</span><span aria-hidden="true">55</span></span> = <span class="frac" role="math" aria-label="3 over 5"><span aria-hidden="true">3</span><span aria-hidden="true">5</span></span>. <span class="reason">Use rise over full run for both guides, with lengths in centimeters.</span></li>
+          <li>5(<var>x</var> − 11) = 3(<var>x</var> + 20). <span class="reason">Clear the denominators.</span></li>
+          <li>5<var>x</var> − 55 = 3<var>x</var> + 60, so 2<var>x</var> = 115 and <var>x</var> = 57.5.</li>
+          <li>UV = 77.5 cm and VW = 46.5 cm. Both are positive, and 46.5/77.5 = 3/5. The full run is about 78 cm to the nearest centimeter.</li>
+        </ol></div>
+      <div class="print-bank-item"><h3>Retry with new information: Check the angle log</h3><p>Frame 1 has m∠M = 51°, and Frame 2 has m∠D = 41°. The measures pair B ↔ D, L ↔ Y, and M ↔ J. By AA, △BLM ∼ △DYJ. The closing edge MB matches JD. If you wrote a different edge, map each endpoint independently before naming the edge.</p></div>
+      <div class="print-bank-item"><h3>Recall later: Compare your later recall</h3><p>M ↔ P and E ↔ J, so ME ↔ PJ. DE = 20 cm. The second-to-first factor is 35/20 = 1.75. Therefore PJ = 1.75 × 16 cm = 28 cm. The factor compares lengths in the same unit.</p></div>
+    </section>
+    <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl class="glossary-list">
         <div><dt id="term-vertex">Vertex</dt><dd>A corner of a figure. In ∠PQR the vertex is Q, the middle letter.</dd></div>
@@ -491,7 +651,8 @@
         <div><dt id="term-proportion">Proportion</dt><dd>An equation showing that two ratios are equal.</dd></div>
       </dl>
     </section>
-    <section class="reading-block sources" aria-labelledby="sources-title">
+
+    <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">See why two angle pairs are enough</h2>
       <p>See the illustrated summary for a proof that resizes one triangle and lines it up with the other. <a href="https://im.kendallhunt.com/HS/students/2/3/9/index.html">Illustrative Mathematics · Conditions for triangle similarity</a>.</p>
     </section>

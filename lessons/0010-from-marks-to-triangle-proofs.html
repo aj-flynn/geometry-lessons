@@ -6,57 +6,66 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="Read geometry marks, match triangles in order, and justify what follows.">
   <title>From marks to triangle proofs</title>
-  <link rel="stylesheet" href="../assets/site.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/activity-layout.css?v=20261107-r1">
-  <link rel="stylesheet" href="../assets/triangle-proof-marks.css">
+  <link rel="stylesheet" href="../assets/site.css?v=20261119-d1">
+  <link rel="stylesheet" href="../assets/worked-example.css?v=20261119-d1">
+  <link rel="stylesheet" href="../assets/0010-lesson.css?v=20261119-d1">
   <script src="../assets/triangle-proof-marks.js" defer></script>
+  <script src="../assets/worked-example.js?v=20261119-d1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <main id="main" class="lesson activity-lesson proof-marks">
-    <header class="proof-hero">
+  <main id="main" class="lesson">
+    <header>
       <a class="return-link" href="../index.html">← Lesson library</a>
-      <p class="eyebrow">Geometry · Proof workshop</p>
+      <p class="subject-tag" data-subject="geometry">Geometry · Proof workshop</p>
       <h1>From marks to triangle proofs</h1>
       <p class="lead">Read the clue. Match the corners. Give a reason for what follows.</p>
-      <nav class="proof-nav" aria-label="Lesson sections">
-        <a href="#read">Read the marks</a><a href="#decide">Test the match</a><a href="#practice">Prove it on your own</a><a href="#glossary">Glossary</a>
-      </nav>
+      <ul class="jump-nav" aria-label="Lesson sections">
+        <li><a href="#read">Read the marks</a></li><li><a href="#decide">The tests</a></li><li><a href="#match">Match in order</a></li><li><a href="#choose">Choose a test</a></li><li><a href="#conclude">Conclude</a></li><li><a href="#angles">Angle facts</a></li><li><a href="#practice">Prove it on your own</a></li><li><a href="#glossary">Glossary</a></li>
+      </ul>
     </header>
 
-    <section class="reading-block warmup" aria-labelledby="warmup-title">
+    <section aria-labelledby="warmup-title">
       <h2 id="warmup-title">Before you start</h2>
       <p>Look at the name ∠KHD. Which letter names the <a href="#vertex">vertex</a> (corner)? Which two rays make it?</p>
       <div class="blank" aria-hidden="true"></div>
       <details class="comparison"><summary>Compare the warm-up</summary><p>H is the corner, or <a href="#vertex">vertex</a>. The rays start at H and pass through K and D. The middle letter always names the corner.</p></details>
     </section>
 
-    <section class="activity" id="read" aria-labelledby="read-title">
-      <h2 id="read-title"><span>01</span> Read the marks before you reason</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="cross-caption-heading">
-          <h3 id="cross-caption-heading">Two crossing strips</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 340 155" role="img" aria-labelledby="cross-svg-title" aria-describedby="cross-svg-desc"><title id="cross-svg-title">Two joined metal strips</title><desc id="cross-svg-desc">G, S, K lie on one straight segment in that order. H, S, W lie on another in that order. GS and SK have matching single ticks.</desc><path class="frame-line" d="M 46.00 126.00 L 292.00 30.00"/><path class="frame-line" d="M 69.00 28.00 L 235.00 111.00"/><path class="diagram-mark" d="M 110.04 108.52 L 104.96 95.48"/><path class="diagram-mark" d="M 233.04 60.52 L 227.96 47.48"/><text x="25" y="138">G</text><text x="299" y="33">K</text><text x="50" y="33">H</text><text x="242" y="126">W</text><text x="169" y="66">S</text></svg><figcaption id="cross-svg-caption">G, S, K lie on one straight segment in that order. H, S, W lie on another in that order. GS and SK have matching single ticks.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Matching ticks mark equal lengths. Matching arcs mark equal angle measures. A little square marks a 90° angle. Matching arrowheads on straight lines mark <a href="#parallel">parallel</a> lines: they never meet.</p>
-          <p>Use <a href="#congruent">≅</a> for congruent figures: they match in size and shape. Here GS ≅ SK is <strong>given by the ticks</strong>. Nothing marks HS and SW as equal.</p>
-          <ul class="proof-lines">
-            <li><strong>∠GSH ≅ ∠KSW.</strong> They are opposite angles formed by two intersecting lines, called <a href="#vertical">vertical angles</a>. Each makes a straight angle when added to ∠HSK, so they have the same measure.</li>
-            <li><strong>S is the midpoint of GK.</strong> S lies on GK and GS ≅ SK. A <a href="#midpoint">midpoint</a> needs both facts.</li>
-            <li><strong>HW bisects GK.</strong> It passes through GK’s midpoint. To say they <a href="#bisect">bisect each other</a>, you would also need S to be the midpoint of HW.</li>
-          </ul>
-          <p class="rule">A mark is evidence. How the drawing looks is not.</p>
-        </div>
+    <section class="define-block" id="read" aria-labelledby="read-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="read-title">Read the marks before you reason</h2>
+      <p>A diagram tells you a fact only through its marks. Use <a href="#congruent">≅</a> for congruent figures: they match in size and shape. Matching marks say two parts are congruent.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="0 0 440 330" role="img" aria-labelledby="marks-t" aria-describedby="marks-d"><title id="marks-t">What each mark means</title><desc id="marks-d">Four panels. Tick marks: two segments with one matching tick each, labeled same length. Arcs: two angles with one matching arc each, labeled same angle measure. Square corner: an angle with a small square, labeled 90 degree angle. Arrowheads: two lines with matching single arrowheads, labeled parallel.</desc><path class="dg-faint" d="M 220 14 L 220 316 M 14 165 L 426 165"/><text class="dg-label-red" x="24.00" y="30.00">Tick marks</text><path class="dg-line" d="M 30.00 62.00 L 190.00 48.00"/><path class="dg-line" d="M 40.00 118.00 L 196.00 128.00"/><path class="dg-tick-red" d="M 109.30 47.03 L 110.70 62.97"/><path class="dg-tick-red" d="M 118.51 115.02 L 117.49 130.98"/><text class="dg-small" x="110.00" y="154.00" text-anchor="middle">same length</text><text class="dg-label-blue" x="244.00" y="30.00">Arcs</text><path class="dg-line" d="M 250.00 128.00 L 340.00 128.00"/><path class="dg-line" d="M 250.00 128.00 L 300.00 70.00"/><path class="dg-blue" d="M 278.00 128.00 A 28 28 0 0 0 268.28 106.79"/><path class="dg-line" d="M 420.00 112.00 L 360.00 140.00"/><path class="dg-line" d="M 420.00 112.00 L 359.81 84.92"/><path class="dg-blue" d="M 394.63 123.84 A 28 28 0 0 1 394.46 100.51"/><text class="dg-small" x="330.00" y="154.00" text-anchor="middle">same angle measure</text><text class="dg-label" x="24.00" y="191.00">Square corner</text><path class="dg-line" d="M 60.00 290.00 L 190.00 290.00"/><path class="dg-line" d="M 60.00 290.00 L 60.00 200.00"/><path class="dg-sun" d="M 80.00 290.00 L 80.00 270.00 L 60.00 270.00"/><text class="dg-small" x="128.00" y="316.00" text-anchor="middle">90° angle</text><text class="dg-label" x="244.00" y="191.00">Arrowheads</text><path class="dg-line" d="M 240.00 272.00 L 400.00 214.00"/><path class="dg-line" d="M 250.00 302.00 L 410.00 244.00"/><path class="dg-line" d="M 319.07 251.00 L 325.08 241.16 L 314.16 237.46"/><path class="dg-line" d="M 329.07 281.00 L 335.08 271.16 L 324.16 267.46"/><text class="dg-small" x="330.00" y="322.00" text-anchor="middle">parallel</text></svg><figcaption>Each mark only counts when its partner has the same mark: one tick with one tick, two arcs with two arcs.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-red" aria-hidden="true"></span>Tick marks</dt><dd>Matching ticks mark equal lengths.<span class="in-diagram">In the diagram: the two segments with one tick each.</span></dd></div>
+          <div><dt><span class="key key-blue" aria-hidden="true"></span>Arcs</dt><dd>Matching arcs mark equal angle measures.<span class="in-diagram">In the diagram: the two angles with one arc each, turned different ways.</span></dd></div>
+          <div><dt><span class="key key-sun" aria-hidden="true"></span>Square corner</dt><dd>A little square marks a 90° angle.<span class="in-diagram">In the diagram: the corner with the small square.</span></dd></div>
+          <div><dt><span class="key" aria-hidden="true"></span>Arrowheads</dt><dd>Matching arrowheads on straight lines mark <a href="#parallel">parallel</a> lines: they never meet.<span class="in-diagram">In the diagram: the two lines with one arrowhead each.</span></dd></div>
+        </dl>
       </div>
+      <p class="rule"><strong>A mark is evidence.</strong> How the drawing looks is not.</p>
+    </section>
 
+    <section class="define-block" id="crossing" aria-labelledby="crossing-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="crossing-title">What two crossing strips tell you</h2>
+      <p>G, S, K lie on one straight segment in that order. H, S, W lie on another in that order. Here GS ≅ SK is <strong>given by the ticks</strong>. Nothing marks HS and SW as equal.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="0 0 460 270" role="img" aria-labelledby="cross-def-t" aria-describedby="cross-def-d"><title id="cross-def-t">Two crossing strips, labeled</title><desc id="cross-def-d">G, S, K lie on one straight strip and H, S, W on the other. GS and SK have matching single ticks, so S is labeled midpoint of GK. The two angles on opposite sides of S, angle GSH and angle KSW, are labeled vertical angles. The angle HSK between them is labeled. HS and SW are labeled no marks.</desc><path class="dg-blue" d="M 180.89 139.84 A 40 40 0 0 1 182.37 107.41"/><path class="dg-blue" d="M 255.41 110.76 A 40 40 0 0 1 253.93 143.19"/><path class="dg-sun" d="M 196.68 114.57 A 24 24 0 0 1 240.51 116.57"/><path class="dg-line" d="M 52.10 190.10 L 384.20 60.50"/><path class="dg-line" d="M 83.15 57.80 L 307.25 169.85"/><path class="dg-tick-red" d="M 132.22 150.25 L 138.03 165.15"/><path class="dg-tick-red" d="M 298.27 85.45 L 304.08 100.35"/><circle class="dg-dot" cx="218.15" cy="125.30" r="4.5"/><text class="dg-label" x="30.10" y="204.10">G</text><text class="dg-label" x="392.20" y="64.50">K</text><text class="dg-label" x="61.15" y="57.80">H</text><text class="dg-label" x="315.25" y="165.85">W</text><text class="dg-label" x="220.15" y="157.30">S</text><path class="dg-leader" d="M 178.19 123.47 L 140.00 131.00"/><text class="dg-small" x="70.00" y="137.00" text-anchor="middle">vertical angles</text><path class="dg-leader" d="M 258.11 127.13 L 316.00 118.00"/><text class="dg-small" x="386.00" y="124.00" text-anchor="middle">vertical angles</text><path class="dg-leader" d="M 219.25 101.33 L 218.15 44.00"/><text class="dg-small" x="218.15" y="36.00" text-anchor="middle">∠HSK</text><path class="dg-leader" d="M 215.15 131.30 L 178.00 232.00"/><text class="dg-label-red" x="178.00" y="252.00" text-anchor="middle">S: midpoint of GK</text><path class="dg-leader" d="M 262.70 147.58 L 362.00 214.00"/><text class="dg-small" x="372.00" y="234.00" text-anchor="middle">HS, SW: no marks</text></svg><figcaption>GS and SK have matching single ticks. Blue arcs are facts you prove, not marks you are given. The sketch is not to scale.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-blue" aria-hidden="true"></span><a href="#vertical">Vertical angles</a></dt><dd>Opposite angles formed by two intersecting lines. <strong>∠GSH ≅ ∠KSW</strong>: each makes a straight angle when added to ∠HSK, so they have the same measure.<span class="in-diagram">In the diagram: the two blue arcs at S. ∠HSK is the yellow arc between them.</span></dd></div>
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#midpoint">Midpoint</a></dt><dd><strong>S is the midpoint of GK.</strong> S lies on GK and GS ≅ SK. A midpoint needs both facts.<span class="in-diagram">In the diagram: S, with one tick on each side of it along GK.</span></dd></div>
+          <div><dt><span class="key" aria-hidden="true"></span><a href="#bisect">Bisect</a></dt><dd><strong>HW bisects GK.</strong> It passes through GK’s midpoint. To say they bisect each other, you would also need S to be the midpoint of HW.<span class="in-diagram">In the diagram: HS and SW have no marks, so HW is not shown bisected.</span></dd></div>
+        </dl>
+      </div>
       <article class="task" aria-labelledby="cut-title">
-        <h3 id="cut-title">Try it · Which direction works?</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="cut-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 340 155" role="img" aria-labelledby="cut-svg-title" aria-describedby="cut-svg-desc"><title id="cut-svg-title">Two crossing braces</title><desc id="cut-svg-desc">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</desc><path class="frame-line" d="M 48.00 65.00 L 288.00 65.00"/><path class="frame-line" d="M 132.00 17.00 L 222.00 137.00"/><text x="30" y="69">L</text><text x="295" y="69">F</text><text x="134" y="18">E</text><text x="228" y="146">R</text><text x="177" y="58">V</text></svg><figcaption id="cut-svg-caption">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Try it</p>
+        <h3 id="cut-title">Which direction works?</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 340 155" role="img" aria-labelledby="cut-svg-title" aria-describedby="cut-svg-desc"><title id="cut-svg-title">Two crossing braces</title><desc id="cut-svg-desc">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</desc><path class="dg-line" d="M 48.00 65.00 L 288.00 65.00"/><path class="dg-line" d="M 132.00 17.00 L 222.00 137.00"/><text class="dg-label" x="30" y="69">L</text><text class="dg-label" x="295" y="69">F</text><text class="dg-label" x="134" y="18">E</text><text class="dg-label" x="228" y="146">R</text><text class="dg-label" x="177" y="58">V</text></svg><figcaption id="cut-svg-caption">L, V, F are in order on one straight brace. E, V, R are in order on the other. LV = 9 cm, VF = 9 cm, EV = 4 cm and VR = 6 cm. The sketch is not to scale.</figcaption></figure>
+          <div>
             <p>Decide whether either brace bisects the other. Write the claim and a reason. If the reverse claim does not follow, say what stops it.</p>
             <div class="blank" aria-hidden="true"></div>
             <details class="hint"><summary>Hint 1 · Find the whole segment</summary><p>For a claim that one brace is bisected, look at the two pieces of <em>that</em> brace.</p></details>
@@ -67,55 +76,130 @@
       </article>
     </section>
 
-    <section class="activity" id="decide" aria-labelledby="decide-title">
-      <h2 id="decide-title"><span>02</span> Decide what fixes a triangle</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="hinge-title">
-          <h3 id="hinge-title">Two triangular brackets</h3>
-          <figure><svg class="proof-diagram" viewBox="0 0 360 155" role="img" aria-labelledby="hinge-svg-title" aria-describedby="hinge-svg-desc"><title id="hinge-svg-title">Two triangular brackets, one turned upside down</title><desc id="hinge-svg-desc">KR and UT have one tick. KV and UJ have two ticks. ∠RKV and ∠TUJ have one arc.</desc><path class="frame-line" d="M 43.00 120.00 L 140.00 120.00 L 69.00 49.00 Z"/><path class="frame-line" d="M 327.00 42.00 L 230.00 42.00 L 301.00 113.00 Z"/><path class="diagram-mark" d="M 91.50 127.00 L 91.50 113.00"/><path class="diagram-mark" d="M 278.50 35.00 L 278.50 49.00"/><path class="diagram-mark" d="M 61.58 89.63 L 48.43 84.82"/><path class="diagram-mark" d="M 63.57 84.18 L 50.42 79.37"/><path class="diagram-mark" d="M 308.42 72.37 L 321.57 77.18"/><path class="diagram-mark" d="M 306.43 77.82 L 319.58 82.63"/><path class="diagram-mark" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="diagram-mark" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text x="24" y="139">K</text><text x="142" y="138">R</text><text x="62" y="43">V</text><text x="324" y="28">U</text><text x="211" y="32">T</text><text x="299" y="137">J</text></svg><figcaption id="hinge-svg-caption">KR and UT have one tick. KV and UJ have two ticks. ∠RKV and ∠TUJ have one arc.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Start where two marked sides touch. KR and KV meet at K. Their partners UT and UJ meet at U. So K matches U. The one-tick sides then pair R with T; the two-tick sides pair V with J. These are <a href="#correspond">corresponding</a> vertices: they play the same roles.</p>
-          <ol class="proof-lines">
-            <li>KR ≅ UT and KV ≅ UJ, by the ticks.</li>
-            <li>∠RKV ≅ ∠TUJ, by the arcs. They are <a href="#included">included angles</a>: the angles between the two known sides. Line up one known side, open the same angle, and go the same distance along the second side. Both outer endpoints are fixed.</li>
-            <li><strong>△KRV ≅ △UTJ</strong> by <a href="#criteria">SAS</a> (side-angle-side). Notice the order: K ↔ U, R ↔ T, V ↔ J.</li>
-            <li>Now <strong>RV ≅ TJ</strong>. Match both endpoints, not where the sides sit on the page. This is <a href="#cpctc">CPCTC</a>: corresponding parts of congruent triangles are congruent. Use it <strong>after</strong> proving the triangles match.</li>
-          </ol>
-        </div>
-      </div>
+    <section class="define-block" id="decide" aria-labelledby="decide-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="decide-title">Decide what fixes a triangle</h2>
+      <p>Two triangles are congruent when their <a href="#correspond">corresponding</a> parts match: the parts that play the same roles. You do not need all six pairs. Each test below names a set of three pairs that is enough. The word <a href="#included">included</a> matters: an included angle is between the two named sides, and an included side joins the two named angles.</p>
+      <h3 id="criteria">Quick method card</h3>
+      <p class="card-note">Each card shows the marks on one triangle. The other triangle needs the matching marks.</p>
+      <dl class="test-cards">
+          <div><dt>SSS</dt><dd><figure><svg viewBox="0 0 250 180" role="img" aria-labelledby="sss-t" aria-describedby="sss-d"><title id="sss-t">SSS marks</title><desc id="sss-d">A triangle with one tick on the bottom side, two ticks on the right side and three ticks on the left side.</desc><path class="dg-line" d="M 30.00 150.00 L 214.00 150.00 L 92.00 42.00 Z"/><path class="dg-tick-red" d="M 122.00 142.00 L 122.00 158.00"/><path class="dg-tick-red" d="M 149.94 103.98 L 160.55 92.00"/><path class="dg-tick-red" d="M 145.45 100.00 L 156.06 88.02"/><path class="dg-tick-red" d="M 70.93 94.78 L 57.05 86.81"/><path class="dg-tick-red" d="M 67.94 99.98 L 54.06 92.02"/><path class="dg-tick-red" d="M 64.95 105.19 L 51.07 97.22"/><text class="dg-small" x="122.00" y="174.00" text-anchor="middle">3 side pairs</text></svg></figure><p>Three corresponding side pairs.</p><span class="in-diagram">In the diagram: one, two and three ticks, one pair on every side.</span></dd></div>
+          <div><dt>SAS</dt><dd><figure><svg viewBox="0 0 250 180" role="img" aria-labelledby="sas-t" aria-describedby="sas-d"><title id="sas-t">SAS marks</title><desc id="sas-d">The bottom side has one tick and the left side has two ticks. The angle between them, at the bottom left corner, has an arc and is labeled included angle.</desc><path class="dg-line" d="M 30.00 150.00 L 214.00 150.00 L 92.00 42.00 Z"/><path class="dg-tick-red" d="M 122.00 142.00 L 122.00 158.00"/><path class="dg-tick-red" d="M 69.43 97.38 L 55.56 89.42"/><path class="dg-tick-red" d="M 66.44 102.58 L 52.57 94.62"/><path class="dg-blue" d="M 56.00 150.00 A 26 26 0 0 0 42.94 127.45"/><path class="dg-leader" d="M 52.50 136.97 L 64.00 160.00"/><text class="dg-label-blue" x="76.00" y="176.00" text-anchor="middle">included angle</text></svg></figure><p>Two side pairs and the angle pair between those sides.</p><span class="in-diagram">In the diagram: the arc sits at the corner where the two ticked sides meet.</span></dd></div>
+          <div><dt>ASA</dt><dd><figure><svg viewBox="0 0 250 180" role="img" aria-labelledby="asa-t" aria-describedby="asa-d"><title id="asa-t">ASA marks</title><desc id="asa-d">The bottom left angle has one arc and the bottom right angle has two arcs. The bottom side, which joins them, has a tick and is labeled included side.</desc><path class="dg-line" d="M 30.00 150.00 L 214.00 150.00 L 92.00 42.00 Z"/><path class="dg-blue" d="M 30.00 150.00 L 214.00 150.00"/><path class="dg-red" d="M 56.00 150.00 A 26 26 0 0 0 42.94 127.45"/><path class="dg-red" d="M 188.00 150.00 A 26 26 0 0 1 194.53 132.77"/><path class="dg-red" d="M 182.00 150.00 A 32 32 0 0 1 190.04 128.79"/><path class="dg-tick-red" d="M 122.00 142.00 L 122.00 158.00"/><text class="dg-label-blue" x="122.00" y="174.00" text-anchor="middle">included side</text></svg></figure><p>Two angle pairs and the side pair joining those angles.</p><span class="in-diagram">In the diagram: the ticked side runs from one arc to the other.</span></dd></div>
+          <div><dt>AAS</dt><dd><figure><svg viewBox="0 0 250 180" role="img" aria-labelledby="aas-t" aria-describedby="aas-d"><title id="aas-t">AAS marks</title><desc id="aas-d">The bottom left angle has one arc and the bottom right angle has two arcs. The tick is on the right side, which does not join those angles, labeled not between the angles.</desc><path class="dg-line" d="M 30.00 150.00 L 214.00 150.00 L 92.00 42.00 Z"/><path class="dg-red" d="M 56.00 150.00 A 26 26 0 0 0 42.94 127.45"/><path class="dg-red" d="M 188.00 150.00 A 26 26 0 0 1 194.53 132.77"/><path class="dg-red" d="M 182.00 150.00 A 32 32 0 0 1 190.04 128.79"/><path class="dg-blue" d="M 214.00 150.00 L 92.00 42.00"/><path class="dg-tick-red" d="M 147.70 101.99 L 158.30 90.01"/><path class="dg-leader" d="M 149.02 100.49 L 196.00 52.00"/><text class="dg-label-blue" x="190.00" y="26.00" text-anchor="middle">not between</text><text class="dg-label-blue" x="190.00" y="44.00" text-anchor="middle">the angles</text></svg></figure><p>Two angle pairs and a side pair not joining those angles. Two equal angle pairs force the third pair equal, which lets you use ASA.</p><span class="in-diagram">In the diagram: the ticked side touches only one of the marked angles.</span></dd></div>
+          <div><dt>HL</dt><dd><figure><svg viewBox="0 0 250 180" role="img" aria-labelledby="hl-t" aria-describedby="hl-d"><title id="hl-t">HL marks</title><desc id="hl-d">A right triangle with a square in the bottom left corner. The hypotenuse, opposite the square, has one tick and is labeled hypotenuse. The upright leg has two ticks and is labeled leg.</desc><path class="dg-line" d="M 58.00 150.00 L 222.00 150.00 L 58.00 40.00 Z"/><path class="dg-sun" d="M 74.00 150.00 L 74.00 134.00 L 58.00 134.00"/><path class="dg-blue" d="M 222.00 150.00 L 58.00 40.00"/><path class="dg-tick-red" d="M 135.54 101.64 L 144.46 88.36"/><path class="dg-tick-red" d="M 50.00 98.00 L 66.00 98.00"/><path class="dg-tick-red" d="M 50.00 92.00 L 66.00 92.00"/><text class="dg-label-blue" x="146.00" y="80.00">hypotenuse</text><text class="dg-small" x="42.00" y="100.00" text-anchor="end">leg</text><text class="dg-small" x="140.00" y="174.00" text-anchor="middle">right angle (square)</text></svg></figure><p>For two right triangles only: a <a href="#hypotenuse">hypotenuse</a> pair (sides opposite the right angles) and a leg pair (sides touching the right angles).</p><span class="in-diagram">In the diagram: the square marks the right angle, the hypotenuse is across from it, and the leg touches it.</span></dd></div>
+      </dl>
+      <p class="rule"><strong>Facts with no mark</strong> Sometimes a needed fact has no mark. A shared side is congruent to itself (the <a href="#reflexive">reflexive property</a>). If you know both angles are right, they are congruent. If you only think they look right, you cannot use that fact.</p>
+    </section>
 
-      <article class="swing reading-block" aria-labelledby="swing-title">
+    <section class="worked" id="match" aria-labelledby="t1-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 1</p>
+        <h2 id="t1-title">Match the corners in order</h2>
+        <p class="worked-goal">Use this before you write any congruence statement. The example is two triangular brackets, one turned upside down.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t1-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t1s1-t" aria-describedby="t1s1-d"><title id="t1s1-t">Two marked brackets</title><desc id="t1s1-d">Triangles KRV and UTJ. KR and UT have one tick. KV and UJ have two ticks. The angles at K and at U have one arc.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>List the marked pairs</h3><p class="slide-math">KR ≅ UT, KV ≅ UJ, ∠RKV ≅ ∠TUJ</p><p>KR and UT have one tick. KV and UJ have two ticks. ∠RKV and ∠TUJ have one arc.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t1s2-t" aria-describedby="t1s2-d"><title id="t1s2-t">The corners where marked sides meet</title><desc id="t1s2-d">The marked sides KR and KV meet at K, and UT and UJ meet at U. K and U are circled.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-red" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-red" d="M 43.00 120.00 L 69.00 49.00"/><path class="dg-red" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-red" d="M 327.00 42.00 L 301.00 113.00"/><circle class="dg-blue" cx="43.00" cy="120.00" r="9"/><circle class="dg-blue" cx="327.00" cy="42.00" r="9"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Start at a corner</p><h3>Start where two marked sides touch</h3><p class="slide-math">K <span class="arrow">↔</span> U</p><p>KR and KV meet at K. Their partners UT and UJ meet at U. So K matches U.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t1s3-t" aria-describedby="t1s3-d"><title id="t1s3-t">Follow the one-tick sides</title><desc id="t1s3-d">The one-tick sides KR and UT are highlighted. Their other ends, R and T, are circled.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-red" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-red" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><circle class="dg-blue" cx="140.00" cy="120.00" r="9"/><circle class="dg-blue" cx="230.00" cy="42.00" r="9"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">One tick</p><h3>Follow the one-tick sides</h3><p class="slide-math">R <span class="arrow">↔</span> T</p><p>KR matches UT and K matches U, so the other ends match: R with T.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t1s4-t" aria-describedby="t1s4-d"><title id="t1s4-t">Follow the two-tick sides</title><desc id="t1s4-d">The two-tick sides KV and UJ are highlighted. Their other ends, V and J, are circled.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-red" d="M 43.00 120.00 L 69.00 49.00"/><path class="dg-red" d="M 327.00 42.00 L 301.00 113.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><circle class="dg-blue" cx="69.00" cy="49.00" r="9"/><circle class="dg-blue" cx="301.00" cy="113.00" r="9"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Two ticks</p><h3>Follow the two-tick sides</h3><p class="slide-math">V <span class="arrow">↔</span> J</p><p>KV matches UJ, so V matches J. These are <a href="#correspond">corresponding</a> vertices: they play the same roles.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t1s5-t" aria-describedby="t1s5-d"><title id="t1s5-t">Two matched triangles</title><desc id="t1s5-d">Both triangles are shaded. K matches U, R matches T and V matches J.</desc><path class="dg-fill" d="M 43.00 120.00 L 140.00 120.00 L 69.00 49.00 Z"/><path class="dg-fill" d="M 327.00 42.00 L 230.00 42.00 L 301.00 113.00 Z"/><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Write it</p><h3>Keep the order</h3><p class="slide-math">△KRV ≅ △UTJ</p><p>Notice the order: K ↔ U, R ↔ T, V ↔ J. Matching letters sit in the same positions, wherever the triangles sit on the page.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">List each marked pair from the marks.</p><p class="step-math">KR ≅ UT, KV ≅ UJ, ∠RKV ≅ ∠TUJ</p><details class="why"><summary>Why?</summary><p>Matching ticks mark equal lengths and matching arcs mark equal angle measures. A mark is evidence; how the drawing looks is not.</p></details></li>
+          <li><p class="step-do">Start where two marked sides touch, in both triangles.</p><p class="step-math">K <span class="arrow">↔</span> U</p><details class="why"><summary>Why?</summary><p>The corner shared by two marked sides has to match the corner shared by their partners. Corresponding vertices play the same roles.</p></details></li>
+          <li><p class="step-do">Follow each marked side to its other endpoint.</p><p class="step-math">R <span class="arrow">↔</span> T, V <span class="arrow">↔</span> J</p><details class="why"><summary>Why?</summary><p>A side is named by its two endpoints. Once one endpoint is matched, the other endpoint of the partner side must match the other endpoint.</p></details></li>
+          <li><p class="step-do">Write the two triangles with matching letters in the same positions.</p><p class="step-math">△KRV ≅ △UTJ</p><details class="why"><summary>Why?</summary><p>The order of the letters is the matching. It does not depend on where the triangles sit on the page; one bracket here is upside down.</p></details></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="worked" id="choose" aria-labelledby="t2-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 2</p>
+        <h2 id="t2-title">Choose the congruence test</h2>
+        <p class="worked-goal">Use this when the marks give three pairs and you have to name the test that fits, or say that none does.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t2-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t2s1-t" aria-describedby="t2s1-d"><title id="t2s1-t">Sort the marks</title><desc id="t2s1-d">Triangles KRV and UTJ with their marks: two pairs of ticked sides and one pair of angles with arcs.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Sort the marks</p><h3>Count sides and angles</h3><p class="slide-math">S: KR ≅ UT · S: KV ≅ UJ · A: ∠RKV ≅ ∠TUJ</p><p>Two side pairs, by the ticks, and one angle pair, by the arcs.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t2s2-t" aria-describedby="t2s2-d"><title id="t2s2-t">The arc sits between the ticked sides</title><desc id="t2s2-d">In triangle KRV the ticked sides KR and KV are highlighted and the arc at K, where they meet, is highlighted too. RV is dashed. The same is true at U, where TJ is dashed.</desc><path class="dg-faint" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-faint" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-red" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-red" d="M 43.00 120.00 L 69.00 49.00"/><path class="dg-red" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-red" d="M 327.00 42.00 L 301.00 113.00"/><path class="dg-sun" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-sun" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Where is the angle?</p><h3>Is the angle between the two sides?</h3><p class="slide-math">KR and KV meet at K</p><p>The arc is at K, where KR and KV meet. So ∠RKV and ∠TUJ are <a href="#included">included angles</a>: the angles between the two known sides.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t2s3-t" aria-describedby="t2s3-d"><title id="t2s3-t">Side, angle, side fixes the corner</title><desc id="t2s3-d">In triangle KRV, KR is highlighted, the angle at K is highlighted, and KV runs from K to the dot at V. The third side RV is highlighted in blue: it has no choice.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-red" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-sun" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 43.00 120.00 L 69.00 49.00"/><circle class="dg-dot" cx="69.00" cy="49.00" r="5.5"/><path class="dg-blue" d="M 140.00 120.00 L 69.00 49.00"/><text class="dg-label-blue" x="112.50" y="78.50">forced</text><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Why it works</p><h3>Side, angle, side leaves no choice</h3><p class="slide-math">R, K and V are fixed</p><p>Line up one known side, open the same angle, and go the same distance along the second side. Both outer endpoints are fixed, so the third side RV has no choice.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t2s4-t" aria-describedby="t2s4-d"><title id="t2s4-t">SAS</title><desc id="t2s4-d">Both triangles are shaded with all their marks: two ticked side pairs and the included angle pair.</desc><path class="dg-fill" d="M 43.00 120.00 L 140.00 120.00 L 69.00 49.00 Z"/><path class="dg-fill" d="M 327.00 42.00 L 230.00 42.00 L 301.00 113.00 Z"/><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Name the test</p><h3>Match the card</h3><p class="slide-math">△KRV ≅ △UTJ by SAS</p><p>SAS: side-angle-side. Two side pairs and the angle pair between those sides.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Sort the marked pairs into sides and angles.</p><p class="step-math">S, S, A</p><details class="why"><summary>Why?</summary><p>Every test on the method card is made of three pairs. Knowing how many are sides and how many are angles narrows it to one or two tests.</p></details></li>
+          <li><p class="step-do">Check where each marked angle sits compared with the marked sides.</p><p class="step-math">arc at K, between KR and KV</p><details class="why"><summary>Why?</summary><p>An included angle is between the two named sides; an included side joins the vertices of the two named angles. The tests depend on this position, not just on the count.</p></details></li>
+          <li><p class="step-do">Match the pattern to a test on the card. If none fits, say what is missing.</p><p class="step-math">SAS</p><details class="why"><summary>Why?</summary><p>SAS needs the angle between the two sides. Line up one side, open the same angle, and go the same distance along the second side: both outer endpoints are fixed, so the third side has no choice and there is only one triangle.</p></details></li>
+          <li><p class="step-do">Write the statement in matching order, with the test as the reason.</p><p class="step-math">△KRV ≅ △UTJ by SAS</p><details class="why"><summary>Why?</summary><p>The test is the reason for the statement. Keeping the letters in matching order is what lets you use the matched parts next.</p></details></li>
+        </ol>
+      </div>
+      <article class="task" aria-labelledby="swing-title">
+        <p class="eyebrow">Predict</p>
         <h3 id="swing-title">What if the angle is at the other end?</h3>
         <p>Suppose the base AB and side BG are fixed, and the angle at A is fixed. Predict: can the last corner land in two spots on the same ray from A?</p>
         <div class="blank" aria-hidden="true"></div>
-        <details class="comparison ssa-compare">
+        <details class="comparison">
           <summary>Compare with a two-position sketch</summary>
-          <figure><svg class="proof-diagram" viewBox="0 0 290 200" role="img" aria-labelledby="swing-svg-title" aria-describedby="swing-svg-desc"><title id="swing-svg-title">One base, two possible third vertices</title><desc id="swing-svg-desc">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</desc><path class="frame-line" d="M 48.00 177.00 L 224.00 177.00"/><path class="frame-line" d="M 48.00 177.00 L 180.00 45.00"/><path class="model-alt" d="M 224.00 177.00 L 92.00 133.00"/><path class="frame-line" d="M 224.00 177.00 L 180.00 45.00"/><circle class="model-dot" cx="92" cy="133" r="3.5"/><circle class="model-dot" cx="180" cy="45" r="3.5"/><path class="diagram-mark" d="M 160.21 148.36 L 155.79 161.64"/><path class="diagram-mark" d="M 208.64 108.79 L 195.36 113.21"/><path class="diagram-mark" d="M 71.00 177.00 A 23 23 0 0 0 64.26 160.74"/><text x="32" y="195">A</text><text x="230" y="191">B</text><text x="72" y="127">G</text><text x="183" y="37">H</text></svg><figcaption id="swing-svg-caption">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</figcaption></figure>
+          <figure class="mid-figure"><svg viewBox="0 0 290 200" role="img" aria-labelledby="swing-svg-title" aria-describedby="swing-svg-desc"><title id="swing-svg-title">One base, two possible third vertices</title><desc id="swing-svg-desc">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</desc><path class="dg-line" d="M 48.00 177.00 L 224.00 177.00"/><path class="dg-line" d="M 48.00 177.00 L 180.00 45.00"/><path class="dg-blue" d="M 224.00 177.00 L 92.00 133.00"/><path class="dg-line" d="M 224.00 177.00 L 180.00 45.00"/><circle class="dg-dot" cx="92" cy="133" r="3.5"/><circle class="dg-dot" cx="180" cy="45" r="3.5"/><path class="dg-red" d="M 160.21 148.36 L 155.79 161.64"/><path class="dg-red" d="M 208.64 108.79 L 195.36 113.21"/><path class="dg-red" d="M 71.00 177.00 A 23 23 0 0 0 64.26 160.74"/><text class="dg-label" x="32" y="195">A</text><text class="dg-label" x="230" y="191">B</text><text class="dg-label" x="72" y="127">G</text><text class="dg-label" x="183" y="37">H</text></svg><figcaption id="swing-svg-caption">G and H lie on the same ray from A. BG and BH have matching single ticks. The base AB is common to both triangles.</figcaption></figure>
           <p>Yes. Take △ABG and △ABH. They share AB and the angle at A, and BG ≅ BH. But AG and AH have different lengths. Here the known angle is <em>not</em> between the two known sides. Two side pairs and a non-included angle (SSA) do not guarantee congruence.</p>
         </details>
         <p>Angle marks alone cannot fix size either. You can enlarge a triangle and keep all its angles.</p>
       </article>
-
-      <aside class="criteria-box reading-block" aria-labelledby="criteria">
-        <h3 id="criteria">Quick method card</h3>
-        <dl class="criteria-grid">
-          <div><dt>SSS</dt><dd>Three corresponding side pairs.</dd></div>
-          <div><dt>SAS</dt><dd>Two side pairs and the angle pair between those sides.</dd></div>
-          <div><dt>ASA</dt><dd>Two angle pairs and the side pair joining those angles.</dd></div>
-          <div><dt>AAS</dt><dd>Two angle pairs and a side pair not joining those angles. Two equal angle pairs force the third pair equal, which lets you use ASA.</dd></div>
-          <div><dt>HL</dt><dd>For two right triangles only: a <a href="#hypotenuse">hypotenuse</a> pair (sides opposite the right angles) and a leg pair (sides touching the right angles).</dd></div>
-        </dl>
-        <p>Sometimes a needed fact has no mark. A shared side is congruent to itself (the <a href="#reflexive">reflexive property</a>). If you know both angles are right, they are congruent. If you only think they look right, you cannot use that fact.</p>
-      </aside>
-      
       <article class="task" aria-labelledby="pair-title">
-        <h3 id="pair-title">Try it · Name the test and keep the order</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="pair-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 340 161" role="img" aria-labelledby="pair-svg-title" aria-describedby="pair-svg-desc"><title id="pair-svg-title">Separate triangles with arc and tick marks</title><desc id="pair-svg-desc">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</desc><path class="frame-line" d="M 34.00 29.00 L 111.00 29.00 L 84.00 114.00 Z"/><path class="frame-line" d="M 321.00 56.00 L 321.00 133.00 L 236.00 106.00 Z"/><path class="diagram-mark" d="M 90.83 69.38 L 104.17 73.62"/><path class="diagram-mark" d="M 280.62 112.83 L 276.38 126.17"/><path class="diagram-mark" d="M 55.00 29.00 A 21 21 0 0 1 44.65 47.10"/><path class="diagram-mark" d="M 321.00 77.00 A 21 21 0 0 1 302.90 66.65"/><path class="diagram-mark" d="M 90.00 29.00 A 21 21 0 0 0 104.64 49.01"/><path class="diagram-mark" d="M 84.00 29.00 A 27 27 0 0 0 102.83 54.73"/><path class="diagram-mark" d="M 321.00 112.00 A 21 21 0 0 0 300.99 126.64"/><path class="diagram-mark" d="M 321.00 106.00 A 27 27 0 0 0 295.27 124.83"/><text x="17" y="26">C</text><text x="115" y="25">F</text><text x="83" y="136">I</text><text x="319" y="41">M</text><text x="323" y="151">O</text><text x="215" y="111">S</text></svg><figcaption id="pair-svg-caption">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Try it</p>
+        <h3 id="pair-title">Name the test and keep the order</h3>
+        <div class="task-split">
+          <figure><svg viewBox="0 0 340 161" role="img" aria-labelledby="pair-svg-title" aria-describedby="pair-svg-desc"><title id="pair-svg-title">Separate triangles with arc and tick marks</title><desc id="pair-svg-desc">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</desc><path class="dg-line" d="M 34.00 29.00 L 111.00 29.00 L 84.00 114.00 Z"/><path class="dg-line" d="M 321.00 56.00 L 321.00 133.00 L 236.00 106.00 Z"/><path class="dg-red" d="M 90.83 69.38 L 104.17 73.62"/><path class="dg-red" d="M 280.62 112.83 L 276.38 126.17"/><path class="dg-red" d="M 55.00 29.00 A 21 21 0 0 1 44.65 47.10"/><path class="dg-red" d="M 321.00 77.00 A 21 21 0 0 1 302.90 66.65"/><path class="dg-red" d="M 90.00 29.00 A 21 21 0 0 0 104.64 49.01"/><path class="dg-red" d="M 84.00 29.00 A 27 27 0 0 0 102.83 54.73"/><path class="dg-red" d="M 321.00 112.00 A 21 21 0 0 0 300.99 126.64"/><path class="dg-red" d="M 321.00 106.00 A 27 27 0 0 0 295.27 124.83"/><text class="dg-label" x="17" y="26">C</text><text class="dg-label" x="115" y="25">F</text><text class="dg-label" x="83" y="136">I</text><text class="dg-label" x="319" y="41">M</text><text class="dg-label" x="323" y="151">O</text><text class="dg-label" x="215" y="111">S</text></svg><figcaption id="pair-svg-caption">∠FCI and ∠OMS have one arc. ∠CFI and ∠MOS have two arcs. FI and OS have one tick.</figcaption></figure>
+          <div>
             <p>Start with △CFI. Write the matching triangle in order and name the congruence test, if one fits. Explain whether the marked side joins the two marked angles.</p>
             <div class="blank" aria-hidden="true"></div>
             <details class="hint"><summary>Hint 1 · Match like marks</summary><p>Find the two one-arc corners first, then the two two-arc corners. That leaves one vertex in each triangle.</p></details>
@@ -137,33 +221,77 @@
       </article>
     </section>
 
-    <section class="activity" aria-labelledby="angle-bridge-title">
-      <h2 id="angle-bridge-title">Use an angle fact in either direction</h2>
-      <div class="activity-split">
-        <aside class="activity-evidence" tabindex="0" aria-labelledby="angle-bridge-title">
-          <figure><svg class="proof-diagram" viewBox="0 0 340 168" role="img" aria-labelledby="alt-svg-title" aria-describedby="alt-svg-desc"><title id="alt-svg-title">Angles where a slanted line crosses two upright lines</title><desc id="alt-svg-desc">K and W are the crossings. M is above K on the left line. Q is below W on the right line. The two highlighted angles are ∠MKW and ∠KWQ.</desc><path class="frame-line" d="M 73.00 39.00 L 73.00 153.00"/><path class="frame-line" d="M 257.00 13.00 L 257.00 139.00"/><path class="frame-line" d="M 31.00 151.00 L 309.00 12.00"/><path class="diagram-mark" d="M 73.00 105.00 A 25 25 0 0 1 95.36 118.82"/><path class="diagram-mark" d="M 234.64 49.18 A 25 25 0 0 0 257.00 63.00"/><text x="53" y="42">M</text><text x="51" y="128">K</text><text x="265" y="60">W</text><text x="262" y="139">Q</text></svg><figcaption id="alt-svg-caption">K and W are the crossings. M is above K on the left line. Q is below W on the right line. The two highlighted angles are ∠MKW and ∠KWQ.</figcaption></figure>
-        </aside>
-        <div class="activity-work">
-          <p>Look at ∠MKW and ∠KWQ. Both are between the upright lines, but one is on each side of the slanted line. They are <a href="#alternate">alternate interior angles</a>.</p>
-          <ul class="proof-lines">
-            <li><strong>Start with parallel lines:</strong> If MK ∥ WQ is known, then ∠MKW ≅ ∠KWQ.</li>
-            <li><strong>Start with matching angles:</strong> If ∠MKW ≅ ∠KWQ is known, then MK ∥ WQ. Reversing the direction is called taking the <a href="#converse">converse</a>.</li>
-          </ul>
-          <p>Use one of these rules only after you have proved its starting fact or read it in the givens. This sketch labels the angle positions to illustrate both directions.</p>
+    <section class="worked" id="conclude" aria-labelledby="t3-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 3</p>
+        <h2 id="t3-title">Conclude matching parts with CPCTC</h2>
+        <p class="worked-goal">Use this when you have proved two triangles congruent and need a side or angle that was not marked.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="t3-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t3s1-t" aria-describedby="t3s1-d"><title id="t3s1-t">Triangles already proved congruent</title><desc id="t3s1-d">Both triangles are shaded with their marks. They have been proved congruent by SAS.</desc><path class="dg-fill" d="M 43.00 120.00 L 140.00 120.00 L 69.00 49.00 Z"/><path class="dg-fill" d="M 327.00 42.00 L 230.00 42.00 L 301.00 113.00 Z"/><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Proved first</p><h3>Start from the proved statement</h3><p class="slide-math">△KRV ≅ △UTJ (SAS)</p><p><a href="#cpctc">CPCTC</a> works only <strong>after</strong> the triangles are proved congruent.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t3s2-t" aria-describedby="t3s2-d"><title id="t3s2-t">Side RV in the first triangle</title><desc id="t3s2-d">Side RV of triangle KRV is highlighted in blue. Its endpoints R and V are circled.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-blue" d="M 140.00 120.00 L 69.00 49.00"/><circle class="dg-blue" cx="140.00" cy="120.00" r="9"/><circle class="dg-blue" cx="69.00" cy="49.00" r="9"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Name the part</p><h3>Find the part by its endpoints</h3><p class="slide-math">RV: 2nd and 3rd letters of △KRV</p><p>RV has no mark. Its endpoints, R and V, are the second and third letters of △KRV.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t3s3-t" aria-describedby="t3s3-d"><title id="t3s3-t">The matching side in the second triangle</title><desc id="t3s3-d">Side TJ of triangle UTJ is highlighted in blue. T matches R and J matches V.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-blue" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-blue" d="M 230.00 42.00 L 301.00 113.00"/><circle class="dg-blue" cx="230.00" cy="42.00" r="9"/><circle class="dg-blue" cx="301.00" cy="113.00" r="9"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Same positions</p><h3>Read the same positions in the other triangle</h3><p class="slide-math">2nd and 3rd letters of △UTJ: T, J</p><p>Match both endpoints, not where the sides sit on the page. R ↔ T and V ↔ J.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><svg viewBox="0 0 360 155" role="img" aria-labelledby="t3s4-t" aria-describedby="t3s4-d"><title id="t3s4-t">RV and TJ are congruent</title><desc id="t3s4-d">RV and TJ are highlighted and each has three blue ticks, showing the new congruence.</desc><path class="dg-line" d="M 43.00 120.00 L 140.00 120.00"/><path class="dg-line" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-line" d="M 69.00 49.00 L 43.00 120.00"/><path class="dg-line" d="M 327.00 42.00 L 230.00 42.00"/><path class="dg-line" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-line" d="M 301.00 113.00 L 327.00 42.00"/><path class="dg-tick-red" d="M 91.50 112.00 L 91.50 128.00"/><path class="dg-tick-red" d="M 278.50 50.00 L 278.50 34.00"/><path class="dg-tick-red" d="M 47.46 84.57 L 62.48 90.07"/><path class="dg-tick-red" d="M 49.52 78.93 L 64.54 84.43"/><path class="dg-tick-red" d="M 322.54 77.43 L 307.52 71.93"/><path class="dg-tick-red" d="M 320.48 83.07 L 305.46 77.57"/><path class="dg-red" d="M 70.00 120.00 A 27 27 0 0 0 52.28 94.65"/><path class="dg-red" d="M 300.00 42.00 A 27 27 0 0 0 317.72 67.35"/><path class="dg-blue" d="M 140.00 120.00 L 69.00 49.00"/><path class="dg-blue" d="M 230.00 42.00 L 301.00 113.00"/><path class="dg-tick-blue" d="M 103.09 94.40 L 114.40 83.09"/><path class="dg-tick-blue" d="M 98.84 90.16 L 110.16 78.84"/><path class="dg-tick-blue" d="M 94.60 85.91 L 105.91 74.60"/><path class="dg-tick-blue" d="M 266.91 67.60 L 255.60 78.91"/><path class="dg-tick-blue" d="M 271.16 71.84 L 259.84 83.16"/><path class="dg-tick-blue" d="M 275.40 76.09 L 264.09 87.40"/><text class="dg-label" x="20.00" y="143.00">K</text><text class="dg-label" x="148.00" y="143.00">R</text><text class="dg-label" x="60.00" y="36.00">V</text><text class="dg-label" x="334.00" y="32.00">U</text><text class="dg-label" x="206.00" y="34.00">T</text><text class="dg-label" x="296.00" y="145.00">J</text></svg></figure>
+            <div class="slide-body"><p class="slide-step">Conclude</p><h3>State it with the reason</h3><p class="slide-math">RV ≅ TJ by CPCTC</p><p>Corresponding parts of congruent triangles are congruent.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden>
+          <button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button>
+          <p class="deck-count" data-deck-count aria-live="polite"></p>
+          <button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button>
         </div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">Prove the triangles congruent before you use their parts.</p><p class="step-math">△KRV ≅ △UTJ by SAS</p><details class="why"><summary>Why?</summary><p>CPCTC starts from a congruence. Without a proved congruence, the parts have not been matched yet.</p></details></li>
+          <li><p class="step-do">Name the part you want by its endpoints and find their positions.</p><p class="step-math">RV <span class="arrow">→</span> R (2nd), V (3rd)</p><details class="why"><summary>Why?</summary><p>Corresponding parts match by position in the ordered statement, not by where they sit on the page.</p></details></li>
+          <li><p class="step-do">Read the same positions in the other triangle.</p><p class="step-math">T (2nd), J (3rd) <span class="arrow">→</span> TJ</p><details class="why"><summary>Why?</summary><p>The order K ↔ U, R ↔ T, V ↔ J was fixed when you wrote the statement, so the same positions give the matching part.</p></details></li>
+          <li><p class="step-do">Write the conclusion with CPCTC as the reason.</p><p class="step-math">RV ≅ TJ</p><details class="why"><summary>Why?</summary><p>Corresponding parts of congruent triangles are congruent. Once the triangles match, every pair of matching parts matches.</p></details></li>
+        </ol>
       </div>
     </section>
 
-    <section class="activity" id="practice" aria-labelledby="practice-title">
-      <h2 id="practice-title"><span>03</span> Prove it on your own</h2>
-      <p class="section-intro">Write your statements and reasons before opening any comparison. Use the diagram and the givens, not a ruler.</p>
+    <section class="define-block" id="angles" aria-labelledby="angle-bridge-title">
+      <p class="eyebrow">Words to know</p>
+      <h2 id="angle-bridge-title">Use an angle fact in either direction</h2>
+      <p>Look at ∠MKW and ∠KWQ. Both are between the upright lines, but one is on each side of the slanted line. They are <a href="#alternate">alternate interior angles</a>.</p>
+      <div class="define-grid">
+        <figure class="labeled-diagram"><svg viewBox="30 16 380 224" role="img" aria-labelledby="alt-def-t" aria-describedby="alt-def-d"><title id="alt-def-t">Alternate interior angles, labeled</title><desc id="alt-def-d">Two upright lines, a slanted line crossing both labeled transversal, and the region between the upright lines shaded and labeled between the lines. Angle MKW at the left crossing and angle KWQ at the right crossing are marked and labeled alternate interior angles. They are between the upright lines and on opposite sides of the transversal.</desc><rect class="dg-fill-sun" x="101.25" y="30.25" width="230.00" height="175.00"/><path class="dg-line" d="M 101.25 62.75 L 101.25 205.25"/><path class="dg-line" d="M 331.25 30.25 L 331.25 187.75"/><path class="dg-blue" d="M 48.75 202.75 L 396.25 29.00"/><path class="dg-red" d="M 101.25 146.50 A 30 30 0 0 1 128.08 163.08"/><path class="dg-red" d="M 304.42 74.92 A 30 30 0 0 0 331.25 91.50"/><text class="dg-label" x="75.25" y="182.50">K</text><text class="dg-label" x="339.25" y="83.50">W</text><text class="dg-label" x="75.25" y="72.75">M</text><text class="dg-label" x="341.25" y="187.75">Q</text><text class="dg-label-blue" x="40.75" y="228.75">transversal</text><text class="dg-small" x="216.00" y="50.00" text-anchor="middle">between the lines</text><path class="dg-leader" d="M 117.02 150.98 L 200.00 150.00"/><path class="dg-leader" d="M 315.48 87.02 L 262.00 146.00"/><text class="dg-label-red" x="248.00" y="168.00" text-anchor="middle">alternate interior</text><text class="dg-label-red" x="248.00" y="188.00" text-anchor="middle">angles</text></svg><figcaption>K and W are the crossings. M is above K on the left line. Q is below W on the right line. The two highlighted angles are ∠MKW and ∠KWQ. This sketch labels the angle positions to illustrate both directions.</figcaption></figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-blue" aria-hidden="true"></span>Transversal</dt><dd>A line that crosses two other lines.<span class="in-diagram">In the diagram: the slanted line through K and W.</span></dd></div>
+          <div><dt><span class="key key-sun" aria-hidden="true"></span>Interior</dt><dd>The region between the two crossed lines.<span class="in-diagram">In the diagram: the shaded band between the upright lines.</span></dd></div>
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#alternate">Alternate interior angles</a></dt><dd>Angles between the two lines and on opposite sides of the transversal.<span class="in-diagram">In the diagram: ∠MKW and ∠KWQ.</span></dd></div>
+        </dl>
+      </div>
+      <p class="rule"><strong>Start with parallel lines</strong> If MK ∥ WQ is known, then ∠MKW ≅ ∠KWQ.</p>
+      <p class="rule"><strong>Start with matching angles</strong> If ∠MKW ≅ ∠KWQ is known, then MK ∥ WQ. Reversing the direction is called taking the <a href="#converse">converse</a>.</p>
+      <p>Use one of these rules only after you have proved its starting fact or read it in the givens.</p>
+    </section>
+
+    <section id="practice" aria-labelledby="practice-title">
+      <p class="eyebrow">Mixed practice</p>
+      <h2 id="practice-title">Prove it on your own</h2>
+      <p>Write your statements and reasons before opening any comparison. Use the diagram and the givens, not a ruler.</p>
       <article class="task" aria-labelledby="braces-title">
+        <p class="eyebrow">Prove it</p>
         <h3 id="braces-title">A frame with an unmarked pair of rails</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="braces-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 345 166" role="img" aria-labelledby="braces-svg-title" aria-describedby="braces-svg-desc"><title id="braces-svg-title">Four joined rails and one diagonal</title><desc id="braces-svg-desc">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</desc><path class="frame-line" d="M 33.00 134.00 L 158.00 134.00 L 307.00 32.00 L 182.00 32.00 Z"/><path class="frame-line" d="M 33.00 134.00 L 307.00 32.00"/><path class="diagram-mark" d="M 80.50 141.00 L 80.50 127.00"/><path class="diagram-mark" d="M 229.50 39.00 L 229.50 25.00"/><path class="diagram-mark" d="M 114.50 139.00 L 127.50 134.00 L 114.50 129.00"/><path class="diagram-mark" d="M 263.50 37.00 L 276.50 32.00 L 263.50 27.00"/><text x="14" y="153">A</text><text x="159" y="152">E</text><text x="311" y="26">H</text><text x="163" y="25">N</text></svg><figcaption id="braces-svg-caption">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <div class="task-split">
+          <figure><svg viewBox="0 0 345 166" role="img" aria-labelledby="braces-svg-title" aria-describedby="braces-svg-desc"><title id="braces-svg-title">Four joined rails and one diagonal</title><desc id="braces-svg-desc">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</desc><path class="dg-line" d="M 33.00 134.00 L 158.00 134.00 L 307.00 32.00 L 182.00 32.00 Z"/><path class="dg-line" d="M 33.00 134.00 L 307.00 32.00"/><path class="dg-red" d="M 80.50 141.00 L 80.50 127.00"/><path class="dg-red" d="M 229.50 39.00 L 229.50 25.00"/><path class="dg-red" d="M 114.50 139.00 L 127.50 134.00 L 114.50 129.00"/><path class="dg-red" d="M 263.50 37.00 L 276.50 32.00 L 263.50 27.00"/><text class="dg-label" x="14" y="153">A</text><text class="dg-label" x="159" y="152">E</text><text class="dg-label" x="311" y="26">H</text><text class="dg-label" x="163" y="25">N</text></svg><figcaption id="braces-svg-caption">A, E, H, N are the outside corners in order. AH is drawn. AE and NH have matching single ticks and matching single arrowheads. There are no angle marks.</figcaption></figure>
+          <div>
             <p>Can you prove that AN and EH are parallel? Start by writing any triangle congruence you can prove, in matching order, and give a reason for each fact you use. Then justify your answer about the rails.</p>
             <div class="blank multi" aria-hidden="true"></div>
             <details class="comparison"><summary>Compare after trying both parts</summary>
@@ -178,14 +306,12 @@
           </div>
         </div>
       </article>
-
       <article class="task" aria-labelledby="right-title">
-        <h3 id="right-title">Fresh retry · The panel with two square corners</h3>
-        <div class="activity-split">
-          <aside class="activity-evidence" tabindex="0" aria-labelledby="right-title">
-            <figure><svg class="proof-diagram" viewBox="0 0 191 181" role="img" aria-labelledby="right-svg-title" aria-describedby="right-svg-desc"><title id="right-svg-title">Two right-angle boxes on a four-sided panel</title><desc id="right-svg-desc">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</desc><path class="frame-line" d="M 40.00 100.00 L 112.00 154.00 L 163.00 86.00 L 91.00 32.00 Z"/><path class="frame-line" d="M 40.00 100.00 L 163.00 86.00"/><path class="diagram-mark" d="M 100.80 145.60 L 109.20 134.40 L 120.40 142.80"/><path class="diagram-mark" d="M 102.20 40.40 L 93.80 51.60 L 82.60 43.20"/><path class="diagram-mark" d="M 71.80 132.60 L 80.20 121.40"/><path class="diagram-mark" d="M 131.20 53.40 L 122.80 64.60"/><text x="21" y="102">R</text><text x="113" y="175">Y</text><text x="166" y="83">T</text><text x="84" y="27">Z</text></svg><figcaption id="right-svg-caption">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</figcaption></figure>
-          </aside>
-          <div class="activity-work">
+        <p class="eyebrow">Fresh retry</p>
+        <h3 id="right-title">The panel with two square corners</h3>
+        <div class="task-split">
+          <figure class="narrow-figure"><svg viewBox="0 0 191 181" role="img" aria-labelledby="right-svg-title" aria-describedby="right-svg-desc"><title id="right-svg-title">Two right-angle boxes on a four-sided panel</title><desc id="right-svg-desc">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</desc><path class="dg-line" d="M 40.00 100.00 L 112.00 154.00 L 163.00 86.00 L 91.00 32.00 Z"/><path class="dg-line" d="M 40.00 100.00 L 163.00 86.00"/><path class="dg-red" d="M 100.80 145.60 L 109.20 134.40 L 120.40 142.80"/><path class="dg-red" d="M 102.20 40.40 L 93.80 51.60 L 82.60 43.20"/><path class="dg-red" d="M 71.80 132.60 L 80.20 121.40"/><path class="dg-red" d="M 131.20 53.40 L 122.80 64.60"/><text class="dg-label" x="21" y="102">R</text><text class="dg-label" x="113" y="175">Y</text><text class="dg-label" x="166" y="83">T</text><text class="dg-label" x="84" y="27">Z</text></svg><figcaption id="right-svg-caption">The panel has boundary R, Y, T, Z in order, and diagonal RT. ∠RYT and ∠TZR have square corners. RY and TZ have single ticks. No other facts about the outside edges are given.</figcaption></figure>
+          <div>
             <p>What can you prove about the two triangles? Write a conclusion in matching order and justify it. If it follows, also prove YT ≅ ZR without measuring.</p>
             <div class="blank multi" aria-hidden="true"></div>
             <details class="comparison"><summary>Compare after writing your reasons</summary><p>△RYT and △TZR are right triangles because of the square marks. RT is opposite both right angles, so it is a shared hypotenuse. RY ≅ TZ by the ticks. Therefore <strong>△RYT ≅ △TZR by HL</strong>. Y matches Z and T matches R, so <strong>YT ≅ ZR by CPCTC</strong>. If you wrote SAS, check whether the right angle is between the marked leg and shared hypotenuse. It is not.</p></details>
@@ -194,22 +320,25 @@
       </article>
     </section>
 
-    <section class="reading-block" aria-labelledby="keep-title">
+    <section aria-labelledby="keep-title">
       <h2 id="keep-title">When you go back to a diagram</h2>
-      <ol class="proof-lines">
+      <aside class="callout" aria-label="Three checks">
+        <ol>
         <li>Label each fact: marked, stated, or proved. Do not add facts from appearance.</li>
         <li>Match vertices and check the exact conditions of the test. If none fits, say what is missing.</li>
         <li>Only then use the matched parts to prove something new. Give a reason for each step.</li>
       </ol>
-      <article class="later" aria-labelledby="later-title">
-        <h3 id="later-title">Next time · Try this without the method card</h3>
+      </aside>
+      <article class="task" aria-labelledby="later-title">
+        <p class="eyebrow">Next time</p>
+        <h3 id="later-title">Try this without the method card</h3>
         <p>Two triangular tiles have matching side lengths in pairs: BD ≅ QJ, DP ≅ JW, and PB ≅ WQ. The tiles face different directions. Write a triangle congruence beginning △PBD, then name the angle that matches ∠BDP. Give reasons.</p>
         <div class="blank" aria-hidden="true"></div>
         <details class="comparison"><summary>Compare after recalling the steps</summary><p>BD and DP meet at D. QJ and JW meet at J. The remaining matches are B ↔ Q and P ↔ W, so <strong>△PBD ≅ △WQJ by SSS</strong>. Then <strong>∠BDP ≅ ∠QJW by CPCTC</strong>.</p></details>
       </article>
     </section>
 
-    <section class="reading-block" id="glossary" aria-labelledby="glossary-title">
+    <section id="glossary" aria-labelledby="glossary-title">
       <h2 id="glossary-title">Glossary</h2>
       <dl>
         <dt id="vertex">Vertex</dt><dd>A corner. In a three-letter angle name, the vertex is the middle letter.</dd>
@@ -227,11 +356,13 @@
         <dt id="converse">Converse</dt><dd>A statement that reverses the if and then of another statement. For alternate interior angles, the converse says that if the angle pair is congruent, the crossed lines are parallel. A converse needs its own justification; not every converse is true.</dd>
       </dl>
     </section>
-    <section class="reading-block sources" aria-labelledby="sources-title">
+
+    <section class="sources" aria-labelledby="sources-title">
       <h2 id="sources-title">Read a little more</h2>
       <p><a href="https://mathcs.clarku.edu/~djoyce/java/elements/bookI/propI4.html">Euclid’s Elements, Book I, Proposition 4</a> shows the idea behind SAS: line up one side, use the included angle to line up the other side, and use the two lengths to match the endpoints. The language is older, but the “place one triangle on top of the other” idea is the same.</p>
     </section>
-    <section class="print-bank" aria-labelledby="print-bank-title">
+
+    <section class="print-only print-bank" aria-labelledby="print-bank-title">
       <h2 id="print-bank-title">Compare your written work</h2>
       <p><strong>Warm-up:</strong> H is the vertex. The rays pass through K and D.</p>
       <p><strong>Crossing braces:</strong> LV = VF and V lies on LF, so V is the midpoint of LF. ER bisects LF. ER is not bisected because EV ≠ VR.</p>

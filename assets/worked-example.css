@@ -1,0 +1,255 @@
+/* Worked-example kit for problem-solving lessons. Load after site.css.
+   Pattern per problem type:
+     section.worked > header.worked-head + div.deck[data-deck] + div.steps-block (+ .practice)
+   Pattern for definition-style problems:
+     section.define-block > div.define-grid > figure.labeled-diagram + dl.define-list
+   Diagram kit: SVG classes .dg-* below keep every diagram on the site palette. */
+
+/* ---------- Problem-type section ---------- */
+.worked { margin-top: 72px; }
+.worked-head { display: grid; gap: .35rem; margin-bottom: 1.2rem; }
+.worked-head h2 { margin: 0; }
+.worked-head .worked-goal { margin: .3rem 0 0; color: var(--ink-2); font-size: 1.06rem; }
+.type-number {
+  display: inline-grid; place-items: center;
+  width: 2.1rem; height: 2.1rem; margin-right: .2rem;
+  border-radius: 50%; background: var(--red-bright); color: #fff;
+  font: 800 1rem/1 var(--font); vertical-align: .35em;
+}
+
+/* ---------- Slideshow ---------- */
+.deck {
+  position: relative;
+  margin-block: 1.2rem 1.6rem;
+  background: var(--ink);
+  color: #eef1fb;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 18px 40px -26px rgba(29, 35, 64, .9);
+}
+.deck:focus-visible { outline: 3px solid var(--sun); outline-offset: 4px; }
+.deck-slides { list-style: none; margin: 0; padding: 0; counter-reset: slide; }
+.deck-slides > li { margin: 0; max-width: none; }
+.slide { counter-increment: slide; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; align-items: center; }
+.slide + .slide { margin-top: 22px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .14); }
+.deck.is-enhanced .slide + .slide { margin-top: 0; padding-top: 0; border-top: 0; }
+.deck.is-enhanced .slide { min-height: 330px; animation: slide-in .28s ease-out both; }
+.slide[hidden] { display: none; }
+@keyframes slide-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.lesson .deck .slide-figure {
+  margin: 0; padding: 14px;
+  background: #fffdf8; border: 0; border-radius: 14px; box-shadow: none;
+  color: var(--ink);
+}
+.lesson .deck .slide-figure svg { max-height: 330px; }
+.lesson .deck .slide-figure figcaption { color: var(--ink-2); margin-top: .4rem; font-size: .85rem; }
+.slide-body > :first-child { margin-top: 0; }
+.slide-step, .lesson .deck .slide-step { margin: 0; font: 700 .78rem/1.3 var(--font); letter-spacing: .12em; text-transform: uppercase; color: var(--sun); }
+.slide-step::before { content: "Slide " counter(slide) " · "; }
+.deck.is-enhanced .slide-step::before { content: none; }
+.lesson .deck h3 { color: #fff; font-size: 1.4rem; margin: .45rem 0 .5rem; }
+.lesson .deck p { color: #d9def0; }
+.lesson .deck .slide-math, .lesson .steps .step-math, .math-line {
+  font-family: var(--math);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+.lesson .deck .slide-math { color: #ffe08a; margin: .6rem 0; }
+.lesson .deck a { color: #b9cbff; }
+.lesson .deck strong { color: #fff; }
+.deck-controls {
+  display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+  margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .16);
+}
+.deck-controls[hidden] { display: none; }
+.lesson .deck-controls button { background: #fffdf8; color: var(--ink); border-color: #fffdf8; }
+.lesson .deck-controls button:hover { background: var(--sun); border-color: var(--sun); color: var(--ink); }
+.lesson .deck-controls button.secondary { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+.lesson .deck-controls button.secondary:hover { background: rgba(255, 255, 255, .1); color: #fff; border-color: #fff; }
+.lesson .deck-controls button:disabled:hover { background: transparent; }
+.lesson .deck-controls button[data-deck-next]:disabled:hover { background: #fffdf8; border-color: #fffdf8; }
+.deck-controls :focus-visible { outline-color: var(--sun); }
+.lesson .deck .deck-count { margin: 0 auto; color: #d9def0; font-size: .92rem; font-weight: 600; text-align: center; }
+.deck-dots { display: flex; justify-content: center; gap: 4px; margin-top: 10px; }
+.deck-dots[hidden] { display: none; }
+.lesson .deck-dots button {
+  min-height: 32px; min-width: 32px; padding: 0;
+  background: transparent; border: 0; border-radius: 50%; box-shadow: none;
+}
+.lesson .deck-dots button::before {
+  content: ""; display: block; width: 10px; height: 10px; margin: auto; border-radius: 50%;
+  background: rgba(255, 255, 255, .35);
+}
+.lesson .deck-dots button:hover { background: rgba(255, 255, 255, .08); transform: none; }
+.lesson .deck-dots button[aria-current="step"]::before { background: var(--sun); width: 22px; border-radius: 6px; }
+.deck-hint { margin: .4rem 0 0; font-size: .85rem; color: #b8bfd8; text-align: center; }
+.deck-hint[hidden] { display: none; }
+
+/* ---------- Step list with "Why" ---------- */
+.steps-block { margin-top: 1.6rem; }
+.steps-block > h3 { font-size: 1.05rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.lesson .steps { list-style: none; margin: .6rem 0 0; padding: 0; counter-reset: step; }
+.lesson .steps > li {
+  counter-increment: step;
+  position: relative;
+  max-width: none;
+  margin: 0;
+  padding: 16px 18px 14px 64px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.lesson .steps > li + li { margin-top: 10px; }
+.lesson .steps > li::before {
+  content: counter(step);
+  position: absolute; left: 16px; top: 15px;
+  display: grid; place-items: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--ink); color: #fff; font: 800 .95rem/1 var(--font);
+}
+.lesson .steps .step-do { margin: .2rem 0 0; font-weight: 700; }
+.lesson .steps .step-math { margin: .35rem 0 0; color: var(--red); }
+.lesson .steps .why { margin: .55rem 0 0; background: var(--paper); border-color: transparent; }
+.lesson .steps .why > summary { min-height: 40px; font-size: .95rem; color: var(--blue); }
+.lesson .steps .why > summary::before { background: var(--blue-soft); color: var(--blue); }
+.lesson .steps .why > p:first-of-type { margin-top: .2rem; }
+
+/* ---------- Definition-style blocks ---------- */
+.define-block .define-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.lesson .define-grid > figure { margin: 0; }
+.lesson .define-list { display: grid; gap: 10px; margin: 0; }
+.lesson .define-list > div { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 14px; }
+.lesson .define-list dt { margin: 0; display: flex; align-items: center; gap: .55rem; font-size: 1.05rem; }
+.lesson .define-list dd { margin: .25rem 0 0; color: var(--ink); }
+.lesson .define-list .in-diagram { display: block; margin-top: .3rem; font-size: .9rem; color: var(--ink-2); }
+.key { flex: none; width: 1.1rem; height: .32rem; border-radius: 3px; background: var(--ink); }
+.key-red { background: var(--red-bright); }
+.key-blue { background: var(--blue-bright); }
+.key-sun { background: #b07d00; }
+.key-green { background: var(--green); }
+.key-dash { background: repeating-linear-gradient(90deg, var(--ink) 0 4px, transparent 4px 7px); }
+
+/* ---------- Diagram kit (inline SVG) ---------- */
+.dg-line { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.dg-thin { fill: none; stroke: var(--ink); stroke-width: 1.6; }
+.dg-faint { fill: none; stroke: #b9b2a2; stroke-width: 2; stroke-dasharray: 6 6; }
+.dg-red { fill: none; stroke: var(--red-bright); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.dg-blue { fill: none; stroke: var(--blue-bright); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.dg-sun { fill: none; stroke: #b07d00; stroke-width: 4; stroke-linecap: round; }
+.dg-fill { fill: var(--blue-soft); stroke: none; }
+.dg-fill-red { fill: var(--red-soft); stroke: none; }
+.dg-fill-sun { fill: var(--sun-soft); stroke: none; }
+.dg-dot { fill: var(--ink); }
+.dg-label { fill: var(--ink); font: 700 18px var(--font); }
+.dg-small { fill: var(--ink-2); font: 600 14px var(--font); }
+.dg-label-red { fill: var(--red); font: 700 17px var(--font); }
+.dg-label-blue { fill: var(--blue); font: 700 17px var(--font); }
+.dg-leader { fill: none; stroke: var(--ink-2); stroke-width: 1.3; stroke-dasharray: 3 3; }
+.dg-tick-red { fill: none; stroke: var(--red-bright); stroke-width: 3.5; stroke-linecap: round; }
+.dg-tick-blue { fill: none; stroke: var(--blue-bright); stroke-width: 3.5; stroke-linecap: round; }
+
+/* ---------- Layout changes ---------- */
+@media (max-width: 760px) {
+  .slide, .define-block .define-grid { grid-template-columns: 1fr; gap: 14px; }
+  .deck { padding: 14px; border-radius: 16px; margin-inline: -4px; }
+  .deck.is-enhanced .slide { min-height: 0; }
+  .lesson .deck .slide-figure { padding: 8px; }
+  .lesson .deck .slide-figure svg { max-height: 260px; }
+  .lesson .deck h3 { font-size: 1.22rem; }
+  .lesson .deck .slide-math { font-size: 1.12rem; }
+  .deck-controls { gap: .5rem; }
+  .lesson .deck .deck-count { order: -1; width: 100%; }
+  .deck-controls button { flex: 1 1 0; }
+  .lesson .steps > li { padding: 14px 14px 12px 56px; }
+  .lesson .steps > li::before { left: 12px; top: 13px; width: 30px; height: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck.is-enhanced .slide { animation: none; }
+}
+@media print {
+  .deck { background: #fff; color: #000; border: 1.5px solid #555; box-shadow: none; padding: 10pt; }
+  .deck .slide[hidden] { display: grid; }
+  .deck.is-enhanced .slide + .slide { margin-top: 10pt; padding-top: 10pt; border-top: 1px solid #999; }
+  .deck .slide { min-height: 0 !important; break-inside: avoid; animation: none; }
+  .deck.is-enhanced .slide-step::before { content: "Slide " counter(slide) " · "; }
+  .lesson .deck h3, .lesson .deck p, .lesson .deck strong, .lesson .deck .slide-math, .slide-step { color: #000; }
+  .lesson .deck .slide-figure { border: 1px solid #ccc; }
+  .deck-controls, .deck-dots, .deck-hint { display: none !important; }
+  .lesson .steps > li { break-inside: avoid; }
+}
+
+/* ---------- Practice kit (try-it tasks, choice checks, hints) ---------- */
+.lesson .rule, .lesson .theorem {
+  margin-block: 1.2rem; padding: 16px 20px;
+  background: var(--blue-soft); border: 1px solid #c9d5f5; border-left: 6px solid var(--blue-bright);
+  border-radius: var(--radius-sm);
+}
+.lesson .rule strong:first-child, .lesson .theorem strong:first-child { display: block; font-family: var(--display); font-size: 1.15rem; margin-bottom: .2rem; }
+.lesson .task {
+  margin-top: 2rem; padding: 22px 24px;
+  background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--red-bright);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.lesson .task > h3:first-child, .lesson .task > .eyebrow:first-child + h3 { margin-top: .2rem; }
+.lesson .task-split { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px; align-items: start; }
+.lesson .task-split > figure { margin: 0; }
+.lesson .task-split > div > :first-child { margin-top: 0; }
+.lesson .statement { font-weight: 700; }
+.lesson .practice-list { padding-inline-start: 1.4rem; }
+.lesson .practice-list > li + li { margin-top: 1.1rem; }
+.lesson .checklist { list-style: none; padding: 0; }
+.lesson .checklist li { position: relative; padding-inline-start: 2rem; }
+.lesson .checklist li::before {
+  content: ""; position: absolute; left: 0; top: .25em; width: 1.1rem; height: 1.1rem;
+  border: 2px solid var(--ink-2); border-radius: 4px;
+}
+.lesson details.hint > summary { color: var(--ink); }
+.lesson details.hint > summary::before { content: "?"; background: var(--sun-soft); color: #7a5a00; }
+.lesson details.hint[open] > summary::before { content: "?"; }
+.lesson details.comparison { background: var(--green-soft); border-color: #c4e3d3; }
+.lesson details.comparison > summary::before { content: "✓"; background: #fff; color: var(--green); font-size: .85rem; }
+.lesson details.comparison[open] > summary::before { content: "✓"; }
+.lesson .check-box { margin-block: 1rem; padding: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.lesson .check-box[data-choice-check]:not([data-ready="true"]),
+.lesson .check-box[data-proof-check]:not([data-ready="true"]) { display: none; }
+.lesson .check-box fieldset { margin: 0; padding: 0; border: 0; }
+.lesson .check-box legend { padding: 0; margin-bottom: .6rem; }
+.lesson .check-box label {
+  display: flex; align-items: center; gap: .2rem;
+  min-height: 46px; margin: 0 0 8px; padding: .5rem .8rem;
+  background: var(--card); border: 2px solid var(--line); border-radius: var(--radius-sm);
+  cursor: pointer; font-weight: 600;
+}
+.lesson .check-box label:hover { border-color: var(--ink-2); }
+.lesson .check-box label:has(input:checked) { border-color: var(--ink); background: var(--blue-soft); }
+.lesson .check-box label:has(input:focus-visible) { outline: 3px solid var(--blue-bright); outline-offset: 2px; }
+.lesson .check-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.lesson .check-feedback:not(:empty) {
+  margin: 12px 0 0; padding: .7rem .9rem;
+  background: var(--card); border-left: 4px solid var(--ink); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-weight: 600;
+}
+.lesson .check-feedback:empty { margin: 0; }
+.lesson form.practice { border-left-color: var(--red-bright); }
+.lesson .blank, .lesson .print-only { display: none; }
+@media (max-width: 760px) {
+  .lesson .task { padding: 18px 16px; }
+  .lesson .task-split { grid-template-columns: 1fr; gap: 12px; }
+}
+@media print {
+  .lesson .task { box-shadow: none; break-inside: avoid; border-left-width: 3px; }
+  .lesson .check-box, .lesson details.comparison, .lesson form.practice { display: none; }
+  .lesson .blank { display: block; height: 2.5em; border-bottom: 1px solid #333; }
+  .lesson .print-only { display: block; }
+}
+
+/* The arrow-key tip only helps where there is a keyboard. */
+@media (hover: none) and (pointer: coarse) { .deck-hint { display: none; } }
+
+/* Paper copies: comparisons collected after the tasks, on a later page. */
+@media print { .lesson .print-bank { break-before: page; } .lesson .print-bank-item { break-inside: avoid; margin-top: 12pt; } }
+
+/* Phones: give labeled diagrams the full card width. */
+@media (max-width: 520px) {
+  .lesson .define-block figure.labeled-diagram { padding: 6px; }
+}

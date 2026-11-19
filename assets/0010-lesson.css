@@ -1,0 +1,23 @@
+/* Lesson 0010 only: the congruence-test card grid and narrow figures. Uses site.css tokens. */
+.lesson .card-note { margin-top: 0; color: var(--ink-2); font-size: .95rem; }
+.lesson .test-cards {
+  display: grid; gap: 14px; margin: 1rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr));
+}
+.lesson .test-cards > div {
+  display: flex; flex-direction: column;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px 16px;
+}
+.lesson .test-cards dt { margin: 0; font: 700 1.5rem/1.1 var(--display); color: var(--ink); }
+.lesson .test-cards dd { margin: .5rem 0 0; }
+.lesson .test-cards figure { margin: 0 0 .6rem; padding: 6px; background: var(--paper); border: 0; box-shadow: none; border-radius: var(--radius-sm); }
+.lesson .test-cards p { margin: 0; }
+.lesson .test-cards .in-diagram { display: block; margin-top: .4rem; font-size: .9rem; color: var(--ink-2); }
+.lesson figure.narrow-figure svg { max-width: 240px; margin-inline: auto; }
+.lesson figure.mid-figure svg { max-width: 380px; margin-inline: auto; }
+@media print {
+  .lesson .test-cards > div { break-inside: avoid; }
+  .lesson .print-bank { break-before: page; }
+}
+.lesson .slide-math .arrow, .lesson .step-math .arrow { font-family: var(--font); }
+.lesson #crossing .labeled-diagram .dg-small { font-size: 18px; }

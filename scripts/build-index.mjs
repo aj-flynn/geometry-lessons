@@ -124,17 +124,18 @@ const dayFormat = new Intl.DateTimeFormat('en-US', { timeZone: displayZone, mont
 const isoDay = new Intl.DateTimeFormat('en-CA', { timeZone: displayZone, year: 'numeric', month: '2-digit', day: '2-digit' });
 const shortDay = value => dayFormat.format(new Date(value));
 
+const subjectKey = lesson => subjectOf(lesson).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 function renderItem(lesson, featured = false) {
   const href = `lessons/${escape(lesson.file)}`;
   const when = lesson.published ? `<time datetime="${escape(isoDay.format(new Date(lesson.published)))}">${escape(shortDay(lesson.published))}</time>` : '';
   const meta = `<p class="feed-meta">${when}<span class="feed-subject">${escape(subjectOf(lesson))}</span></p>`;
   const topics = `<p class="topic-line">${lesson.topics.map(escape).join(' · ')}</p>`;
+  const subject = `data-subject="${escape(subjectKey(lesson))}"`;
   if (featured) {
-    return `<article class="feed-latest" aria-labelledby="latest-title">${meta}<h3 id="latest-title"><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}<a class="button" href="${href}">Open the newest lesson <span aria-hidden="true">→</span></a></article>`;
+    return `<article class="feed-latest" ${subject} aria-labelledby="latest-title"><p class="feed-flag">Newest lesson</p>${meta}<h3 id="latest-title"><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}<a class="button" href="${href}">Start this lesson <span aria-hidden="true">→</span></a></article>`;
   }
-  return `<li class="feed-item">${meta}<h3><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
+  return `<li class="feed-item" ${subject}>${meta}<h3><a href="${href}">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
 }
-
 export function renderIndex(manifest, template, registry = defaultRegistry) {
   validateManifest(manifest, registry);
   const count = manifest.lessons.length;

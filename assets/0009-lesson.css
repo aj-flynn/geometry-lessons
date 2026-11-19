@@ -1,0 +1,2 @@
+/* Lesson 0009 only: one extra diagram colour for "similar triangles" in the Read the marks figure. */
+.dg-fill-green { fill: var(--green-soft); stroke: var(--green); stroke-width: 2.5; stroke-linejoin: round; }

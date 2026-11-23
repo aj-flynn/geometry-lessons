@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, renderFeed, feedFile, subjectFeedFile, libraryOf, librariesOf, libraryDir, libraryIndexFile, libraryFeedFile, rootLibrary, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, renderFeed, feedFile, subjectFeedFile, libraryOf, librariesOf, libraryDir, libraryIndexFile, libraryFeedFile, libraryConfig, libraryTemplateFile, librarySubjects, rootLibrary, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -455,12 +455,14 @@ export function check(base = root) {
   const regularFile = name => isRegularLocalFile(resolve(base, name), resolve(realBase, name));
   const registry = loadSubjectRegistry(base);
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
-  const template = readFileSync(resolve(base,'templates/index.html'),'utf8');
   const libraries = librariesOf(manifest);
+  const subjectsOf = library => librarySubjects(libraryConfig(manifest, library), registry);
   const current = (file, expected) => existsSync(resolve(base, file)) && readFileSync(resolve(base, file), 'utf8') === expected;
   for (const library of libraries) {
     const file = libraryIndexFile(library);
-    if (!current(file, renderIndex(manifest, template, registry, library))) {
+    const templateFile = libraryTemplateFile(libraryConfig(manifest, library));
+    if (!existsSync(resolve(base, templateFile))) { errors.push(`Missing library template ${templateFile}.`); continue; }
+    if (!current(file, renderIndex(manifest, readFileSync(resolve(base, templateFile), 'utf8'), registry, library))) {
       errors.push(`${library === rootLibrary ? 'Root index' : `Library index ${file}`} is stale; run node scripts/build-index.mjs.`);
     }
   }
@@ -472,7 +474,7 @@ export function check(base = root) {
       if (!current(libraryFeedFile(library), renderFeed(manifest, registry, undefined, library))) {
         errors.push(`Lesson feed ${libraryFeedFile(library)} is stale; run node scripts/build-index.mjs.`);
       }
-      for (const { id } of registry) {
+      for (const { id } of subjectsOf(library)) {
         const file = libraryFeedFile(library, id);
         if (!current(file, renderFeed(manifest, registry, id, library))) {
           errors.push(`Subject feed ${file} is stale; run node scripts/build-index.mjs.`);
@@ -480,7 +482,7 @@ export function check(base = root) {
       }
     }
   }
-  const libraryOutputs = new Set(libraries.flatMap(library => [libraryIndexFile(library), libraryFeedFile(library), ...registry.map(({ id }) => libraryFeedFile(library, id))]));
+  const libraryOutputs = new Set(libraries.flatMap(library => [libraryIndexFile(library), libraryFeedFile(library), ...subjectsOf(library).map(({ id }) => libraryFeedFile(library, id))]));
   const libraryIndexes = new Set(libraries.map(libraryIndexFile));
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
@@ -496,6 +498,10 @@ export function check(base = root) {
     const html = bytes.toString('utf8');
     const libraryLink = libraryLinkFor(libraryOf(lesson));
     if (!hasLibraryLink(html, libraryLink)) errors.push(`${lesson.file}: needs a visible Lesson library link to ${libraryLink}.`);
+    const theme = libraryConfig(manifest, libraryOf(lesson))?.theme;
+    if (theme && (!/<body\b[^>]*\bclass\s*=\s*["'][^"']*\btheme-early\b/i.test(html) || !/href\s*=\s*["']\.\.\/assets\/early-grades\.css(?:\?[^"']*)?["']/i.test(html))) {
+      errors.push(`${lesson.file}: library ${libraryOf(lesson)} uses the ${theme} theme; build it from templates/lesson-${theme}.html.`);
+    }
     // A lesson never sends its reader to another sender's library.
     for (const other of libraries.filter(other => other !== libraryOf(lesson))) {
       const href = libraryLinkFor(other).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

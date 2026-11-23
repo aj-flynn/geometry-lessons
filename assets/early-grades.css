@@ -1,0 +1,107 @@
+/* Early grades (K-4) theme. Loaded after site.css (and library-feed.css on the library page)
+   by pages whose body has the theme-early class. Bright, roomy and read-aloud friendly:
+   larger type, bigger tap targets, rounded shapes, system fonts only. */
+
+.theme-early {
+  --paper: #fffaf0;
+  --paper-2: #fff1d6;
+  --card: #ffffff;
+  --surface: #fff1d6;
+  --ink: #1f2a44;
+  --ink-2: #3d4766;
+  --line: #f1dfbd;
+  --line-strong: #d9bd8a;
+  --red: #c2332b;
+  --red-bright: #e2483d;
+  --red-soft: #ffe4e0;
+  --blue: #1f5fbf;
+  --blue-bright: #2f74e0;
+  --blue-soft: #e3eeff;
+  --sun: #ffc83d;
+  --sun-soft: #fff0bd;
+  --green: #1b7a3e;
+  --green-soft: #ddf4e4;
+  --purple: #6b3fb5;
+  --accent: var(--blue);
+  --font: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Nunito", "Trebuchet MS", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --display: var(--font);
+  --radius: 22px;
+  --radius-sm: 14px;
+  --measure: 58ch;
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: .005em;
+}
+.theme-early h1, .theme-early h2, .theme-early h3 { font-family: var(--display); letter-spacing: 0; }
+.theme-early h3 { font-size: 1.3rem; }
+.theme-early a { text-underline-offset: .18em; }
+.theme-early :focus-visible { outline: 4px solid var(--blue-bright); outline-offset: 3px; }
+
+/* Buttons and chips: big, round and easy to tap */
+.theme-early .button { min-height: 56px; padding: .7rem 1.4rem; border-radius: 999px; font-size: 1.1rem; font-weight: 800; }
+.theme-early .filter-chip { min-height: 52px; padding: .55rem 1.15rem; font-size: 1.05rem; border-width: 2px; }
+
+/* Library hero: polka dots instead of graph paper */
+.theme-early .library-hero::before {
+  background-color: var(--sun-soft);
+  background-image: radial-gradient(rgba(47, 116, 224, .16) 3px, transparent 3.5px), radial-gradient(rgba(226, 72, 61, .14) 3px, transparent 3.5px);
+  background-size: 34px 34px, 34px 34px;
+  background-position: 0 0, 17px 17px;
+}
+.theme-early .library-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.1; }
+.theme-early .library-hero .lead { font-size: 1.25rem; color: var(--ink); }
+.theme-early .eyebrow { color: var(--blue); }
+.ks-sun { fill: var(--sun); stroke: var(--ink); stroke-width: 4; }
+.ks-ray { fill: none; stroke: #e0a400; stroke-width: 5; stroke-linecap: round; }
+.ks-block { stroke: var(--ink); stroke-width: 4; }
+.ks-red { fill: #ff8f84; }
+.ks-blue { fill: #8fbaff; }
+.ks-green { fill: #8fe0a6; }
+.ks-letter { fill: var(--ink); font: 800 38px var(--font); }
+.ks-counters circle { fill: var(--sun); stroke: var(--ink); stroke-width: 3.5; }
+.ks-star { fill: #c9a8ff; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.theme-early .hero-sketch svg { transform-origin: 50% 90%; animation: ks-pop .6s ease-out both; }
+@keyframes ks-pop { from { transform: scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* Lesson cards: one column, rounded, colorful edge */
+.theme-early .feed { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.theme-early .feed-item, .theme-early .feed-latest, .theme-early .feed-empty { border-radius: var(--radius); border-width: 2px; }
+.theme-early .feed-item::before { width: 8px; }
+.theme-early .feed-flag { background: var(--blue); font-size: .85rem; }
+.theme-early .feed-item h3, .theme-early .feed-latest h3 { line-height: 1.2; }
+.theme-early .feed-summary { font-size: 1.05rem; }
+.theme-early .feed-meta, .theme-early .topic-line { font-size: .95rem; }
+.theme-early .feed-empty { background: var(--card); border-style: dashed; font-size: 1.1rem; }
+
+/* How to use: bright cards instead of the dark band */
+.theme-early .how { background: var(--blue-soft); color: var(--ink); }
+.theme-early .how h2, .theme-early .how-steps h3 { color: var(--ink); }
+.theme-early .how-steps li { background: var(--card); border: 2px solid #c6d8f7; }
+.theme-early .how-steps p { color: var(--ink-2); }
+.theme-early .how-steps li:nth-child(1) .how-num { background: #ff8f84; }
+.theme-early .how-steps li:nth-child(2) .how-num { background: var(--sun); }
+.theme-early .how-steps li:nth-child(3) .how-num { background: #8fe0a6; }
+.theme-early .how-num { width: 2.8rem; height: 2.8rem; font-size: 1.3rem; border: 3px solid var(--ink); }
+.theme-early .subscribe { border-width: 2px; border-radius: var(--radius); }
+.theme-early .feed-address, .theme-early .subject-feeds { font-size: .95rem; }
+
+/* Lessons for young learners: roomy steps, bigger pictures and readable text */
+.theme-early .lesson { max-width: 60rem; }
+.theme-early .lesson h1 { font-size: clamp(2.1rem, 5vw, 3rem); line-height: 1.12; }
+.theme-early .lesson p, .theme-early .lesson li { max-width: var(--measure); }
+.theme-early .lesson figure svg, .theme-early .lesson figure img { min-height: 160px; }
+.theme-early .lesson summary { min-height: 48px; padding-block: .4rem; font-size: 1.05rem; font-weight: 800; cursor: pointer; }
+.theme-early .lesson details { border-radius: var(--radius-sm); }
+.theme-early .lesson button, .theme-early .lesson input, .theme-early .lesson select { min-height: 48px; font: inherit; }
+.theme-early .return-link { font-size: 1.05rem; }
+
+@media (max-width: 640px) {
+  .theme-early { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-early .hero-sketch svg { animation: none; }
+}
+@media print {
+  .theme-early { font-size: 13pt; }
+  .theme-early .library-hero::before { background: none; }
+}

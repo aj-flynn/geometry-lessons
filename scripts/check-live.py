@@ -22,8 +22,24 @@ def library_index(library):
     return 'index.html' if library == ROOT_LIBRARY else f'{library}/index.html'
 
 
+def library_entries(manifest):
+    """A library entry is its id or its settings (id, theme, grades, subjects)."""
+    return [{'id': entry} if isinstance(entry, str) else entry for entry in manifest.get('libraries', [ROOT_LIBRARY])]
+
+
 def libraries_of(manifest):
-    return manifest.get('libraries', [ROOT_LIBRARY])
+    return [entry['id'] for entry in library_entries(manifest)]
+
+
+def expected_chips(entry, subjects, lessons):
+    """Subject chips a library page shows: its subjects; the early theme shows only subjects with
+    lessons, and no chips at all for fewer than two."""
+    shown = [subject for subject in subjects if 'subjects' not in entry or subject['id'] in entry['subjects']]
+    if entry.get('theme') == 'early':
+        shown = [subject for subject in shown if any(lesson.get('subject', 'Geometry') == subject['label'] for lesson in lessons)]
+        if len(shown) < 2:
+            return []
+    return shown
 
 
 def reviewed_files(repo, manifest, publication=None):
@@ -130,13 +146,20 @@ def verify_publication(page, base, manifest, subjects, expected):
     lesson_urls = [urls['lessons/' + lesson['file']] for lesson in manifest['lessons']]
     library_of = lambda lesson: lesson.get('library', ROOT_LIBRARY)
     shelf = {library: [lesson for lesson in manifest['lessons'] if library_of(lesson) == library] for library in libraries_of(manifest)}
-    for library, lessons in shelf.items():
+    subject_links = 0
+    for entry in library_entries(manifest):
+        library, lessons = entry['id'], shelf[entry['id']]
         library_url = urls[library_index(library)]
         load_page(page, library_url)
         if page.locator('.lesson-link').count() != len(lessons):
             raise AssertionError(f'Published library has the wrong lesson count: {library}')
+        chips = expected_chips(entry, subjects, lessons)
+        shown = page.locator('.subject-filter a[data-subject]').evaluate_all('links => links.map(link => link.dataset.subject)')
+        if shown != [subject['id'] for subject in chips]:
+            raise AssertionError(f'Published library shows the wrong subject links: {library}')
+        subject_links += len(chips)
         nav = page.get_by_role('navigation', name='Lesson subjects')
-        for subject in subjects:
+        for subject in chips:
             nav.get_by_role('link', name=subject['label'], exact=True).click()
             target = library_url + '#subject-' + subject['id']
             if page.url != target:
@@ -159,7 +182,7 @@ def verify_publication(page, base, manifest, subjects, expected):
     reference_urls = [url for path, url in urls.items() if path.startswith('reference/') and path.endswith('.html')]
     reference_links = verify_reference_links(page, base, lesson_urls, reference_urls, index_url) if reference_urls else 0
     return {'verified_public_files': len(expected), 'keyboard_library_returns': len(lesson_urls),
-            'subject_links': len(subjects), 'reference_links': reference_links, 'passed': True}
+            'subject_links': subject_links, 'reference_links': reference_links, 'passed': True}
 
 
 def main():

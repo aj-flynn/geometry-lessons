@@ -9,22 +9,43 @@ export const subjectOf = lesson => lesson.subject ?? 'Geometry';
 // library is published under <id>/. The map from sender address to library is private and never here.
 export const rootLibrary = 'main';
 export const libraryOf = lesson => lesson.library ?? rootLibrary;
-export const librariesOf = manifest => manifest.libraries ?? [rootLibrary];
+// A library entry is its id, or { id, theme, grades, subjects }. theme "early" uses the K-4 page and
+// lesson templates; grades is the public grade band lessons are written for; subjects limits the
+// subject links and feeds the library shows (all registered subjects when omitted).
+export const libraryThemes = Object.freeze(['early']);
+export const libraryEntry = entry => typeof entry === 'string' ? { id: entry } : entry;
+export const libraryEntries = manifest => (manifest.libraries ?? [rootLibrary]).map(libraryEntry);
+export const librariesOf = manifest => libraryEntries(manifest).map(({ id }) => id);
+export const libraryConfig = (manifest, id) => libraryEntries(manifest).find(entry => entry.id === id);
+export const libraryTemplateFile = entry => entry?.theme ? `templates/index-${entry.theme}.html` : 'templates/index.html';
+export const librarySubjects = (entry, registry) => entry?.subjects ? registry.filter(({ id }) => entry.subjects.includes(id)) : registry;
 export const libraryDir = id => id === rootLibrary ? '' : `${id}/`;
 export const libraryIndexFile = id => `${libraryDir(id)}index.html`;
 export const libraryFeedFile = (id, subjectId) => libraryDir(id) + (subjectId === undefined ? 'feed.xml' : `feeds/${subjectId}.xml`);
 const reservedLibraryIds = new Set(['assets', 'lessons', 'reference', 'templates', 'scripts', 'tests', 'docs', 'feeds', 'prototype', 'node_modules']);
-export function validateLibraries(libraries) {
-  if (!Array.isArray(libraries) || libraries[0] !== rootLibrary) throw new Error(`The library list must start with the root library "${rootLibrary}".`);
+export function validateLibraries(list, registry) {
+  if (!Array.isArray(list) || !list.every(entry => typeof entry === 'string' || (entry && Object.getPrototypeOf(entry) === Object.prototype))) {
+    throw new Error('The library list holds library IDs or library settings.');
+  }
+  const entries = list.map(libraryEntry);
+  if (entries[0]?.id !== rootLibrary) throw new Error(`The library list must start with the root library "${rootLibrary}".`);
   const seen = new Set();
-  for (const id of libraries) {
+  for (const entry of entries) {
+    const { id, theme, grades, subjects } = entry;
+    if (Object.keys(entry).some(key => !['id', 'theme', 'grades', 'subjects'].includes(key))) throw new Error(`Unknown library setting for ${id}.`);
+    if (theme !== undefined && !libraryThemes.includes(theme)) throw new Error(`Library theme must be one of: ${libraryThemes.join(', ')}.`);
+    if (grades !== undefined && (typeof grades !== 'string' || !/^(?:K|[1-9]|1[0-2])(?:-(?:[1-9]|1[0-2]))?$/.test(grades))) throw new Error('Library grades look like K-4, 3-5 or 9.');
+    if (subjects !== undefined && (!Array.isArray(subjects) || !subjects.length || new Set(subjects).size !== subjects.length ||
+        (registry && subjects.some(subject => !registry.some(({ id: known }) => known === subject))))) {
+      throw new Error(`Library ${id} subjects must be registered subject IDs.`);
+    }
     if (typeof id !== 'string' || !/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(id) || id.length > 30 || reservedLibraryIds.has(id)) {
       throw new Error('Library IDs are short lowercase words joined by hyphens and cannot reuse a site folder name.');
     }
     if (seen.has(id)) throw new Error('Library IDs must be unique.');
     seen.add(id);
   }
-  return libraries;
+  return entries.map(({ id }) => id);
 }
 export const lessonFilename = /^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
 export const dependencyPath = /^assets\/(?:[\w-]+\/)*[\w.-]+\.[a-z0-9]+$/i;
@@ -34,7 +55,7 @@ export const reviewContractCoreFiles = Object.freeze([
   '.agents/skills/homework-teach/scripts/read-docx.py',
   'scripts/build-index.mjs', 'scripts/check.mjs', 'scripts/check-live.py',
   'scripts/check-chemistry-browser.py', 'scripts/check-practice-browser.py', 'scripts/review-candidate.mjs',
-  'templates/index.html', 'templates/lesson.html',
+  'templates/index.html', 'templates/lesson.html', 'templates/index-early.html', 'templates/lesson-early.html',
   'tests/chemistry.test.mjs',
   'tests/interactions.test.mjs', 'tests/libraries.test.mjs',
   'tests/subjects.test.mjs', 'tests/test_docx.py', 'tests/test_live.py', 'tests/workflow.test.mjs'
@@ -86,7 +107,7 @@ function validateHashMap(file, kind, hashes, acceptsPath) {
 export function validateManifest(manifest, registry = defaultRegistry) {
   const labels = validateSubjectRegistry(registry).map(({ label }) => label);
   if (![1,2].includes(manifest.version) || !Array.isArray(manifest.lessons)) throw new Error('Unsupported lesson manifest.');
-  const libraries = validateLibraries(librariesOf(manifest));
+  const libraries = validateLibraries(manifest.libraries ?? [rootLibrary], registry);
   const seen = new Set();
   for (const lesson of manifest.lessons) {
     if (!libraries.includes(libraryOf(lesson))) throw new Error(`${lesson.file}: library must be one of ${libraries.join(', ')}.`);
@@ -96,6 +117,8 @@ export function validateManifest(manifest, registry = defaultRegistry) {
     seen.add(number);
     if ((manifest.version === 2 && !lesson.subject) || !labels.includes(subjectOf(lesson))) throw new Error(`Supply a supported lesson subject from subjects.json (${labels.join(', ')}).`);
     if (manifest.version === 1 && subjectOf(lesson) !== 'Geometry') throw new Error('Non-geometry lessons require manifest version 2.');
+    const shown = librarySubjects(libraryConfig(manifest, libraryOf(lesson)), registry).map(({ label }) => label);
+    if (!shown.includes(subjectOf(lesson))) throw new Error(`${lesson.file}: add its subject to library ${libraryOf(lesson)}'s subjects.`);
     if (typeof lesson.title !== 'string' || !lesson.title.trim() || lesson.title.length > 85) throw new Error('Supply a short public lesson title.');
     if (typeof lesson.summary !== 'string' || !lesson.summary.trim() || lesson.summary.length > 260) throw new Error('Supply a short public lesson summary.');
     if (!Array.isArray(lesson.topics) || !lesson.topics.length || lesson.topics.some(t => typeof t !== 'string' || !t.trim() || t.length > 60)) throw new Error('Supply public concept topics.');
@@ -166,12 +189,16 @@ export function renderIndex(fullManifest, template, registry = defaultRegistry, 
   if (!librariesOf(fullManifest).includes(library)) throw new Error(`Unknown library: ${library}`);
   const manifest = { ...fullManifest, lessons: fullManifest.lessons.filter(lesson => libraryOf(lesson) === library) };
   const base = library === rootLibrary ? '' : '../';
+  const config = libraryConfig(fullManifest, library);
+  registry = librarySubjects(config, registry);
   const count = manifest.lessons.length;
   const ordered = feedOrder(manifest);
   const [latest, ...earlier] = ordered;
   const ids = new Map(registry.map(({ id, label }) => [label, id]));
   const keyOf = lesson => ids.get(subjectOf(lesson)) ?? subjectKey(lesson);
-  const tally = registry.map(({ id, label }) => ({ id, label, n: manifest.lessons.filter(lesson => subjectOf(lesson) === label).length }));
+  // The early-grades page shows only subjects that already have lessons, to keep young readers' choices short.
+  const tally = registry.map(({ id, label }) => ({ id, label, n: manifest.lessons.filter(lesson => subjectOf(lesson) === label).length }))
+    .filter(({ n }) => config?.theme !== 'early' || n > 0);
   // Subject filter: each chip links to an empty target span; CSS :target filters the list with or without JavaScript.
   const empties = latest ? tally.filter(({ n }) => !n).map(({ id, label }) =>
     `\n      <p class="filter-empty" data-subject="${id}">No ${escape(label)} lessons yet. New ones will appear here.</p>`).join('') : '';
@@ -180,22 +207,28 @@ export function renderIndex(fullManifest, template, registry = defaultRegistry, 
     : `${renderItem(latest, true, keyOf(latest), base)}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson, false, keyOf(lesson), base)}`).join('\n')}\n      </ol>` : ''}${empties}`;
   const chip = (href, filter, label, n, subject = '') =>
     `<li><a class="filter-chip" href="${href}" data-filter="${filter}"${subject}>${label}<span class="filter-count" aria-hidden="true">${n}</span></a></li>`;
-  const subjectNav = `<span id="all-subjects" class="filter-reset"></span>${tally.map(({ id }) => `<span id="subject-${id}" class="filter-target"></span>`).join('')}
+  // With one subject or none, the early-grades page leaves out the subject chips and their styles.
+  const showNav = config?.theme !== 'early' || tally.length > 1;
+  const subjectNav = !showNav ? '<span id="all-subjects" class="filter-reset"></span><p class="filter-status" role="status" aria-live="polite"></p>' : `<span id="all-subjects" class="filter-reset"></span>${tally.map(({ id }) => `<span id="subject-${id}" class="filter-target"></span>`).join('')}
       <nav class="subject-filter" aria-label="Lesson subjects"><ul>${chip('#all-subjects', 'all', 'All', count)}${tally.map(({ id, label, n }) => chip(`#subject-${id}`, id, escape(label), n, ` data-subject="${id}"`)).join('')}</ul></nav>
       <p class="filter-status" role="status" aria-live="polite"></p>`;
   const subjectStyle = `${tally.map(({ id, label }) => `<link rel="alternate" type="application/rss+xml" title="Homework lessons: ${escape(label)}" href="${subjectFeedFile(id)}">`).join('\n  ')}
-  <style>${[
+  ${showNav && tally.length ? `<style>${[
     [tally.map(({ id }) => `#subject-${id}:target~.feed-latest:not([data-subject="${id}"]),#subject-${id}:target~.feed>.feed-item:not([data-subject="${id}"])`), 'display:none'],
     [tally.map(({ id }) => `#subject-${id}:target~.filter-empty[data-subject="${id}"]`), 'display:block'],
     [tally.map(({ id }) => `#subject-${id}:target~.subject-filter [data-filter="${id}"]`), 'background:var(--ink);border-color:var(--ink);color:#fff']
-  ].map(([selectors, rule]) => `${selectors.join(',')}{${rule}}`).join('')}</style>`;
+  ].map(([selectors, rule]) => `${selectors.join(',')}{${rule}}`).join('')}</style>` : ''}`;
   const subjectFeeds = tally.map(({ id, label }) => `<a href="${subjectFeedFile(id)}">${escape(label)} feed</a>`).join(' · ');
+  const subjectFeedsBlock = tally.length > 1 ? `<p class="subject-feeds">One subject only: ${subjectFeeds}</p>` : '';
+  const grades = config?.grades ? escape(config.grades.replace('-', '–')) : '';
   return template.replaceAll('{{BASE}}', base)
     .replace('{{COUNT}}', count ? `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit` : 'No lessons yet')
     .replace('{{SUBJECT_STYLE}}', () => subjectStyle)
     .replace('{{SUBJECT_NAV}}', () => subjectNav)
     .replace('{{FEED_URL}}', () => escape(siteUrl + libraryFeedFile(library)))
     .replace('{{SUBJECT_FEEDS}}', () => subjectFeeds)
+    .replace('{{SUBJECT_FEEDS_BLOCK}}', () => subjectFeedsBlock)
+    .replaceAll('{{GRADES}}', () => grades)
     .replace('{{LESSONS}}', () => content);
 }
 
@@ -207,7 +240,7 @@ const xml = value => escape(value).replace(/&#39;/g, '&apos;');
 export function renderFeed(manifest, registry = defaultRegistry, subjectId, library = rootLibrary) {
   validateManifest(manifest, registry);
   if (!librariesOf(manifest).includes(library)) throw new Error(`Unknown library: ${library}`);
-  const subject = subjectId === undefined ? undefined : registry.find(({ id }) => id === subjectId);
+  const subject = subjectId === undefined ? undefined : librarySubjects(libraryConfig(manifest, library), registry).find(({ id }) => id === subjectId);
   if (subjectId !== undefined && !subject) throw new Error(`Unknown subject feed: ${subjectId}`);
   const page = siteUrl + libraryDir(library);
   const self = siteUrl + libraryFeedFile(library, subject?.id);
@@ -247,16 +280,19 @@ export function generateFeed(base = root, subjectId, library = rootLibrary) {
 
 export function generateIndex(base = root, library = rootLibrary) {
   const registry = loadSubjectRegistry(base);
-  return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'), registry, library);
+  const manifest = JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8'));
+  const template = readFileSync(resolve(base, libraryTemplateFile(libraryConfig(manifest, library))), 'utf8');
+  return renderIndex(manifest, template, registry, library);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const libraries = librariesOf(JSON.parse(readFileSync(resolve(root,'lessons.json'),'utf8')));
+  const manifest = JSON.parse(readFileSync(resolve(root,'lessons.json'),'utf8'));
+  const libraries = librariesOf(manifest);
   for (const library of libraries) {
     mkdirSync(resolve(root, libraryDir(library) || '.', 'feeds'), { recursive: true });
     writeFileSync(resolve(root,libraryIndexFile(library)), generateIndex(root, library));
     writeFileSync(resolve(root,libraryFeedFile(library)), generateFeed(root, undefined, library));
-    for (const { id } of loadSubjectRegistry()) writeFileSync(resolve(root,libraryFeedFile(library, id)), generateFeed(root, id, library));
+    for (const { id } of librarySubjects(libraryConfig(manifest, library), loadSubjectRegistry())) writeFileSync(resolve(root,libraryFeedFile(library, id)), generateFeed(root, id, library));
   }
   console.log(`Updated index.html, ${feedFile} and the subject feeds for ${libraries.length} ${libraries.length === 1 ? 'library' : 'libraries'} (${libraries.join(', ')}).`);
 }

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,dirname} from 'node:path';
-import {renderIndex,renderFeed,validateManifest,generateIndex,generateFeed,libraryFeedFile,libraryIndexFile,reviewContractCoreFiles} from '../scripts/build-index.mjs';
+import {renderIndex,renderFeed,validateManifest,generateIndex,generateFeed,libraryFeedFile,libraryIndexFile,reviewContractCoreFiles,libraryConfig,libraryTemplateFile} from '../scripts/build-index.mjs';
 import {check,hasLibraryLink,libraryLinkFor} from '../scripts/check.mjs';
 
 const review={privacy:true,homeworkSeparation:true,accuracy:true,accessibility:true,sha256:'a'.repeat(64),dependencies:{},contract:{}};
@@ -88,4 +88,49 @@ test('publication checks require every library page and feed to be current', t =
   put('second/feed.xml', generateFeed(base, undefined, 'second'));
   put('second/feeds/geometry.xml', generateFeed(base, 'geometry', 'second'));
   assert.equal(check(base).lessons, 0);
+});
+
+const registry=[{id:'geometry',label:'Geometry',skill:'.agents/skills/geometry-teach/SKILL.md'},{id:'math',label:'Math',skill:'.agents/skills/math-teach/SKILL.md'}];
+const themed={version:2,libraries:[{id:'main',subjects:['geometry']},{id:'young',theme:'early',grades:'K-4'}],lessons:[
+  entry('0001-root-concept.html','main','2026-11-01T10:00:00-05:00'),
+  {...entry('0002-young-concept.html','young','2026-11-02T10:00:00-05:00'),subject:'Math'}]};
+const navTemplate='{{SUBJECT_STYLE}}|{{SUBJECT_NAV}}|{{LESSONS}}|{{SUBJECT_FEEDS_BLOCK}}|Grades {{GRADES}}';
+
+test('library settings pick the theme, grades and subjects each page shows',()=>{
+  assert.equal(libraryTemplateFile(libraryConfig(themed,'young')),'templates/index-early.html');
+  assert.equal(libraryTemplateFile(libraryConfig(themed,'main')),'templates/index.html');
+  const main=renderIndex(themed,navTemplate,registry,'main');
+  assert.match(main,/data-filter="geometry"/);
+  assert.doesNotMatch(main,/math/i,'a subject registered for another library leaves the root page alone');
+  const young=renderIndex(themed,navTemplate,registry,'young');
+  assert.match(young,/Grades K–4/);
+  assert.doesNotMatch(young,/subject-filter|data-filter|<style>|feeds\/geometry/,'one subject with lessons needs no subject chips');
+  assert.doesNotMatch(renderIndex({...themed,lessons:[]},navTemplate,registry,'young'),/<style>|data-filter/);
+  assert.throws(()=>renderFeed(themed,registry,'math','main'),/Unknown subject feed/);
+  assert.match(renderFeed(themed,registry,'math','young'),/0002-young-concept/);
+  assert.throws(()=>validateManifest({...themed,lessons:[{...themed.lessons[0],subject:'Math'}]},registry),/add its subject to library main/);
+  for (const libraries of [['main',{id:'x',theme:'bright'}],['main',{id:'x',grades:'kindergarten'}],['main',{id:'x',subjects:['art']}],['main',{id:'x',color:'red'}],[{id:'main',subjects:[]}]])
+    assert.throws(()=>validateManifest({...themed,libraries,lessons:[]},registry),/librar/i,JSON.stringify(libraries));
+});
+
+test('an early-grades library page is built and checked from its own template', t => {
+  const base = mkdtempSync(join(tmpdir(), 'geometry-themes-'));
+  t.after(() => rmSync(base, { recursive: true }));
+  const put = (name, content) => { const file = join(base, name); mkdirSync(dirname(file), { recursive: true }); writeFileSync(file, content); };
+  for (const name of reviewContractCoreFiles) put(name, 'Synthetic contract input.');
+  put('subjects.json', JSON.stringify([{ id: 'geometry', label: 'Geometry', skill: '.agents/skills/geometry-teach/SKILL.md' }]));
+  put('.agents/skills/homework-teach/SKILL.md', '---\nname: homework-teach\ndescription: Synthetic shared contract.\n---\n');
+  put('.agents/skills/geometry-teach/SKILL.md', '---\nname: geometry-teach\ndescription: Synthetic geometry.\n---\n[Shared](../homework-teach/SKILL.md)\n');
+  put('templates/index.html', '<html lang="en"><meta name="viewport"><h1>Library</h1>{{LESSONS}}</html>');
+  put('templates/index-early.html', '<html lang="en"><meta name="viewport"><h1>Young</h1>{{LESSONS}}</html>');
+  put('lessons.json', JSON.stringify({ version: 2, libraries: ['main', { id: 'young', theme: 'early', grades: 'K-4' }], lessons: [] }));
+  for (const library of ['main', 'young']) {
+    put(libraryIndexFile(library), generateIndex(base, library));
+    put(libraryFeedFile(library), generateFeed(base, undefined, library));
+    put(libraryFeedFile(library, 'geometry'), generateFeed(base, 'geometry', library));
+  }
+  assert.match(generateIndex(base, 'young'), /<h1>Young<\/h1>/);
+  assert.equal(check(base).lessons, 0);
+  rmSync(join(base, 'templates/index-early.html'));
+  assert.throws(() => check(base), /Missing library template templates\/index-early\.html/);
 });

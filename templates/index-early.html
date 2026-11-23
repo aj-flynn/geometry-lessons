@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Short, friendly lessons for grades {{GRADES}}, newest first. Read them together, try the idea with things you can touch, then do your own work.">
+  <meta name="referrer" content="no-referrer">
+  <title>Learning lessons for grades {{GRADES}} | Newest first</title>
+  <link rel="alternate" type="application/rss+xml" title="Learning lessons for grades {{GRADES}}" href="feed.xml">
+  <link rel="stylesheet" href="{{BASE}}assets/site.css?v=20261119-d1">
+  <link rel="stylesheet" href="{{BASE}}assets/library-feed.css?v=20261119-d2">
+  <link rel="stylesheet" href="{{BASE}}assets/early-grades.css?v=20261123-k1">
+  <script src="{{BASE}}assets/library-filter.js?v=20261119-d2" defer></script>
+  {{SUBJECT_STYLE}}
+</head>
+<body class="library-page theme-early">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header frame">
+    <a class="wordmark" href="index.html"><svg class="wordmark-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="6.5" fill="#ffc83d" stroke="currentColor" stroke-width="2.2"/><path d="M16 2.5v4M16 25.5v4M2.5 16h4M25.5 16h4M6.4 6.4l2.8 2.8M22.8 22.8l2.8 2.8M6.4 25.6l2.8-2.8M22.8 9.2l2.8-2.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Learning lessons</a>
+    <nav aria-label="Main navigation"><a href="#lessons">Lessons</a><a href="#how">How to use them</a><a href="#subscribe">For grown-ups</a></nav>
+  </header>
+  <main id="main">
+    <section class="library-hero" aria-labelledby="title">
+      <div class="frame library-hero-inner">
+        <div class="library-hero-copy">
+          <p class="eyebrow">Grades {{GRADES}} · newest first</p>
+          <h1 id="title">Let’s learn it together!</h1>
+          <p class="lead">Short lessons with pictures, big steps and things to try. Read along, try it out, then do your own work.</p>
+          <p class="hero-actions"><a class="button" href="#lessons">Pick a lesson <span aria-hidden="true">↓</span></a></p>
+        </div>
+        <figure class="hero-sketch" aria-hidden="true">
+          <svg viewBox="0 0 360 300" focusable="false">
+            <circle class="ks-sun" cx="286" cy="62" r="34"/>
+            <path class="ks-ray" d="M286 10v12M286 102v12M234 62h12M326 62h12M249 25l9 9M314 90l9 9M249 99l9-9M314 34l9-9"/>
+            <rect class="ks-block ks-red" x="44" y="196" width="70" height="70" rx="10"/>
+            <rect class="ks-block ks-blue" x="124" y="196" width="70" height="70" rx="10"/>
+            <rect class="ks-block ks-green" x="84" y="116" width="70" height="70" rx="10"/>
+            <text class="ks-letter" x="79" y="244" text-anchor="middle">A</text>
+            <text class="ks-letter" x="159" y="244" text-anchor="middle">B</text>
+            <text class="ks-letter" x="119" y="164" text-anchor="middle">C</text>
+            <g class="ks-counters"><circle cx="232" cy="248" r="14"/><circle cx="268" cy="248" r="14"/><circle cx="304" cy="248" r="14"/><circle cx="250" cy="216" r="14"/><circle cx="286" cy="216" r="14"/></g>
+            <path class="ks-star" d="M206 128l8 17 18 3-13 12 3 18-16-9-16 9 3-18-13-12 18-3z"/>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <section id="lessons" class="library frame" aria-labelledby="library-title">
+      <div class="section-heading">
+        <h2 id="library-title">Lessons</h2>
+        <p class="count-line">{{COUNT}}</p>
+      </div>
+      {{SUBJECT_NAV}}
+      {{LESSONS}}
+    </section>
+
+    <section id="how" class="how" aria-labelledby="how-title">
+      <div class="frame">
+        <h2 id="how-title">How to use a lesson</h2>
+        <ol class="how-steps">
+          <li><span class="how-num" aria-hidden="true">1</span><h3>Read it together</h3><p>Each step is short, so a grown-up can read it out loud. Look at the picture for each step.</p></li>
+          <li><span class="how-num" aria-hidden="true">2</span><h3>Try it with your hands</h3><p>Use things you can touch, like blocks, coins or crayons, to show the idea. Tap “Why?” to hear the reason.</p></li>
+          <li><span class="how-num" aria-hidden="true">3</span><h3>Do your own work</h3><p>Try the practice with the hints. Then go back to your own page and do it yourself.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="subscribe" class="subscribe frame" aria-labelledby="subscribe-title">
+      <div>
+        <h2 id="subscribe-title">For grown-ups: get new lessons</h2>
+        <p>This page also publishes a feed. A feed reader or a feed-to-email service can watch it and send each new lesson when it appears.</p>
+      </div>
+      <div class="subscribe-actions">
+        <a class="button secondary" href="feed.xml">Open the lesson feed <span aria-hidden="true">↗</span></a>
+        <p class="feed-address">Feed address: <code>{{FEED_URL}}</code></p>
+        {{SUBJECT_FEEDS_BLOCK}}
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer frame"><p>Big ideas, one small step at a time.</p><p class="footer-note">Concept lessons only. No homework sheets, answers or personal details.</p></footer>
+</body>
+</html>

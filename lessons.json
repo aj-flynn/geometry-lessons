@@ -1,8 +1,8 @@
 {
   "version": 2,
   "libraries": [
-    "main",
-    "mom"
+    { "id": "main", "subjects": ["geometry", "science", "chemistry", "english", "spanish"] },
+    { "id": "mom", "theme": "early", "grades": "K-4" }
   ],
   "lessons": [
     {

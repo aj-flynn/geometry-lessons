@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="AUTHOR: a public concept summary, with no homework details.">
+  <title>AUTHOR: concept title</title>
+  <link rel="stylesheet" href="../assets/site.css?v=20261119-d1">
+  <!-- AUTHOR: early-grades (K-4) lesson template. Use it for a library whose lessons.json entry has
+       "theme": "early"; write for that entry's grades as .agents/skills/homework-teach/references/early-grades.md says.
+       Load early-grades.css after every other stylesheet so its theme wins. -->
+  <!-- AUTHOR: lessons with a problem to be worked or a labeled definition diagram also load
+       ../assets/worked-example.css?v=20261119-d1 and ../assets/worked-example.js?v=20261119-d1 (defer).
+       See lessons/0011-equal-sides-equal-angles.html for the reference build. -->
+  <link rel="stylesheet" href="../assets/worked-example.css?v=20261119-d1">
+  <!-- AUTHOR: for activities that benefit from a persistent current problem, also load
+       ../assets/activity-layout.css?v=20261119-d1 and add activity-lesson to main.
+       Use header/reading-block for ordinary reading. A split activity uses:
+       section.activity > h2 + div.activity-split > aside.activity-evidence + div.activity-work.
+       Give the aside a unique id, tabindex="0", and aria-labelledby pointing to its heading.
+       Put the complete original task evidence in that aside; keep its reasoning in activity-work.
+       A fresh task gets its own evidence-and-work pair. Use a.activity-return linking to that
+       evidence only when a return jump helps in the stacked layout; CSS hides it when paired.
+       Keep all required evidence available with comparisons closed. -->
+  <script src="../assets/lesson.js?v=20261105-r9" defer></script>
+  <script src="../assets/worked-example.js?v=20261119-d1" defer></script>
+  <link rel="stylesheet" href="../assets/early-grades.css?v=20261123-k1">
+</head>
+<body class="theme-early">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="lesson">
+    <!-- AUTHOR: choose only the teaching patterns this task needs. Replace headings and
+         sequence to fit the subject; neither a geometric diagram nor a manipulative is mandatory.
+         A passage, data table or model can be the instructional evidence. Use a control only
+         when changing or testing something teaches a decision. Check the final paginated printout. -->
+    <header>
+      <!-- AUTHOR: ../<library id>/index.html, the library this lesson is filed under. -->
+      <a class="return-link" href="../mom/index.html">← Lesson library</a>
+      <!-- AUTHOR: data-subject is the subjects.json id: geometry, chemistry, english, science or spanish (sets the swatch color). -->
+      <p class="subject-tag" data-subject="geometry">AUTHOR: Subject · topic</p>
+      <h1>AUTHOR: concept title</h1>
+      <p class="lead">AUTHOR: one achievable concept goal, written at the approximate grade or course level of the assignment. No original problem or personal context.</p>
+      <ul class="jump-nav" aria-label="Lesson sections">
+        <li><a href="#parts">AUTHOR: the parts</a></li>
+        <li><a href="#type-1">AUTHOR: problem type 1</a></li>
+        <li><a href="#practice">Your turn</a></li>
+        <li><a href="#glossary">Glossary</a></li>
+      </ul>
+    </header>
+    <aside aria-label="Before you start"><p>AUTHOR: one optional fresh prerequisite prompt. Point an uncertain learner to the first explanation; do not grade assigned work or save responses.</p></aside>
+    <p><a href="#glossary">Open the glossary</a> for unfamiliar words and symbols.</p>
+    <section aria-labelledby="definitions"><h2 id="definitions">Know the idea</h2>
+      <p><a href="#term-example">AUTHOR: essential term</a> (AUTHOR: brief inline meaning).</p>
+    </section>
+    <!-- AUTHOR: DEFINITIONAL KNOWLEDGE. When a task tests names of parts, vocabulary or recognizing a
+         relationship, draw ONE accurate diagram where every defined term is drawn and labeled, with leader
+         lines and the color keys below, and give each definition an "In the diagram" pointer.
+         SVG kit (worked-example.css): dg-line dg-thin dg-faint dg-red dg-blue dg-sun dg-fill dg-fill-red
+         dg-fill-sun dg-dot dg-label dg-small dg-label-red dg-label-blue dg-leader dg-tick-red dg-tick-blue.
+         Keys: key key-red | key-blue | key-sun | key-green | key-dash. -->
+    <section id="parts" class="define-block" aria-labelledby="parts-title">
+      <h2 id="parts-title">AUTHOR: Name the parts</h2>
+      <div class="define-grid">
+        <figure class="labeled-diagram">
+          <svg viewBox="0 0 580 320" role="img" aria-labelledby="parts-svg-title parts-svg-desc">
+            <title id="parts-svg-title">AUTHOR: neutral title</title>
+            <desc id="parts-svg-desc">AUTHOR: every labeled part and where it is.</desc>
+            <!-- AUTHOR: computed, accurate geometry only. -->
+          </svg>
+          <figcaption>AUTHOR: text equivalent of every label.</figcaption>
+        </figure>
+        <dl class="define-list">
+          <div><dt><span class="key key-red" aria-hidden="true"></span><a href="#term-example">AUTHOR: term</a></dt>
+            <dd>AUTHOR: plain definition. <span class="in-diagram">In the diagram: AUTHOR: where it is, by its labels.</span></dd></div>
+        </dl>
+      </div>
+      <p class="rule"><strong>AUTHOR: theorem or rule name.</strong> AUTHOR: statement with its conditions.</p>
+    </section>
+
+    <!-- AUTHOR: PROBLEMS TO BE WORKED. One section.worked per problem type: a slideshow of one ORIGINAL
+         example (3 to 7 slides; red = what this step uses, blue = what it finds, dg-faint = ignore), then the
+         same method as 3 to 6 numbered steps, each with an imperative action, its math line and a closed
+         "Why?" giving the reason in one to three sentences. Then a fresh attempt for that type.
+         Copy the deck controls verbatim; worked-example.js enables them. Without scripts every slide stays
+         visible as a numbered list, and print shows every slide.
+         For word-based tasks (English, Spanish), the slide figure holds the original passage instead of an
+         SVG: blockquote.passage with mark.hl-red / mark.hl-blue on the words this step uses or finds, and
+         ul.gloss naming each mark. The math line becomes the step's short result (a paraphrase, a form,
+         a claim). See lessons/0002-close-reading-dialogue.html. -->
+    <section id="type-1" class="worked" aria-labelledby="type-1-title">
+      <header class="worked-head">
+        <p class="eyebrow">Problem type 1</p>
+        <h2 id="type-1-title">AUTHOR: what this kind of problem asks</h2>
+        <p class="worked-goal">AUTHOR: the clue that tells you to use this method.</p>
+      </header>
+      <div class="deck" data-deck aria-roledescription="slideshow" aria-labelledby="type-1-title">
+        <ol class="deck-slides">
+          <li class="slide">
+            <figure class="slide-figure"><!-- AUTHOR: inline SVG with role="img", title and desc --></figure>
+            <div class="slide-body"><p class="slide-step">Read the marks</p><h3>AUTHOR: step title</h3><p class="slide-math">AUTHOR: math line</p><p>AUTHOR: one or two short sentences.</p></div>
+          </li>
+          <li class="slide">
+            <figure class="slide-figure"><!-- AUTHOR: next state of the same diagram --></figure>
+            <div class="slide-body"><p class="slide-step">Use the rule</p><h3>AUTHOR: step title</h3><p class="slide-math">AUTHOR: math line</p><p>AUTHOR: one or two short sentences.</p></div>
+          </li>
+        </ol>
+        <div class="deck-controls" data-deck-controls hidden><button type="button" class="secondary" data-deck-prev><span aria-hidden="true">←</span> Back</button><p class="deck-count" data-deck-count aria-live="polite"></p><button type="button" data-deck-next>Next step <span aria-hidden="true">→</span></button></div>
+        <div class="deck-dots" data-deck-dots hidden></div>
+        <p class="deck-hint" data-deck-hint hidden>Tip: the arrow keys also move through the steps.</p>
+      </div>
+      <div class="steps-block">
+        <h3>The steps</h3>
+        <ol class="steps">
+          <li><p class="step-do">AUTHOR: Imperative action.</p><p class="step-math">AUTHOR: math line</p><details class="why"><summary>Why?</summary><p>AUTHOR: the theorem, definition or reason.</p></details></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="glossary" aria-labelledby="glossary-title"><h2 id="glossary-title">Glossary</h2>
+      <dl><dt id="term-example">AUTHOR: essential term</dt><dd>AUTHOR: precise definition and notation. Define units too; do not copy an assigned vocabulary answer.</dd></dl>
+    </section>
+    <section aria-labelledby="diagram"><h2 id="diagram">Inspect the evidence</h2>
+      <p>AUTHOR: introduce the original evidence needed for this decision: a passage, diagram, table or model. Explain what is given and what must be inferred.</p>
+      <figure>
+        <!-- AUTHOR: supply actual evidence. For a diagram use accurate inline SVG with viewBox,
+             title and desc. Before an attempt, use a neutral title and describe givens and positions,
+             rather than the judgment the learner must make. For reading, use the complete original
+             passage or relevant excerpt. -->
+        <figcaption>AUTHOR: equivalent text explanation, all important labels, and scale limitations.</figcaption>
+      </figure>
+      <div class="practice"><h3>Try the idea here</h3><p>AUTHOR: a fresh transfer check directly after this concept. Change the representation or direction from the taught example. Define new terms inline. Add labeled controls, a conceptual hint, misconception-specific feedback, and retry; no assigned-work grader.</p></div>
+    </section>
+    <section aria-labelledby="explore"><h2 id="explore">Test an idea</h2>
+      <p>AUTHOR: include this pattern only when comparing or changing something helps the learner reason. Put the prediction before outcome controls in every layout and outside the closed reveal. Supply the actual evidence for the comparison. If using a manipulative, provide keyboard, reset, motion controls where needed, and static fallback; state model limits, label units and verify endpoints. Avoid assigned values or homework-equivalent cases.</p>
+      <details><summary>Reveal and compare</summary><p>AUTHOR: accurate visual result and explanation. The prediction must remain visible while this is closed.</p></details>
+      <div class="practice"><h3>Use the relationship</h3><p>AUTHOR: a new transfer check with a plausible misconception, targeted feedback and retry, before introducing the next concept.</p></div>
+    </section>
+    <section aria-labelledby="example"><h2 id="example">Try a different example</h2>
+      <p>AUTHOR: use fresh quantities and a distinct context. In a calculation, label givens and goal and show justified steps with precise symbols and units. Check against every supplied question.</p>
+      <details><summary>Notice a feature</summary><p>AUTHOR: first conceptual hint.</p></details>
+      <details><summary>Recall a relationship</summary><p>AUTHOR: next hint.</p></details>
+      <details><summary>Choose a strategy</summary><p>AUTHOR: method for this NEW example only.</p></details>
+    </section>
+    <section aria-labelledby="practice"><h2 id="practice">Your turn</h2>
+      <p>AUTHOR: a short mixed set that makes the learner choose among methods already checked beside their concepts. Add an exit explanation and accessible feedback. Do not repeat the just-worked example. Avoid answer clues from option length, position or formatting. No actual-homework grader or mastery claim.</p>
+      <!-- AUTHOR: this executable specimen demonstrates construction, not reusable lesson content.
+           Rebuild its context, quantities, reasoning, misconception and transfer from the selected
+           subject skill after privately comparing every supplied question. Keep the safe markup. -->
+      <h3>A working authoring specimen: count the chosen signal</h3>
+      <p>A fictional beacon repeats one long flash and two short flashes in each complete cycle. Before checking, predict how many <em>short</em> flashes occur in four complete cycles. Explain what should be counted and what should be left out.</p>
+      <details><summary>Notice what repeats</summary><p>Count only the requested kind of flash in one cycle, then use the number of complete cycles.</p></details>
+      <form class="practice" data-practice data-expected="8"
+        data-hint="Separate short flashes from all flashes, then count the short flashes across four cycles. Try again."
+        data-mistakes='{"12":"That counts both kinds of flash. Count only the two short flashes in each cycle, then retry.","2":"That counts one cycle. Account for all four complete cycles, then retry."}'
+        data-success="Eight short flashes fit four groups of two. Explain why the long flashes were left out.">
+        <label for="specimen-count">Short flashes in four complete cycles</label>
+        <input id="specimen-count" type="number" min="0" step="1" required>
+        <button type="submit" disabled>Check this new example</button>
+        <p data-feedback role="status" aria-live="polite"></p>
+      </form>
+      <details class="static-feedback"><summary>Compare your reasoning, including without scripts</summary><p>Each complete cycle contributes two short flashes, so four cycles give 2 + 2 + 2 + 2 = 8 short flashes. Twelve counts all flashes, and two counts only one cycle. Retry with a different case: three complete cycles and five short flashes per cycle. Predict before opening the next comparison.</p>
+        <details><summary>Compare the retry</summary><p>Three groups of five short flashes give fifteen. The method depends on complete cycles and a fixed pattern; part of a cycle needs information about where it stops.</p></details>
+      </details>
+    </section>
+    <section aria-labelledby="remember"><h2 id="remember">Keep the idea</h2>
+      <p>AUTHOR: next time, before opening this lesson, recall one relationship and try one new transfer example. If unsure, use a hint and revisit the smallest relevant section. Keep all learner responses private; do not create reminders or public learning records.</p>
+      <p>Ask a follow-up question in the private chat if something is unclear. Describe where your thinking got stuck.</p>
+    </section>
+    <section class="sources" aria-labelledby="sources"><h2 id="sources">Read a little more</h2>
+      <p>AUTHOR: verified topic-specific educational source link and relevant lesson/reference links.</p>
+    </section>
+  </main>
+</body>
+</html>
+

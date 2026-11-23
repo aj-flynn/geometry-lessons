@@ -1,8 +1,13 @@
 {
   "version": 2,
+  "libraries": [
+    "main",
+    "mom"
+  ],
   "lessons": [
     {
       "file": "0001-similar-polygons.html",
+      "library": "main",
       "title": "Similar polygons",
       "summary": "Match turned polygons, reason with scale, and justify claims about similar figures.",
       "topics": [
@@ -64,6 +69,7 @@
     },
     {
       "file": "0002-close-reading-dialogue.html",
+      "library": "main",
       "subject": "English",
       "title": "Read between the lines",
       "summary": "Practice translating older dialogue, explaining figures of speech, and supporting character traits with exact quotations.",
@@ -127,6 +133,7 @@
     },
     {
       "file": "0003-reading-particle-formulas.html",
+      "library": "main",
       "title": "Read particle formulas",
       "summary": "Count atoms and identify the particle a formula describes.",
       "topics": [
@@ -189,6 +196,7 @@
     },
     {
       "file": "0004-electrons-and-bonds.html",
+      "library": "main",
       "title": "Account for electrons in a drawing",
       "summary": "Build electron dot structures and count each kind of bond.",
       "topics": [
@@ -251,6 +259,7 @@
     },
     {
       "file": "0005-shape-and-polarity.html",
+      "library": "main",
       "title": "Trace pull through a molecule",
       "summary": "Use a lookup and a shape model to make two different polarity decisions.",
       "topics": [
@@ -314,6 +323,7 @@
     },
     {
       "file": "0006-between-molecules.html",
+      "library": "main",
       "title": "Compare attractions between molecules",
       "summary": "Locate a contact, then reason about how a sample melts or boils.",
       "topics": [
@@ -377,6 +387,7 @@
     },
     {
       "file": "0007-aa-triangle-similarity.html",
+      "library": "main",
       "subject": "Geometry",
       "title": "Two angles, one shape",
       "summary": "Use Angle–Angle similarity to match triangle vertices, compare full sides, and find missing measurements.",
@@ -439,6 +450,7 @@
     },
     {
       "file": "0008-chemistry-evidence-split.html",
+      "library": "main",
       "subject": "Chemistry",
       "title": "From particle formulas to physical properties",
       "summary": "Read a formula, build a dot structure, trace uneven pull, and explain an attraction between particles.",
@@ -503,6 +515,7 @@
     },
     {
       "file": "0009-ratios-from-geometric-marks.html",
+      "library": "main",
       "subject": "Geometry",
       "title": "Ratios from geometric marks",
       "summary": "Work through four slide-based examples at your own pace, with concise steps and expandable explanations.",
@@ -566,6 +579,7 @@
     },
     {
       "file": "0010-from-marks-to-triangle-proofs.html",
+      "library": "main",
       "subject": "Geometry",
       "title": "From marks to triangle proofs",
       "summary": "Read geometric marks, match triangles in order, and justify what follows from congruence.",
@@ -627,6 +641,7 @@
     },
     {
       "file": "0011-equal-sides-equal-angles.html",
+      "library": "main",
       "subject": "Geometry",
       "title": "Equal sides, equal angles",
       "summary": "Use the Isosceles Triangle Theorem and its converse to match equal sides with equal angles, even when triangles share corners.",

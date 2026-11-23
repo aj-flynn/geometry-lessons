@@ -5,6 +5,27 @@ import { resolve } from 'node:path';
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const subjectOf = lesson => lesson.subject ?? 'Geometry';
+// Libraries keep each sender's lessons apart. The root library stays at the site root; every other
+// library is published under <id>/. The map from sender address to library is private and never here.
+export const rootLibrary = 'main';
+export const libraryOf = lesson => lesson.library ?? rootLibrary;
+export const librariesOf = manifest => manifest.libraries ?? [rootLibrary];
+export const libraryDir = id => id === rootLibrary ? '' : `${id}/`;
+export const libraryIndexFile = id => `${libraryDir(id)}index.html`;
+export const libraryFeedFile = (id, subjectId) => libraryDir(id) + (subjectId === undefined ? 'feed.xml' : `feeds/${subjectId}.xml`);
+const reservedLibraryIds = new Set(['assets', 'lessons', 'reference', 'templates', 'scripts', 'tests', 'docs', 'feeds', 'prototype', 'node_modules']);
+export function validateLibraries(libraries) {
+  if (!Array.isArray(libraries) || libraries[0] !== rootLibrary) throw new Error(`The library list must start with the root library "${rootLibrary}".`);
+  const seen = new Set();
+  for (const id of libraries) {
+    if (typeof id !== 'string' || !/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(id) || id.length > 30 || reservedLibraryIds.has(id)) {
+      throw new Error('Library IDs are short lowercase words joined by hyphens and cannot reuse a site folder name.');
+    }
+    if (seen.has(id)) throw new Error('Library IDs must be unique.');
+    seen.add(id);
+  }
+  return libraries;
+}
 export const lessonFilename = /^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
 export const dependencyPath = /^assets\/(?:[\w-]+\/)*[\w.-]+\.[a-z0-9]+$/i;
 export const referenceDependencyPath = /^reference\/(?:[\w-][\w.-]*\/)*[\w.-]+\.html$/;
@@ -15,7 +36,7 @@ export const reviewContractCoreFiles = Object.freeze([
   'scripts/check-chemistry-browser.py', 'scripts/check-practice-browser.py', 'scripts/review-candidate.mjs',
   'templates/index.html', 'templates/lesson.html',
   'tests/chemistry.test.mjs',
-  'tests/interactions.test.mjs',
+  'tests/interactions.test.mjs', 'tests/libraries.test.mjs',
   'tests/subjects.test.mjs', 'tests/test_docx.py', 'tests/test_live.py', 'tests/workflow.test.mjs'
 ]);
 export const isReviewContractPath = name => reviewContractCoreFiles.includes(name) ||
@@ -65,8 +86,10 @@ function validateHashMap(file, kind, hashes, acceptsPath) {
 export function validateManifest(manifest, registry = defaultRegistry) {
   const labels = validateSubjectRegistry(registry).map(({ label }) => label);
   if (![1,2].includes(manifest.version) || !Array.isArray(manifest.lessons)) throw new Error('Unsupported lesson manifest.');
+  const libraries = validateLibraries(librariesOf(manifest));
   const seen = new Set();
   for (const lesson of manifest.lessons) {
+    if (!libraries.includes(libraryOf(lesson))) throw new Error(`${lesson.file}: library must be one of ${libraries.join(', ')}.`);
     if (typeof lesson.file !== 'string' || !lessonFilename.test(lesson.file)) throw new Error('Lesson filenames must be NNNN-concept-name.html.');
     const number = lesson.file.slice(0, 4);
     if (seen.has(number)) throw new Error('Lesson identifiers must be unique.');
@@ -126,8 +149,8 @@ const shortDay = value => dayFormat.format(new Date(value));
 
 const subjectKey = lesson => subjectOf(lesson).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 export const subjectFeedFile = id => `feeds/${id}.xml`;
-function renderItem(lesson, featured = false, key = subjectKey(lesson)) {
-  const href = `lessons/${escape(lesson.file)}`;
+function renderItem(lesson, featured = false, key = subjectKey(lesson), base = '') {
+  const href = `${base}lessons/${escape(lesson.file)}`;
   const when = lesson.published ? `<time datetime="${escape(isoDay.format(new Date(lesson.published)))}">${escape(shortDay(lesson.published))}</time>` : '';
   const meta = `<p class="feed-meta">${when}<span class="feed-subject">${escape(subjectOf(lesson))}</span></p>`;
   const topics = `<p class="topic-line">${lesson.topics.map(escape).join(' · ')}</p>`;
@@ -137,8 +160,12 @@ function renderItem(lesson, featured = false, key = subjectKey(lesson)) {
   }
   return `<li class="feed-item" ${subject}>${meta}<h3><a href="${href}" class="lesson-link">${escape(lesson.title)}</a></h3><p class="feed-summary">${escape(lesson.summary)}</p>${topics}</li>`;
 }
-export function renderIndex(manifest, template, registry = defaultRegistry) {
-  validateManifest(manifest, registry);
+// Only lessons in the chosen library appear. Pages below the root reach shared assets and lessons through ../.
+export function renderIndex(fullManifest, template, registry = defaultRegistry, library = rootLibrary) {
+  validateManifest(fullManifest, registry);
+  if (!librariesOf(fullManifest).includes(library)) throw new Error(`Unknown library: ${library}`);
+  const manifest = { ...fullManifest, lessons: fullManifest.lessons.filter(lesson => libraryOf(lesson) === library) };
+  const base = library === rootLibrary ? '' : '../';
   const count = manifest.lessons.length;
   const ordered = feedOrder(manifest);
   const [latest, ...earlier] = ordered;
@@ -150,7 +177,7 @@ export function renderIndex(manifest, template, registry = defaultRegistry) {
     `\n      <p class="filter-empty" data-subject="${id}">No ${escape(label)} lessons yet. New ones will appear here.</p>`).join('') : '';
   const content = !latest
     ? '<p class="feed-empty">No lessons yet. The first lesson will appear here when it is published.</p>'
-    : `${renderItem(latest, true, keyOf(latest))}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson, false, keyOf(lesson))}`).join('\n')}\n      </ol>` : ''}${empties}`;
+    : `${renderItem(latest, true, keyOf(latest), base)}\n      ${earlier.length ? `<h3 class="feed-earlier-heading">Earlier lessons</h3>\n      <ol class="feed" reversed>\n${earlier.map(lesson => `        ${renderItem(lesson, false, keyOf(lesson), base)}`).join('\n')}\n      </ol>` : ''}${empties}`;
   const chip = (href, filter, label, n, subject = '') =>
     `<li><a class="filter-chip" href="${href}" data-filter="${filter}"${subject}>${label}<span class="filter-count" aria-hidden="true">${n}</span></a></li>`;
   const subjectNav = `<span id="all-subjects" class="filter-reset"></span>${tally.map(({ id }) => `<span id="subject-${id}" class="filter-target"></span>`).join('')}
@@ -163,10 +190,11 @@ export function renderIndex(manifest, template, registry = defaultRegistry) {
     [tally.map(({ id }) => `#subject-${id}:target~.subject-filter [data-filter="${id}"]`), 'background:var(--ink);border-color:var(--ink);color:#fff']
   ].map(([selectors, rule]) => `${selectors.join(',')}{${rule}}`).join('')}</style>`;
   const subjectFeeds = tally.map(({ id, label }) => `<a href="${subjectFeedFile(id)}">${escape(label)} feed</a>`).join(' · ');
-  return template.replace('{{COUNT}}', `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit`)
+  return template.replaceAll('{{BASE}}', base)
+    .replace('{{COUNT}}', count ? `${count} ${count === 1 ? 'lesson' : 'lessons'} to revisit` : 'No lessons yet')
     .replace('{{SUBJECT_STYLE}}', () => subjectStyle)
     .replace('{{SUBJECT_NAV}}', () => subjectNav)
-    .replace('{{FEED_URL}}', () => escape(siteUrl + feedFile))
+    .replace('{{FEED_URL}}', () => escape(siteUrl + libraryFeedFile(library)))
     .replace('{{SUBJECT_FEEDS}}', () => subjectFeeds)
     .replace('{{LESSONS}}', () => content);
 }
@@ -175,12 +203,15 @@ const rfc822 = value => new Date(value).toUTCString().replace(/GMT$/, '+0000');
 const xml = value => escape(value).replace(/&#39;/g, '&apos;');
 
 // With a subject ID, the feed lists only that subject's lessons at feeds/<id>.xml.
-export function renderFeed(manifest, registry = defaultRegistry, subjectId) {
+// A library's feeds list only its own lessons, inside that library's folder.
+export function renderFeed(manifest, registry = defaultRegistry, subjectId, library = rootLibrary) {
   validateManifest(manifest, registry);
+  if (!librariesOf(manifest).includes(library)) throw new Error(`Unknown library: ${library}`);
   const subject = subjectId === undefined ? undefined : registry.find(({ id }) => id === subjectId);
   if (subjectId !== undefined && !subject) throw new Error(`Unknown subject feed: ${subjectId}`);
-  const self = siteUrl + (subject ? subjectFeedFile(subject.id) : feedFile);
-  const ordered = feedOrder(manifest).filter(lesson => lesson.published && (!subject || subjectOf(lesson) === subject.label));
+  const page = siteUrl + libraryDir(library);
+  const self = siteUrl + libraryFeedFile(library, subject?.id);
+  const ordered = feedOrder(manifest).filter(lesson => lesson.published && libraryOf(lesson) === library && (!subject || subjectOf(lesson) === subject.label));
   const items = ordered.map(lesson => {
     const link = siteUrl + 'lessons/' + lesson.file;
     const categories = [subjectOf(lesson), ...lesson.topics].map(c => `      <category>${xml(c)}</category>`).join('\n');
@@ -198,7 +229,7 @@ ${categories}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homework lessons${subject ? `: ${xml(subject.label)}` : ''}</title>
-    <link>${xml(subject ? `${siteUrl}#subject-${subject.id}` : siteUrl)}</link>
+    <link>${xml(subject ? `${page}#subject-${subject.id}` : page)}</link>
     <atom:link href="${xml(self)}" rel="self" type="application/rss+xml"/>
     <description>New ${subject ? `${xml(subject.label)} ` : ''}concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
     <language>en-us</language>${built}
@@ -209,20 +240,23 @@ ${items}
 `;
 }
 
-export function generateFeed(base = root, subjectId) {
+export function generateFeed(base = root, subjectId, library = rootLibrary) {
   const registry = loadSubjectRegistry(base);
-  return renderFeed(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry, subjectId);
+  return renderFeed(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry, subjectId, library);
 }
 
-export function generateIndex(base = root) {
+export function generateIndex(base = root, library = rootLibrary) {
   const registry = loadSubjectRegistry(base);
-  return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'), registry);
+  return renderIndex(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), readFileSync(resolve(base,'templates/index.html'),'utf8'), registry, library);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  writeFileSync(resolve(root,'index.html'), generateIndex());
-  writeFileSync(resolve(root,feedFile), generateFeed());
-  mkdirSync(resolve(root,'feeds'), { recursive: true });
-  for (const { id } of loadSubjectRegistry()) writeFileSync(resolve(root,subjectFeedFile(id)), generateFeed(root, id));
-  console.log(`Updated root index.html, ${feedFile} and the subject feeds from lessons.json and subjects.json.`);
+  const libraries = librariesOf(JSON.parse(readFileSync(resolve(root,'lessons.json'),'utf8')));
+  for (const library of libraries) {
+    mkdirSync(resolve(root, libraryDir(library) || '.', 'feeds'), { recursive: true });
+    writeFileSync(resolve(root,libraryIndexFile(library)), generateIndex(root, library));
+    writeFileSync(resolve(root,libraryFeedFile(library)), generateFeed(root, undefined, library));
+    for (const { id } of loadSubjectRegistry()) writeFileSync(resolve(root,libraryFeedFile(library, id)), generateFeed(root, id, library));
+  }
+  console.log(`Updated index.html, ${feedFile} and the subject feeds for ${libraries.length} ${libraries.length === 1 ? 'library' : 'libraries'} (${libraries.join(', ')}).`);
 }

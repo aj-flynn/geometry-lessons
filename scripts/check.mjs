@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'parse5';
-import { root, renderIndex, renderFeed, feedFile, subjectFeedFile, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
+import { root, renderIndex, renderFeed, feedFile, subjectFeedFile, libraryOf, librariesOf, libraryDir, libraryIndexFile, libraryFeedFile, rootLibrary, loadSubjectRegistry, subjectOf, validateManifest, dependencyPath, referenceDependencyPath, isReviewContractPath, reviewContractCoreFiles, lessonFilename } from './build-index.mjs';
 
 const textExtension = /\.(?:html|css|js|mjs|json|md|txt|py)$/;
 const hashBytes = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -360,13 +360,15 @@ function inspectReviewedHashes(name, kind, hashes, reviewed) {
 
 // Enforce the shared authoring convention. Browser review still checks visibility
 // and activation: source inspection cannot determine inherited CSS behavior.
-export function hasLibraryLink(html) {
+// A lesson in a library below the site root links back to ../<library id>/index.html.
+export const libraryLinkFor = library => `../${libraryDir(library)}index.html`;
+export function hasLibraryLink(html, expected = libraryLinkFor(rootLibrary)) {
   const content = html.replace(/<!--[\s\S]*?-->|<(script|style|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, '');
   return [...content.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/gi)].some(([, attrs, body]) => {
     const href = attrs.match(/(?:^|\s)href\s*=\s*(["'])(.*?)\1/i)?.[2];
     const hidden = /(?:^|\s)hidden(?:\s|=|$)|\baria-hidden\s*=\s*["']true["']/i.test(attrs);
     const label = body.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-    return !hidden && href === '../index.html' && /\blesson library\b/i.test(label);
+    return !hidden && href === expected && /\blesson library\b/i.test(label);
   });
 }
 
@@ -454,21 +456,32 @@ export function check(base = root) {
   const registry = loadSubjectRegistry(base);
   const manifest = validateManifest(JSON.parse(readFileSync(resolve(base,'lessons.json'),'utf8')), registry);
   const template = readFileSync(resolve(base,'templates/index.html'),'utf8');
-  if (readFileSync(resolve(base,'index.html'),'utf8') !== renderIndex(manifest, template, registry)) errors.push('Root index is stale; run node scripts/build-index.mjs.');
-  // Once any lesson carries a publication time, the library publishes a feed and every lesson needs one.
+  const libraries = librariesOf(manifest);
+  const current = (file, expected) => existsSync(resolve(base, file)) && readFileSync(resolve(base, file), 'utf8') === expected;
+  for (const library of libraries) {
+    const file = libraryIndexFile(library);
+    if (!current(file, renderIndex(manifest, template, registry, library))) {
+      errors.push(`${library === rootLibrary ? 'Root index' : `Library index ${file}`} is stale; run node scripts/build-index.mjs.`);
+    }
+  }
+  // Once any lesson carries a publication time, every library publishes feeds and every lesson needs one.
   if (existsSync(resolve(base, feedFile)) || manifest.lessons.some(lesson => lesson.published !== undefined)) {
     const undated = manifest.lessons.filter(lesson => lesson.published === undefined).map(lesson => lesson.file);
     if (undated.length) errors.push(`Lessons need a published time for the feed: ${undated.join(', ')}.`);
-    if (!existsSync(resolve(base, feedFile)) || readFileSync(resolve(base, feedFile), 'utf8') !== renderFeed(manifest, registry)) {
-      errors.push(`Lesson feed is stale; run node scripts/build-index.mjs.`);
-    }
-    for (const { id } of registry) {
-      const file = subjectFeedFile(id);
-      if (!existsSync(resolve(base, file)) || readFileSync(resolve(base, file), 'utf8') !== renderFeed(manifest, registry, id)) {
-        errors.push(`Subject feed ${file} is stale; run node scripts/build-index.mjs.`);
+    for (const library of libraries) {
+      if (!current(libraryFeedFile(library), renderFeed(manifest, registry, undefined, library))) {
+        errors.push(`Lesson feed ${libraryFeedFile(library)} is stale; run node scripts/build-index.mjs.`);
+      }
+      for (const { id } of registry) {
+        const file = libraryFeedFile(library, id);
+        if (!current(file, renderFeed(manifest, registry, id, library))) {
+          errors.push(`Subject feed ${file} is stale; run node scripts/build-index.mjs.`);
+        }
       }
     }
   }
+  const libraryOutputs = new Set(libraries.flatMap(library => [libraryIndexFile(library), libraryFeedFile(library), ...registry.map(({ id }) => libraryFeedFile(library, id))]));
+  const libraryIndexes = new Set(libraries.map(libraryIndexFile));
   const lessonDir = resolve(base,'lessons');
   const actual = existsSync(lessonDir) ? readdirSync(lessonDir) : [];
   if (actual.some(name => !manifest.lessons.some(lesson => lesson.file === name))) errors.push('Every file in lessons/ must be reviewed and indexed.');
@@ -481,7 +494,13 @@ export function check(base = root) {
     const sha = hashBytes(bytes);
     if (sha !== lesson.review.sha256.toLowerCase()) errors.push(`${lesson.file}: changed since review; review again and update hash.`);
     const html = bytes.toString('utf8');
-    if (!hasLibraryLink(html)) errors.push(`${lesson.file}: needs a visible Lesson library link to ../index.html.`);
+    const libraryLink = libraryLinkFor(libraryOf(lesson));
+    if (!hasLibraryLink(html, libraryLink)) errors.push(`${lesson.file}: needs a visible Lesson library link to ${libraryLink}.`);
+    // A lesson never sends its reader to another sender's library.
+    for (const other of libraries.filter(other => other !== libraryOf(lesson))) {
+      const href = libraryLinkFor(other).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (new RegExp(`href\\s*=\\s*["']${href}(?:[?#][^"']*)?["']`, 'i').test(html)) errors.push(`${lesson.file}: links to another library's index.`);
+    }
     if (manifest.version === 2 && (!/\bid="glossary"/.test(html) || !/<dl[\s>]/i.test(html) || !/href="#glossary"/.test(html))) errors.push(`${lesson.file}: needs a linked glossary with a definition list.`);
     const hasDiagram = /<svg\b/i.test(html) && /<desc[\s>]/i.test(html);
     const isEnglish = subjectOf(lesson) === 'English';
@@ -521,7 +540,7 @@ export function check(base = root) {
       errors.push(...pathFindings);
       continue;
     }
-    const subjectFeed = registry.some(({ id }) => name === subjectFeedFile(id));
+    const subjectFeed = libraryOutputs.has(name);
     const allowedPath = allowedRoots.has(name) || subjectFeed || prototypeFiles.has(name) || (!unexpectedAuxiliaryPath(name) &&
       (/^(?:assets|lessons|reference|templates|scripts|tests|docs)\//.test(name) || allowedSkillFolders.some(folder => name.startsWith(folder))));
     const allowedType = textExtension.test(name) || allowedRoots.has(name) || subjectFeed;
@@ -552,7 +571,7 @@ export function check(base = root) {
       checkedFiles++;
       continue;
     }
-    const publicPageOrAsset = name === 'index.html' || /^(?:assets|lessons|reference)\//.test(name) ||
+    const publicPageOrAsset = libraryIndexes.has(name) || /^(?:assets|lessons|reference)\//.test(name) ||
       (name.startsWith('docs/skill-samples/') && extname(path) === '.html');
     if (!publicPageOrAsset) {
       errors.push(...inspectPrivateIdentifiers(source, name));

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework lessons: Spanish</title>
+    <link>https://aj-flynn.github.io/geometry-lessons/mom/#subject-spanish</link>
+    <atom:link href="https://aj-flynn.github.io/geometry-lessons/mom/feeds/spanish.xml" rel="self" type="application/rss+xml"/>
+    <description>New Spanish concept lessons, newest first. Each lesson teaches the idea with fresh examples and leaves the assigned work to the learner.</description>
+    <language>en-us</language>
+    <ttl>60</ttl>
+
+  </channel>
+</rss>

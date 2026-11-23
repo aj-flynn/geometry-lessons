@@ -1,6 +1,6 @@
 # Homework lessons
 
-[Open the lesson library](https://aj-flynn.github.io/geometry-lessons/), a newest-first feed of lessons. Feed readers and feed-to-email services can follow [feed.xml](https://aj-flynn.github.io/geometry-lessons/feed.xml), or one subject's feed at feeds/<subject id>.xml (for example [feeds/geometry.xml](https://aj-flynn.github.io/geometry-lessons/feeds/geometry.xml)). The library's subject links filter the list and can be shared, for example index.html#subject-geometry. [Browse public skill samples](docs/skill-samples/index.html).
+[Open the lesson library](https://aj-flynn.github.io/geometry-lessons/), a newest-first feed of lessons. Feed readers and feed-to-email services can follow [feed.xml](https://aj-flynn.github.io/geometry-lessons/feed.xml), or one subject's feed at feeds/<subject id>.xml (for example [feeds/geometry.xml](https://aj-flynn.github.io/geometry-lessons/feeds/geometry.xml)). The library's subject links filter the list and can be shared, for example index.html#subject-geometry. Lessons are grouped by who sent the homework: the root library above is one sender's, and each other sender's library lives in its own folder (for example [mom/](https://aj-flynn.github.io/geometry-lessons/mom/)) with its own feed.xml and feeds/. lessons.json lists the libraries and files each lesson under one; the private routing reference explains how. [Browse public skill samples](docs/skill-samples/index.html).
 
 Use [homework-teach](.agents/skills/homework-teach/SKILL.md) with an authorized private assignment. It selects or creates the subject skill in subjects.json. The authoring session writes focused HTML and performs the author checks; a separate, freshly started reviewer subagent checks the source, teaching and rendered tasks before publication. Everyday delivery uses one focused independent pass and a basic browser smoke test, not a 100/100 scoring loop. Preserve historical review evidence; optional capability gaps are disclosed rather than release blockers. During [skill refinement](.agents/skills/homework-teach/references/independent-refinement.md), preserve first-draft scores separately from corrected results.
 
@@ -11,7 +11,7 @@ This checkout and its history are public. Keep actual inputs, transcriptions, id
 Use Node 22+. Install dependencies with npm ci --ignore-scripts on a fresh checkout. Update lessons.json after semantic review, including each lesson's `published` time (ISO 8601 with a time zone), then run:
 
 ```sh
-node scripts/build-index.mjs   # writes index.html, feed.xml and feeds/<subject id>.xml
+node scripts/build-index.mjs   # writes index.html, feed.xml and feeds/<subject id>.xml for every library
 node scripts/check.mjs
 node --test tests/*.test.mjs
 ```

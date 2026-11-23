@@ -14,6 +14,18 @@ def sha256(data):
     return hashlib.sha256(data).hexdigest()
 
 
+ROOT_LIBRARY = 'main'
+
+
+def library_index(library):
+    """Each sender's library has its own index; the root library stays at the site root."""
+    return 'index.html' if library == ROOT_LIBRARY else f'{library}/index.html'
+
+
+def libraries_of(manifest):
+    return manifest.get('libraries', [ROOT_LIBRARY])
+
+
 def reviewed_files(repo, manifest, publication=None):
     expected = {}
 
@@ -31,7 +43,7 @@ def reviewed_files(repo, manifest, publication=None):
                 raise ValueError(f'Local reviewed bytes changed: {path}')
             expected[path] = digest
 
-    for path in ('index.html', 'lessons.json', 'subjects.json'):
+    for path in ('lessons.json', 'subjects.json', *(library_index(library) for library in libraries_of(manifest))):
         add(path, sha256((repo / path).read_bytes()))
     for subject in json.loads((repo / 'subjects.json').read_text(encoding='utf-8')):
         if subject.get('skill'):
@@ -116,26 +128,32 @@ def verify_publication(page, base, manifest, subjects, expected):
 
     index_url = urls['index.html']
     lesson_urls = [urls['lessons/' + lesson['file']] for lesson in manifest['lessons']]
-    load_page(page, index_url)
-    if page.locator('.lesson-link').count() != len(lesson_urls):
-        raise AssertionError('Published library has the wrong lesson count')
-    nav = page.get_by_role('navigation', name='Lesson subjects')
-    for subject in subjects:
-        nav.get_by_role('link', name=subject['label'], exact=True).click()
-        target = index_url + '#subject-' + subject['id']
-        if page.url != target:
-            raise AssertionError(f'Subject navigation failed: {subject["id"]}')
-        assert_fragment(page, target)
+    library_of = lambda lesson: lesson.get('library', ROOT_LIBRARY)
+    shelf = {library: [lesson for lesson in manifest['lessons'] if library_of(lesson) == library] for library in libraries_of(manifest)}
+    for library, lessons in shelf.items():
+        library_url = urls[library_index(library)]
+        load_page(page, library_url)
+        if page.locator('.lesson-link').count() != len(lessons):
+            raise AssertionError(f'Published library has the wrong lesson count: {library}')
+        nav = page.get_by_role('navigation', name='Lesson subjects')
+        for subject in subjects:
+            nav.get_by_role('link', name=subject['label'], exact=True).click()
+            target = library_url + '#subject-' + subject['id']
+            if page.url != target:
+                raise AssertionError(f'Subject navigation failed: {library} {subject["id"]}')
+            assert_fragment(page, target)
 
-    for url in lesson_urls:
+    for lesson in manifest['lessons']:
+        url = urls['lessons/' + lesson['file']]
+        library_url = urls[library_index(library_of(lesson))]
         load_page(page, url)
         link = page.get_by_role('link', name=re.compile(r'\bLesson library\b', re.I)).first
         if not link.is_visible():
             raise AssertionError(f'Library link is not visible: {url}')
         link.focus()
         page.keyboard.press('Enter')
-        page.wait_for_url(index_url)
-        if page.locator('.lesson-link').count() != len(lesson_urls):
+        page.wait_for_url(library_url)
+        if page.locator('.lesson-link').count() != len(shelf[library_of(lesson)]):
             raise AssertionError('Library return did not reach the lesson shelf')
 
     reference_urls = [url for path, url in urls.items() if path.startswith('reference/') and path.endswith('.html')]
